@@ -91,7 +91,7 @@ class ProjectTaskView: UIView {
         
         self.color = .black
         
-        self.checkImage = UIImage.icons.checkmarkIcon ?? .defaultImage
+        self.checkImage = UIImage.Icons.checkmarkIcon ?? .defaultImage
         
         super.init(frame: .zero)
         

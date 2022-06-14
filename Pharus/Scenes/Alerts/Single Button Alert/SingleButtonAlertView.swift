@@ -66,7 +66,7 @@ class SingleButtonAlertView: UIView {
     
     private lazy var alertIconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.icons.checkIcon
+        imageView.image = UIImage.Icons.checkIcon
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "SingleButtonAlertView.alertIconImageView"
         
@@ -155,9 +155,9 @@ class SingleButtonAlertView: UIView {
         alertMessageLabel.text = message
         
         if type == .confirmation {
-            alertIconImageView.image = UIImage.icons.checkIcon
+            alertIconImageView.image = UIImage.Icons.checkIcon
         } else {
-            alertIconImageView.image = UIImage.icons.errorIcon
+            alertIconImageView.image = UIImage.Icons.errorIcon
         }
     }
     

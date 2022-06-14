@@ -10,9 +10,9 @@ extension UIImage {
     
     static let defaultImage = UIImage()
     
-    //MARK: - Icons
+    // MARK: - Icons
     
-    struct icons {
+    struct Icons {
         static let bookIcon = UIImage(named: K.Assets.Icons.bookIcon)
         static let clockIcon = UIImage(named: K.Assets.Icons.clockIcon)
         static let rulesIcon = UIImage(named: K.Assets.Icons.rulesIcon)
@@ -45,16 +45,16 @@ extension UIImage {
         static let rankingTabBarIconSelected = UIImage(named: K.Assets.Icons.rankingTabBarIconSelected)
     }
     
-    //MARK: - Images
+    // MARK: - Images
     
-    struct images {
+    struct Images {
         
-        struct avatars {
-            static let avatarsDict: [UIImage : UIImage] = [
-                (UIImage.images.avatars.circleImage.avatar1 ?? .defaultImage) : UIImage.images.avatars.fullImage.avatar1 ?? .defaultImage
+        struct Avatars {
+            static let avatarsDict: [UIImage: UIImage] = [
+                (UIImage.Images.Avatars.CircleImage.avatar1 ?? .defaultImage) : UIImage.Images.Avatars.FullImage.avatar1 ?? .defaultImage
             ]
             
-            struct fullImage {
+            struct FullImage {
                 static let avatar1 = UIImage(named: K.Assets.Images.Avatar.FullImage.avatar1)
                 static let avatar2 = UIImage(named: K.Assets.Images.Avatar.FullImage.avatar2)
                 static let avatar3 = UIImage(named: K.Assets.Images.Avatar.FullImage.avatar3)
@@ -100,7 +100,7 @@ extension UIImage {
                 ]
             }
             
-            struct circleImage {
+            struct CircleImage {
                 static let avatar1 = UIImage(named: K.Assets.Images.Avatar.CircleImage.avatar1)
                 static let avatar2 = UIImage(named: K.Assets.Images.Avatar.CircleImage.avatar2)
                 static let avatar3 = UIImage(named: K.Assets.Images.Avatar.CircleImage.avatar3)
@@ -148,7 +148,7 @@ extension UIImage {
             
         }
         
-        struct companies {
+        struct Companies {
             static let ioasysLogoImage = UIImage(named: K.Assets.Images.Company.ioasysLogoImage)
             static let dupeLogoImage = UIImage(named: K.Assets.Images.Company.dupeLogoImage)
             static let havaianasLogoImage = UIImage(
@@ -172,7 +172,7 @@ extension UIImage {
         static let thirdPlaceMedalImage = UIImage(named: K.Assets.Images.thirdPlaceMedalImage)
         static let fourthPlaceMedalImage = UIImage(named: K.Assets.Images.fourthPlaceMedalImage)
         static let fifthPlaceMedalImage = UIImage(named: K.Assets.Images.fifthPlaceMedalImage)
-        
+
         static let appLogoImage = UIImage(named: K.Assets.Images.appLogoImage)
     }
 }

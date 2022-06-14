@@ -58,7 +58,7 @@ class LogoutAlertView: UIView {
     
     private lazy var logoutIconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.icons.logOutIcon?.withTintColor(.black)
+        imageView.image = UIImage.Icons.logOutIcon?.withTintColor(.black)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "LogoutAlertViewDelegate.logoutIconImageView"
         

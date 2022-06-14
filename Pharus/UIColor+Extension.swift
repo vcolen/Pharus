@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIColor {
+
     struct Project {
         static let yellowDisabledProjectBackground = UIColor(
             red: 0.992,
@@ -22,7 +23,7 @@ extension UIColor {
             blue: 0.29,
             alpha: 1
         )
-
+        
         static let orangeSubscribedProjectBackground = UIColor(
             red: 0.992,
             green: 0.627,
@@ -73,7 +74,7 @@ extension UIColor {
             blue: 0.631,
             alpha: 1
         )
-        
+
         static let orangeBackground = UIColor(
             red: 0.988,
             green: 0.729,
@@ -110,7 +111,7 @@ extension UIColor {
             blue: 0.702,
             alpha: 1
         )
-
+        
         static let grayDisabledBackground = UIColor(
             red: 0.808,
             green: 0.808,
@@ -118,7 +119,7 @@ extension UIColor {
             alpha: 1
         )
     }
-
+    
     struct Card {
         static let orangeHomeStandardCardBackground = UIColor(
             red: 0.988,
@@ -165,7 +166,7 @@ extension UIColor {
             blue: 0.227,
             alpha: 1
         )
-
+        
         static let greenBackground = UIColor(
             red: 0.017,
             green: 0.7,

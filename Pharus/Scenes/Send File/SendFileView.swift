@@ -70,7 +70,7 @@ class SendFileView: UIView {
     
     lazy var closeSheetButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage.icons.xmarkIcon, for: .normal)
+        button.setImage(UIImage.Icons.xmarkIcon, for: .normal)
         button.addAction(
             UIAction { _ in
                 self.closeButtonTapped()
@@ -127,7 +127,7 @@ class SendFileView: UIView {
     
     private lazy var uploadIconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.icons.uploadIcon
+        imageView.image = UIImage.Icons.uploadIcon
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "SendFileView.uploadIconImageView"
         
@@ -170,7 +170,7 @@ class SendFileView: UIView {
     
     private lazy var fileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.icons.bookIcon
+        imageView.image = UIImage.Icons.bookIcon
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "SendFileView.fileImageView"
         
@@ -189,7 +189,7 @@ class SendFileView: UIView {
     
     private lazy var removeFileButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage.icons.xmarkIcon, for: .normal)
+        button.setImage(UIImage.Icons.xmarkIcon, for: .normal)
         button.tintColor = .black
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "SendFileView.removeFileButton"

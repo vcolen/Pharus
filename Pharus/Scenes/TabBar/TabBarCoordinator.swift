@@ -72,12 +72,12 @@ class TabBarCoordinator: Coordinator {
         coordinator
             .navigationController
             .tabBarItem
-            .image = UIImage.icons.homeTabBarIcon
+            .image = UIImage.Icons.homeTabBarIcon
         
         coordinator
             .navigationController
             .tabBarItem
-            .selectedImage = UIImage.icons.homeTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
+            .selectedImage = UIImage.Icons.homeTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
         
         coordinator.start()
         
@@ -93,12 +93,12 @@ class TabBarCoordinator: Coordinator {
         coordinator
             .navigationController
             .tabBarItem
-            .image = UIImage.icons.projecsTabBarIcon
+            .image = UIImage.Icons.projecsTabBarIcon
         
         coordinator
             .navigationController
             .tabBarItem
-            .selectedImage = UIImage.icons.projecsTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
+            .selectedImage = UIImage.Icons.projecsTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
         
         coordinator.start()
         
@@ -114,12 +114,12 @@ class TabBarCoordinator: Coordinator {
         coordinator
             .navigationController
             .tabBarItem
-            .image = UIImage.icons.rankingTabBarIcon
+            .image = UIImage.Icons.rankingTabBarIcon
         
         coordinator
             .navigationController
             .tabBarItem
-            .selectedImage = UIImage.icons.rankingTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
+            .selectedImage = UIImage.Icons.rankingTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
         
         coordinator.start()
         
@@ -135,12 +135,12 @@ class TabBarCoordinator: Coordinator {
         coordinator
             .navigationController
             .tabBarItem
-            .image = UIImage.icons.avatarTabBarIcon
+            .image = UIImage.Icons.avatarTabBarIcon
         
         coordinator
             .navigationController
             .tabBarItem
-            .selectedImage = UIImage.icons.avatarTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
+            .selectedImage = UIImage.Icons.avatarTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
         
         coordinator.start()
         
@@ -156,13 +156,13 @@ class TabBarCoordinator: Coordinator {
         coordinator
             .navigationController
             .tabBarItem
-            .image = UIImage.icons.profileTabBarIcon
+            .image = UIImage.Icons.profileTabBarIcon
         
         
         coordinator
             .navigationController
             .tabBarItem
-            .selectedImage = UIImage.icons.profileTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
+            .selectedImage = UIImage.Icons.profileTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
         
         coordinator.start()
         

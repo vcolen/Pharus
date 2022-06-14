@@ -69,7 +69,7 @@ extension UIView {
     
     func addBackground(imageName: String,
                        contentMode: UIView.ContentMode = .scaleToFill) {
-        
+        print(UIScreen.main.bounds.height)
         let backgroundImageView = UIImageView(frame: UIScreen.main.bounds)
         backgroundImageView.image = UIImage(named: imageName)
         backgroundImageView.contentMode = contentMode

@@ -69,7 +69,7 @@ class StutentProfileViewController: UIViewController {
         self.title = "Perfil"
         self.navigationController?.title = ""
         
-        let logoutIcon = UIImage.icons.logOutIcon?.withRenderingMode(.alwaysOriginal)
+        let logoutIcon = UIImage.Icons.logOutIcon?.withRenderingMode(.alwaysOriginal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: logoutIcon,
             style: .plain,

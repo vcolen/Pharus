@@ -104,7 +104,7 @@ class AvatarSelectionViewController: UIViewController {
 //MARK: - UI Collection View Data Source
 extension AvatarSelectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        UIImage.images.avatars.circleImage.avatars.count
+        UIImage.Images.Avatars.CircleImage.avatars.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -113,7 +113,7 @@ extension AvatarSelectionViewController: UICollectionViewDataSource {
             for: indexPath
         )
         
-        let avatarImage = UIImage.images.avatars.circleImage.avatars[indexPath.row]
+        let avatarImage = UIImage.Images.Avatars.CircleImage.avatars[indexPath.row]
         let avatarImageView = UIImageView(image: avatarImage)
         
         cell.addSubview(avatarImageView)
@@ -127,7 +127,7 @@ extension AvatarSelectionViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let newAvatar = UIImage.images.avatars.fullImage.avatars[indexPath.row]
+        let newAvatar = UIImage.Images.Avatars.FullImage.avatars[indexPath.row]
         customView.mainAvatarImageView.image = newAvatar
         
         student.avatar = String(indexPath.row + 1)

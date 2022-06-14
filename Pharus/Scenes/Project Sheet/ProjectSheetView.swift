@@ -67,7 +67,7 @@ class ProjectSheetView: UIView {
     
     private lazy var titleIconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.icons.feedbackIcon
+        imageView.image = UIImage.Icons.feedbackIcon
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "ProjectSheetView.titleIconImageView"
         
@@ -179,11 +179,11 @@ class ProjectSheetView: UIView {
     
     private func customizeSubviews() {
         if sheetContent == .mentorReview {
-            titleIconImageView.image = UIImage.icons.feedbackIcon
+            titleIconImageView.image = UIImage.Icons.feedbackIcon
             titleLabel.text = "Avaliação do Mentor"
             descriptionTextLabel.text = project.scoreDescription
         } else {
-            titleIconImageView.image = UIImage.icons.rulesIcon
+            titleIconImageView.image = UIImage.Icons.rulesIcon
             titleLabel.text = "Atividades"
             var descriptionText = ""
             for task in project.tasks {

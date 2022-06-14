@@ -49,7 +49,7 @@ class StudentProfileView: UIView {
     
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.images.avatars.circleImage.avatar1
+        imageView.image = UIImage.Images.Avatars.CircleImage.avatar1
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "StudentProfileView.profileImageView"
