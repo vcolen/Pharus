@@ -7,15 +7,15 @@
 
 import UIKit
 
-//MARK: - Click action
+// MARK: - Click action
 
 class ClickListener: UITapGestureRecognizer {
-    var onClick : (() -> Void)? = nil
+    var onClick: (() -> Void)? 
 }
 
 extension UIView {
     
-    func setOnClickListener(action: @escaping () -> Void){
+    func setOnClickListener(action: @escaping () -> Void) {
         let tapRecogniser = ClickListener(target: self, action: #selector(onViewClicked(sender:)))
         tapRecogniser.onClick = action
         self.addGestureRecognizer(tapRecogniser)
@@ -27,7 +27,7 @@ extension UIView {
         }
     }
     
-    //MARK: - Constraints
+    // MARK: - Constraints
     
     func stretch(_ view: UIView,
                  to otherView: UIView? = nil,
@@ -54,7 +54,7 @@ extension UIView {
         }
     }
     
-    //MARK: - Center
+    // MARK: - Center
     
     func center(in otherView: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +65,7 @@ extension UIView {
         ])
     }
     
-    //MARK: - Add Background
+    // MARK: - Add Background
     
     func addBackground(imageName: String,
                        contentMode: UIView.ContentMode = .scaleToFill) {
@@ -79,7 +79,10 @@ extension UIView {
         sendSubviewToBack(backgroundImageView)
         
         NSLayoutConstraint.activate([
-            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor), backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor), backgroundImageView.topAnchor.constraint(equalTo: topAnchor), backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
