@@ -53,15 +53,15 @@ class SmallAlertButton: UIButton {
     private func configureSubviews() {
         setTitle(title, for: .normal)
         layer.borderWidth = 2
-        layer.borderColor = UIColor.purple.pharusPurple.cgColor
+        layer.borderColor = UIColor.Purple.pharusPurple.cgColor
         layer.cornerRadius = 16
         
         if importance == .primary {
-            backgroundColor = UIColor.purple.pharusPurple
+            backgroundColor = UIColor.Purple.pharusPurple
             setTitleColor(.white, for: .normal)
         } else {
             backgroundColor = .clear
-            setTitleColor(UIColor.purple.pharusPurple, for: .normal)
+            setTitleColor(UIColor.Purple.pharusPurple, for: .normal)
         }
     }
     

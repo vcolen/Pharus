@@ -52,7 +52,7 @@ class LoginView: UIView {
     private lazy var loginTitle: UILabel = {
         let label = UILabel()
         label.text = "Login"
-        label.textColor = UIColor.purple.pharusPurple
+        label.textColor = UIColor.Purple.pharusPurple
         label.font = .largeTitleBold
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +77,7 @@ class LoginView: UIView {
         let label = UILabel()
         label.text = "E-mail"
         label.font = .mediumTitleBold
-        label.textColor = UIColor.purple.pharusPurple
+        label.textColor = UIColor.Purple.pharusPurple
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityIdentifier = "LoginView.emailLabel"
         
@@ -91,7 +91,7 @@ class LoginView: UIView {
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         textField.textColor = .black
         textField.font = .smallBody
-        textField.layer.shadowColor = UIColor.purple.pharusPurple.cgColor
+        textField.layer.shadowColor = UIColor.Purple.pharusPurple.cgColor
         textField.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         textField.layer.shadowOpacity = 0.30
         textField.layer.shadowRadius = 0.0
@@ -120,7 +120,7 @@ class LoginView: UIView {
         let label = UILabel()
         label.text = "Senha"
         label.font = .mediumTitleBold
-        label.textColor = UIColor.purple.pharusPurple
+        label.textColor = UIColor.Purple.pharusPurple
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityIdentifier = "LoginView.passwordLabel"
         
@@ -134,7 +134,7 @@ class LoginView: UIView {
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         textField.textColor = .black
         textField.font = .smallBody
-        textField.layer.shadowColor = UIColor.purple.pharusPurple.cgColor
+        textField.layer.shadowColor = UIColor.Purple.pharusPurple.cgColor
         textField.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         textField.layer.shadowOpacity = 0.30
         textField.layer.shadowRadius = 0.0

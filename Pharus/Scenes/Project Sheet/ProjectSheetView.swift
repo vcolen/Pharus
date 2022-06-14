@@ -29,7 +29,7 @@ class ProjectSheetView: UIView {
     
     private lazy var scrollView: UIScrollView = {
         var scrollView = UIScrollView()
-        scrollView.backgroundColor = UIColor.modal.yellowBackground
+        scrollView.backgroundColor = UIColor.Modal.yellowBackground
         scrollView.layer.cornerRadius = 16
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.accessibilityIdentifier = "ProjectSheetView.scrollView"

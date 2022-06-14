@@ -50,16 +50,16 @@ class MainCardButton: UIButton {
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont.mediumButtonSemiBold
         setBackgroundColor()
-        setTitleColor(UIColor.project.grayDisabledText, for: .disabled)
-        setTitleColor(UIColor.button.whiteMainButtonText, for: .normal)
+        setTitleColor(UIColor.Project.grayDisabledText, for: .disabled)
+        setTitleColor(UIColor.Button.whiteMainButtonText, for: .normal)
         layer.cornerRadius = 16
     }
     
     private func setBackgroundColor() {
         if buttonState == .normal {
-            backgroundColor = UIColor.purple.pharusPurple
+            backgroundColor = UIColor.Purple.pharusPurple
         } else {
-            backgroundColor = UIColor.button.grayDisabledBackground
+            backgroundColor = UIColor.Button.grayDisabledBackground
         }
     }
     

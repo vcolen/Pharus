@@ -109,7 +109,7 @@ class ProjectScheduleView: UIView {
         if project.isComplete {
             iconImageView.image = UIImage.icons.checkIcon?.withTintColor(.black)
             textLabel.text = "Feito!"
-            mainView.backgroundColor = UIColor.projectSchedule.greenBackground
+            mainView.backgroundColor = UIColor.ProjectSchedule.greenBackground
         } else {
             switch project.daysRemaining {
             case ..<0:
@@ -117,7 +117,7 @@ class ProjectScheduleView: UIView {
                 textLabel.text = "Expirado"
                 iconImageView.image = UIImage.icons.xmarkIcon?.withTintColor(.white)
             case 0...6:
-                mainView.backgroundColor = UIColor.projectSchedule.redBackground
+                mainView.backgroundColor = UIColor.ProjectSchedule.redBackground
                 iconImageView.image = UIImage.icons.clockIcon ?? .defaultImage
                 textLabel.text = "\(project.daysRemaining) Dias"
                 textLabel.textColor = .white
@@ -125,11 +125,11 @@ class ProjectScheduleView: UIView {
             case 7...8:
                 iconImageView.image = UIImage.icons.clockIcon ?? .defaultImage
                 textLabel.text = "\(project.daysRemaining) Dias"
-                mainView.backgroundColor = UIColor.projectSchedule.yellowBackground
+                mainView.backgroundColor = UIColor.ProjectSchedule.yellowBackground
             default:
                 iconImageView.image = UIImage.icons.clockIcon ?? .defaultImage
                 textLabel.text = "\(project.daysRemaining) Dias"
-                mainView.backgroundColor = UIColor.projectSchedule.orangeBackground
+                mainView.backgroundColor = UIColor.ProjectSchedule.orangeBackground
             }
         }
     }

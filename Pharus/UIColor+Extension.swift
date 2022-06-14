@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIColor {
-    struct project {
+    struct Project {
         static let yellowDisabledProjectBackground = UIColor(
             red: 0.992,
             green: 0.925,
@@ -66,7 +66,7 @@ extension UIColor {
         )
     }
     
-    struct modal {
+    struct Modal {
         static let yellowBackground = UIColor(
             red: 0.992,
             green: 0.863,
@@ -82,7 +82,7 @@ extension UIColor {
         )
     }
     
-    struct button {
+    struct Button {
         static let whiteMainButtonText = UIColor(
             red: 0.945,
             green: 0.945,
@@ -119,7 +119,7 @@ extension UIColor {
         )
     }
     
-    struct card {
+    struct Card {
         static let orangeHomeStandardCardBackground = UIColor(
             red: 0.988,
             green: 0.729,
@@ -135,7 +135,7 @@ extension UIColor {
         )
     }
     
-    struct purple {
+    struct Purple {
         static let pharusPurple = UIColor(
             red: 0.361,
             green: 0.145,
@@ -144,7 +144,7 @@ extension UIColor {
         )
     }
     
-    struct projectSchedule {
+    struct ProjectSchedule {
         static let redBackground = UIColor(
             red: 0.6,
             green: 0,
@@ -174,7 +174,7 @@ extension UIColor {
         )
     }
     
-    struct tabbar {
+    struct Tabbar {
         static let blueBackground = UIColor(
             red: 0.235,
             green: 0.125,

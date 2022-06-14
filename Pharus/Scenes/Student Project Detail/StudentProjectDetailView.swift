@@ -33,7 +33,7 @@ class StudentProjectDetailView: UIView {
     
     private  lazy var mainView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.modal.yellowBackground
+        view.backgroundColor = UIColor.Modal.yellowBackground
         view.layer.cornerRadius = 16
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "StudentProjectDetailView.mainView"
@@ -156,7 +156,7 @@ class StudentProjectDetailView: UIView {
     private lazy var rulesLabel: UILabel = {
         let label = UILabel()
         label.text = "Atividades do projeto"
-        label.textColor = UIColor.project.redText
+        label.textColor = UIColor.Project.redText
         label.font = .largeTitleMedium
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityIdentifier = "StudentProjectDetailView.descriptionLabel"
@@ -231,7 +231,7 @@ class StudentProjectDetailView: UIView {
         progressView.progress = 0.75
         progressView.clipsToBounds = true
         progressView.trackTintColor = .white
-        progressView.progressTintColor = UIColor.project.greenProgress
+        progressView.progressTintColor = UIColor.Project.greenProgress
         progressView.accessibilityIdentifier = "StudentProjectDetailView.completedTasksProgressView"
         
         return progressView
@@ -354,7 +354,7 @@ class StudentProjectDetailView: UIView {
             let taskView = ProjectTaskView(
                 task: task,
                 checkImage: checkboxIcon,
-                color: project.isSubscribed ? .black : UIColor.project.grayDisabledText
+                color: project.isSubscribed ? .black : UIColor.Project.grayDisabledText
             )
             
             if project.isComplete == false && project.isSubscribed == true {
@@ -373,15 +373,15 @@ class StudentProjectDetailView: UIView {
     }
     
     private func configureUnsubscribedProject(with project: ProjectModel) {
-        mentorReviewImageView.image = mentorReviewImageView.image?.withTintColor(UIColor.project.grayDisabledText)
-        rulesLabel.textColor = UIColor.project.grayDisabledText
-        completedTasksLabel.textColor = UIColor.project.grayDisabledText
-        taskTitleLabel.textColor = UIColor.project.grayDisabledText
-        completedTasksProgressView.trackTintColor = UIColor.button.grayDisabledBackground
+        mentorReviewImageView.image = mentorReviewImageView.image?.withTintColor(UIColor.Project.grayDisabledText)
+        rulesLabel.textColor = UIColor.Project.grayDisabledText
+        completedTasksLabel.textColor = UIColor.Project.grayDisabledText
+        taskTitleLabel.textColor = UIColor.Project.grayDisabledText
+        completedTasksProgressView.trackTintColor = UIColor.Button.grayDisabledBackground
         uploadFilesButton.disable()
         
         for case let taskView as ProjectTaskView in tasksStackView.arrangedSubviews {
-            taskView.color = UIColor.project.grayDisabledText
+            taskView.color = UIColor.Project.grayDisabledText
         }
     }
     

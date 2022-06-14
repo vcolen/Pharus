@@ -10,7 +10,7 @@ class StudentProjectRankingCell: UITableViewCell {
     
     lazy var mainView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.purple.pharusPurple
+        view.backgroundColor = UIColor.Purple.pharusPurple
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "StudentProjectCell.mainView"
         

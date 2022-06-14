@@ -42,10 +42,10 @@ class SecondaryCardButton: UIButton {
     private func configureSubviews() {
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont.mediumButtonSemiBold
-        setTitleColor(UIColor.purple.pharusPurple, for: .normal)
+        setTitleColor(UIColor.Purple.pharusPurple, for: .normal)
         backgroundColor = .clear
         layer.borderWidth = 2
-        layer.borderColor = UIColor.purple.pharusPurple.cgColor
+        layer.borderColor = UIColor.Purple.pharusPurple.cgColor
         layer.cornerRadius = 16
     }
     

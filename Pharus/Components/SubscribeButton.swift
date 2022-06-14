@@ -55,12 +55,12 @@ class SubscribeButton: UIButton {
     private func setButtonColors() {
         if isSubscribed {
             setTitle("Inscrito", for: .normal)
-            setTitleColor(UIColor.button.graySubscribeText, for: .normal)
-            layer.borderColor = UIColor.button.graySubscribeBorder.cgColor
+            setTitleColor(UIColor.Button.graySubscribeText, for: .normal)
+            layer.borderColor = UIColor.Button.graySubscribeBorder.cgColor
         } else {
             setTitle("Inscreva-se", for: .normal)
-            setTitleColor(UIColor.purple.pharusPurple, for: .normal)
-            layer.borderColor = UIColor.purple.pharusPurple.cgColor
+            setTitleColor(UIColor.Purple.pharusPurple, for: .normal)
+            layer.borderColor = UIColor.Purple.pharusPurple.cgColor
         }
     }
     

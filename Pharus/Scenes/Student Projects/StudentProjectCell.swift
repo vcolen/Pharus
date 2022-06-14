@@ -134,7 +134,7 @@ class StudentProjectCell: UITableViewCell {
     private lazy var completionBarCircleView: CircleProgressView = {
         let view = CircleProgressView(
             circleColor: .white,
-            completionProgressColor: UIColor.purple.pharusPurple,
+            completionProgressColor: UIColor.Purple.pharusPurple,
             radius: 45,
             progress: 50
         )
@@ -275,12 +275,12 @@ class StudentProjectCell: UITableViewCell {
         
         if project.daysRemaining >= 0 {
             if project.isSubscribed {
-                mainView.backgroundColor = UIColor.project.orangeSubscribedProjectBackground
+                mainView.backgroundColor = UIColor.Project.orangeSubscribedProjectBackground
             } else {
-                mainView.backgroundColor = UIColor.project.grayUnsubscribedProjectBackground
+                mainView.backgroundColor = UIColor.Project.grayUnsubscribedProjectBackground
             }
         } else {
-            mainView.backgroundColor = UIColor.project.redExpiredProjectBackground
+            mainView.backgroundColor = UIColor.Project.redExpiredProjectBackground
             titleLabel.textColor = .white
             mentorLabel.textColor = .white
             descriptionTitleLabel.textColor = .white

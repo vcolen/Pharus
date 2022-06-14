@@ -125,13 +125,13 @@ class StudentHomeMiniCardView: UIView {
     
     private func customizeSubviews() {
         if cardType == .newProject {
-            mainView.backgroundColor = UIColor.card.orangeHomeStandardCardBackground
+            mainView.backgroundColor = UIColor.Card.orangeHomeStandardCardBackground
             cardIconImageView.image = UIImage.icons.companyIcon
         } else if cardType == .warning {
-            mainView.backgroundColor = UIColor.card.yellowHomeAlertCardBackground
+            mainView.backgroundColor = UIColor.Card.yellowHomeAlertCardBackground
             cardIconImageView.image = UIImage.icons.warningIcon
         } else {
-            mainView.backgroundColor = UIColor.card.orangeHomeStandardCardBackground
+            mainView.backgroundColor = UIColor.Card.orangeHomeStandardCardBackground
             cardIconImageView.image = UIImage.icons.medalIcon
         }
         

@@ -38,7 +38,7 @@ class SingleButtonAlertView: UIView {
     private lazy var mainView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 16
-        view.backgroundColor = UIColor.modal.yellowBackground
+        view.backgroundColor = UIColor.Modal.yellowBackground
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "SingleButtonAlertView.mainView"
         
