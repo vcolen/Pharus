@@ -89,13 +89,17 @@ extension StudentRankingProjectsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
+        guard let cell = tableView.dequeueReusableCell(
             withIdentifier: K.CellReuseIdentifiers.userRankingProjects,
             for: indexPath
-        ) as! StudentProjectRankingCell
+        ) as? StudentProjectRankingCell else {
+            return tableView.dequeueReusableCell(
+                withIdentifier: K.CellReuseIdentifiers.userRankingProjects,
+                for: indexPath
+            )
+        }
         
         let project = projects[indexPath.row]
-        
         cell.configureCell(using: project)
         cell.mainView.layer.cornerRadius = 16
         cell.backgroundColor = .clear
