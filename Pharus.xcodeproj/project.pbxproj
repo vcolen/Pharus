@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B61B3516451D1C37F478EFF /* Pods_Pharus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */; };
 		7906FE61281321F900E4A83A /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906FE60281321F900E4A83A /* Float+Extension.swift */; };
 		7910D9CE27FCEFE900A8DDA0 /* StudentProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910D9CD27FCEFE900A8DDA0 /* StudentProjectDetailView.swift */; };
 		7910D9D027FCF5C800A8DDA0 /* StudentProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910D9CF27FCF5C800A8DDA0 /* StudentProjectDetailViewController.swift */; };
@@ -212,6 +213,9 @@
 		C05AA2FE27FFA6F300230698 /* SendFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileView.swift; sourceTree = "<group>"; };
 		C05AA30227FFAA7400230698 /* SingleButtonAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertViewController.swift; sourceTree = "<group>"; };
 		C05AA30627FFAA9500230698 /* SendFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileViewController.swift; sourceTree = "<group>"; };
+		D4BA86555EDE4B604F9448CB /* Pods-Pharus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharus.release.xcconfig"; path = "Target Support Files/Pods-Pharus/Pods-Pharus.release.xcconfig"; sourceTree = "<group>"; };
+		D6E854262F5DBF584644FA5C /* Pods-Pharus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharus.debug.xcconfig"; path = "Target Support Files/Pods-Pharus/Pods-Pharus.debug.xcconfig"; sourceTree = "<group>"; };
+		F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pharus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,12 +230,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B61B3516451D1C37F478EFF /* Pods_Pharus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67F55506ADFE85F816E51F86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6E854262F5DBF584644FA5C /* Pods-Pharus.debug.xcconfig */,
+				D4BA86555EDE4B604F9448CB /* Pods-Pharus.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7906FE5F2812C04000E4A83A /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,6 +521,8 @@
 				79F06D9F27F28FCD00343865 /* PharusTests */,
 				C045618827EA03A5007EC5C3 /* Products */,
 				79AF90F628043A120094AB97 /* Recovered References */,
+				67F55506ADFE85F816E51F86 /* Pods */,
+				E76B9285E1526767CD8ECE9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -569,6 +585,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		E76B9285E1526767CD8ECE9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -594,9 +618,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C045619B27EA03A6007EC5C3 /* Build configuration list for PBXNativeTarget "Pharus" */;
 			buildPhases = (
+				C5F94E96521D7BBC338CE7FD /* [CP] Check Pods Manifest.lock */,
 				C045618327EA03A5007EC5C3 /* Sources */,
 				C045618427EA03A5007EC5C3 /* Frameworks */,
 				C045618527EA03A5007EC5C3 /* Resources */,
+				7993923728592F4C00A324AE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -674,6 +700,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7993923728592F4C00A324AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		C5F94E96521D7BBC338CE7FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pharus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		79F06D9A27F28FCD00343865 /* Sources */ = {
@@ -953,6 +1021,7 @@
 		};
 		C045619C27EA03A6007EC5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6E854262F5DBF584644FA5C /* Pods-Pharus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -975,6 +1044,7 @@
 		};
 		C045619D27EA03A6007EC5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4BA86555EDE4B604F9448CB /* Pods-Pharus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
