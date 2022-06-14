@@ -36,7 +36,7 @@ class StudentProjectsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     
     override func loadView() {
         super.loadView()
@@ -92,7 +92,7 @@ class StudentProjectsViewController: UIViewController {
     }
 }
 
-//MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource
 
 extension StudentProjectsViewController: UITableViewDataSource {
     
@@ -105,8 +105,16 @@ extension StudentProjectsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.CellReuseIdentifiers.userProjects,
-                                                 for: indexPath) as! StudentProjectCell
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: K.CellReuseIdentifiers.userProjects,
+            for: indexPath
+        ) as? StudentProjectCell else {
+            return tableView.dequeueReusableCell(
+                withIdentifier: K.CellReuseIdentifiers.userProjects,
+                for: indexPath
+            )
+        }
+        
         let project = projects[indexPath.row]
         
         cell.configureSubviews()
@@ -124,7 +132,7 @@ extension StudentProjectsViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - UITableViewDelegate
+// MARK: - UITableViewDelegate
 
 extension StudentProjectsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

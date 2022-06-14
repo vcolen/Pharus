@@ -22,7 +22,7 @@ extension UIColor {
             blue: 0.29,
             alpha: 1
         )
-        
+
         static let orangeSubscribedProjectBackground = UIColor(
             red: 0.992,
             green: 0.627,
