@@ -47,14 +47,27 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         initializeHideKeyboard()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
 
     // MARK: - Actions
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (
+            notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        )?.cgRectValue {
             if self.customView.frame.origin.y == 0 {
                 self.customView.frame.origin.y -= keyboardSize.height + 50
                 self.customView.frame.origin.y += keyboardSize.height - 130
@@ -97,7 +110,7 @@ extension LoginViewController: LoginViewDelegate {
         let studentDidLogIn = presenter.loginUser(email: email, password: password)
 
         if studentDidLogIn == false {
-            customView.wrongPasswordImageView.image = customView.wrongPasswordImageView.image?.withTintColor(UIColor.redError)
+            customView.wrongPasswordImageView.image = customView.wrongPasswordImageView.image?.withTintColor(.redError)
             customView.wrongPasswordLabel.textColor = UIColor.redError
             customView.passwordTextField.textColor = UIColor.redError
         }

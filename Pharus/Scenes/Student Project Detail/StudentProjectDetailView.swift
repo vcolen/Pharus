@@ -113,7 +113,10 @@ class StudentProjectDetailView: UIView {
 
     private lazy var descriptionTextLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc non ipsum blandit tempus. "
+        label.text = """
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc non ipsum blandit tempus.
+"""
         label.numberOfLines = 0
         label.font = .smallBody
         label.textColor = .black
@@ -388,7 +391,9 @@ class StudentProjectDetailView: UIView {
     private func updateProjectProgressView() {
         let roundedPercentage: Float = project.completionPercentage*100
 
-        completedTasksLabel.text = "Completadas \(project.completedTasksCount) de \(project.tasks.count) tarefas (\(roundedPercentage.withDecimalPoints(2))%)"
+        completedTasksLabel.text = """
+Completadas \(project.completedTasksCount) de \(project.tasks.count) tarefas \(roundedPercentage.withDecimalPoints(2))%)
+"""
         completedTasksProgressView.progress = project.completionPercentage
     }
 

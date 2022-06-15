@@ -133,7 +133,10 @@ class StudentProjectRankingCell: UITableViewCell {
 
     private lazy var mentorCommentsDescriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc non ipsum blandit tempus."
+        label.text = """
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc non ipsum blandit tempus.
+"""
         label.font = .smallBody
         label.textColor = .white
         label.numberOfLines = 4
@@ -308,8 +311,14 @@ class StudentProjectRankingCell: UITableViewCell {
 
         // Mentor Comments Description Label
         NSLayoutConstraint.activate([
-            mentorCommentsDescriptionLabel.leadingAnchor.constraint(equalTo: mentorCommentsTitleHelperView.leadingAnchor, constant: 9),
-            mentorCommentsDescriptionLabel.trailingAnchor.constraint(equalTo: mentorCommentsTitleHelperView.trailingAnchor, constant: -9)
+            mentorCommentsDescriptionLabel.leadingAnchor.constraint(
+                equalTo: mentorCommentsTitleHelperView.leadingAnchor,
+                constant: 9
+            ),
+            mentorCommentsDescriptionLabel.trailingAnchor.constraint(
+                equalTo: mentorCommentsTitleHelperView.trailingAnchor,
+                constant: -9
+            )
         ])
     }
 }

@@ -107,7 +107,10 @@ extension AvatarSelectionViewController: UICollectionViewDataSource {
         UIImage.Images.Avatars.CircleImage.avatars.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: K.CellReuseIdentifiers.avatarSelection,
             for: indexPath

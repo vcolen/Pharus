@@ -54,14 +54,11 @@ class LoginPresenter: LoginPresenterProtocol {
 
     func makeStudentModel(with student: Student) -> StudentModel {
         var projectModelArray = [ProjectModel]()
-
         for project in student.projects {
             var taskModelArray = [TaskModel]()
             for task in project.tasks {
-                let taskModel = TaskModel(
-                    title: task.title,
-                    isComplete: task.isComplete,
-                    description: task.taskDescription
+                let taskModel = TaskModel(title: task.title, isComplete: task.isComplete,
+                                          description: task.taskDescription
                 )
                 taskModelArray.append(taskModel)
             }
@@ -83,7 +80,6 @@ class LoginPresenter: LoginPresenterProtocol {
             )
             projectModelArray.append(projectModel)
         }
-
         let studentModel = StudentModel(
             id: student.id,
             firstName: student.firstName,
@@ -100,7 +96,6 @@ class LoginPresenter: LoginPresenterProtocol {
             username: student.username,
             projects: projectModelArray
         )
-
         return studentModel
     }
 }
