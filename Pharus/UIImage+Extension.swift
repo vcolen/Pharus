@@ -55,26 +55,26 @@ extension UIImage {
             ]
 
             struct FullImage {
-                static let avatar1 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar1)
-                static let avatar2 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar2)
-                static let avatar3 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar3)
-                static let avatar4 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar4)
-                static let avatar5 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar5)
-                static let avatar6 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar6)
-                static let avatar7 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar7)
-                static let avatar8 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar8)
-                static let avatar9 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar9)
-                static let avatar10 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar10)
-                static let avatar11 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar11)
-                static let avatar12 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar12)
-                static let avatar13 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar13)
-                static let avatar14 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar14)
-                static let avatar15 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar15)
-                static let avatar16 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar16)
-                static let avatar17 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar17)
-                static let avatar18 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar18)
-                static let avatar19 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar19)
-                static let avatar20 = UIImage(named: Constants.Assets.Images.Avatar.FullImage.avatar20)
+                static let avatar1 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar1)
+                static let avatar2 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar2)
+                static let avatar3 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar3)
+                static let avatar4 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar4)
+                static let avatar5 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar5)
+                static let avatar6 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar6)
+                static let avatar7 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar7)
+                static let avatar8 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar8)
+                static let avatar9 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar9)
+                static let avatar10 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar10)
+                static let avatar11 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar11)
+                static let avatar12 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar12)
+                static let avatar13 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar13)
+                static let avatar14 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar14)
+                static let avatar15 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar15)
+                static let avatar16 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar16)
+                static let avatar17 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar17)
+                static let avatar18 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar18)
+                static let avatar19 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar19)
+                static let avatar20 = UIImage(named: Constants.assets.images.avatar.fullImage.avatar20)
 
                 static let avatars = [
                     avatar1,
@@ -101,26 +101,26 @@ extension UIImage {
             }
 
             struct CircleImage {
-                static let avatar1 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar1)
-                static let avatar2 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar2)
-                static let avatar3 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar3)
-                static let avatar4 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar4)
-                static let avatar5 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar5)
-                static let avatar6 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar6)
-                static let avatar7 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar7)
-                static let avatar8 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar8)
-                static let avatar9 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar9)
-                static let avatar10 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar10)
-                static let avatar11 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar11)
-                static let avatar12 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar12)
-                static let avatar13 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar13)
-                static let avatar14 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar14)
-                static let avatar15 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar15)
-                static let avatar16 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar16)
-                static let avatar17 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar17)
-                static let avatar18 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar18)
-                static let avatar19 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar19)
-                static let avatar20 = UIImage(named: Constants.Assets.Images.Avatar.CircleImage.avatar20)
+                static let avatar1 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar1)
+                static let avatar2 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar2)
+                static let avatar3 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar3)
+                static let avatar4 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar4)
+                static let avatar5 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar5)
+                static let avatar6 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar6)
+                static let avatar7 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar7)
+                static let avatar8 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar8)
+                static let avatar9 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar9)
+                static let avatar10 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar10)
+                static let avatar11 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar11)
+                static let avatar12 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar12)
+                static let avatar13 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar13)
+                static let avatar14 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar14)
+                static let avatar15 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar15)
+                static let avatar16 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar16)
+                static let avatar17 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar17)
+                static let avatar18 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar18)
+                static let avatar19 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar19)
+                static let avatar20 = UIImage(named: Constants.assets.images.avatar.circleImage.avatar20)
 
                 static let avatars = [
                     avatar1,
@@ -149,30 +149,30 @@ extension UIImage {
         }
 
         struct Companies {
-            static let ioasysLogoImage = UIImage(named: Constants.Assets.Images.Company.ioasysLogoImage)
-            static let dupeLogoImage = UIImage(named: Constants.Assets.Images.Company.dupeLogoImage)
+            static let ioasysLogoImage = UIImage(named: Constants.assets.images.company.ioasysLogoImage)
+            static let dupeLogoImage = UIImage(named: Constants.assets.images.company.dupeLogoImage)
             static let havaianasLogoImage = UIImage(
-                named: Constants.Assets.Images.Company.havaianasLogoImage
+                named: Constants.assets.images.company.havaianasLogoImage
             )
             static let alpargatasLogoImage = UIImage(
-                named: Constants.Assets.Images.Company.alpargatasLogoImage
+                named: Constants.assets.images.company.alpargatasLogoImage
             )
             static let osklenLogoImage = UIImage(
-                named: Constants.Assets.Images.Company.osklenLogoImage
+                named: Constants.assets.images.company.osklenLogoImage
             )
         }
-        static let firstPlaceImage = UIImage(named: Constants.Assets.Images.firstPlaceImage)
-        static let secondPlaceImage = UIImage(named: Constants.Assets.Images.secondPlaceImage)
-        static let thirdPlaceImage = UIImage(named: Constants.Assets.Images.thirdPlaceImage)
-        static let fourthPlaceImage = UIImage(named: Constants.Assets.Images.fourthPlaceImage)
-        static let fifthPlaceImage = UIImage(named: Constants.Assets.Images.fifthPlaceImage)
+        static let firstPlaceImage = UIImage(named: Constants.assets.images.firstPlaceImage)
+        static let secondPlaceImage = UIImage(named: Constants.assets.images.secondPlaceImage)
+        static let thirdPlaceImage = UIImage(named: Constants.assets.images.thirdPlaceImage)
+        static let fourthPlaceImage = UIImage(named: Constants.assets.images.fourthPlaceImage)
+        static let fifthPlaceImage = UIImage(named: Constants.assets.images.fifthPlaceImage)
 
-        static let firstPlaceMedalImage = UIImage(named: Constants.Assets.Images.firstPlaceMedalImage)
-        static let secondPlaceMedalImage = UIImage(named: Constants.Assets.Images.secondPlaceMedalImage)
-        static let thirdPlaceMedalImage = UIImage(named: Constants.Assets.Images.thirdPlaceMedalImage)
-        static let fourthPlaceMedalImage = UIImage(named: Constants.Assets.Images.fourthPlaceMedalImage)
-        static let fifthPlaceMedalImage = UIImage(named: Constants.Assets.Images.fifthPlaceMedalImage)
+        static let firstPlaceMedalImage = UIImage(named: Constants.assets.images.firstPlaceMedalImage)
+        static let secondPlaceMedalImage = UIImage(named: Constants.assets.images.secondPlaceMedalImage)
+        static let thirdPlaceMedalImage = UIImage(named: Constants.assets.images.thirdPlaceMedalImage)
+        static let fourthPlaceMedalImage = UIImage(named: Constants.assets.images.fourthPlaceMedalImage)
+        static let fifthPlaceMedalImage = UIImage(named: Constants.assets.images.fifthPlaceMedalImage)
 
-        static let appLogoImage = UIImage(named: Constants.Assets.Images.appLogoImage)
+        static let appLogoImage = UIImage(named: Constants.assets.images.appLogoImage)
     }
 }
