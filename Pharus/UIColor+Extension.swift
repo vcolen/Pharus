@@ -16,42 +16,42 @@ extension UIColor {
             blue: 0.733,
             alpha: 1
         )
-        
+
         static let redExpiredProjectBackground = UIColor(
             red: 0.765,
             green: 0.063,
             blue: 0.29,
             alpha: 1
         )
-        
+
         static let orangeSubscribedProjectBackground = UIColor(
             red: 0.992,
             green: 0.627,
             blue: 0.286,
             alpha: 1
         )
-        
+
         static let grayUnsubscribedProjectBackground = UIColor(
             red: 0.808,
             green: 0.808,
             blue: 0.82,
             alpha: 1
         )
-        
+
         static let grayDisabledText = UIColor(
             red: 0.471,
             green: 0.467,
             blue: 0.502,
             alpha: 1
         )
-        
+
         static let purpleCompletedPodiumBackground = UIColor(
             red: 0.475,
             green: 0.176,
             blue: 0.914,
             alpha: 1
         )
-        
+
         static let redText = UIColor(
             red: 0.765,
             green: 0.063,
@@ -66,7 +66,7 @@ extension UIColor {
             alpha: 1
         )
     }
-    
+
     struct Modal {
         static let yellowBackground = UIColor(
             red: 0.992,
@@ -82,7 +82,7 @@ extension UIColor {
             alpha: 1
         )
     }
-    
+
     struct Button {
         static let whiteMainButtonText = UIColor(
             red: 0.945,
@@ -90,7 +90,7 @@ extension UIColor {
             blue: 0.949,
             alpha: 1
         )
-        
+
         static let grayDisabledText = UIColor(
             red: 0.471,
             green: 0.467,
@@ -104,14 +104,14 @@ extension UIColor {
             blue: 0.702,
             alpha: 1
         )
-        
+
         static let graySubscribeBorder = UIColor(
             red: 0.686,
             green: 0.682,
             blue: 0.702,
             alpha: 1
         )
-        
+
         static let grayDisabledBackground = UIColor(
             red: 0.808,
             green: 0.808,
@@ -119,7 +119,7 @@ extension UIColor {
             alpha: 1
         )
     }
-    
+
     struct Card {
         static let orangeHomeStandardCardBackground = UIColor(
             red: 0.988,
@@ -135,7 +135,7 @@ extension UIColor {
             alpha: 1
         )
     }
-    
+
     struct Purple {
         static let pharusPurple = UIColor(
             red: 0.361,
@@ -144,7 +144,7 @@ extension UIColor {
             alpha: 1
         )
     }
-    
+
     struct ProjectSchedule {
         static let redBackground = UIColor(
             red: 0.6,
@@ -166,7 +166,7 @@ extension UIColor {
             blue: 0.227,
             alpha: 1
         )
-        
+
         static let greenBackground = UIColor(
             red: 0.017,
             green: 0.7,
