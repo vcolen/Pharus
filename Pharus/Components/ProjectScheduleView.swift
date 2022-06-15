@@ -47,7 +47,7 @@ class ProjectScheduleView: UIView {
 
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.Icons.clockIcon
+        imageView.image = .pharusIcons.clockIcon
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "ProjectScheduleView.iconImageView"
 
@@ -106,7 +106,7 @@ class ProjectScheduleView: UIView {
     private func customizeSubviews() {
 
         if project.isComplete {
-            iconImageView.image = UIImage.Icons.checkIcon?.withTintColor(.black)
+            iconImageView.image = .pharusIcons.checkIcon?.withTintColor(.black)
             textLabel.text = "Feito!"
             mainView.backgroundColor = UIColor.ProjectSchedule.greenBackground
         } else {
@@ -114,19 +114,19 @@ class ProjectScheduleView: UIView {
             case ..<0:
                 mainView.backgroundColor = .black
                 textLabel.text = "Expirado"
-                iconImageView.image = UIImage.Icons.xmarkIcon?.withTintColor(.white)
+                iconImageView.image = .pharusIcons.xmarkIcon?.withTintColor(.white)
             case 0...6:
                 mainView.backgroundColor = UIColor.ProjectSchedule.redBackground
-                iconImageView.image = UIImage.Icons.clockIcon ?? .defaultImage
+                iconImageView.image = .pharusIcons.clockIcon ?? .defaultImage
                 textLabel.text = "\(project.daysRemaining) Dias"
                 textLabel.textColor = .white
                 iconImageView.image = iconImageView.image?.withTintColor(.white)
             case 7...8:
-                iconImageView.image = UIImage.Icons.clockIcon ?? .defaultImage
+                iconImageView.image = .pharusIcons.clockIcon ?? .defaultImage
                 textLabel.text = "\(project.daysRemaining) Dias"
                 mainView.backgroundColor = UIColor.ProjectSchedule.yellowBackground
             default:
-                iconImageView.image = UIImage.Icons.clockIcon ?? .defaultImage
+                iconImageView.image = .pharusIcons.clockIcon ?? .defaultImage
                 textLabel.text = "\(project.daysRemaining) Dias"
                 mainView.backgroundColor = UIColor.ProjectSchedule.orangeBackground
             }

@@ -83,7 +83,7 @@ class StudentProjectDetailView: UIView {
 
     private lazy var mentorReviewImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.Icons.envelopeIcon
+        imageView.image = UIImage.pharusIcons.envelopeIcon
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "StudentProjectDetailView.mentorReviewImageView"
 
@@ -150,7 +150,7 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
 
     private lazy var rulesArrowImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.Icons.rightArrowIcon
+        imageView.image = UIImage.pharusIcons.rightArrowIcon
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "StudentProjectDetailView.rulesBoookImageView"
 
@@ -345,7 +345,7 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
         }
 
         if project.scoreDescription != nil {
-            mentorReviewImageView.image = UIImage.Icons.notificationEnvelopeIcon
+            mentorReviewImageView.image = .pharusIcons.notificationEnvelopeIcon
             mentorReviewHelperView.setOnClickListener {
                 self.envelopeIconTapped()
             }
@@ -354,7 +354,7 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
 
     private func setupProjectTasks(of project: ProjectModel) {
         for task in project.tasks {
-            let checkboxIcon = task.isComplete ? UIImage.Icons.checkmarkIcon! : .defaultImage
+            let checkboxIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon! : .defaultImage
             let taskView = ProjectTaskView(
                 task: task,
                 checkImage: checkboxIcon,
@@ -365,7 +365,7 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
                 taskView.taskCheckmarkButton.addAction(
                     UIAction { _ in
                         self.taskCheckboxTapped(task: task)
-                        let newIcon = task.isComplete ? UIImage.Icons.checkmarkIcon : .defaultImage
+                        let newIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon : .defaultImage
                         taskView.taskCheckmarkButton.setImage(newIcon, for: .normal)
                         self.updateProjectProgressView()
                     }, for: .touchUpInside

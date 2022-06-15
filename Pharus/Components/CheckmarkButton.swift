@@ -28,7 +28,7 @@ class CheckmarkButton: UIButton {
         self.backgroundColor = .white
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.cornerRadius = 4
-        self.setImage(UIImage.Icons.checkmarkIcon, for: .normal)
+        self.setImage(.pharusIcons.checkmarkIcon, for: .normal)
     }
 
     // MARK: - Constraints

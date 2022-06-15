@@ -73,7 +73,7 @@ class StudentProjectsViewController: UIViewController {
 
     private func setupTableView() {
         tableView.register(StudentProjectCell.self,
-                           forCellReuseIdentifier: K.CellReuseIdentifiers.userProjects)
+                           forCellReuseIdentifier: Constants.cellReuseIdentifiers.userProjects)
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -106,11 +106,11 @@ extension StudentProjectsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: K.CellReuseIdentifiers.userProjects,
+            withIdentifier: Constants.cellReuseIdentifiers.userProjects,
             for: indexPath
         ) as? StudentProjectCell else {
             return tableView.dequeueReusableCell(
-                withIdentifier: K.CellReuseIdentifiers.userProjects,
+                withIdentifier: Constants.cellReuseIdentifiers.userProjects,
                 for: indexPath
             )
         }

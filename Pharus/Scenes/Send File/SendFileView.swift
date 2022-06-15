@@ -69,7 +69,7 @@ class SendFileView: UIView {
 
     lazy var closeSheetButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage.Icons.xmarkIcon, for: .normal)
+        button.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
         button.addAction(
             UIAction { _ in
                 self.closeButtonTapped()
@@ -129,7 +129,7 @@ Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os qu
 
     private lazy var uploadIconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.Icons.uploadIcon
+        imageView.image = UIImage.pharusIcons.uploadIcon
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "SendFileView.uploadIconImageView"
 
@@ -171,7 +171,7 @@ Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os qu
 
     private lazy var fileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.Icons.bookIcon
+        imageView.image = .pharusIcons.bookIcon
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "SendFileView.fileImageView"
 
@@ -190,7 +190,7 @@ Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os qu
 
     private lazy var removeFileButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage.Icons.xmarkIcon, for: .normal)
+        button.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
         button.tintColor = .black
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "SendFileView.removeFileButton"

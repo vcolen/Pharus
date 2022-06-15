@@ -61,7 +61,7 @@ class StutentProfileViewController: UIViewController {
 
     func showStudentAvatar() {
         studentProfileView.profileImageView.image = UIImage(
-            named: "avatar" + student.avatar + K.Assets.Images.Avatar.CircleImage.suffix
+            named: "avatar" + student.avatar + Constants.assets.images.avatar.circleImage.suffix
         )
     }
 
@@ -69,7 +69,7 @@ class StutentProfileViewController: UIViewController {
         self.title = "Perfil"
         self.navigationController?.title = ""
 
-        let logoutIcon = UIImage.Icons.logOutIcon?.withRenderingMode(.alwaysOriginal)
+        let logoutIcon = UIImage.pharusIcons.logOutIcon?.withRenderingMode(.alwaysOriginal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: logoutIcon,
             style: .plain,

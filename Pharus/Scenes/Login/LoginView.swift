@@ -30,7 +30,7 @@ class LoginView: UIView {
 
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.Images.appLogoImage
+        imageView.image = UIImage.pharusImages.appLogoImage
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "LoginView.logoImageView"
@@ -160,7 +160,7 @@ class LoginView: UIView {
 
     lazy var wrongPasswordImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.Icons.errorIcon?.withTintColor(.clear)
+        imageView.image = UIImage.pharusIcons.errorIcon?.withTintColor(.clear)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "LoginView.wrongPasswordImageView"
 
