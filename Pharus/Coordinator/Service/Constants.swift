@@ -8,29 +8,31 @@
 import Foundation
 
 struct Constants {
-
     static let assets = Assets()
+    static let regEx = RegEx()
+    static let cellReuseIdentifiers = CellReuseIdentifiers()
+    static let dateFormats = DateFormats()
+}
 
-    // MARK: - RegEx
+// MARK: - RegEx
 
-    struct RegEx {
-        static let emailRegEx =  "^[a-z0-9_%+-]+([.-][a-z0-9]+)*@[a-z0-9]+([.-][a-z0-9]+)*\\.[a-z]{2,3}$"
-        static let passwordRegEx = "^(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$"
-    }
+struct RegEx {
+     let emailRegEx =  "^[a-z0-9_%+-]+([.-][a-z0-9]+)*@[a-z0-9]+([.-][a-z0-9]+)*\\.[a-z]{2,3}$"
+     let passwordRegEx = "^(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$"
+}
 
-    // MARK: - Cell Reuse Identifiers
+// MARK: - Cell Reuse Identifiers
 
-    struct CellReuseIdentifiers {
-        static let userProjects = "userProjects"
-        static let userRankingProjects = "userRankingProjects"
-        static let avatarSelection = "avatarSelection"
-    }
+struct CellReuseIdentifiers {
+     let userProjects = "userProjects"
+     let userRankingProjects = "userRankingProjects"
+     let avatarSelection = "avatarSelection"
+}
 
-    // MARK: - Date Formats
+// MARK: - Date Formats
 
-    struct DateFormats {
-        static let projectDateFormat = "dd/MM/yyyy"
-    }
+struct DateFormats {
+     let projectDateFormat = "dd/MM/yyyy"
 }
 
 // MARK: - Assets

@@ -30,14 +30,14 @@ class LoginPresenter: LoginPresenterProtocol {
     // MARK: - Actions
 
     func isValidEmail(email: String) -> Bool {
-        let emailRegEx = Constants.RegEx.emailRegEx
+        let emailRegEx = Constants.regEx.emailRegEx
 
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPredicate.evaluate(with: email)
     }
 
     func isValidPassword(password: String) -> Bool {
-        let passwordRegEx = Constants.RegEx.passwordRegEx
+        let passwordRegEx = Constants.regEx.passwordRegEx
 
         let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         return passwordPredicate.evaluate(with: password)

@@ -77,7 +77,7 @@ class AvatarSelectionViewController: UIViewController {
         avatarSelectionCollectionView?.showsHorizontalScrollIndicator = false
         avatarSelectionCollectionView?.register(
             UICollectionViewCell.self,
-            forCellWithReuseIdentifier: Constants.CellReuseIdentifiers.avatarSelection
+            forCellWithReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection
         )
 
         avatarSelectionCollectionView?.backgroundColor = .clear
@@ -112,7 +112,7 @@ extension AvatarSelectionViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: Constants.CellReuseIdentifiers.avatarSelection,
+            withReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection,
             for: indexPath
         )
 
