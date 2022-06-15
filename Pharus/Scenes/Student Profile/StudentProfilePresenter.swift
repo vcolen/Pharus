@@ -10,19 +10,19 @@ import Foundation
 protocol StudentProfilePresenterProtocol { }
 
 class StudentProfilePresenter {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     private var coordinator: StudentProfileCoordinator
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(coordinator: StudentProfileCoordinator) {
         self.coordinator = coordinator
     }
 }
 
-//MARK: - Actions
+// MARK: - Actions
 
 extension StudentProfilePresenter: StudentProfilePresenterProtocol {
     func showLogoutAlert() {

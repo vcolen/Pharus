@@ -14,54 +14,54 @@ protocol ProjectSubcriptionAlertViewDelegate: AnyObject {
 }
 
 class ProjectSubcriptionAlertView: UIView {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     weak var delegate: ProjectSubcriptionAlertViewDelegate?
     private var title: String
     private var message: String
     private var mainButtonText: String
     private var secondaryButtonText: String
-    
-    //MARK: - Views
-    
+
+    // MARK: - Views
+
     private lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
+
         return blurEffectView
     }()
-    
+
     private lazy var mainView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.Modal.yellowBackground
         view.layer.cornerRadius = 16
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "ProjectSubcriptionAlertView.mainView"
-        
+
         return view
     }()
-    
+
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 24
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.accessibilityIdentifier = "ProjectSubcriptionAlertView.mainStackView"
-        
+
         return stackView
     }()
-    
+
     private lazy var titleStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.accessibilityIdentifier = "ProjectSubcriptionAlertView.titleStackView"
-        
+
         return stackView
     }()
-    
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.largeTitleSemiBold
@@ -69,10 +69,10 @@ class ProjectSubcriptionAlertView: UIView {
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityIdentifier = "ProjectSubcriptionAlertView.titleLabel"
-        
+
         return label
     }()
-    
+
     private lazy var closeModalButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage.Icons.xmarkIcon, for: .normal)
@@ -81,10 +81,10 @@ class ProjectSubcriptionAlertView: UIView {
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "ProjectSubcriptionAlertView.closeModalButton"
-        
+
         return button
     }()
-    
+
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .mediumBody
@@ -93,10 +93,10 @@ class ProjectSubcriptionAlertView: UIView {
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityIdentifier = "ProjectSubcriptionAlertView.descriptionLabel"
-        
+
         return label
     }()
-    
+
     private lazy var primaryButton: MainCardButton = {
         let button = MainCardButton(title: "Sim, quero me inscrever", buttonState: .normal)
         button.addAction(UIAction { _ in
@@ -104,10 +104,10 @@ class ProjectSubcriptionAlertView: UIView {
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "ProjectSubcriptionAlertView.primaryButton"
-        
+
         return button
     }()
-    
+
     private lazy var secondaryButton: SecondaryCardButton = {
         let button = SecondaryCardButton(title: "Não quero, mudei de ideia")
         button.addAction( UIAction { _ in
@@ -115,12 +115,12 @@ class ProjectSubcriptionAlertView: UIView {
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "ProjectSubcriptionAlertView.secondaryButton"
-        
+
         return button
     }()
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     convenience init(
         title: String,
         message: String,
@@ -128,74 +128,74 @@ class ProjectSubcriptionAlertView: UIView {
         secondaryButtonText: String
     ) {
         self.init()
-        
+
         self.title = title
         self.message = message
         self.mainButtonText = mainButtonText
         self.secondaryButtonText = secondaryButtonText
-        
+
         configureSubviews()
         customizeView()
         setupConstraints()
     }
-    
+
     override init(frame: CGRect) {
         self.title = "Confirmar Inscrição"
         self.message = "Você deseja se inscrever no projeto ”Algoritmo no seu dia?"
         self.mainButtonText = "Sim, quero me inscrever"
         self.secondaryButtonText = "Não quero, mudei de idéia"
-        
+
         super.init(frame: .zero)
-        
+
         configureSubviews()
         setupConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK: - Subviews
-    
+
+    // MARK: - Subviews
+
     private func configureSubviews() {
         addSubview(blurEffectView)
         addSubview(mainView)
-        
+
         mainView.addSubview(mainStackView)
-        
+
         mainStackView.addArrangedSubview(titleStackView)
-        
+
         titleStackView.addArrangedSubview(titleLabel)
         titleStackView.addArrangedSubview(closeModalButton)
-        
+
         mainStackView.addArrangedSubview(descriptionLabel)
         mainStackView.addArrangedSubview(primaryButton)
         mainStackView.addArrangedSubview(secondaryButton)
     }
-    
+
     private func customizeView() {
         titleLabel.text = title
         descriptionLabel.text = message
         primaryButton.setTitle(mainButtonText, for: .normal)
         secondaryButton.setTitle(secondaryButtonText, for: .normal)
     }
-    
-    //MARK: - Constraints
-    
+
+    // MARK: - Constraints
+
     private func setupConstraints() {
-        
-        //Main View
+
+        // Main View
         NSLayoutConstraint.activate([
             mainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             mainView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             mainView.centerYAnchor.constraint(equalTo: centerYAnchor),
             mainView.heightAnchor.constraint(equalToConstant: 314)
         ])
-        
-        //Main Stack View
+
+        // Main Stack View
         self.stretch(mainStackView, to: mainView, top: 32, left: 16, bottom: -16, right: -13)
-        
-        //Close Modal Image View
+
+        // Close Modal Image View
         NSLayoutConstraint.activate([
             closeModalButton.heightAnchor.constraint(equalToConstant: 24),
             closeModalButton.widthAnchor.constraint(equalToConstant: 24)
@@ -203,20 +203,18 @@ class ProjectSubcriptionAlertView: UIView {
     }
 }
 
-//MARK: - Actions
+// MARK: - Actions
 
 extension ProjectSubcriptionAlertView {
-    
+
     func closeButtonTapped() {
         delegate?.closeButtonTapped()
     }
     func primaryButtonTapped() {
         delegate?.primaryButtonTapped()
     }
-    
+
     func secondaryButtonTapped() {
         delegate?.secondaryButtonTapped()
     }
 }
-
-

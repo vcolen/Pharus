@@ -7,11 +7,11 @@
 import UIKit
 
 extension UIImage {
-    
+
     static let defaultImage = UIImage()
-    
+
     // MARK: - Icons
-    
+
     struct Icons {
         static let bookIcon = UIImage(named: K.Assets.Icons.bookIcon)
         static let clockIcon = UIImage(named: K.Assets.Icons.clockIcon)
@@ -31,29 +31,29 @@ extension UIImage {
         static let medalIcon = UIImage(named: K.Assets.Icons.medalIcon)
         static let companyIcon = UIImage(named: K.Assets.Icons.companyIcon)
         static let errorIcon = UIImage(named: K.Assets.Icons.errorIcon)
-        
+
         static let avatarTabBarIcon = UIImage(named: K.Assets.Icons.avatarTabBarIcon)
         static let homeTabBarIcon = UIImage(named: K.Assets.Icons.homeTabBarIcon)
         static let profileTabBarIcon = UIImage(named: K.Assets.Icons.profileTabBarIcon)
         static let projecsTabBarIcon = UIImage(named: K.Assets.Icons.projectsTabBarIcon)
         static let rankingTabBarIcon = UIImage(named: K.Assets.Icons.rankingTabBarIcon)
-        
+
         static let avatarTabBarIconSelected = UIImage(named: K.Assets.Icons.avatarTabBarIconSelected)
         static let homeTabBarIconSelected = UIImage(named: K.Assets.Icons.homeTabBarIconSelected)
         static let profileTabBarIconSelected = UIImage(named: K.Assets.Icons.profileTabBarIconSelected)
         static let projecsTabBarIconSelected = UIImage(named: K.Assets.Icons.projectsTabBarIconSelected)
         static let rankingTabBarIconSelected = UIImage(named: K.Assets.Icons.rankingTabBarIconSelected)
     }
-    
+
     // MARK: - Images
-    
+
     struct Images {
-        
+
         struct Avatars {
             static let avatarsDict: [UIImage: UIImage] = [
-                (UIImage.Images.Avatars.CircleImage.avatar1 ?? .defaultImage) : UIImage.Images.Avatars.FullImage.avatar1 ?? .defaultImage
+                (UIImage.Images.Avatars.CircleImage.avatar1 ?? .defaultImage): UIImage.Images.Avatars.FullImage.avatar1 ?? .defaultImage
             ]
-            
+
             struct FullImage {
                 static let avatar1 = UIImage(named: K.Assets.Images.Avatar.FullImage.avatar1)
                 static let avatar2 = UIImage(named: K.Assets.Images.Avatar.FullImage.avatar2)
@@ -75,7 +75,7 @@ extension UIImage {
                 static let avatar18 = UIImage(named: K.Assets.Images.Avatar.FullImage.avatar18)
                 static let avatar19 = UIImage(named: K.Assets.Images.Avatar.FullImage.avatar19)
                 static let avatar20 = UIImage(named: K.Assets.Images.Avatar.FullImage.avatar20)
-                
+
                 static let avatars = [
                     avatar1,
                     avatar2,
@@ -99,7 +99,7 @@ extension UIImage {
                     avatar20
                 ]
             }
-            
+
             struct CircleImage {
                 static let avatar1 = UIImage(named: K.Assets.Images.Avatar.CircleImage.avatar1)
                 static let avatar2 = UIImage(named: K.Assets.Images.Avatar.CircleImage.avatar2)
@@ -121,7 +121,7 @@ extension UIImage {
                 static let avatar18 = UIImage(named: K.Assets.Images.Avatar.CircleImage.avatar18)
                 static let avatar19 = UIImage(named: K.Assets.Images.Avatar.CircleImage.avatar19)
                 static let avatar20 = UIImage(named: K.Assets.Images.Avatar.CircleImage.avatar20)
-                
+
                 static let avatars = [
                     avatar1,
                     avatar2,
@@ -145,9 +145,9 @@ extension UIImage {
                     avatar20
                 ]
             }
-            
+
         }
-        
+
         struct Companies {
             static let ioasysLogoImage = UIImage(named: K.Assets.Images.Company.ioasysLogoImage)
             static let dupeLogoImage = UIImage(named: K.Assets.Images.Company.dupeLogoImage)
@@ -166,7 +166,7 @@ extension UIImage {
         static let thirdPlaceImage = UIImage(named: K.Assets.Images.thirdPlaceImage)
         static let fourthPlaceImage = UIImage(named: K.Assets.Images.fourthPlaceImage)
         static let fifthPlaceImage = UIImage(named: K.Assets.Images.fifthPlaceImage)
-        
+
         static let firstPlaceMedalImage = UIImage(named: K.Assets.Images.firstPlaceMedalImage)
         static let secondPlaceMedalImage = UIImage(named: K.Assets.Images.secondPlaceMedalImage)
         static let thirdPlaceMedalImage = UIImage(named: K.Assets.Images.thirdPlaceMedalImage)

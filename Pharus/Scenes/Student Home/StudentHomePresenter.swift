@@ -12,15 +12,14 @@ protocol StudentHomePresenterProtocol {
 }
 
 class StudentHomePresenter: StudentHomePresenterProtocol {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
    private var coordinator: StudentHomeCoordinator
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(coordinator: StudentHomeCoordinator) {
         self.coordinator = coordinator
     }
 }
-

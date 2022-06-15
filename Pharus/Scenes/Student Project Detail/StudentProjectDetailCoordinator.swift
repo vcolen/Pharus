@@ -14,15 +14,15 @@ protocol StudentProjectDetailFlow {
 }
 
 class StudentProjectDetailCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     private var project: ProjectModel
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(
         navigationController: UINavigationController,
         project: ProjectModel
@@ -30,21 +30,21 @@ class StudentProjectDetailCoordinator: Coordinator {
         self.navigationController = navigationController
         self.project = project
     }
-    
+
     func start() {
         let studentProjectDetailPresenter = StudentProjectDetailPresenter(coordinator: self)
-        
+
         let studentProjectDetailViewController = StudentProjectDetailViewController(
             coordinator: self,
             presenter: studentProjectDetailPresenter,
             project: project
         )
-        
+
         navigationController.pushViewController(studentProjectDetailViewController, animated: true)
     }
 }
 
-//MARK: - Actions
+// MARK: - Actions
 
 extension StudentProjectDetailCoordinator: StudentProjectDetailFlow {
     func showProjectRules() {
@@ -52,35 +52,35 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailFlow {
             project: project,
             sheetContent: .activities
         )
-        
+
         let projectSheetCoordinator = ProjectSheetCoordinator(
             navigationController: navigationController,
             projectSheetView: projectSheetView
         )
-        
+
         coordinate(to: projectSheetCoordinator)
     }
-    
+
     func showMentorReview() {
         let projectSheetView = ProjectSheetView(
             project: project,
             sheetContent: .mentorReview
         )
-        
+
         let projectSheetCoordinator = ProjectSheetCoordinator(
             navigationController: navigationController,
             projectSheetView: projectSheetView
         )
-        
+
         coordinate(to: projectSheetCoordinator)
     }
-    
+
     func showSendFileView() {
         let sendFileCoordinator = SendFileCoordinator(
             navigationController: navigationController,
             project: project
         )
-        
+
         coordinate(to: sendFileCoordinator)
     }
 }

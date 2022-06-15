@@ -7,37 +7,37 @@
 
 import UIKit
 
-protocol LoginViewDelegate: AnyObject{
+protocol LoginViewDelegate: AnyObject {
     func loginButtonPressed()
 }
 
 class LoginView: UIView {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     weak var delegate: LoginViewDelegate?
-    
-    //MARK: - Views
-    
+
+    // MARK: - Views
+
     private lazy var mainView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "LoginView.mainView"
-        
+
         return view
     }()
-    
+
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage.Images.appLogoImage
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "LoginView.logoImageView"
-        
+
         return imageView
     }()
-    
+
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -45,10 +45,10 @@ class LoginView: UIView {
         stackView.alignment = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.accessibilityIdentifier = "LoginView.mainStackView"
-        
+
         return stackView
     }()
-    
+
     private lazy var loginTitle: UILabel = {
         let label = UILabel()
         label.text = "Login"
@@ -57,10 +57,10 @@ class LoginView: UIView {
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityIdentifier = "LoginView.loginTitle"
-        
+
         return label
     }()
-    
+
     private lazy var emailStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -69,10 +69,10 @@ class LoginView: UIView {
         stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.accessibilityIdentifier = "LoginView.emailStackView"
-        
+
         return stackView
     }()
-    
+
     private lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.text = "E-mail"
@@ -80,10 +80,10 @@ class LoginView: UIView {
         label.textColor = UIColor.Purple.pharusPurple
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityIdentifier = "LoginView.emailLabel"
-        
+
         return label
     }()
-    
+
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(
@@ -100,10 +100,10 @@ class LoginView: UIView {
         textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.accessibilityIdentifier = "LoginView.emailTextField"
-        
+
         return textField
     }()
-    
+
     private lazy var passwordStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -112,10 +112,10 @@ class LoginView: UIView {
         stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.accessibilityIdentifier = "LoginView.passwordStackView"
-        
+
         return stackView
     }()
-    
+
     private  lazy var passwordLabel: UILabel = {
         let label = UILabel()
         label.text = "Senha"
@@ -123,10 +123,10 @@ class LoginView: UIView {
         label.textColor = UIColor.Purple.pharusPurple
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityIdentifier = "LoginView.passwordLabel"
-        
+
         return label
     }()
-    
+
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(
@@ -144,29 +144,29 @@ class LoginView: UIView {
         textField.isSecureTextEntry = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.accessibilityIdentifier = "LoginView.passwordTextField"
-        
+
         return textField
     }()
-    
+
   private lazy var wrongPasswordStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 4
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.accessibilityIdentifier = "LoginView.wrongPasswordStackView"
-        
+
         return stackView
     }()
-    
+
     lazy var wrongPasswordImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage.Icons.errorIcon?.withTintColor(.clear)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "LoginView.wrongPasswordImageView"
-        
+
         return imageView
     }()
-    
+
     lazy var wrongPasswordLabel: UILabel = {
         let label = UILabel()
         label.text = "Senha incorreta!"
@@ -174,10 +174,10 @@ class LoginView: UIView {
         label.textColor = UIColor.clear
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityIdentifier = "LoginView.wrongPasswordLabel"
-        
+
         return label
     }()
-    
+
     private lazy var loginButton: MainCardButton = {
         let button = MainCardButton(title: "Entrar", buttonState: .normal)
         button.addAction(UIAction { _ in
@@ -186,70 +186,70 @@ class LoginView: UIView {
         button.titleLabel?.font = .largeButton
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "LoginView.loginButton"
-        
+
         return button
     }()
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        
+
         configureSubviews()
         setupConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK: - Subviews
-    
+
+    // MARK: - Subviews
+
     func configureSubviews() {
         addSubview(mainView)
-        
+
         mainView.addSubview(mainStackView)
-        
+
         mainStackView.addArrangedSubview(logoImageView)
         mainStackView.addArrangedSubview(loginTitle)
         mainStackView.addArrangedSubview(emailStackView)
-        
+
         emailStackView.addArrangedSubview(emailLabel)
         emailStackView.addArrangedSubview(emailTextField)
-        
+
         mainStackView.addArrangedSubview(passwordStackView)
-        
+
         passwordStackView.addArrangedSubview(passwordLabel)
         passwordStackView.addArrangedSubview(passwordTextField)
         passwordStackView.addArrangedSubview(wrongPasswordStackView)
-        
+
         wrongPasswordStackView.addArrangedSubview(wrongPasswordImageView)
         wrongPasswordStackView.addArrangedSubview(wrongPasswordLabel)
-        
+
         mainStackView.addArrangedSubview(loginButton)
     }
-    
-    //MARK: - Constraints
-    
+
+    // MARK: - Constraints
+
     func setupConstraints() {
-        //Main View
+        // Main View
         self.stretch(mainView)
-        
-        //Main Stack View
+
+        // Main Stack View
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 48),
             mainStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 32),
             mainStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -32)
         ])
-        
-        //Wrong password Image View
+
+        // Wrong password Image View
         NSLayoutConstraint.activate([
             wrongPasswordImageView.widthAnchor.constraint(equalToConstant: 24)
         ])
     }
 }
 
-//MARK: - Actions
+// MARK: - Actions
 
 extension LoginView: LoginViewDelegate {
     func loginButtonPressed() {

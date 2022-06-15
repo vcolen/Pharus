@@ -8,41 +8,41 @@
 import UIKit
 
 class SubscribeButton: UIButton {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     var isSubscribed: Bool {
         didSet {
             self.setButtonColors()
         }
     }
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     convenience init(isSubscribed: Bool) {
         self.init()
-        
+
         self.isSubscribed = isSubscribed
-        
+
         configureSubviews()
         setupConstraints()
     }
-    
+
     override init(frame: CGRect) {
         self.isSubscribed = false
-        
+
         super.init(frame: .zero)
-        
+
         configureSubviews()
         setupConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK: - Subviews
-    
+
+    // MARK: - Subviews
+
     private func configureSubviews() {
         setButtonColors()
         titleLabel?.font = UIFont.smallButtonSemiBold
@@ -51,7 +51,7 @@ class SubscribeButton: UIButton {
         layer.borderWidth = 2
         layer.cornerRadius = 16
     }
-    
+
     private func setButtonColors() {
         if isSubscribed {
             setTitle("Inscrito", for: .normal)
@@ -63,11 +63,10 @@ class SubscribeButton: UIButton {
             layer.borderColor = UIColor.Purple.pharusPurple.cgColor
         }
     }
-    
-    //MARK: - Constraints
-    
+
+    // MARK: - Constraints
+
     private func setupConstraints() {
         self.heightAnchor.constraint(equalToConstant: 32).isActive = true
     }
 }
-

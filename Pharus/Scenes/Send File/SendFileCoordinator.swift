@@ -12,15 +12,15 @@ protocol SendFileFlow {
 }
 
 class SendFileCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     private var project: ProjectModel
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(
         navigationController: UINavigationController,
         project: ProjectModel
@@ -28,19 +28,19 @@ class SendFileCoordinator: Coordinator {
         self.navigationController = navigationController
         self.project = project
     }
-    
+
     func start() {
         let sendFilePresenter = SendFilePresenter(coordinator: self)
         let sendFileViewController = SendFileViewController(
             presenter: sendFilePresenter,
             coordinator: self
         )
-        
+
         navigationController.present(sendFileViewController, animated: true)
     }
 }
 
-//MARK: - Actions
+// MARK: - Actions
 
 extension SendFileCoordinator: SendFileFlow {
     func showFileSentAlert() {
@@ -48,18 +48,17 @@ extension SendFileCoordinator: SendFileFlow {
             message: "Arquivo enviado com sucesso!",
             type: .confirmation
         )
-        
+
         let alertCoordinator = SingleButtonAlertCoordinator(
             navigationController: navigationController,
             alertView: alertView
         )
-        
+
         navigationController.topViewController?.dismiss(animated: true)
         coordinate(to: alertCoordinator)
     }
-    
+
     func closeSheet() {
         navigationController.topViewController?.dismiss(animated: true)
     }
 }
-

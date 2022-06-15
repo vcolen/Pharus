@@ -13,23 +13,23 @@ protocol ProjectSubcriptionPresenterProtocol {
 }
 
 class ProjectSubcriptionAlertPresenter: ProjectSubcriptionPresenterProtocol {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     private var coordinator: ProjectSubcriptionAlertCoordinator
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(coordinator: ProjectSubcriptionAlertCoordinator) {
         self.coordinator = coordinator
     }
-    
-    //MARK: - Actions
-    
+
+    // MARK: - Actions
+
     func closeModal() {
         coordinator.closeModal()
     }
-    
+
     func subscribeToProject() {
         coordinator.subscribeToProject()
     }

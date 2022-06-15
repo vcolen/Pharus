@@ -7,28 +7,28 @@
 import Foundation
 
 struct K {
-    
-    //MARK: - RegEx
-    
+
+    // MARK: - RegEx
+
     struct RegEx {
         static let emailRegEx =  "^[a-z0-9_%+-]+([.-][a-z0-9]+)*@[a-z0-9]+([.-][a-z0-9]+)*\\.[a-z]{2,3}$"
         static let passwordRegEx = "^(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$"
     }
-    
-    //MARK: - Cell Resuse Identifiers
-    
+
+    // MARK: - Cell Resuse Identifiers
+
     struct CellReuseIdentifiers {
         static let userProjects = "userProjects"
         static let userRankingProjects = "userRankingProjects"
         static let avatarSelection = "avatarSelection"
     }
-    
-    //MARK: - Assets
-    
+
+    // MARK: - Assets
+
     struct Assets {
-        
-        //MARK: - Icons
-        
+
+        // MARK: - Icons
+
         struct Icons {
             static let backArrowIcon = "backArrowIcon"
             static let logoutIcon = "logoutIcon"
@@ -48,26 +48,26 @@ struct K {
             static let medalIcon =  "medalIcon"
             static let companyIcon = "companyIcon"
             static let errorIcon = "errorIcon"
-            
+
             static let avatarTabBarIcon = "avatarTabBarIcon"
             static let homeTabBarIcon = "homeTabBarIcon"
             static let profileTabBarIcon = "profileTabBarIcon"
             static let projectsTabBarIcon = "projectsTabBarIcon"
             static let rankingTabBarIcon = "rankingTabBarIcon"
-            
+
             static let avatarTabBarIconSelected = "avatarTabBarIconSelected"
             static let homeTabBarIconSelected = "homeTabBarIconSelected"
             static let profileTabBarIconSelected = "profileTabBarIconSelected"
             static let projectsTabBarIconSelected = "projectsTabBarIconSelected"
             static let rankingTabBarIconSelected = "rankingTabBarIconSelected"
         }
-        
-        //MARK: - Images
-        
+
+        // MARK: - Images
+
         struct Images {
-            
+
             struct Avatar {
-                
+
                 struct FullImage {
                     static let avatar1 = "avatar1FullImage"
                     static let avatar2 = "avatar2FullImage"
@@ -91,7 +91,7 @@ struct K {
                     static let avatar20 = "avatar20FullImage"
                     static let suffix = "FullImage"
                 }
-                
+
                 struct CircleImage {
                     static let avatar1 = "avatar1CircleImage"
                     static let avatar2 = "avatar2CircleImage"
@@ -116,7 +116,7 @@ struct K {
                     static let suffix = "CircleImage"
                 }
             }
-            
+
             struct Company {
                 static let havaianasLogoImage = "havaianasLogoImage"
                 static let ioasysLogoImage = "ioasysLogoImage"
@@ -124,15 +124,15 @@ struct K {
                 static let dupeLogoImage = "dupéLogoImage"
                 static let alpargatasLogoImage = "alpargatasLogoImage"
             }
-            
+
             static let appLogoImage = "PharusImage"
-            
+
             static let firstPlaceImage = "1stPlaceImage"
             static let secondPlaceImage = "2ndPlaceImage"
             static let thirdPlaceImage = "3rdPlaceImage"
             static let fourthPlaceImage = "4thPlaceImage"
             static let fifthPlaceImage = "5thPlaceImage"
-            
+
             static let firstPlaceMedalImage = "1stPlaceMedalImage"
             static let secondPlaceMedalImage = "2ndPlaceMedalImage"
             static let thirdPlaceMedalImage = "3rdPlaceMedalImage"
@@ -140,9 +140,9 @@ struct K {
             static let fifthPlaceMedalImage = "5thPlaceMedalImage"
         }
     }
-    
-    //MARK: - Date Formats
-    
+
+    // MARK: - Date Formats
+
     struct DateFormats {
         static let projectDateFormat = "dd/MM/yyyy"
     }

@@ -8,15 +8,15 @@
 import Foundation
 
 class TaskModel: Codable {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     let title: String
     var isComplete: Bool
     let taskDescription: String
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(
         title: String,
         isComplete: Bool,
@@ -26,7 +26,7 @@ class TaskModel: Codable {
         self.isComplete = isComplete
         self.taskDescription = description
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case title, isComplete
         case taskDescription = "description"

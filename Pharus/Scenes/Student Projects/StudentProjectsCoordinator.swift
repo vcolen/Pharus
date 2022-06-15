@@ -12,15 +12,15 @@ protocol StudentProjectsFlow {
 }
 
 class StudentProjectsCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     private var student: StudentModel
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(
         navigationController: UINavigationController,
         student: StudentModel
@@ -28,23 +28,23 @@ class StudentProjectsCoordinator: Coordinator {
         self.navigationController = navigationController
         self.student = student
     }
-    
+
     func start() {
         let studentProjectsPresenter = StudentProjectsPresenter(coordinator: self)
-        
+
         let studentProjectsViewController = StudentProjectsViewController(
             coordinator: self,
             presenter: studentProjectsPresenter,
             student: student
         )
-        
+
         navigationController.setNavigationBarHidden(false, animated: true)
-        
+
         navigationController.pushViewController(studentProjectsViewController, animated: true)
     }
 }
 
-//MARK: - Actions
+// MARK: - Actions
 
 extension StudentProjectsCoordinator: StudentProjectsFlow {
     func showStudentProject(_ project: ProjectModel) {
@@ -52,10 +52,10 @@ extension StudentProjectsCoordinator: StudentProjectsFlow {
             navigationController: navigationController,
             project: project
         )
-        
+
         self.coordinate(to: studentProjectDetailCoordinator)
     }
-    
+
     func showSubscribeAlert(of project: ProjectModel) {
         let alertView = ProjectSubcriptionAlertView(
             title: "Confirmar Inscrição",
@@ -63,14 +63,13 @@ extension StudentProjectsCoordinator: StudentProjectsFlow {
             mainButtonText: "Sim, quero me inscrever",
             secondaryButtonText: "Não quero, mudei de idéia"
         )
-        
+
         let twoBigButtonsAlertCoordinator = ProjectSubcriptionAlertCoordinator(
             navigationController: navigationController,
             alertView: alertView,
             project: project
         )
-        
+
         coordinate(to: twoBigButtonsAlertCoordinator)
     }
 }
-

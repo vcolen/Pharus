@@ -8,35 +8,35 @@
 import UIKit
 
 protocol StudentHomeFlow {
-    
+
 }
 
 class StudentHomeCoordinator: Coordinator {
-    
+
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     var student: StudentModel
-    
+
     init(
         navigationController: UINavigationController,
-         student: StudentModel
+        student: StudentModel
     ) {
         self.navigationController = navigationController
         self.student = student
     }
-    
+
     func start() {
-        
+
         let studentHomePresenter = StudentHomePresenter(coordinator: self)
         let studentHomeViewController = StudentHomeViewController(
             coordinator: self,
             presenter: studentHomePresenter,
             student: student
         )
-    
+
         navigationController.setNavigationBarHidden(true, animated: true)
         navigationController.tabBarController?.tabBar.isHidden = false
-        
+
         navigationController.pushViewController(studentHomeViewController, animated: true)
     }
 }
@@ -44,4 +44,3 @@ class StudentHomeCoordinator: Coordinator {
 extension StudentHomeCoordinator: StudentHomeFlow {
 
 }
-

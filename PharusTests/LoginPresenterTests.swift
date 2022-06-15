@@ -32,7 +32,7 @@ class LoginPresenterTests: XCTestCase {
     }
 
     func testLoginPresenter_WhenEmailHasNoAts_shouldReturnFalse() {
-        
+
         // Act
         let email = "johndoe.com"
         let isValidEmail = sut.isValidEmail(email: email)
@@ -102,7 +102,7 @@ class LoginPresenterTests: XCTestCase {
         // Assert
         XCTAssertFalse(isValidPassword, "Test should have returned false, but returned false true instead")
     }
-    
+
     func testLoginPresenter_WhenPasswordIsSQLInjection_ShouldReturnFalse() {
 
         // Act

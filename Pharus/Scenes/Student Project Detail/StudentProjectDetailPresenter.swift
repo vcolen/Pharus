@@ -15,31 +15,31 @@ protocol StudentProjectsDetailPresenterProtocol {
 }
 
 class StudentProjectDetailPresenter: StudentProjectsDetailPresenterProtocol {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     private var coordinator: StudentProjectDetailCoordinator
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(coordinator: StudentProjectDetailCoordinator) {
         self.coordinator = coordinator
     }
-    
-    //MARK: - Actions
-    
+
+    // MARK: - Actions
+
     func showProjectRules() {
         coordinator.showProjectRules()
     }
-    
+
     func showMentorReview() {
         coordinator.showMentorReview()
     }
-    
+
     func showUploadFileView() {
         coordinator.showSendFileView()
     }
-    
+
     func toggleTaskCompletedStatus(task: TaskModel) {
         task.toggleCompletionStatus()
     }

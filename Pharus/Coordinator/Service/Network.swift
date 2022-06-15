@@ -22,32 +22,32 @@ class Network: APIClientProtocol {
                     dataType: T.Type,
                     baseUrlString: String,
                     parameters: [String: Any]? = nil,
-                    completion: @escaping ((Result<T, Error>) -> Void)) where T : Codable {
-        
+                    completion: @escaping ((Result<T, Error>) -> Void)) where T: Codable {
+
         var newUrlString = baseUrlString
-        
+
         if let parameters = parameters {
             newUrlString += "?"
             for parameter in parameters {
                 newUrlString += "\(parameter.key)=\(parameter.value)&"
             }
-            //remove extra "&" at the end
+            // remove extra "&" at the end
             newUrlString.removeLast()
         }
-        
+
         let url = URL(string: newUrlString)
         guard url != nil else {
             return
         }
-        
+
         var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = httpMethod
-        
+
         if let httpBody = httpBody {
             urlRequest.httpBody = httpBody
         }
-        
-        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+
+        URLSession.shared.dataTask(with: urlRequest) { data, _, error in
             DispatchQueue.main.async {
                 if let error = error {
                     completion(.failure(error))
