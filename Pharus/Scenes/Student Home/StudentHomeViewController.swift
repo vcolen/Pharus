@@ -93,7 +93,10 @@ class StudentHomeViewController: UIViewController {
 // MARK: - UIPageViewControllerDataSource
 
 extension StudentHomeViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerBefore viewController: UIViewController
+    ) -> UIViewController? {
         guard let currentVC = viewController as? HomeNewsViewController else {
             return nil
         }
@@ -102,11 +105,14 @@ extension StudentHomeViewController: UIPageViewControllerDataSource {
             return nil
         }
         index -= 1
-        let vc: HomeNewsViewController = HomeNewsViewController(with: pages[index])
-        return vc
+        let viewController: HomeNewsViewController = HomeNewsViewController(with: pages[index])
+        return viewController
     }
 
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerAfter viewController: UIViewController
+    ) -> UIViewController? {
         guard let currentVC = viewController as? HomeNewsViewController else {
             return nil
         }
@@ -115,8 +121,8 @@ extension StudentHomeViewController: UIPageViewControllerDataSource {
             return nil
         }
         index += 1
-        let vc: HomeNewsViewController = HomeNewsViewController(with: pages[index])
-        return vc
+        let viewController: HomeNewsViewController = HomeNewsViewController(with: pages[index])
+        return viewController
     }
 
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
@@ -135,7 +141,11 @@ enum Pages: CaseIterable {
         case .pageZero:
             return HomeNewsView()
         case .pageOne:
-            return HomeNewsView(news: "O projeto ”Introdução a robótica” finalizou. Me contaram você ficou bem colocado, dá uma olhadinha no seu ranking!")
+            return HomeNewsView(
+                news: """
+O projeto ”Introdução a robótica” finalizou. Me contaram você ficou bem colocado, dá uma olhadinha no seu ranking!
+"""
+            )
         }
     }
 
