@@ -8,7 +8,7 @@
 import UIKit
 
 struct PharusImages {
-    let companies = CompanyImages()
+    let companyImages = CompanyImages()
 
     let firstPlaceImage = UIImage(named: Constants.assets.images.firstPlaceImage)
     let secondPlaceImage = UIImage(named: Constants.assets.images.secondPlaceImage)
