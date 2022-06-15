@@ -56,6 +56,13 @@
 		79AF90FB28043DEA0094AB97 /* StudentProjectDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF90FA28043DEA0094AB97 /* StudentProjectDetailPresenter.swift */; };
 		79AF90FD2804478F0094AB97 /* ProjectTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF90FC2804478F0094AB97 /* ProjectTaskView.swift */; };
 		79C577D027FBBB8100046B00 /* StudentProjectRankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C577CF27FBBB8100046B00 /* StudentProjectRankingCell.swift */; };
+		79DA98B9285A5DEE0071D4D1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98B8285A5DEE0071D4D1 /* Assets.swift */; };
+		79DA98BB285A5DF40071D4D1 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98BA285A5DF40071D4D1 /* Icons.swift */; };
+		79DA98BD285A5DF90071D4D1 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98BC285A5DF90071D4D1 /* Images.swift */; };
+		79DA98BF285A5E010071D4D1 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98BE285A5E010071D4D1 /* Avatar.swift */; };
+		79DA98C1285A5E070071D4D1 /* FullImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C0285A5E070071D4D1 /* FullImage.swift */; };
+		79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C2285A5E0E0071D4D1 /* CircleImage.swift */; };
+		79DA98C5285A5E1A0071D4D1 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C4285A5E1A0071D4D1 /* Company.swift */; };
 		79E6424D27F098D30046A2F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6424C27F098D30046A2F0 /* Network.swift */; };
 		79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8389E280AF7C5001C46AD /* HomeNewsView.swift */; };
 		79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */; };
@@ -165,6 +172,13 @@
 		79AF90FC2804478F0094AB97 /* ProjectTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskView.swift; sourceTree = "<group>"; };
 		79C577CF27FBBB8100046B00 /* StudentProjectRankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectRankingCell.swift; sourceTree = "<group>"; };
 		79C577D127FBBB9800046B00 /* StudentProjectsRankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingViewController.swift; sourceTree = "<group>"; };
+		79DA98B8285A5DEE0071D4D1 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		79DA98BA285A5DF40071D4D1 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		79DA98BC285A5DF90071D4D1 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		79DA98BE285A5E010071D4D1 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		79DA98C0285A5E070071D4D1 /* FullImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImage.swift; sourceTree = "<group>"; };
+		79DA98C2285A5E0E0071D4D1 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		79DA98C4285A5E1A0071D4D1 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		79E6424C27F098D30046A2F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		79E8389E280AF7C5001C46AD /* HomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsView.swift; sourceTree = "<group>"; };
 		79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
@@ -425,10 +439,25 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		79E6424B27F098C10046A2F0 /* Service */ = {
+		79DA98B7285A5DCC0071D4D1 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				7963213127F23C9200A202EE /* Constants.swift */,
+				79DA98B8285A5DEE0071D4D1 /* Assets.swift */,
+				79DA98BA285A5DF40071D4D1 /* Icons.swift */,
+				79DA98BC285A5DF90071D4D1 /* Images.swift */,
+				79DA98BE285A5E010071D4D1 /* Avatar.swift */,
+				79DA98C0285A5E070071D4D1 /* FullImage.swift */,
+				79DA98C2285A5E0E0071D4D1 /* CircleImage.swift */,
+				79DA98C4285A5E1A0071D4D1 /* Company.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		79E6424B27F098C10046A2F0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				79DA98B7285A5DCC0071D4D1 /* Constants */,
 				79E6424C27F098D30046A2F0 /* Network.swift */,
 			);
 			name = Service;
@@ -770,8 +799,10 @@
 				C057E8F52807954B004E44C3 /* AvatarSelectionCoordinator.swift in Sources */,
 				7993C9BA28104E7400526AF2 /* SmallAlertButton.swift in Sources */,
 				C05AA30327FFAA7400230698 /* SingleButtonAlertViewController.swift in Sources */,
+				79DA98BB285A5DF40071D4D1 /* Icons.swift in Sources */,
 				797A68EC27F4649200ABDAC6 /* UIColor+Extension.swift in Sources */,
 				7952058127FE382D00A89012 /* TabBarViewController.swift in Sources */,
+				79DA98B9285A5DEE0071D4D1 /* Assets.swift in Sources */,
 				7906FE61281321F900E4A83A /* Float+Extension.swift in Sources */,
 				793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */,
 				79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */,
@@ -780,6 +811,7 @@
 				795005A82811E734009C3716 /* Student.swift in Sources */,
 				C05AA2BC27FC740E00230698 /* TabBarCoordinator.swift in Sources */,
 				79EE571B280B889200F01069 /* StudentHomePresenter.swift in Sources */,
+				79DA98C1285A5E070071D4D1 /* FullImage.swift in Sources */,
 				79FB0CCB27F33118001D36A7 /* Bundle+Extension.swift in Sources */,
 				7993C9B228104C5800526AF2 /* LogoutAlertView.swift in Sources */,
 				7910D9D027FCF5C800A8DDA0 /* StudentProjectDetailViewController.swift in Sources */,
@@ -791,8 +823,10 @@
 				79AF90FD2804478F0094AB97 /* ProjectTaskView.swift in Sources */,
 				79E6424D27F098D30046A2F0 /* Network.swift in Sources */,
 				7993C9A928102E1800526AF2 /* SecondaryCardButton.swift in Sources */,
+				79DA98BD285A5DF90071D4D1 /* Images.swift in Sources */,
 				79164BB927F1251C00167B8A /* UIView+Extension.swift in Sources */,
 				7943975827F3C5BF0075102B /* StudentProjectsCoordinator.swift in Sources */,
+				79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */,
 				793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */,
 				7952058327FE394900A89012 /* ProjectSheetView.swift in Sources */,
 				C05AA2CE27FC82AB00230698 /* StudentProjectsRankingCoordinator.swift in Sources */,
@@ -800,6 +834,7 @@
 				795005AA2811E74D009C3716 /* Task.swift in Sources */,
 				C01BB6C5280B8C9C004D4790 /* StudentProfileViewController.swift in Sources */,
 				C05AA2F527FFA66D00230698 /* SingleButtonAlertView.swift in Sources */,
+				79DA98C5285A5E1A0071D4D1 /* Company.swift in Sources */,
 				C01BB6C1280B8C84004D4790 /* StudenteProfileView.swift in Sources */,
 				7993C9AD28103CAB00526AF2 /* ProjectSubcriptionAlertPresenter.swift in Sources */,
 				795005AC2811E75A009C3716 /* Project.swift in Sources */,
@@ -821,6 +856,7 @@
 				79C577D027FBBB8100046B00 /* StudentProjectRankingCell.swift in Sources */,
 				79E838AE280B067D001C46AD /* SingleButtonAlertPresenter.swift in Sources */,
 				C05AA30727FFAA9500230698 /* SendFileViewController.swift in Sources */,
+				79DA98BF285A5E010071D4D1 /* Avatar.swift in Sources */,
 				C04561AB27EA0428007EC5C3 /* AppCoordinator.swift in Sources */,
 				79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */,
 				7963213027F23AF000A202EE /* LoginPresenter.swift in Sources */,
