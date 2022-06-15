@@ -222,7 +222,7 @@ class StudentProjectCell: UITableViewCell {
 
     private lazy var companyLogoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.Images.Companies.ioasysLogoImage
+        imageView.image = UIImage.pharusImages.companies.ioasysLogoImage
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "UserProjectCell.companyLogoImageView"

@@ -49,7 +49,7 @@ class StudentHomeMiniCardView: UIView {
 
     private lazy var cardIconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.Images.fifthPlaceMedalImage
+        imageView.image = UIImage.pharusImages.fifthPlaceMedalImage
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "StudentHomeMiniCardView.cardIconImageView"
 
@@ -125,13 +125,13 @@ class StudentHomeMiniCardView: UIView {
     private func customizeSubviews() {
         if cardType == .newProject {
             mainView.backgroundColor = UIColor.Card.orangeHomeStandardCardBackground
-            cardIconImageView.image = UIImage.Icons.companyIcon
+            cardIconImageView.image = UIImage.pharusIcons.companyIcon
         } else if cardType == .warning {
             mainView.backgroundColor = UIColor.Card.yellowHomeAlertCardBackground
-            cardIconImageView.image = UIImage.Icons.warningIcon
+            cardIconImageView.image = UIImage.pharusIcons.warningIcon
         } else {
             mainView.backgroundColor = UIColor.Card.orangeHomeStandardCardBackground
-            cardIconImageView.image = UIImage.Icons.medalIcon
+            cardIconImageView.image = UIImage.pharusIcons.medalIcon
         }
 
         cardDescriptionLabel.text = message

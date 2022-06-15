@@ -75,7 +75,7 @@ class ProjectSubcriptionAlertView: UIView {
 
     private lazy var closeModalButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage.Icons.xmarkIcon, for: .normal)
+        button.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
         button.addAction(UIAction { _ in
             self.closeButtonTapped()
         }, for: .touchUpInside)

@@ -40,7 +40,7 @@ class AvatarSelectionView: UIView {
 
     lazy var mainAvatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.Images.Avatars.FullImage.avatar1
+        imageView.image = FullAvatarImages.avatar1
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "StudentAvatarView.MainAvatarImageView"
