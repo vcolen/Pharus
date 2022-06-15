@@ -63,6 +63,9 @@
 		79DA98C1285A5E070071D4D1 /* FullImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C0285A5E070071D4D1 /* FullImage.swift */; };
 		79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C2285A5E0E0071D4D1 /* CircleImage.swift */; };
 		79DA98C5285A5E1A0071D4D1 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C4285A5E1A0071D4D1 /* Company.swift */; };
+		79DA98C7285A5EF60071D4D1 /* RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C6285A5EF60071D4D1 /* RegEx.swift */; };
+		79DA98C9285A5F010071D4D1 /* CellReuseIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C8285A5F010071D4D1 /* CellReuseIdentifiers.swift */; };
+		79DA98CB285A5F0C0071D4D1 /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98CA285A5F0C0071D4D1 /* DateFormats.swift */; };
 		79E6424D27F098D30046A2F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6424C27F098D30046A2F0 /* Network.swift */; };
 		79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8389E280AF7C5001C46AD /* HomeNewsView.swift */; };
 		79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */; };
@@ -179,6 +182,9 @@
 		79DA98C0285A5E070071D4D1 /* FullImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImage.swift; sourceTree = "<group>"; };
 		79DA98C2285A5E0E0071D4D1 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		79DA98C4285A5E1A0071D4D1 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		79DA98C6285A5EF60071D4D1 /* RegEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegEx.swift; sourceTree = "<group>"; };
+		79DA98C8285A5F010071D4D1 /* CellReuseIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseIdentifiers.swift; sourceTree = "<group>"; };
+		79DA98CA285A5F0C0071D4D1 /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		79E6424C27F098D30046A2F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		79E8389E280AF7C5001C46AD /* HomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsView.swift; sourceTree = "<group>"; };
 		79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
@@ -442,14 +448,17 @@
 		79DA98B7285A5DCC0071D4D1 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				7963213127F23C9200A202EE /* Constants.swift */,
 				79DA98B8285A5DEE0071D4D1 /* Assets.swift */,
-				79DA98BA285A5DF40071D4D1 /* Icons.swift */,
-				79DA98BC285A5DF90071D4D1 /* Images.swift */,
 				79DA98BE285A5E010071D4D1 /* Avatar.swift */,
-				79DA98C0285A5E070071D4D1 /* FullImage.swift */,
+				79DA98C8285A5F010071D4D1 /* CellReuseIdentifiers.swift */,
 				79DA98C2285A5E0E0071D4D1 /* CircleImage.swift */,
 				79DA98C4285A5E1A0071D4D1 /* Company.swift */,
+				7963213127F23C9200A202EE /* Constants.swift */,
+				79DA98CA285A5F0C0071D4D1 /* DateFormats.swift */,
+				79DA98C0285A5E070071D4D1 /* FullImage.swift */,
+				79DA98BA285A5DF40071D4D1 /* Icons.swift */,
+				79DA98BC285A5DF90071D4D1 /* Images.swift */,
+				79DA98C6285A5EF60071D4D1 /* RegEx.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -799,7 +808,9 @@
 				C057E8F52807954B004E44C3 /* AvatarSelectionCoordinator.swift in Sources */,
 				7993C9BA28104E7400526AF2 /* SmallAlertButton.swift in Sources */,
 				C05AA30327FFAA7400230698 /* SingleButtonAlertViewController.swift in Sources */,
+				79DA98CB285A5F0C0071D4D1 /* DateFormats.swift in Sources */,
 				79DA98BB285A5DF40071D4D1 /* Icons.swift in Sources */,
+				79DA98C7285A5EF60071D4D1 /* RegEx.swift in Sources */,
 				797A68EC27F4649200ABDAC6 /* UIColor+Extension.swift in Sources */,
 				7952058127FE382D00A89012 /* TabBarViewController.swift in Sources */,
 				79DA98B9285A5DEE0071D4D1 /* Assets.swift in Sources */,
@@ -842,6 +853,7 @@
 				79AF90F728043A590094AB97 /* SendFileView.swift in Sources */,
 				C008AF1A27F1ED3700AD94C9 /* LoginCoodinator.swift in Sources */,
 				7943975A27F3C5D20075102B /* StudentProjectsViewController.swift in Sources */,
+				79DA98C9285A5F010071D4D1 /* CellReuseIdentifiers.swift in Sources */,
 				795A02192809B695000D0B84 /* ProjectSheetCoordinator.swift in Sources */,
 				79A4B75628124214002C018C /* HomeNewsViewController.swift in Sources */,
 				7910D9D227FD0B8300A8DDA0 /* UIFont+Extension.swift in Sources */,
