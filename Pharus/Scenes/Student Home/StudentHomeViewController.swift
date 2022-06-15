@@ -64,7 +64,7 @@ class StudentHomeViewController: UIViewController {
 
     func showStudentAvatar() {
         customView.studentAvatarImageView.image = UIImage(
-            named: "avatar" + student.avatar + Constants.Assets.Images.Avatar.CircleImage.suffix
+            named: "avatar" + student.avatar + Constants.assets.images.avatar.circleImage.suffix
         )
     }
 

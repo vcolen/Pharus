@@ -96,7 +96,7 @@ class AvatarSelectionViewController: UIViewController {
 
     private func showStudentAvatar() {
         customView.mainAvatarImageView.image = UIImage(
-            named: "avatar" + student.avatar + Constants.Assets.Images.Avatar.FullImage.suffix
+            named: "avatar" + student.avatar + Constants.assets.images.avatar.fullImage.suffix
         )
     }
 }
