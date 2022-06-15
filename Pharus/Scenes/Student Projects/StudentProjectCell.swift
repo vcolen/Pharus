@@ -1,9 +1,10 @@
 //
-//  UserProjectCell.swift
+//  StudentProjectCell.swift
 //  Pharus
 //
 //  Created by Victor Colen on 29/03/22.
 //
+//  swiftlint: disable type_body_length file_length
 
 import UIKit
 
