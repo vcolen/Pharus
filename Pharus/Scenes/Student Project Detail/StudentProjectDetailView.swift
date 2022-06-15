@@ -4,7 +4,6 @@
 //
 //  Created by Victor Colen on 05/04/22.
 //
-//  swiftlint: disable type_body_length file_length
 
 import UIKit
 
@@ -14,6 +13,8 @@ protocol StudentProjectDetailViewDelegate: AnyObject {
     func envelopeIconTapped()
     func taskCheckboxTapped(task: TaskModel)
 }
+
+//  swiftlint: disable type_body_length file_length
 
 class StudentProjectDetailView: UIView {
 
