@@ -12,59 +12,59 @@ protocol ProjectSheetDelegate: AnyObject {
 }
 
 class ProjectSheetView: UIView {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     weak var delegate: ProjectSheetDelegate?
-    
+
     private var project: ProjectModel
     private var sheetContent: SheetContent
-    
+
     enum SheetContent {
         case activities
         case mentorReview
     }
-    
-    //MARK: - Views
-    
+
+    // MARK: - Views
+
     private lazy var scrollView: UIScrollView = {
         var scrollView = UIScrollView()
         scrollView.backgroundColor = UIColor.Modal.yellowBackground
         scrollView.layer.cornerRadius = 16
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.accessibilityIdentifier = "ProjectSheetView.scrollView"
-        
+
         return scrollView
     }()
-    
+
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 46
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.accessibilityIdentifier = "ProjectSheetView.mainStackView"
-        
+
         return stackView
     }()
-    
+
     private lazy var titleHelperView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "ProjectSheetView.titleHelperView"
-        
+
         return view
     }()
-    
+
     private lazy var titleStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 8
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.accessibilityIdentifier = "ProjectSheetView.titleStackView"
-        
+
         return stackView
     }()
-    
+
     private lazy var titleIconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage.Icons.feedbackIcon
@@ -101,7 +101,7 @@ class ProjectSheetView: UIView {
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityIdentifier = "ProjectSheetView.descriptionTitleLabel"
-       
+
         return label
     }()
     
