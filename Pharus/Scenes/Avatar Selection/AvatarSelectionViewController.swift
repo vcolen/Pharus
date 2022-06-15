@@ -77,7 +77,7 @@ class AvatarSelectionViewController: UIViewController {
         avatarSelectionCollectionView?.showsHorizontalScrollIndicator = false
         avatarSelectionCollectionView?.register(
             UICollectionViewCell.self,
-            forCellWithReuseIdentifier: K.CellReuseIdentifiers.avatarSelection
+            forCellWithReuseIdentifier: Constants.CellReuseIdentifiers.avatarSelection
         )
 
         avatarSelectionCollectionView?.backgroundColor = .clear
@@ -96,7 +96,7 @@ class AvatarSelectionViewController: UIViewController {
 
     private func showStudentAvatar() {
         customView.mainAvatarImageView.image = UIImage(
-            named: "avatar" + student.avatar + K.Assets.Images.Avatar.FullImage.suffix
+            named: "avatar" + student.avatar + Constants.Assets.Images.Avatar.FullImage.suffix
         )
     }
 }
@@ -112,7 +112,7 @@ extension AvatarSelectionViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: K.CellReuseIdentifiers.avatarSelection,
+            withReuseIdentifier: Constants.CellReuseIdentifiers.avatarSelection,
             for: indexPath
         )
 

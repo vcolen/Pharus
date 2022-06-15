@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct K {
+struct Constants {
 
     // MARK: - RegEx
 

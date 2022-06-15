@@ -64,7 +64,7 @@ class StudentRankingProjectsViewController: UIViewController {
 
     private func setupTableView() {
         tableView.register(StudentProjectRankingCell.self,
-                           forCellReuseIdentifier: K.CellReuseIdentifiers.userRankingProjects)
+                           forCellReuseIdentifier: Constants.CellReuseIdentifiers.userRankingProjects)
 
         tableView.dataSource = self
         tableView.allowsSelection = false
@@ -90,11 +90,11 @@ extension StudentRankingProjectsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: K.CellReuseIdentifiers.userRankingProjects,
+            withIdentifier: Constants.CellReuseIdentifiers.userRankingProjects,
             for: indexPath
         ) as? StudentProjectRankingCell else {
             return tableView.dequeueReusableCell(
-                withIdentifier: K.CellReuseIdentifiers.userRankingProjects,
+                withIdentifier: Constants.CellReuseIdentifiers.userRankingProjects,
                 for: indexPath
             )
         }
