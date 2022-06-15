@@ -14,6 +14,7 @@ protocol StudentProjectDetailViewDelegate: AnyObject {
     func taskCheckboxTapped(task: TaskModel)
 }
 
+// swiftlint:disable type_body_length file_length
 class StudentProjectDetailView: UIView {
 
     // MARK: - Properties

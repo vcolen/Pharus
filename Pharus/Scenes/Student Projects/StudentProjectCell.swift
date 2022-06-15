@@ -1,5 +1,5 @@
 //
-//  UserProjectCell.swift
+//  StudentProjectCell.swift
 //  Pharus
 //
 //  Created by Victor Colen on 29/03/22.
@@ -7,6 +7,7 @@
 
 import UIKit
 
+// swiftlint:disable type_body_length file_length
 class StudentProjectCell: UITableViewCell {
 
     // MARK: - Views
