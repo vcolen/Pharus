@@ -4,6 +4,7 @@
 //
 //  Created by Victor Colen on 05/04/22.
 //
+//  swiftlint: disable type_body_length file_length
 
 import UIKit
 
