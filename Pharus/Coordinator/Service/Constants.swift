@@ -8,35 +8,39 @@
 import Foundation
 
 struct Constants {
-    
+
     static let assets = Assets()
-    
+
     // MARK: - RegEx
-    
+
     struct RegEx {
         static let emailRegEx =  "^[a-z0-9_%+-]+([.-][a-z0-9]+)*@[a-z0-9]+([.-][a-z0-9]+)*\\.[a-z]{2,3}$"
         static let passwordRegEx = "^(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$"
     }
-    
+
     // MARK: - Cell Reuse Identifiers
-    
+
     struct CellReuseIdentifiers {
         static let userProjects = "userProjects"
         static let userRankingProjects = "userRankingProjects"
         static let avatarSelection = "avatarSelection"
     }
-    
+
     // MARK: - Date Formats
-    
+
     struct DateFormats {
         static let projectDateFormat = "dd/MM/yyyy"
     }
 }
 
+// MARK: - Assets
+
 struct Assets {
      let icons = Icons()
      let images = Images()
 }
+
+// MARK: - Icons
 
 struct Icons {
     let backArrowIcon = "backArrowIcon"
@@ -57,13 +61,13 @@ struct Icons {
     let medalIcon =  "medalIcon"
     let companyIcon = "companyIcon"
     let errorIcon = "errorIcon"
-    
+
     let avatarTabBarIcon = "avatarTabBarIcon"
     let homeTabBarIcon = "homeTabBarIcon"
     let profileTabBarIcon = "profileTabBarIcon"
     let projectsTabBarIcon = "projectsTabBarIcon"
     let rankingTabBarIcon = "rankingTabBarIcon"
-    
+
     let avatarTabBarIconSelected = "avatarTabBarIconSelected"
     let homeTabBarIconSelected = "homeTabBarIconSelected"
     let profileTabBarIconSelected = "profileTabBarIconSelected"
@@ -71,18 +75,20 @@ struct Icons {
     let rankingTabBarIconSelected = "rankingTabBarIconSelected"
 }
 
+// MARK: - Images
+
 struct Images {
      let avatar = Avatar()
      let company = Company()
-    
+
      let appLogoImage = "PharusImage"
-    
+
      let firstPlaceImage = "1stPlaceImage"
      let secondPlaceImage = "2ndPlaceImage"
      let thirdPlaceImage = "3rdPlaceImage"
      let fourthPlaceImage = "4thPlaceImage"
      let fifthPlaceImage = "5thPlaceImage"
-    
+
      let firstPlaceMedalImage = "1stPlaceMedalImage"
      let secondPlaceMedalImage = "2ndPlaceMedalImage"
      let thirdPlaceMedalImage = "3rdPlaceMedalImage"
@@ -90,10 +96,14 @@ struct Images {
      let fifthPlaceMedalImage = "5thPlaceMedalImage"
 }
 
+// MARK: - Avatar
+
 struct Avatar {
     let fullImage = FullImage()
     let circleImage = CircleImage()
 }
+
+// MARK: - FullImage
 
 struct FullImage {
      let avatar1 = "avatar1FullImage"
@@ -119,6 +129,8 @@ struct FullImage {
      let suffix = "FullImage"
 }
 
+// MARK: - Circle Image
+
 struct CircleImage {
      let avatar1 = "avatar1CircleImage"
      let avatar2 = "avatar2CircleImage"
@@ -142,6 +154,8 @@ struct CircleImage {
      let avatar20 = "avatar20CircleImage"
      let suffix = "CircleImage"
 }
+
+// MARK: - Company
 
 struct Company {
      let havaianasLogoImage = "havaianasLogoImage"
