@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProjectSubcriptionAlertPresenter: ProjectSubcriptionPresenterProtocol {
+class ProjectSubcriptionAlertPresenter: ProjectSubcriptionPresenting {
 
     // MARK: - Properties
 

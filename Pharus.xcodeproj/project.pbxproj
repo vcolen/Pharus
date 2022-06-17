@@ -21,15 +21,15 @@
 		79345401285CAB7400D3C08B /* LogoutAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345400285CAB7400D3C08B /* LogoutAlertCoordinating.swift */; };
 		79345403285CAB8500D3C08B /* LogoutAlertPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345402285CAB8500D3C08B /* LogoutAlertPresenting.swift */; };
 		79345406285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */; };
-		79345408285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */; };
+		79345408285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345407285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift */; };
 		7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */; };
 		7934540D285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */; };
 		7934540F285CACBC00D3C08B /* SingleButtonAlertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */; };
-		79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */; };
+		79345411285CACCC00D3C08B /* SingleButtonAlertPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345410285CACCC00D3C08B /* SingleButtonAlertPresenting.swift */; };
 		79345414285CAD0C00D3C08B /* AvatarSelectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */; };
 		79345417285CADBF00D3C08B /* ProjectSheetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */; };
 		7934541A285CADD400D3C08B /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345419285CADD400D3C08B /* LoginFlow.swift */; };
-		7934541C285CADE400D3C08B /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */; };
+		7934541C285CADE400D3C08B /* LoginPresenterPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541B285CADE400D3C08B /* LoginPresenterPresenting.swift */; };
 		7934541E285CADF300D3C08B /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541D285CADF300D3C08B /* LoginViewDelegate.swift */; };
 		79345420285CAE2000D3C08B /* ProjectSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541F285CAE2000D3C08B /* ProjectSheetProtocol.swift */; };
 		79345422285CAE3100D3C08B /* ProjectSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345421285CAE3100D3C08B /* ProjectSheetDelegate.swift */; };
@@ -173,15 +173,15 @@
 		79345400285CAB7400D3C08B /* LogoutAlertCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertCoordinating.swift; sourceTree = "<group>"; };
 		79345402285CAB8500D3C08B /* LogoutAlertPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertPresenting.swift; sourceTree = "<group>"; };
 		79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertViewDelegate.swift; sourceTree = "<group>"; };
-		79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionPresenterProtocol.swift; sourceTree = "<group>"; };
+		79345407285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionPresenting.swift; sourceTree = "<group>"; };
 		79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertFlow.swift; sourceTree = "<group>"; };
 		7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertViewDelegate.swift; sourceTree = "<group>"; };
 		7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertFlow.swift; sourceTree = "<group>"; };
-		79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertPresenterProtocol.swift; sourceTree = "<group>"; };
+		79345410285CACCC00D3C08B /* SingleButtonAlertPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertPresenting.swift; sourceTree = "<group>"; };
 		79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionFlow.swift; sourceTree = "<group>"; };
 		79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetFlow.swift; sourceTree = "<group>"; };
 		79345419285CADD400D3C08B /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
-		7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
+		7934541B285CADE400D3C08B /* LoginPresenterPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterPresenting.swift; sourceTree = "<group>"; };
 		7934541D285CADF300D3C08B /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
 		7934541F285CAE2000D3C08B /* ProjectSheetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetProtocol.swift; sourceTree = "<group>"; };
 		79345421285CAE3100D3C08B /* ProjectSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetDelegate.swift; sourceTree = "<group>"; };
@@ -371,7 +371,7 @@
 			children = (
 				79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */,
 				79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */,
-				79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */,
+				79345407285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -380,7 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */,
-				79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */,
+				79345410285CACCC00D3C08B /* SingleButtonAlertPresenting.swift */,
 				7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */,
 			);
 			path = Protocols;
@@ -408,7 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				79345419285CADD400D3C08B /* LoginFlow.swift */,
-				7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */,
+				7934541B285CADE400D3C08B /* LoginPresenterPresenting.swift */,
 				7934541D285CADF300D3C08B /* LoginViewDelegate.swift */,
 			);
 			path = Protocols;
@@ -1043,7 +1043,7 @@
 				79345429285CAEE200D3C08B /* SendFileFlow.swift in Sources */,
 				7993C9AF28103CD500526AF2 /* ProjectSubcriptionAlertCoordinator.swift in Sources */,
 				79345427285CAE9900D3C08B /* SendFilePresenterProtocol.swift in Sources */,
-				79345408285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift in Sources */,
+				79345408285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift in Sources */,
 				C04561A827EA041B007EC5C3 /* Coordinator.swift in Sources */,
 				795005A82811E734009C3716 /* Student.swift in Sources */,
 				C05AA2BC27FC740E00230698 /* TabBarCoordinator.swift in Sources */,
@@ -1069,7 +1069,7 @@
 				79345401285CAB7400D3C08B /* LogoutAlertCoordinating.swift in Sources */,
 				79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */,
 				79345417285CADBF00D3C08B /* ProjectSheetFlow.swift in Sources */,
-				79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */,
+				79345411285CACCC00D3C08B /* SingleButtonAlertPresenting.swift in Sources */,
 				793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */,
 				7952058327FE394900A89012 /* ProjectSheetView.swift in Sources */,
 				C05AA2CE27FC82AB00230698 /* StudentProjectsRankingCoordinator.swift in Sources */,
@@ -1106,7 +1106,7 @@
 				79E838A5280AF82C001C46AD /* StudentHomeViewController.swift in Sources */,
 				7943975E27F3C6020075102B /* StudentProjectCell.swift in Sources */,
 				79C577D027FBBB8100046B00 /* StudentProjectRankingCell.swift in Sources */,
-				7934541C285CADE400D3C08B /* LoginPresenterProtocol.swift in Sources */,
+				7934541C285CADE400D3C08B /* LoginPresenterPresenting.swift in Sources */,
 				79E838AE280B067D001C46AD /* SingleButtonAlertPresenter.swift in Sources */,
 				C05AA30727FFAA9500230698 /* SendFileViewController.swift in Sources */,
 				79DA98BF285A5E010071D4D1 /* Avatar.swift in Sources */,

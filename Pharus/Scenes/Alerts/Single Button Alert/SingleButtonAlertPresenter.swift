@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SingleButtonAlertPresenter: SingleButtonAlertPresenterProtocol {
+class SingleButtonAlertPresenter: SingleButtonAlertPresenting {
 
     // MARK: - Properties
 
