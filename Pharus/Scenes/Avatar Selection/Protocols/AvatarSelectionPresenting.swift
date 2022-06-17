@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol AvatarSelectionPresenting { }
+protocol AvatarSelectionPresenting: AnyObject { }

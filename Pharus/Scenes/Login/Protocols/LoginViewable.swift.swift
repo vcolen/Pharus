@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol LoginViewable { }
+protocol LoginViewable: AnyObject { }

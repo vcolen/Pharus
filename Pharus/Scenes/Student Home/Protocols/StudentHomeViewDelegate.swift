@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol StudentHomeViewDelegate { }
+protocol StudentHomeViewDelegate: AnyObject { }

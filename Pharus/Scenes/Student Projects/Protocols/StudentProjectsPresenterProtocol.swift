@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol StudentProjectsPresenterProtocol {
+protocol StudentProjectsPresenterProtocol: AnyObject {
     func showStudentProject(project: ProjectModel)
 }

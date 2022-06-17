@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol StudentProjectsViewDelegate { }
+protocol StudentProjectsViewDelegate: AnyObject { }

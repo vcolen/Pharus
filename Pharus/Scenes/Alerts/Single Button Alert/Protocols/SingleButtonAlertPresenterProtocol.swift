@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol SingleButtonAlertPresenterProtocol {
+protocol SingleButtonAlertPresenterProtocol: AnyObject {
     func closeModal()
 }

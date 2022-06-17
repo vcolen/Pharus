@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol LoginPresenterProtocol {
+protocol LoginPresenterProtocol: AnyObject {
     func isValidEmail(email: String) -> Bool
     func isValidPassword(password: String) -> Bool
     func loginUser(email: String, password: String) -> Bool

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol StudentProjectsDetailPresenterProtocol {
+protocol StudentProjectsDetailPresenterProtocol: AnyObject {
     func showProjectRules()
     func showUploadFileView()
     func toggleTaskCompletedStatus(task: TaskModel)

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ProjectSheetProtocol {
+protocol ProjectSheetProtocol: AnyObject {
     func popView()
 }

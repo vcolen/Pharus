@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ProjectSubcriptionPresenterProtocol {
+protocol ProjectSubcriptionPresenterProtocol: AnyObject {
     func closeModal()
     func subscribeToProject()
 }

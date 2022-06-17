@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol AvatarSelectionViewable { }
+protocol AvatarSelectionViewable: AnyObject { }
