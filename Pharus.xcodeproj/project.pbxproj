@@ -18,8 +18,8 @@
 		793453FA285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453F9285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift */; };
 		793453FC285CAAD000D3C08B /* StudentProjectsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453FB285CAAD000D3C08B /* StudentProjectsFlow.swift */; };
 		793453FF285CAB6000D3C08B /* LogoutAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453FE285CAB6000D3C08B /* LogoutAlertViewDelegate.swift */; };
-		79345401285CAB7400D3C08B /* LogoutAlertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345400285CAB7400D3C08B /* LogoutAlertFlow.swift */; };
-		79345403285CAB8500D3C08B /* LogoutAlertPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345402285CAB8500D3C08B /* LogoutAlertPresenterProtocol.swift */; };
+		79345401285CAB7400D3C08B /* LogoutAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345400285CAB7400D3C08B /* LogoutAlertCoordinating.swift */; };
+		79345403285CAB8500D3C08B /* LogoutAlertPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345402285CAB8500D3C08B /* LogoutAlertPresenting.swift */; };
 		79345406285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */; };
 		79345408285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */; };
 		7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */; };
@@ -44,6 +44,7 @@
 		79345438285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */; };
 		7934543A285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345439285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift */; };
 		7934543D285CB04100D3C08B /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934543C285CB04100D3C08B /* TabBarFlow.swift */; };
+		7934543F285CB23E00D3C08B /* LogoutAlertViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934543E285CB23E00D3C08B /* LogoutAlertViewable.swift */; };
 		793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73827FE177000CD8334 /* CheckmarkButton.swift */; };
 		793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73A27FE183000CD8334 /* UIImage+Extension.swift */; };
 		793EC73D27FE197B00CD8334 /* StudentProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */; };
@@ -169,8 +170,8 @@
 		793453F9285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsPresenterProtocol.swift; sourceTree = "<group>"; };
 		793453FB285CAAD000D3C08B /* StudentProjectsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsFlow.swift; sourceTree = "<group>"; };
 		793453FE285CAB6000D3C08B /* LogoutAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertViewDelegate.swift; sourceTree = "<group>"; };
-		79345400285CAB7400D3C08B /* LogoutAlertFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertFlow.swift; sourceTree = "<group>"; };
-		79345402285CAB8500D3C08B /* LogoutAlertPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertPresenterProtocol.swift; sourceTree = "<group>"; };
+		79345400285CAB7400D3C08B /* LogoutAlertCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertCoordinating.swift; sourceTree = "<group>"; };
+		79345402285CAB8500D3C08B /* LogoutAlertPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertPresenting.swift; sourceTree = "<group>"; };
 		79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertViewDelegate.swift; sourceTree = "<group>"; };
 		79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionPresenterProtocol.swift; sourceTree = "<group>"; };
 		79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertFlow.swift; sourceTree = "<group>"; };
@@ -195,6 +196,7 @@
 		79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsDetailPresenterProtocol.swift; sourceTree = "<group>"; };
 		79345439285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailViewDelegate.swift; sourceTree = "<group>"; };
 		7934543C285CB04100D3C08B /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
+		7934543E285CB23E00D3C08B /* LogoutAlertViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertViewable.swift; sourceTree = "<group>"; };
 		793EC73827FE177000CD8334 /* CheckmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		793EC73A27FE183000CD8334 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileButton.swift; sourceTree = "<group>"; };
@@ -356,9 +358,10 @@
 		793453FD285CAB4C00D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				79345400285CAB7400D3C08B /* LogoutAlertCoordinating.swift */,
+				79345402285CAB8500D3C08B /* LogoutAlertPresenting.swift */,
+				7934543E285CB23E00D3C08B /* LogoutAlertViewable.swift */,
 				793453FE285CAB6000D3C08B /* LogoutAlertViewDelegate.swift */,
-				79345400285CAB7400D3C08B /* LogoutAlertFlow.swift */,
-				79345402285CAB8500D3C08B /* LogoutAlertPresenterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1023,6 +1026,7 @@
 				79DA98BB285A5DF40071D4D1 /* Icons.swift in Sources */,
 				79DA98D2285A668C0071D4D1 /* FullAvatarImages.swift in Sources */,
 				79DA98C7285A5EF60071D4D1 /* RegEx.swift in Sources */,
+				7934543F285CB23E00D3C08B /* LogoutAlertViewable.swift in Sources */,
 				797A68EC27F4649200ABDAC6 /* UIColor+Extension.swift in Sources */,
 				7952058127FE382D00A89012 /* TabBarViewController.swift in Sources */,
 				79DA98B9285A5DEE0071D4D1 /* Assets.swift in Sources */,
@@ -1062,7 +1066,7 @@
 				79164BB927F1251C00167B8A /* UIView+Extension.swift in Sources */,
 				7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift in Sources */,
 				7943975827F3C5BF0075102B /* StudentProjectsCoordinator.swift in Sources */,
-				79345401285CAB7400D3C08B /* LogoutAlertFlow.swift in Sources */,
+				79345401285CAB7400D3C08B /* LogoutAlertCoordinating.swift in Sources */,
 				79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */,
 				79345417285CADBF00D3C08B /* ProjectSheetFlow.swift in Sources */,
 				79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */,
@@ -1090,7 +1094,7 @@
 				79345414285CAD0C00D3C08B /* AvatarSelectionFlow.swift in Sources */,
 				79A4B75628124214002C018C /* HomeNewsViewController.swift in Sources */,
 				7910D9D227FD0B8300A8DDA0 /* UIFont+Extension.swift in Sources */,
-				79345403285CAB8500D3C08B /* LogoutAlertPresenterProtocol.swift in Sources */,
+				79345403285CAB8500D3C08B /* LogoutAlertPresenting.swift in Sources */,
 				793453FC285CAAD000D3C08B /* StudentProjectsFlow.swift in Sources */,
 				79AF90FB28043DEA0094AB97 /* StudentProjectDetailPresenter.swift in Sources */,
 				79A2C779280C587F00B3159B /* ProjectScheduleView.swift in Sources */,

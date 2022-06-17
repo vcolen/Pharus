@@ -40,7 +40,7 @@ class LogoutAlertCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension LogoutAlertCoordinator: LogoutAlertFlow {
+extension LogoutAlertCoordinator: LogoutAlertCoordinating {
     func closeModal() {
         navigationController.topViewController?.dismiss(animated: true)
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogoutAlertPresenter: LogoutAlertPresenterProtocol {
+class LogoutAlertPresenter: LogoutAlertPresenting {
 
     // MARK: - Properties
 
