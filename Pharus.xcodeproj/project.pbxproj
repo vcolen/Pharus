@@ -26,7 +26,7 @@
 		7934540D285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */; };
 		7934540F285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540E285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift */; };
 		79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */; };
-		79345414285CAD0C00D3C08B /* AvatarSelectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */; };
+		79345414285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345413285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift */; };
 		79345417285CADBF00D3C08B /* ProjectSheetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */; };
 		7934541A285CADD400D3C08B /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345419285CADD400D3C08B /* LoginFlow.swift */; };
 		7934541C285CADE400D3C08B /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */; };
@@ -178,7 +178,7 @@
 		7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertViewDelegate.swift; sourceTree = "<group>"; };
 		7934540E285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertCoordinating.swift; sourceTree = "<group>"; };
 		79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertPresenterProtocol.swift; sourceTree = "<group>"; };
-		79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionFlow.swift; sourceTree = "<group>"; };
+		79345413285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionCoordinating.swift; sourceTree = "<group>"; };
 		79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetFlow.swift; sourceTree = "<group>"; };
 		79345419285CADD400D3C08B /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -389,7 +389,7 @@
 		79345412285CAD0000D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */,
+				79345413285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1091,7 +1091,7 @@
 				79DA98C9285A5F010071D4D1 /* CellReuseIdentifiers.swift in Sources */,
 				795A02192809B695000D0B84 /* ProjectSheetCoordinator.swift in Sources */,
 				79345420285CAE2000D3C08B /* ProjectSheetProtocol.swift in Sources */,
-				79345414285CAD0C00D3C08B /* AvatarSelectionFlow.swift in Sources */,
+				79345414285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift in Sources */,
 				79A4B75628124214002C018C /* HomeNewsViewController.swift in Sources */,
 				7910D9D227FD0B8300A8DDA0 /* UIFont+Extension.swift in Sources */,
 				79345403285CAB8500D3C08B /* LogoutAlertPresenting.swift in Sources */,

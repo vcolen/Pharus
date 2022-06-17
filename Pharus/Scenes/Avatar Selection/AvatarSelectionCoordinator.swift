@@ -35,6 +35,6 @@ class AvatarSelectionCoordinator: Coordinator {
     }
 }
 
-extension AvatarSelectionCoordinator: AvatarSelectionFlow {
+extension AvatarSelectionCoordinator: AvatarSelectionCoordinating {
 
 }
