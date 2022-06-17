@@ -165,6 +165,6 @@ class TabBarCoordinator: Coordinator {
     }
 }
 
-extension TabBarCoordinator: TabBarFlow {
+extension TabBarCoordinator: TabBarCoordinating {
 
 }

@@ -43,7 +43,7 @@
 		79345436285CAFDC00D3C08B /* StudentProjectDetailCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345435285CAFDC00D3C08B /* StudentProjectDetailCoordinating.swift */; };
 		79345438285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */; };
 		7934543A285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345439285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift */; };
-		7934543D285CB04100D3C08B /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934543C285CB04100D3C08B /* TabBarFlow.swift */; };
+		7934543D285CB04100D3C08B /* TabBarCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934543C285CB04100D3C08B /* TabBarCoordinating.swift */; };
 		7934543F285CB23E00D3C08B /* LogoutAlertViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934543E285CB23E00D3C08B /* LogoutAlertViewable.swift */; };
 		793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73827FE177000CD8334 /* CheckmarkButton.swift */; };
 		793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73A27FE183000CD8334 /* UIImage+Extension.swift */; };
@@ -195,7 +195,7 @@
 		79345435285CAFDC00D3C08B /* StudentProjectDetailCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailCoordinating.swift; sourceTree = "<group>"; };
 		79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsDetailPresenterProtocol.swift; sourceTree = "<group>"; };
 		79345439285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailViewDelegate.swift; sourceTree = "<group>"; };
-		7934543C285CB04100D3C08B /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
+		7934543C285CB04100D3C08B /* TabBarCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinating.swift; sourceTree = "<group>"; };
 		7934543E285CB23E00D3C08B /* LogoutAlertViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertViewable.swift; sourceTree = "<group>"; };
 		793EC73827FE177000CD8334 /* CheckmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		793EC73A27FE183000CD8334 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -455,7 +455,7 @@
 		7934543B285CB03300D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7934543C285CB04100D3C08B /* TabBarFlow.swift */,
+				7934543C285CB04100D3C08B /* TabBarCoordinating.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1031,7 +1031,7 @@
 				7952058127FE382D00A89012 /* TabBarViewController.swift in Sources */,
 				79DA98B9285A5DEE0071D4D1 /* Assets.swift in Sources */,
 				79345431285CAF8700D3C08B /* StudentProfileCoordinating.swift in Sources */,
-				7934543D285CB04100D3C08B /* TabBarFlow.swift in Sources */,
+				7934543D285CB04100D3C08B /* TabBarCoordinating.swift in Sources */,
 				7906FE61281321F900E4A83A /* Float+Extension.swift in Sources */,
 				793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */,
 				79345438285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift in Sources */,
