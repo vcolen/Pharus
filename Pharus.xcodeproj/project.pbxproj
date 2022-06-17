@@ -36,6 +36,8 @@
 		79345425285CAE8B00D3C08B /* SendFileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345424285CAE8B00D3C08B /* SendFileDelegate.swift */; };
 		79345427285CAE9900D3C08B /* SendFilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */; };
 		79345429285CAEE200D3C08B /* SendFileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345428285CAEE200D3C08B /* SendFileFlow.swift */; };
+		7934542C285CAF2C00D3C08B /* StudentHomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */; };
+		7934542E285CAF3900D3C08B /* StudentHomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */; };
 		793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73827FE177000CD8334 /* CheckmarkButton.swift */; };
 		793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73A27FE183000CD8334 /* UIImage+Extension.swift */; };
 		793EC73D27FE197B00CD8334 /* StudentProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */; };
@@ -179,6 +181,8 @@
 		79345424285CAE8B00D3C08B /* SendFileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileDelegate.swift; sourceTree = "<group>"; };
 		79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFilePresenterProtocol.swift; sourceTree = "<group>"; };
 		79345428285CAEE200D3C08B /* SendFileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileFlow.swift; sourceTree = "<group>"; };
+		7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeFlow.swift; sourceTree = "<group>"; };
+		7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomePresenterProtocol.swift; sourceTree = "<group>"; };
 		793EC73827FE177000CD8334 /* CheckmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		793EC73A27FE183000CD8334 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileButton.swift; sourceTree = "<group>"; };
@@ -400,6 +404,15 @@
 				79345424285CAE8B00D3C08B /* SendFileDelegate.swift */,
 				79345428285CAEE200D3C08B /* SendFileFlow.swift */,
 				79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7934542A285CAF2300D3C08B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */,
+				7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -626,6 +639,7 @@
 		79E8389D280AF791001C46AD /* Student Home */ = {
 			isa = PBXGroup;
 			children = (
+				7934542A285CAF2300D3C08B /* Protocols */,
 				79EE5718280B881500F01069 /* StudentHomeCoordinator.swift */,
 				79EE571A280B889200F01069 /* StudentHomePresenter.swift */,
 				79E838A2280AF804001C46AD /* StudentHomeView.swift */,
@@ -954,6 +968,7 @@
 				79A2C775280C473F00B3159B /* SubscribeButton.swift in Sources */,
 				794D9ABD27F8D15A0017D5EB /* Date+Extension.swift in Sources */,
 				79E838A9280AFD03001C46AD /* SendFileCoordinator.swift in Sources */,
+				7934542C285CAF2C00D3C08B /* StudentHomeFlow.swift in Sources */,
 				7993C9B628104C6D00526AF2 /* LogoutAlertPresenter.swift in Sources */,
 				79222EA327F643D60051334A /* CircleProgressView.swift in Sources */,
 				79E838A3280AF804001C46AD /* StudentHomeView.swift in Sources */,
@@ -1018,6 +1033,7 @@
 				C01BB6C1280B8C84004D4790 /* StudenteProfileView.swift in Sources */,
 				7993C9AD28103CAB00526AF2 /* ProjectSubcriptionAlertPresenter.swift in Sources */,
 				795005AC2811E75A009C3716 /* Project.swift in Sources */,
+				7934542E285CAF3900D3C08B /* StudentHomePresenterProtocol.swift in Sources */,
 				7993C9B428104C6400526AF2 /* LogoutAlertCoordinator.swift in Sources */,
 				79AF90F728043A590094AB97 /* SendFileView.swift in Sources */,
 				C008AF1A27F1ED3700AD94C9 /* LoginCoodinator.swift in Sources */,
