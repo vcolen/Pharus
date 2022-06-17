@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol StudentProfileFlow {
-
-}
-
 class StudentProfileCoordinator: Coordinator {
 
     // MARK: - Properties

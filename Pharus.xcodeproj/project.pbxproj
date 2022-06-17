@@ -38,6 +38,8 @@
 		79345429285CAEE200D3C08B /* SendFileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345428285CAEE200D3C08B /* SendFileFlow.swift */; };
 		7934542C285CAF2C00D3C08B /* StudentHomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */; };
 		7934542E285CAF3900D3C08B /* StudentHomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */; };
+		79345431285CAF8700D3C08B /* StudentProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345430285CAF8700D3C08B /* StudentProfileFlow.swift */; };
+		79345433285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */; };
 		793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73827FE177000CD8334 /* CheckmarkButton.swift */; };
 		793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73A27FE183000CD8334 /* UIImage+Extension.swift */; };
 		793EC73D27FE197B00CD8334 /* StudentProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */; };
@@ -183,6 +185,8 @@
 		79345428285CAEE200D3C08B /* SendFileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileFlow.swift; sourceTree = "<group>"; };
 		7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeFlow.swift; sourceTree = "<group>"; };
 		7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomePresenterProtocol.swift; sourceTree = "<group>"; };
+		79345430285CAF8700D3C08B /* StudentProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileFlow.swift; sourceTree = "<group>"; };
+		79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfilePresenterProtocol.swift; sourceTree = "<group>"; };
 		793EC73827FE177000CD8334 /* CheckmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		793EC73A27FE183000CD8334 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileButton.swift; sourceTree = "<group>"; };
@@ -413,6 +417,15 @@
 			children = (
 				7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */,
 				7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7934542F285CAF8000D3C08B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				79345430285CAF8700D3C08B /* StudentProfileFlow.swift */,
+				79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -708,10 +721,11 @@
 		C01BB6B9280B8C41004D4790 /* Student Profile */ = {
 			isa = PBXGroup;
 			children = (
-				C01BB6BA280B8C73004D4790 /* StudentProfileCoordinator.swift */,
+				7934542F285CAF8000D3C08B /* Protocols */,
 				C01BB6C0280B8C84004D4790 /* StudenteProfileView.swift */,
-				C01BB6C4280B8C9C004D4790 /* StudentProfileViewController.swift */,
+				C01BB6BA280B8C73004D4790 /* StudentProfileCoordinator.swift */,
 				C01BB6C8280B8CAF004D4790 /* StudentProfilePresenter.swift */,
+				C01BB6C4280B8C9C004D4790 /* StudentProfileViewController.swift */,
 			);
 			path = "Student Profile";
 			sourceTree = "<group>";
@@ -964,6 +978,7 @@
 				79A2C777280C4A1700B3159B /* MainCardButton.swift in Sources */,
 				C09DB2B528138C1B0028FDA7 /* SingleButtonAlertCoordinator.swift in Sources */,
 				C09DB2B028138C010028FDA7 /* StudentProjectsRankingViewController.swift in Sources */,
+				79345433285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift in Sources */,
 				C09DB2AB28138BDD0028FDA7 /* ProjectSubcriptionAlertViewController.swift in Sources */,
 				79A2C775280C473F00B3159B /* SubscribeButton.swift in Sources */,
 				794D9ABD27F8D15A0017D5EB /* Date+Extension.swift in Sources */,
@@ -983,6 +998,7 @@
 				797A68EC27F4649200ABDAC6 /* UIColor+Extension.swift in Sources */,
 				7952058127FE382D00A89012 /* TabBarViewController.swift in Sources */,
 				79DA98B9285A5DEE0071D4D1 /* Assets.swift in Sources */,
+				79345431285CAF8700D3C08B /* StudentProfileFlow.swift in Sources */,
 				7906FE61281321F900E4A83A /* Float+Extension.swift in Sources */,
 				793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */,
 				79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */,

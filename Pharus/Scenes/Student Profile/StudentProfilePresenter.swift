@@ -7,8 +7,6 @@
 
 import Foundation
 
-protocol StudentProfilePresenterProtocol { }
-
 class StudentProfilePresenter {
 
     // MARK: - Properties
