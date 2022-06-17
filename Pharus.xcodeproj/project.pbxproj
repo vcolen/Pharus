@@ -34,7 +34,7 @@
 		79345420285CAE2000D3C08B /* ProjectSheetPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541F285CAE2000D3C08B /* ProjectSheetPresenting.swift */; };
 		79345422285CAE3100D3C08B /* ProjectSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345421285CAE3100D3C08B /* ProjectSheetDelegate.swift */; };
 		79345425285CAE8B00D3C08B /* SendFileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345424285CAE8B00D3C08B /* SendFileDelegate.swift */; };
-		79345427285CAE9900D3C08B /* SendFilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */; };
+		79345427285CAE9900D3C08B /* SendFilePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345426285CAE9900D3C08B /* SendFilePresenting.swift */; };
 		79345429285CAEE200D3C08B /* SendFileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345428285CAEE200D3C08B /* SendFileFlow.swift */; };
 		7934542C285CAF2C00D3C08B /* StudentHomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */; };
 		7934542E285CAF3900D3C08B /* StudentHomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */; };
@@ -186,7 +186,7 @@
 		7934541F285CAE2000D3C08B /* ProjectSheetPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetPresenting.swift; sourceTree = "<group>"; };
 		79345421285CAE3100D3C08B /* ProjectSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetDelegate.swift; sourceTree = "<group>"; };
 		79345424285CAE8B00D3C08B /* SendFileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileDelegate.swift; sourceTree = "<group>"; };
-		79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFilePresenterProtocol.swift; sourceTree = "<group>"; };
+		79345426285CAE9900D3C08B /* SendFilePresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFilePresenting.swift; sourceTree = "<group>"; };
 		79345428285CAEE200D3C08B /* SendFileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileFlow.swift; sourceTree = "<group>"; };
 		7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeFlow.swift; sourceTree = "<group>"; };
 		7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomePresenterProtocol.swift; sourceTree = "<group>"; };
@@ -419,7 +419,7 @@
 			children = (
 				79345424285CAE8B00D3C08B /* SendFileDelegate.swift */,
 				79345428285CAEE200D3C08B /* SendFileFlow.swift */,
-				79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */,
+				79345426285CAE9900D3C08B /* SendFilePresenting.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1042,7 +1042,7 @@
 				7934541E285CADF300D3C08B /* LoginViewDelegate.swift in Sources */,
 				79345429285CAEE200D3C08B /* SendFileFlow.swift in Sources */,
 				7993C9AF28103CD500526AF2 /* ProjectSubcriptionAlertCoordinator.swift in Sources */,
-				79345427285CAE9900D3C08B /* SendFilePresenterProtocol.swift in Sources */,
+				79345427285CAE9900D3C08B /* SendFilePresenting.swift in Sources */,
 				79345408285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift in Sources */,
 				C04561A827EA041B007EC5C3 /* Coordinator.swift in Sources */,
 				795005A82811E734009C3716 /* Student.swift in Sources */,
