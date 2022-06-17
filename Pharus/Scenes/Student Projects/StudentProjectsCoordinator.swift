@@ -42,7 +42,7 @@ class StudentProjectsCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension StudentProjectsCoordinator: StudentProjectsFlow {
+extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     func showStudentProject(_ project: ProjectModel) {
         let studentProjectDetailCoordinator = StudentProjectDetailCoordinator(
             navigationController: navigationController,
