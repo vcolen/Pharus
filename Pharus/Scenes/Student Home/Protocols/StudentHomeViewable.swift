@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol StudentHomeViewable: AnyObject{ }
+protocol StudentHomeViewable: AnyObject { }
