@@ -38,7 +38,7 @@
 		79345429285CAEE200D3C08B /* SendFileCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345428285CAEE200D3C08B /* SendFileCoordinating.swift */; };
 		7934542C285CAF2C00D3C08B /* StudentHomeCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542B285CAF2C00D3C08B /* StudentHomeCoordinating.swift */; };
 		7934542E285CAF3900D3C08B /* StudentHomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */; };
-		79345431285CAF8700D3C08B /* StudentProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345430285CAF8700D3C08B /* StudentProfileFlow.swift */; };
+		79345431285CAF8700D3C08B /* StudentProfileCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345430285CAF8700D3C08B /* StudentProfileCoordinating.swift */; };
 		79345433285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */; };
 		79345436285CAFDC00D3C08B /* StudentProjectDetailFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345435285CAFDC00D3C08B /* StudentProjectDetailFlow.swift */; };
 		79345438285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */; };
@@ -190,7 +190,7 @@
 		79345428285CAEE200D3C08B /* SendFileCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileCoordinating.swift; sourceTree = "<group>"; };
 		7934542B285CAF2C00D3C08B /* StudentHomeCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeCoordinating.swift; sourceTree = "<group>"; };
 		7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomePresenterProtocol.swift; sourceTree = "<group>"; };
-		79345430285CAF8700D3C08B /* StudentProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileFlow.swift; sourceTree = "<group>"; };
+		79345430285CAF8700D3C08B /* StudentProfileCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileCoordinating.swift; sourceTree = "<group>"; };
 		79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfilePresenterProtocol.swift; sourceTree = "<group>"; };
 		79345435285CAFDC00D3C08B /* StudentProjectDetailFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailFlow.swift; sourceTree = "<group>"; };
 		79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsDetailPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -436,7 +436,7 @@
 		7934542F285CAF8000D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				79345430285CAF8700D3C08B /* StudentProfileFlow.swift */,
+				79345430285CAF8700D3C08B /* StudentProfileCoordinating.swift */,
 				79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */,
 			);
 			path = Protocols;
@@ -1030,7 +1030,7 @@
 				797A68EC27F4649200ABDAC6 /* UIColor+Extension.swift in Sources */,
 				7952058127FE382D00A89012 /* TabBarViewController.swift in Sources */,
 				79DA98B9285A5DEE0071D4D1 /* Assets.swift in Sources */,
-				79345431285CAF8700D3C08B /* StudentProfileFlow.swift in Sources */,
+				79345431285CAF8700D3C08B /* StudentProfileCoordinating.swift in Sources */,
 				7934543D285CB04100D3C08B /* TabBarFlow.swift in Sources */,
 				7906FE61281321F900E4A83A /* Float+Extension.swift in Sources */,
 				793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */,
