@@ -7,13 +7,14 @@
 
 import Foundation
 
+// swiftlint:disable function_parameter_count
 protocol APIClientProtocol {
     func request<T: Codable>(
         httpMethod: String?,
         httpBody: Data?,
         dataType: T.Type,
         baseUrlString: String,
-        parameters: [String: Any]?,
+        parameters: [String: String]?,
         completion: @escaping ((Result<T, Error>) -> Void)
     )
 }
@@ -24,7 +25,7 @@ class Network: APIClientProtocol {
         httpBody: Data? = nil,
         dataType: T.Type,
         baseUrlString: String,
-        parameters: [String: Any]? = nil,
+        parameters: [String: String]? = nil,
         completion: @escaping ((Result<T, Error>) -> Void)
     ) where T: Codable {
 
