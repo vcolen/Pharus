@@ -38,7 +38,7 @@ class SendFileCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension SendFileCoordinator: SendFileFlow {
+extension SendFileCoordinator: SendFileCoordinating {
     func showFileSentAlert() {
         let alertView = SingleButtonAlertView(
             message: "Arquivo enviado com sucesso!",
