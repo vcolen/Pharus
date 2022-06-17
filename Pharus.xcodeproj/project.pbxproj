@@ -111,6 +111,8 @@
 		79E0CCE4285CBAF6007A5361 /* SendFileViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE3285CBAF6007A5361 /* SendFileViewable.swift */; };
 		79E0CCE6285CBB67007A5361 /* StudentHomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE5285CBB67007A5361 /* StudentHomeViewDelegate.swift */; };
 		79E0CCE8285CBB74007A5361 /* StudentHomeViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE7285CBB74007A5361 /* StudentHomeViewable.swift */; };
+		79E0CCEB285CBBBD007A5361 /* HomeNewsViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCEA285CBBBD007A5361 /* HomeNewsViewable.swift */; };
+		79E0CCED285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCEC285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift */; };
 		79E6424D27F098D30046A2F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6424C27F098D30046A2F0 /* Network.swift */; };
 		79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8389E280AF7C5001C46AD /* HomeNewsView.swift */; };
 		79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */; };
@@ -275,6 +277,8 @@
 		79E0CCE3285CBAF6007A5361 /* SendFileViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileViewable.swift; sourceTree = "<group>"; };
 		79E0CCE5285CBB67007A5361 /* StudentHomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewDelegate.swift; sourceTree = "<group>"; };
 		79E0CCE7285CBB74007A5361 /* StudentHomeViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewable.swift; sourceTree = "<group>"; };
+		79E0CCEA285CBBBD007A5361 /* HomeNewsViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewable.swift; sourceTree = "<group>"; };
+		79E0CCEC285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewDelegate.swift.swift; sourceTree = "<group>"; };
 		79E6424C27F098D30046A2F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		79E8389E280AF7C5001C46AD /* HomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsView.swift; sourceTree = "<group>"; };
 		79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
@@ -639,8 +643,9 @@
 		79A4B757281249A0002C018C /* Student Home News */ = {
 			isa = PBXGroup;
 			children = (
-				79A4B75528124214002C018C /* HomeNewsViewController.swift */,
 				79E8389E280AF7C5001C46AD /* HomeNewsView.swift */,
+				79A4B75528124214002C018C /* HomeNewsViewController.swift */,
+				79E0CCE9285CBBAD007A5361 /* Protocols */,
 			);
 			path = "Student Home News";
 			sourceTree = "<group>";
@@ -698,6 +703,15 @@
 				793EC73A27FE183000CD8334 /* UIImage+Extension.swift */,
 			);
 			name = UIImage;
+			sourceTree = "<group>";
+		};
+		79E0CCE9285CBBAD007A5361 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				79E0CCEA285CBBBD007A5361 /* HomeNewsViewable.swift */,
+				79E0CCEC285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		79E6424B27F098C10046A2F0 /* Service */ = {
@@ -1082,6 +1096,7 @@
 				79345408285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift in Sources */,
 				C04561A827EA041B007EC5C3 /* Coordinator.swift in Sources */,
 				795005A82811E734009C3716 /* Student.swift in Sources */,
+				79E0CCED285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift in Sources */,
 				C05AA2BC27FC740E00230698 /* TabBarCoordinator.swift in Sources */,
 				79EE571B280B889200F01069 /* StudentHomePresenter.swift in Sources */,
 				79DA98C1285A5E070071D4D1 /* FullImage.swift in Sources */,
@@ -1089,6 +1104,7 @@
 				7993C9B228104C5800526AF2 /* LogoutAlertView.swift in Sources */,
 				7910D9D027FCF5C800A8DDA0 /* StudentProjectDetailViewController.swift in Sources */,
 				796F55342810F03E00DC6F70 /* ProjectModel.swift in Sources */,
+				79E0CCEB285CBBBD007A5361 /* HomeNewsViewable.swift in Sources */,
 				79EE5719280B881500F01069 /* StudentHomeCoordinator.swift in Sources */,
 				C057E8F1280794E9004E44C3 /* AvatarSelectionViewController.swift in Sources */,
 				7993C9B828104C7700526AF2 /* LogoutAlertViewController.swift in Sources */,
