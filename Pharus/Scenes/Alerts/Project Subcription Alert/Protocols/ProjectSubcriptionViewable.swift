@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol ProjectSubcriptionViewable { }
+protocol ProjectSubcriptionAlertViewable { }

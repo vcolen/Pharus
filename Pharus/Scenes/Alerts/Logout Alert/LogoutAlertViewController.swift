@@ -56,3 +56,7 @@ extension LogoutAlertViewController: LogoutAlertViewDelegate {
         presenter.closeModal()
     }
 }
+
+// MARK: - Logout Alert Viewable
+
+extension LogoutAlertViewController: LogoutAlertViewable { }
