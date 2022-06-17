@@ -102,6 +102,10 @@
 		79DA98D4285A66980071D4D1 /* CircleAvatarImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98D3285A66980071D4D1 /* CircleAvatarImages.swift */; };
 		79DA98D6285A67540071D4D1 /* CompanyImages.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98D5285A67540071D4D1 /* CompanyImages.swift.swift */; };
 		79E0CCD6285CB9CF007A5361 /* ProjectSubcriptionViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCD5285CB9CF007A5361 /* ProjectSubcriptionViewable.swift */; };
+		79E0CCD8285CBA19007A5361 /* SingleButtonAlertViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCD7285CBA19007A5361 /* SingleButtonAlertViewable.swift */; };
+		79E0CCDA285CBA49007A5361 /* AvatarSelectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCD9285CBA49007A5361 /* AvatarSelectionViewDelegate.swift */; };
+		79E0CCDC285CBA5A007A5361 /* AvatarSelectionViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCDB285CBA5A007A5361 /* AvatarSelectionViewable.swift */; };
+		79E0CCDE285CBA73007A5361 /* AvatarSelectionPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCDD285CBA73007A5361 /* AvatarSelectionPresenting.swift */; };
 		79E6424D27F098D30046A2F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6424C27F098D30046A2F0 /* Network.swift */; };
 		79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8389E280AF7C5001C46AD /* HomeNewsView.swift */; };
 		79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */; };
@@ -257,6 +261,10 @@
 		79DA98D3285A66980071D4D1 /* CircleAvatarImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAvatarImages.swift; sourceTree = "<group>"; };
 		79DA98D5285A67540071D4D1 /* CompanyImages.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyImages.swift.swift; sourceTree = "<group>"; };
 		79E0CCD5285CB9CF007A5361 /* ProjectSubcriptionViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionViewable.swift; sourceTree = "<group>"; };
+		79E0CCD7285CBA19007A5361 /* SingleButtonAlertViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertViewable.swift; sourceTree = "<group>"; };
+		79E0CCD9285CBA49007A5361 /* AvatarSelectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionViewDelegate.swift; sourceTree = "<group>"; };
+		79E0CCDB285CBA5A007A5361 /* AvatarSelectionViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionViewable.swift; sourceTree = "<group>"; };
+		79E0CCDD285CBA73007A5361 /* AvatarSelectionPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenting.swift; sourceTree = "<group>"; };
 		79E6424C27F098D30046A2F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		79E8389E280AF7C5001C46AD /* HomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsView.swift; sourceTree = "<group>"; };
 		79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
@@ -385,6 +393,7 @@
 				7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */,
 				79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */,
 				7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */,
+				79E0CCD7285CBA19007A5361 /* SingleButtonAlertViewable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -393,6 +402,9 @@
 			isa = PBXGroup;
 			children = (
 				79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */,
+				79E0CCD9285CBA49007A5361 /* AvatarSelectionViewDelegate.swift */,
+				79E0CCDB285CBA5A007A5361 /* AvatarSelectionViewable.swift */,
+				79E0CCDD285CBA73007A5361 /* AvatarSelectionPresenting.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1021,6 +1033,7 @@
 				7993C9B628104C6D00526AF2 /* LogoutAlertPresenter.swift in Sources */,
 				79222EA327F643D60051334A /* CircleProgressView.swift in Sources */,
 				79E838A3280AF804001C46AD /* StudentHomeView.swift in Sources */,
+				79E0CCDC285CBA5A007A5361 /* AvatarSelectionViewable.swift in Sources */,
 				C057E8F52807954B004E44C3 /* AvatarSelectionCoordinator.swift in Sources */,
 				7993C9BA28104E7400526AF2 /* SmallAlertButton.swift in Sources */,
 				C05AA30327FFAA7400230698 /* SingleButtonAlertViewController.swift in Sources */,
@@ -1029,6 +1042,7 @@
 				79DA98BB285A5DF40071D4D1 /* Icons.swift in Sources */,
 				79DA98D2285A668C0071D4D1 /* FullAvatarImages.swift in Sources */,
 				79DA98C7285A5EF60071D4D1 /* RegEx.swift in Sources */,
+				79E0CCD8285CBA19007A5361 /* SingleButtonAlertViewable.swift in Sources */,
 				7934543F285CB23E00D3C08B /* LogoutAlertViewable.swift in Sources */,
 				797A68EC27F4649200ABDAC6 /* UIColor+Extension.swift in Sources */,
 				7952058127FE382D00A89012 /* TabBarViewController.swift in Sources */,
@@ -1038,6 +1052,7 @@
 				7906FE61281321F900E4A83A /* Float+Extension.swift in Sources */,
 				793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */,
 				79345438285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift in Sources */,
+				79E0CCDE285CBA73007A5361 /* AvatarSelectionPresenting.swift in Sources */,
 				79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */,
 				79DA98D6285A67540071D4D1 /* CompanyImages.swift.swift in Sources */,
 				79DA98CE285A60D30071D4D1 /* PharusIcons.swift in Sources */,
@@ -1046,6 +1061,7 @@
 				79345429285CAEE200D3C08B /* SendFileFlow.swift in Sources */,
 				79E0CCD6285CB9CF007A5361 /* ProjectSubcriptionViewable.swift in Sources */,
 				7993C9AF28103CD500526AF2 /* ProjectSubcriptionAlertCoordinator.swift in Sources */,
+				79E0CCDA285CBA49007A5361 /* AvatarSelectionViewDelegate.swift in Sources */,
 				79345427285CAE9900D3C08B /* SendFilePresenterProtocol.swift in Sources */,
 				79345408285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift in Sources */,
 				C04561A827EA041B007EC5C3 /* Coordinator.swift in Sources */,
