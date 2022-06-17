@@ -103,4 +103,4 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
 
 // MARK: - Student Project Detail Viewable
 
-extension StudentProjectsViewController: StudentProjectsViewable { }
+extension SendFileViewController: StudentProjectsViewable { }

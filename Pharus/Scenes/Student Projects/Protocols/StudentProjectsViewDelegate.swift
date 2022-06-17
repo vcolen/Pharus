@@ -7,4 +7,5 @@
 
 import Foundation
 
+// swiftlint:disable class_delegate_protocol
 protocol StudentProjectsViewDelegate { }

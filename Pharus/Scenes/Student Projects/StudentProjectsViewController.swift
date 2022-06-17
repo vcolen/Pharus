@@ -92,6 +92,14 @@ class StudentProjectsViewController: UIViewController {
     }
 }
 
+// MARK: - Student Projects View Delegate
+
+extension StudentProjectsViewController: StudentProjectsViewDelegate { }
+
+// MARK: - Student Projects Viewable
+
+extension StudentProjectsViewController: StudentProjectsViewable { }
+
 // MARK: - UITableViewDataSource
 
 extension StudentProjectsViewController: UITableViewDataSource {
