@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol AvatarSelectionFlow {
-    func start()
-}
-
 class AvatarSelectionCoordinator: Coordinator {
 
     // MARK: - Properties
