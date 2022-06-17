@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol LogoutAlertViewable { }
+protocol LogoutAlertViewable: AnyObject { }

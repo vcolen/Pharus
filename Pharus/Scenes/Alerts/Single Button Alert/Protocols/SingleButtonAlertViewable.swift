@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol SingleButtonAlertViewable { }
+protocol SingleButtonAlertViewable: AnyObject { }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SendFilePresenterProtocol {
+protocol SendFilePresenterProtocol: AnyObject {
     func uploadFile()
     func sendFile()
 }

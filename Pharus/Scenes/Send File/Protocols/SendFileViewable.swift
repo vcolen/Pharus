@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol SendFileViewable { }
+protocol SendFileViewable: AnyObject { }

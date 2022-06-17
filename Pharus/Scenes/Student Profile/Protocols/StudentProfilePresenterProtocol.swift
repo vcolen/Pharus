@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol StudentProfilePresenterProtocol { }
+protocol StudentProfilePresenterProtocol: AnyObject { }

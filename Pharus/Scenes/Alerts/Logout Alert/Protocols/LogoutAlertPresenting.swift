@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol LogoutAlertPresenting {
+protocol LogoutAlertPresenting: AnyObject {
     func closeModal()
     func logout()
 }
