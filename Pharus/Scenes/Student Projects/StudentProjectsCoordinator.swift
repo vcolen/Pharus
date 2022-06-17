@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol StudentProjectsFlow {
-    func showStudentProject(_ project: ProjectModel)
-}
-
 class StudentProjectsCoordinator: Coordinator {
 
     // MARK: - Properties

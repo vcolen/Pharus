@@ -5,11 +5,7 @@
 //  Created by Victor Colen on 29/03/22.
 //
 
-import UIKit
-
-protocol StudentProjectsPresenterProtocol {
-    func showStudentProject(project: ProjectModel)
-}
+import Foundation
 
 class StudentProjectsPresenter: StudentProjectsPresenterProtocol {
 

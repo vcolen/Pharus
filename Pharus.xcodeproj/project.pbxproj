@@ -15,6 +15,8 @@
 		79164BB927F1251C00167B8A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79164BB827F1251C00167B8A /* UIView+Extension.swift */; };
 		79222EA127F63FC50051334A /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79222EA027F63FC50051334A /* CGFloat+Extension.swift */; };
 		79222EA327F643D60051334A /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79222EA227F643D60051334A /* CircleProgressView.swift */; };
+		793453FA285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453F9285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift */; };
+		793453FC285CAAD000D3C08B /* StudentProjectsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453FB285CAAD000D3C08B /* StudentProjectsFlow.swift */; };
 		793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73827FE177000CD8334 /* CheckmarkButton.swift */; };
 		793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73A27FE183000CD8334 /* UIImage+Extension.swift */; };
 		793EC73D27FE197B00CD8334 /* StudentProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */; };
@@ -137,6 +139,8 @@
 		79164BB827F1251C00167B8A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		79222EA027F63FC50051334A /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		79222EA227F643D60051334A /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		793453F9285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsPresenterProtocol.swift; sourceTree = "<group>"; };
+		793453FB285CAAD000D3C08B /* StudentProjectsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsFlow.swift; sourceTree = "<group>"; };
 		793EC73827FE177000CD8334 /* CheckmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		793EC73A27FE183000CD8334 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileButton.swift; sourceTree = "<group>"; };
@@ -285,6 +289,15 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		793453F8285CAA5600D3C08B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				793453F9285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift */,
+				793453FB285CAAD000D3C08B /* StudentProjectsFlow.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		79434A652809129A006D0184 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,10 +331,11 @@
 		79434A67280912B2006D0184 /* Student Projects */ = {
 			isa = PBXGroup;
 			children = (
-				7943975927F3C5D20075102B /* StudentProjectsViewController.swift */,
+				793453F8285CAA5600D3C08B /* Protocols */,
 				7943975D27F3C6020075102B /* StudentProjectCell.swift */,
-				7943975F27F3C6130075102B /* StudentProjectsPresenter.swift */,
 				7943975727F3C5BF0075102B /* StudentProjectsCoordinator.swift */,
+				7943975F27F3C6130075102B /* StudentProjectsPresenter.swift */,
+				7943975927F3C5D20075102B /* StudentProjectsViewController.swift */,
 			);
 			path = "Student Projects";
 			sourceTree = "<group>";
@@ -817,6 +831,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793453FA285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift in Sources */,
 				79DA98D0285A60D90071D4D1 /* PharusImages.swift in Sources */,
 				C09DB2BE28138C6B0028FDA7 /* StudentModel.swift in Sources */,
 				79A2C777280C4A1700B3159B /* MainCardButton.swift in Sources */,
@@ -885,6 +900,7 @@
 				795A02192809B695000D0B84 /* ProjectSheetCoordinator.swift in Sources */,
 				79A4B75628124214002C018C /* HomeNewsViewController.swift in Sources */,
 				7910D9D227FD0B8300A8DDA0 /* UIFont+Extension.swift in Sources */,
+				793453FC285CAAD000D3C08B /* StudentProjectsFlow.swift in Sources */,
 				79AF90FB28043DEA0094AB97 /* StudentProjectDetailPresenter.swift in Sources */,
 				79A2C779280C587F00B3159B /* ProjectScheduleView.swift in Sources */,
 				79A4FCD1280E58B900B509FE /* UIStackView+Extension.swift in Sources */,
