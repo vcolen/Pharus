@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LoginPresenter: LoginPresenterProtocol {
+class LoginPresenter: LoginPresenting {
 
     // MARK: - Properties
 
