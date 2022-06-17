@@ -113,6 +113,8 @@
 		79E0CCE8285CBB74007A5361 /* StudentHomeViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE7285CBB74007A5361 /* StudentHomeViewable.swift */; };
 		79E0CCEB285CBBBD007A5361 /* HomeNewsViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCEA285CBBBD007A5361 /* HomeNewsViewable.swift */; };
 		79E0CCED285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCEC285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift */; };
+		79E0CCEF285CBC04007A5361 /* StudentProfileViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCEE285CBC04007A5361 /* StudentProfileViewable.swift */; };
+		79E0CCF1285CBC1B007A5361 /* StudentProfileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCF0285CBC1B007A5361 /* StudentProfileViewDelegate.swift */; };
 		79E6424D27F098D30046A2F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6424C27F098D30046A2F0 /* Network.swift */; };
 		79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8389E280AF7C5001C46AD /* HomeNewsView.swift */; };
 		79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */; };
@@ -279,6 +281,8 @@
 		79E0CCE7285CBB74007A5361 /* StudentHomeViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewable.swift; sourceTree = "<group>"; };
 		79E0CCEA285CBBBD007A5361 /* HomeNewsViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewable.swift; sourceTree = "<group>"; };
 		79E0CCEC285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewDelegate.swift.swift; sourceTree = "<group>"; };
+		79E0CCEE285CBC04007A5361 /* StudentProfileViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewable.swift; sourceTree = "<group>"; };
+		79E0CCF0285CBC1B007A5361 /* StudentProfileViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewDelegate.swift; sourceTree = "<group>"; };
 		79E6424C27F098D30046A2F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		79E8389E280AF7C5001C46AD /* HomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsView.swift; sourceTree = "<group>"; };
 		79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
@@ -472,6 +476,8 @@
 			children = (
 				79345430285CAF8700D3C08B /* StudentProfileFlow.swift */,
 				79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */,
+				79E0CCEE285CBC04007A5361 /* StudentProfileViewable.swift */,
+				79E0CCF0285CBC1B007A5361 /* StudentProfileViewDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1085,6 +1091,7 @@
 				79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */,
 				79DA98D6285A67540071D4D1 /* CompanyImages.swift.swift in Sources */,
 				79DA98CE285A60D30071D4D1 /* PharusIcons.swift in Sources */,
+				79E0CCF1285CBC1B007A5361 /* StudentProfileViewDelegate.swift in Sources */,
 				79DA98D4285A66980071D4D1 /* CircleAvatarImages.swift in Sources */,
 				7934541E285CADF300D3C08B /* LoginViewDelegate.swift in Sources */,
 				79E0CCE8285CBB74007A5361 /* StudentHomeViewable.swift in Sources */,
@@ -1141,6 +1148,7 @@
 				C008AF1A27F1ED3700AD94C9 /* LoginCoodinator.swift in Sources */,
 				7943975A27F3C5D20075102B /* StudentProjectsViewController.swift in Sources */,
 				79DA98C9285A5F010071D4D1 /* CellReuseIdentifiers.swift in Sources */,
+				79E0CCEF285CBC04007A5361 /* StudentProfileViewable.swift in Sources */,
 				795A02192809B695000D0B84 /* ProjectSheetCoordinator.swift in Sources */,
 				79345420285CAE2000D3C08B /* ProjectSheetProtocol.swift in Sources */,
 				79345414285CAD0C00D3C08B /* AvatarSelectionFlow.swift in Sources */,
