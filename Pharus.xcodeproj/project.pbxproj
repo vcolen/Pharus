@@ -118,6 +118,7 @@
 		79E0CCF3285CBC3F007A5361 /* StudentProjectDetailViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCF2285CBC3F007A5361 /* StudentProjectDetailViewable.swift */; };
 		79E0CCF5285CBC64007A5361 /* StudentProjectsViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCF4285CBC64007A5361 /* StudentProjectsViewable.swift */; };
 		79E0CCF7285CBC72007A5361 /* StudentProjectsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCF6285CBC72007A5361 /* StudentProjectsViewDelegate.swift */; };
+		79E0CCFA285CBCBB007A5361 /* StudentProjectsRankingCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCF9285CBCBB007A5361 /* StudentProjectsRankingCoordinating.swift */; };
 		79E6424D27F098D30046A2F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6424C27F098D30046A2F0 /* Network.swift */; };
 		79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8389E280AF7C5001C46AD /* HomeNewsView.swift */; };
 		79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */; };
@@ -289,6 +290,7 @@
 		79E0CCF2285CBC3F007A5361 /* StudentProjectDetailViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailViewable.swift; sourceTree = "<group>"; };
 		79E0CCF4285CBC64007A5361 /* StudentProjectsViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsViewable.swift; sourceTree = "<group>"; };
 		79E0CCF6285CBC72007A5361 /* StudentProjectsViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsViewDelegate.swift; sourceTree = "<group>"; };
+		79E0CCF9285CBCBB007A5361 /* StudentProjectsRankingCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingCoordinating.swift; sourceTree = "<group>"; };
 		79E6424C27F098D30046A2F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		79E8389E280AF7C5001C46AD /* HomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsView.swift; sourceTree = "<group>"; };
 		79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
@@ -579,6 +581,7 @@
 			isa = PBXGroup;
 			children = (
 				79C577D127FBBB9800046B00 /* StudentProjectsRankingViewController.swift */,
+				79E0CCF8285CBC88007A5361 /* Protocols */,
 				C05AA2CD27FC82AB00230698 /* StudentProjectsRankingCoordinator.swift */,
 				79C577CF27FBBB8100046B00 /* StudentProjectRankingCell.swift */,
 			);
@@ -725,6 +728,14 @@
 			children = (
 				79E0CCEA285CBBBD007A5361 /* HomeNewsViewable.swift */,
 				79E0CCEC285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		79E0CCF8285CBC88007A5361 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				79E0CCF9285CBCBB007A5361 /* StudentProjectsRankingCoordinating.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1150,6 +1161,7 @@
 				C01BB6C5280B8C9C004D4790 /* StudentProfileViewController.swift in Sources */,
 				C05AA2F527FFA66D00230698 /* SingleButtonAlertView.swift in Sources */,
 				79DA98C5285A5E1A0071D4D1 /* Company.swift in Sources */,
+				79E0CCFA285CBCBB007A5361 /* StudentProjectsRankingCoordinating.swift in Sources */,
 				C01BB6C1280B8C84004D4790 /* StudenteProfileView.swift in Sources */,
 				7993C9AD28103CAB00526AF2 /* ProjectSubcriptionAlertPresenter.swift in Sources */,
 				795005AC2811E75A009C3716 /* Project.swift in Sources */,
