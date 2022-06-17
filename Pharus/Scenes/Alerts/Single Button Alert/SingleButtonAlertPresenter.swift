@@ -12,19 +12,19 @@ protocol SingleButtonAlertPresenterProtocol {
 }
 
 class SingleButtonAlertPresenter: SingleButtonAlertPresenterProtocol {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     private var coordinator: SingleButtonAlertCoordinator
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(coordinator: SingleButtonAlertCoordinator) {
         self.coordinator = coordinator
     }
-    
-    //MARK: - Actions
-    
+
+    // MARK: - Actions
+
     func closeModal() {
         coordinator.closeModal()
     }

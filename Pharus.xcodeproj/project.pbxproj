@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B61B3516451D1C37F478EFF /* Pods_Pharus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */; };
 		7906FE61281321F900E4A83A /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906FE60281321F900E4A83A /* Float+Extension.swift */; };
 		7910D9CE27FCEFE900A8DDA0 /* StudentProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910D9CD27FCEFE900A8DDA0 /* StudentProjectDetailView.swift */; };
 		7910D9D027FCF5C800A8DDA0 /* StudentProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910D9CF27FCF5C800A8DDA0 /* StudentProjectDetailViewController.swift */; };
@@ -55,6 +56,21 @@
 		79AF90FB28043DEA0094AB97 /* StudentProjectDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF90FA28043DEA0094AB97 /* StudentProjectDetailPresenter.swift */; };
 		79AF90FD2804478F0094AB97 /* ProjectTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF90FC2804478F0094AB97 /* ProjectTaskView.swift */; };
 		79C577D027FBBB8100046B00 /* StudentProjectRankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C577CF27FBBB8100046B00 /* StudentProjectRankingCell.swift */; };
+		79DA98B9285A5DEE0071D4D1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98B8285A5DEE0071D4D1 /* Assets.swift */; };
+		79DA98BB285A5DF40071D4D1 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98BA285A5DF40071D4D1 /* Icons.swift */; };
+		79DA98BD285A5DF90071D4D1 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98BC285A5DF90071D4D1 /* Images.swift */; };
+		79DA98BF285A5E010071D4D1 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98BE285A5E010071D4D1 /* Avatar.swift */; };
+		79DA98C1285A5E070071D4D1 /* FullImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C0285A5E070071D4D1 /* FullImage.swift */; };
+		79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C2285A5E0E0071D4D1 /* CircleImage.swift */; };
+		79DA98C5285A5E1A0071D4D1 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C4285A5E1A0071D4D1 /* Company.swift */; };
+		79DA98C7285A5EF60071D4D1 /* RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C6285A5EF60071D4D1 /* RegEx.swift */; };
+		79DA98C9285A5F010071D4D1 /* CellReuseIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98C8285A5F010071D4D1 /* CellReuseIdentifiers.swift */; };
+		79DA98CB285A5F0C0071D4D1 /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98CA285A5F0C0071D4D1 /* DateFormats.swift */; };
+		79DA98CE285A60D30071D4D1 /* PharusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98CD285A60D30071D4D1 /* PharusIcons.swift */; };
+		79DA98D0285A60D90071D4D1 /* PharusImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98CF285A60D90071D4D1 /* PharusImages.swift */; };
+		79DA98D2285A668C0071D4D1 /* FullAvatarImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98D1285A668C0071D4D1 /* FullAvatarImages.swift */; };
+		79DA98D4285A66980071D4D1 /* CircleAvatarImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98D3285A66980071D4D1 /* CircleAvatarImages.swift */; };
+		79DA98D6285A67540071D4D1 /* CompanyImages.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98D5285A67540071D4D1 /* CompanyImages.swift.swift */; };
 		79E6424D27F098D30046A2F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6424C27F098D30046A2F0 /* Network.swift */; };
 		79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8389E280AF7C5001C46AD /* HomeNewsView.swift */; };
 		79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */; };
@@ -164,6 +180,21 @@
 		79AF90FC2804478F0094AB97 /* ProjectTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskView.swift; sourceTree = "<group>"; };
 		79C577CF27FBBB8100046B00 /* StudentProjectRankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectRankingCell.swift; sourceTree = "<group>"; };
 		79C577D127FBBB9800046B00 /* StudentProjectsRankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingViewController.swift; sourceTree = "<group>"; };
+		79DA98B8285A5DEE0071D4D1 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		79DA98BA285A5DF40071D4D1 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		79DA98BC285A5DF90071D4D1 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		79DA98BE285A5E010071D4D1 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		79DA98C0285A5E070071D4D1 /* FullImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImage.swift; sourceTree = "<group>"; };
+		79DA98C2285A5E0E0071D4D1 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		79DA98C4285A5E1A0071D4D1 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		79DA98C6285A5EF60071D4D1 /* RegEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegEx.swift; sourceTree = "<group>"; };
+		79DA98C8285A5F010071D4D1 /* CellReuseIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseIdentifiers.swift; sourceTree = "<group>"; };
+		79DA98CA285A5F0C0071D4D1 /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
+		79DA98CD285A60D30071D4D1 /* PharusIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharusIcons.swift; sourceTree = "<group>"; };
+		79DA98CF285A60D90071D4D1 /* PharusImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharusImages.swift; sourceTree = "<group>"; };
+		79DA98D1285A668C0071D4D1 /* FullAvatarImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullAvatarImages.swift; sourceTree = "<group>"; };
+		79DA98D3285A66980071D4D1 /* CircleAvatarImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAvatarImages.swift; sourceTree = "<group>"; };
+		79DA98D5285A67540071D4D1 /* CompanyImages.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyImages.swift.swift; sourceTree = "<group>"; };
 		79E6424C27F098D30046A2F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		79E8389E280AF7C5001C46AD /* HomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsView.swift; sourceTree = "<group>"; };
 		79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
@@ -212,6 +243,9 @@
 		C05AA2FE27FFA6F300230698 /* SendFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileView.swift; sourceTree = "<group>"; };
 		C05AA30227FFAA7400230698 /* SingleButtonAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertViewController.swift; sourceTree = "<group>"; };
 		C05AA30627FFAA9500230698 /* SendFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileViewController.swift; sourceTree = "<group>"; };
+		D4BA86555EDE4B604F9448CB /* Pods-Pharus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharus.release.xcconfig"; path = "Target Support Files/Pods-Pharus/Pods-Pharus.release.xcconfig"; sourceTree = "<group>"; };
+		D6E854262F5DBF584644FA5C /* Pods-Pharus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharus.debug.xcconfig"; path = "Target Support Files/Pods-Pharus/Pods-Pharus.debug.xcconfig"; sourceTree = "<group>"; };
+		F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pharus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,12 +260,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B61B3516451D1C37F478EFF /* Pods_Pharus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67F55506ADFE85F816E51F86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6E854262F5DBF584644FA5C /* Pods-Pharus.debug.xcconfig */,
+				D4BA86555EDE4B604F9448CB /* Pods-Pharus.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7906FE5F2812C04000E4A83A /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,7 +446,7 @@
 				794D9ABC27F8D15A0017D5EB /* Date+Extension.swift */,
 				797A68EB27F4649200ABDAC6 /* UIColor+Extension.swift */,
 				7910D9D127FD0B8300A8DDA0 /* UIFont+Extension.swift */,
-				793EC73A27FE183000CD8334 /* UIImage+Extension.swift */,
+				79DA98CC285A60810071D4D1 /* UIImage */,
 				7906FE60281321F900E4A83A /* Float+Extension.swift */,
 				79A4FCD0280E58B800B509FE /* UIStackView+Extension.swift */,
 				79164BB827F1251C00167B8A /* UIView+Extension.swift */,
@@ -411,10 +455,41 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		79DA98B7285A5DCC0071D4D1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				79DA98B8285A5DEE0071D4D1 /* Assets.swift */,
+				79DA98BE285A5E010071D4D1 /* Avatar.swift */,
+				79DA98C8285A5F010071D4D1 /* CellReuseIdentifiers.swift */,
+				79DA98C2285A5E0E0071D4D1 /* CircleImage.swift */,
+				79DA98C4285A5E1A0071D4D1 /* Company.swift */,
+				7963213127F23C9200A202EE /* Constants.swift */,
+				79DA98CA285A5F0C0071D4D1 /* DateFormats.swift */,
+				79DA98C0285A5E070071D4D1 /* FullImage.swift */,
+				79DA98BA285A5DF40071D4D1 /* Icons.swift */,
+				79DA98BC285A5DF90071D4D1 /* Images.swift */,
+				79DA98C6285A5EF60071D4D1 /* RegEx.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		79DA98CC285A60810071D4D1 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				79DA98D3285A66980071D4D1 /* CircleAvatarImages.swift */,
+				79DA98D1285A668C0071D4D1 /* FullAvatarImages.swift */,
+				79DA98CD285A60D30071D4D1 /* PharusIcons.swift */,
+				79DA98CF285A60D90071D4D1 /* PharusImages.swift */,
+				79DA98D5285A67540071D4D1 /* CompanyImages.swift.swift */,
+				793EC73A27FE183000CD8334 /* UIImage+Extension.swift */,
+			);
+			name = UIImage;
+			sourceTree = "<group>";
+		};
 		79E6424B27F098C10046A2F0 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				7963213127F23C9200A202EE /* Constants.swift */,
+				79DA98B7285A5DCC0071D4D1 /* Constants */,
 				79E6424C27F098D30046A2F0 /* Network.swift */,
 			);
 			name = Service;
@@ -507,6 +582,8 @@
 				79F06D9F27F28FCD00343865 /* PharusTests */,
 				C045618827EA03A5007EC5C3 /* Products */,
 				79AF90F628043A120094AB97 /* Recovered References */,
+				67F55506ADFE85F816E51F86 /* Pods */,
+				E76B9285E1526767CD8ECE9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -569,6 +646,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		E76B9285E1526767CD8ECE9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -594,9 +679,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C045619B27EA03A6007EC5C3 /* Build configuration list for PBXNativeTarget "Pharus" */;
 			buildPhases = (
+				C5F94E96521D7BBC338CE7FD /* [CP] Check Pods Manifest.lock */,
 				C045618327EA03A5007EC5C3 /* Sources */,
 				C045618427EA03A5007EC5C3 /* Frameworks */,
 				C045618527EA03A5007EC5C3 /* Resources */,
+				7993923728592F4C00A324AE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -675,6 +762,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7993923728592F4C00A324AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		C5F94E96521D7BBC338CE7FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pharus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		79F06D9A27F28FCD00343865 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -688,6 +817,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79DA98D0285A60D90071D4D1 /* PharusImages.swift in Sources */,
 				C09DB2BE28138C6B0028FDA7 /* StudentModel.swift in Sources */,
 				79A2C777280C4A1700B3159B /* MainCardButton.swift in Sources */,
 				C09DB2B528138C1B0028FDA7 /* SingleButtonAlertCoordinator.swift in Sources */,
@@ -702,16 +832,25 @@
 				C057E8F52807954B004E44C3 /* AvatarSelectionCoordinator.swift in Sources */,
 				7993C9BA28104E7400526AF2 /* SmallAlertButton.swift in Sources */,
 				C05AA30327FFAA7400230698 /* SingleButtonAlertViewController.swift in Sources */,
+				79DA98CB285A5F0C0071D4D1 /* DateFormats.swift in Sources */,
+				79DA98BB285A5DF40071D4D1 /* Icons.swift in Sources */,
+				79DA98D2285A668C0071D4D1 /* FullAvatarImages.swift in Sources */,
+				79DA98C7285A5EF60071D4D1 /* RegEx.swift in Sources */,
 				797A68EC27F4649200ABDAC6 /* UIColor+Extension.swift in Sources */,
 				7952058127FE382D00A89012 /* TabBarViewController.swift in Sources */,
+				79DA98B9285A5DEE0071D4D1 /* Assets.swift in Sources */,
 				7906FE61281321F900E4A83A /* Float+Extension.swift in Sources */,
 				793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */,
 				79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */,
+				79DA98D6285A67540071D4D1 /* CompanyImages.swift.swift in Sources */,
+				79DA98CE285A60D30071D4D1 /* PharusIcons.swift in Sources */,
+				79DA98D4285A66980071D4D1 /* CircleAvatarImages.swift in Sources */,
 				7993C9AF28103CD500526AF2 /* ProjectSubcriptionAlertCoordinator.swift in Sources */,
 				C04561A827EA041B007EC5C3 /* Coordinator.swift in Sources */,
 				795005A82811E734009C3716 /* Student.swift in Sources */,
 				C05AA2BC27FC740E00230698 /* TabBarCoordinator.swift in Sources */,
 				79EE571B280B889200F01069 /* StudentHomePresenter.swift in Sources */,
+				79DA98C1285A5E070071D4D1 /* FullImage.swift in Sources */,
 				79FB0CCB27F33118001D36A7 /* Bundle+Extension.swift in Sources */,
 				7993C9B228104C5800526AF2 /* LogoutAlertView.swift in Sources */,
 				7910D9D027FCF5C800A8DDA0 /* StudentProjectDetailViewController.swift in Sources */,
@@ -723,8 +862,10 @@
 				79AF90FD2804478F0094AB97 /* ProjectTaskView.swift in Sources */,
 				79E6424D27F098D30046A2F0 /* Network.swift in Sources */,
 				7993C9A928102E1800526AF2 /* SecondaryCardButton.swift in Sources */,
+				79DA98BD285A5DF90071D4D1 /* Images.swift in Sources */,
 				79164BB927F1251C00167B8A /* UIView+Extension.swift in Sources */,
 				7943975827F3C5BF0075102B /* StudentProjectsCoordinator.swift in Sources */,
+				79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */,
 				793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */,
 				7952058327FE394900A89012 /* ProjectSheetView.swift in Sources */,
 				C05AA2CE27FC82AB00230698 /* StudentProjectsRankingCoordinator.swift in Sources */,
@@ -732,6 +873,7 @@
 				795005AA2811E74D009C3716 /* Task.swift in Sources */,
 				C01BB6C5280B8C9C004D4790 /* StudentProfileViewController.swift in Sources */,
 				C05AA2F527FFA66D00230698 /* SingleButtonAlertView.swift in Sources */,
+				79DA98C5285A5E1A0071D4D1 /* Company.swift in Sources */,
 				C01BB6C1280B8C84004D4790 /* StudenteProfileView.swift in Sources */,
 				7993C9AD28103CAB00526AF2 /* ProjectSubcriptionAlertPresenter.swift in Sources */,
 				795005AC2811E75A009C3716 /* Project.swift in Sources */,
@@ -739,6 +881,7 @@
 				79AF90F728043A590094AB97 /* SendFileView.swift in Sources */,
 				C008AF1A27F1ED3700AD94C9 /* LoginCoodinator.swift in Sources */,
 				7943975A27F3C5D20075102B /* StudentProjectsViewController.swift in Sources */,
+				79DA98C9285A5F010071D4D1 /* CellReuseIdentifiers.swift in Sources */,
 				795A02192809B695000D0B84 /* ProjectSheetCoordinator.swift in Sources */,
 				79A4B75628124214002C018C /* HomeNewsViewController.swift in Sources */,
 				7910D9D227FD0B8300A8DDA0 /* UIFont+Extension.swift in Sources */,
@@ -753,6 +896,7 @@
 				79C577D027FBBB8100046B00 /* StudentProjectRankingCell.swift in Sources */,
 				79E838AE280B067D001C46AD /* SingleButtonAlertPresenter.swift in Sources */,
 				C05AA30727FFAA9500230698 /* SendFileViewController.swift in Sources */,
+				79DA98BF285A5E010071D4D1 /* Avatar.swift in Sources */,
 				C04561AB27EA0428007EC5C3 /* AppCoordinator.swift in Sources */,
 				79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */,
 				7963213027F23AF000A202EE /* LoginPresenter.swift in Sources */,
@@ -953,6 +1097,7 @@
 		};
 		C045619C27EA03A6007EC5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6E854262F5DBF584644FA5C /* Pods-Pharus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -975,6 +1120,7 @@
 		};
 		C045619D27EA03A6007EC5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4BA86555EDE4B604F9448CB /* Pods-Pharus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

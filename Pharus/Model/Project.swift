@@ -17,7 +17,7 @@ struct Project: Codable {
     let mentor: String
     let company: String
     let tasks: [Task]
-    
+
     enum CodingKeys: String, CodingKey {
         case id, name, isSubscribed, isComplete, score, placement
         case projectDescription = "description"

@@ -14,35 +14,35 @@ protocol LoginPresenterProtocol {
 }
 
 class LoginPresenter: LoginPresenterProtocol {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     private var coordinator: LoginCoordinator
     private var student: Student
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(coordinator: LoginCoordinator) {
         self.coordinator = coordinator
         self.student = Bundle.main.decode("Student.json")
     }
-    
-    //MARK: - Actions
-    
+
+    // MARK: - Actions
+
     func isValidEmail(email: String) -> Bool {
-        let emailRegEx = K.RegEx.emailRegEx
-        
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailRegEx = Constants.regEx.emailRegEx
+
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPredicate.evaluate(with: email)
     }
-    
+
     func isValidPassword(password: String) -> Bool {
-        let passwordRegEx = K.RegEx.passwordRegEx
-        
+        let passwordRegEx = Constants.regEx.passwordRegEx
+
         let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         return passwordPredicate.evaluate(with: password)
     }
-    
+
     func loginUser(email: String, password: String) -> Bool {
         if email == student.email && password == student.password {
             let studentModel = makeStudentModel(with: student)
@@ -51,17 +51,14 @@ class LoginPresenter: LoginPresenterProtocol {
         }
         return false
     }
-    
+
     func makeStudentModel(with student: Student) -> StudentModel {
         var projectModelArray = [ProjectModel]()
-        
         for project in student.projects {
             var taskModelArray = [TaskModel]()
             for task in project.tasks {
-                let taskModel = TaskModel(
-                    title: task.title,
-                    isComplete: task.isComplete,
-                    description: task.taskDescription
+                let taskModel = TaskModel(title: task.title, isComplete: task.isComplete,
+                                          description: task.taskDescription
                 )
                 taskModelArray.append(taskModel)
             }
@@ -83,7 +80,6 @@ class LoginPresenter: LoginPresenterProtocol {
             )
             projectModelArray.append(projectModel)
         }
-        
         let studentModel = StudentModel(
             id: student.id,
             firstName: student.firstName,
@@ -100,7 +96,6 @@ class LoginPresenter: LoginPresenterProtocol {
             username: student.username,
             projects: projectModelArray
         )
-        
         return studentModel
     }
 }

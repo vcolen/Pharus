@@ -13,25 +13,23 @@ protocol SendFilePresenterProtocol {
 }
 
 class SendFilePresenter {
-    
-    //MARK: - Properties
-    
+    // MARK: - Properties
+
     var coordinator: SendFileCoordinator
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(coordinator: SendFileCoordinator) {
         self.coordinator = coordinator
     }
-    
-    //MARK: - Actions
+
+    // MARK: - Actions
 
     func sendFile() {
         coordinator.showFileSentAlert()
     }
-    
+
     func closeSheet() {
         coordinator.closeSheet()
     }
 }
-

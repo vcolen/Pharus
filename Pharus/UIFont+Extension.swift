@@ -6,10 +6,9 @@
 //
 import UIKit
 
-
-//MARK: - Constants
+// MARK: - Constants
 extension UIFont {
-    
+
     static let largeTitleBold = customFont(font: .montserrat, ofSize: .large, weight: .bold)
     static let largeTitleSemiBold = customFont(font: .montserrat, ofSize: .large, weight: .semibold)
     static let largeTitleMedium = customFont(font: .montserrat, ofSize: .large, weight: .medium)
@@ -17,17 +16,17 @@ extension UIFont {
     static let mediumTitleBold = customFont(font: .montserrat, ofSize: .medium, weight: .bold)
     static let mediumTitleSemiBold = customFont(font: .montserrat, ofSize: .medium, weight: .semibold)
     static let smallTitleMedium = customFont(font: .montserrat, ofSize: .small, weight: .medium)
-    
+
     static let largeButton = customFont(font: .montserrat, ofSize: .large, weight: .medium)
     static let mediumButtonSemiBold = customFont(font: .montserrat, ofSize: .medium, weight: .semibold)
     static let smallButtonSemiBold = customFont(font: .montserrat, ofSize: .small, weight: .semibold)
-    
+
     static let mediumBody = customFont(font: .openSans, ofSize: .medium)
     static let mediumBodyBold = customFont(font: .openSans, ofSize: .medium, weight: .bold)
     static let smallBody = customFont(font: .openSans, ofSize: .small)
     static let smallBodyBold = customFont(font: .openSans, ofSize: .small, weight: .bold)
     static let miniBody = customFont(font: .openSans, ofSize: .mini)
-    
+
     private static func customFont(
         font: FontName,
         ofSize size: FontSize,
@@ -40,7 +39,7 @@ extension UIFont {
     }
 }
 
-//MARK: - Enums
+// MARK: - Enums
 extension UIFont {
     private enum FontSize: CGFloat {
         case mini = 12
@@ -50,12 +49,12 @@ extension UIFont {
         case extraLarge = 24
         case giant = 32
     }
-    
+
     private enum FontName: String {
         case montserrat = "Montserrat"
         case openSans = "OpenSans"
     }
-    
+
     private enum FontWeight: String {
         case regular = "Regular"
         case medium = "Medium"

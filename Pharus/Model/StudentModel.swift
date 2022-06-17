@@ -7,9 +7,9 @@
 import Foundation
 
 class StudentModel: Codable {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     var id: String
     let firstName: String
     let lastName: String
@@ -24,9 +24,9 @@ class StudentModel: Codable {
     var password: String
     var username: String
     var projects: [ProjectModel]
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(
         id: String,
         firstName: String,

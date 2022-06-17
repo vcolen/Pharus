@@ -12,15 +12,15 @@ protocol SingleButtonAlertFlow {
 }
 
 class SingleButtonAlertCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     private var alertView: SingleButtonAlertView
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(
         navigationController: UINavigationController,
         alertView: SingleButtonAlertView
@@ -28,7 +28,7 @@ class SingleButtonAlertCoordinator: Coordinator {
         self.navigationController = navigationController
         self.alertView = alertView
     }
-    
+
     func start() {
         let alertPresenter = SingleButtonAlertPresenter(coordinator: self)
         let alertViewController = SingleButtonAlertViewController(
@@ -36,18 +36,16 @@ class SingleButtonAlertCoordinator: Coordinator {
             coordinator: self,
             presenter: alertPresenter
         )
-        
+
         alertViewController.modalPresentationStyle = .overFullScreen
-         
+
         navigationController.present(alertViewController, animated: true)
     }
 }
 
-//MARK: - Actions
+// MARK: - Actions
 extension SingleButtonAlertCoordinator: SingleButtonAlertFlow {
     func closeModal() {
         navigationController.topViewController?.dismiss(animated: true)
     }
 }
-
-

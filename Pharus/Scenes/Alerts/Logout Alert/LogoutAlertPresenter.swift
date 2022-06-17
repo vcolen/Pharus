@@ -13,25 +13,24 @@ protocol LogoutAlertPresenterProtocol {
 }
 
 class LogoutAlertPresenter: LogoutAlertPresenterProtocol {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     private var coordinator: LogoutAlertCoordinator
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(coordinator: LogoutAlertCoordinator) {
         self.coordinator = coordinator
     }
-    
-    //MARK: - Actions
-    
+
+    // MARK: - Actions
+
     func closeModal() {
         coordinator.closeModal()
     }
-    
+
     func logout() {
         coordinator.logout()
     }
 }
-

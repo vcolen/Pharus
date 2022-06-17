@@ -12,25 +12,24 @@ protocol StudentProjectsPresenterProtocol {
 }
 
 class StudentProjectsPresenter: StudentProjectsPresenterProtocol {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     private var coordinator: StudentProjectsCoordinator
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(coordinator: StudentProjectsCoordinator) {
         self.coordinator = coordinator
     }
-    
-    //MARK: - Actions
-    
+
+    // MARK: - Actions
+
     func showStudentProject(project: ProjectModel) {
         coordinator.showStudentProject(project)
     }
-    
+
     func showSubscribeAlert(of project: ProjectModel) {
         coordinator.showSubscribeAlert(of: project)
     }
 }
-

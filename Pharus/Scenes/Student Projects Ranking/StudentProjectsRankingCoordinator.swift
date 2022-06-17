@@ -8,15 +8,15 @@
 import UIKit
 
 class StudentProjectsRankingCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     private var student: StudentModel
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(
         navigationController: UINavigationController,
         student: StudentModel
@@ -24,7 +24,7 @@ class StudentProjectsRankingCoordinator: Coordinator {
         self.navigationController = navigationController
         self.student = student
     }
-    
+
     func start() {
         let studentProjectsRankingViewController = StudentRankingProjectsViewController(
             coordinator: self,

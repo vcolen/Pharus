@@ -8,20 +8,20 @@
 import UIKit
 
 protocol TabBarFlow {
-    
+
 }
 
 class TabBarCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+
     private var student: StudentModel
     var navigationController: UINavigationController
     var tabBarViewController: UITabBarController
     var childCoordinators: [Coordinator] = []
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     init(
         navigationController: UINavigationController,
         tabBarViewController: UITabBarController,
@@ -31,14 +31,14 @@ class TabBarCoordinator: Coordinator {
         self.tabBarViewController = tabBarViewController
         self.student = student
     }
-    
+
     func start() {
         let studentHomeCoordinator = makeStudentHomeCoordinator()
         let studentProjectsCoordinator = makeStudentProjectsCoordinator()
         let studentProjectsRankingCoordinator = makeStudentProjectsRankingCoordinator()
         let studentAvatarCoordinator = makeStudentAvatarCoordinator()
         let studentProfileCoordinator = makeStudentProfileCoordinator()
-        
+
         childCoordinators = [
             studentHomeCoordinator,
             studentProjectsCoordinator,
@@ -46,7 +46,7 @@ class TabBarCoordinator: Coordinator {
             studentProjectsRankingCoordinator,
             studentProfileCoordinator
         ]
-        
+
         tabBarViewController.setViewControllers(
             [
                 studentHomeCoordinator.navigationController,
@@ -57,119 +57,118 @@ class TabBarCoordinator: Coordinator {
             ],
             animated: true
         )
-        
+
         navigationController.setViewControllers([tabBarViewController], animated: true)
     }
-    
-    //MARK: - Actions
-    
+
+    // MARK: - Actions
+
     private func makeStudentHomeCoordinator() -> StudentHomeCoordinator {
         let coordinator = StudentHomeCoordinator(
             navigationController: UINavigationController(),
             student: student
         )
-                        
+
         coordinator
             .navigationController
             .tabBarItem
-            .image = UIImage.icons.homeTabBarIcon
-        
+            .image = .pharusIcons.homeTabBarIcon
+
         coordinator
             .navigationController
             .tabBarItem
-            .selectedImage = UIImage.icons.homeTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
-        
+            .selectedImage = .pharusIcons.homeTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
+
         coordinator.start()
-        
+
         return coordinator
     }
-    
+
     private func makeStudentProjectsCoordinator() -> StudentProjectsCoordinator {
         let coordinator = StudentProjectsCoordinator(
             navigationController: UINavigationController(),
             student: student
         )
-        
+
         coordinator
             .navigationController
             .tabBarItem
-            .image = UIImage.icons.projecsTabBarIcon
-        
+            .image = .pharusIcons.projecsTabBarIcon
+
         coordinator
             .navigationController
             .tabBarItem
-            .selectedImage = UIImage.icons.projecsTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
-        
+            .selectedImage = .pharusIcons.projecsTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
+
         coordinator.start()
-        
+
         return coordinator
     }
-    
+
     private func makeStudentProjectsRankingCoordinator() -> StudentProjectsRankingCoordinator {
         let coordinator = StudentProjectsRankingCoordinator(
             navigationController: UINavigationController(),
             student: student
         )
-        
+
         coordinator
             .navigationController
             .tabBarItem
-            .image = UIImage.icons.rankingTabBarIcon
-        
+            .image = .pharusIcons.rankingTabBarIcon
+
         coordinator
             .navigationController
             .tabBarItem
-            .selectedImage = UIImage.icons.rankingTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
-        
+            .selectedImage = .pharusIcons.rankingTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
+
         coordinator.start()
-        
+
         return coordinator
     }
-    
+
     private func makeStudentAvatarCoordinator() -> AvatarSelectionCoordinator {
         let coordinator = AvatarSelectionCoordinator(
             navigationController: UINavigationController(),
             student: student
         )
-        
+
         coordinator
             .navigationController
             .tabBarItem
-            .image = UIImage.icons.avatarTabBarIcon
-        
+            .image = .pharusIcons.avatarTabBarIcon
+
         coordinator
             .navigationController
             .tabBarItem
-            .selectedImage = UIImage.icons.avatarTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
-        
+            .selectedImage = .pharusIcons.avatarTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
+
         coordinator.start()
-        
+
         return coordinator
     }
-    
+
     private func makeStudentProfileCoordinator() -> StudentProfileCoordinator {
         let coordinator = StudentProfileCoordinator(
             navigationController: UINavigationController(),
             student: student
         )
-        
+
         coordinator
             .navigationController
             .tabBarItem
-            .image = UIImage.icons.profileTabBarIcon
-        
-        
+            .image = .pharusIcons.profileTabBarIcon
+
         coordinator
             .navigationController
             .tabBarItem
-            .selectedImage = UIImage.icons.profileTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
-        
+            .selectedImage = .pharusIcons.profileTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
+
         coordinator.start()
-        
+
         return coordinator
     }
 }
 
 extension TabBarCoordinator: TabBarFlow {
-    
+
 }
