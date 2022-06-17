@@ -22,7 +22,7 @@ class StudentProfilePresenter {
 
 // MARK: - Actions
 
-extension StudentProfilePresenter: StudentProfilePresenterProtocol {
+extension StudentProfilePresenter: StudentProfilePresenting {
     func showLogoutAlert() {
         coordinator.showLogOutAlert()
     }

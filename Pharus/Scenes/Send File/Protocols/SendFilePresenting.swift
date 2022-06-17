@@ -1,5 +1,5 @@
 //
-//  SendFilePresenterProtocol.swift
+//  SendFilePresenting.swift
 //  Pharus
 //
 //  Created by Victor Colen on 17/06/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SendFilePresenterProtocol: AnyObject {
+protocol SendFilePresenting: AnyObject {
     func uploadFile()
     func sendFile()
 }

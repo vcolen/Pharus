@@ -25,19 +25,19 @@
 		799AFAD3285CECDF001B0371 /* SendFileCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA0B285CECDE001B0371 /* SendFileCoordinating.swift */; };
 		799AFAD4285CECDF001B0371 /* SendFileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA0C285CECDE001B0371 /* SendFileViewDelegate.swift */; };
 		799AFAD5285CECDF001B0371 /* SendFileViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA0D285CECDE001B0371 /* SendFileViewable.swift */; };
-		799AFAD6285CECDF001B0371 /* SendFilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA0E285CECDE001B0371 /* SendFilePresenterProtocol.swift */; };
+		799AFAD6285CECDF001B0371 /* SendFilePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA0E285CECDE001B0371 /* SendFilePresenting.swift */; };
 		799AFAD7285CECDF001B0371 /* StudentProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA10285CECDE001B0371 /* StudentProjectsViewController.swift */; };
 		799AFAD8285CECDF001B0371 /* StudentProjectsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA11285CECDE001B0371 /* StudentProjectsCoordinator.swift */; };
 		799AFAD9285CECDF001B0371 /* StudentProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA12285CECDE001B0371 /* StudentProjectCell.swift */; };
 		799AFADA285CECDF001B0371 /* StudentProjectsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA13285CECDE001B0371 /* StudentProjectsPresenter.swift */; };
-		799AFADB285CECDF001B0371 /* StudentProjectsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA15285CECDE001B0371 /* StudentProjectsPresenterProtocol.swift */; };
+		799AFADB285CECDF001B0371 /* StudentProjectsPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA15285CECDE001B0371 /* StudentProjectsPresenting.swift */; };
 		799AFADC285CECDF001B0371 /* StudentProjectsCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA16285CECDE001B0371 /* StudentProjectsCoordinating.swift */; };
 		799AFADD285CECDF001B0371 /* StudentProjectsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA17285CECDE001B0371 /* StudentProjectsViewDelegate.swift */; };
 		799AFADE285CECDF001B0371 /* StudentProjectsViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA18285CECDE001B0371 /* StudentProjectsViewable.swift */; };
 		799AFADF285CECDF001B0371 /* StudentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA1A285CECDE001B0371 /* StudentHomeView.swift */; };
 		799AFAE0285CECDF001B0371 /* StudentHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA1B285CECDE001B0371 /* StudentHomeViewController.swift */; };
 		799AFAE1285CECDF001B0371 /* StudentHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA1C285CECDE001B0371 /* StudentHomePresenter.swift */; };
-		799AFAE2285CECDF001B0371 /* StudentHomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA1E285CECDE001B0371 /* StudentHomePresenterProtocol.swift */; };
+		799AFAE2285CECDF001B0371 /* StudentHomePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA1E285CECDE001B0371 /* StudentHomePresenting.swift */; };
 		799AFAE3285CECDF001B0371 /* StudentHomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA1F285CECDE001B0371 /* StudentHomeViewDelegate.swift */; };
 		799AFAE4285CECDF001B0371 /* StudentHomeCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA20285CECDE001B0371 /* StudentHomeCoordinating.swift */; };
 		799AFAE5285CECDF001B0371 /* StudentHomeViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA21285CECDE001B0371 /* StudentHomeViewable.swift */; };
@@ -45,7 +45,7 @@
 		799AFAE7285CECDF001B0371 /* StudentProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA24285CECDE001B0371 /* StudentProfilePresenter.swift */; };
 		799AFAE8285CECDF001B0371 /* StudentProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA25285CECDE001B0371 /* StudentProfileCoordinator.swift */; };
 		799AFAE9285CECDF001B0371 /* StudenteProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA26285CECDE001B0371 /* StudenteProfileView.swift */; };
-		799AFAEA285CECDF001B0371 /* StudentProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA28285CECDE001B0371 /* StudentProfilePresenterProtocol.swift */; };
+		799AFAEA285CECDF001B0371 /* StudentProfilePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA28285CECDE001B0371 /* StudentProfilePresenting.swift */; };
 		799AFAEB285CECDF001B0371 /* StudentProfileViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA29285CECDE001B0371 /* StudentProfileViewable.swift */; };
 		799AFAEC285CECDF001B0371 /* StudentProfileCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2A285CECDE001B0371 /* StudentProfileCoordinating.swift */; };
 		799AFAED285CECDF001B0371 /* StudentProfileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2B285CECDE001B0371 /* StudentProfileViewDelegate.swift */; };
@@ -97,7 +97,7 @@
 		799AFB1C285CECDF001B0371 /* StudentProjectDetailViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA6B285CECDE001B0371 /* StudentProjectDetailViewable.swift */; };
 		799AFB1D285CECDF001B0371 /* StudentProjectDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA6C285CECDE001B0371 /* StudentProjectDetailViewDelegate.swift */; };
 		799AFB1E285CECDF001B0371 /* StudentProjectDetailCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA6D285CECDE001B0371 /* StudentProjectDetailCoordinating.swift */; };
-		799AFB1F285CECDF001B0371 /* StudentProjectsDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA6E285CECDE001B0371 /* StudentProjectsDetailPresenterProtocol.swift */; };
+		799AFB1F285CECDF001B0371 /* StudentProjectsDetailPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA6E285CECDE001B0371 /* StudentProjectsDetailPresenting.swift */; };
 		799AFB20285CECDF001B0371 /* StudentProjectDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA6F285CECDE001B0371 /* StudentProjectDetailPresenter.swift */; };
 		799AFB21285CECDF001B0371 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA71285CECDE001B0371 /* LoginView.swift */; };
 		799AFB22285CECDF001B0371 /* LoginCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA72285CECDE001B0371 /* LoginCoodinator.swift */; };
@@ -196,19 +196,19 @@
 		799AFA0B285CECDE001B0371 /* SendFileCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendFileCoordinating.swift; sourceTree = "<group>"; };
 		799AFA0C285CECDE001B0371 /* SendFileViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendFileViewDelegate.swift; sourceTree = "<group>"; };
 		799AFA0D285CECDE001B0371 /* SendFileViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendFileViewable.swift; sourceTree = "<group>"; };
-		799AFA0E285CECDE001B0371 /* SendFilePresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendFilePresenterProtocol.swift; sourceTree = "<group>"; };
+		799AFA0E285CECDE001B0371 /* SendFilePresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendFilePresenting.swift; sourceTree = "<group>"; };
 		799AFA10285CECDE001B0371 /* StudentProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsViewController.swift; sourceTree = "<group>"; };
 		799AFA11285CECDE001B0371 /* StudentProjectsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsCoordinator.swift; sourceTree = "<group>"; };
 		799AFA12285CECDE001B0371 /* StudentProjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectCell.swift; sourceTree = "<group>"; };
 		799AFA13285CECDE001B0371 /* StudentProjectsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsPresenter.swift; sourceTree = "<group>"; };
-		799AFA15285CECDE001B0371 /* StudentProjectsPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsPresenterProtocol.swift; sourceTree = "<group>"; };
+		799AFA15285CECDE001B0371 /* StudentProjectsPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsPresenting.swift; sourceTree = "<group>"; };
 		799AFA16285CECDE001B0371 /* StudentProjectsCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsCoordinating.swift; sourceTree = "<group>"; };
 		799AFA17285CECDE001B0371 /* StudentProjectsViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsViewDelegate.swift; sourceTree = "<group>"; };
 		799AFA18285CECDE001B0371 /* StudentProjectsViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsViewable.swift; sourceTree = "<group>"; };
 		799AFA1A285CECDE001B0371 /* StudentHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeView.swift; sourceTree = "<group>"; };
 		799AFA1B285CECDE001B0371 /* StudentHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeViewController.swift; sourceTree = "<group>"; };
 		799AFA1C285CECDE001B0371 /* StudentHomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomePresenter.swift; sourceTree = "<group>"; };
-		799AFA1E285CECDE001B0371 /* StudentHomePresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomePresenterProtocol.swift; sourceTree = "<group>"; };
+		799AFA1E285CECDE001B0371 /* StudentHomePresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomePresenting.swift; sourceTree = "<group>"; };
 		799AFA1F285CECDE001B0371 /* StudentHomeViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeViewDelegate.swift; sourceTree = "<group>"; };
 		799AFA20285CECDE001B0371 /* StudentHomeCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeCoordinating.swift; sourceTree = "<group>"; };
 		799AFA21285CECDE001B0371 /* StudentHomeViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeViewable.swift; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 		799AFA24285CECDE001B0371 /* StudentProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfilePresenter.swift; sourceTree = "<group>"; };
 		799AFA25285CECDE001B0371 /* StudentProfileCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfileCoordinator.swift; sourceTree = "<group>"; };
 		799AFA26285CECDE001B0371 /* StudenteProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudenteProfileView.swift; sourceTree = "<group>"; };
-		799AFA28285CECDE001B0371 /* StudentProfilePresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfilePresenterProtocol.swift; sourceTree = "<group>"; };
+		799AFA28285CECDE001B0371 /* StudentProfilePresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfilePresenting.swift; sourceTree = "<group>"; };
 		799AFA29285CECDE001B0371 /* StudentProfileViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfileViewable.swift; sourceTree = "<group>"; };
 		799AFA2A285CECDE001B0371 /* StudentProfileCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfileCoordinating.swift; sourceTree = "<group>"; };
 		799AFA2B285CECDE001B0371 /* StudentProfileViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfileViewDelegate.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 		799AFA6B285CECDE001B0371 /* StudentProjectDetailViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailViewable.swift; sourceTree = "<group>"; };
 		799AFA6C285CECDE001B0371 /* StudentProjectDetailViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailViewDelegate.swift; sourceTree = "<group>"; };
 		799AFA6D285CECDE001B0371 /* StudentProjectDetailCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailCoordinating.swift; sourceTree = "<group>"; };
-		799AFA6E285CECDE001B0371 /* StudentProjectsDetailPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsDetailPresenterProtocol.swift; sourceTree = "<group>"; };
+		799AFA6E285CECDE001B0371 /* StudentProjectsDetailPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsDetailPresenting.swift; sourceTree = "<group>"; };
 		799AFA6F285CECDE001B0371 /* StudentProjectDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailPresenter.swift; sourceTree = "<group>"; };
 		799AFA71285CECDE001B0371 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		799AFA72285CECDE001B0371 /* LoginCoodinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoodinator.swift; sourceTree = "<group>"; };
@@ -457,7 +457,7 @@
 				799AFA0B285CECDE001B0371 /* SendFileCoordinating.swift */,
 				799AFA0C285CECDE001B0371 /* SendFileViewDelegate.swift */,
 				799AFA0D285CECDE001B0371 /* SendFileViewable.swift */,
-				799AFA0E285CECDE001B0371 /* SendFilePresenterProtocol.swift */,
+				799AFA0E285CECDE001B0371 /* SendFilePresenting.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -477,7 +477,7 @@
 		799AFA14285CECDE001B0371 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA15285CECDE001B0371 /* StudentProjectsPresenterProtocol.swift */,
+				799AFA15285CECDE001B0371 /* StudentProjectsPresenting.swift */,
 				799AFA16285CECDE001B0371 /* StudentProjectsCoordinating.swift */,
 				799AFA17285CECDE001B0371 /* StudentProjectsViewDelegate.swift */,
 				799AFA18285CECDE001B0371 /* StudentProjectsViewable.swift */,
@@ -500,7 +500,7 @@
 		799AFA1D285CECDE001B0371 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA1E285CECDE001B0371 /* StudentHomePresenterProtocol.swift */,
+				799AFA1E285CECDE001B0371 /* StudentHomePresenting.swift */,
 				799AFA1F285CECDE001B0371 /* StudentHomeViewDelegate.swift */,
 				799AFA20285CECDE001B0371 /* StudentHomeCoordinating.swift */,
 				799AFA21285CECDE001B0371 /* StudentHomeViewable.swift */,
@@ -523,7 +523,7 @@
 		799AFA27285CECDE001B0371 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA28285CECDE001B0371 /* StudentProfilePresenterProtocol.swift */,
+				799AFA28285CECDE001B0371 /* StudentProfilePresenting.swift */,
 				799AFA29285CECDE001B0371 /* StudentProfileViewable.swift */,
 				799AFA2A285CECDE001B0371 /* StudentProfileCoordinating.swift */,
 				799AFA2B285CECDE001B0371 /* StudentProfileViewDelegate.swift */,
@@ -706,7 +706,7 @@
 				799AFA6B285CECDE001B0371 /* StudentProjectDetailViewable.swift */,
 				799AFA6C285CECDE001B0371 /* StudentProjectDetailViewDelegate.swift */,
 				799AFA6D285CECDE001B0371 /* StudentProjectDetailCoordinating.swift */,
-				799AFA6E285CECDE001B0371 /* StudentProjectsDetailPresenterProtocol.swift */,
+				799AFA6E285CECDE001B0371 /* StudentProjectsDetailPresenting.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1103,7 +1103,7 @@
 				799AFB4F285CECDF001B0371 /* HomeMiniCardView.swift in Sources */,
 				799AFB17285CECDF001B0371 /* AvatarSelectionViewable.swift in Sources */,
 				799AFB3C285CECDF001B0371 /* UIView+Extension.swift in Sources */,
-				799AFB1F285CECDF001B0371 /* StudentProjectsDetailPresenterProtocol.swift in Sources */,
+				799AFB1F285CECDF001B0371 /* StudentProjectsDetailPresenting.swift in Sources */,
 				799AFAFA285CECDF001B0371 /* ProjectSubcriptionAlertPresenter.swift in Sources */,
 				799AFAF7285CECDF001B0371 /* LogoutAlertCoordinating.swift in Sources */,
 				799AFB5A285CECDF001B0371 /* CircleAvatarImages.swift in Sources */,
@@ -1144,7 +1144,7 @@
 				799AFB32285CECDF001B0371 /* Images.swift in Sources */,
 				799AFB57285CECDF001B0371 /* Task.swift in Sources */,
 				799AFAF2285CECDF001B0371 /* LogoutAlertCoordinator.swift in Sources */,
-				799AFADB285CECDF001B0371 /* StudentProjectsPresenterProtocol.swift in Sources */,
+				799AFADB285CECDF001B0371 /* StudentProjectsPresenting.swift in Sources */,
 				799AFAD3285CECDF001B0371 /* SendFileCoordinating.swift in Sources */,
 				799AFB07285CECDF001B0371 /* SingleButtonAlertViewDelegate.swift in Sources */,
 				799AFB66285CECDF001B0371 /* CGFloat+Extension.swift in Sources */,
@@ -1168,14 +1168,14 @@
 				799AFB38285CECDF001B0371 /* PharusIcons.swift in Sources */,
 				799AFADE285CECDF001B0371 /* StudentProjectsViewable.swift in Sources */,
 				799AFB00285CECDF001B0371 /* ProjectSubcriptionAlertViewDelegate.swift in Sources */,
-				799AFAE2285CECDF001B0371 /* StudentHomePresenterProtocol.swift in Sources */,
+				799AFAE2285CECDF001B0371 /* StudentHomePresenting.swift in Sources */,
 				799AFB28285CECDF001B0371 /* LoginPresenting.swift in Sources */,
 				799AFB08285CECDF001B0371 /* SingleButtonAlertCoordinating.swift in Sources */,
 				799AFB51285CECDF001B0371 /* UIStackView+Extension.swift in Sources */,
 				799AFB46285CECDF001B0371 /* MainCardButton.swift in Sources */,
 				799AFB15285CECDF001B0371 /* AvatarSelectionCoordinating.swift in Sources */,
 				799AFB05285CECDF001B0371 /* SingleButtonAlertView.swift in Sources */,
-				799AFAEA285CECDF001B0371 /* StudentProfilePresenterProtocol.swift in Sources */,
+				799AFAEA285CECDF001B0371 /* StudentProfilePresenting.swift in Sources */,
 				799AFAF1285CECDF001B0371 /* TabBarCoordinating.swift in Sources */,
 				799AFAF4285CECDF001B0371 /* LogoutAlertPresenter.swift in Sources */,
 				799AFAC5285CECDE001B0371 /* UIFont+Extension.swift in Sources */,
@@ -1211,7 +1211,7 @@
 				799AFACB285CECDF001B0371 /* ProjectSheetDelegate.swift in Sources */,
 				799AFAF9285CECDF001B0371 /* LogoutAlertPresenting.swift in Sources */,
 				799AFB21285CECDF001B0371 /* LoginView.swift in Sources */,
-				799AFAD6285CECDF001B0371 /* SendFilePresenterProtocol.swift in Sources */,
+				799AFAD6285CECDF001B0371 /* SendFilePresenting.swift in Sources */,
 				799AFAD8285CECDF001B0371 /* StudentProjectsCoordinator.swift in Sources */,
 				799AFB43285CECDF001B0371 /* CompanyImages.swift.swift in Sources */,
 				799AFB22285CECDF001B0371 /* LoginCoodinator.swift in Sources */,

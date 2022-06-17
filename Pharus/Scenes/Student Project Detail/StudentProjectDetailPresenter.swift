@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StudentProjectDetailPresenter: StudentProjectsDetailPresenterProtocol {
+class StudentProjectDetailPresenter: StudentProjectsDetailPresenting {
 
     // MARK: - Properties
 
