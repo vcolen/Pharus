@@ -27,7 +27,7 @@ class ProjectSheetPresenter {
 
 // MARK: - Actions
 
-extension ProjectSheetPresenter: ProjectSheetProtocol {
+extension ProjectSheetPresenter: ProjectSheetPresenting {
     func popView() {
         coordinator.popView()
     }
