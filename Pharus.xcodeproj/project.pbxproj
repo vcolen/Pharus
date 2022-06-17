@@ -109,6 +109,8 @@
 		79E0CCE0285CBA9D007A5361 /* LoginViewable.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCDF285CBA9D007A5361 /* LoginViewable.swift.swift */; };
 		79E0CCE2285CBAD9007A5361 /* ProjectSheetViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE1285CBAD9007A5361 /* ProjectSheetViewable.swift */; };
 		79E0CCE4285CBAF6007A5361 /* SendFileViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE3285CBAF6007A5361 /* SendFileViewable.swift */; };
+		79E0CCE6285CBB67007A5361 /* StudentHomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE5285CBB67007A5361 /* StudentHomeViewDelegate.swift */; };
+		79E0CCE8285CBB74007A5361 /* StudentHomeViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE7285CBB74007A5361 /* StudentHomeViewable.swift */; };
 		79E6424D27F098D30046A2F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6424C27F098D30046A2F0 /* Network.swift */; };
 		79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8389E280AF7C5001C46AD /* HomeNewsView.swift */; };
 		79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */; };
@@ -271,6 +273,8 @@
 		79E0CCDF285CBA9D007A5361 /* LoginViewable.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewable.swift.swift; sourceTree = "<group>"; };
 		79E0CCE1285CBAD9007A5361 /* ProjectSheetViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetViewable.swift; sourceTree = "<group>"; };
 		79E0CCE3285CBAF6007A5361 /* SendFileViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileViewable.swift; sourceTree = "<group>"; };
+		79E0CCE5285CBB67007A5361 /* StudentHomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewDelegate.swift; sourceTree = "<group>"; };
+		79E0CCE7285CBB74007A5361 /* StudentHomeViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewable.swift; sourceTree = "<group>"; };
 		79E6424C27F098D30046A2F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		79E8389E280AF7C5001C46AD /* HomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsView.swift; sourceTree = "<group>"; };
 		79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
@@ -452,6 +456,8 @@
 			isa = PBXGroup;
 			children = (
 				7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */,
+				79E0CCE5285CBB67007A5361 /* StudentHomeViewDelegate.swift */,
+				79E0CCE7285CBB74007A5361 /* StudentHomeViewable.swift */,
 				7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */,
 			);
 			path = Protocols;
@@ -1067,6 +1073,7 @@
 				79DA98CE285A60D30071D4D1 /* PharusIcons.swift in Sources */,
 				79DA98D4285A66980071D4D1 /* CircleAvatarImages.swift in Sources */,
 				7934541E285CADF300D3C08B /* LoginViewDelegate.swift in Sources */,
+				79E0CCE8285CBB74007A5361 /* StudentHomeViewable.swift in Sources */,
 				79345429285CAEE200D3C08B /* SendFileFlow.swift in Sources */,
 				79E0CCD6285CB9CF007A5361 /* ProjectSubcriptionViewable.swift in Sources */,
 				7993C9AF28103CD500526AF2 /* ProjectSubcriptionAlertCoordinator.swift in Sources */,
@@ -1137,6 +1144,7 @@
 				79E838A5280AF82C001C46AD /* StudentHomeViewController.swift in Sources */,
 				7943975E27F3C6020075102B /* StudentProjectCell.swift in Sources */,
 				79C577D027FBBB8100046B00 /* StudentProjectRankingCell.swift in Sources */,
+				79E0CCE6285CBB67007A5361 /* StudentHomeViewDelegate.swift in Sources */,
 				7934541C285CADE400D3C08B /* LoginPresenterProtocol.swift in Sources */,
 				79E838AE280B067D001C46AD /* SingleButtonAlertPresenter.swift in Sources */,
 				C05AA30727FFAA9500230698 /* SendFileViewController.swift in Sources */,
