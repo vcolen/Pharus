@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol StudentProfileViewDelegate { }
+protocol StudentProfileViewDelegate: AnyObject { }

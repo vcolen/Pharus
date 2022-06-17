@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol AvatarSelectionViewDelegate { }
+protocol AvatarSelectionViewDelegate: AnyObject { }

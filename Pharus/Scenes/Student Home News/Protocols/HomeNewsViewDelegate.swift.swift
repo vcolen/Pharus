@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol HomeNewsViewDelegate { }
+protocol HomeNewsViewDelegate: AnyObject { }
