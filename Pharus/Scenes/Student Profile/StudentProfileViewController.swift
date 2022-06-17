@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StutentProfileViewController: UIViewController {
+class StudentProfileViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -82,3 +82,11 @@ class StutentProfileViewController: UIViewController {
         presenter.showLogoutAlert()
     }
 }
+
+// MARK: - Student Profile View Delegate
+
+extension StudentProfileViewController: StudentProfileViewDelegate { }
+
+// MARK: - Student Profile Viewable
+
+extension StudentProfileViewController: StudentProfileViewable { }

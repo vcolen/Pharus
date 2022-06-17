@@ -30,7 +30,7 @@ class StudentProfileCoordinator: Coordinator {
             coordinator: self
         )
 
-        let studentProfileViewController = StutentProfileViewController(
+        let studentProfileViewController = StudentProfileViewController(
             coordinator: self,
             presenter: studentProfilePresenter,
             student: student

@@ -136,3 +136,11 @@ extension AvatarSelectionViewController: UICollectionViewDelegate {
         student.avatar = String(indexPath.row + 1)
     }
 }
+
+// MARK: - Avatar Selection Viewable
+
+extension AvatarSelectionViewController: AvatarSelectionViewable { }
+
+// MARK: - Avatar Selection View Delegate
+
+extension AvatarSelectionViewController: AvatarSelectionViewDelegate { }
