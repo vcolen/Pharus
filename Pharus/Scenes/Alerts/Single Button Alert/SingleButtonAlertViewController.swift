@@ -44,10 +44,14 @@ class SingleButtonAlertViewController: UIViewController {
     }
 }
 
-// MARK: - Confirmation Alert View Delegate
+// MARK: - Single Button Alert View Delegate
 
 extension SingleButtonAlertViewController: SingleButtonAlertViewDelegate {
     func closeButtonTapped() {
         presenter.closeModal()
     }
 }
+
+// MARK: - Single Button Alert Viewable
+
+extension SingleButtonAlertViewController: SingleButtonAlertViewable { }

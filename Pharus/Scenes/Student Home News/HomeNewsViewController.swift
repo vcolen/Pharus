@@ -37,3 +37,11 @@ class HomeNewsViewController: UIViewController {
         super.viewDidLoad()
     }
 }
+
+// MARK: - Home News View Delegate
+
+extension HomeNewsViewController: HomeNewsViewDelegate { }
+
+// MARK: - Home News Viewable
+
+extension HomeNewsViewController: HomeNewsViewable { }

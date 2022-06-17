@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ProjectSheetDelegate: AnyObject {
+protocol ProjectSheetViewDelegate: AnyObject {
     func closeButtonTapped()
 }

@@ -1,0 +1,6 @@
+framework module Pods_Pharus {
+  umbrella header "Pods-Pharus-umbrella.h"
+
+  export *
+  module * { export * }
+}
