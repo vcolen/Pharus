@@ -100,3 +100,7 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
         presenter.showUploadFileView()
     }
 }
+
+// MARK: - Student Project Detail Viewable
+
+extension StudentProjectsViewController: StudentProjectsViewable { }
