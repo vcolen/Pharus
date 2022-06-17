@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol LogoutAlertFlow {
-    func closeModal()
-    func logout()
-}
-
 class LogoutAlertCoordinator: Coordinator {
 
     // MARK: - Properties

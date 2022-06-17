@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol LogoutAlertViewDelegate: AnyObject {
-    func primaryButtonTapped()
-    func secondaryButtonTapped()
-}
-
 class LogoutAlertView: UIView {
 
     // MARK: - Properties
