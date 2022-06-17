@@ -22,9 +22,9 @@
 		79345403285CAB8500D3C08B /* LogoutAlertPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345402285CAB8500D3C08B /* LogoutAlertPresenting.swift */; };
 		79345406285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */; };
 		79345408285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */; };
-		7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */; };
+		7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345409285CAC0000D3C08B /* ProjectSubcriptionAlertCoordinating.swift */; };
 		7934540D285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */; };
-		7934540F285CACBC00D3C08B /* SingleButtonAlertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */; };
+		7934540F285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540E285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift */; };
 		79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */; };
 		79345414285CAD0C00D3C08B /* AvatarSelectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */; };
 		79345417285CADBF00D3C08B /* ProjectSheetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */; };
@@ -174,9 +174,9 @@
 		79345402285CAB8500D3C08B /* LogoutAlertPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertPresenting.swift; sourceTree = "<group>"; };
 		79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertViewDelegate.swift; sourceTree = "<group>"; };
 		79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionPresenterProtocol.swift; sourceTree = "<group>"; };
-		79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertFlow.swift; sourceTree = "<group>"; };
+		79345409285CAC0000D3C08B /* ProjectSubcriptionAlertCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertCoordinating.swift; sourceTree = "<group>"; };
 		7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertViewDelegate.swift; sourceTree = "<group>"; };
-		7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertFlow.swift; sourceTree = "<group>"; };
+		7934540E285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertCoordinating.swift; sourceTree = "<group>"; };
 		79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertPresenterProtocol.swift; sourceTree = "<group>"; };
 		79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionFlow.swift; sourceTree = "<group>"; };
 		79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetFlow.swift; sourceTree = "<group>"; };
@@ -369,7 +369,7 @@
 		79345404285CABD200D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */,
+				79345409285CAC0000D3C08B /* ProjectSubcriptionAlertCoordinating.swift */,
 				79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */,
 				79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */,
 			);
@@ -379,7 +379,7 @@
 		7934540B285CACA600D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */,
+				7934540E285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift */,
 				79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */,
 				7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */,
 			);
@@ -1064,7 +1064,7 @@
 				7993C9A928102E1800526AF2 /* SecondaryCardButton.swift in Sources */,
 				79DA98BD285A5DF90071D4D1 /* Images.swift in Sources */,
 				79164BB927F1251C00167B8A /* UIView+Extension.swift in Sources */,
-				7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift in Sources */,
+				7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertCoordinating.swift in Sources */,
 				7943975827F3C5BF0075102B /* StudentProjectsCoordinator.swift in Sources */,
 				79345401285CAB7400D3C08B /* LogoutAlertCoordinating.swift in Sources */,
 				79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */,
@@ -1076,7 +1076,7 @@
 				79345406285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift in Sources */,
 				C057E8E92807941C004E44C3 /* AvatarSelectionView.swift in Sources */,
 				795005AA2811E74D009C3716 /* Task.swift in Sources */,
-				7934540F285CACBC00D3C08B /* SingleButtonAlertFlow.swift in Sources */,
+				7934540F285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift in Sources */,
 				C01BB6C5280B8C9C004D4790 /* StudentProfileViewController.swift in Sources */,
 				C05AA2F527FFA66D00230698 /* SingleButtonAlertView.swift in Sources */,
 				79DA98C5285A5E1A0071D4D1 /* Company.swift in Sources */,
