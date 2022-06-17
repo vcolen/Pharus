@@ -7,12 +7,6 @@
 
 import UIKit
 
-protocol SendFileDelegate: AnyObject {
-    func uploadButtonTapped()
-    func sendFileButtonTapped()
-    func closeButtonTapped()
-}
-
 class SendFileView: UIView {
 
     // MARK: - Properties

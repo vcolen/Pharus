@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol SendFileFlow {
-    func showFileSentAlert()
-}
-
 class SendFileCoordinator: Coordinator {
 
     // MARK: - Properties
