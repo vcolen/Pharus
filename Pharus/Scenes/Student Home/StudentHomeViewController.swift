@@ -130,6 +130,14 @@ extension StudentHomeViewController: UIPageViewControllerDataSource {
     }
 }
 
+// MARK: - Student Home View Delegate
+
+extension StudentHomeViewController: StudentHomeViewDelegate { }
+
+// MARK: - Student Home Viewable
+
+extension StudentHomeViewController: StudentHomeViewable { }
+
 // MARK: - Pages
 
 enum Pages: CaseIterable {
