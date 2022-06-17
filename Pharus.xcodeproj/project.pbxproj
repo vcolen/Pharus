@@ -132,7 +132,6 @@
 		799AFB3F285CECDF001B0371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799AFA94285CECDE001B0371 /* Assets.xcassets */; };
 		799AFB40285CECDF001B0371 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA95285CECDE001B0371 /* UIViewController+Extension.swift */; };
 		799AFB41285CECDF001B0371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799AFA96285CECDE001B0371 /* LaunchScreen.storyboard */; };
-		799AFB42285CECDF001B0371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799AFA98285CECDE001B0371 /* Main.storyboard */; };
 		799AFB43285CECDF001B0371 /* CompanyImages.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9A285CECDE001B0371 /* CompanyImages.swift.swift */; };
 		799AFB44285CECDF001B0371 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9C285CECDE001B0371 /* CheckmarkButton.swift */; };
 		799AFB45285CECDF001B0371 /* SmallAlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */; };
@@ -305,7 +304,6 @@
 		799AFA94285CECDE001B0371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		799AFA95285CECDE001B0371 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		799AFA97285CECDE001B0371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		799AFA99285CECDE001B0371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		799AFA9A285CECDE001B0371 /* CompanyImages.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyImages.swift.swift; sourceTree = "<group>"; };
 		799AFA9C285CECDE001B0371 /* CheckmarkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertButton.swift; sourceTree = "<group>"; };
@@ -381,34 +379,20 @@
 		799AF9F7285CECDE001B0371 /* Pharus */ = {
 			isa = PBXGroup;
 			children = (
-				799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */,
-				799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */,
-				799AF9FA285CECDE001B0371 /* Scenes */,
-				799AFA7A285CECDE001B0371 /* Coordinator */,
-				799AFA8B285CECDE001B0371 /* FullAvatarImages.swift */,
-				799AFA8C285CECDE001B0371 /* PharusIcons.swift */,
-				799AFA8D285CECDE001B0371 /* Date+Extension.swift */,
-				799AFA8E285CECDE001B0371 /* SystemDelegate */,
-				799AFA91285CECDE001B0371 /* UIView+Extension.swift */,
-				799AFA92285CECDE001B0371 /* UIImage+Extension.swift */,
-				799AFA93285CECDE001B0371 /* Bundle+Extension.swift */,
-				799AFA94285CECDE001B0371 /* Assets.xcassets */,
-				799AFA95285CECDE001B0371 /* UIViewController+Extension.swift */,
-				799AFA96285CECDE001B0371 /* LaunchScreen.storyboard */,
-				799AFA98285CECDE001B0371 /* Main.storyboard */,
-				799AFA9A285CECDE001B0371 /* CompanyImages.swift.swift */,
-				799AFA9B285CECDE001B0371 /* Components */,
-				799AFAA9285CECDE001B0371 /* .gitignore */,
-				799AFAAA285CECDE001B0371 /* UIStackView+Extension.swift */,
-				799AFAAB285CECDE001B0371 /* Model */,
 				799AFAB3285CECDE001B0371 /* .gitattributes */,
-				799AFAB4285CECDE001B0371 /* Pharus.entitlements */,
-				799AFAB5285CECDE001B0371 /* CircleAvatarImages.swift */,
-				799AFAB6285CECDE001B0371 /* Float+Extension.swift */,
+				799AFAA9285CECDE001B0371 /* .gitignore */,
+				799AFA94285CECDE001B0371 /* Assets.xcassets */,
+				799AFA9B285CECDE001B0371 /* Components */,
+				799AFA7A285CECDE001B0371 /* Coordinator */,
+				799AFB68285CF4DD001B0371 /* Extension */,
 				799AFAB7285CECDE001B0371 /* Fonts */,
 				799AFAC2285CECDE001B0371 /* Info.plist */,
-				799AFAC3285CECDE001B0371 /* PharusImages.swift */,
-				799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */,
+				799AFA96285CECDE001B0371 /* LaunchScreen.storyboard */,
+				799AFAAB285CECDE001B0371 /* Model */,
+				799AFAB4285CECDE001B0371 /* Pharus.entitlements */,
+				799AF9FA285CECDE001B0371 /* Scenes */,
+				799AFA7C285CECDE001B0371 /* Service */,
+				799AFA8E285CECDE001B0371 /* SystemDelegate */,
 			);
 			path = Pharus;
 			sourceTree = "<group>";
@@ -416,18 +400,18 @@
 		799AF9FA285CECDE001B0371 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				799AFA32285CECDE001B0371 /* Alerts */,
+				799AFA5D285CECDE001B0371 /* Avatar Selection */,
+				799AFA70285CECDE001B0371 /* Login */,
 				799AF9FB285CECDE001B0371 /* Project Sheet */,
 				799AFA05285CECDE001B0371 /* Send File */,
-				799AFA0F285CECDE001B0371 /* Student Projects */,
 				799AFA19285CECDE001B0371 /* Student Home */,
-				799AFA23285CECDE001B0371 /* Student Profile */,
-				799AFA2D285CECDE001B0371 /* TabBar */,
-				799AFA32285CECDE001B0371 /* Alerts */,
 				799AFA51285CECDE001B0371 /* Student Home News */,
-				799AFA57285CECDE001B0371 /* Student Projects Ranking */,
-				799AFA5D285CECDE001B0371 /* Avatar Selection */,
+				799AFA23285CECDE001B0371 /* Student Profile */,
 				799AFA66285CECDE001B0371 /* Student Project Detail */,
-				799AFA70285CECDE001B0371 /* Login */,
+				799AFA0F285CECDE001B0371 /* Student Projects */,
+				799AFA57285CECDE001B0371 /* Student Projects Ranking */,
+				799AFA2D285CECDE001B0371 /* TabBar */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -435,11 +419,11 @@
 		799AF9FB285CECDE001B0371 /* Project Sheet */ = {
 			isa = PBXGroup;
 			children = (
-				799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */,
-				799AF9FD285CECDE001B0371 /* ProjectSheetView.swift */,
 				799AF9FE285CECDE001B0371 /* ProjectSheetCoordinator.swift */,
-				799AF9FF285CECDE001B0371 /* Protocols */,
 				799AFA04285CECDE001B0371 /* ProjectSheetPresenter.swift */,
+				799AF9FD285CECDE001B0371 /* ProjectSheetView.swift */,
+				799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */,
+				799AF9FF285CECDE001B0371 /* Protocols */,
 			);
 			path = "Project Sheet";
 			sourceTree = "<group>";
@@ -504,11 +488,11 @@
 		799AFA19285CECDE001B0371 /* Student Home */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA1A285CECDE001B0371 /* StudentHomeView.swift */,
-				799AFA1B285CECDE001B0371 /* StudentHomeViewController.swift */,
-				799AFA1C285CECDE001B0371 /* StudentHomePresenter.swift */,
 				799AFA1D285CECDE001B0371 /* Protocols */,
 				799AFA22285CECDE001B0371 /* StudentHomeCoordinator.swift */,
+				799AFA1C285CECDE001B0371 /* StudentHomePresenter.swift */,
+				799AFA1A285CECDE001B0371 /* StudentHomeView.swift */,
+				799AFA1B285CECDE001B0371 /* StudentHomeViewController.swift */,
 			);
 			path = "Student Home";
 			sourceTree = "<group>";
@@ -527,10 +511,10 @@
 		799AFA23285CECDE001B0371 /* Student Profile */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA24285CECDE001B0371 /* StudentProfilePresenter.swift */,
-				799AFA25285CECDE001B0371 /* StudentProfileCoordinator.swift */,
-				799AFA26285CECDE001B0371 /* StudenteProfileView.swift */,
 				799AFA27285CECDE001B0371 /* Protocols */,
+				799AFA26285CECDE001B0371 /* StudenteProfileView.swift */,
+				799AFA25285CECDE001B0371 /* StudentProfileCoordinator.swift */,
+				799AFA24285CECDE001B0371 /* StudentProfilePresenter.swift */,
 				799AFA2C285CECDE001B0371 /* StudentProfileViewController.swift */,
 			);
 			path = "Student Profile";
@@ -686,9 +670,9 @@
 			isa = PBXGroup;
 			children = (
 				799AFA5E285CECDE001B0371 /* AvatarSelectionCoordinator.swift */,
+				799AFA65285CECDE001B0371 /* AvatarSelectionView.swift */,
 				799AFA5F285CECDE001B0371 /* AvatarSelectionViewController.swift */,
 				799AFA60285CECDE001B0371 /* Protocols */,
-				799AFA65285CECDE001B0371 /* AvatarSelectionView.swift */,
 			);
 			path = "Avatar Selection";
 			sourceTree = "<group>";
@@ -707,11 +691,11 @@
 		799AFA66285CECDE001B0371 /* Student Project Detail */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA67285CECDE001B0371 /* StudentProjectDetailCoordinator.swift */,
-				799AFA68285CECDE001B0371 /* StudentProjectDetailViewController.swift */,
-				799AFA69285CECDE001B0371 /* StudentProjectDetailView.swift */,
 				799AFA6A285CECDE001B0371 /* Protocols */,
+				799AFA67285CECDE001B0371 /* StudentProjectDetailCoordinator.swift */,
 				799AFA6F285CECDE001B0371 /* StudentProjectDetailPresenter.swift */,
+				799AFA69285CECDE001B0371 /* StudentProjectDetailView.swift */,
+				799AFA68285CECDE001B0371 /* StudentProjectDetailViewController.swift */,
 			);
 			path = "Student Project Detail";
 			sourceTree = "<group>";
@@ -754,7 +738,6 @@
 			isa = PBXGroup;
 			children = (
 				799AFA7B285CECDE001B0371 /* AppCoordinator.swift */,
-				799AFA7C285CECDE001B0371 /* Service */,
 				799AFA8A285CECDE001B0371 /* Coordinator.swift */,
 			);
 			path = Coordinator;
@@ -857,6 +840,36 @@
 				799AFAC1285CECDE001B0371 /* OpenSans-Regular.ttf */,
 			);
 			path = OpenSans;
+			sourceTree = "<group>";
+		};
+		799AFB68285CF4DD001B0371 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				799AFA93285CECDE001B0371 /* Bundle+Extension.swift */,
+				799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */,
+				799AFA8D285CECDE001B0371 /* Date+Extension.swift */,
+				799AFAB6285CECDE001B0371 /* Float+Extension.swift */,
+				799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */,
+				799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */,
+				799AFB69285CF4F4001B0371 /* UIImage */,
+				799AFAAA285CECDE001B0371 /* UIStackView+Extension.swift */,
+				799AFA91285CECDE001B0371 /* UIView+Extension.swift */,
+				799AFA95285CECDE001B0371 /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		799AFB69285CF4F4001B0371 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				799AFAB5285CECDE001B0371 /* CircleAvatarImages.swift */,
+				799AFA9A285CECDE001B0371 /* CompanyImages.swift.swift */,
+				799AFA8B285CECDE001B0371 /* FullAvatarImages.swift */,
+				799AFA8C285CECDE001B0371 /* PharusIcons.swift */,
+				799AFAC3285CECDE001B0371 /* PharusImages.swift */,
+				799AFA92285CECDE001B0371 /* UIImage+Extension.swift */,
+			);
+			path = UIImage;
 			sourceTree = "<group>";
 		};
 		79AF90F628043A120094AB97 /* Recovered References */ = {
@@ -1001,7 +1014,6 @@
 				799AFB62285CECDF001B0371 /* OpenSans-Medium.ttf in Resources */,
 				799AFB5C285CECDF001B0371 /* Montserrat-Medium.ttf in Resources */,
 				799AFB5D285CECDF001B0371 /* Montserrat-Bold.ttf in Resources */,
-				799AFB42285CECDF001B0371 /* Main.storyboard in Resources */,
 				799AFB5E285CECDF001B0371 /* Montserrat-SemiBold.ttf in Resources */,
 				799AFB63285CECDF001B0371 /* OpenSans-Regular.ttf in Resources */,
 				799AFB3F285CECDF001B0371 /* Assets.xcassets in Resources */,
@@ -1233,14 +1245,6 @@
 				799AFA97285CECDE001B0371 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		799AFA98285CECDE001B0371 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				799AFA99285CECDE001B0371 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
