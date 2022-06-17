@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ProjectSheetProtocol {
-    func popView()
-}
-
 class ProjectSheetPresenter {
 
     // MARK: - Properties

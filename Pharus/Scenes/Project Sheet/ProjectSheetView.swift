@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ProjectSheetDelegate: AnyObject {
-    func closeButtonTapped()
-}
-
 class ProjectSheetView: UIView {
 
     // MARK: - Properties

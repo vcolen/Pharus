@@ -7,12 +7,6 @@
 
 import Foundation
 
-protocol LoginPresenterProtocol {
-    func isValidEmail(email: String) -> Bool
-    func isValidPassword(password: String) -> Bool
-    func loginUser(email: String, password: String) -> Bool
-}
-
 class LoginPresenter: LoginPresenterProtocol {
 
     // MARK: - Properties

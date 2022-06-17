@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ProjectSheetFlow {
-    func popView()
-}
-
 class ProjectSheetCoordinator: Coordinator {
 
     // MARK: - Properties

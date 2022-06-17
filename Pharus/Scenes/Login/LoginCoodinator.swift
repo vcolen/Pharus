@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol LoginFlow {
-    func showHome(student: StudentModel)
-}
-
 class LoginCoordinator: Coordinator {
 
     // MARK: - Properties
