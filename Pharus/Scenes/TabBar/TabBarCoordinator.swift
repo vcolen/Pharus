@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol TabBarFlow {
-
-}
-
 class TabBarCoordinator: Coordinator {
 
     // MARK: - Properties
