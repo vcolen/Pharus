@@ -40,7 +40,7 @@ class SingleButtonAlertCoordinator: Coordinator {
 }
 
 // MARK: - Actions
-extension SingleButtonAlertCoordinator: SingleButtonAlertFlow {
+extension SingleButtonAlertCoordinator: SingleButtonAlertCoordinating {
     func closeModal() {
         navigationController.topViewController?.dismiss(animated: true)
     }

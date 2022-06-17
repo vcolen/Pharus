@@ -37,6 +37,6 @@ class StudentHomeCoordinator: Coordinator {
     }
 }
 
-extension StudentHomeCoordinator: StudentHomeFlow {
+extension StudentHomeCoordinator: StudentHomeCoordinating {
 
 }

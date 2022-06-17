@@ -43,7 +43,7 @@ class ProjectSubcriptionAlertCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertFlow {
+extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinating {
     func closeModal() {
         navigationController.topViewController?.dismiss(animated: true)
     }
