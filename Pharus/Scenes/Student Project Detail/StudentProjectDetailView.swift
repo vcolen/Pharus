@@ -7,13 +7,6 @@
 
 import UIKit
 
-protocol StudentProjectDetailViewDelegate: AnyObject {
-    func rulesViewTapped()
-    func sendFilesButtonTapped()
-    func envelopeIconTapped()
-    func taskCheckboxTapped(task: TaskModel)
-}
-
 // swiftlint:disable type_body_length file_length
 class StudentProjectDetailView: UIView {
 

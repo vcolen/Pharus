@@ -7,12 +7,6 @@
 
 import UIKit
 
-protocol StudentProjectDetailFlow {
-    func showProjectRules()
-    func showSendFileView()
-    func showMentorReview()
-}
-
 class StudentProjectDetailCoordinator: Coordinator {
 
     // MARK: - Properties

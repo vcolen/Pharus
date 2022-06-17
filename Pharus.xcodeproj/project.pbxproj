@@ -40,6 +40,9 @@
 		7934542E285CAF3900D3C08B /* StudentHomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */; };
 		79345431285CAF8700D3C08B /* StudentProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345430285CAF8700D3C08B /* StudentProfileFlow.swift */; };
 		79345433285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */; };
+		79345436285CAFDC00D3C08B /* StudentProjectDetailFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345435285CAFDC00D3C08B /* StudentProjectDetailFlow.swift */; };
+		79345438285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */; };
+		7934543A285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345439285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift */; };
 		793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73827FE177000CD8334 /* CheckmarkButton.swift */; };
 		793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73A27FE183000CD8334 /* UIImage+Extension.swift */; };
 		793EC73D27FE197B00CD8334 /* StudentProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */; };
@@ -187,6 +190,9 @@
 		7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomePresenterProtocol.swift; sourceTree = "<group>"; };
 		79345430285CAF8700D3C08B /* StudentProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileFlow.swift; sourceTree = "<group>"; };
 		79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfilePresenterProtocol.swift; sourceTree = "<group>"; };
+		79345435285CAFDC00D3C08B /* StudentProjectDetailFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailFlow.swift; sourceTree = "<group>"; };
+		79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsDetailPresenterProtocol.swift; sourceTree = "<group>"; };
+		79345439285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailViewDelegate.swift; sourceTree = "<group>"; };
 		793EC73827FE177000CD8334 /* CheckmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		793EC73A27FE183000CD8334 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileButton.swift; sourceTree = "<group>"; };
@@ -430,6 +436,16 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		79345434285CAFD300D3C08B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				79345435285CAFDC00D3C08B /* StudentProjectDetailFlow.swift */,
+				79345439285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift */,
+				79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		79434A652809129A006D0184 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +492,7 @@
 		79434A68280912BE006D0184 /* Student Project Detail */ = {
 			isa = PBXGroup;
 			children = (
+				79345434285CAFD300D3C08B /* Protocols */,
 				79AF90F828043D3C0094AB97 /* StudentProjectDetailCoordinator.swift */,
 				79AF90FA28043DEA0094AB97 /* StudentProjectDetailPresenter.swift */,
 				7910D9CD27FCEFE900A8DDA0 /* StudentProjectDetailView.swift */,
@@ -1001,6 +1018,7 @@
 				79345431285CAF8700D3C08B /* StudentProfileFlow.swift in Sources */,
 				7906FE61281321F900E4A83A /* Float+Extension.swift in Sources */,
 				793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */,
+				79345438285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift in Sources */,
 				79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */,
 				79DA98D6285A67540071D4D1 /* CompanyImages.swift.swift in Sources */,
 				79DA98CE285A60D30071D4D1 /* PharusIcons.swift in Sources */,
@@ -1084,6 +1102,8 @@
 				C008AF2427F1EDA100AD94C9 /* LoginView.swift in Sources */,
 				7993C9A728102C2500526AF2 /* ProjectSubcriptionAlertView.swift in Sources */,
 				7963213227F23C9200A202EE /* Constants.swift in Sources */,
+				79345436285CAFDC00D3C08B /* StudentProjectDetailFlow.swift in Sources */,
+				7934543A285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift in Sources */,
 				C045618D27EA03A5007EC5C3 /* SceneDelegate.swift in Sources */,
 				C008AF1D27F1ED5D00AD94C9 /* LoginViewController.swift in Sources */,
 				796F55322810F01A00DC6F70 /* TaskModel.swift in Sources */,
