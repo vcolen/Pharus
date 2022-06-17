@@ -318,7 +318,7 @@ Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os qu
 
 // MARK: - Actions
 
-extension SendFileView: SendFileViewDelegate {
+extension SendFileView {
     func closeButtonTapped() {
         delegate?.closeButtonTapped()
     }
