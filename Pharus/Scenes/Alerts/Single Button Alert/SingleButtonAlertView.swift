@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol SingleButtonAlertViewDelegate: AnyObject {
-    func closeButtonTapped()
-}
-
 class SingleButtonAlertView: UIView {
 
     // MARK: - Properties

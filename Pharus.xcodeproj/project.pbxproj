@@ -23,6 +23,9 @@
 		79345406285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */; };
 		79345408285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */; };
 		7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */; };
+		7934540D285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */; };
+		7934540F285CACBC00D3C08B /* SingleButtonAlertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */; };
+		79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */; };
 		793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73827FE177000CD8334 /* CheckmarkButton.swift */; };
 		793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73A27FE183000CD8334 /* UIImage+Extension.swift */; };
 		793EC73D27FE197B00CD8334 /* StudentProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */; };
@@ -153,6 +156,9 @@
 		79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertViewDelegate.swift; sourceTree = "<group>"; };
 		79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionPresenterProtocol.swift; sourceTree = "<group>"; };
 		79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertFlow.swift; sourceTree = "<group>"; };
+		7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertViewDelegate.swift; sourceTree = "<group>"; };
+		7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertFlow.swift; sourceTree = "<group>"; };
+		79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertPresenterProtocol.swift; sourceTree = "<group>"; };
 		793EC73827FE177000CD8334 /* CheckmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		793EC73A27FE183000CD8334 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		793EC73C27FE197B00CD8334 /* StudentProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileButton.swift; sourceTree = "<group>"; };
@@ -330,6 +336,16 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		7934540B285CACA600D3C08B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */,
+				79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */,
+				7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		79434A652809129A006D0184 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,10 +454,11 @@
 		7993C9A328102B2C00526AF2 /* Single Button Alert */ = {
 			isa = PBXGroup;
 			children = (
-				C05AA30227FFAA7400230698 /* SingleButtonAlertViewController.swift */,
-				C05AA2F427FFA66D00230698 /* SingleButtonAlertView.swift */,
+				7934540B285CACA600D3C08B /* Protocols */,
 				79E838AB280B0676001C46AD /* SingleButtonAlertCoordinator.swift */,
 				79E838AD280B067D001C46AD /* SingleButtonAlertPresenter.swift */,
+				C05AA2F427FFA66D00230698 /* SingleButtonAlertView.swift */,
+				C05AA30227FFAA7400230698 /* SingleButtonAlertViewController.swift */,
 			);
 			path = "Single Button Alert";
 			sourceTree = "<group>";
@@ -911,6 +928,7 @@
 				7993C9B828104C7700526AF2 /* LogoutAlertViewController.swift in Sources */,
 				79E838A7280AFCE7001C46AD /* SendFilePresenter.swift in Sources */,
 				79AF90FD2804478F0094AB97 /* ProjectTaskView.swift in Sources */,
+				7934540D285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift in Sources */,
 				79E6424D27F098D30046A2F0 /* Network.swift in Sources */,
 				7993C9A928102E1800526AF2 /* SecondaryCardButton.swift in Sources */,
 				79DA98BD285A5DF90071D4D1 /* Images.swift in Sources */,
@@ -919,12 +937,14 @@
 				7943975827F3C5BF0075102B /* StudentProjectsCoordinator.swift in Sources */,
 				79345401285CAB7400D3C08B /* LogoutAlertFlow.swift in Sources */,
 				79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */,
+				79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */,
 				793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */,
 				7952058327FE394900A89012 /* ProjectSheetView.swift in Sources */,
 				C05AA2CE27FC82AB00230698 /* StudentProjectsRankingCoordinator.swift in Sources */,
 				79345406285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift in Sources */,
 				C057E8E92807941C004E44C3 /* AvatarSelectionView.swift in Sources */,
 				795005AA2811E74D009C3716 /* Task.swift in Sources */,
+				7934540F285CACBC00D3C08B /* SingleButtonAlertFlow.swift in Sources */,
 				C01BB6C5280B8C9C004D4790 /* StudentProfileViewController.swift in Sources */,
 				C05AA2F527FFA66D00230698 /* SingleButtonAlertView.swift in Sources */,
 				79DA98C5285A5E1A0071D4D1 /* Company.swift in Sources */,

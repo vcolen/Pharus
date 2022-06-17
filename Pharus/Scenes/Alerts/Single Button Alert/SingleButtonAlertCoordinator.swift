@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol SingleButtonAlertFlow {
-    func closeModal()
-}
-
 class SingleButtonAlertCoordinator: Coordinator {
 
     // MARK: - Properties
