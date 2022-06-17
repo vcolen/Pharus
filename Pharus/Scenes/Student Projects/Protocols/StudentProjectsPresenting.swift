@@ -1,5 +1,5 @@
 //
-//  StudentProjectsPresenterProtocol.swift
+//  StudentProjectsPresenting.swift
 //  Pharus
 //
 //  Created by Victor Colen on 17/06/22.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol StudentProjectsPresenterProtocol {
+protocol StudentProjectsPresenting {
     func showStudentProject(project: ProjectModel)
 }

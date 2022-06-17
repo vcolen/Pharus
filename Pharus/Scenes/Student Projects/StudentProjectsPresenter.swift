@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StudentProjectsPresenter: StudentProjectsPresenterProtocol {
+class StudentProjectsPresenter: StudentProjectsPresenting {
 
     // MARK: - Properties
 
