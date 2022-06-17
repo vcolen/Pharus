@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol SendFilePresenterProtocol {
-    func uploadFile()
-    func sendFile()
-}
-
 class SendFilePresenter {
     // MARK: - Properties
 

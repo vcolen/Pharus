@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol LogoutAlertFlow {
-    func closeModal()
-    func logout()
-}
-
 class LogoutAlertCoordinator: Coordinator {
 
     // MARK: - Properties
@@ -45,7 +40,7 @@ class LogoutAlertCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension LogoutAlertCoordinator: LogoutAlertFlow {
+extension LogoutAlertCoordinator: LogoutAlertCoordinating {
     func closeModal() {
         navigationController.topViewController?.dismiss(animated: true)
     }

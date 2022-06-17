@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol LoginViewDelegate: AnyObject {
-    func loginButtonPressed()
-}
-
 class LoginView: UIView {
 
     // MARK: - Properties

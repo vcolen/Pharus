@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ProjectSubcriptionAlertFlow {
-    func closeModal()
-}
-
 class ProjectSubcriptionAlertCoordinator: Coordinator {
 
     // MARK: - Properties
@@ -47,7 +43,7 @@ class ProjectSubcriptionAlertCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertFlow {
+extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinating {
     func closeModal() {
         navigationController.topViewController?.dismiss(animated: true)
     }

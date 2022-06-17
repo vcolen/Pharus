@@ -116,3 +116,7 @@ extension LoginViewController: LoginViewDelegate {
         }
     }
 }
+
+// MARK: - Login Viewable
+
+extension LoginViewController: LoginViewable { }

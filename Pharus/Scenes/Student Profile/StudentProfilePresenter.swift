@@ -7,8 +7,6 @@
 
 import Foundation
 
-protocol StudentProfilePresenterProtocol { }
-
 class StudentProfilePresenter {
 
     // MARK: - Properties
@@ -24,7 +22,7 @@ class StudentProfilePresenter {
 
 // MARK: - Actions
 
-extension StudentProfilePresenter: StudentProfilePresenterProtocol {
+extension StudentProfilePresenter: StudentProfilePresenting {
     func showLogoutAlert() {
         coordinator.showLogOutAlert()
     }

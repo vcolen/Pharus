@@ -5,13 +5,9 @@
 //  Created by Victor Colen on 29/03/22.
 //
 
-import UIKit
+import Foundation
 
-protocol StudentProjectsPresenterProtocol {
-    func showStudentProject(project: ProjectModel)
-}
-
-class StudentProjectsPresenter: StudentProjectsPresenterProtocol {
+class StudentProjectsPresenter: StudentProjectsPresenting {
 
     // MARK: - Properties
 

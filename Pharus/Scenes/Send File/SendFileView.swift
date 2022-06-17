@@ -7,17 +7,11 @@
 
 import UIKit
 
-protocol SendFileDelegate: AnyObject {
-    func uploadButtonTapped()
-    func sendFileButtonTapped()
-    func closeButtonTapped()
-}
-
 class SendFileView: UIView {
 
     // MARK: - Properties
 
-    weak var delegate: SendFileDelegate?
+    weak var delegate: SendFileViewDelegate?
 
     // MARK: - Views
 
@@ -324,7 +318,7 @@ Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os qu
 
 // MARK: - Actions
 
-extension SendFileView: SendFileDelegate {
+extension SendFileView {
     func closeButtonTapped() {
         delegate?.closeButtonTapped()
     }

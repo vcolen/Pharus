@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol SendFileFlow {
-    func showFileSentAlert()
-}
-
 class SendFileCoordinator: Coordinator {
 
     // MARK: - Properties
@@ -42,7 +38,7 @@ class SendFileCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension SendFileCoordinator: SendFileFlow {
+extension SendFileCoordinator: SendFileCoordinating {
     func showFileSentAlert() {
         let alertView = SingleButtonAlertView(
             message: "Arquivo enviado com sucesso!",

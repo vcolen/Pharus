@@ -7,11 +7,7 @@
 
 import UIKit
 
-protocol SingleButtonAlertPresenterProtocol {
-    func closeModal()
-}
-
-class SingleButtonAlertPresenter: SingleButtonAlertPresenterProtocol {
+class SingleButtonAlertPresenter: SingleButtonAlertPresenting {
 
     // MARK: - Properties
 

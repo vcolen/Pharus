@@ -57,16 +57,16 @@ class UploadMessageButton: UIButton {
     private func configureSubviews() {
         setTitle(title, for: .normal)
         setBackgroundColor()
-        setTitleColor(UIColor.project.grayDisabledText, for: .disabled)
-        setTitleColor(UIColor.button.whiteMainButtonText, for: .normal)
+        setTitleColor(UIColor.Project.grayDisabledText, for: .disabled)
+        setTitleColor(UIColor.Button.whiteMainButtonText, for: .normal)
         layer.cornerRadius = 16
     }
 
     func setBackgroundColor() {
         if buttonState == .normal {
-            backgroundColor = UIColor.purple.pharusPurple
+            backgroundColor = UIColor.Purple.pharusPurple
         } else {
-            backgroundColor = UIColor.button.grayDisabledBackground
+            backgroundColor = UIColor.Button.grayDisabledBackground
         }
     }
 

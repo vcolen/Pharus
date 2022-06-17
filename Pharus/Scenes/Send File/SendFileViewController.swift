@@ -44,7 +44,7 @@ class SendFileViewController: UIViewController, UIDocumentPickerDelegate {
 
 // MARK: - Send File Delegate
 
-extension SendFileViewController: SendFileDelegate {
+extension SendFileViewController: SendFileViewDelegate {
     func closeButtonTapped() {
         presenter.closeSheet()
     }
@@ -80,3 +80,7 @@ extension SendFileViewController: SendFileDelegate {
         presenter.sendFile()
     }
 }
+
+// MARK: - Send File Viewable
+
+extension SendFileViewController: SendFileViewable { }

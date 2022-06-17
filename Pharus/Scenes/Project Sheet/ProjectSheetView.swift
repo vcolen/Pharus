@@ -7,15 +7,11 @@
 
 import UIKit
 
-protocol ProjectSheetDelegate: AnyObject {
-    func closeButtonTapped()
-}
-
 class ProjectSheetView: UIView {
 
     // MARK: - Properties
 
-    weak var delegate: ProjectSheetDelegate?
+    weak var delegate: ProjectSheetViewDelegate?
 
     private var project: ProjectModel
     private var sheetContent: SheetContent

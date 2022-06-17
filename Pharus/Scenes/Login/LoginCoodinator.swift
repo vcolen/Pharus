@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol LoginFlow {
-    func showHome(student: StudentModel)
-}
-
 class LoginCoordinator: Coordinator {
 
     // MARK: - Properties
@@ -39,7 +35,7 @@ class LoginCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension LoginCoordinator: LoginFlow {
+extension LoginCoordinator: LoginCoordinating {
 
     func showHome(student: StudentModel) {
         let tabbarViewController = TabBarViewController()

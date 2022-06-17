@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol StudentProfileFlow {
-
-}
-
 class StudentProfileCoordinator: Coordinator {
 
     // MARK: - Properties
@@ -34,7 +30,7 @@ class StudentProfileCoordinator: Coordinator {
             coordinator: self
         )
 
-        let studentProfileViewController = StutentProfileViewController(
+        let studentProfileViewController = StudentProfileViewController(
             coordinator: self,
             presenter: studentProfilePresenter,
             student: student
@@ -47,7 +43,7 @@ class StudentProfileCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension StudentProfileCoordinator: StudentProfileFlow {
+extension StudentProfileCoordinator: StudentProfileCoordinating {
     func showLogOutAlert() {
         let logoutAlertView = LogoutAlertView()
 

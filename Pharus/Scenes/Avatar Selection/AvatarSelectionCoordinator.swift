@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol AvatarSelectionFlow {
-    func start()
-}
-
 class AvatarSelectionCoordinator: Coordinator {
 
     // MARK: - Properties
@@ -39,6 +35,6 @@ class AvatarSelectionCoordinator: Coordinator {
     }
 }
 
-extension AvatarSelectionCoordinator: AvatarSelectionFlow {
+extension AvatarSelectionCoordinator: AvatarSelectionCoordinating {
 
 }

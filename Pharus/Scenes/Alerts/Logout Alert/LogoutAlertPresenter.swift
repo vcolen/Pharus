@@ -7,12 +7,7 @@
 
 import UIKit
 
-protocol LogoutAlertPresenterProtocol {
-    func closeModal()
-    func logout()
-}
-
-class LogoutAlertPresenter: LogoutAlertPresenterProtocol {
+class LogoutAlertPresenter: LogoutAlertPresenting {
 
     // MARK: - Properties
 

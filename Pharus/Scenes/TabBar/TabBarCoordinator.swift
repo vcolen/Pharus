@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol TabBarFlow {
-
-}
-
 class TabBarCoordinator: Coordinator {
 
     // MARK: - Properties
@@ -169,6 +165,6 @@ class TabBarCoordinator: Coordinator {
     }
 }
 
-extension TabBarCoordinator: TabBarFlow {
+extension TabBarCoordinator: TabBarCoordinating {
 
 }

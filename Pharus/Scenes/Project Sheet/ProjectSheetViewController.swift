@@ -48,10 +48,14 @@ class ProjectSheetViewController: UIViewController {
     }
 }
 
-// MARK: - Project Sheet Delegate
+// MARK: - Project Sheet View Delegate
 
-extension ProjectSheetViewController: ProjectSheetDelegate {
+extension ProjectSheetViewController: ProjectSheetViewDelegate {
     func closeButtonTapped() {
         presenter.popView()
     }
 }
+
+// MARK: - Project Sheet Viewable
+
+extension ProjectSheetViewController: ProjectSheetViewable { }

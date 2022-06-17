@@ -59,3 +59,7 @@ extension ProjectSubcriptionAlertViewController: ProjectSubcriptionAlertViewDele
         presenter.closeModal()
     }
 }
+
+// MARK: - Project Subscription Alert Viewable
+
+extension ProjectSubcriptionAlertViewController: ProjectSubcriptionAlertViewable { }

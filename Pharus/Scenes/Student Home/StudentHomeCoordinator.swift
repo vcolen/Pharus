@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol StudentHomeFlow {
-
-}
-
 class StudentHomeCoordinator: Coordinator {
 
     var navigationController: UINavigationController
@@ -41,6 +37,6 @@ class StudentHomeCoordinator: Coordinator {
     }
 }
 
-extension StudentHomeCoordinator: StudentHomeFlow {
+extension StudentHomeCoordinator: StudentHomeCoordinating {
 
 }

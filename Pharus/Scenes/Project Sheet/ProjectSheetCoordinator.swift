@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ProjectSheetFlow {
-    func popView()
-}
-
 class ProjectSheetCoordinator: Coordinator {
 
     // MARK: - Properties
@@ -48,7 +44,7 @@ class ProjectSheetCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension ProjectSheetCoordinator: ProjectSheetFlow {
+extension ProjectSheetCoordinator: ProjectSheetCoordinating {
     func popView() {
         navigationController.dismiss(animated: true)
     }
