@@ -27,7 +27,7 @@
 		7934540F285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540E285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift */; };
 		79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */; };
 		79345414285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345413285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift */; };
-		79345417285CADBF00D3C08B /* ProjectSheetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */; };
+		79345417285CADBF00D3C08B /* ProjectSheetCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345416285CADBF00D3C08B /* ProjectSheetCoordinating.swift */; };
 		7934541A285CADD400D3C08B /* LoginCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345419285CADD400D3C08B /* LoginCoordinating.swift */; };
 		7934541C285CADE400D3C08B /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */; };
 		7934541E285CADF300D3C08B /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541D285CADF300D3C08B /* LoginViewDelegate.swift */; };
@@ -179,7 +179,7 @@
 		7934540E285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertCoordinating.swift; sourceTree = "<group>"; };
 		79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertPresenterProtocol.swift; sourceTree = "<group>"; };
 		79345413285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionCoordinating.swift; sourceTree = "<group>"; };
-		79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetFlow.swift; sourceTree = "<group>"; };
+		79345416285CADBF00D3C08B /* ProjectSheetCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetCoordinating.swift; sourceTree = "<group>"; };
 		79345419285CADD400D3C08B /* LoginCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinating.swift; sourceTree = "<group>"; };
 		7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
 		7934541D285CADF300D3C08B /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
@@ -398,7 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				79345421285CAE3100D3C08B /* ProjectSheetDelegate.swift */,
-				79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */,
+				79345416285CADBF00D3C08B /* ProjectSheetCoordinating.swift */,
 				7934541F285CAE2000D3C08B /* ProjectSheetProtocol.swift */,
 			);
 			path = Protocols;
@@ -1068,7 +1068,7 @@
 				7943975827F3C5BF0075102B /* StudentProjectsCoordinator.swift in Sources */,
 				79345401285CAB7400D3C08B /* LogoutAlertCoordinating.swift in Sources */,
 				79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */,
-				79345417285CADBF00D3C08B /* ProjectSheetFlow.swift in Sources */,
+				79345417285CADBF00D3C08B /* ProjectSheetCoordinating.swift in Sources */,
 				79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */,
 				793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */,
 				7952058327FE394900A89012 /* ProjectSheetView.swift in Sources */,
