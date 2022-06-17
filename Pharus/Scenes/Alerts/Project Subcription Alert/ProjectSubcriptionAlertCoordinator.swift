@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ProjectSubcriptionAlertFlow {
-    func closeModal()
-}
-
 class ProjectSubcriptionAlertCoordinator: Coordinator {
 
     // MARK: - Properties

@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol ProjectSubcriptionPresenterProtocol {
-    func closeModal()
-    func subscribeToProject()
-}
-
 class ProjectSubcriptionAlertPresenter: ProjectSubcriptionPresenterProtocol {
 
     // MARK: - Properties

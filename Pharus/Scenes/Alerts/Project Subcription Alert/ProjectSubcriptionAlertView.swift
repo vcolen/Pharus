@@ -7,12 +7,6 @@
 
 import UIKit
 
-protocol ProjectSubcriptionAlertViewDelegate: AnyObject {
-    func closeButtonTapped()
-    func primaryButtonTapped()
-    func secondaryButtonTapped()
-}
-
 class ProjectSubcriptionAlertView: UIView {
 
     // MARK: - Properties
