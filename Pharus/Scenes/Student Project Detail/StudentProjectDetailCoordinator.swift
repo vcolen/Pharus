@@ -40,7 +40,7 @@ class StudentProjectDetailCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension StudentProjectDetailCoordinator: StudentProjectDetailFlow {
+extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showProjectRules() {
         let projectSheetView = ProjectSheetView(
             project: project,

@@ -43,7 +43,7 @@ class StudentProfileCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension StudentProfileCoordinator: StudentProfileFlow {
+extension StudentProfileCoordinator: StudentProfileCoordinating {
     func showLogOutAlert() {
         let logoutAlertView = LogoutAlertView()
 

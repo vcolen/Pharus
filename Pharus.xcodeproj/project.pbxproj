@@ -16,34 +16,34 @@
 		79222EA127F63FC50051334A /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79222EA027F63FC50051334A /* CGFloat+Extension.swift */; };
 		79222EA327F643D60051334A /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79222EA227F643D60051334A /* CircleProgressView.swift */; };
 		793453FA285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453F9285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift */; };
-		793453FC285CAAD000D3C08B /* StudentProjectsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453FB285CAAD000D3C08B /* StudentProjectsFlow.swift */; };
+		793453FC285CAAD000D3C08B /* StudentProjectsCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453FB285CAAD000D3C08B /* StudentProjectsCoordinating.swift */; };
 		793453FF285CAB6000D3C08B /* LogoutAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793453FE285CAB6000D3C08B /* LogoutAlertViewDelegate.swift */; };
 		79345401285CAB7400D3C08B /* LogoutAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345400285CAB7400D3C08B /* LogoutAlertCoordinating.swift */; };
 		79345403285CAB8500D3C08B /* LogoutAlertPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345402285CAB8500D3C08B /* LogoutAlertPresenting.swift */; };
 		79345406285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */; };
-		79345408285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345407285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift */; };
-		7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */; };
+		79345408285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */; };
+		7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345409285CAC0000D3C08B /* ProjectSubcriptionAlertCoordinating.swift */; };
 		7934540D285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */; };
-		7934540F285CACBC00D3C08B /* SingleButtonAlertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */; };
-		79345411285CACCC00D3C08B /* SingleButtonAlertPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345410285CACCC00D3C08B /* SingleButtonAlertPresenting.swift */; };
-		79345414285CAD0C00D3C08B /* AvatarSelectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */; };
-		79345417285CADBF00D3C08B /* ProjectSheetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */; };
-		7934541A285CADD400D3C08B /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345419285CADD400D3C08B /* LoginFlow.swift */; };
-		7934541C285CADE400D3C08B /* LoginPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541B285CADE400D3C08B /* LoginPresenting.swift */; };
+		7934540F285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934540E285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift */; };
+		79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */; };
+		79345414285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345413285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift */; };
+		79345417285CADBF00D3C08B /* ProjectSheetCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345416285CADBF00D3C08B /* ProjectSheetCoordinating.swift */; };
+		7934541A285CADD400D3C08B /* LoginCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345419285CADD400D3C08B /* LoginCoordinating.swift */; };
+		7934541C285CADE400D3C08B /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */; };
 		7934541E285CADF300D3C08B /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541D285CADF300D3C08B /* LoginViewDelegate.swift */; };
-		79345420285CAE2000D3C08B /* ProjectSheetPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541F285CAE2000D3C08B /* ProjectSheetPresenting.swift */; };
+		79345420285CAE2000D3C08B /* ProjectSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541F285CAE2000D3C08B /* ProjectSheetProtocol.swift */; };
 		79345422285CAE3100D3C08B /* ProjectSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345421285CAE3100D3C08B /* ProjectSheetDelegate.swift */; };
-		79345425285CAE8B00D3C08B /* SendFileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345424285CAE8B00D3C08B /* SendFileViewDelegate.swift */; };
+		79345425285CAE8B00D3C08B /* SendFileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345424285CAE8B00D3C08B /* SendFileDelegate.swift */; };
 		79345427285CAE9900D3C08B /* SendFilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */; };
-		79345429285CAEE200D3C08B /* SendFileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345428285CAEE200D3C08B /* SendFileFlow.swift */; };
-		7934542C285CAF2C00D3C08B /* StudentHomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */; };
+		79345429285CAEE200D3C08B /* SendFileCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345428285CAEE200D3C08B /* SendFileCoordinating.swift */; };
+		7934542C285CAF2C00D3C08B /* StudentHomeCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542B285CAF2C00D3C08B /* StudentHomeCoordinating.swift */; };
 		7934542E285CAF3900D3C08B /* StudentHomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */; };
-		79345431285CAF8700D3C08B /* StudentProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345430285CAF8700D3C08B /* StudentProfileFlow.swift */; };
+		79345431285CAF8700D3C08B /* StudentProfileCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345430285CAF8700D3C08B /* StudentProfileCoordinating.swift */; };
 		79345433285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */; };
-		79345436285CAFDC00D3C08B /* StudentProjectDetailFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345435285CAFDC00D3C08B /* StudentProjectDetailFlow.swift */; };
+		79345436285CAFDC00D3C08B /* StudentProjectDetailCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345435285CAFDC00D3C08B /* StudentProjectDetailCoordinating.swift */; };
 		79345438285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */; };
 		7934543A285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345439285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift */; };
-		7934543D285CB04100D3C08B /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934543C285CB04100D3C08B /* TabBarFlow.swift */; };
+		7934543D285CB04100D3C08B /* TabBarCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934543C285CB04100D3C08B /* TabBarCoordinating.swift */; };
 		7934543F285CB23E00D3C08B /* LogoutAlertViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934543E285CB23E00D3C08B /* LogoutAlertViewable.swift */; };
 		793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73827FE177000CD8334 /* CheckmarkButton.swift */; };
 		793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EC73A27FE183000CD8334 /* UIImage+Extension.swift */; };
@@ -101,24 +101,6 @@
 		79DA98D2285A668C0071D4D1 /* FullAvatarImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98D1285A668C0071D4D1 /* FullAvatarImages.swift */; };
 		79DA98D4285A66980071D4D1 /* CircleAvatarImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98D3285A66980071D4D1 /* CircleAvatarImages.swift */; };
 		79DA98D6285A67540071D4D1 /* CompanyImages.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DA98D5285A67540071D4D1 /* CompanyImages.swift.swift */; };
-		79E0CCD6285CB9CF007A5361 /* ProjectSubcriptionViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCD5285CB9CF007A5361 /* ProjectSubcriptionViewable.swift */; };
-		79E0CCD8285CBA19007A5361 /* SingleButtonAlertViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCD7285CBA19007A5361 /* SingleButtonAlertViewable.swift */; };
-		79E0CCDA285CBA49007A5361 /* AvatarSelectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCD9285CBA49007A5361 /* AvatarSelectionViewDelegate.swift */; };
-		79E0CCDC285CBA5A007A5361 /* AvatarSelectionViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCDB285CBA5A007A5361 /* AvatarSelectionViewable.swift */; };
-		79E0CCDE285CBA73007A5361 /* AvatarSelectionPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCDD285CBA73007A5361 /* AvatarSelectionPresenting.swift */; };
-		79E0CCE0285CBA9D007A5361 /* LoginViewable.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCDF285CBA9D007A5361 /* LoginViewable.swift.swift */; };
-		79E0CCE2285CBAD9007A5361 /* ProjectSheetViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE1285CBAD9007A5361 /* ProjectSheetViewable.swift */; };
-		79E0CCE4285CBAF6007A5361 /* SendFileViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE3285CBAF6007A5361 /* SendFileViewable.swift */; };
-		79E0CCE6285CBB67007A5361 /* StudentHomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE5285CBB67007A5361 /* StudentHomeViewDelegate.swift */; };
-		79E0CCE8285CBB74007A5361 /* StudentHomeViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCE7285CBB74007A5361 /* StudentHomeViewable.swift */; };
-		79E0CCEB285CBBBD007A5361 /* HomeNewsViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCEA285CBBBD007A5361 /* HomeNewsViewable.swift */; };
-		79E0CCED285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCEC285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift */; };
-		79E0CCEF285CBC04007A5361 /* StudentProfileViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCEE285CBC04007A5361 /* StudentProfileViewable.swift */; };
-		79E0CCF1285CBC1B007A5361 /* StudentProfileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCF0285CBC1B007A5361 /* StudentProfileViewDelegate.swift */; };
-		79E0CCF3285CBC3F007A5361 /* StudentProjectDetailViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCF2285CBC3F007A5361 /* StudentProjectDetailViewable.swift */; };
-		79E0CCF5285CBC64007A5361 /* StudentProjectsViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCF4285CBC64007A5361 /* StudentProjectsViewable.swift */; };
-		79E0CCF7285CBC72007A5361 /* StudentProjectsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCF6285CBC72007A5361 /* StudentProjectsViewDelegate.swift */; };
-		79E0CCFA285CBCBB007A5361 /* StudentProjectsRankingCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCF9285CBCBB007A5361 /* StudentProjectsRankingCoordinating.swift */; };
 		79E6424D27F098D30046A2F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6424C27F098D30046A2F0 /* Network.swift */; };
 		79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8389E280AF7C5001C46AD /* HomeNewsView.swift */; };
 		79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */; };
@@ -186,34 +168,34 @@
 		79222EA027F63FC50051334A /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		79222EA227F643D60051334A /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		793453F9285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsPresenterProtocol.swift; sourceTree = "<group>"; };
-		793453FB285CAAD000D3C08B /* StudentProjectsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsFlow.swift; sourceTree = "<group>"; };
+		793453FB285CAAD000D3C08B /* StudentProjectsCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsCoordinating.swift; sourceTree = "<group>"; };
 		793453FE285CAB6000D3C08B /* LogoutAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertViewDelegate.swift; sourceTree = "<group>"; };
 		79345400285CAB7400D3C08B /* LogoutAlertCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertCoordinating.swift; sourceTree = "<group>"; };
 		79345402285CAB8500D3C08B /* LogoutAlertPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertPresenting.swift; sourceTree = "<group>"; };
 		79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertViewDelegate.swift; sourceTree = "<group>"; };
-		79345407285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionPresenting.swift; sourceTree = "<group>"; };
-		79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertFlow.swift; sourceTree = "<group>"; };
+		79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionPresenterProtocol.swift; sourceTree = "<group>"; };
+		79345409285CAC0000D3C08B /* ProjectSubcriptionAlertCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertCoordinating.swift; sourceTree = "<group>"; };
 		7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertViewDelegate.swift; sourceTree = "<group>"; };
-		7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertFlow.swift; sourceTree = "<group>"; };
-		79345410285CACCC00D3C08B /* SingleButtonAlertPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertPresenting.swift; sourceTree = "<group>"; };
-		79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionFlow.swift; sourceTree = "<group>"; };
-		79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetFlow.swift; sourceTree = "<group>"; };
-		79345419285CADD400D3C08B /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
-		7934541B285CADE400D3C08B /* LoginPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenting.swift; sourceTree = "<group>"; };
+		7934540E285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertCoordinating.swift; sourceTree = "<group>"; };
+		79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertPresenterProtocol.swift; sourceTree = "<group>"; };
+		79345413285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionCoordinating.swift; sourceTree = "<group>"; };
+		79345416285CADBF00D3C08B /* ProjectSheetCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetCoordinating.swift; sourceTree = "<group>"; };
+		79345419285CADD400D3C08B /* LoginCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinating.swift; sourceTree = "<group>"; };
+		7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
 		7934541D285CADF300D3C08B /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
-		7934541F285CAE2000D3C08B /* ProjectSheetPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetPresenting.swift; sourceTree = "<group>"; };
+		7934541F285CAE2000D3C08B /* ProjectSheetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetProtocol.swift; sourceTree = "<group>"; };
 		79345421285CAE3100D3C08B /* ProjectSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetDelegate.swift; sourceTree = "<group>"; };
-		79345424285CAE8B00D3C08B /* SendFileViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileViewDelegate.swift; sourceTree = "<group>"; };
+		79345424285CAE8B00D3C08B /* SendFileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileDelegate.swift; sourceTree = "<group>"; };
 		79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFilePresenterProtocol.swift; sourceTree = "<group>"; };
-		79345428285CAEE200D3C08B /* SendFileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileFlow.swift; sourceTree = "<group>"; };
-		7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeFlow.swift; sourceTree = "<group>"; };
+		79345428285CAEE200D3C08B /* SendFileCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileCoordinating.swift; sourceTree = "<group>"; };
+		7934542B285CAF2C00D3C08B /* StudentHomeCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeCoordinating.swift; sourceTree = "<group>"; };
 		7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomePresenterProtocol.swift; sourceTree = "<group>"; };
-		79345430285CAF8700D3C08B /* StudentProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileFlow.swift; sourceTree = "<group>"; };
+		79345430285CAF8700D3C08B /* StudentProfileCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileCoordinating.swift; sourceTree = "<group>"; };
 		79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfilePresenterProtocol.swift; sourceTree = "<group>"; };
-		79345435285CAFDC00D3C08B /* StudentProjectDetailFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailFlow.swift; sourceTree = "<group>"; };
+		79345435285CAFDC00D3C08B /* StudentProjectDetailCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailCoordinating.swift; sourceTree = "<group>"; };
 		79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsDetailPresenterProtocol.swift; sourceTree = "<group>"; };
 		79345439285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailViewDelegate.swift; sourceTree = "<group>"; };
-		7934543C285CB04100D3C08B /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
+		7934543C285CB04100D3C08B /* TabBarCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinating.swift; sourceTree = "<group>"; };
 		7934543E285CB23E00D3C08B /* LogoutAlertViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertViewable.swift; sourceTree = "<group>"; };
 		793EC73827FE177000CD8334 /* CheckmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		793EC73A27FE183000CD8334 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -273,24 +255,6 @@
 		79DA98D1285A668C0071D4D1 /* FullAvatarImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullAvatarImages.swift; sourceTree = "<group>"; };
 		79DA98D3285A66980071D4D1 /* CircleAvatarImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAvatarImages.swift; sourceTree = "<group>"; };
 		79DA98D5285A67540071D4D1 /* CompanyImages.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyImages.swift.swift; sourceTree = "<group>"; };
-		79E0CCD5285CB9CF007A5361 /* ProjectSubcriptionViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionViewable.swift; sourceTree = "<group>"; };
-		79E0CCD7285CBA19007A5361 /* SingleButtonAlertViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertViewable.swift; sourceTree = "<group>"; };
-		79E0CCD9285CBA49007A5361 /* AvatarSelectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionViewDelegate.swift; sourceTree = "<group>"; };
-		79E0CCDB285CBA5A007A5361 /* AvatarSelectionViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionViewable.swift; sourceTree = "<group>"; };
-		79E0CCDD285CBA73007A5361 /* AvatarSelectionPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenting.swift; sourceTree = "<group>"; };
-		79E0CCDF285CBA9D007A5361 /* LoginViewable.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewable.swift.swift; sourceTree = "<group>"; };
-		79E0CCE1285CBAD9007A5361 /* ProjectSheetViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetViewable.swift; sourceTree = "<group>"; };
-		79E0CCE3285CBAF6007A5361 /* SendFileViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileViewable.swift; sourceTree = "<group>"; };
-		79E0CCE5285CBB67007A5361 /* StudentHomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewDelegate.swift; sourceTree = "<group>"; };
-		79E0CCE7285CBB74007A5361 /* StudentHomeViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewable.swift; sourceTree = "<group>"; };
-		79E0CCEA285CBBBD007A5361 /* HomeNewsViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewable.swift; sourceTree = "<group>"; };
-		79E0CCEC285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewDelegate.swift.swift; sourceTree = "<group>"; };
-		79E0CCEE285CBC04007A5361 /* StudentProfileViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewable.swift; sourceTree = "<group>"; };
-		79E0CCF0285CBC1B007A5361 /* StudentProfileViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewDelegate.swift; sourceTree = "<group>"; };
-		79E0CCF2285CBC3F007A5361 /* StudentProjectDetailViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectDetailViewable.swift; sourceTree = "<group>"; };
-		79E0CCF4285CBC64007A5361 /* StudentProjectsViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsViewable.swift; sourceTree = "<group>"; };
-		79E0CCF6285CBC72007A5361 /* StudentProjectsViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsViewDelegate.swift; sourceTree = "<group>"; };
-		79E0CCF9285CBCBB007A5361 /* StudentProjectsRankingCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingCoordinating.swift; sourceTree = "<group>"; };
 		79E6424C27F098D30046A2F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		79E8389E280AF7C5001C46AD /* HomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsView.swift; sourceTree = "<group>"; };
 		79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
@@ -386,9 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				793453F9285CAA9A00D3C08B /* StudentProjectsPresenterProtocol.swift */,
-				793453FB285CAAD000D3C08B /* StudentProjectsFlow.swift */,
-				79E0CCF4285CBC64007A5361 /* StudentProjectsViewable.swift */,
-				79E0CCF6285CBC72007A5361 /* StudentProjectsViewDelegate.swift */,
+				793453FB285CAAD000D3C08B /* StudentProjectsCoordinating.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -407,10 +369,9 @@
 		79345404285CABD200D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				79345409285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift */,
+				79345409285CAC0000D3C08B /* ProjectSubcriptionAlertCoordinating.swift */,
 				79345405285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift */,
-				79345407285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift */,
-				79E0CCD5285CB9CF007A5361 /* ProjectSubcriptionViewable.swift */,
+				79345407285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -418,10 +379,9 @@
 		7934540B285CACA600D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7934540E285CACBC00D3C08B /* SingleButtonAlertFlow.swift */,
-				79345410285CACCC00D3C08B /* SingleButtonAlertPresenting.swift */,
+				7934540E285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift */,
+				79345410285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift */,
 				7934540C285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift */,
-				79E0CCD7285CBA19007A5361 /* SingleButtonAlertViewable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -429,10 +389,7 @@
 		79345412285CAD0000D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				79345413285CAD0C00D3C08B /* AvatarSelectionFlow.swift */,
-				79E0CCD9285CBA49007A5361 /* AvatarSelectionViewDelegate.swift */,
-				79E0CCDB285CBA5A007A5361 /* AvatarSelectionViewable.swift */,
-				79E0CCDD285CBA73007A5361 /* AvatarSelectionPresenting.swift */,
+				79345413285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -441,9 +398,8 @@
 			isa = PBXGroup;
 			children = (
 				79345421285CAE3100D3C08B /* ProjectSheetDelegate.swift */,
-				79345416285CADBF00D3C08B /* ProjectSheetFlow.swift */,
-				7934541F285CAE2000D3C08B /* ProjectSheetPresenting.swift */,
-				79E0CCE1285CBAD9007A5361 /* ProjectSheetViewable.swift */,
+				79345416285CADBF00D3C08B /* ProjectSheetCoordinating.swift */,
+				7934541F285CAE2000D3C08B /* ProjectSheetProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -451,10 +407,9 @@
 		79345418285CADCE00D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				79345419285CADD400D3C08B /* LoginFlow.swift */,
-				7934541B285CADE400D3C08B /* LoginPresenting.swift */,
+				79345419285CADD400D3C08B /* LoginCoordinating.swift */,
+				7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */,
 				7934541D285CADF300D3C08B /* LoginViewDelegate.swift */,
-				79E0CCDF285CBA9D007A5361 /* LoginViewable.swift.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -462,9 +417,8 @@
 		79345423285CAE8200D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				79345424285CAE8B00D3C08B /* SendFileViewDelegate.swift */,
-				79E0CCE3285CBAF6007A5361 /* SendFileViewable.swift */,
-				79345428285CAEE200D3C08B /* SendFileFlow.swift */,
+				79345424285CAE8B00D3C08B /* SendFileDelegate.swift */,
+				79345428285CAEE200D3C08B /* SendFileCoordinating.swift */,
 				79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */,
 			);
 			path = Protocols;
@@ -473,9 +427,7 @@
 		7934542A285CAF2300D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */,
-				79E0CCE5285CBB67007A5361 /* StudentHomeViewDelegate.swift */,
-				79E0CCE7285CBB74007A5361 /* StudentHomeViewable.swift */,
+				7934542B285CAF2C00D3C08B /* StudentHomeCoordinating.swift */,
 				7934542D285CAF3900D3C08B /* StudentHomePresenterProtocol.swift */,
 			);
 			path = Protocols;
@@ -484,10 +436,8 @@
 		7934542F285CAF8000D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				79345430285CAF8700D3C08B /* StudentProfileFlow.swift */,
+				79345430285CAF8700D3C08B /* StudentProfileCoordinating.swift */,
 				79345432285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift */,
-				79E0CCEE285CBC04007A5361 /* StudentProfileViewable.swift */,
-				79E0CCF0285CBC1B007A5361 /* StudentProfileViewDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -495,10 +445,9 @@
 		79345434285CAFD300D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				79345435285CAFDC00D3C08B /* StudentProjectDetailFlow.swift */,
+				79345435285CAFDC00D3C08B /* StudentProjectDetailCoordinating.swift */,
 				79345439285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift */,
 				79345437285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift */,
-				79E0CCF2285CBC3F007A5361 /* StudentProjectDetailViewable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -506,7 +455,7 @@
 		7934543B285CB03300D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7934543C285CB04100D3C08B /* TabBarFlow.swift */,
+				7934543C285CB04100D3C08B /* TabBarCoordinating.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -581,7 +530,6 @@
 			isa = PBXGroup;
 			children = (
 				79C577D127FBBB9800046B00 /* StudentProjectsRankingViewController.swift */,
-				79E0CCF8285CBC88007A5361 /* Protocols */,
 				C05AA2CD27FC82AB00230698 /* StudentProjectsRankingCoordinator.swift */,
 				79C577CF27FBBB8100046B00 /* StudentProjectRankingCell.swift */,
 			);
@@ -661,9 +609,8 @@
 		79A4B757281249A0002C018C /* Student Home News */ = {
 			isa = PBXGroup;
 			children = (
-				79E8389E280AF7C5001C46AD /* HomeNewsView.swift */,
 				79A4B75528124214002C018C /* HomeNewsViewController.swift */,
-				79E0CCE9285CBBAD007A5361 /* Protocols */,
+				79E8389E280AF7C5001C46AD /* HomeNewsView.swift */,
 			);
 			path = "Student Home News";
 			sourceTree = "<group>";
@@ -721,23 +668,6 @@
 				793EC73A27FE183000CD8334 /* UIImage+Extension.swift */,
 			);
 			name = UIImage;
-			sourceTree = "<group>";
-		};
-		79E0CCE9285CBBAD007A5361 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				79E0CCEA285CBBBD007A5361 /* HomeNewsViewable.swift */,
-				79E0CCEC285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		79E0CCF8285CBC88007A5361 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				79E0CCF9285CBCBB007A5361 /* StudentProjectsRankingCoordinating.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		79E6424B27F098C10046A2F0 /* Service */ = {
@@ -1078,18 +1008,16 @@
 				C09DB2BE28138C6B0028FDA7 /* StudentModel.swift in Sources */,
 				79A2C777280C4A1700B3159B /* MainCardButton.swift in Sources */,
 				C09DB2B528138C1B0028FDA7 /* SingleButtonAlertCoordinator.swift in Sources */,
-				79E0CCF3285CBC3F007A5361 /* StudentProjectDetailViewable.swift in Sources */,
 				C09DB2B028138C010028FDA7 /* StudentProjectsRankingViewController.swift in Sources */,
 				79345433285CAF9F00D3C08B /* StudentProfilePresenterProtocol.swift in Sources */,
 				C09DB2AB28138BDD0028FDA7 /* ProjectSubcriptionAlertViewController.swift in Sources */,
 				79A2C775280C473F00B3159B /* SubscribeButton.swift in Sources */,
 				794D9ABD27F8D15A0017D5EB /* Date+Extension.swift in Sources */,
 				79E838A9280AFD03001C46AD /* SendFileCoordinator.swift in Sources */,
-				7934542C285CAF2C00D3C08B /* StudentHomeFlow.swift in Sources */,
+				7934542C285CAF2C00D3C08B /* StudentHomeCoordinating.swift in Sources */,
 				7993C9B628104C6D00526AF2 /* LogoutAlertPresenter.swift in Sources */,
 				79222EA327F643D60051334A /* CircleProgressView.swift in Sources */,
 				79E838A3280AF804001C46AD /* StudentHomeView.swift in Sources */,
-				79E0CCDC285CBA5A007A5361 /* AvatarSelectionViewable.swift in Sources */,
 				C057E8F52807954B004E44C3 /* AvatarSelectionCoordinator.swift in Sources */,
 				7993C9BA28104E7400526AF2 /* SmallAlertButton.swift in Sources */,
 				C05AA30327FFAA7400230698 /* SingleButtonAlertViewController.swift in Sources */,
@@ -1098,33 +1026,26 @@
 				79DA98BB285A5DF40071D4D1 /* Icons.swift in Sources */,
 				79DA98D2285A668C0071D4D1 /* FullAvatarImages.swift in Sources */,
 				79DA98C7285A5EF60071D4D1 /* RegEx.swift in Sources */,
-				79E0CCD8285CBA19007A5361 /* SingleButtonAlertViewable.swift in Sources */,
 				7934543F285CB23E00D3C08B /* LogoutAlertViewable.swift in Sources */,
 				797A68EC27F4649200ABDAC6 /* UIColor+Extension.swift in Sources */,
 				7952058127FE382D00A89012 /* TabBarViewController.swift in Sources */,
 				79DA98B9285A5DEE0071D4D1 /* Assets.swift in Sources */,
-				79345431285CAF8700D3C08B /* StudentProfileFlow.swift in Sources */,
-				7934543D285CB04100D3C08B /* TabBarFlow.swift in Sources */,
+				79345431285CAF8700D3C08B /* StudentProfileCoordinating.swift in Sources */,
+				7934543D285CB04100D3C08B /* TabBarCoordinating.swift in Sources */,
 				7906FE61281321F900E4A83A /* Float+Extension.swift in Sources */,
 				793EC73B27FE183000CD8334 /* UIImage+Extension.swift in Sources */,
 				79345438285CAFE700D3C08B /* StudentProjectsDetailPresenterProtocol.swift in Sources */,
-				79E0CCDE285CBA73007A5361 /* AvatarSelectionPresenting.swift in Sources */,
 				79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */,
 				79DA98D6285A67540071D4D1 /* CompanyImages.swift.swift in Sources */,
 				79DA98CE285A60D30071D4D1 /* PharusIcons.swift in Sources */,
-				79E0CCF1285CBC1B007A5361 /* StudentProfileViewDelegate.swift in Sources */,
 				79DA98D4285A66980071D4D1 /* CircleAvatarImages.swift in Sources */,
 				7934541E285CADF300D3C08B /* LoginViewDelegate.swift in Sources */,
-				79E0CCE8285CBB74007A5361 /* StudentHomeViewable.swift in Sources */,
-				79345429285CAEE200D3C08B /* SendFileFlow.swift in Sources */,
-				79E0CCD6285CB9CF007A5361 /* ProjectSubcriptionViewable.swift in Sources */,
+				79345429285CAEE200D3C08B /* SendFileCoordinating.swift in Sources */,
 				7993C9AF28103CD500526AF2 /* ProjectSubcriptionAlertCoordinator.swift in Sources */,
-				79E0CCDA285CBA49007A5361 /* AvatarSelectionViewDelegate.swift in Sources */,
 				79345427285CAE9900D3C08B /* SendFilePresenterProtocol.swift in Sources */,
-				79345408285CABEF00D3C08B /* ProjectSubcriptionPresenting.swift in Sources */,
+				79345408285CABEF00D3C08B /* ProjectSubcriptionPresenterProtocol.swift in Sources */,
 				C04561A827EA041B007EC5C3 /* Coordinator.swift in Sources */,
 				795005A82811E734009C3716 /* Student.swift in Sources */,
-				79E0CCED285CBBD9007A5361 /* HomeNewsViewDelegate.swift.swift in Sources */,
 				C05AA2BC27FC740E00230698 /* TabBarCoordinator.swift in Sources */,
 				79EE571B280B889200F01069 /* StudentHomePresenter.swift in Sources */,
 				79DA98C1285A5E070071D4D1 /* FullImage.swift in Sources */,
@@ -1132,36 +1053,33 @@
 				7993C9B228104C5800526AF2 /* LogoutAlertView.swift in Sources */,
 				7910D9D027FCF5C800A8DDA0 /* StudentProjectDetailViewController.swift in Sources */,
 				796F55342810F03E00DC6F70 /* ProjectModel.swift in Sources */,
-				79E0CCEB285CBBBD007A5361 /* HomeNewsViewable.swift in Sources */,
 				79EE5719280B881500F01069 /* StudentHomeCoordinator.swift in Sources */,
 				C057E8F1280794E9004E44C3 /* AvatarSelectionViewController.swift in Sources */,
 				7993C9B828104C7700526AF2 /* LogoutAlertViewController.swift in Sources */,
 				79E838A7280AFCE7001C46AD /* SendFilePresenter.swift in Sources */,
-				79345425285CAE8B00D3C08B /* SendFileViewDelegate.swift in Sources */,
+				79345425285CAE8B00D3C08B /* SendFileDelegate.swift in Sources */,
 				79AF90FD2804478F0094AB97 /* ProjectTaskView.swift in Sources */,
 				7934540D285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift in Sources */,
 				79E6424D27F098D30046A2F0 /* Network.swift in Sources */,
 				7993C9A928102E1800526AF2 /* SecondaryCardButton.swift in Sources */,
 				79DA98BD285A5DF90071D4D1 /* Images.swift in Sources */,
 				79164BB927F1251C00167B8A /* UIView+Extension.swift in Sources */,
-				7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertFlow.swift in Sources */,
+				7934540A285CAC0000D3C08B /* ProjectSubcriptionAlertCoordinating.swift in Sources */,
 				7943975827F3C5BF0075102B /* StudentProjectsCoordinator.swift in Sources */,
-				79E0CCF7285CBC72007A5361 /* StudentProjectsViewDelegate.swift in Sources */,
 				79345401285CAB7400D3C08B /* LogoutAlertCoordinating.swift in Sources */,
 				79DA98C3285A5E0E0071D4D1 /* CircleImage.swift in Sources */,
-				79345417285CADBF00D3C08B /* ProjectSheetFlow.swift in Sources */,
-				79345411285CACCC00D3C08B /* SingleButtonAlertPresenting.swift in Sources */,
+				79345417285CADBF00D3C08B /* ProjectSheetCoordinating.swift in Sources */,
+				79345411285CACCC00D3C08B /* SingleButtonAlertPresenterProtocol.swift in Sources */,
 				793EC73927FE177000CD8334 /* CheckmarkButton.swift in Sources */,
 				7952058327FE394900A89012 /* ProjectSheetView.swift in Sources */,
 				C05AA2CE27FC82AB00230698 /* StudentProjectsRankingCoordinator.swift in Sources */,
 				79345406285CABDD00D3C08B /* ProjectSubcriptionAlertViewDelegate.swift in Sources */,
 				C057E8E92807941C004E44C3 /* AvatarSelectionView.swift in Sources */,
 				795005AA2811E74D009C3716 /* Task.swift in Sources */,
-				7934540F285CACBC00D3C08B /* SingleButtonAlertFlow.swift in Sources */,
+				7934540F285CACBC00D3C08B /* SingleButtonAlertCoordinating.swift in Sources */,
 				C01BB6C5280B8C9C004D4790 /* StudentProfileViewController.swift in Sources */,
 				C05AA2F527FFA66D00230698 /* SingleButtonAlertView.swift in Sources */,
 				79DA98C5285A5E1A0071D4D1 /* Company.swift in Sources */,
-				79E0CCFA285CBCBB007A5361 /* StudentProjectsRankingCoordinating.swift in Sources */,
 				C01BB6C1280B8C84004D4790 /* StudenteProfileView.swift in Sources */,
 				7993C9AD28103CAB00526AF2 /* ProjectSubcriptionAlertPresenter.swift in Sources */,
 				795005AC2811E75A009C3716 /* Project.swift in Sources */,
@@ -1171,41 +1089,36 @@
 				C008AF1A27F1ED3700AD94C9 /* LoginCoodinator.swift in Sources */,
 				7943975A27F3C5D20075102B /* StudentProjectsViewController.swift in Sources */,
 				79DA98C9285A5F010071D4D1 /* CellReuseIdentifiers.swift in Sources */,
-				79E0CCEF285CBC04007A5361 /* StudentProfileViewable.swift in Sources */,
 				795A02192809B695000D0B84 /* ProjectSheetCoordinator.swift in Sources */,
-				79345420285CAE2000D3C08B /* ProjectSheetPresenting.swift in Sources */,
-				79345414285CAD0C00D3C08B /* AvatarSelectionFlow.swift in Sources */,
+				79345420285CAE2000D3C08B /* ProjectSheetProtocol.swift in Sources */,
+				79345414285CAD0C00D3C08B /* AvatarSelectionCoordinating.swift in Sources */,
 				79A4B75628124214002C018C /* HomeNewsViewController.swift in Sources */,
 				7910D9D227FD0B8300A8DDA0 /* UIFont+Extension.swift in Sources */,
 				79345403285CAB8500D3C08B /* LogoutAlertPresenting.swift in Sources */,
-				79E0CCE4285CBAF6007A5361 /* SendFileViewable.swift in Sources */,
-				793453FC285CAAD000D3C08B /* StudentProjectsFlow.swift in Sources */,
+				793453FC285CAAD000D3C08B /* StudentProjectsCoordinating.swift in Sources */,
 				79AF90FB28043DEA0094AB97 /* StudentProjectDetailPresenter.swift in Sources */,
 				79A2C779280C587F00B3159B /* ProjectScheduleView.swift in Sources */,
 				79A4FCD1280E58B900B509FE /* UIStackView+Extension.swift in Sources */,
 				C01BB6BB280B8C73004D4790 /* StudentProfileCoordinator.swift in Sources */,
-				79E0CCE2285CBAD9007A5361 /* ProjectSheetViewable.swift in Sources */,
 				79735B64280ED78600D1067B /* UIViewController+Extension.swift in Sources */,
 				7952058527FE3B1A00A89012 /* ProjectSheetViewController.swift in Sources */,
 				79345422285CAE3100D3C08B /* ProjectSheetDelegate.swift in Sources */,
 				79E838A5280AF82C001C46AD /* StudentHomeViewController.swift in Sources */,
 				7943975E27F3C6020075102B /* StudentProjectCell.swift in Sources */,
 				79C577D027FBBB8100046B00 /* StudentProjectRankingCell.swift in Sources */,
-				79E0CCE6285CBB67007A5361 /* StudentHomeViewDelegate.swift in Sources */,
-				7934541C285CADE400D3C08B /* LoginPresenting.swift in Sources */,
+				7934541C285CADE400D3C08B /* LoginPresenterProtocol.swift in Sources */,
 				79E838AE280B067D001C46AD /* SingleButtonAlertPresenter.swift in Sources */,
 				C05AA30727FFAA9500230698 /* SendFileViewController.swift in Sources */,
 				79DA98BF285A5E010071D4D1 /* Avatar.swift in Sources */,
 				C04561AB27EA0428007EC5C3 /* AppCoordinator.swift in Sources */,
 				79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */,
-				7934541A285CADD400D3C08B /* LoginFlow.swift in Sources */,
-				79E0CCE0285CBA9D007A5361 /* LoginViewable.swift.swift in Sources */,
+				7934541A285CADD400D3C08B /* LoginCoordinating.swift in Sources */,
 				7963213027F23AF000A202EE /* LoginPresenter.swift in Sources */,
 				C045618B27EA03A5007EC5C3 /* AppDelegate.swift in Sources */,
 				C008AF2427F1EDA100AD94C9 /* LoginView.swift in Sources */,
 				7993C9A728102C2500526AF2 /* ProjectSubcriptionAlertView.swift in Sources */,
 				7963213227F23C9200A202EE /* Constants.swift in Sources */,
-				79345436285CAFDC00D3C08B /* StudentProjectDetailFlow.swift in Sources */,
+				79345436285CAFDC00D3C08B /* StudentProjectDetailCoordinating.swift in Sources */,
 				7934543A285CAFF500D3C08B /* StudentProjectDetailViewDelegate.swift in Sources */,
 				C045618D27EA03A5007EC5C3 /* SceneDelegate.swift in Sources */,
 				C008AF1D27F1ED5D00AD94C9 /* LoginViewController.swift in Sources */,
@@ -1217,7 +1130,6 @@
 				79AF90F928043D3C0094AB97 /* StudentProjectDetailCoordinator.swift in Sources */,
 				C01BB6C9280B8CAF004D4790 /* StudentProfilePresenter.swift in Sources */,
 				79222EA127F63FC50051334A /* CGFloat+Extension.swift in Sources */,
-				79E0CCF5285CBC64007A5361 /* StudentProjectsViewable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
