@@ -35,7 +35,7 @@ class LoginCoordinator: Coordinator {
 
 // MARK: - Actions
 
-extension LoginCoordinator: LoginFlow {
+extension LoginCoordinator: LoginCoordinating {
 
     func showHome(student: StudentModel) {
         let tabbarViewController = TabBarViewController()
