@@ -33,7 +33,7 @@
 		7934541E285CADF300D3C08B /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541D285CADF300D3C08B /* LoginViewDelegate.swift */; };
 		79345420285CAE2000D3C08B /* ProjectSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934541F285CAE2000D3C08B /* ProjectSheetProtocol.swift */; };
 		79345422285CAE3100D3C08B /* ProjectSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345421285CAE3100D3C08B /* ProjectSheetDelegate.swift */; };
-		79345425285CAE8B00D3C08B /* SendFileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345424285CAE8B00D3C08B /* SendFileDelegate.swift */; };
+		79345425285CAE8B00D3C08B /* SendFileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345424285CAE8B00D3C08B /* SendFileViewDelegate.swift */; };
 		79345427285CAE9900D3C08B /* SendFilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */; };
 		79345429285CAEE200D3C08B /* SendFileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79345428285CAEE200D3C08B /* SendFileFlow.swift */; };
 		7934542C285CAF2C00D3C08B /* StudentHomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */; };
@@ -203,7 +203,7 @@
 		7934541D285CADF300D3C08B /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
 		7934541F285CAE2000D3C08B /* ProjectSheetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetProtocol.swift; sourceTree = "<group>"; };
 		79345421285CAE3100D3C08B /* ProjectSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSheetDelegate.swift; sourceTree = "<group>"; };
-		79345424285CAE8B00D3C08B /* SendFileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileDelegate.swift; sourceTree = "<group>"; };
+		79345424285CAE8B00D3C08B /* SendFileViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileViewDelegate.swift; sourceTree = "<group>"; };
 		79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFilePresenterProtocol.swift; sourceTree = "<group>"; };
 		79345428285CAEE200D3C08B /* SendFileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFileFlow.swift; sourceTree = "<group>"; };
 		7934542B285CAF2C00D3C08B /* StudentHomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeFlow.swift; sourceTree = "<group>"; };
@@ -462,7 +462,7 @@
 		79345423285CAE8200D3C08B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				79345424285CAE8B00D3C08B /* SendFileDelegate.swift */,
+				79345424285CAE8B00D3C08B /* SendFileViewDelegate.swift */,
 				79E0CCE3285CBAF6007A5361 /* SendFileViewable.swift */,
 				79345428285CAEE200D3C08B /* SendFileFlow.swift */,
 				79345426285CAE9900D3C08B /* SendFilePresenterProtocol.swift */,
@@ -1137,7 +1137,7 @@
 				C057E8F1280794E9004E44C3 /* AvatarSelectionViewController.swift in Sources */,
 				7993C9B828104C7700526AF2 /* LogoutAlertViewController.swift in Sources */,
 				79E838A7280AFCE7001C46AD /* SendFilePresenter.swift in Sources */,
-				79345425285CAE8B00D3C08B /* SendFileDelegate.swift in Sources */,
+				79345425285CAE8B00D3C08B /* SendFileViewDelegate.swift in Sources */,
 				79AF90FD2804478F0094AB97 /* ProjectTaskView.swift in Sources */,
 				7934540D285CACAD00D3C08B /* SingleButtonAlertViewDelegate.swift in Sources */,
 				79E6424D27F098D30046A2F0 /* Network.swift in Sources */,
