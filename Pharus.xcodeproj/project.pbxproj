@@ -106,6 +106,7 @@
 		79E0CCDA285CBA49007A5361 /* AvatarSelectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCD9285CBA49007A5361 /* AvatarSelectionViewDelegate.swift */; };
 		79E0CCDC285CBA5A007A5361 /* AvatarSelectionViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCDB285CBA5A007A5361 /* AvatarSelectionViewable.swift */; };
 		79E0CCDE285CBA73007A5361 /* AvatarSelectionPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCDD285CBA73007A5361 /* AvatarSelectionPresenting.swift */; };
+		79E0CCE0285CBA9D007A5361 /* LoginViewable.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0CCDF285CBA9D007A5361 /* LoginViewable.swift.swift */; };
 		79E6424D27F098D30046A2F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6424C27F098D30046A2F0 /* Network.swift */; };
 		79E8389F280AF7C5001C46AD /* HomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8389E280AF7C5001C46AD /* HomeNewsView.swift */; };
 		79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */; };
@@ -265,6 +266,7 @@
 		79E0CCD9285CBA49007A5361 /* AvatarSelectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionViewDelegate.swift; sourceTree = "<group>"; };
 		79E0CCDB285CBA5A007A5361 /* AvatarSelectionViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionViewable.swift; sourceTree = "<group>"; };
 		79E0CCDD285CBA73007A5361 /* AvatarSelectionPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenting.swift; sourceTree = "<group>"; };
+		79E0CCDF285CBA9D007A5361 /* LoginViewable.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewable.swift.swift; sourceTree = "<group>"; };
 		79E6424C27F098D30046A2F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		79E8389E280AF7C5001C46AD /* HomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsView.swift; sourceTree = "<group>"; };
 		79E838A0280AF7E1001C46AD /* HomeMiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				79345419285CADD400D3C08B /* LoginFlow.swift */,
 				7934541B285CADE400D3C08B /* LoginPresenterProtocol.swift */,
 				7934541D285CADF300D3C08B /* LoginViewDelegate.swift */,
+				79E0CCDF285CBA9D007A5361 /* LoginViewable.swift.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1133,6 +1136,7 @@
 				C04561AB27EA0428007EC5C3 /* AppCoordinator.swift in Sources */,
 				79E838A1280AF7E1001C46AD /* HomeMiniCardView.swift in Sources */,
 				7934541A285CADD400D3C08B /* LoginFlow.swift in Sources */,
+				79E0CCE0285CBA9D007A5361 /* LoginViewable.swift.swift in Sources */,
 				7963213027F23AF000A202EE /* LoginPresenter.swift in Sources */,
 				C045618B27EA03A5007EC5C3 /* AppDelegate.swift in Sources */,
 				C008AF2427F1EDA100AD94C9 /* LoginView.swift in Sources */,
