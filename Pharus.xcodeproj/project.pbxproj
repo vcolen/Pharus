@@ -466,11 +466,11 @@
 		799AFA0F285CECDE001B0371 /* Student Projects */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA10285CECDE001B0371 /* StudentProjectsViewController.swift */,
-				799AFA11285CECDE001B0371 /* StudentProjectsCoordinator.swift */,
-				799AFA12285CECDE001B0371 /* StudentProjectCell.swift */,
-				799AFA13285CECDE001B0371 /* StudentProjectsPresenter.swift */,
 				799AFA14285CECDE001B0371 /* Protocols */,
+				799AFA12285CECDE001B0371 /* StudentProjectCell.swift */,
+				799AFA11285CECDE001B0371 /* StudentProjectsCoordinator.swift */,
+				799AFA13285CECDE001B0371 /* StudentProjectsPresenter.swift */,
+				799AFA10285CECDE001B0371 /* StudentProjectsViewController.swift */,
 			);
 			path = "Student Projects";
 			sourceTree = "<group>";
@@ -586,10 +586,10 @@
 		799AFA3D285CECDE001B0371 /* Project Subcription Alert */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA3E285CECDE001B0371 /* ProjectSubcriptionAlertPresenter.swift */,
 				799AFA3F285CECDE001B0371 /* ProjectSubcriptionAlertCoordinator.swift */,
-				799AFA40285CECDE001B0371 /* ProjectSubcriptionAlertViewController.swift */,
+				799AFA3E285CECDE001B0371 /* ProjectSubcriptionAlertPresenter.swift */,
 				799AFA41285CECDE001B0371 /* ProjectSubcriptionAlertView.swift */,
+				799AFA40285CECDE001B0371 /* ProjectSubcriptionAlertViewController.swift */,
 				799AFA42285CECDE001B0371 /* Protocols */,
 			);
 			path = "Project Subcription Alert";

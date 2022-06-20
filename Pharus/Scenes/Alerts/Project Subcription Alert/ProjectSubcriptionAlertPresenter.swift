@@ -11,12 +11,17 @@ class ProjectSubcriptionAlertPresenter: ProjectSubcriptionPresenting {
 
     // MARK: - Properties
 
-    private var coordinator: ProjectSubcriptionAlertCoordinator
+    private let coordinator: ProjectSubcriptionAlertCoordinator
+    let project: ProjectModel
 
     // MARK: - Initializer
 
-    init(coordinator: ProjectSubcriptionAlertCoordinator) {
+    init(
+        coordinator: ProjectSubcriptionAlertCoordinator,
+        project: ProjectModel
+    ) {
         self.coordinator = coordinator
+        self.project = project
     }
 
     // MARK: - Actions

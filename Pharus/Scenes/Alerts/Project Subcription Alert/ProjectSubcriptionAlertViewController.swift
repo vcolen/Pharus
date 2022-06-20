@@ -11,21 +11,19 @@ class ProjectSubcriptionAlertViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var alertView: ProjectSubcriptionAlertView
-    private var coordinator: ProjectSubcriptionAlertCoordinator
-    private var presenter: ProjectSubcriptionAlertPresenter
+    private let alertView: ProjectSubcriptionAlertView
+    private let presenter: ProjectSubcriptionAlertPresenter
 
     // MARK: - Initializer
 
-    init(
-        alertView: ProjectSubcriptionAlertView,
-        coordinator: ProjectSubcriptionAlertCoordinator,
-        presenter: ProjectSubcriptionAlertPresenter
-    ) {
-
-        self.alertView = alertView
-        self.coordinator = coordinator
+    init(presenter: ProjectSubcriptionAlertPresenter) {
         self.presenter = presenter
+        self.alertView = ProjectSubcriptionAlertView(
+            title: "Confirmar Inscrição",
+            message: "Você deseja se inscrever no projeto \"\(presenter.project.name)\"?",
+            mainButtonText: "Sim, quero me inscrever",
+            secondaryButtonText: "Não quero, mudei de idéia"
+        )
 
         super.init(nibName: nil, bundle: nil)
     }

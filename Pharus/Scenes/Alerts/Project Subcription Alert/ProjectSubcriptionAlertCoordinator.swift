@@ -13,27 +13,27 @@ class ProjectSubcriptionAlertCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var alertView: ProjectSubcriptionAlertView
-    private var project: ProjectModel
+    private let project: ProjectModel
 
     // MARK: - Initializer
 
     init(
         navigationController: UINavigationController,
-        alertView: ProjectSubcriptionAlertView,
         project: ProjectModel
     ) {
         self.navigationController = navigationController
-        self.alertView = alertView
         self.project = project
     }
 
     func start() {
-        let alertPresenter = ProjectSubcriptionAlertPresenter(coordinator: self)
-        let alertViewController = ProjectSubcriptionAlertViewController(
-            alertView: alertView,
+        let alertPresenter = ProjectSubcriptionAlertPresenter(
             coordinator: self,
-            presenter: alertPresenter)
+            project: project
+        )
+
+        let alertViewController = ProjectSubcriptionAlertViewController(
+            presenter: alertPresenter
+        )
 
         alertViewController.modalPresentationStyle = .fullScreen
 

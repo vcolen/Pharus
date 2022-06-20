@@ -54,19 +54,11 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     }
 
     func showSubscribeAlert(of project: ProjectModel) {
-        let alertView = ProjectSubcriptionAlertView(
-            title: "Confirmar Inscrição",
-            message: "Você deseja se inscrever no projeto \"\(project.name)\"?",
-            mainButtonText: "Sim, quero me inscrever",
-            secondaryButtonText: "Não quero, mudei de idéia"
-        )
-
-        let twoBigButtonsAlertCoordinator = ProjectSubcriptionAlertCoordinator(
+        let projectSubcriptionAlertCoordinator = ProjectSubcriptionAlertCoordinator(
             navigationController: navigationController,
-            alertView: alertView,
             project: project
         )
 
-        coordinate(to: twoBigButtonsAlertCoordinator)
+        coordinate(to: projectSubcriptionAlertCoordinator)
     }
 }
