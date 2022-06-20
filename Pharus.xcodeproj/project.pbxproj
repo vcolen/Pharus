@@ -167,6 +167,7 @@
 		799AFB66285CECDF001B0371 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */; };
 		799AFB67285CEDE5001B0371 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2F285CECDE001B0371 /* TabBarViewController.swift */; };
 		79F06DA127F28FCD00343865 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */; };
+		79FFE7E52860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -344,6 +345,7 @@
 		799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		79F06D9E27F28FCD00343865 /* PharusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PharusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingPresenter.swift; sourceTree = "<group>"; };
 		C045618727EA03A5007EC5C3 /* Pharus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pharus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BA86555EDE4B604F9448CB /* Pods-Pharus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharus.release.xcconfig"; path = "Target Support Files/Pods-Pharus/Pods-Pharus.release.xcconfig"; sourceTree = "<group>"; };
 		D6E854262F5DBF584644FA5C /* Pods-Pharus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharus.debug.xcconfig"; path = "Target Support Files/Pods-Pharus/Pods-Pharus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -443,11 +445,11 @@
 		799AFA05285CECDE001B0371 /* Send File */ = {
 			isa = PBXGroup;
 			children = (
+				799AFA0A285CECDE001B0371 /* Protocols */,
+				799AFA08285CECDE001B0371 /* SendFileCoordinator.swift */,
 				799AFA06285CECDE001B0371 /* SendFilePresenter.swift */,
 				799AFA07285CECDE001B0371 /* SendFileView.swift */,
-				799AFA08285CECDE001B0371 /* SendFileCoordinator.swift */,
 				799AFA09285CECDE001B0371 /* SendFileViewController.swift */,
-				799AFA0A285CECDE001B0371 /* Protocols */,
 			);
 			path = "Send File";
 			sourceTree = "<group>";
@@ -653,6 +655,7 @@
 			children = (
 				799AFA58285CECDE001B0371 /* StudentProjectsRankingCoordinator.swift */,
 				799AFA59285CECDE001B0371 /* StudentProjectRankingCell.swift */,
+				79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */,
 				799AFA5A285CECDE001B0371 /* StudentProjectsRankingViewController.swift */,
 				799AFA5B285CECDE001B0371 /* Protocols */,
 			);
@@ -1221,6 +1224,7 @@
 				799AFB22285CECDF001B0371 /* LoginCoodinator.swift in Sources */,
 				799AFB35285CECDF001B0371 /* Network.swift in Sources */,
 				799AFB2E285CECDF001B0371 /* CircleImage.swift in Sources */,
+				79FFE7E52860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift in Sources */,
 				799AFB33285CECDF001B0371 /* Company.swift in Sources */,
 				799AFACA285CECDF001B0371 /* ProjectSheetPresenting.swift in Sources */,
 				799AFB0E285CECDF001B0371 /* StudentProjectsRankingCoordinator.swift in Sources */,

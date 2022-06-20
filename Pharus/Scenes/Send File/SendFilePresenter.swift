@@ -10,7 +10,7 @@ import UIKit
 class SendFilePresenter {
     // MARK: - Properties
 
-    var coordinator: SendFileCoordinator
+    let coordinator: SendFileCoordinator
 
     // MARK: - Initializer
 

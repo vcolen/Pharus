@@ -10,11 +10,11 @@ class StudentHomeViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var presenter: StudentHomePresenter
+    private let presenter: StudentHomePresenter
     private var pageController: UIPageViewController?
-    private var currentIndex: Int
-    private var pages: [Pages] = Pages.allCases
-    private var customView: StudentHomeView
+    private let currentIndex: Int
+    private let pages: [Pages] = Pages.allCases
+    private let customView: StudentHomeView
 
     // MARK: - Initializer
 

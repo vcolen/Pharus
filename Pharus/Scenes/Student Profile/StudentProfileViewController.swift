@@ -11,8 +11,8 @@ class StudentProfileViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var studentProfileView: StudentProfileView
-    private var presenter: StudentProfilePresenter
+    private let studentProfileView: StudentProfileView
+    private let presenter: StudentProfilePresenter
 
     // MARK: - Initializer
 

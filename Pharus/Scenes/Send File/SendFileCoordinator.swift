@@ -13,7 +13,7 @@ class SendFileCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var project: ProjectModel
+    private let project: ProjectModel
 
     // MARK: - Initializer
 

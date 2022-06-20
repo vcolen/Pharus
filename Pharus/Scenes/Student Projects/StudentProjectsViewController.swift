@@ -11,8 +11,8 @@ class StudentProjectsViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var presenter: StudentProjectsPresenter
-    private var projects: [ProjectModel]
+    private let presenter: StudentProjectsPresenter
+    private let projects: [ProjectModel]
     private let tableView = UITableView()
 
     // MARK: - Initializer

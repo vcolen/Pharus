@@ -11,19 +11,14 @@ class StudentRankingProjectsViewController: UIViewController {
     // MARK: - Properties
 
     private let tableView = UITableView()
-    private var coordinator: StudentProjectsRankingCoordinator
-    private var student: StudentModel
-    private var projects: [ProjectModel]
+    private let presenter: StudentProjectsRankingPresenter
+    private let projects: [ProjectModel]
 
     // MARK: - Initializer
 
-    init(
-        coordinator: StudentProjectsRankingCoordinator,
-        student: StudentModel
-    ) {
-        self.coordinator = coordinator
-        self.student = student
-        self.projects = student.projects.filter({ $0.placement != nil })
+    init(presenter: StudentProjectsRankingPresenter) {
+        self.presenter = presenter
+        self.projects = presenter.student.projects.filter({ $0.placement != nil })
 
         super.init(nibName: nil, bundle: nil)
     }

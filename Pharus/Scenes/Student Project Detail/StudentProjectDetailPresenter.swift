@@ -11,7 +11,7 @@ class StudentProjectDetailPresenter: StudentProjectsDetailPresenting {
 
     // MARK: - Properties
 
-    private var coordinator: StudentProjectDetailCoordinator
+    private let coordinator: StudentProjectDetailCoordinator
     let project: ProjectModel
 
     // MARK: - Initializer

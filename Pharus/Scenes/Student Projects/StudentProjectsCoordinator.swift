@@ -13,7 +13,7 @@ class StudentProjectsCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var student: StudentModel
+    private let student: StudentModel
 
     // MARK: - Initializer
 

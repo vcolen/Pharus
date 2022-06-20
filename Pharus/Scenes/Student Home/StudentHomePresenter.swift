@@ -11,7 +11,7 @@ class StudentHomePresenter: StudentHomePresenting {
 
     // MARK: - Properties
 
-    private var coordinator: StudentHomeCoordinator
+    private let coordinator: StudentHomeCoordinator
     let student: StudentModel
 
     // MARK: - Initializer

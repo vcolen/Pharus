@@ -11,8 +11,8 @@ class LogoutAlertViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var alertView: LogoutAlertView
-    private var presenter: LogoutAlertPresenter
+    private let alertView: LogoutAlertView
+    private let presenter: LogoutAlertPresenter
 
     // MARK: - Initializer
 

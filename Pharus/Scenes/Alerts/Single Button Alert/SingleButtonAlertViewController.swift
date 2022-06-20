@@ -11,8 +11,8 @@ class SingleButtonAlertViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var alertView: SingleButtonAlertView
-    private var presenter: SingleButtonAlertPresenter
+    private let alertView: SingleButtonAlertView
+    private let presenter: SingleButtonAlertPresenter
 
     // MARK: - Initializer
 

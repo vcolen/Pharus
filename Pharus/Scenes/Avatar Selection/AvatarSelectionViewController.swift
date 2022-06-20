@@ -9,8 +9,8 @@ import UIKit
 class AvatarSelectionViewController: UIViewController {
 
     // MARK: - Properties
-    private var presenter: AvatarSelectionPresenter
-    private var customView: AvatarSelectionView
+    private let presenter: AvatarSelectionPresenter
+    private let customView: AvatarSelectionView
     private var avatarSelectionCollectionView: UICollectionView?
 
     // MARK: - Initializer

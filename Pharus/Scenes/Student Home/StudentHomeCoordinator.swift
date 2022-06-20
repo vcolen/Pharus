@@ -11,7 +11,7 @@ class StudentHomeCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var student: StudentModel
+    private let student: StudentModel
 
     init(
         navigationController: UINavigationController,

@@ -10,8 +10,8 @@ class StudentProjectDetailViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var presenter: StudentProjectDetailPresenter
-    private var studentProjectDetailView: StudentProjectDetailView
+    private let presenter: StudentProjectDetailPresenter
+    private let studentProjectDetailView: StudentProjectDetailView
 
     // MARK: - Initializer
 
