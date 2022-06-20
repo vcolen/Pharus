@@ -13,7 +13,7 @@ class StudentProjectsCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var student: StudentModel
+    private let student: StudentModel
 
     // MARK: - Initializer
 
@@ -26,12 +26,13 @@ class StudentProjectsCoordinator: Coordinator {
     }
 
     func start() {
-        let studentProjectsPresenter = StudentProjectsPresenter(coordinator: self)
+        let studentProjectsPresenter = StudentProjectsPresenter(
+            coordinator: self,
+            student: student
+        )
 
         let studentProjectsViewController = StudentProjectsViewController(
-            coordinator: self,
-            presenter: studentProjectsPresenter,
-            student: student
+            presenter: studentProjectsPresenter
         )
 
         navigationController.setNavigationBarHidden(false, animated: true)
@@ -53,19 +54,11 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     }
 
     func showSubscribeAlert(of project: ProjectModel) {
-        let alertView = ProjectSubcriptionAlertView(
-            title: "Confirmar Inscrição",
-            message: "Você deseja se inscrever no projeto \"\(project.name)\"?",
-            mainButtonText: "Sim, quero me inscrever",
-            secondaryButtonText: "Não quero, mudei de idéia"
-        )
-
-        let twoBigButtonsAlertCoordinator = ProjectSubcriptionAlertCoordinator(
+        let projectSubcriptionAlertCoordinator = ProjectSubcriptionAlertCoordinator(
             navigationController: navigationController,
-            alertView: alertView,
             project: project
         )
 
-        coordinate(to: twoBigButtonsAlertCoordinator)
+        coordinate(to: projectSubcriptionAlertCoordinator)
     }
 }

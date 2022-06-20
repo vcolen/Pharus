@@ -10,26 +10,20 @@ class StudentHomeViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var coordinator: StudentHomeCoordinator
-    private var presenter: StudentHomePresenter
-    private var student: StudentModel
+    private let presenter: StudentHomePresenter
     private var pageController: UIPageViewController?
-    private var currentIndex: Int
-    private var pages: [Pages] = Pages.allCases
-    private var customView: StudentHomeView
+    private let currentIndex: Int
+    private let pages: [Pages] = Pages.allCases
+    private let customView: StudentHomeView
 
     // MARK: - Initializer
 
     init(
-        coordinator: StudentHomeCoordinator,
-        presenter: StudentHomePresenter,
-        student: StudentModel
+        presenter: StudentHomePresenter
     ) {
-        self.coordinator = coordinator
         self.presenter = presenter
-        self.student = student
         self.currentIndex = 0
-        self.customView = StudentHomeView(studentName: student.firstName)
+        self.customView = StudentHomeView(studentName: presenter.student.firstName)
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,7 +58,7 @@ class StudentHomeViewController: UIViewController {
 
     func showStudentAvatar() {
         customView.studentAvatarImageView.image = UIImage(
-            named: "avatar" + student.avatar + Constants.assets.images.avatar.circleImage.suffix
+            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.circleImage.suffix
         )
     }
 

@@ -13,23 +13,29 @@ class SingleButtonAlertCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var alertView: SingleButtonAlertView
+    private let alertMessage: String
+    private let alertType: SingleButtonAlertView.AlertType
 
     // MARK: - Initializer
 
     init(
         navigationController: UINavigationController,
-        alertView: SingleButtonAlertView
+        alertMessage: String,
+        alertType: SingleButtonAlertView.AlertType
     ) {
         self.navigationController = navigationController
-        self.alertView = alertView
+        self.alertMessage = alertMessage
+        self.alertType = alertType
     }
 
     func start() {
-        let alertPresenter = SingleButtonAlertPresenter(coordinator: self)
-        let alertViewController = SingleButtonAlertViewController(
-            alertView: alertView,
+        let alertPresenter = SingleButtonAlertPresenter(
             coordinator: self,
+            alertMessage: alertMessage,
+            alertType: alertType
+        )
+
+        let alertViewController = SingleButtonAlertViewController(
             presenter: alertPresenter
         )
 

@@ -13,29 +13,31 @@ class ProjectSheetCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var projectSheetView: ProjectSheetView
+    private let project: ProjectModel
+    private let projectSheetContent: ProjectSheetView.SheetContent
 
     // MARK: - Initializer
 
     init(
         navigationController: UINavigationController,
-        projectSheetView: ProjectSheetView
+        project: ProjectModel,
+        projectSheetContent: ProjectSheetView.SheetContent
     ) {
         self.navigationController = navigationController
-        self.projectSheetView = projectSheetView
+        self.project = project
+        self.projectSheetContent = projectSheetContent
     }
 
     func start() {
 
         let projectSheetPresenter = ProjectSheetPresenter(
             coordinator: self,
-            projectSheetView: projectSheetView
+            project: project,
+            projectSheetContent: projectSheetContent
         )
 
         let projectSheetViewController = ProjectSheetViewController(
-            coordinator: self,
-            presenter: projectSheetPresenter,
-            projectSheetView: projectSheetView
+            presenter: projectSheetPresenter
         )
 
         navigationController.present(projectSheetViewController, animated: true)

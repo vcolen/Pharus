@@ -13,24 +13,17 @@ class LogoutAlertCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var alertView: LogoutAlertView
 
     // MARK: - Initializer
 
-    init(
-        navigationController: UINavigationController,
-        alertView: LogoutAlertView
-    ) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.alertView = alertView
     }
 
     func start() {
         let alertPresenter = LogoutAlertPresenter(coordinator: self)
-        let alertViewController = LogoutAlertViewController(
-            alertView: alertView,
-            coordinator: self,
-            presenter: alertPresenter)
+
+        let alertViewController = LogoutAlertViewController(presenter: alertPresenter)
 
         alertViewController.modalPresentationStyle = .overFullScreen
 

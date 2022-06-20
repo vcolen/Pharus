@@ -11,23 +11,17 @@ class StudentProfileViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var coordinator: StudentProfileCoordinator
-    private var studentProfileView: StudentProfileView
-    private var presenter: StudentProfilePresenter
-    private var student: StudentModel
+    private let studentProfileView: StudentProfileView
+    private let presenter: StudentProfilePresenter
 
     // MARK: - Initializer
 
     init(
-        coordinator: StudentProfileCoordinator,
-        presenter: StudentProfilePresenter,
-        student: StudentModel
+        presenter: StudentProfilePresenter
     ) {
-        self.coordinator = coordinator
         self.presenter = presenter
-        self.student = student
 
-        studentProfileView =  StudentProfileView(student: student)
+        studentProfileView =  StudentProfileView(student: presenter.student)
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -61,7 +55,7 @@ class StudentProfileViewController: UIViewController {
 
     func showStudentAvatar() {
         studentProfileView.profileImageView.image = UIImage(
-            named: "avatar" + student.avatar + Constants.assets.images.avatar.circleImage.suffix
+            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.circleImage.suffix
         )
     }
 

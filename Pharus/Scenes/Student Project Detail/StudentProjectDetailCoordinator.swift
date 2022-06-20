@@ -13,7 +13,7 @@ class StudentProjectDetailCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var project: ProjectModel
+    private let project: ProjectModel
 
     // MARK: - Initializer
 
@@ -26,12 +26,13 @@ class StudentProjectDetailCoordinator: Coordinator {
     }
 
     func start() {
-        let studentProjectDetailPresenter = StudentProjectDetailPresenter(coordinator: self)
+        let studentProjectDetailPresenter = StudentProjectDetailPresenter(
+            coordinator: self,
+            project: project
+        )
 
         let studentProjectDetailViewController = StudentProjectDetailViewController(
-            coordinator: self,
-            presenter: studentProjectDetailPresenter,
-            project: project
+            presenter: studentProjectDetailPresenter
         )
 
         navigationController.pushViewController(studentProjectDetailViewController, animated: true)
@@ -42,28 +43,21 @@ class StudentProjectDetailCoordinator: Coordinator {
 
 extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showProjectRules() {
-        let projectSheetView = ProjectSheetView(
-            project: project,
-            sheetContent: .activities
-        )
 
         let projectSheetCoordinator = ProjectSheetCoordinator(
             navigationController: navigationController,
-            projectSheetView: projectSheetView
+            project: project,
+            projectSheetContent: .activities
         )
 
         coordinate(to: projectSheetCoordinator)
     }
 
     func showMentorReview() {
-        let projectSheetView = ProjectSheetView(
-            project: project,
-            sheetContent: .mentorReview
-        )
-
         let projectSheetCoordinator = ProjectSheetCoordinator(
             navigationController: navigationController,
-            projectSheetView: projectSheetView
+            project: project,
+            projectSheetContent: .mentorReview
         )
 
         coordinate(to: projectSheetCoordinator)

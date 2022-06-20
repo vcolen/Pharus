@@ -7,4 +7,6 @@
 
 import Foundation
 
-protocol AvatarSelectionPresenting: AnyObject { }
+protocol AvatarSelectionPresenting: AnyObject {
+    func changeStudentAvatar(to avatar: String)
+}

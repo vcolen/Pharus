@@ -11,21 +11,20 @@ class SingleButtonAlertViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var alertView: SingleButtonAlertView
-    private var coordinator: SingleButtonAlertCoordinator
-    private var presenter: SingleButtonAlertPresenter
+    private let alertView: SingleButtonAlertView
+    private let presenter: SingleButtonAlertPresenter
 
     // MARK: - Initializer
 
     init(
-        alertView: SingleButtonAlertView,
-        coordinator: SingleButtonAlertCoordinator,
         presenter: SingleButtonAlertPresenter
     ) {
 
-        self.alertView = alertView
-        self.coordinator = coordinator
         self.presenter = presenter
+        self.alertView = SingleButtonAlertView(
+            message: presenter.alertMessage,
+            type: presenter.alertType
+        )
 
         super.init(nibName: nil, bundle: nil)
     }

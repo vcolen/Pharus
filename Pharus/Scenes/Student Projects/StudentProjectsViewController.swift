@@ -11,23 +11,15 @@ class StudentProjectsViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var coordinator: StudentProjectsCoordinator
-    private var presenter: StudentProjectsPresenter
-    private var student: StudentModel
-    private var projects: [ProjectModel]
+    private let presenter: StudentProjectsPresenter
+    private let projects: [ProjectModel]
     private let tableView = UITableView()
 
     // MARK: - Initializer
 
-    init(
-        coordinator: StudentProjectsCoordinator,
-        presenter: StudentProjectsPresenter,
-        student: StudentModel
-    ) {
-        self.coordinator = coordinator
+    init(presenter: StudentProjectsPresenter) {
         self.presenter = presenter
-        self.student = student
-        self.projects = student.projects
+        self.projects = presenter.student.projects
 
         super.init(nibName: nil, bundle: nil)
     }

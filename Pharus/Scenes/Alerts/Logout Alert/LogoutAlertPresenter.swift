@@ -11,7 +11,7 @@ class LogoutAlertPresenter: LogoutAlertPresenting {
 
     // MARK: - Properties
 
-    private var coordinator: LogoutAlertCoordinator
+    private let coordinator: LogoutAlertCoordinator
 
     // MARK: - Initializer
 

@@ -11,17 +11,20 @@ class ProjectSheetPresenter {
 
     // MARK: - Properties
 
-    var coordinator: ProjectSheetCoordinator
-    private var projectSheetView: ProjectSheetView
+    private let coordinator: ProjectSheetCoordinator
+    let project: ProjectModel
+    let projectSheetContent: ProjectSheetView.SheetContent
 
     // MARK: - Initializer
 
     init(
         coordinator: ProjectSheetCoordinator,
-        projectSheetView: ProjectSheetView
+        project: ProjectModel,
+        projectSheetContent: ProjectSheetView.SheetContent
     ) {
         self.coordinator = coordinator
-        self.projectSheetView = projectSheetView
+        self.project = project
+        self.projectSheetContent = projectSheetContent
     }
 }
 

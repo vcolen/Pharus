@@ -23,7 +23,6 @@ class LoginCoordinator: Coordinator {
     func start() {
         let loginPresenter = LoginPresenter(coordinator: self)
         let loginViewController = LoginViewController(
-            coordinator: self,
             presenter: loginPresenter
         )
 

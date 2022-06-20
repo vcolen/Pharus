@@ -11,8 +11,8 @@ class LoginPresenter: LoginPresenting {
 
     // MARK: - Properties
 
-    private var coordinator: LoginCoordinator
-    private var student: Student
+    private let coordinator: LoginCoordinator
+    private let student: Student
 
     // MARK: - Initializer
 

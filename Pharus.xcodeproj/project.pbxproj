@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B61B3516451D1C37F478EFF /* Pods_Pharus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */; };
+		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
 		799AFAC5285CECDE001B0371 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */; };
 		799AFAC6285CECDE001B0371 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */; };
 		799AFAC7285CECDE001B0371 /* ProjectSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */; };
@@ -166,6 +167,10 @@
 		799AFB66285CECDF001B0371 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */; };
 		799AFB67285CEDE5001B0371 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2F285CECDE001B0371 /* TabBarViewController.swift */; };
 		79F06DA127F28FCD00343865 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */; };
+		79FFE7E52860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */; };
+		79FFE7E72860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E62860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift */; };
+		79FFE7E92860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E82860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift */; };
+		79FFE7EB2860FA01003FCBE5 /* StudentProjectsRankingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7EA2860FA01003FCBE5 /* StudentProjectsRankingViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +184,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenter.swift.swift; sourceTree = "<group>"; };
 		799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +348,10 @@
 		799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		79F06D9E27F28FCD00343865 /* PharusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PharusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingPresenter.swift; sourceTree = "<group>"; };
+		79FFE7E62860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingPresenting.swift; sourceTree = "<group>"; };
+		79FFE7E82860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingViewable.swift; sourceTree = "<group>"; };
+		79FFE7EA2860FA01003FCBE5 /* StudentProjectsRankingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingViewDelegate.swift; sourceTree = "<group>"; };
 		C045618727EA03A5007EC5C3 /* Pharus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pharus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BA86555EDE4B604F9448CB /* Pods-Pharus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharus.release.xcconfig"; path = "Target Support Files/Pods-Pharus/Pods-Pharus.release.xcconfig"; sourceTree = "<group>"; };
 		D6E854262F5DBF584644FA5C /* Pods-Pharus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharus.debug.xcconfig"; path = "Target Support Files/Pods-Pharus/Pods-Pharus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -406,7 +416,6 @@
 				799AF9FB285CECDE001B0371 /* Project Sheet */,
 				799AFA05285CECDE001B0371 /* Send File */,
 				799AFA19285CECDE001B0371 /* Student Home */,
-				799AFA51285CECDE001B0371 /* Student Home News */,
 				799AFA23285CECDE001B0371 /* Student Profile */,
 				799AFA66285CECDE001B0371 /* Student Project Detail */,
 				799AFA0F285CECDE001B0371 /* Student Projects */,
@@ -442,11 +451,11 @@
 		799AFA05285CECDE001B0371 /* Send File */ = {
 			isa = PBXGroup;
 			children = (
+				799AFA0A285CECDE001B0371 /* Protocols */,
+				799AFA08285CECDE001B0371 /* SendFileCoordinator.swift */,
 				799AFA06285CECDE001B0371 /* SendFilePresenter.swift */,
 				799AFA07285CECDE001B0371 /* SendFileView.swift */,
-				799AFA08285CECDE001B0371 /* SendFileCoordinator.swift */,
 				799AFA09285CECDE001B0371 /* SendFileViewController.swift */,
-				799AFA0A285CECDE001B0371 /* Protocols */,
 			);
 			path = "Send File";
 			sourceTree = "<group>";
@@ -465,11 +474,11 @@
 		799AFA0F285CECDE001B0371 /* Student Projects */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA10285CECDE001B0371 /* StudentProjectsViewController.swift */,
-				799AFA11285CECDE001B0371 /* StudentProjectsCoordinator.swift */,
-				799AFA12285CECDE001B0371 /* StudentProjectCell.swift */,
-				799AFA13285CECDE001B0371 /* StudentProjectsPresenter.swift */,
 				799AFA14285CECDE001B0371 /* Protocols */,
+				799AFA12285CECDE001B0371 /* StudentProjectCell.swift */,
+				799AFA11285CECDE001B0371 /* StudentProjectsCoordinator.swift */,
+				799AFA13285CECDE001B0371 /* StudentProjectsPresenter.swift */,
+				799AFA10285CECDE001B0371 /* StudentProjectsViewController.swift */,
 			);
 			path = "Student Projects";
 			sourceTree = "<group>";
@@ -585,10 +594,10 @@
 		799AFA3D285CECDE001B0371 /* Project Subcription Alert */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA3E285CECDE001B0371 /* ProjectSubcriptionAlertPresenter.swift */,
 				799AFA3F285CECDE001B0371 /* ProjectSubcriptionAlertCoordinator.swift */,
-				799AFA40285CECDE001B0371 /* ProjectSubcriptionAlertViewController.swift */,
+				799AFA3E285CECDE001B0371 /* ProjectSubcriptionAlertPresenter.swift */,
 				799AFA41285CECDE001B0371 /* ProjectSubcriptionAlertView.swift */,
+				799AFA40285CECDE001B0371 /* ProjectSubcriptionAlertViewController.swift */,
 				799AFA42285CECDE001B0371 /* Protocols */,
 			);
 			path = "Project Subcription Alert";
@@ -608,11 +617,11 @@
 		799AFA47285CECDE001B0371 /* Single Button Alert */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA48285CECDE001B0371 /* SingleButtonAlertPresenter.swift */,
-				799AFA49285CECDE001B0371 /* SingleButtonAlertViewController.swift */,
-				799AFA4A285CECDE001B0371 /* SingleButtonAlertCoordinator.swift */,
-				799AFA4B285CECDE001B0371 /* SingleButtonAlertView.swift */,
 				799AFA4C285CECDE001B0371 /* Protocols */,
+				799AFA4A285CECDE001B0371 /* SingleButtonAlertCoordinator.swift */,
+				799AFA48285CECDE001B0371 /* SingleButtonAlertPresenter.swift */,
+				799AFA4B285CECDE001B0371 /* SingleButtonAlertView.swift */,
+				799AFA49285CECDE001B0371 /* SingleButtonAlertViewController.swift */,
 			);
 			path = "Single Button Alert";
 			sourceTree = "<group>";
@@ -652,6 +661,7 @@
 			children = (
 				799AFA58285CECDE001B0371 /* StudentProjectsRankingCoordinator.swift */,
 				799AFA59285CECDE001B0371 /* StudentProjectRankingCell.swift */,
+				79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */,
 				799AFA5A285CECDE001B0371 /* StudentProjectsRankingViewController.swift */,
 				799AFA5B285CECDE001B0371 /* Protocols */,
 			);
@@ -662,6 +672,9 @@
 			isa = PBXGroup;
 			children = (
 				799AFA5C285CECDE001B0371 /* StudentProjectsRankingCoordinating.swift */,
+				79FFE7E62860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift */,
+				79FFE7E82860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift */,
+				79FFE7EA2860FA01003FCBE5 /* StudentProjectsRankingViewDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -671,6 +684,7 @@
 			children = (
 				799AFA5E285CECDE001B0371 /* AvatarSelectionCoordinator.swift */,
 				799AFA65285CECDE001B0371 /* AvatarSelectionView.swift */,
+				797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */,
 				799AFA5F285CECDE001B0371 /* AvatarSelectionViewController.swift */,
 				799AFA60285CECDE001B0371 /* Protocols */,
 			);
@@ -783,16 +797,17 @@
 			isa = PBXGroup;
 			children = (
 				799AFA9C285CECDE001B0371 /* CheckmarkButton.swift */,
-				799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */,
-				799AFA9E285CECDE001B0371 /* MainCardButton.swift */,
-				799AFA9F285CECDE001B0371 /* StudentProfileButton.swift */,
-				799AFAA0285CECDE001B0371 /* ProjectScheduleView.swift */,
-				799AFAA1285CECDE001B0371 /* SubscribeButton.swift */,
-				799AFAA2285CECDE001B0371 /* ProjectTaskView.swift */,
-				799AFAA3285CECDE001B0371 /* SecondaryCardButton.swift */,
-				799AFAA4285CECDE001B0371 /* UploadMessageButton.swift */,
 				799AFAA5285CECDE001B0371 /* CircleProgressView.swift */,
 				799AFAA8285CECDE001B0371 /* HomeMiniCardView.swift */,
+				799AFA9E285CECDE001B0371 /* MainCardButton.swift */,
+				799AFAA0285CECDE001B0371 /* ProjectScheduleView.swift */,
+				799AFAA2285CECDE001B0371 /* ProjectTaskView.swift */,
+				799AFAA3285CECDE001B0371 /* SecondaryCardButton.swift */,
+				799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */,
+				799AFA51285CECDE001B0371 /* Student Home News */,
+				799AFA9F285CECDE001B0371 /* StudentProfileButton.swift */,
+				799AFAA1285CECDE001B0371 /* SubscribeButton.swift */,
+				799AFAA4285CECDE001B0371 /* UploadMessageButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1099,6 +1114,7 @@
 				799AFB16285CECDF001B0371 /* AvatarSelectionViewDelegate.swift in Sources */,
 				799AFADD285CECDF001B0371 /* StudentProjectsViewDelegate.swift in Sources */,
 				799AFB0A285CECDF001B0371 /* HomeNewsViewController.swift in Sources */,
+				79FFE7EB2860FA01003FCBE5 /* StudentProjectsRankingViewDelegate.swift in Sources */,
 				799AFAF8285CECDF001B0371 /* LogoutAlertViewable.swift in Sources */,
 				799AFB4F285CECDF001B0371 /* HomeMiniCardView.swift in Sources */,
 				799AFB17285CECDF001B0371 /* AvatarSelectionViewable.swift in Sources */,
@@ -1137,7 +1153,9 @@
 				799AFAF6285CECDF001B0371 /* LogoutAlertViewDelegate.swift in Sources */,
 				799AFAE4285CECDF001B0371 /* StudentHomeCoordinating.swift in Sources */,
 				799AFB36285CECDF001B0371 /* Coordinator.swift in Sources */,
+				797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */,
 				799AFAD4285CECDF001B0371 /* SendFileViewDelegate.swift in Sources */,
+				79FFE7E72860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift in Sources */,
 				799AFB45285CECDF001B0371 /* SmallAlertButton.swift in Sources */,
 				799AFAFD285CECDF001B0371 /* ProjectSubcriptionAlertView.swift in Sources */,
 				799AFB0B285CECDF001B0371 /* HomeNewsView.swift in Sources */,
@@ -1178,6 +1196,7 @@
 				799AFAEA285CECDF001B0371 /* StudentProfilePresenting.swift in Sources */,
 				799AFAF1285CECDF001B0371 /* TabBarCoordinating.swift in Sources */,
 				799AFAF4285CECDF001B0371 /* LogoutAlertPresenter.swift in Sources */,
+				79FFE7E92860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift in Sources */,
 				799AFAC5285CECDE001B0371 /* UIFont+Extension.swift in Sources */,
 				799AFB1D285CECDF001B0371 /* StudentProjectDetailViewDelegate.swift in Sources */,
 				799AFB39285CECDF001B0371 /* Date+Extension.swift in Sources */,
@@ -1217,6 +1236,7 @@
 				799AFB22285CECDF001B0371 /* LoginCoodinator.swift in Sources */,
 				799AFB35285CECDF001B0371 /* Network.swift in Sources */,
 				799AFB2E285CECDF001B0371 /* CircleImage.swift in Sources */,
+				79FFE7E52860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift in Sources */,
 				799AFB33285CECDF001B0371 /* Company.swift in Sources */,
 				799AFACA285CECDF001B0371 /* ProjectSheetPresenting.swift in Sources */,
 				799AFB0E285CECDF001B0371 /* StudentProjectsRankingCoordinator.swift in Sources */,
