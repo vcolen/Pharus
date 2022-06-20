@@ -9,20 +9,14 @@ import UIKit
 class AvatarSelectionViewController: UIViewController {
 
     // MARK: - Properties
-
-    private var coordinator: AvatarSelectionCoordinator
-    private var student: StudentModel
+    private var presenter: AvatarSelectionPresenter
     private var customView: AvatarSelectionView
     private var avatarSelectionCollectionView: UICollectionView?
 
     // MARK: - Initializer
 
-    init(
-        coordinator: AvatarSelectionCoordinator,
-        student: StudentModel
-    ) {
-        self.coordinator = coordinator
-        self.student = student
+    init(presenter: AvatarSelectionPresenter) {
+        self.presenter = presenter
         self.customView = AvatarSelectionView()
 
         super.init(nibName: nil, bundle: nil)
@@ -96,7 +90,7 @@ class AvatarSelectionViewController: UIViewController {
 
     private func showStudentAvatar() {
         customView.mainAvatarImageView.image = UIImage(
-            named: "avatar" + student.avatar + Constants.assets.images.avatar.fullImage.suffix
+            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.fullImage.suffix
         )
     }
 }
@@ -127,13 +121,12 @@ extension AvatarSelectionViewController: UICollectionViewDataSource {
 // MARK: - UI Collection View Delegate
 
 extension AvatarSelectionViewController: UICollectionViewDelegate {
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let newAvatar = FullAvatarImages.avatars[indexPath.row]
         customView.mainAvatarImageView.image = newAvatar
 
-        student.avatar = String(indexPath.row + 1)
+        presenter.changeStudentAvatar(to: String(indexPath.row + 1))
     }
 }
 

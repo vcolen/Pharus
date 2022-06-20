@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B61B3516451D1C37F478EFF /* Pods_Pharus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */; };
+		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
 		799AFAC5285CECDE001B0371 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */; };
 		799AFAC6285CECDE001B0371 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */; };
 		799AFAC7285CECDE001B0371 /* ProjectSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */; };
@@ -179,6 +180,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenter.swift.swift; sourceTree = "<group>"; };
 		799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetViewController.swift; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 			children = (
 				799AFA5E285CECDE001B0371 /* AvatarSelectionCoordinator.swift */,
 				799AFA65285CECDE001B0371 /* AvatarSelectionView.swift */,
+				797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */,
 				799AFA5F285CECDE001B0371 /* AvatarSelectionViewController.swift */,
 				799AFA60285CECDE001B0371 /* Protocols */,
 			);
@@ -1137,6 +1140,7 @@
 				799AFAF6285CECDF001B0371 /* LogoutAlertViewDelegate.swift in Sources */,
 				799AFAE4285CECDF001B0371 /* StudentHomeCoordinating.swift in Sources */,
 				799AFB36285CECDF001B0371 /* Coordinator.swift in Sources */,
+				797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */,
 				799AFAD4285CECDF001B0371 /* SendFileViewDelegate.swift in Sources */,
 				799AFB45285CECDF001B0371 /* SmallAlertButton.swift in Sources */,
 				799AFAFD285CECDF001B0371 /* ProjectSubcriptionAlertView.swift in Sources */,

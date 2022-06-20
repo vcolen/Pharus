@@ -27,9 +27,9 @@ class LogoutAlertCoordinator: Coordinator {
 
     func start() {
         let alertPresenter = LogoutAlertPresenter(coordinator: self)
+
         let alertViewController = LogoutAlertViewController(
             alertView: alertView,
-            coordinator: self,
             presenter: alertPresenter)
 
         alertViewController.modalPresentationStyle = .overFullScreen
