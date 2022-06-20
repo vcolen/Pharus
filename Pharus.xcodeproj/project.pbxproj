@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B61B3516451D1C37F478EFF /* Pods_Pharus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */; };
 		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
 		799AFAC5285CECDE001B0371 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */; };
 		799AFAC6285CECDE001B0371 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */; };
@@ -351,7 +350,6 @@
 		79FFE7E82860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingViewable.swift; sourceTree = "<group>"; };
 		79FFE7EA2860FA01003FCBE5 /* StudentProjectsRankingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingViewDelegate.swift; sourceTree = "<group>"; };
 		C045618727EA03A5007EC5C3 /* Pharus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pharus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pharus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,7 +364,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B61B3516451D1C37F478EFF /* Pods_Pharus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,7 +891,6 @@
 				79F06D9F27F28FCD00343865 /* PharusTests */,
 				C045618827EA03A5007EC5C3 /* Products */,
 				79AF90F628043A120094AB97 /* Recovered References */,
-				E76B9285E1526767CD8ECE9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -905,14 +901,6 @@
 				79F06D9E27F28FCD00343865 /* PharusTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E76B9285E1526767CD8ECE9F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F0788BC0F7E3A9A86461E85E /* Pods_Pharus.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -940,7 +928,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C045619B27EA03A6007EC5C3 /* Build configuration list for PBXNativeTarget "Pharus" */;
 			buildPhases = (
-				C5F94E96521D7BBC338CE7FD /* [CP] Check Pods Manifest.lock */,
 				C045618327EA03A5007EC5C3 /* Sources */,
 				C045618427EA03A5007EC5C3 /* Frameworks */,
 				C045618527EA03A5007EC5C3 /* Resources */,
@@ -1039,29 +1026,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		C5F94E96521D7BBC338CE7FD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Pharus-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
