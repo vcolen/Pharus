@@ -10,22 +10,14 @@ class StudentProjectDetailViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var project: ProjectModel
     private var presenter: StudentProjectDetailPresenter
-    private var coordinator: StudentProjectDetailCoordinator
     private var studentProjectDetailView: StudentProjectDetailView
 
     // MARK: - Initializer
 
-    init(
-        coordinator: StudentProjectDetailCoordinator,
-        presenter: StudentProjectDetailPresenter,
-        project: ProjectModel
-    ) {
-        self.coordinator = coordinator
+    init(presenter: StudentProjectDetailPresenter) {
         self.presenter = presenter
-        self.project = project
-        self.studentProjectDetailView = StudentProjectDetailView(project: project)
+        self.studentProjectDetailView = StudentProjectDetailView(project: presenter.project)
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -59,7 +51,7 @@ class StudentProjectDetailViewController: UIViewController {
     // MARK: - Actions
 
     func setNavigationBar() {
-        self.title = project.name
+        self.title = presenter.project.name
 
         var backButtonImage = UIImage(named: Constants.assets.icons.backArrowIcon)
         backButtonImage = backButtonImage?.withTintColor(

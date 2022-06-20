@@ -13,7 +13,7 @@ class StudentProjectDetailCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var project: ProjectModel
+    private let project: ProjectModel
 
     // MARK: - Initializer
 
@@ -26,12 +26,13 @@ class StudentProjectDetailCoordinator: Coordinator {
     }
 
     func start() {
-        let studentProjectDetailPresenter = StudentProjectDetailPresenter(coordinator: self)
+        let studentProjectDetailPresenter = StudentProjectDetailPresenter(
+            coordinator: self,
+            project: project
+        )
 
         let studentProjectDetailViewController = StudentProjectDetailViewController(
-            coordinator: self,
-            presenter: studentProjectDetailPresenter,
-            project: project
+            presenter: studentProjectDetailPresenter
         )
 
         navigationController.pushViewController(studentProjectDetailViewController, animated: true)

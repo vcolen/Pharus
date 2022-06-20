@@ -12,11 +12,16 @@ class StudentProjectDetailPresenter: StudentProjectsDetailPresenting {
     // MARK: - Properties
 
     private var coordinator: StudentProjectDetailCoordinator
+    let project: ProjectModel
 
     // MARK: - Initializer
 
-    init(coordinator: StudentProjectDetailCoordinator) {
+    init(
+        coordinator: StudentProjectDetailCoordinator,
+        project: ProjectModel
+    ) {
         self.coordinator = coordinator
+        self.project = project
     }
 
     // MARK: - Actions

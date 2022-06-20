@@ -25,7 +25,7 @@ class StudentProjectsPresenter: StudentProjectsPresenting {
     }
 
     // MARK: - Actions
-    
+
     func showStudentProject(project: ProjectModel) {
         coordinator.showStudentProject(project)
     }
