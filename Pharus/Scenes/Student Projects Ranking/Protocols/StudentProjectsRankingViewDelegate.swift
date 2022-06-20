@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol StudentProjectsRankingViewDelegate { }
+protocol StudentProjectsRankingViewDelegate: AnyObject { }

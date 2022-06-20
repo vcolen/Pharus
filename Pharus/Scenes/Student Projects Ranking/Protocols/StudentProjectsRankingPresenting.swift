@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol StudentProjectsRankingPresenting { }
+protocol StudentProjectsRankingPresenting: AnyObject { }

@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol StudentProjectsRankingViewable { }
+protocol StudentProjectsRankingViewable: AnyObject { }
