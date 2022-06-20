@@ -10,12 +10,10 @@ import UIKit
 class ProjectSubcriptionAlertViewController: UIViewController {
 
     // MARK: - Properties
-
     private let alertView: ProjectSubcriptionAlertView
     private let presenter: ProjectSubcriptionAlertPresenter
 
     // MARK: - Initializer
-
     init(presenter: ProjectSubcriptionAlertPresenter) {
         self.presenter = presenter
         self.alertView = ProjectSubcriptionAlertView(
@@ -31,19 +29,19 @@ class ProjectSubcriptionAlertViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Life Cycle
+// MARK: - Super Methods
+extension ProjectSubcriptionAlertViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         alertView.delegate = self
         self.view = alertView
-
     }
 }
 
 // MARK: - Project Subcription Alert View Delegate
-
 extension ProjectSubcriptionAlertViewController: ProjectSubcriptionAlertViewDelegate {
     func closeButtonTapped() {
         presenter.closeModal()
@@ -59,5 +57,4 @@ extension ProjectSubcriptionAlertViewController: ProjectSubcriptionAlertViewDele
 }
 
 // MARK: - Project Subscription Alert Viewable
-
 extension ProjectSubcriptionAlertViewController: ProjectSubcriptionAlertViewable { }
