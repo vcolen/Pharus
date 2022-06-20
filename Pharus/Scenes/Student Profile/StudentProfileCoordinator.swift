@@ -13,7 +13,7 @@ class StudentProfileCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    private var student: StudentModel
+    private let student: StudentModel
 
     // MARK: - Initializer
 
@@ -27,13 +27,12 @@ class StudentProfileCoordinator: Coordinator {
 
     func start() {
         let studentProfilePresenter = StudentProfilePresenter(
-            coordinator: self
+            coordinator: self,
+            student: student
         )
 
         let studentProfileViewController = StudentProfileViewController(
-            coordinator: self,
-            presenter: studentProfilePresenter,
-            student: student
+            presenter: studentProfilePresenter
         )
 
         navigationController.setNavigationBarHidden(false, animated: true)
