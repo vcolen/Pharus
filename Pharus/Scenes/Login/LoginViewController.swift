@@ -12,18 +12,13 @@ class LoginViewController: UIViewController {
     // MARK: - Properties
 
     private var customView = LoginView()
-    private var coordinator: LoginCoordinator
     private var presenter: LoginPresenter
     var keyboardHeight = CGFloat(0)
 
     // MARK: - Initializer
 
-    init(
-        coordinator: LoginCoordinator,
-        presenter: LoginPresenter
-    ) {
+    init(presenter: LoginPresenter) {
         self.presenter = presenter
-        self.coordinator = coordinator
 
         super.init(nibName: nil, bundle: nil)
     }

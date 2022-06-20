@@ -122,7 +122,7 @@ class AvatarSelectionView: UIView {
                 equalToConstant: UIScreen.main.bounds.height/2.2
             )
         ])
-        
+
         // Select You Avatar Label
         NSLayoutConstraint.activate([
             selectYourAvatarLabel.heightAnchor.constraint(equalToConstant: 25)
