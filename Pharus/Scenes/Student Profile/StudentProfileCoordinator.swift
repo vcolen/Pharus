@@ -44,11 +44,8 @@ class StudentProfileCoordinator: Coordinator {
 
 extension StudentProfileCoordinator: StudentProfileCoordinating {
     func showLogOutAlert() {
-        let logoutAlertView = LogoutAlertView()
-
         let logoutAlertCoordinator = LogoutAlertCoordinator(
-            navigationController: navigationController,
-            alertView: logoutAlertView
+            navigationController: navigationController
         )
 
         coordinate(to: logoutAlertCoordinator)

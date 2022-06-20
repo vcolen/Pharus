@@ -16,12 +16,9 @@ class LogoutAlertViewController: UIViewController {
 
     // MARK: - Initializer
 
-    init(
-        alertView: LogoutAlertView,
-        presenter: LogoutAlertPresenter
-    ) {
+    init(presenter: LogoutAlertPresenter) {
 
-        self.alertView = alertView
+        self.alertView = LogoutAlertView()
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
