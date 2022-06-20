@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StudentProjectsRankingPresenter {
+class StudentProjectsRankingPresenter: StudentProjectsRankingPresenting {
     private let coordinator: StudentProjectsRankingCoordinator
     let student: StudentModel
 

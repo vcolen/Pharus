@@ -77,6 +77,16 @@ class StudentRankingProjectsViewController: UIViewController {
     }
 }
 
+// MARK: - Student Projects Ranking Viewable
+
+extension StudentRankingProjectsViewController: StudentProjectsRankingViewable { }
+
+// MARK: - Student Projects Ranking View Delegate
+
+extension StudentRankingProjectsViewController: StudentProjectsRankingViewDelegate { }
+
+// MARK: - UITableViewDataSource
+
 extension StudentRankingProjectsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
