@@ -11,20 +11,18 @@ class ProjectSheetViewController: UIViewController {
 
     // MARK: - Properties
 
-    var coordinator: ProjectSheetCoordinator
-    var presenter: ProjectSheetPresenter
-    private var projectSheetView: ProjectSheetView
+    private let presenter: ProjectSheetPresenter
+    private let projectSheetView: ProjectSheetView
 
     // MARK: - Initializer
 
-    init(
-        coordinator: ProjectSheetCoordinator,
-        presenter: ProjectSheetPresenter,
-        projectSheetView: ProjectSheetView
+    init(presenter: ProjectSheetPresenter
     ) {
-        self.coordinator = coordinator
         self.presenter = presenter
-        self.projectSheetView = projectSheetView
+        self.projectSheetView = ProjectSheetView(
+            project: presenter.project,
+            sheetContent: presenter.projectSheetContent
+        )
 
         super.init(nibName: nil, bundle: nil)
     }
