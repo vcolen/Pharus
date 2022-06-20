@@ -40,14 +40,10 @@ class SendFileCoordinator: Coordinator {
 
 extension SendFileCoordinator: SendFileCoordinating {
     func showFileSentAlert() {
-        let alertView = SingleButtonAlertView(
-            message: "Arquivo enviado com sucesso!",
-            type: .confirmation
-        )
-
         let alertCoordinator = SingleButtonAlertCoordinator(
             navigationController: navigationController,
-            alertView: alertView
+            alertMessage: "Arquivo enviado com sucesso!",
+            alertType: .confirmation
         )
 
         navigationController.topViewController?.dismiss(animated: true)

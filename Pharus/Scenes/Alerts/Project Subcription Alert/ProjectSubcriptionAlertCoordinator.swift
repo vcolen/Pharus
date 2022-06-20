@@ -52,13 +52,10 @@ extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinatin
         project.isSubscribed = true
         closeModal()
 
-        let confirmationAlertView = SingleButtonAlertView(
-            message: "Inscrição confirmada!",
-            type: .confirmation
-        )
         let confirmationAlertCoordinator = SingleButtonAlertCoordinator(
             navigationController: navigationController,
-            alertView: confirmationAlertView
+            alertMessage: "Inscrição confirmada!",
+            alertType: .confirmation
         )
 
         coordinate(to: confirmationAlertCoordinator)

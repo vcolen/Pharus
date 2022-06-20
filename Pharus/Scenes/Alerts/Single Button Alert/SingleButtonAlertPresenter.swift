@@ -11,12 +11,20 @@ class SingleButtonAlertPresenter: SingleButtonAlertPresenting {
 
     // MARK: - Properties
 
-    private var coordinator: SingleButtonAlertCoordinator
+    private let coordinator: SingleButtonAlertCoordinator
+    let alertMessage: String
+    let alertType: SingleButtonAlertView.AlertType
 
     // MARK: - Initializer
 
-    init(coordinator: SingleButtonAlertCoordinator) {
+    init(
+        coordinator: SingleButtonAlertCoordinator,
+        alertMessage: String,
+        alertType: SingleButtonAlertView.AlertType
+    ) {
         self.coordinator = coordinator
+        self.alertMessage = alertMessage
+        self.alertType = alertType
     }
 
     // MARK: - Actions

@@ -609,11 +609,11 @@
 		799AFA47285CECDE001B0371 /* Single Button Alert */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA48285CECDE001B0371 /* SingleButtonAlertPresenter.swift */,
-				799AFA49285CECDE001B0371 /* SingleButtonAlertViewController.swift */,
-				799AFA4A285CECDE001B0371 /* SingleButtonAlertCoordinator.swift */,
-				799AFA4B285CECDE001B0371 /* SingleButtonAlertView.swift */,
 				799AFA4C285CECDE001B0371 /* Protocols */,
+				799AFA4A285CECDE001B0371 /* SingleButtonAlertCoordinator.swift */,
+				799AFA48285CECDE001B0371 /* SingleButtonAlertPresenter.swift */,
+				799AFA4B285CECDE001B0371 /* SingleButtonAlertView.swift */,
+				799AFA49285CECDE001B0371 /* SingleButtonAlertViewController.swift */,
 			);
 			path = "Single Button Alert";
 			sourceTree = "<group>";
