@@ -12,15 +12,20 @@ class StudentProjectsPresenter: StudentProjectsPresenting {
     // MARK: - Properties
 
     private var coordinator: StudentProjectsCoordinator
+    let student: StudentModel
 
     // MARK: - Initializer
 
-    init(coordinator: StudentProjectsCoordinator) {
+    init(
+        coordinator: StudentProjectsCoordinator,
+        student: StudentModel
+    ) {
         self.coordinator = coordinator
+        self.student = student
     }
 
     // MARK: - Actions
-
+    
     func showStudentProject(project: ProjectModel) {
         coordinator.showStudentProject(project)
     }

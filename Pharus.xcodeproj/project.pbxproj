@@ -408,7 +408,6 @@
 				799AF9FB285CECDE001B0371 /* Project Sheet */,
 				799AFA05285CECDE001B0371 /* Send File */,
 				799AFA19285CECDE001B0371 /* Student Home */,
-				799AFA51285CECDE001B0371 /* Student Home News */,
 				799AFA23285CECDE001B0371 /* Student Profile */,
 				799AFA66285CECDE001B0371 /* Student Project Detail */,
 				799AFA0F285CECDE001B0371 /* Student Projects */,
@@ -786,16 +785,17 @@
 			isa = PBXGroup;
 			children = (
 				799AFA9C285CECDE001B0371 /* CheckmarkButton.swift */,
-				799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */,
-				799AFA9E285CECDE001B0371 /* MainCardButton.swift */,
-				799AFA9F285CECDE001B0371 /* StudentProfileButton.swift */,
-				799AFAA0285CECDE001B0371 /* ProjectScheduleView.swift */,
-				799AFAA1285CECDE001B0371 /* SubscribeButton.swift */,
-				799AFAA2285CECDE001B0371 /* ProjectTaskView.swift */,
-				799AFAA3285CECDE001B0371 /* SecondaryCardButton.swift */,
-				799AFAA4285CECDE001B0371 /* UploadMessageButton.swift */,
 				799AFAA5285CECDE001B0371 /* CircleProgressView.swift */,
 				799AFAA8285CECDE001B0371 /* HomeMiniCardView.swift */,
+				799AFA9E285CECDE001B0371 /* MainCardButton.swift */,
+				799AFAA0285CECDE001B0371 /* ProjectScheduleView.swift */,
+				799AFAA2285CECDE001B0371 /* ProjectTaskView.swift */,
+				799AFAA3285CECDE001B0371 /* SecondaryCardButton.swift */,
+				799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */,
+				799AFA51285CECDE001B0371 /* Student Home News */,
+				799AFA9F285CECDE001B0371 /* StudentProfileButton.swift */,
+				799AFAA1285CECDE001B0371 /* SubscribeButton.swift */,
+				799AFAA4285CECDE001B0371 /* UploadMessageButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";

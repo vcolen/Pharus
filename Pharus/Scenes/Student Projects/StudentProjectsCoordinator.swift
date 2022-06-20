@@ -26,12 +26,13 @@ class StudentProjectsCoordinator: Coordinator {
     }
 
     func start() {
-        let studentProjectsPresenter = StudentProjectsPresenter(coordinator: self)
+        let studentProjectsPresenter = StudentProjectsPresenter(
+            coordinator: self,
+            student: student
+        )
 
         let studentProjectsViewController = StudentProjectsViewController(
-            coordinator: self,
-            presenter: studentProjectsPresenter,
-            student: student
+            presenter: studentProjectsPresenter
         )
 
         navigationController.setNavigationBarHidden(false, animated: true)
