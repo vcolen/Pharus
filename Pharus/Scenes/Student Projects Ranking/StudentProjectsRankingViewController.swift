@@ -15,7 +15,6 @@ class StudentRankingProjectsViewController: UIViewController {
     private let projects: [ProjectModel]
 
     // MARK: - Initializer
-
     init(presenter: StudentProjectsRankingPresenter) {
         self.presenter = presenter
         self.projects = presenter.student.projects.filter({ $0.placement != nil })
@@ -28,7 +27,6 @@ class StudentRankingProjectsViewController: UIViewController {
     }
 
     // MARK: - Life Cycle
-
     override func loadView() {
         super.loadView()
 
@@ -51,7 +49,6 @@ class StudentRankingProjectsViewController: UIViewController {
     }
 
     // MARK: - Actions
-
     private func setNavigationBar() {
         self.title = "Seus Rankings"
         self.navigationController?.title = ""
@@ -78,15 +75,12 @@ class StudentRankingProjectsViewController: UIViewController {
 }
 
 // MARK: - Student Projects Ranking Viewable
-
 extension StudentRankingProjectsViewController: StudentProjectsRankingViewable { }
 
 // MARK: - Student Projects Ranking View Delegate
-
 extension StudentRankingProjectsViewController: StudentProjectsRankingViewDelegate { }
 
 // MARK: - UITableViewDataSource
-
 extension StudentRankingProjectsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

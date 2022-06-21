@@ -9,12 +9,7 @@ import UIKit
 
 class StudentProjectsTableView: UITableView {
 
-    // MARK: - Properties
-
-    // MARK: - Views
-
     // MARK: - Initializer
-
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: .zero, style: .plain)
 
@@ -28,7 +23,6 @@ class StudentProjectsTableView: UITableView {
     }
 
     // MARK: - Subviews
-
     func configureSubviews() {
         self.backgroundColor = .clear
         self.separatorColor = .clear
@@ -39,7 +33,6 @@ class StudentProjectsTableView: UITableView {
     }
 
     // MARK: - Constraints
-
     func setupConstraints() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.stretch(self)
