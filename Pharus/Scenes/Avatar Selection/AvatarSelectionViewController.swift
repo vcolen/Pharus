@@ -14,7 +14,6 @@ class AvatarSelectionViewController: UIViewController {
     private var avatarSelectionCollectionView: UICollectionView?
 
     // MARK: - Initializer
-
     init(presenter: AvatarSelectionPresenter) {
         self.presenter = presenter
         self.customView = AvatarSelectionView()
@@ -26,8 +25,49 @@ class AvatarSelectionViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Life Cycle
+    // MARK: - Functions
+    private func setNavigationBar() {
+        self.title = "Avatar"
+        self.navigationController?.title = ""
+    }
 
+    private func setupCollectionView() {
+        avatarSelectionCollectionView = UICollectionView(
+            frame: customView.mainStackView.frame,
+            collectionViewLayout: customView.collectionViewFlowLayout
+        )
+
+        guard let avatarSelectionCollectionView = avatarSelectionCollectionView else {
+            return
+        }
+
+        avatarSelectionCollectionView.showsHorizontalScrollIndicator = false
+        avatarSelectionCollectionView.register(
+            UICollectionViewCell.self,
+            forCellWithReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection
+        )
+
+        avatarSelectionCollectionView.backgroundColor = .clear
+
+        avatarSelectionCollectionView.dataSource = self
+        avatarSelectionCollectionView.delegate = self
+
+        customView.avatarSelectionStackView.addArrangedSubview(avatarSelectionCollectionView)
+
+        NSLayoutConstraint.activate([
+            avatarSelectionCollectionView.heightAnchor.constraint(equalToConstant: 130)
+        ])
+    }
+
+    private func showStudentAvatar() {
+        customView.mainAvatarImageView.image = UIImage(
+            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.fullImage.suffix
+        )
+    }
+}
+
+// MARK: - Super Methods
+extension AvatarSelectionViewController {
     override func loadView() {
         super.loadView()
 
@@ -46,52 +86,6 @@ class AvatarSelectionViewController: UIViewController {
 
         setGradientBackground()
         showStudentAvatar()
-    }
-
-    // MARK: - Functions
-
-    private func setNavigationBar() {
-        self.title = "Avatar"
-        self.navigationController?.title = ""
-    }
-
-    private  func setupCollectionView() {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        layout.itemSize = CGSize(width: 120, height: 120)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 20
-
-        avatarSelectionCollectionView = UICollectionView(
-            frame: customView.mainStackView.frame,
-            collectionViewLayout: layout
-        )
-
-        avatarSelectionCollectionView?.showsHorizontalScrollIndicator = false
-        avatarSelectionCollectionView?.register(
-            UICollectionViewCell.self,
-            forCellWithReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection
-        )
-
-        avatarSelectionCollectionView?.backgroundColor = .clear
-
-        avatarSelectionCollectionView?.dataSource = self
-        avatarSelectionCollectionView?.delegate = self
-
-        customView.avatarSelectionStackView.addArrangedSubview(
-            avatarSelectionCollectionView ?? UICollectionView()
-        )
-
-        NSLayoutConstraint.activate([
-            avatarSelectionCollectionView!.heightAnchor.constraint(equalToConstant: 130)
-        ])
-    }
-
-    private func showStudentAvatar() {
-        customView.mainAvatarImageView.image = UIImage(
-            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.fullImage.suffix
-        )
     }
 }
 
@@ -119,10 +113,11 @@ extension AvatarSelectionViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UI Collection View Delegate
-
 extension AvatarSelectionViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
         let newAvatar = FullAvatarImages.avatars[indexPath.row]
         customView.mainAvatarImageView.image = newAvatar
 
@@ -131,9 +126,7 @@ extension AvatarSelectionViewController: UICollectionViewDelegate {
 }
 
 // MARK: - Avatar Selection Viewable
-
 extension AvatarSelectionViewController: AvatarSelectionViewable { }
 
 // MARK: - Avatar Selection View Delegate
-
 extension AvatarSelectionViewController: AvatarSelectionViewDelegate { }

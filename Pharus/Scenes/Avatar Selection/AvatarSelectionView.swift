@@ -70,6 +70,17 @@ class AvatarSelectionView: UIView {
         return label
     }()
 
+    lazy var collectionViewFlowLayout: UICollectionViewLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        layout.itemSize = CGSize(width: 120, height: 120)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 20
+
+        return layout
+    }()
+
     // MARK: - Initializer
 
     override init(frame: CGRect) {
