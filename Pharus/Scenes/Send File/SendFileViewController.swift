@@ -11,13 +11,11 @@ import UniformTypeIdentifiers
 class SendFileViewController: UIViewController, UIDocumentPickerDelegate {
 
     // MARK: - Properties
-
     private let sendFileView = SendFileView()
     private let presenter: SendFilePresenter
     private let coordinator: SendFileCoordinator
 
     // MARK: - Initializer
-
     init(
         presenter: SendFilePresenter,
         coordinator: SendFileCoordinator
@@ -31,9 +29,10 @@ class SendFileViewController: UIViewController, UIDocumentPickerDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Life Cycle
-
+extension SendFileViewController {
+    // MARK: - Super Methods
     override func loadView() {
         super.loadView()
 
@@ -43,7 +42,6 @@ class SendFileViewController: UIViewController, UIDocumentPickerDelegate {
 }
 
 // MARK: - Send File Delegate
-
 extension SendFileViewController: SendFileViewDelegate {
     func closeButtonTapped() {
         presenter.closeSheet()
