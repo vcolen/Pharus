@@ -347,7 +347,7 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
 
     private func setupProjectTasks(of project: ProjectModel) {
         for task in project.tasks {
-            let checkboxIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon! : .defaultImage
+            let checkboxIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon ?? .defaultImage : .defaultImage
             let taskView = ProjectTaskView(
                 task: task,
                 checkImage: checkboxIcon,

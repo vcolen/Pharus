@@ -177,7 +177,7 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
 
     private func configureSubviews(with project: ProjectModel) {
         self.backgroundColor = .clear
-        
+
         addSubview(mainView)
 
         mainView.addSubview(mainStackView)

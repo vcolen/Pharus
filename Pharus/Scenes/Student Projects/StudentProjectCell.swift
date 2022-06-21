@@ -269,7 +269,7 @@ class StudentProjectCell: UITableViewCell {
         projectScheduleView.project = project
         subscribeButton.isSubscribed = project.isSubscribed
         companyLogoImageView.image = UIImage(
-            named: "\(project.company!.lowercased())LogoImage"
+            named: "\(project.company ?? "ioasys" .lowercased())LogoImage"
         )
 
         completionBarCircleView.progress = project.completionPercentage*100

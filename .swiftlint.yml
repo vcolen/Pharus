@@ -1,2 +1,11 @@
-disabled_rules: # rule identifiers turned on by default to exclude from running
-  - trailing_whitespace
+opt_in_rules:
+  - force_unwrapping
+  - opening_brace
+
+force_unwrapping: 
+  severity: error
+
+trailing_whitespace:
+  severity: error
+
+

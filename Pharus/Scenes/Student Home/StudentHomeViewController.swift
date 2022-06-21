@@ -38,8 +38,8 @@ class StudentHomeViewController: UIViewController {
     }
 
     func setupTabBarIcons() {
-        let array = self.tabBarController?.customizableViewControllers
-        for controller in array! {
+        guard let array = self.tabBarController?.customizableViewControllers else { return }
+        for controller in array {
             controller.tabBarItem.imageInsets = UIEdgeInsets(
                 top: 3,
                 left: 0,
@@ -50,17 +50,32 @@ class StudentHomeViewController: UIViewController {
     }
 
     private func setupPageController() {
-        self.pageController = UIPageViewController(
+        pageController = UIPageViewController(
             transitionStyle: .scroll,
             navigationOrientation: .horizontal
         )
 
-        self.pageController?.dataSource = self
-        self.customView.newsHelperView.addSubview(self.pageController!.view)
-        self.view.stretch(self.pageController!.view, to: customView.newsHelperView, left: 16, right: -16)
+        guard let pageController = pageController else {
+            return
+        }
+
+        pageController.dataSource = self
+        customView.newsHelperView.addSubview(pageController.view)
+        view.stretch(
+            pageController.view,
+            to: customView.newsHelperView,
+            left: 16,
+            right: -16
+        )
+
         let initialVC = HomeNewsViewController(with: pages[0])
-        self.pageController?.setViewControllers([initialVC], direction: .forward, animated: true)
-        self.pageController?.didMove(toParent: self)
+        pageController.setViewControllers(
+            [initialVC],
+            direction: .forward,
+            animated: true
+        )
+
+        pageController.didMove(toParent: self)
     }
 }
 
