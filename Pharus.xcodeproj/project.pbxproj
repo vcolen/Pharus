@@ -718,9 +718,9 @@
 		799AFA70285CECDE001B0371 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA71285CECDE001B0371 /* LoginView.swift */,
 				799AFA72285CECDE001B0371 /* LoginCoodinator.swift */,
 				799AFA73285CECDE001B0371 /* LoginViewController.swift */,
+				799AFA71285CECDE001B0371 /* LoginView.swift */,
 				799AFA74285CECDE001B0371 /* LoginPresenter.swift */,
 				799AFA75285CECDE001B0371 /* Protocols */,
 			);
