@@ -32,31 +32,12 @@ class AvatarSelectionViewController: UIViewController {
     }
 
     private func setupCollectionView() {
-        avatarSelectionCollectionView = UICollectionView(
-            frame: customView.mainStackView.frame,
-            collectionViewLayout: customView.collectionViewFlowLayout
-        )
-
-        guard let avatarSelectionCollectionView = avatarSelectionCollectionView else {
-            return
-        }
-
-        avatarSelectionCollectionView.showsHorizontalScrollIndicator = false
-        avatarSelectionCollectionView.register(
+        customView.avatarSelectionCollectionView.register(
             UICollectionViewCell.self,
             forCellWithReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection
         )
-
-        avatarSelectionCollectionView.backgroundColor = .clear
-
-        avatarSelectionCollectionView.dataSource = self
-        avatarSelectionCollectionView.delegate = self
-
-        customView.avatarSelectionStackView.addArrangedSubview(avatarSelectionCollectionView)
-
-        NSLayoutConstraint.activate([
-            avatarSelectionCollectionView.heightAnchor.constraint(equalToConstant: 130)
-        ])
+        customView.avatarSelectionCollectionView.dataSource = self
+        customView.avatarSelectionCollectionView.delegate = self
     }
 
     private func showStudentAvatar() {

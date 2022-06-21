@@ -81,6 +81,10 @@ class AvatarSelectionView: UIView {
         return layout
     }()
 
+    lazy var avatarSelectionCollectionView: UICollectionView = {
+        return UICollectionView()
+    }()
+
     // MARK: - Initializer
 
     override init(frame: CGRect) {
@@ -106,6 +110,19 @@ class AvatarSelectionView: UIView {
         mainStackView.addArrangedSubview(avatarSelectionStackView)
 
         avatarSelectionStackView.addArrangedSubview(selectYourAvatarLabel)
+        setupCollectionView()
+    }
+
+    private func setupCollectionView() {
+        avatarSelectionCollectionView = UICollectionView(
+            frame: mainStackView.frame,
+            collectionViewLayout: collectionViewFlowLayout
+        )
+
+        avatarSelectionCollectionView.backgroundColor = .clear
+
+        avatarSelectionCollectionView.showsHorizontalScrollIndicator = false
+        avatarSelectionStackView.addArrangedSubview(avatarSelectionCollectionView)
     }
 
     private func setupConstraints() {
@@ -137,6 +154,11 @@ class AvatarSelectionView: UIView {
         // Select You Avatar Label
         NSLayoutConstraint.activate([
             selectYourAvatarLabel.heightAnchor.constraint(equalToConstant: 25)
+        ])
+
+        // Avatar Selection Stack View
+        NSLayoutConstraint.activate([
+            avatarSelectionCollectionView.heightAnchor.constraint(equalToConstant: 130)
         ])
     }
 }
