@@ -9,7 +9,7 @@ import UIKit
 class StudentProjectsRankingViewController: UIViewController {
 
     // MARK: - Properties
-    private let tableView = StudentProjectsRankingTableView()
+    private lazy var tableView = StudentProjectsRankingTableView()
     private let presenter: StudentProjectsRankingPresenter
     private let projects: [ProjectModel]
 

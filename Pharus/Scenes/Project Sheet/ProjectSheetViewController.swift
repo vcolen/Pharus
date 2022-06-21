@@ -11,16 +11,14 @@ class ProjectSheetViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: ProjectSheetPresenter
-    private let projectSheetView: ProjectSheetView
+    private lazy var projectSheetView = ProjectSheetView(
+        project: presenter.project,
+        sheetContent: presenter.projectSheetContent
+    )
 
     // MARK: - Initializer
-    init(presenter: ProjectSheetPresenter
-    ) {
+    init(presenter: ProjectSheetPresenter) {
         self.presenter = presenter
-        self.projectSheetView = ProjectSheetView(
-            project: presenter.project,
-            sheetContent: presenter.projectSheetContent
-        )
 
         super.init(nibName: nil, bundle: nil)
     }

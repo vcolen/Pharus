@@ -12,7 +12,7 @@ class StudentProjectsViewController: UIViewController {
     // MARK: - Properties
     private let presenter: StudentProjectsPresenter
     private let projects: [ProjectModel]
-    private let tableView = StudentProjectsTableView()
+    private lazy var tableView = StudentProjectsTableView()
 
     // MARK: - Initializer
     init(presenter: StudentProjectsPresenter) {

@@ -11,17 +11,12 @@ import UniformTypeIdentifiers
 class SendFileViewController: UIViewController, UIDocumentPickerDelegate {
 
     // MARK: - Properties
-    private let sendFileView = SendFileView()
+    private lazy var sendFileView = SendFileView()
     private let presenter: SendFilePresenter
-    private let coordinator: SendFileCoordinator
 
     // MARK: - Initializer
-    init(
-        presenter: SendFilePresenter,
-        coordinator: SendFileCoordinator
-    ) {
+    init(presenter: SendFilePresenter) {
         self.presenter = presenter
-        self.coordinator = coordinator
 
         super.init(nibName: nil, bundle: nil)
     }

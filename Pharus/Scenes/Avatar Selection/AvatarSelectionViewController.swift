@@ -10,13 +10,12 @@ class AvatarSelectionViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: AvatarSelectionPresenter
-    private let customView: AvatarSelectionView
+    private lazy var customView = AvatarSelectionView()
     private var avatarSelectionCollectionView: UICollectionView?
 
     // MARK: - Initializer
     init(presenter: AvatarSelectionPresenter) {
         self.presenter = presenter
-        self.customView = AvatarSelectionView()
 
         super.init(nibName: nil, bundle: nil)
     }

@@ -13,15 +13,12 @@ class StudentHomeViewController: UIViewController {
     private var pageController: UIPageViewController?
     private let currentIndex: Int
     private let pages: [Pages] = Pages.allCases
-    private let customView: StudentHomeView
+    private lazy var customView = StudentHomeView(studentName: presenter.student.firstName)
 
     // MARK: - Initializer
-    init(
-        presenter: StudentHomePresenter
-    ) {
+    init(presenter: StudentHomePresenter) {
         self.presenter = presenter
         self.currentIndex = 0
-        self.customView = StudentHomeView(studentName: presenter.student.firstName)
 
         super.init(nibName: nil, bundle: nil)
     }

@@ -10,16 +10,12 @@ import UIKit
 class StudentProfileViewController: UIViewController {
 
     // MARK: - Properties
-    private let studentProfileView: StudentProfileView
     private let presenter: StudentProfilePresenter
+    private lazy var studentProfileView = StudentProfileView(student: presenter.student)
 
     // MARK: - Initializer
-    init(
-        presenter: StudentProfilePresenter
-    ) {
+    init(presenter: StudentProfilePresenter) {
         self.presenter = presenter
-
-        studentProfileView =  StudentProfileView(student: presenter.student)
 
         super.init(nibName: nil, bundle: nil)
     }

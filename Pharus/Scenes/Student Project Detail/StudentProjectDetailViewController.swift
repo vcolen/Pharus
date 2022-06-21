@@ -10,12 +10,13 @@ class StudentProjectDetailViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: StudentProjectDetailPresenter
-    private let studentProjectDetailView: StudentProjectDetailView
+    private lazy var studentProjectDetailView = StudentProjectDetailView(
+        project: presenter.project
+    )
 
     // MARK: - Initializer
     init(presenter: StudentProjectDetailPresenter) {
         self.presenter = presenter
-        self.studentProjectDetailView = StudentProjectDetailView(project: presenter.project)
 
         super.init(nibName: nil, bundle: nil)
     }
