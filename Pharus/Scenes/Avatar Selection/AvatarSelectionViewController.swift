@@ -30,11 +30,7 @@ class AvatarSelectionViewController: UIViewController {
         self.navigationController?.title = ""
     }
 
-    private func setupCollectionView() {
-        customView.avatarSelectionCollectionView.register(
-            UICollectionViewCell.self,
-            forCellWithReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection
-        )
+    private func setupCollectionViewDelegate() {
         customView.avatarSelectionCollectionView.dataSource = self
         customView.avatarSelectionCollectionView.delegate = self
     }
@@ -51,7 +47,7 @@ extension AvatarSelectionViewController {
     override func loadView() {
         super.loadView()
 
-        setupCollectionView()
+        setupCollectionViewDelegate()
         self.view = customView
     }
 

@@ -82,7 +82,19 @@ class AvatarSelectionView: UIView {
     }()
 
     lazy var avatarSelectionCollectionView: UICollectionView = {
-        return UICollectionView()
+       let collectionView = UICollectionView(
+            frame: mainStackView.frame,
+            collectionViewLayout: collectionViewFlowLayout
+        )
+
+        collectionView.register(
+        UICollectionViewCell.self,
+        forCellWithReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection
+    )
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+
+        return collectionView
     }()
 
     // MARK: - Initializer
@@ -110,18 +122,6 @@ class AvatarSelectionView: UIView {
         mainStackView.addArrangedSubview(avatarSelectionStackView)
 
         avatarSelectionStackView.addArrangedSubview(selectYourAvatarLabel)
-        setupCollectionView()
-    }
-
-    private func setupCollectionView() {
-        avatarSelectionCollectionView = UICollectionView(
-            frame: mainStackView.frame,
-            collectionViewLayout: collectionViewFlowLayout
-        )
-
-        avatarSelectionCollectionView.backgroundColor = .clear
-
-        avatarSelectionCollectionView.showsHorizontalScrollIndicator = false
         avatarSelectionStackView.addArrangedSubview(avatarSelectionCollectionView)
     }
 
