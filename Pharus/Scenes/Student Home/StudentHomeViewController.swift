@@ -65,7 +65,12 @@ class StudentHomeViewController: UIViewController {
     func setupTabBarIcons() {
         let array = self.tabBarController?.customizableViewControllers
         for controller in array! {
-            controller.tabBarItem.imageInsets = UIEdgeInsets(top: 3, left: 0, bottom: -3, right: 0)
+            controller.tabBarItem.imageInsets = UIEdgeInsets(
+                top: 3,
+                left: 0,
+                bottom: -3,
+                right: 0
+            )
         }
     }
 
@@ -144,9 +149,7 @@ enum Pages: CaseIterable {
             return HomeNewsView()
         case .pageOne:
             return HomeNewsView(
-                news: """
-O projeto ”Introdução a robótica” finalizou. Me contaram você ficou bem colocado, dá uma olhadinha no seu ranking!
-"""
+                news: Constants.defaultTexts.homeNewsText
             )
         }
     }
