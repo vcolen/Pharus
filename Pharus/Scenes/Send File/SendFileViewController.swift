@@ -31,8 +31,8 @@ class SendFileViewController: UIViewController, UIDocumentPickerDelegate {
     }
 }
 
+// MARK: - Super Methods
 extension SendFileViewController {
-    // MARK: - Super Methods
     override func loadView() {
         super.loadView()
 
@@ -80,5 +80,4 @@ extension SendFileViewController: SendFileViewDelegate {
 }
 
 // MARK: - Send File Viewable
-
 extension SendFileViewController: SendFileViewable { }

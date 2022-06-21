@@ -9,12 +9,10 @@ import UIKit
 class StudentProjectDetailViewController: UIViewController {
 
     // MARK: - Properties
-
     private let presenter: StudentProjectDetailPresenter
     private let studentProjectDetailView: StudentProjectDetailView
 
     // MARK: - Initializer
-
     init(presenter: StudentProjectDetailPresenter) {
         self.presenter = presenter
         self.studentProjectDetailView = StudentProjectDetailView(project: presenter.project)
@@ -26,29 +24,7 @@ class StudentProjectDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Life Cycle
-
-    override func loadView() {
-        super.loadView()
-
-        studentProjectDetailView.delegate = self
-        self.view = studentProjectDetailView
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setNavigationBar()
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-
-        setGradientBackground()
-    }
-
     // MARK: - Actions
-
     func setNavigationBar() {
         self.title = presenter.project.name
 
@@ -72,8 +48,29 @@ class StudentProjectDetailViewController: UIViewController {
     }
 }
 
-// MARK: - Student Project Detail View Delegate
+// MARK: - Super Methods
+extension StudentProjectDetailViewController {
+    override func loadView() {
+        super.loadView()
 
+        studentProjectDetailView.delegate = self
+        self.view = studentProjectDetailView
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setNavigationBar()
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        setGradientBackground()
+    }
+}
+
+// MARK: - Student Project Detail View Delegate
 extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
     func envelopeIconTapped() {
         presenter.showMentorReview()
@@ -93,5 +90,4 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
 }
 
 // MARK: - Student Project Detail Viewable
-
 extension SendFileViewController: StudentProjectsViewable { }

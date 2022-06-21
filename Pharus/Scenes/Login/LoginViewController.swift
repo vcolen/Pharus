@@ -8,25 +8,23 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    
+
     // MARK: - Properties
-    
     private let customView = LoginView()
     private let presenter: LoginPresenter
     var keyboardHeight = CGFloat(0)
-    
+
     // MARK: - Initializer
-    
     init(presenter: LoginPresenter) {
         self.presenter = presenter
-        
+
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Actions
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (
@@ -38,45 +36,44 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.customView.frame.origin.y != 0 {
             self.customView.frame.origin.y = 0
         }
     }
-    
+
     private func initializeHideKeyboard() {
-        
+
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
             action: #selector(
                 dismissMyKeyboard
             )
         )
-        
+
         view.addGestureRecognizer(tap)
     }
-    
+
     @objc private func dismissMyKeyboard() {
         view.endEditing(true)
     }
 }
 
 // MARK: - Super Methods
-
 extension LoginViewController {
     override func loadView() {
         super.loadView()
-        
+
         self.view = customView
         customView.delegate = self
         self.tabBarController?.tabBar.isHidden = true
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         initializeHideKeyboard()
         NotificationCenter.default.addObserver(
             self,
@@ -84,7 +81,7 @@ extension LoginViewController {
             name: UIResponder.keyboardWillShowNotification,
             object: nil
         )
-        
+
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillHide),
@@ -95,14 +92,13 @@ extension LoginViewController {
 }
 
 // MARK: - Login View Delegate
-
 extension LoginViewController: LoginViewDelegate {
     func loginButtonPressed() {
         guard let email = customView.emailTextField.text else { return }
         guard let password = customView.passwordTextField.text else { return }
-        
+
         let studentDidLogIn = presenter.loginUser(email: email, password: password)
-        
+
         if studentDidLogIn == false {
             customView.wrongPasswordImageView.image = customView.wrongPasswordImageView.image?.withTintColor(.redError)
             customView.wrongPasswordLabel.textColor = UIColor.redError
@@ -112,5 +108,4 @@ extension LoginViewController: LoginViewDelegate {
 }
 
 // MARK: - Login Viewable
-
 extension LoginViewController: LoginViewable { }

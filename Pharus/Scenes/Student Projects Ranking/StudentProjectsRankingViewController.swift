@@ -1,15 +1,14 @@
 //
-//  StudentRankingProjectsViewController.swift
+//  StudentProjectsRankingViewController.swift
 //  Pharus
 //
 //  Created by Victor Colen on 04/04/22.
 //
 import UIKit
 
-class StudentRankingProjectsViewController: UIViewController {
+class StudentProjectsRankingViewController: UIViewController {
 
     // MARK: - Properties
-
     private let tableView = UITableView()
     private let presenter: StudentProjectsRankingPresenter
     private let projects: [ProjectModel]
@@ -24,28 +23,6 @@ class StudentRankingProjectsViewController: UIViewController {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    // MARK: - Life Cycle
-    override func loadView() {
-        super.loadView()
-
-        tableView.backgroundColor = .clear
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setNavigationBar()
-
-        view.addSubview(tableView)
-        setupTableView()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        setGradientBackground()
     }
 
     // MARK: - Actions
@@ -74,14 +51,38 @@ class StudentRankingProjectsViewController: UIViewController {
     }
 }
 
+// MARK: - Super Methods
+extension StudentProjectsRankingViewController {
+    override func loadView() {
+        super.loadView()
+
+        tableView.backgroundColor = .clear
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setNavigationBar()
+
+        view.addSubview(tableView)
+        setupTableView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        setGradientBackground()
+    }
+}
+
 // MARK: - Student Projects Ranking Viewable
-extension StudentRankingProjectsViewController: StudentProjectsRankingViewable { }
+extension StudentProjectsRankingViewController: StudentProjectsRankingViewable { }
 
 // MARK: - Student Projects Ranking View Delegate
-extension StudentRankingProjectsViewController: StudentProjectsRankingViewDelegate { }
+extension StudentProjectsRankingViewController: StudentProjectsRankingViewDelegate { }
 
 // MARK: - UITableViewDataSource
-extension StudentRankingProjectsViewController: UITableViewDataSource {
+extension StudentProjectsRankingViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         projects.count

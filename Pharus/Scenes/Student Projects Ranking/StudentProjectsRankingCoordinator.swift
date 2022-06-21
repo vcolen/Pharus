@@ -31,7 +31,7 @@ class StudentProjectsRankingCoordinator: Coordinator {
             student: student
         )
 
-        let studentProjectsRankingViewController = StudentRankingProjectsViewController(
+        let studentProjectsRankingViewController = StudentProjectsRankingViewController(
             presenter: studentProjectsRankingPresenter
         )
 

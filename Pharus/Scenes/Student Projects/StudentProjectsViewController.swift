@@ -10,13 +10,11 @@ import UIKit
 class StudentProjectsViewController: UIViewController {
 
     // MARK: - Properties
-
     private let presenter: StudentProjectsPresenter
     private let projects: [ProjectModel]
     private let tableView = StudentProjectsTableView()
 
     // MARK: - Initializer
-
     init(presenter: StudentProjectsPresenter) {
         self.presenter = presenter
         self.projects = presenter.student.projects
@@ -28,8 +26,26 @@ class StudentProjectsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Life Cycle
+    // MARK: - Actions
+    private func setNavigationBar() {
+        self.title = "Seus projetos"
+        self.navigationController?.title = ""
+    }
 
+    private func setupTableView() {
+        tableView.register(
+            StudentProjectCell.self,
+            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userProjects
+        )
+
+        view.stretch(tableView, to: view)
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+}
+
+// MARK: - Super Mehods
+extension StudentProjectsViewController {
     override func loadView() {
         super.loadView()
 
@@ -55,36 +71,15 @@ class StudentProjectsViewController: UIViewController {
 
         setGradientBackground()
     }
-
-    // MARK: - Actions
-
-    private func setNavigationBar() {
-        self.title = "Seus projetos"
-        self.navigationController?.title = ""
-    }
-
-    private func setupTableView() {
-        tableView.register(
-            StudentProjectCell.self,
-            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userProjects
-        )
-
-        view.stretch(tableView, to: view)
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
 }
 
 // MARK: - Student Projects View Delegate
-
 extension StudentProjectsViewController: StudentProjectsViewDelegate { }
 
 // MARK: - Student Projects Viewable
-
 extension StudentProjectsViewController: StudentProjectsViewable { }
 
 // MARK: - UITableViewDataSource
-
 extension StudentProjectsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -123,7 +118,6 @@ extension StudentProjectsViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-
 extension StudentProjectsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let project = projects[indexPath.row]
