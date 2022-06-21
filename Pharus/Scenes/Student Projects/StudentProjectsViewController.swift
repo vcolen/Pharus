@@ -11,13 +11,11 @@ class StudentProjectsViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: StudentProjectsPresenter
-    private let projects: [ProjectModel]
     private lazy var customView = StudentProjectsView()
 
     // MARK: - Initializer
     init(presenter: StudentProjectsPresenter) {
         self.presenter = presenter
-        self.projects = presenter.student.projects
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -81,7 +79,7 @@ extension StudentProjectsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        projects.count
+        presenter.student.projects.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,7 +93,7 @@ extension StudentProjectsViewController: UITableViewDataSource {
             )
         }
 
-        let project = projects[indexPath.row]
+        let project = presenter.student.projects[indexPath.row]
 
         cell.configureSubviews()
         cell.setupConstraints()
@@ -114,7 +112,7 @@ extension StudentProjectsViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension StudentProjectsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let project = projects[indexPath.row]
+        let project = presenter.student.projects[indexPath.row]
         presenter.showStudentProject(project: project)
 
         tableView.deselectRow(at: indexPath, animated: true)
