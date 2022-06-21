@@ -9,7 +9,7 @@ import UIKit
 class StudentProjectsRankingViewController: UIViewController {
 
     // MARK: - Properties
-    private lazy var tableView = StudentProjectsRankingTableView()
+    private lazy var customView = StudentProjectsRankingView()
     private let presenter: StudentProjectsRankingPresenter
     private let projects: [ProjectModel]
 
@@ -31,15 +31,9 @@ class StudentProjectsRankingViewController: UIViewController {
         self.navigationController?.title = ""
     }
 
-    private func setupTableView() {
-        tableView.register(
-            StudentProjectRankingCell.self,
-            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userRankingProjects
-        )
-
-        tableView.stretch(tableView, to: view)
-        tableView.dataSource = self
-        tableView.allowsSelection = false
+    private func setupTableViewDelegate() {
+        customView.tableView.dataSource = self
+        customView.tableView.allowsSelection = false
     }
 }
 
@@ -50,8 +44,8 @@ extension StudentProjectsRankingViewController {
 
         setNavigationBar()
 
-        view.addSubview(tableView)
-        setupTableView()
+        view = customView
+        setupTableViewDelegate()
     }
 
     override func viewWillAppear(_ animated: Bool) {

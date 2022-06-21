@@ -167,7 +167,7 @@
 		799AFB67285CEDE5001B0371 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2F285CECDE001B0371 /* TabBarViewController.swift */; };
 		79D659C1286207690060971C /* DefaultTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C0286207690060971C /* DefaultTexts.swift */; };
 		79D659C3286209760060971C /* StudentProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C2286209760060971C /* StudentProjectsView.swift */; };
-		79D659C5286213270060971C /* StudentProjectsRankingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C4286213270060971C /* StudentProjectsRankingTableView.swift */; };
+		79D659C5286213270060971C /* StudentProjectsRankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C4286213270060971C /* StudentProjectsRankingView.swift */; };
 		79F06DA127F28FCD00343865 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */; };
 		79FFE7E52860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */; };
 		79FFE7E72860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E62860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift */; };
@@ -348,7 +348,7 @@
 		799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		79D659C0286207690060971C /* DefaultTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTexts.swift; sourceTree = "<group>"; };
 		79D659C2286209760060971C /* StudentProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsView.swift; sourceTree = "<group>"; };
-		79D659C4286213270060971C /* StudentProjectsRankingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingTableView.swift; sourceTree = "<group>"; };
+		79D659C4286213270060971C /* StudentProjectsRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingView.swift; sourceTree = "<group>"; };
 		79F06D9E27F28FCD00343865 /* PharusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PharusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingPresenter.swift; sourceTree = "<group>"; };
@@ -652,7 +652,7 @@
 				799AFA59285CECDE001B0371 /* StudentProjectRankingCell.swift */,
 				79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */,
 				799AFA5A285CECDE001B0371 /* StudentProjectsRankingViewController.swift */,
-				79D659C4286213270060971C /* StudentProjectsRankingTableView.swift */,
+				79D659C4286213270060971C /* StudentProjectsRankingView.swift */,
 				799AFA5B285CECDE001B0371 /* Protocols */,
 			);
 			path = "Student Projects Ranking";
@@ -1070,7 +1070,7 @@
 				799AFB49285CECDF001B0371 /* SubscribeButton.swift in Sources */,
 				799AFAFF285CECDF001B0371 /* ProjectSubcriptionViewable.swift in Sources */,
 				799AFB16285CECDF001B0371 /* AvatarSelectionViewDelegate.swift in Sources */,
-				79D659C5286213270060971C /* StudentProjectsRankingTableView.swift in Sources */,
+				79D659C5286213270060971C /* StudentProjectsRankingView.swift in Sources */,
 				799AFADD285CECDF001B0371 /* StudentProjectsViewDelegate.swift in Sources */,
 				799AFB0A285CECDF001B0371 /* HomeNewsViewController.swift in Sources */,
 				79FFE7EB2860FA01003FCBE5 /* StudentProjectsRankingViewDelegate.swift in Sources */,
