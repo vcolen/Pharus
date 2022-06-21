@@ -9,7 +9,7 @@ import UIKit
 class StudentProjectsRankingViewController: UIViewController {
 
     // MARK: - Properties
-    private let tableView = UITableView()
+    private let tableView = StudentProjectsRankingTableView()
     private let presenter: StudentProjectsRankingPresenter
     private let projects: [ProjectModel]
 
@@ -32,33 +32,19 @@ class StudentProjectsRankingViewController: UIViewController {
     }
 
     private func setupTableView() {
-        tableView.register(StudentProjectRankingCell.self,
-                           forCellReuseIdentifier: Constants.cellReuseIdentifiers.userRankingProjects)
+        tableView.register(
+            StudentProjectRankingCell.self,
+            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userRankingProjects
+        )
 
+        tableView.stretch(tableView, to: view)
         tableView.dataSource = self
         tableView.allowsSelection = false
-
-        tableView.separatorColor = .clear
-
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-
-        tableView.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
 // MARK: - Super Methods
 extension StudentProjectsRankingViewController {
-    override func loadView() {
-        super.loadView()
-
-        tableView.backgroundColor = .clear
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -101,9 +87,6 @@ extension StudentProjectsRankingViewController: UITableViewDataSource {
 
         let project = projects[indexPath.row]
         cell.configureCell(using: project)
-        cell.mainView.layer.cornerRadius = 16
-        cell.backgroundColor = .clear
-
         return cell
     }
 }
