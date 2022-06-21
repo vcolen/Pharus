@@ -10,18 +10,17 @@ import UIKit
 class ProjectSubcriptionAlertViewController: UIViewController {
 
     // MARK: - Properties
-    private let alertView: ProjectSubcriptionAlertView
+    private lazy var alertView = ProjectSubcriptionAlertView(
+        title: "Confirmar Inscrição",
+        message: "Você deseja se inscrever no projeto \"\(presenter.project.name)\"?",
+        mainButtonText: "Sim, quero me inscrever",
+        secondaryButtonText: "Não quero, mudei de idéia"
+    )
     private let presenter: ProjectSubcriptionAlertPresenter
 
     // MARK: - Initializer
     init(presenter: ProjectSubcriptionAlertPresenter) {
         self.presenter = presenter
-        self.alertView = ProjectSubcriptionAlertView(
-            title: "Confirmar Inscrição",
-            message: "Você deseja se inscrever no projeto \"\(presenter.project.name)\"?",
-            mainButtonText: "Sim, quero me inscrever",
-            secondaryButtonText: "Não quero, mudei de idéia"
-        )
 
         super.init(nibName: nil, bundle: nil)
     }

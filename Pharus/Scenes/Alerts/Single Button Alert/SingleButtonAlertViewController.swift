@@ -10,16 +10,16 @@ import UIKit
 class SingleButtonAlertViewController: UIViewController {
 
     // MARK: - Properties
-    private let alertView: SingleButtonAlertView
+    private lazy var alertView = SingleButtonAlertView(
+        message: presenter.alertMessage,
+        type: presenter.alertType
+    )
     private let presenter: SingleButtonAlertPresenter
 
     // MARK: - Initializer
     init(presenter: SingleButtonAlertPresenter) {
         self.presenter = presenter
-        self.alertView = SingleButtonAlertView(
-            message: presenter.alertMessage,
-            type: presenter.alertType
-        )
+
         super.init(nibName: nil, bundle: nil)
     }
 

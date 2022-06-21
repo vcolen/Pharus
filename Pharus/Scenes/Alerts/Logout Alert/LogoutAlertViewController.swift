@@ -10,13 +10,11 @@ import UIKit
 class LogoutAlertViewController: UIViewController {
 
     // MARK: - Properties
-    private let alertView: LogoutAlertView
+    private lazy var alertView = LogoutAlertView()
     private let presenter: LogoutAlertPresenter
 
     // MARK: - Initializer
     init(presenter: LogoutAlertPresenter) {
-
-        self.alertView = LogoutAlertView()
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
