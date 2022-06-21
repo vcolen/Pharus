@@ -12,7 +12,7 @@ class StudentProjectsViewController: UIViewController {
     // MARK: - Properties
     private let presenter: StudentProjectsPresenter
     private let projects: [ProjectModel]
-    private lazy var tableView = StudentProjectsTableView()
+    private lazy var customView = StudentProjectsView()
 
     // MARK: - Initializer
     init(presenter: StudentProjectsPresenter) {
@@ -32,15 +32,9 @@ class StudentProjectsViewController: UIViewController {
         self.navigationController?.title = ""
     }
 
-    private func setupTableView() {
-        tableView.register(
-            StudentProjectCell.self,
-            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userProjects
-        )
-
-        view.stretch(tableView, to: view)
-        tableView.dataSource = self
-        tableView.delegate = self
+    private func setupTableViewDelegate() {
+        customView.tableView.dataSource = self
+        customView.tableView.delegate = self
     }
 }
 
@@ -55,15 +49,15 @@ extension StudentProjectsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view = customView
         setNavigationBar()
-        view.addSubview(tableView)
-        setupTableView()
+        setupTableViewDelegate()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        tableView.reloadData()
+        customView.tableView.reloadData()
     }
 
     override func viewWillLayoutSubviews() {
