@@ -14,6 +14,7 @@ class StudentProjectCell: UITableViewCell {
 
     lazy var mainView: UIView = {
         let view = UIView()
+        view.layer.cornerRadius = 16
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "StudentProjectCell.mainView"
 
@@ -292,6 +293,8 @@ class StudentProjectCell: UITableViewCell {
     }
 
     func configureSubviews() {
+        self.backgroundColor = .clear
+
         addSubview(mainView)
 
         mainView.addSubview(mainStackView)

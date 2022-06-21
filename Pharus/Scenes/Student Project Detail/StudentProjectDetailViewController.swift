@@ -31,7 +31,6 @@ class StudentProjectDetailViewController: UIViewController {
     override func loadView() {
         super.loadView()
 
-        studentProjectDetailView.backgroundColor = .white
         studentProjectDetailView.delegate = self
         self.view = studentProjectDetailView
     }

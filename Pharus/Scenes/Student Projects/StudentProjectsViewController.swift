@@ -13,7 +13,7 @@ class StudentProjectsViewController: UIViewController {
 
     private let presenter: StudentProjectsPresenter
     private let projects: [ProjectModel]
-    private let tableView = UITableView()
+    private let tableView = StudentProjectsTableView()
 
     // MARK: - Initializer
 
@@ -64,23 +64,14 @@ class StudentProjectsViewController: UIViewController {
     }
 
     private func setupTableView() {
-        tableView.register(StudentProjectCell.self,
-                           forCellReuseIdentifier: Constants.cellReuseIdentifiers.userProjects)
+        tableView.register(
+            StudentProjectCell.self,
+            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userProjects
+        )
 
+        view.stretch(tableView, to: view)
         tableView.dataSource = self
         tableView.delegate = self
-
-        tableView.backgroundColor = .clear
-        tableView.separatorColor = .clear
-
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-
-        tableView.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
@@ -120,13 +111,12 @@ extension StudentProjectsViewController: UITableViewDataSource {
         cell.configureSubviews()
         cell.setupConstraints()
         cell.configureCell(using: project)
+
         if project.isSubscribed == false {
             cell.subscribeButton.addAction( UIAction { _ in
                 self.presenter.showSubscribeAlert(of: project)
             }, for: .touchUpInside)
         }
-        cell.mainView.layer.cornerRadius = 16
-        cell.backgroundColor = .clear
 
         return cell
     }
