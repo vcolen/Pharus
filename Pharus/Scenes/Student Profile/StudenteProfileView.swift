@@ -76,17 +76,11 @@ class StudentProfileView: UIView {
     }()
 
     // MARK: - Initializer
-
-    convenience init(student: StudentModel) {
-        self.init()
+    init(student: StudentModel) {
+        super.init(frame: .zero)
 
         configureSubviews(with: student)
         setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-
     }
 
     required init?(coder: NSCoder) {
