@@ -10,7 +10,7 @@ class AvatarSelectionViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: AvatarSelectionPresenter
-    private lazy var customView = AvatarSelectionView()
+    private lazy var customView = AvatarSelectionView(student: presenter.student)
     private var avatarSelectionCollectionView: UICollectionView?
 
     // MARK: - Initializer
@@ -29,17 +29,6 @@ class AvatarSelectionViewController: UIViewController {
         self.title = "Avatar"
         self.navigationController?.title = ""
     }
-
-    private func setupCollectionViewDelegate() {
-        customView.avatarSelectionCollectionView.dataSource = self
-        customView.avatarSelectionCollectionView.delegate = self
-    }
-
-    private func showStudentAvatar() {
-        customView.mainAvatarImageView.image = UIImage(
-            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.fullImage.suffix
-        )
-    }
 }
 
 // MARK: - Super Methods
@@ -47,8 +36,8 @@ extension AvatarSelectionViewController {
     override func loadView() {
         super.loadView()
 
-        setupCollectionViewDelegate()
         self.view = customView
+        customView.delegate = self
     }
 
     override func viewDidLoad() {
@@ -61,43 +50,6 @@ extension AvatarSelectionViewController {
         super.viewWillAppear(animated)
 
         setGradientBackground()
-        showStudentAvatar()
-    }
-}
-
-// MARK: - UI Collection View Data Source
-extension AvatarSelectionViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        CircleAvatarImages.avatars.count
-    }
-
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection,
-            for: indexPath
-        )
-
-        let avatarImage = CircleAvatarImages.avatars[indexPath.row]
-        let avatarImageView = UIImageView(image: avatarImage)
-
-        cell.addSubview(avatarImageView)
-        return cell
-    }
-}
-
-// MARK: - UI Collection View Delegate
-extension AvatarSelectionViewController: UICollectionViewDelegate {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath
-    ) {
-        let newAvatar = FullAvatarImages.avatars[indexPath.row]
-        customView.mainAvatarImageView.image = newAvatar
-
-        presenter.changeStudentAvatar(to: String(indexPath.row + 1))
     }
 }
 
@@ -105,4 +57,8 @@ extension AvatarSelectionViewController: UICollectionViewDelegate {
 extension AvatarSelectionViewController: AvatarSelectionViewable { }
 
 // MARK: - Avatar Selection View Delegate
-extension AvatarSelectionViewController: AvatarSelectionViewDelegate { }
+extension AvatarSelectionViewController: AvatarSelectionViewDelegate {
+    func avatarImageTapped(avatar: String) {
+        presenter.changeStudentAvatar(to: avatar)
+    }
+}
