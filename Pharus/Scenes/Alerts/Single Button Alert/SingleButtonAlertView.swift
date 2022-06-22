@@ -101,28 +101,17 @@ class SingleButtonAlertView: UIView {
     }()
 
     // MARK: - Initializer
-
-    convenience init(
+    init(
         message: String,
         type: AlertType
     ) {
-        self.init()
-
         self.message = message
         self.type = type
-
-        configureSubviews()
-        customizeView()
-        setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-        self.message = "Alerta"
-        self.type = .confirmation
 
         super.init(frame: .zero)
 
         configureSubviews()
+        customizeView()
         setupConstraints()
     }
 

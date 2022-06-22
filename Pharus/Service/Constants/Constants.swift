@@ -12,4 +12,5 @@ struct Constants {
     static let regEx = RegEx()
     static let cellReuseIdentifiers = CellReuseIdentifiers()
     static let dateFormats = DateFormats()
+    static let defaultTexts = DefaultTexts()
 }

@@ -10,13 +10,11 @@ import UIKit
 class LoginViewController: UIViewController {
 
     // MARK: - Properties
-
-    private let customView = LoginView()
+    private lazy var customView = LoginView()
     private let presenter: LoginPresenter
     var keyboardHeight = CGFloat(0)
 
     // MARK: - Initializer
-
     init(presenter: LoginPresenter) {
         self.presenter = presenter
 
@@ -27,8 +25,43 @@ class LoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Life Cycle
+    // MARK: - Actions
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (
+            notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        )?.cgRectValue {
+            if self.customView.frame.origin.y == 0 {
+                self.customView.frame.origin.y -= keyboardSize.height + 50
+                self.customView.frame.origin.y += keyboardSize.height - 130
+            }
+        }
+    }
 
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.customView.frame.origin.y != 0 {
+            self.customView.frame.origin.y = 0
+        }
+    }
+
+    private func initializeHideKeyboard() {
+
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(
+                dismissMyKeyboard
+            )
+        )
+
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc private func dismissMyKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+// MARK: - Super Methods
+extension LoginViewController {
     override func loadView() {
         super.loadView()
 
@@ -56,47 +89,9 @@ class LoginViewController: UIViewController {
             object: nil
         )
     }
-
-    // MARK: - Actions
-
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (
-            notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
-        )?.cgRectValue {
-            if self.customView.frame.origin.y == 0 {
-                self.customView.frame.origin.y -= keyboardSize.height + 50
-                self.customView.frame.origin.y += keyboardSize.height - 130
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.customView.frame.origin.y != 0 {
-            self.customView.frame.origin.y = 0
-        }
-    }
-
-    // MARK: - Actions
-
-    private func initializeHideKeyboard() {
-
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(
-                dismissMyKeyboard
-            )
-        )
-
-        view.addGestureRecognizer(tap)
-    }
-
-    @objc private func dismissMyKeyboard() {
-        view.endEditing(true)
-    }
 }
 
 // MARK: - Login View Delegate
-
 extension LoginViewController: LoginViewDelegate {
     func loginButtonPressed() {
         guard let email = customView.emailTextField.text else { return }
@@ -113,5 +108,4 @@ extension LoginViewController: LoginViewDelegate {
 }
 
 // MARK: - Login Viewable
-
 extension LoginViewController: LoginViewable { }

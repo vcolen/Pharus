@@ -27,10 +27,7 @@ class SendFileCoordinator: Coordinator {
 
     func start() {
         let sendFilePresenter = SendFilePresenter(coordinator: self)
-        let sendFileViewController = SendFileViewController(
-            presenter: sendFilePresenter,
-            coordinator: self
-        )
+        let sendFileViewController = SendFileViewController(presenter: sendFilePresenter)
 
         navigationController.present(sendFileViewController, animated: true)
     }

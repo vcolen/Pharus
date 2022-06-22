@@ -10,19 +10,15 @@ import UIKit
 class ProjectSheetViewController: UIViewController {
 
     // MARK: - Properties
-
     private let presenter: ProjectSheetPresenter
-    private let projectSheetView: ProjectSheetView
+    private lazy var projectSheetView = ProjectSheetView(
+        project: presenter.project,
+        sheetContent: presenter.projectSheetContent
+    )
 
     // MARK: - Initializer
-
-    init(presenter: ProjectSheetPresenter
-    ) {
+    init(presenter: ProjectSheetPresenter) {
         self.presenter = presenter
-        self.projectSheetView = ProjectSheetView(
-            project: presenter.project,
-            sheetContent: presenter.projectSheetContent
-        )
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -30,9 +26,10 @@ class ProjectSheetViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Life Cycle
-
+// MARK: - Super Methods
+extension ProjectSheetViewController {
     override func loadView() {
         super.loadView()
 
@@ -47,7 +44,6 @@ class ProjectSheetViewController: UIViewController {
 }
 
 // MARK: - Project Sheet View Delegate
-
 extension ProjectSheetViewController: ProjectSheetViewDelegate {
     func closeButtonTapped() {
         presenter.popView()
@@ -55,5 +51,4 @@ extension ProjectSheetViewController: ProjectSheetViewDelegate {
 }
 
 // MARK: - Project Sheet Viewable
-
 extension ProjectSheetViewController: ProjectSheetViewable { }

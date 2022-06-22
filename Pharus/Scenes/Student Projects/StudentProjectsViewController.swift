@@ -10,16 +10,12 @@ import UIKit
 class StudentProjectsViewController: UIViewController {
 
     // MARK: - Properties
-
     private let presenter: StudentProjectsPresenter
-    private let projects: [ProjectModel]
-    private let tableView = UITableView()
+    private lazy var customView = StudentProjectsView(student: presenter.student)
 
     // MARK: - Initializer
-
     init(presenter: StudentProjectsPresenter) {
         self.presenter = presenter
-        self.projects = presenter.student.projects
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,8 +24,15 @@ class StudentProjectsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Life Cycle
+    // MARK: - Actions
+    private func setNavigationBar() {
+        self.title = "Seus projetos"
+        self.navigationController?.title = ""
+    }
+}
 
+// MARK: - Super Mehods
+extension StudentProjectsViewController {
     override func loadView() {
         super.loadView()
 
@@ -39,15 +42,14 @@ class StudentProjectsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view = customView
         setNavigationBar()
-        view.addSubview(tableView)
-        setupTableView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        tableView.reloadData()
+        customView.tableView.reloadData()
     }
 
     override func viewWillLayoutSubviews() {
@@ -55,90 +57,18 @@ class StudentProjectsViewController: UIViewController {
 
         setGradientBackground()
     }
-
-    // MARK: - Actions
-
-    private func setNavigationBar() {
-        self.title = "Seus projetos"
-        self.navigationController?.title = ""
-    }
-
-    private func setupTableView() {
-        tableView.register(StudentProjectCell.self,
-                           forCellReuseIdentifier: Constants.cellReuseIdentifiers.userProjects)
-
-        tableView.dataSource = self
-        tableView.delegate = self
-
-        tableView.backgroundColor = .clear
-        tableView.separatorColor = .clear
-
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-    }
 }
 
 // MARK: - Student Projects View Delegate
+extension StudentProjectsViewController: StudentProjectsViewDelegate {
+    func subscribeButtonTapped(of project: ProjectModel) {
+        presenter.showSubscribeAlert(of: project)
+    }
 
-extension StudentProjectsViewController: StudentProjectsViewDelegate { }
+    func projectCellTapped(for project: ProjectModel) {
+        presenter.showStudentProject(project: project)
+    }
+}
 
 // MARK: - Student Projects Viewable
-
 extension StudentProjectsViewController: StudentProjectsViewable { }
-
-// MARK: - UITableViewDataSource
-
-extension StudentProjectsViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        397
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        projects.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: Constants.cellReuseIdentifiers.userProjects,
-            for: indexPath
-        ) as? StudentProjectCell else {
-            return tableView.dequeueReusableCell(
-                withIdentifier: Constants.cellReuseIdentifiers.userProjects,
-                for: indexPath
-            )
-        }
-
-        let project = projects[indexPath.row]
-
-        cell.configureSubviews()
-        cell.setupConstraints()
-        cell.configureCell(using: project)
-        if project.isSubscribed == false {
-            cell.subscribeButton.addAction( UIAction { _ in
-                self.presenter.showSubscribeAlert(of: project)
-            }, for: .touchUpInside)
-        }
-        cell.mainView.layer.cornerRadius = 16
-        cell.backgroundColor = .clear
-
-        return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension StudentProjectsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let project = projects[indexPath.row]
-        presenter.showStudentProject(project: project)
-
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}

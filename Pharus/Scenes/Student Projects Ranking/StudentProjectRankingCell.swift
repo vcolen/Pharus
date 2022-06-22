@@ -10,6 +10,7 @@ class StudentProjectRankingCell: UITableViewCell {
 
     lazy var mainView: UIView = {
         let view = UIView()
+        view.layer.cornerRadius = 16
         view.backgroundColor = UIColor.Purple.pharusPurple
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "StudentProjectCell.mainView"
@@ -175,6 +176,8 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
     }
 
     private func configureSubviews(with project: ProjectModel) {
+        self.backgroundColor = .clear
+
         addSubview(mainView)
 
         mainView.addSubview(mainStackView)

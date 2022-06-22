@@ -10,15 +10,11 @@ import UIKit
 class LogoutAlertViewController: UIViewController {
 
     // MARK: - Properties
-
-    private let alertView: LogoutAlertView
+    private lazy var alertView = LogoutAlertView()
     private let presenter: LogoutAlertPresenter
 
     // MARK: - Initializer
-
     init(presenter: LogoutAlertPresenter) {
-
-        self.alertView = LogoutAlertView()
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
@@ -27,8 +23,10 @@ class LogoutAlertViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Life Cycle
+// MARK: - Super Methods
+extension LogoutAlertViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +37,6 @@ class LogoutAlertViewController: UIViewController {
 }
 
 // MARK: - Logout Alert View Delegate
-
 extension LogoutAlertViewController: LogoutAlertViewDelegate {
 
     func primaryButtonTapped() {
@@ -52,5 +49,4 @@ extension LogoutAlertViewController: LogoutAlertViewDelegate {
 }
 
 // MARK: - Logout Alert Viewable
-
 extension LogoutAlertViewController: LogoutAlertViewable { }

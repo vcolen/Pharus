@@ -114,34 +114,21 @@ class ProjectSubcriptionAlertView: UIView {
     }()
 
     // MARK: - Initializer
-
-    convenience init(
+    init(
         title: String,
         message: String,
         mainButtonText: String,
         secondaryButtonText: String
     ) {
-        self.init()
-
         self.title = title
         self.message = message
         self.mainButtonText = mainButtonText
         self.secondaryButtonText = secondaryButtonText
 
-        configureSubviews()
-        customizeView()
-        setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-        self.title = "Confirmar Inscrição"
-        self.message = "Você deseja se inscrever no projeto ”Algoritmo no seu dia?"
-        self.mainButtonText = "Sim, quero me inscrever"
-        self.secondaryButtonText = "Não quero, mudei de idéia"
-
         super.init(frame: .zero)
 
         configureSubviews()
+        customizeView()
         setupConstraints()
     }
 

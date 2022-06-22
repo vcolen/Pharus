@@ -9,21 +9,16 @@ import UIKit
 class StudentHomeViewController: UIViewController {
 
     // MARK: - Properties
-
     private let presenter: StudentHomePresenter
     private var pageController: UIPageViewController?
     private let currentIndex: Int
     private let pages: [Pages] = Pages.allCases
-    private let customView: StudentHomeView
+    private lazy var customView = StudentHomeView(studentName: presenter.student.firstName)
 
     // MARK: - Initializer
-
-    init(
-        presenter: StudentHomePresenter
-    ) {
+    init(presenter: StudentHomePresenter) {
         self.presenter = presenter
         self.currentIndex = 0
-        self.customView = StudentHomeView(studentName: presenter.student.firstName)
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,8 +27,57 @@ class StudentHomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Life Cycle
+    // MARK: - Actions
+    func showStudentAvatar() {
+        customView.studentAvatarImageView.image = UIImage(
+            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.circleImage.suffix
+        )
+    }
 
+    func setupTabBarIcons() {
+        guard let array = self.tabBarController?.customizableViewControllers else { return }
+        for controller in array {
+            controller.tabBarItem.imageInsets = UIEdgeInsets(
+                top: 3,
+                left: 0,
+                bottom: -3,
+                right: 0
+            )
+        }
+    }
+
+    private func setupPageController() {
+        pageController = UIPageViewController(
+            transitionStyle: .scroll,
+            navigationOrientation: .horizontal
+        )
+
+        guard let pageController = pageController else {
+            return
+        }
+
+        pageController.dataSource = self
+        customView.newsHelperView.addSubview(pageController.view)
+        view.stretch(
+            pageController.view,
+            to: customView.newsHelperView,
+            left: 16,
+            right: -16
+        )
+
+        let initialVC = HomeNewsViewController(with: pages[0])
+        pageController.setViewControllers(
+            [initialVC],
+            direction: .forward,
+            animated: true
+        )
+
+        pageController.didMove(toParent: self)
+    }
+}
+
+// MARK: - Super Methods
+extension StudentHomeViewController {
     override func loadView() {
         super.loadView()
 
@@ -53,39 +97,9 @@ class StudentHomeViewController: UIViewController {
         setGradientBackground()
         showStudentAvatar()
     }
-
-    // MARK: - Actions
-
-    func showStudentAvatar() {
-        customView.studentAvatarImageView.image = UIImage(
-            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.circleImage.suffix
-        )
-    }
-
-    func setupTabBarIcons() {
-        let array = self.tabBarController?.customizableViewControllers
-        for controller in array! {
-            controller.tabBarItem.imageInsets = UIEdgeInsets(top: 3, left: 0, bottom: -3, right: 0)
-        }
-    }
-
-    private func setupPageController() {
-        self.pageController = UIPageViewController(
-            transitionStyle: .scroll,
-            navigationOrientation: .horizontal
-        )
-
-        self.pageController?.dataSource = self
-        self.customView.newsHelperView.addSubview(self.pageController!.view)
-        self.view.stretch(self.pageController!.view, to: customView.newsHelperView, left: 16, right: -16)
-        let initialVC = HomeNewsViewController(with: pages[0])
-        self.pageController?.setViewControllers([initialVC], direction: .forward, animated: true)
-        self.pageController?.didMove(toParent: self)
-    }
 }
 
 // MARK: - UIPageViewControllerDataSource
-
 extension StudentHomeViewController: UIPageViewControllerDataSource {
     func pageViewController(
         _ pageViewController: UIPageViewController,
@@ -125,15 +139,12 @@ extension StudentHomeViewController: UIPageViewControllerDataSource {
 }
 
 // MARK: - Student Home View Delegate
-
 extension StudentHomeViewController: StudentHomeViewDelegate { }
 
 // MARK: - Student Home Viewable
-
 extension StudentHomeViewController: StudentHomeViewable { }
 
 // MARK: - Pages
-
 enum Pages: CaseIterable {
     case pageZero
     case pageOne
@@ -144,9 +155,7 @@ enum Pages: CaseIterable {
             return HomeNewsView()
         case .pageOne:
             return HomeNewsView(
-                news: """
-O projeto ”Introdução a robótica” finalizou. Me contaram você ficou bem colocado, dá uma olhadinha no seu ranking!
-"""
+                news: Constants.defaultTexts.homeNewsText
             )
         }
     }

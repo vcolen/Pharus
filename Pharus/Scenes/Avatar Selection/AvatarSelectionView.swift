@@ -9,8 +9,11 @@ import UIKit
 
 class AvatarSelectionView: UIView {
 
-    // MARK: - Views
+    // MARK: - Properties
+    weak var delegate: AvatarSelectionViewDelegate?
+    private var student: StudentModel
 
+    // MARK: - Views
     private lazy var mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
@@ -70,9 +73,37 @@ class AvatarSelectionView: UIView {
         return label
     }()
 
-    // MARK: - Initializer
+    lazy var collectionViewFlowLayout: UICollectionViewLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        layout.itemSize = CGSize(width: 120, height: 120)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 20
 
-    override init(frame: CGRect) {
+        return layout
+    }()
+
+    lazy var avatarSelectionCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(
+            frame: mainStackView.frame,
+            collectionViewLayout: collectionViewFlowLayout
+        )
+
+        collectionView.register(
+            UICollectionViewCell.self,
+            forCellWithReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection
+        )
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+
+        return collectionView
+    }()
+
+    // MARK: - Initializer
+    init(student: StudentModel) {
+        self.student = student
+
         super.init(frame: .zero)
 
         configureSubviews()
@@ -84,6 +115,11 @@ class AvatarSelectionView: UIView {
     }
 
     // MARK: - Functions
+    private func showStudentAvatar() {
+        mainAvatarImageView.image = UIImage(
+            named: "avatar" + student.avatar + Constants.assets.images.avatar.fullImage.suffix
+        )
+    }
 
     private func configureSubviews() {
         addSubview(mainScrollView)
@@ -93,8 +129,11 @@ class AvatarSelectionView: UIView {
 
         mainStackView.addArrangedSubview(mainAvatarImageView)
         mainStackView.addArrangedSubview(avatarSelectionStackView)
+        showStudentAvatar()
 
         avatarSelectionStackView.addArrangedSubview(selectYourAvatarLabel)
+        avatarSelectionStackView.addArrangedSubview(avatarSelectionCollectionView)
+        setupCollectionViewDelegate()
     }
 
     private func setupConstraints() {
@@ -127,5 +166,52 @@ class AvatarSelectionView: UIView {
         NSLayoutConstraint.activate([
             selectYourAvatarLabel.heightAnchor.constraint(equalToConstant: 25)
         ])
+
+        // Avatar Selection Stack View
+        NSLayoutConstraint.activate([
+            avatarSelectionCollectionView.heightAnchor.constraint(equalToConstant: 130)
+        ])
+    }
+}
+
+// MARK: - UI Collection View Data Source
+extension AvatarSelectionView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        CircleAvatarImages.avatars.count
+    }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection,
+            for: indexPath
+        )
+
+        let avatarImage = CircleAvatarImages.avatars[indexPath.row]
+        let avatarImageView = UIImageView(image: avatarImage)
+
+        cell.addSubview(avatarImageView)
+        return cell
+    }
+}
+
+// MARK: - UI Collection View Delegate
+extension AvatarSelectionView: UICollectionViewDelegate {
+
+    private func setupCollectionViewDelegate() {
+        avatarSelectionCollectionView.dataSource = self
+        avatarSelectionCollectionView.delegate = self
+    }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let newAvatar = FullAvatarImages.avatars[indexPath.row]
+        mainAvatarImageView.image = newAvatar
+
+        delegate?.avatarImageTapped(avatar: String(indexPath.row + 1))
     }
 }

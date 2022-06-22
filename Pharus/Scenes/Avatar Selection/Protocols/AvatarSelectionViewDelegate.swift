@@ -7,4 +7,6 @@
 
 import Foundation
 
-protocol AvatarSelectionViewDelegate: AnyObject { }
+protocol AvatarSelectionViewDelegate: AnyObject {
+    func avatarImageTapped(avatar: String)
+}
