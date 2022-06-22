@@ -10,17 +10,19 @@ import UIKit
 class ProjectSheetViewController: UIViewController {
 
     // MARK: - Properties
-    private let presenter: ProjectSheetPresenter
+    private let presenter: ProjectSheetPresenting
     private lazy var projectSheetView = ProjectSheetView(
         project: presenter.project,
         sheetContent: presenter.projectSheetContent
     )
 
     // MARK: - Initializer
-    init(presenter: ProjectSheetPresenter) {
+    init(presenter: ProjectSheetPresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {

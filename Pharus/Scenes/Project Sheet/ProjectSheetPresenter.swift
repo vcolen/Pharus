@@ -7,18 +7,16 @@
 
 import UIKit
 
-class ProjectSheetPresenter {
+class ProjectSheetPresenter: BasePresenter<ProjectSheetViewable> {
 
     // MARK: - Properties
-
-    private let coordinator: ProjectSheetCoordinator
+    private let coordinator: ProjectSheetCoordinating
     let project: ProjectModel
     let projectSheetContent: ProjectSheetView.SheetContent
 
     // MARK: - Initializer
-
     init(
-        coordinator: ProjectSheetCoordinator,
+        coordinator: ProjectSheetCoordinating,
         project: ProjectModel,
         projectSheetContent: ProjectSheetView.SheetContent
     ) {
@@ -29,7 +27,6 @@ class ProjectSheetPresenter {
 }
 
 // MARK: - Actions
-
 extension ProjectSheetPresenter: ProjectSheetPresenting {
     func popView() {
         coordinator.popView()

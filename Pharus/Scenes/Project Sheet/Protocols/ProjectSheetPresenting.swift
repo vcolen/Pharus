@@ -7,6 +7,8 @@
 
 import Foundation
 
-protocol ProjectSheetPresenting: AnyObject {
+protocol ProjectSheetPresenting: Presenting {
+    var project: ProjectModel { get }
+    var projectSheetContent: ProjectSheetView.SheetContent { get }
     func popView()
 }
