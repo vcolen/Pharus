@@ -7,4 +7,6 @@
 
 import Foundation
 
-protocol StudentProfileCoordinating { }
+protocol StudentProfileCoordinating {
+    func showLogOutAlert()
+}

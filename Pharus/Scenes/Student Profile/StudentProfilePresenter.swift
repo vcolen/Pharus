@@ -7,17 +7,17 @@
 
 import Foundation
 
-class StudentProfilePresenter {
+class StudentProfilePresenter: BasePresenter<StudentProfileViewable> {
 
     // MARK: - Properties
 
-    private let coordinator: StudentProfileCoordinator
+    private let coordinator: StudentProfileCoordinating
     let student: StudentModel
 
     // MARK: - Initializer
 
     init(
-        coordinator: StudentProfileCoordinator,
+        coordinator: StudentProfileCoordinating,
         student: StudentModel
     ) {
         self.coordinator = coordinator

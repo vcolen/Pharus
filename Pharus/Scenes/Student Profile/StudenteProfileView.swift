@@ -9,8 +9,10 @@ import UIKit
 
 class StudentProfileView: UIView {
 
-    // MARK: - Views
+    // MARK: - Properties
+    private let student: StudentModel
 
+    // MARK: - Views
     private lazy var mainScrollView: UIScrollView = {
         var scrollView = UIScrollView()
         scrollView.clipsToBounds = true
@@ -77,10 +79,13 @@ class StudentProfileView: UIView {
 
     // MARK: - Initializer
     init(student: StudentModel) {
+        self.student = student
+
         super.init(frame: .zero)
 
         configureSubviews(with: student)
         setupConstraints()
+        showStudentAvatar()
     }
 
     required init?(coder: NSCoder) {
@@ -88,6 +93,12 @@ class StudentProfileView: UIView {
     }
 
     // MARK: - Subviews
+
+    func showStudentAvatar() {
+        profileImageView.image = UIImage(
+            named: "avatar" + student.avatar + Constants.assets.images.avatar.circleImage.suffix
+        )
+    }
 
     func configureSubviews(with student: StudentModel) {
         addSubview(mainScrollView)
