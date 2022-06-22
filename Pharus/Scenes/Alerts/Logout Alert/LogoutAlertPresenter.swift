@@ -7,20 +7,17 @@
 
 import UIKit
 
-class LogoutAlertPresenter: LogoutAlertPresenting {
+class LogoutAlertPresenter: BasePresenter<LogoutAlertViewable>, LogoutAlertPresenting {
 
     // MARK: - Properties
-
-    private let coordinator: LogoutAlertCoordinator
+    private let coordinator: LogoutAlertCoordinating
 
     // MARK: - Initializer
-
-    init(coordinator: LogoutAlertCoordinator) {
+    init(coordinator: LogoutAlertCoordinating) {
         self.coordinator = coordinator
     }
 
     // MARK: - Actions
-
     func closeModal() {
         coordinator.closeModal()
     }
