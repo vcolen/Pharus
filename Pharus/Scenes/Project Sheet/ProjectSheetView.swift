@@ -124,28 +124,17 @@ class ProjectSheetView: UIView {
     }()
 
     // MARK: - Initializer
-
-    convenience init(
+    init(
         project: ProjectModel,
         sheetContent: SheetContent
     ) {
-        self.init()
-
         self.project = project
         self.sheetContent = sheetContent
-
-        configureSubviews()
-        customizeSubviews()
-        setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-        self.project = StudentModel.defaultProject
-        self.sheetContent = .mentorReview
 
         super.init(frame: .zero)
 
         configureSubviews()
+        customizeSubviews()
         setupConstraints()
     }
 
