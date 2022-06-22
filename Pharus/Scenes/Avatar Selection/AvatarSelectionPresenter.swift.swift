@@ -7,17 +7,17 @@
 
 import UIKit
 
-class AvatarSelectionPresenter {
+class AvatarSelectionPresenter: BasePresenter<AvatarSelectionViewable> {
 
     // MARK: - Properties
 
-    let coordinator: Coordinator
+    private let coordinator: AvatarSelectionCoordinating
     let student: StudentModel
 
     // MARK: - Initializer
 
     init(
-        coordinator: Coordinator,
+        coordinator: AvatarSelectionCoordinating,
         student: StudentModel
     ) {
         self.coordinator = coordinator

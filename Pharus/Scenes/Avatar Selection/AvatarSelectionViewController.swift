@@ -9,14 +9,16 @@ import UIKit
 class AvatarSelectionViewController: UIViewController {
 
     // MARK: - Properties
-    private let presenter: AvatarSelectionPresenter
+    private let presenter: AvatarSelectionPresenting
     private lazy var customView = AvatarSelectionView(student: presenter.student)
 
     // MARK: - Initializer
-    init(presenter: AvatarSelectionPresenter) {
+    init(presenter: AvatarSelectionPresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
