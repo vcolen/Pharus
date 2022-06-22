@@ -9,6 +9,11 @@ import UIKit
 
 class StudentProjectsView: UIView {
 
+    // MARK: - Properties
+    weak var delegate: StudentProjectsViewDelegate?
+    private let student: StudentModel
+
+    // MARK: - Views
    private lazy var mainView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -30,11 +35,14 @@ class StudentProjectsView: UIView {
     }()
 
     // MARK: - Initializer
-    override init(frame: CGRect) {
+    init(student: StudentModel) {
+        self.student = student
+
         super.init(frame: .zero)
 
         configureSubviews()
         setupConstraints()
+        setupTableViewDelegate()
     }
 
     required init?(coder: NSCoder) {
@@ -56,5 +64,59 @@ class StudentProjectsView: UIView {
     func setupConstraints() {
         self.stretch(mainView)
         self.stretch(tableView, to: mainView)
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension StudentProjectsView: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        397
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        student.projects.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: Constants.cellReuseIdentifiers.userProjects,
+            for: indexPath
+        ) as? StudentProjectCell else {
+            return tableView.dequeueReusableCell(
+                withIdentifier: Constants.cellReuseIdentifiers.userProjects,
+                for: indexPath
+            )
+        }
+
+        let project = student.projects[indexPath.row]
+
+        cell.configureSubviews()
+        cell.setupConstraints()
+        cell.configureCell(using: project)
+
+        if project.isSubscribed == false {
+            cell.subscribeButton.addAction( UIAction { _ in
+                self.delegate?.subscribeButtonTapped(of: project)
+            }, for: .touchUpInside)
+        }
+
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension StudentProjectsView: UITableViewDelegate {
+
+    private func setupTableViewDelegate() {
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let project = student.projects[indexPath.row]
+        delegate?.projectCellTapped(for: project)
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

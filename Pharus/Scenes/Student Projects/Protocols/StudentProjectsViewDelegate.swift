@@ -7,4 +7,7 @@
 
 import Foundation
 
-protocol StudentProjectsViewDelegate: AnyObject { }
+protocol StudentProjectsViewDelegate: AnyObject {
+    func subscribeButtonTapped(of project: ProjectModel)
+    func projectCellTapped(for project: ProjectModel)
+}

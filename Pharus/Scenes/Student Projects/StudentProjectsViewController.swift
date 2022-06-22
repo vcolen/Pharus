@@ -11,7 +11,7 @@ class StudentProjectsViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: StudentProjectsPresenter
-    private lazy var customView = StudentProjectsView()
+    private lazy var customView = StudentProjectsView(student: presenter.student)
 
     // MARK: - Initializer
     init(presenter: StudentProjectsPresenter) {
@@ -29,11 +29,6 @@ class StudentProjectsViewController: UIViewController {
         self.title = "Seus projetos"
         self.navigationController?.title = ""
     }
-
-    private func setupTableViewDelegate() {
-        customView.tableView.dataSource = self
-        customView.tableView.delegate = self
-    }
 }
 
 // MARK: - Super Mehods
@@ -49,7 +44,6 @@ extension StudentProjectsViewController {
 
         view = customView
         setNavigationBar()
-        setupTableViewDelegate()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -66,55 +60,15 @@ extension StudentProjectsViewController {
 }
 
 // MARK: - Student Projects View Delegate
-extension StudentProjectsViewController: StudentProjectsViewDelegate { }
+extension StudentProjectsViewController: StudentProjectsViewDelegate {
+    func subscribeButtonTapped(of project: ProjectModel) {
+        presenter.showSubscribeAlert(of: project)
+    }
+
+    func projectCellTapped(for project: ProjectModel) {
+        presenter.showStudentProject(project: project)
+    }
+}
 
 // MARK: - Student Projects Viewable
 extension StudentProjectsViewController: StudentProjectsViewable { }
-
-// MARK: - UITableViewDataSource
-extension StudentProjectsViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        397
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter.student.projects.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: Constants.cellReuseIdentifiers.userProjects,
-            for: indexPath
-        ) as? StudentProjectCell else {
-            return tableView.dequeueReusableCell(
-                withIdentifier: Constants.cellReuseIdentifiers.userProjects,
-                for: indexPath
-            )
-        }
-
-        let project = presenter.student.projects[indexPath.row]
-
-        cell.configureSubviews()
-        cell.setupConstraints()
-        cell.configureCell(using: project)
-
-        if project.isSubscribed == false {
-            cell.subscribeButton.addAction( UIAction { _ in
-                self.presenter.showSubscribeAlert(of: project)
-            }, for: .touchUpInside)
-        }
-
-        return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-extension StudentProjectsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let project = presenter.student.projects[indexPath.row]
-        presenter.showStudentProject(project: project)
-
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
