@@ -10,11 +10,9 @@ import UIKit
 class LoginView: UIView {
 
     // MARK: - Properties
-
     weak var delegate: LoginViewDelegate?
 
     // MARK: - Views
-
     private lazy var mainView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -187,7 +185,6 @@ class LoginView: UIView {
     }()
 
     // MARK: - Initializer
-
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
@@ -200,7 +197,6 @@ class LoginView: UIView {
     }
 
     // MARK: - Subviews
-
     func configureSubviews() {
         addSubview(mainView)
 
@@ -226,7 +222,6 @@ class LoginView: UIView {
     }
 
     // MARK: - Constraints
-
     func setupConstraints() {
         // Main View
         self.stretch(mainView)
@@ -246,7 +241,6 @@ class LoginView: UIView {
 }
 
 // MARK: - Actions
-
 extension LoginView: LoginViewDelegate {
     func loginButtonPressed() {
         delegate?.loginButtonPressed()

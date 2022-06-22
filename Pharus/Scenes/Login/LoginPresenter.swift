@@ -10,19 +10,17 @@ import Foundation
 class LoginPresenter: LoginPresenting {
 
     // MARK: - Properties
-
-    private let coordinator: LoginCoordinator
+    private let coordinator: LoginCoordinating
     private let student: Student
+    private weak var view: LoginViewable?
 
     // MARK: - Initializer
-
-    init(coordinator: LoginCoordinator) {
+    init(coordinator: LoginCoordinating) {
         self.coordinator = coordinator
         self.student = Bundle.main.decode("Student.json")
     }
 
     // MARK: - Actions
-
     func isValidEmail(email: String) -> Bool {
         let emailRegEx = Constants.regEx.emailRegEx
 
@@ -91,5 +89,9 @@ class LoginPresenter: LoginPresenting {
             projects: projectModelArray
         )
         return studentModel
+    }
+
+    func attach(_ view: LoginViewable) {
+        self.view = view
     }
 }

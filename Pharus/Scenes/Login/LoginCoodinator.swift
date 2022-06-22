@@ -10,12 +10,10 @@ import UIKit
 class LoginCoordinator: Coordinator {
 
     // MARK: - Properties
-
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
 
     // MARK: - Initializer
-
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -33,7 +31,6 @@ class LoginCoordinator: Coordinator {
 }
 
 // MARK: - Actions
-
 extension LoginCoordinator: LoginCoordinating {
 
     func showHome(student: StudentModel) {

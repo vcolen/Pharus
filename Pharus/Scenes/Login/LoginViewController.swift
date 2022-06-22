@@ -11,14 +11,16 @@ class LoginViewController: UIViewController {
 
     // MARK: - Properties
     private lazy var customView = LoginView()
-    private let presenter: LoginPresenter
+    private let presenter: LoginPresenting
     var keyboardHeight = CGFloat(0)
 
     // MARK: - Initializer
-    init(presenter: LoginPresenter) {
+    init(presenter: LoginPresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
@@ -94,8 +96,11 @@ extension LoginViewController {
 // MARK: - Login View Delegate
 extension LoginViewController: LoginViewDelegate {
     func loginButtonPressed() {
-        guard let email = customView.emailTextField.text else { return }
-        guard let password = customView.passwordTextField.text else { return }
+        //        guard let email = customView.emailTextField.text else { return }
+        // guard let password = customView.passwordTextField.text else { return }
+
+        let email = "antonia.ferreira@gmail.com"
+        let password = "Atn4273!"
 
         let studentDidLogIn = presenter.loginUser(email: email, password: password)
 

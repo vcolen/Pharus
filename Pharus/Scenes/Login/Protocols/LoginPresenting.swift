@@ -11,4 +11,5 @@ protocol LoginPresenting: AnyObject {
     func isValidEmail(email: String) -> Bool
     func isValidPassword(password: String) -> Bool
     func loginUser(email: String, password: String) -> Bool
+    func attach(_ view: LoginViewable)
 }
