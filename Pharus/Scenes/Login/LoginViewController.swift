@@ -102,15 +102,20 @@ extension LoginViewController: LoginViewDelegate {
         let email = "antonia.ferreira@gmail.com"
         let password = "Atn4273!"
 
-        let studentDidLogIn = presenter.loginUser(email: email, password: password)
+         let studentDidLogIn = presenter.loginUser(email: email, password: password)
 
-        if studentDidLogIn == false {
+         if studentDidLogIn == false {
             customView.wrongPasswordImageView.image = customView.wrongPasswordImageView.image?.withTintColor(.redError)
             customView.wrongPasswordLabel.textColor = UIColor.redError
             customView.passwordTextField.textColor = UIColor.redError
-        }
+         }
     }
 }
 
 // MARK: - Login Viewable
-extension LoginViewController: LoginViewable { }
+extension LoginViewController: LoginViewable {
+    func teste() {
+        print("alo")
+    }
+
+}

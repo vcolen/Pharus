@@ -10,14 +10,13 @@ import Foundation
 class StudentHomePresenter: StudentHomePresenting {
 
     // MARK: - Properties
-
-    private let coordinator: StudentHomeCoordinator
+    private let coordinator: StudentHomeCoordinating
     let student: StudentModel
+    weak var view: StudentHomeViewable?
 
     // MARK: - Initializer
-
     init(
-        coordinator: StudentHomeCoordinator,
+        coordinator: StudentHomeCoordinating,
         student: StudentModel
     ) {
         self.coordinator = coordinator

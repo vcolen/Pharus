@@ -169,6 +169,8 @@
 		79D659C3286209760060971C /* StudentProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C2286209760060971C /* StudentProjectsView.swift */; };
 		79D659C5286213270060971C /* StudentProjectsRankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C4286213270060971C /* StudentProjectsRankingView.swift */; };
 		79F06DA127F28FCD00343865 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */; };
+		79FCEB932863B55B004D22EC /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FCEB922863B55B004D22EC /* BasePresenter.swift */; };
+		79FCEB952863B5B6004D22EC /* Presenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FCEB942863B5B6004D22EC /* Presenting.swift */; };
 		79FFE7E52860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */; };
 		79FFE7E72860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E62860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift */; };
 		79FFE7E92860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E82860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift */; };
@@ -351,6 +353,8 @@
 		79D659C4286213270060971C /* StudentProjectsRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingView.swift; sourceTree = "<group>"; };
 		79F06D9E27F28FCD00343865 /* PharusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PharusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		79FCEB922863B55B004D22EC /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		79FCEB942863B5B6004D22EC /* Presenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenting.swift; sourceTree = "<group>"; };
 		79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingPresenter.swift; sourceTree = "<group>"; };
 		79FFE7E62860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingPresenting.swift; sourceTree = "<group>"; };
 		79FFE7E82860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingViewable.swift; sourceTree = "<group>"; };
@@ -380,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				799AFA94285CECDE001B0371 /* Assets.xcassets */,
+				79FCEB912863B4BC004D22EC /* Base */,
 				799AFA9B285CECDE001B0371 /* Components */,
 				799AFA7A285CECDE001B0371 /* Coordinator */,
 				799AFB68285CF4DD001B0371 /* Extension */,
@@ -893,6 +898,15 @@
 			path = PharusTests;
 			sourceTree = "<group>";
 		};
+		79FCEB912863B4BC004D22EC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				79FCEB922863B55B004D22EC /* BasePresenter.swift */,
+				79FCEB942863B5B6004D22EC /* Presenting.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		C045617E27EA03A5007EC5C3 = {
 			isa = PBXGroup;
 			children = (
@@ -1086,6 +1100,7 @@
 				799AFAE6285CECDF001B0371 /* StudentHomeCoordinator.swift in Sources */,
 				799AFB20285CECDF001B0371 /* StudentProjectDetailPresenter.swift in Sources */,
 				799AFAE5285CECDF001B0371 /* StudentHomeViewable.swift in Sources */,
+				79FCEB952863B5B6004D22EC /* Presenting.swift in Sources */,
 				799AFB52285CECDF001B0371 /* ProjectModel.swift in Sources */,
 				799AFAD2285CECDF001B0371 /* SendFileViewController.swift in Sources */,
 				799AFAEC285CECDF001B0371 /* StudentProfileCoordinating.swift in Sources */,
@@ -1163,6 +1178,7 @@
 				799AFB39285CECDF001B0371 /* Date+Extension.swift in Sources */,
 				799AFB01285CECDF001B0371 /* ProjectSubcriptionAlertCoordinating.swift in Sources */,
 				799AFB29285CECDF001B0371 /* AppCoordinator.swift in Sources */,
+				79FCEB932863B55B004D22EC /* BasePresenter.swift in Sources */,
 				799AFB34285CECDF001B0371 /* CellReuseIdentifiers.swift in Sources */,
 				799AFAD9285CECDF001B0371 /* StudentProjectCell.swift in Sources */,
 				799AFB3D285CECDF001B0371 /* UIImage+Extension.swift in Sources */,

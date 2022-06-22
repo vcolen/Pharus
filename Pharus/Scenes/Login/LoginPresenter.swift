@@ -7,12 +7,11 @@
 
 import Foundation
 
-class LoginPresenter: LoginPresenting {
+class LoginPresenter: BasePresenter<LoginViewable>, LoginPresenting {
 
     // MARK: - Properties
     private let coordinator: LoginCoordinating
     private let student: Student
-    private weak var view: LoginViewable?
 
     // MARK: - Initializer
     init(coordinator: LoginCoordinating) {
@@ -89,9 +88,5 @@ class LoginPresenter: LoginPresenting {
             projects: projectModelArray
         )
         return studentModel
-    }
-
-    func attach(_ view: LoginViewable) {
-        self.view = view
     }
 }

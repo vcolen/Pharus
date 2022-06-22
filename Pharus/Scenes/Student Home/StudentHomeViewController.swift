@@ -9,18 +9,19 @@ import UIKit
 class StudentHomeViewController: UIViewController {
 
     // MARK: - Properties
-    private let presenter: StudentHomePresenter
     private var pageController: UIPageViewController?
     private let currentIndex: Int
     private let pages: [Pages] = Pages.allCases
+    private let presenter: StudentHomePresenting
     private lazy var customView = StudentHomeView(studentName: presenter.student.firstName)
 
     // MARK: - Initializer
-    init(presenter: StudentHomePresenter) {
+    init(presenter: StudentHomePresenting) {
         self.presenter = presenter
         self.currentIndex = 0
 
         super.init(nibName: nil, bundle: nil)
+
     }
 
     required init?(coder: NSCoder) {
