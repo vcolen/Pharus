@@ -7,19 +7,17 @@
 
 import UIKit
 
-class SendFilePresenter {
-    // MARK: - Properties
+class SendFilePresenter: BasePresenter<SendFileViewable>, SendFilePresenting {
 
-    let coordinator: SendFileCoordinator
+    // MARK: - Properties
+    let coordinator: SendFileCoordinating
 
     // MARK: - Initializer
-
-    init(coordinator: SendFileCoordinator) {
+    init(coordinator: SendFileCoordinating) {
         self.coordinator = coordinator
     }
 
     // MARK: - Actions
-
     func sendFile() {
         coordinator.showFileSentAlert()
     }

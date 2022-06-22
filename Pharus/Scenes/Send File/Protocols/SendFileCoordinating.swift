@@ -9,4 +9,5 @@ import Foundation
 
 protocol SendFileCoordinating {
     func showFileSentAlert()
+    func closeSheet()
 }

@@ -12,13 +12,15 @@ class SendFileViewController: UIViewController, UIDocumentPickerDelegate {
 
     // MARK: - Properties
     private lazy var sendFileView = SendFileView()
-    private let presenter: SendFilePresenter
+    private let presenter: SendFilePresenting
 
     // MARK: - Initializer
-    init(presenter: SendFilePresenter) {
+    init(presenter: SendFilePresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
