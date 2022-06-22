@@ -254,24 +254,13 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
     }()
 
     // MARK: - Initializer
-
-    convenience init(project: ProjectModel) {
-        self.init()
-
+    init(project: ProjectModel) {
         self.project = project
-
-        configureSubviews()
-        customizeSubviews(with: project)
-        setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-
-        self.project = StudentModel.defaultProject
 
         super.init(frame: .zero)
 
         configureSubviews()
+        customizeSubviews(with: project)
         setupConstraints()
     }
 
