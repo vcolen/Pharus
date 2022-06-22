@@ -7,12 +7,12 @@
 
 import Foundation
 
-class StudentProjectsRankingPresenter: StudentProjectsRankingPresenting {
-    private let coordinator: StudentProjectsRankingCoordinator
+class StudentProjectsRankingPresenter: BasePresenter<StudentProjectsViewable>, StudentProjectsRankingPresenting {
+    private let coordinator: StudentProjectsRankingCoordinating
     let student: StudentModel
 
     init(
-        coordinator: StudentProjectsRankingCoordinator,
+        coordinator: StudentProjectsRankingCoordinating,
         student: StudentModel
     ) {
         self.coordinator = coordinator

@@ -10,13 +10,15 @@ class StudentProjectsRankingViewController: UIViewController {
 
     // MARK: - Properties
     private lazy var customView = StudentProjectsRankingView(student: presenter.student)
-    private let presenter: StudentProjectsRankingPresenter
+    private let presenter: StudentProjectsRankingPresenting
 
     // MARK: - Initializer
-    init(presenter: StudentProjectsRankingPresenter) {
+    init(presenter: StudentProjectsRankingPresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
