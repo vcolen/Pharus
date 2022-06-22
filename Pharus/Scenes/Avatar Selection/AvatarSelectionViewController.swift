@@ -11,7 +11,6 @@ class AvatarSelectionViewController: UIViewController {
     // MARK: - Properties
     private let presenter: AvatarSelectionPresenter
     private lazy var customView = AvatarSelectionView(student: presenter.student)
-    private var avatarSelectionCollectionView: UICollectionView?
 
     // MARK: - Initializer
     init(presenter: AvatarSelectionPresenter) {
