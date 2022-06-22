@@ -7,12 +7,11 @@
 
 import Foundation
 
-class StudentHomePresenter: StudentHomePresenting {
+class StudentHomePresenter: BasePresenter<StudentHomeViewable>, StudentHomePresenting {
 
     // MARK: - Properties
     private let coordinator: StudentHomeCoordinating
     let student: StudentModel
-    weak var view: StudentHomeViewable?
 
     // MARK: - Initializer
     init(

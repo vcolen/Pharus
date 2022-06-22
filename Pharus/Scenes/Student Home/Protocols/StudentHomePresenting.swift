@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol StudentHomePresenting: AnyObject {
+protocol StudentHomePresenting: Presenting {
     var student: StudentModel { get }
 }
