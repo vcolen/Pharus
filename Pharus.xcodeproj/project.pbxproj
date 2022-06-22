@@ -64,7 +64,7 @@
 		799AFAFB285CECDF001B0371 /* ProjectSubcriptionAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA3F285CECDE001B0371 /* ProjectSubcriptionAlertCoordinator.swift */; };
 		799AFAFC285CECDF001B0371 /* ProjectSubcriptionAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA40285CECDE001B0371 /* ProjectSubcriptionAlertViewController.swift */; };
 		799AFAFD285CECDF001B0371 /* ProjectSubcriptionAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA41285CECDE001B0371 /* ProjectSubcriptionAlertView.swift */; };
-		799AFAFE285CECDF001B0371 /* ProjectSubcriptionPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA43285CECDE001B0371 /* ProjectSubcriptionPresenting.swift */; };
+		799AFAFE285CECDF001B0371 /* ProjectSubcriptionAlertPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA43285CECDE001B0371 /* ProjectSubcriptionAlertPresenting.swift */; };
 		799AFAFF285CECDF001B0371 /* ProjectSubcriptionViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA44285CECDE001B0371 /* ProjectSubcriptionViewable.swift */; };
 		799AFB00285CECDF001B0371 /* ProjectSubcriptionAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA45285CECDE001B0371 /* ProjectSubcriptionAlertViewDelegate.swift */; };
 		799AFB01285CECDF001B0371 /* ProjectSubcriptionAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA46285CECDE001B0371 /* ProjectSubcriptionAlertCoordinating.swift */; };
@@ -246,7 +246,7 @@
 		799AFA3F285CECDE001B0371 /* ProjectSubcriptionAlertCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertCoordinator.swift; sourceTree = "<group>"; };
 		799AFA40285CECDE001B0371 /* ProjectSubcriptionAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertViewController.swift; sourceTree = "<group>"; };
 		799AFA41285CECDE001B0371 /* ProjectSubcriptionAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertView.swift; sourceTree = "<group>"; };
-		799AFA43285CECDE001B0371 /* ProjectSubcriptionPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionPresenting.swift; sourceTree = "<group>"; };
+		799AFA43285CECDE001B0371 /* ProjectSubcriptionAlertPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertPresenting.swift; sourceTree = "<group>"; };
 		799AFA44285CECDE001B0371 /* ProjectSubcriptionViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionViewable.swift; sourceTree = "<group>"; };
 		799AFA45285CECDE001B0371 /* ProjectSubcriptionAlertViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertViewDelegate.swift; sourceTree = "<group>"; };
 		799AFA46285CECDE001B0371 /* ProjectSubcriptionAlertCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertCoordinating.swift; sourceTree = "<group>"; };
@@ -600,7 +600,7 @@
 		799AFA42285CECDE001B0371 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA43285CECDE001B0371 /* ProjectSubcriptionPresenting.swift */,
+				799AFA43285CECDE001B0371 /* ProjectSubcriptionAlertPresenting.swift */,
 				799AFA44285CECDE001B0371 /* ProjectSubcriptionViewable.swift */,
 				799AFA45285CECDE001B0371 /* ProjectSubcriptionAlertViewDelegate.swift */,
 				799AFA46285CECDE001B0371 /* ProjectSubcriptionAlertCoordinating.swift */,
@@ -1197,7 +1197,7 @@
 				799AFACE285CECDF001B0371 /* ProjectSheetPresenter.swift in Sources */,
 				799AFB14285CECDF001B0371 /* AvatarSelectionPresenting.swift in Sources */,
 				799AFAD7285CECDF001B0371 /* StudentProjectsViewController.swift in Sources */,
-				799AFAFE285CECDF001B0371 /* ProjectSubcriptionPresenting.swift in Sources */,
+				799AFAFE285CECDF001B0371 /* ProjectSubcriptionAlertPresenting.swift in Sources */,
 				799AFB04285CECDF001B0371 /* SingleButtonAlertCoordinator.swift in Sources */,
 				799AFACD285CECDF001B0371 /* ProjectSheetCoordinating.swift in Sources */,
 				799AFB13285CECDF001B0371 /* AvatarSelectionViewController.swift in Sources */,
