@@ -139,22 +139,14 @@ class StudentHomeView: UIView {
     }()
 
     // MARK: - Initializer
-
-    convenience init(studentName: String) {
-        self.init()
-
+    init(studentName: String) {
         self.studentName = studentName
-        customizeSubviews()
-    }
-
-    override init(frame: CGRect) {
-
-        studentName = "Antônia"
 
         super.init(frame: .zero)
 
         configureSubviews()
         setupConstraints()
+        customizeSubviews()
     }
 
     required init?(coder: NSCoder) {
