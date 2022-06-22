@@ -9,14 +9,12 @@ import UIKit
 class StudentProjectsRankingViewController: UIViewController {
 
     // MARK: - Properties
-    private lazy var customView = StudentProjectsRankingView()
+    private lazy var customView = StudentProjectsRankingView(student: presenter.student)
     private let presenter: StudentProjectsRankingPresenter
-    private let projects: [ProjectModel]
 
     // MARK: - Initializer
     init(presenter: StudentProjectsRankingPresenter) {
         self.presenter = presenter
-        self.projects = presenter.student.projects.filter({ $0.placement != nil })
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -30,11 +28,6 @@ class StudentProjectsRankingViewController: UIViewController {
         self.title = "Seus Rankings"
         self.navigationController?.title = ""
     }
-
-    private func setupTableViewDelegate() {
-        customView.tableView.dataSource = self
-        customView.tableView.allowsSelection = false
-    }
 }
 
 // MARK: - Super Methods
@@ -45,7 +38,6 @@ extension StudentProjectsRankingViewController {
         setNavigationBar()
 
         view = customView
-        setupTableViewDelegate()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -60,27 +52,3 @@ extension StudentProjectsRankingViewController: StudentProjectsRankingViewable {
 
 // MARK: - Student Projects Ranking View Delegate
 extension StudentProjectsRankingViewController: StudentProjectsRankingViewDelegate { }
-
-// MARK: - UITableViewDataSource
-extension StudentProjectsRankingViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        projects.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: Constants.cellReuseIdentifiers.userRankingProjects,
-            for: indexPath
-        ) as? StudentProjectRankingCell else {
-            return tableView.dequeueReusableCell(
-                withIdentifier: Constants.cellReuseIdentifiers.userRankingProjects,
-                for: indexPath
-            )
-        }
-
-        let project = projects[indexPath.row]
-        cell.configureCell(using: project)
-        return cell
-    }
-}
