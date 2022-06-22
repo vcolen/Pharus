@@ -7,18 +7,19 @@
 
 import UIKit
 
-class SingleButtonAlertPresenter: SingleButtonAlertPresenting {
+class SingleButtonAlertPresenter: BasePresenter<SingleButtonAlertViewable>,
+                                  SingleButtonAlertPresenting {
 
     // MARK: - Properties
 
-    private let coordinator: SingleButtonAlertCoordinator
+    private let coordinator: SingleButtonAlertCoordinating
     let alertMessage: String
     let alertType: SingleButtonAlertView.AlertType
 
     // MARK: - Initializer
 
     init(
-        coordinator: SingleButtonAlertCoordinator,
+        coordinator: SingleButtonAlertCoordinating,
         alertMessage: String,
         alertType: SingleButtonAlertView.AlertType
     ) {

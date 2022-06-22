@@ -14,13 +14,15 @@ class SingleButtonAlertViewController: UIViewController {
         message: presenter.alertMessage,
         type: presenter.alertType
     )
-    private let presenter: SingleButtonAlertPresenter
+    private let presenter: SingleButtonAlertPresenting
 
     // MARK: - Initializer
-    init(presenter: SingleButtonAlertPresenter) {
+    init(presenter: SingleButtonAlertPresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
