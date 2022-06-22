@@ -10,14 +10,16 @@ import UIKit
 class StudentProjectsViewController: UIViewController {
 
     // MARK: - Properties
-    private let presenter: StudentProjectsPresenter
+    private let presenter: StudentProjectsPresenting
     private lazy var customView = StudentProjectsView(student: presenter.student)
 
     // MARK: - Initializer
-    init(presenter: StudentProjectsPresenter) {
+    init(presenter: StudentProjectsPresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
@@ -43,6 +45,7 @@ extension StudentProjectsViewController {
         super.viewDidLoad()
 
         view = customView
+        customView.delegate = self
         setNavigationBar()
     }
 
