@@ -110,9 +110,4 @@ extension LoginViewController: LoginViewDelegate {
 }
 
 // MARK: - Login Viewable
-extension LoginViewController: LoginViewable {
-    func teste() {
-        print("alo")
-    }
-
-}
+extension LoginViewController: LoginViewable { }
