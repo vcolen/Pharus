@@ -10,7 +10,6 @@ import UIKit
 class StudentProjectsRankingCoordinator: Coordinator {
 
     // MARK: - Properties
-
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     private let student: StudentModel
@@ -41,3 +40,5 @@ class StudentProjectsRankingCoordinator: Coordinator {
         )
     }
 }
+
+extension StudentProjectsRankingCoordinator: StudentProjectsRankingCoordinating { }

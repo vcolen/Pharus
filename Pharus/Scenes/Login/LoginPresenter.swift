@@ -7,22 +7,19 @@
 
 import Foundation
 
-class LoginPresenter: LoginPresenting {
+class LoginPresenter: BasePresenter<LoginViewable>, LoginPresenting {
 
     // MARK: - Properties
-
-    private let coordinator: LoginCoordinator
+    private let coordinator: LoginCoordinating
     private let student: Student
 
     // MARK: - Initializer
-
-    init(coordinator: LoginCoordinator) {
+    init(coordinator: LoginCoordinating) {
         self.coordinator = coordinator
         self.student = Bundle.main.decode("Student.json")
     }
 
     // MARK: - Actions
-
     func isValidEmail(email: String) -> Bool {
         let emailRegEx = Constants.regEx.emailRegEx
 

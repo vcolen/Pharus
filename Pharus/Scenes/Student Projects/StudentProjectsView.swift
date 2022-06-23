@@ -14,7 +14,7 @@ class StudentProjectsView: UIView {
     private let student: StudentModel
 
     // MARK: - Views
-   private lazy var mainView: UIView = {
+    private lazy var mainView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "StudentProjectsView.mainView"

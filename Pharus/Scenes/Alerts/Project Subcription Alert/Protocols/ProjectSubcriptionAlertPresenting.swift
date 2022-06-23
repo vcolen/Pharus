@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol ProjectSubcriptionPresenting: AnyObject {
+protocol ProjectSubcriptionAlertPresenting: Presenting {
+    var project: ProjectModel { get }
     func closeModal()
     func subscribeToProject()
 }

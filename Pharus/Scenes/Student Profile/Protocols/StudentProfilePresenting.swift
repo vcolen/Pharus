@@ -7,4 +7,7 @@
 
 import Foundation
 
-protocol StudentProfilePresenting: AnyObject { }
+protocol StudentProfilePresenting: Presenting {
+    var student: StudentModel { get }
+    func showLogoutAlert()
+}

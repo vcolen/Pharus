@@ -7,6 +7,8 @@
 
 import Foundation
 
-protocol StudentProjectsPresenting: AnyObject {
+protocol StudentProjectsPresenting: Presenting {
+    var student: StudentModel { get }
+    func showSubscribeAlert(of project: ProjectModel)
     func showStudentProject(project: ProjectModel)
 }

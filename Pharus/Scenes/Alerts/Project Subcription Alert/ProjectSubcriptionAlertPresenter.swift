@@ -7,17 +7,17 @@
 
 import UIKit
 
-class ProjectSubcriptionAlertPresenter: ProjectSubcriptionPresenting {
+class ProjectSubcriptionAlertPresenter: BasePresenter<ProjectSubcriptionAlertViewable>,
+                                        ProjectSubcriptionAlertPresenting {
 
     // MARK: - Properties
-
-    private let coordinator: ProjectSubcriptionAlertCoordinator
+    private let coordinator: ProjectSubcriptionAlertCoordinating
     let project: ProjectModel
 
     // MARK: - Initializer
 
     init(
-        coordinator: ProjectSubcriptionAlertCoordinator,
+        coordinator: ProjectSubcriptionAlertCoordinating,
         project: ProjectModel
     ) {
         self.coordinator = coordinator

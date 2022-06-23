@@ -11,14 +11,16 @@ class LoginViewController: UIViewController {
 
     // MARK: - Properties
     private lazy var customView = LoginView()
-    private let presenter: LoginPresenter
+    private let presenter: LoginPresenting
     var keyboardHeight = CGFloat(0)
 
     // MARK: - Initializer
-    init(presenter: LoginPresenter) {
+    init(presenter: LoginPresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {

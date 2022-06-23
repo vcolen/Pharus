@@ -10,14 +10,16 @@ import UIKit
 class StudentProfileViewController: UIViewController {
 
     // MARK: - Properties
-    private let presenter: StudentProfilePresenter
-    private lazy var studentProfileView = StudentProfileView(student: presenter.student)
+    private let presenter: StudentProfilePresenting
+    private lazy var customView = StudentProfileView(student: presenter.student)
 
     // MARK: - Initializer
-    init(presenter: StudentProfilePresenter) {
+    init(presenter: StudentProfilePresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
@@ -25,11 +27,6 @@ class StudentProfileViewController: UIViewController {
     }
 
     // MARK: - Actions
-    func showStudentAvatar() {
-        studentProfileView.profileImageView.image = UIImage(
-            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.circleImage.suffix
-        )
-    }
 
     func setNavigationBar() {
         self.title = "Perfil"
@@ -54,7 +51,7 @@ extension StudentProfileViewController {
     override func loadView() {
         super.loadView()
 
-        self.view = studentProfileView
+        self.view = customView
     }
 
     override func viewDidLoad() {
@@ -67,7 +64,7 @@ extension StudentProfileViewController {
         super.viewWillAppear(animated)
 
         setGradientBackground()
-        showStudentAvatar()
+        customView.showStudentAvatar()
     }
 }
 

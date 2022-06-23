@@ -16,10 +16,10 @@ class ProjectSubcriptionAlertViewController: UIViewController {
         mainButtonText: "Sim, quero me inscrever",
         secondaryButtonText: "Não quero, mudei de idéia"
     )
-    private let presenter: ProjectSubcriptionAlertPresenter
+    private let presenter: ProjectSubcriptionAlertPresenting
 
     // MARK: - Initializer
-    init(presenter: ProjectSubcriptionAlertPresenter) {
+    init(presenter: ProjectSubcriptionAlertPresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)

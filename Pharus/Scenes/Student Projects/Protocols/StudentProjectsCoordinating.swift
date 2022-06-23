@@ -9,4 +9,5 @@ import Foundation
 
 protocol StudentProjectsCoordinating {
     func showStudentProject(_ project: ProjectModel)
+    func showSubscribeAlert(of project: ProjectModel)
 }

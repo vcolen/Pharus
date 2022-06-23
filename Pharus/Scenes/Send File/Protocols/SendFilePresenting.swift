@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SendFilePresenting: AnyObject {
-    func uploadFile()
+protocol SendFilePresenting: Presenting {
+    func closeSheet()
     func sendFile()
 }

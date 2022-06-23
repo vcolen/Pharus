@@ -7,6 +7,8 @@
 
 import Foundation
 
-protocol SingleButtonAlertPresenting: AnyObject {
+protocol SingleButtonAlertPresenting: Presenting {
+    var alertType: SingleButtonAlertView.AlertType { get }
+    var alertMessage: String { get }
     func closeModal()
 }
