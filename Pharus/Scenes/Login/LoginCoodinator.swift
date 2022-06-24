@@ -40,6 +40,6 @@ extension LoginCoordinator: LoginCoordinating {
             tabBarViewController: tabbarViewController,
             student: student)
 
-        coordinate(to: tabbarCoordinator)
+        tabbarCoordinator.start()
     }
 }

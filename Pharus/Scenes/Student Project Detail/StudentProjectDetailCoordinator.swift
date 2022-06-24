@@ -50,7 +50,7 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
             projectSheetContent: .activities
         )
 
-        coordinate(to: projectSheetCoordinator)
+        projectSheetCoordinator.start()
     }
 
     func showMentorReview() {
@@ -60,7 +60,7 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
             projectSheetContent: .mentorReview
         )
 
-        coordinate(to: projectSheetCoordinator)
+        projectSheetCoordinator.start()
     }
 
     func showSendFileView() {
@@ -69,6 +69,6 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
             project: project
         )
 
-        coordinate(to: sendFileCoordinator)
+        sendFileCoordinator.start()
     }
 }

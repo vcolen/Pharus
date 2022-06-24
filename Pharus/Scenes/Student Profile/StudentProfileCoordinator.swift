@@ -48,6 +48,6 @@ extension StudentProfileCoordinator: StudentProfileCoordinating {
             navigationController: navigationController
         )
 
-        coordinate(to: logoutAlertCoordinator)
+        logoutAlertCoordinator.start()
     }
 }

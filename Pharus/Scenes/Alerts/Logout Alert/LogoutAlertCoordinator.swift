@@ -44,6 +44,6 @@ extension LogoutAlertCoordinator: LogoutAlertCoordinating {
             navigationController: navigationController
         )
 
-        coordinate(to: loginCoordinator)
+        loginCoordinator.start()
     }
 }

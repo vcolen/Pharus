@@ -58,6 +58,6 @@ extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinatin
             alertType: .confirmation
         )
 
-        coordinate(to: confirmationAlertCoordinator)
+        confirmationAlertCoordinator.start()
     }
 }

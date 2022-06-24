@@ -32,6 +32,6 @@ class AppCoordinator: Coordinator {
             navigationController: navigationController
         )
 
-        coordinate(to: mainCoordinator)
+        mainCoordinator.start()
     }
 }

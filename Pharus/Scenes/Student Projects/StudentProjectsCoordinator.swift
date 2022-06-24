@@ -50,7 +50,7 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
             project: project
         )
 
-        self.coordinate(to: studentProjectDetailCoordinator)
+        studentProjectDetailCoordinator.start()
     }
 
     func showSubscribeAlert(of project: ProjectModel) {
@@ -59,6 +59,6 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
             project: project
         )
 
-        coordinate(to: projectSubcriptionAlertCoordinator)
+        projectSubcriptionAlertCoordinator.start()
     }
 }

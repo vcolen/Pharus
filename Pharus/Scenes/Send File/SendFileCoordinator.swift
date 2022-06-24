@@ -44,7 +44,7 @@ extension SendFileCoordinator: SendFileCoordinating {
         )
 
         navigationController.topViewController?.dismiss(animated: true)
-        coordinate(to: alertCoordinator)
+        alertCoordinator.start()
     }
 
     func closeSheet() {
