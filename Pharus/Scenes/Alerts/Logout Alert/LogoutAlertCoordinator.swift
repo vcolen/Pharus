@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogoutAlertCoordinator: Coordinator {
+class LogoutAlertCoordinator {
 
     // MARK: - Properties
     private let navigationController: UINavigationController
@@ -16,7 +16,10 @@ class LogoutAlertCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+}
 
+// MARK: - Coordinator
+extension LogoutAlertCoordinator: Coordinator {
     func start() {
         let alertPresenter = LogoutAlertPresenter(coordinator: self)
         let alertViewController = LogoutAlertViewController(presenter: alertPresenter)
@@ -26,7 +29,6 @@ class LogoutAlertCoordinator: Coordinator {
         navigationController.present(alertViewController, animated: true)
     }
 }
-
 // MARK: - Actions
 extension LogoutAlertCoordinator: LogoutAlertCoordinating {
     func closeModal() {

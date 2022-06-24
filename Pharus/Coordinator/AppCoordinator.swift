@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
+class AppCoordinator {
 
     // MARK: - Properties
     private let window: UIWindow
@@ -18,7 +18,10 @@ class AppCoordinator: Coordinator {
         self.window = window
         self.rootViewController = UINavigationController()
     }
+}
 
+// MARK: - Coordinator
+extension AppCoordinator: Coordinator {
     func start() {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()

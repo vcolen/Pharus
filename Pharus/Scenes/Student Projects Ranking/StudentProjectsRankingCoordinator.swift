@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StudentProjectsRankingCoordinator: Coordinator {
+class StudentProjectsRankingCoordinator {
 
     // MARK: - Properties
     let navigationController: UINavigationController
@@ -22,7 +22,10 @@ class StudentProjectsRankingCoordinator: Coordinator {
         self.navigationController = navigationController
         self.student = student
     }
+}
 
+// MARK: - Coordinator
+extension StudentProjectsRankingCoordinator: Coordinator {
     func start() {
         let studentProjectsRankingPresenter = StudentProjectsRankingPresenter(
             coordinator: self,

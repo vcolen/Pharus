@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginCoordinator: Coordinator {
+class LoginCoordinator {
 
     // MARK: - Properties
     private let navigationController: UINavigationController
@@ -16,7 +16,10 @@ class LoginCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+}
 
+// MARK: - Coordinator
+extension LoginCoordinator: Coordinator {
     func start() {
         let loginPresenter = LoginPresenter(coordinator: self)
         let loginViewController = LoginViewController(
@@ -28,7 +31,6 @@ class LoginCoordinator: Coordinator {
         navigationController.setViewControllers([loginViewController], animated: true)
     }
 }
-
 // MARK: - Actions
 extension LoginCoordinator: LoginCoordinating {
     func showHome(student: StudentModel) {

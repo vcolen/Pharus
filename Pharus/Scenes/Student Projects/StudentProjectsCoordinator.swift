@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StudentProjectsCoordinator: Coordinator {
+class StudentProjectsCoordinator {
 
     // MARK: - Properties
     let navigationController: UINavigationController
@@ -21,7 +21,10 @@ class StudentProjectsCoordinator: Coordinator {
         self.navigationController = navigationController
         self.student = student
     }
+}
 
+// MARK: - Coordinator
+extension StudentProjectsCoordinator: Coordinator {
     func start() {
         let studentProjectsPresenter = StudentProjectsPresenter(
             coordinator: self,
@@ -37,7 +40,6 @@ class StudentProjectsCoordinator: Coordinator {
         navigationController.pushViewController(studentProjectsViewController, animated: true)
     }
 }
-
 // MARK: - Student Projects Coordinating
 extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     func showStudentProject(_ project: ProjectModel) {

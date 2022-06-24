@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProjectSubcriptionAlertCoordinator: Coordinator {
+class ProjectSubcriptionAlertCoordinator {
 
     // MARK: - Properties
     private let navigationController: UINavigationController
@@ -21,7 +21,10 @@ class ProjectSubcriptionAlertCoordinator: Coordinator {
         self.navigationController = navigationController
         self.project = project
     }
+}
 
+// MARK: - Coordinator
+extension ProjectSubcriptionAlertCoordinator: Coordinator {
     func start() {
         let alertPresenter = ProjectSubcriptionAlertPresenter(
             coordinator: self,
@@ -37,7 +40,6 @@ class ProjectSubcriptionAlertCoordinator: Coordinator {
         navigationController.present(alertViewController, animated: true)
     }
 }
-
 // MARK: - Actions
 extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinating {
     func closeModal() {

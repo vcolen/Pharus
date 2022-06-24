@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StudentProfileCoordinator: Coordinator {
+class StudentProfileCoordinator {
 
     // MARK: - Properties
     let navigationController: UINavigationController
@@ -21,7 +21,10 @@ class StudentProfileCoordinator: Coordinator {
         self.navigationController = navigationController
         self.student = student
     }
+}
 
+// MARK: - Coordinator
+extension StudentProfileCoordinator: Coordinator {
     func start() {
         let studentProfilePresenter = StudentProfilePresenter(
             coordinator: self,
@@ -36,7 +39,6 @@ class StudentProfileCoordinator: Coordinator {
         navigationController.pushViewController(studentProfileViewController, animated: true)
     }
 }
-
 // MARK: - Actions
 extension StudentProfileCoordinator: StudentProfileCoordinating {
     func showLogOutAlert() {
