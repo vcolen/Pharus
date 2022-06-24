@@ -7,17 +7,14 @@
 
 import UIKit
 
-class SingleButtonAlertCoordinator: Coordinator {
+class SingleButtonAlertCoordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
     private let alertMessage: String
     private let alertType: SingleButtonAlertView.AlertType
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         alertMessage: String,
@@ -27,7 +24,10 @@ class SingleButtonAlertCoordinator: Coordinator {
         self.alertMessage = alertMessage
         self.alertType = alertType
     }
+}
 
+// MARK: - Coordinator
+extension SingleButtonAlertCoordinator: Coordinator {
     func start() {
         let alertPresenter = SingleButtonAlertPresenter(
             coordinator: self,

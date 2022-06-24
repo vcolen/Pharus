@@ -7,13 +7,12 @@
 
 import UIKit
 
-class TabBarCoordinator: Coordinator {
+class TabBarCoordinator {
 
     // MARK: - Properties
-
-    private var student: StudentModel
-    var navigationController: UINavigationController
-    var tabBarViewController: UITabBarController
+    private let student: StudentModel
+    private let navigationController: UINavigationController
+    private let tabBarViewController: UITabBarController
     var childCoordinators: [Coordinator] = []
 
     // MARK: - Initializer
@@ -26,35 +25,6 @@ class TabBarCoordinator: Coordinator {
         self.navigationController = navigationController
         self.tabBarViewController = tabBarViewController
         self.student = student
-    }
-
-    func start() {
-        let studentHomeCoordinator = makeStudentHomeCoordinator()
-        let studentProjectsCoordinator = makeStudentProjectsCoordinator()
-        let studentProjectsRankingCoordinator = makeStudentProjectsRankingCoordinator()
-        let studentAvatarCoordinator = makeStudentAvatarCoordinator()
-        let studentProfileCoordinator = makeStudentProfileCoordinator()
-
-        childCoordinators = [
-            studentHomeCoordinator,
-            studentProjectsCoordinator,
-            studentAvatarCoordinator,
-            studentProjectsRankingCoordinator,
-            studentProfileCoordinator
-        ]
-
-        tabBarViewController.setViewControllers(
-            [
-                studentHomeCoordinator.navigationController,
-                studentProjectsCoordinator.navigationController,
-                studentProjectsRankingCoordinator.navigationController,
-                studentAvatarCoordinator.navigationController,
-                studentProfileCoordinator.navigationController
-            ],
-            animated: true
-        )
-
-        navigationController.setViewControllers([tabBarViewController], animated: true)
     }
 
     // MARK: - Actions
@@ -165,6 +135,37 @@ class TabBarCoordinator: Coordinator {
     }
 }
 
-extension TabBarCoordinator: TabBarCoordinating {
+// MARK: - Coordinator
+extension TabBarCoordinator: Coordinator {
+    func start() {
+        let studentHomeCoordinator = makeStudentHomeCoordinator()
+        let studentProjectsCoordinator = makeStudentProjectsCoordinator()
+        let studentProjectsRankingCoordinator = makeStudentProjectsRankingCoordinator()
+        let studentAvatarCoordinator = makeStudentAvatarCoordinator()
+        let studentProfileCoordinator = makeStudentProfileCoordinator()
 
+        childCoordinators = [
+            studentHomeCoordinator,
+            studentProjectsCoordinator,
+            studentAvatarCoordinator,
+            studentProjectsRankingCoordinator,
+            studentProfileCoordinator
+        ]
+
+        tabBarViewController.setViewControllers(
+            [
+                studentHomeCoordinator.navigationController,
+                studentProjectsCoordinator.navigationController,
+                studentProjectsRankingCoordinator.navigationController,
+                studentAvatarCoordinator.navigationController,
+                studentProfileCoordinator.navigationController
+            ],
+            animated: true
+        )
+
+        navigationController.setViewControllers([tabBarViewController], animated: true)
+    }
 }
+
+// MARK: - Coordinating
+extension TabBarCoordinator: TabBarCoordinating { }

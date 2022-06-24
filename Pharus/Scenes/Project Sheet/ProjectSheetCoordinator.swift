@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ProjectSheetCoordinator: Coordinator {
+class ProjectSheetCoordinator {
 
     // MARK: - Properties
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
     private let project: ProjectModel
     private let projectSheetContent: ProjectSheetView.SheetContent
 
@@ -25,9 +24,11 @@ class ProjectSheetCoordinator: Coordinator {
         self.project = project
         self.projectSheetContent = projectSheetContent
     }
+}
 
+// MARK: - Coordinator
+extension ProjectSheetCoordinator: Coordinator {
     func start() {
-
         let projectSheetPresenter = ProjectSheetPresenter(
             coordinator: self,
             project: project,
@@ -41,7 +42,6 @@ class ProjectSheetCoordinator: Coordinator {
         navigationController.present(projectSheetViewController, animated: true)
     }
 }
-
 // MARK: - Actions
 extension ProjectSheetCoordinator: ProjectSheetCoordinating {
     func popView() {

@@ -7,16 +7,13 @@
 
 import UIKit
 
-class ProjectSubcriptionAlertCoordinator: Coordinator {
+class ProjectSubcriptionAlertCoordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
     private let project: ProjectModel
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         project: ProjectModel
@@ -24,7 +21,10 @@ class ProjectSubcriptionAlertCoordinator: Coordinator {
         self.navigationController = navigationController
         self.project = project
     }
+}
 
+// MARK: - Coordinator
+extension ProjectSubcriptionAlertCoordinator: Coordinator {
     func start() {
         let alertPresenter = ProjectSubcriptionAlertPresenter(
             coordinator: self,
@@ -40,9 +40,7 @@ class ProjectSubcriptionAlertCoordinator: Coordinator {
         navigationController.present(alertViewController, animated: true)
     }
 }
-
 // MARK: - Actions
-
 extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinating {
     func closeModal() {
         navigationController.topViewController?.dismiss(animated: true)
@@ -58,6 +56,6 @@ extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinatin
             alertType: .confirmation
         )
 
-        coordinate(to: confirmationAlertCoordinator)
+        confirmationAlertCoordinator.start()
     }
 }

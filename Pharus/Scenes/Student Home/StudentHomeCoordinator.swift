@@ -7,10 +7,10 @@
 
 import UIKit
 
-class StudentHomeCoordinator: Coordinator {
+class StudentHomeCoordinator {
 
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    // MARK: - Properties
+    let navigationController: UINavigationController
     private let student: StudentModel
 
     init(
@@ -20,7 +20,10 @@ class StudentHomeCoordinator: Coordinator {
         self.navigationController = navigationController
         self.student = student
     }
+}
 
+// MARK: - Coordinator
+extension StudentHomeCoordinator: Coordinator {
     func start() {
         let studentHomePresenter = StudentHomePresenter(
             coordinator: self,
@@ -37,5 +40,5 @@ class StudentHomeCoordinator: Coordinator {
         navigationController.pushViewController(studentHomeViewController, animated: true)
     }
 }
-
+// MARK: - Student Home Coordinating
 extension StudentHomeCoordinator: StudentHomeCoordinating { }

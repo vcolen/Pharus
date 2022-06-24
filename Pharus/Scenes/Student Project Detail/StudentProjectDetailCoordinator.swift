@@ -7,12 +7,10 @@
 
 import UIKit
 
-class StudentProjectDetailCoordinator: Coordinator {
+class StudentProjectDetailCoordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
     private let project: ProjectModel
 
     // MARK: - Initializer
@@ -24,7 +22,10 @@ class StudentProjectDetailCoordinator: Coordinator {
         self.navigationController = navigationController
         self.project = project
     }
+}
 
+// MARK: - Coordinator
+extension StudentProjectDetailCoordinator: Coordinator {
     func start() {
         let studentProjectDetailPresenter = StudentProjectDetailPresenter(
             coordinator: self,
@@ -39,18 +40,16 @@ class StudentProjectDetailCoordinator: Coordinator {
     }
 }
 
-// MARK: - Actions
-
+// MARK: - Student Project Detail Coordinating
 extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showProjectRules() {
-
         let projectSheetCoordinator = ProjectSheetCoordinator(
             navigationController: navigationController,
             project: project,
             projectSheetContent: .activities
         )
 
-        coordinate(to: projectSheetCoordinator)
+        projectSheetCoordinator.start()
     }
 
     func showMentorReview() {
@@ -60,7 +59,7 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
             projectSheetContent: .mentorReview
         )
 
-        coordinate(to: projectSheetCoordinator)
+        projectSheetCoordinator.start()
     }
 
     func showSendFileView() {
@@ -69,6 +68,6 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
             project: project
         )
 
-        coordinate(to: sendFileCoordinator)
+        sendFileCoordinator.start()
     }
 }

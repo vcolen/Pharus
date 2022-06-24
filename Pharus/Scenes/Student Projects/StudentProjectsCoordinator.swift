@@ -7,16 +7,13 @@
 
 import UIKit
 
-class StudentProjectsCoordinator: Coordinator {
+class StudentProjectsCoordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    let navigationController: UINavigationController
     private let student: StudentModel
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         student: StudentModel
@@ -24,7 +21,10 @@ class StudentProjectsCoordinator: Coordinator {
         self.navigationController = navigationController
         self.student = student
     }
+}
 
+// MARK: - Coordinator
+extension StudentProjectsCoordinator: Coordinator {
     func start() {
         let studentProjectsPresenter = StudentProjectsPresenter(
             coordinator: self,
@@ -40,9 +40,7 @@ class StudentProjectsCoordinator: Coordinator {
         navigationController.pushViewController(studentProjectsViewController, animated: true)
     }
 }
-
-// MARK: - Actions
-
+// MARK: - Student Projects Coordinating
 extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     func showStudentProject(_ project: ProjectModel) {
         let studentProjectDetailCoordinator = StudentProjectDetailCoordinator(
@@ -50,7 +48,7 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
             project: project
         )
 
-        self.coordinate(to: studentProjectDetailCoordinator)
+        studentProjectDetailCoordinator.start()
     }
 
     func showSubscribeAlert(of project: ProjectModel) {
@@ -59,6 +57,6 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
             project: project
         )
 
-        coordinate(to: projectSubcriptionAlertCoordinator)
+        projectSubcriptionAlertCoordinator.start()
     }
 }

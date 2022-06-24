@@ -7,16 +7,13 @@
 
 import UIKit
 
-class AvatarSelectionCoordinator: Coordinator {
+class AvatarSelectionCoordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    let navigationController: UINavigationController
     private let student: StudentModel
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         student: StudentModel
@@ -24,7 +21,10 @@ class AvatarSelectionCoordinator: Coordinator {
         self.navigationController = navigationController
         self.student = student
     }
+}
 
+// MARK: - Coordinator
+extension AvatarSelectionCoordinator: Coordinator {
     func start() {
         let studentAvatarSelectionPresenter = AvatarSelectionPresenter(
             coordinator: self,
@@ -38,5 +38,5 @@ class AvatarSelectionCoordinator: Coordinator {
         navigationController.pushViewController(studentAvatarViewController, animated: true)
     }
 }
-
+// MARK: - Avatar Selection Coordinating
 extension AvatarSelectionCoordinator: AvatarSelectionCoordinating { }
