@@ -10,7 +10,6 @@ import UIKit
 class CheckmarkButton: UIButton {
 
     // MARK: - Initializer
-
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
@@ -22,7 +21,6 @@ class CheckmarkButton: UIButton {
     }
 
     // MARK: - Subviews
-
     private func setupButton() {
         self.layer.borderWidth = 1
         self.backgroundColor = .white
@@ -32,7 +30,6 @@ class CheckmarkButton: UIButton {
     }
 
     // MARK: - Constraints
-
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             self.heightAnchor.constraint(equalToConstant: 25),

@@ -89,7 +89,7 @@ class SingleButtonAlertView: UIView {
     }()
 
     private lazy var actionButton: MainCardButton = {
-        let button = MainCardButton()
+        let button = MainCardButton(title: "Fechar", buttonState: .normal)
         button.setTitle("Fechar", for: .normal)
         button.addAction(UIAction { _ in
             self.closeButtonTapped()

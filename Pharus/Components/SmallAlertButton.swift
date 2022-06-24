@@ -10,7 +10,6 @@ import UIKit
 class SmallAlertButton: UIButton {
 
     // MARK: - Properties
-
     private var title: String
     private var importance: Importance
 
@@ -20,23 +19,12 @@ class SmallAlertButton: UIButton {
     }
 
     // MARK: - Initializer
-
-    convenience init(
+    init(
         title: String,
         importance: Importance
     ) {
-        self.init()
-
         self.title = title
         self.importance = importance
-
-        configureSubviews()
-        setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-        self.title = "Sair"
-        self.importance = .primary
 
         super.init(frame: .zero)
 
@@ -49,7 +37,6 @@ class SmallAlertButton: UIButton {
     }
 
     // MARK: - Subviews
-
     private func configureSubviews() {
         setTitle(title, for: .normal)
         layer.borderWidth = 2
@@ -66,7 +53,6 @@ class SmallAlertButton: UIButton {
     }
 
     // MARK: - Constraints
-
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             self.heightAnchor.constraint(equalToConstant: 32)

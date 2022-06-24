@@ -17,7 +17,6 @@ class ProjectScheduleView: UIView {
     }
 
     // MARK: - Views
-
     private lazy var mainView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -65,19 +64,8 @@ class ProjectScheduleView: UIView {
     }()
 
     // MARK: - Initilizer
-
-    convenience init(project: ProjectModel) {
-        self.init()
-
+    init(project: ProjectModel) {
         self.project = project
-
-        configureSubviews()
-        setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-
-        self.project = StudentModel.defaultProject
 
         super.init(frame: .zero)
 
@@ -90,7 +78,6 @@ class ProjectScheduleView: UIView {
     }
 
     // MARK: - Subviews
-
     private func configureSubviews() {
         addSubview(mainView)
 
@@ -104,7 +91,6 @@ class ProjectScheduleView: UIView {
     }
 
     private func customizeSubviews() {
-
         if project.isComplete {
             iconImageView.image = .pharusIcons.checkIcon?.withTintColor(.black)
             textLabel.text = "Feito!"
@@ -134,7 +120,6 @@ class ProjectScheduleView: UIView {
     }
 
     // MARK: - Constraints
-
     private func setupConstraints() {
         // Main View
         self.stretch(mainView)

@@ -19,7 +19,6 @@ class StudentHomeMiniCardView: UIView {
     }
 
     // MARK: - Views
-
     private lazy var mainView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 16
@@ -78,28 +77,18 @@ class StudentHomeMiniCardView: UIView {
     }()
 
     // MARK: - Initializer
-
-    convenience init(
+    init(
         cardType: HomeCardType,
         message: String
     ) {
-        self.init()
-
         self.cardType = cardType
         self.message = message
-
-        customizeSubviews()
-    }
-
-    override init(frame: CGRect) {
-
-        self.cardType = .newProject
-        self.message = "O projeto ”Introdução a Robótica” te deu uma medalha!"
 
         super.init(frame: .zero)
 
         configureSubviews()
         setupConstraints()
+        customizeSubviews()
     }
 
     required init?(coder: NSCoder) {
@@ -107,7 +96,6 @@ class StudentHomeMiniCardView: UIView {
     }
 
     // MARK: - Subviews
-
     private func configureSubviews() {
         addSubview(mainView)
 
@@ -138,7 +126,6 @@ class StudentHomeMiniCardView: UIView {
     }
 
     // MARK: - Constraints
-
     private func setupConstraints() {
         // Main View
         self.stretch(mainView)

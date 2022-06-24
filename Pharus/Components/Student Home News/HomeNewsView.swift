@@ -12,7 +12,6 @@ class HomeNewsView: UIView {
     private var news: String
 
     // MARK: - Views
-
     lazy var mainView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -77,25 +76,14 @@ Dá uma olhadinha lá, quem sabe você se identifica com a proposta!
     }()
 
     // MARK: - Initializer
-
-    convenience init(news: String) {
-        self.init()
-
+    init(news: String) {
         self.news = news
-
-        customizeSubviews()
-    }
-
-    override init(frame: CGRect) {
-        news = """
-A empresa XPTO, em parceria com a escola, lançou o projeto Voluntários Digitais.
-Dá uma olhadinha lá, quem sabe você se identifica com a proposta!
-"""
 
         super.init(frame: .zero)
 
         configureSubviews()
         setupConstraints()
+        customizeSubviews()
     }
 
     required init?(coder: NSCoder) {
@@ -103,7 +91,6 @@ Dá uma olhadinha lá, quem sabe você se identifica com a proposta!
     }
 
     // MARK: - Subviews
-
     func configureSubviews() {
         addSubview(mainView)
 

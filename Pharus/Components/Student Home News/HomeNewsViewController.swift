@@ -10,11 +10,9 @@ import UIKit
 class HomeNewsViewController: UIViewController {
 
     // MARK: - Properties
-
     var page: Pages
 
     // MARK: - Initializer
-
     init(with page: Pages) {
         self.page = page
 
@@ -24,12 +22,11 @@ class HomeNewsViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Life Cycle
-
+// MARK: - Super Methods
+extension HomeNewsViewController {
     override func loadView() {
-        super.loadView()
-
         self.view = page.view
     }
 
@@ -39,9 +36,7 @@ class HomeNewsViewController: UIViewController {
 }
 
 // MARK: - Home News View Delegate
-
 extension HomeNewsViewController: HomeNewsViewDelegate { }
 
 // MARK: - Home News Viewable
-
 extension HomeNewsViewController: HomeNewsViewable { }

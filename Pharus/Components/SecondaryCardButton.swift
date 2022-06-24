@@ -10,22 +10,11 @@ import UIKit
 class SecondaryCardButton: UIButton {
 
     // MARK: - Properties
-
     private var title: String
 
     // MARK: - Initializer
-
-    convenience init(title: String) {
-        self.init()
-
+    init(title: String) {
         self.title = title
-
-        configureSubviews()
-        setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-        self.title = "Fechar"
 
         super.init(frame: .zero)
 
@@ -38,7 +27,6 @@ class SecondaryCardButton: UIButton {
     }
 
     // MARK: - Subviews
-
     private func configureSubviews() {
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont.mediumButtonSemiBold
@@ -50,13 +38,11 @@ class SecondaryCardButton: UIButton {
     }
 
     // MARK: - Constraints
-
     private func setupConstraints() {
         self.heightAnchor.constraint(equalToConstant: 56).isActive = true
     }
 
     // MARK: - Actions
-
     func disable() {
         self.isEnabled = false
     }

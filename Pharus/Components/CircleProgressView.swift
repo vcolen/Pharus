@@ -10,7 +10,6 @@ import UIKit
 class CircleProgressView: UIView {
 
     // MARK: - Properties
-
     private var circleLayer = CAShapeLayer()
     private var completionProgressLayer = CAShapeLayer()
     private var circleColor: UIColor
@@ -23,27 +22,16 @@ class CircleProgressView: UIView {
     }
 
     // MARK: - Initializer
-
-    convenience init(
+    init(
         circleColor: UIColor,
         completionProgressColor: UIColor,
         radius: Float,
         progress: Float
     ) {
-        self.init()
-
         self.circleColor = circleColor
         self.completionProgressColor = completionProgressColor
         self.circleRadius = radius
         self.progress = progress
-    }
-
-    override init(frame: CGRect) {
-
-        self.circleColor = .white
-        self.completionProgressColor = .black
-        self.circleRadius = 40.0
-        self.progress = 50.0
 
         super.init(frame: .zero)
     }
@@ -53,7 +41,6 @@ class CircleProgressView: UIView {
     }
 
     // MARK: - Subviews
-
     private func makeCircularPath() {
         self.layer.cornerRadius = self.frame.size.width/2
 
@@ -67,7 +54,6 @@ class CircleProgressView: UIView {
             endAngle: CGFloat(360).toRadians() * CGFloat(progress)/100,
             clockwise: true
         )
-
         let circleLayerPath = UIBezierPath(
             arcCenter: CGPoint(
                 x: frame.size.width/2,
@@ -84,6 +70,7 @@ class CircleProgressView: UIView {
         circleLayer.strokeColor = circleColor.cgColor
         circleLayer.lineWidth = 15
         circleLayer.strokeEnd = 1.0
+
         layer.addSublayer(circleLayer)
 
         completionProgressLayer.path = completionBarLayerPath.cgPath
@@ -92,6 +79,7 @@ class CircleProgressView: UIView {
         completionProgressLayer.lineWidth = 15.0
         completionProgressLayer.strokeEnd = 1.0
         completionProgressLayer.lineCap = .round
+
         layer.addSublayer(completionProgressLayer)
     }
 }
