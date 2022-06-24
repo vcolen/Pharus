@@ -35,6 +35,8 @@ extension StudentProfileCoordinator: Coordinator {
             presenter: studentProfilePresenter
         )
 
+        studentProfileViewController.title = "Perfil"
+
         navigationController.setNavigationBarHidden(false, animated: true)
         navigationController.pushViewController(studentProfileViewController, animated: true)
     }

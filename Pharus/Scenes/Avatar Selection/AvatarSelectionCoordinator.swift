@@ -36,7 +36,6 @@ extension AvatarSelectionCoordinator: Coordinator {
         )
 
         studentAvatarViewController.title = "Avatar"
-        studentAvatarViewController.navigationController?.title = ""
 
         navigationController.pushViewController(studentAvatarViewController, animated: true)
     }

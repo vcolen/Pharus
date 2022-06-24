@@ -29,9 +29,6 @@ class StudentProfileViewController: UIViewController {
     // MARK: - Actions
 
     func setNavigationBar() {
-        self.title = "Perfil"
-        self.navigationController?.title = ""
-
         let logoutIcon = UIImage.pharusIcons.logOutIcon?.withRenderingMode(.alwaysOriginal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: logoutIcon,

@@ -30,18 +30,6 @@ class StudentHomeViewController: UIViewController {
     }
 
     // MARK: - Actions
-    func setupTabBarIcons() {
-        guard let array = self.tabBarController?.customizableViewControllers else { return }
-        for controller in array {
-            controller.tabBarItem.imageInsets = UIEdgeInsets(
-                top: 3,
-                left: 0,
-                bottom: -3,
-                right: 0
-            )
-        }
-    }
-
     private func setupPageController() {
         pageController = UIPageViewController(
             transitionStyle: .scroll,
@@ -81,7 +69,6 @@ extension StudentHomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupTabBarIcons()
         setupPageController()
     }
 
