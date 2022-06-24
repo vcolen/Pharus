@@ -10,13 +10,10 @@ import UIKit
 class StudentProjectsCoordinator: Coordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    let navigationController: UINavigationController
     private let student: StudentModel
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         student: StudentModel
@@ -41,8 +38,7 @@ class StudentProjectsCoordinator: Coordinator {
     }
 }
 
-// MARK: - Actions
-
+// MARK: - Student Projects Coordinating
 extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     func showStudentProject(_ project: ProjectModel) {
         let studentProjectDetailCoordinator = StudentProjectDetailCoordinator(

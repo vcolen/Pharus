@@ -10,14 +10,11 @@ import UIKit
 class SingleButtonAlertCoordinator: Coordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
     private let alertMessage: String
     private let alertType: SingleButtonAlertView.AlertType
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         alertMessage: String,

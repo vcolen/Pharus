@@ -10,13 +10,10 @@ import UIKit
 class ProjectSubcriptionAlertCoordinator: Coordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
     private let project: ProjectModel
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         project: ProjectModel
@@ -42,7 +39,6 @@ class ProjectSubcriptionAlertCoordinator: Coordinator {
 }
 
 // MARK: - Actions
-
 extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinating {
     func closeModal() {
         navigationController.topViewController?.dismiss(animated: true)

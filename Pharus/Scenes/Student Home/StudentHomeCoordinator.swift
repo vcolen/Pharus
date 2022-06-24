@@ -9,8 +9,8 @@ import UIKit
 
 class StudentHomeCoordinator: Coordinator {
 
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    // MARK: - Properties
+    let navigationController: UINavigationController
     private let student: StudentModel
 
     init(
@@ -38,4 +38,5 @@ class StudentHomeCoordinator: Coordinator {
     }
 }
 
+// MARK: - Student Home Coordinating
 extension StudentHomeCoordinator: StudentHomeCoordinating { }

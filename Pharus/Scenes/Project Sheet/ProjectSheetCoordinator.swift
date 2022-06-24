@@ -10,8 +10,7 @@ import UIKit
 class ProjectSheetCoordinator: Coordinator {
 
     // MARK: - Properties
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
     private let project: ProjectModel
     private let projectSheetContent: ProjectSheetView.SheetContent
 
@@ -27,7 +26,6 @@ class ProjectSheetCoordinator: Coordinator {
     }
 
     func start() {
-
         let projectSheetPresenter = ProjectSheetPresenter(
             coordinator: self,
             project: project,

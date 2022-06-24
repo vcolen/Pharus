@@ -10,8 +10,7 @@ import UIKit
 class LoginCoordinator: Coordinator {
 
     // MARK: - Properties
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
 
     // MARK: - Initializer
     init(navigationController: UINavigationController) {
@@ -32,7 +31,6 @@ class LoginCoordinator: Coordinator {
 
 // MARK: - Actions
 extension LoginCoordinator: LoginCoordinating {
-
     func showHome(student: StudentModel) {
         let tabbarViewController = TabBarViewController()
         let tabbarCoordinator = TabBarCoordinator(

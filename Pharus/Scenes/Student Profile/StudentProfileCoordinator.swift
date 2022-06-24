@@ -10,13 +10,10 @@ import UIKit
 class StudentProfileCoordinator: Coordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    let navigationController: UINavigationController
     private let student: StudentModel
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         student: StudentModel
@@ -41,7 +38,6 @@ class StudentProfileCoordinator: Coordinator {
 }
 
 // MARK: - Actions
-
 extension StudentProfileCoordinator: StudentProfileCoordinating {
     func showLogOutAlert() {
         let logoutAlertCoordinator = LogoutAlertCoordinator(

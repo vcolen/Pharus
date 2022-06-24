@@ -10,9 +10,7 @@ import UIKit
 class SendFileCoordinator: Coordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
     private let project: ProjectModel
 
     // MARK: - Initializer

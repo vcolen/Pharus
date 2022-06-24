@@ -10,19 +10,15 @@ import UIKit
 class LogoutAlertCoordinator: Coordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
 
     // MARK: - Initializer
-
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     func start() {
         let alertPresenter = LogoutAlertPresenter(coordinator: self)
-
         let alertViewController = LogoutAlertViewController(presenter: alertPresenter)
 
         alertViewController.modalPresentationStyle = .overFullScreen
@@ -32,7 +28,6 @@ class LogoutAlertCoordinator: Coordinator {
 }
 
 // MARK: - Actions
-
 extension LogoutAlertCoordinator: LogoutAlertCoordinating {
     func closeModal() {
         navigationController.topViewController?.dismiss(animated: true)

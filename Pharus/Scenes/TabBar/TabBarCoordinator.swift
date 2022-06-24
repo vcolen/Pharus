@@ -10,10 +10,9 @@ import UIKit
 class TabBarCoordinator: Coordinator {
 
     // MARK: - Properties
-
-    private var student: StudentModel
-    var navigationController: UINavigationController
-    var tabBarViewController: UITabBarController
+    private let student: StudentModel
+    private let navigationController: UINavigationController
+    private let tabBarViewController: UITabBarController
     var childCoordinators: [Coordinator] = []
 
     // MARK: - Initializer
