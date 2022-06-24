@@ -25,12 +25,6 @@ class StudentProjectsViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: - Actions
-    private func setNavigationBar() {
-        self.title = "Seus projetos"
-        self.navigationController?.title = ""
-    }
 }
 
 // MARK: - Super Mehods
@@ -44,7 +38,6 @@ extension StudentProjectsViewController {
         super.viewDidLoad()
 
         customView.delegate = self
-        setNavigationBar()
     }
 
     override func viewWillAppear(_ animated: Bool) {

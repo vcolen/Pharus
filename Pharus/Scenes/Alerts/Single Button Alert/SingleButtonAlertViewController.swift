@@ -36,7 +36,7 @@ extension SingleButtonAlertViewController {
     override func loadView() {
         self.view = alertView
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

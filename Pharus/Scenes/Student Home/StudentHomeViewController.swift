@@ -13,7 +13,7 @@ class StudentHomeViewController: UIViewController {
     private let currentIndex: Int
     private let pages: [Pages] = Pages.allCases
     private let presenter: StudentHomePresenting
-    private lazy var customView = StudentHomeView(studentName: presenter.student.firstName)
+    private lazy var customView = StudentHomeView(student: presenter.student)
 
     // MARK: - Initializer
     init(presenter: StudentHomePresenting) {
@@ -30,12 +30,6 @@ class StudentHomeViewController: UIViewController {
     }
 
     // MARK: - Actions
-    func showStudentAvatar() {
-        customView.studentAvatarImageView.image = UIImage(
-            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.circleImage.suffix
-        )
-    }
-
     func setupTabBarIcons() {
         guard let array = self.tabBarController?.customizableViewControllers else { return }
         for controller in array {
@@ -95,7 +89,7 @@ extension StudentHomeViewController {
         super.viewWillAppear(animated)
 
         setGradientBackground()
-        showStudentAvatar()
+        customView.showStudentAvatar()
     }
 }
 

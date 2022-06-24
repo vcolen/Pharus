@@ -9,8 +9,7 @@ import UIKit
 class StudentHomeView: UIView {
 
     // MARK: - Properties
-
-    private var studentName: String
+    private var student: StudentModel
     private let cards: [StudentHomeMiniCardView] = [
         StudentHomeMiniCardView(
             cardType: .warning,
@@ -27,7 +26,6 @@ class StudentHomeView: UIView {
     ]
 
     // MARK: - Views
-
     private lazy var rectangleImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "rectangleImage")
@@ -139,8 +137,8 @@ class StudentHomeView: UIView {
     }()
 
     // MARK: - Initializer
-    init(studentName: String) {
-        self.studentName = studentName
+    init(student: StudentModel) {
+        self.student = student
 
         super.init(frame: .zero)
 
@@ -185,7 +183,7 @@ class StudentHomeView: UIView {
     }
 
     private func customizeSubviews() {
-        helloStudentLabel.text = "Olá, \(studentName)!"
+        helloStudentLabel.text = "Olá, \(student.firstName)!"
     }
 
     // MARK: - Constraints
@@ -239,5 +237,11 @@ class StudentHomeView: UIView {
         NSLayoutConstraint.activate([
             newsHelperView.heightAnchor.constraint(equalToConstant: 221)
         ])
+    }
+
+    func showStudentAvatar() {
+        studentAvatarImageView.image = UIImage(
+            named: "avatar" + student.avatar + Constants.assets.images.avatar.circleImage.suffix
+        )
     }
 }

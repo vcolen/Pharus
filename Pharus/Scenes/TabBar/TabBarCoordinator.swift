@@ -16,7 +16,6 @@ class TabBarCoordinator {
     var childCoordinators: [Coordinator] = []
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         tabBarViewController: UITabBarController,
@@ -28,7 +27,6 @@ class TabBarCoordinator {
     }
 
     // MARK: - Actions
-
     private func makeStudentHomeCoordinator() -> StudentHomeCoordinator {
         let coordinator = StudentHomeCoordinator(
             navigationController: UINavigationController(),
@@ -162,6 +160,10 @@ extension TabBarCoordinator: Coordinator {
             ],
             animated: true
         )
+
+        studentAvatarCoordinator.navigationController.title = ""
+        studentProjectsCoordinator.navigationController.title = ""
+        studentProjectsRankingCoordinator.navigationController.title = ""
 
         navigationController.setViewControllers([tabBarViewController], animated: true)
     }
