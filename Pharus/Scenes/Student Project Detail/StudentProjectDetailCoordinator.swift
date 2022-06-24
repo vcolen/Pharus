@@ -10,13 +10,11 @@ import UIKit
 class StudentProjectDetailCoordinator: Coordinator {
 
     // MARK: - Properties
-
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     private let project: ProjectModel
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         project: ProjectModel
@@ -35,9 +33,28 @@ class StudentProjectDetailCoordinator: Coordinator {
             presenter: studentProjectDetailPresenter
         )
 
+        studentProjectDetailViewController.title = project.name
+
+        var backButtonImage = UIImage(named: Constants.assets.icons.backArrowIcon)
+        backButtonImage = backButtonImage?.withTintColor(
+            .white,
+            renderingMode: .alwaysOriginal
+        )
+
+        studentProjectDetailViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: backButtonImage,
+            style: .plain,
+            target: self,
+            action: #selector(backButtonPressed))
+
         navigationController.pushViewController(studentProjectDetailViewController, animated: true)
     }
+
+    @objc func backButtonPressed() {
+        studentProjectDetailViewController.navigationController?.popViewController(animated: true)
+    }
 }
+
 
 // MARK: - Actions
 

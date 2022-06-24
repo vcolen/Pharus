@@ -24,12 +24,6 @@ class AvatarSelectionViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: - Functions
-    private func setNavigationBar() {
-        self.title = "Avatar"
-        self.navigationController?.title = ""
-    }
 }
 
 // MARK: - Super Methods
@@ -39,12 +33,6 @@ extension AvatarSelectionViewController {
 
         self.view = customView
         customView.delegate = self
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setNavigationBar()
     }
 
     override func viewWillAppear(_ animated: Bool) {

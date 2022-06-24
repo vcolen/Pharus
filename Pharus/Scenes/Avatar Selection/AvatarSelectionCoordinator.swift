@@ -35,6 +35,9 @@ class AvatarSelectionCoordinator: Coordinator {
             presenter: studentAvatarSelectionPresenter
         )
 
+        studentAvatarViewController.title = "Avatar"
+        studentAvatarViewController.navigationController?.title = ""
+
         navigationController.pushViewController(studentAvatarViewController, animated: true)
     }
 }

@@ -24,29 +24,6 @@ class StudentProjectDetailViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: - Actions
-    func setNavigationBar() {
-        self.title = presenter.project.name
-
-        var backButtonImage = UIImage(named: Constants.assets.icons.backArrowIcon)
-        backButtonImage = backButtonImage?.withTintColor(
-            .white,
-            renderingMode: .alwaysOriginal
-        )
-
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: backButtonImage,
-            style: .plain,
-            target: self,
-            action: #selector(backButtonPressed)
-        )
-
-    }
-
-    @objc func backButtonPressed() {
-        self.navigationController?.popViewController(animated: true)
-    }
 }
 
 // MARK: - Super Methods
@@ -56,12 +33,6 @@ extension StudentProjectDetailViewController {
 
         studentProjectDetailView.delegate = self
         self.view = studentProjectDetailView
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setNavigationBar()
     }
 
     override func viewWillLayoutSubviews() {
