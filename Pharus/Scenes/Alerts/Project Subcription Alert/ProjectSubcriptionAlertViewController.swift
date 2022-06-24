@@ -32,11 +32,15 @@ class ProjectSubcriptionAlertViewController: UIViewController {
 
 // MARK: - Super Methods
 extension ProjectSubcriptionAlertViewController {
+    
+    override func loadView() {
+        self.view = alertView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         alertView.delegate = self
-        self.view = alertView
     }
 }
 

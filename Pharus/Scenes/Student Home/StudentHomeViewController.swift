@@ -81,8 +81,6 @@ class StudentHomeViewController: UIViewController {
 // MARK: - Super Methods
 extension StudentHomeViewController {
     override func loadView() {
-        super.loadView()
-
         self.view = customView
     }
 

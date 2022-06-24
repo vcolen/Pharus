@@ -49,8 +49,6 @@ class StudentProfileViewController: UIViewController {
 // MARK: - Super Methods
 extension StudentProfileViewController {
     override func loadView() {
-        super.loadView()
-
         self.view = customView
     }
 

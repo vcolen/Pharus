@@ -31,10 +31,11 @@ class SendFileViewController: UIViewController, UIDocumentPickerDelegate {
 // MARK: - Super Methods
 extension SendFileViewController {
     override func loadView() {
-        super.loadView()
-
-        sendFileView.delegate = self
         self.view = sendFileView
+    }
+
+    override func viewDidLoad() {
+        sendFileView.delegate = self
     }
 }
 

@@ -33,8 +33,6 @@ class ProjectSheetViewController: UIViewController {
 // MARK: - Super Methods
 extension ProjectSheetViewController {
     override func loadView() {
-        super.loadView()
-
         self.view = projectSheetView
     }
 

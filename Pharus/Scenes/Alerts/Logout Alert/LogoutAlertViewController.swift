@@ -30,11 +30,14 @@ class LogoutAlertViewController: UIViewController {
 // MARK: - Super Methods
 extension LogoutAlertViewController {
 
+    override func loadView() {
+        self.view = alertView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         alertView.delegate = self
-        self.view = alertView
     }
 }
 

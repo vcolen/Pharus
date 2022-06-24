@@ -36,15 +36,13 @@ class StudentProjectsViewController: UIViewController {
 // MARK: - Super Mehods
 extension StudentProjectsViewController {
     override func loadView() {
-        super.loadView()
-
-        view.backgroundColor = .white
+        self.view = customView
+        self.view.backgroundColor = .white
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view = customView
         customView.delegate = self
         setNavigationBar()
     }

@@ -34,12 +34,14 @@ class StudentProjectsRankingViewController: UIViewController {
 
 // MARK: - Super Methods
 extension StudentProjectsRankingViewController {
+
+    override func loadView() {
+        self.view = customView
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setNavigationBar()
-
-        view = customView
     }
 
     override func viewWillAppear(_ animated: Bool) {

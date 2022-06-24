@@ -29,15 +29,13 @@ class AvatarSelectionViewController: UIViewController {
 // MARK: - Super Methods
 extension AvatarSelectionViewController {
     override func loadView() {
-        super.loadView()
-
         self.view = customView
-        customView.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        customView.delegate = self
         setGradientBackground()
     }
 }
