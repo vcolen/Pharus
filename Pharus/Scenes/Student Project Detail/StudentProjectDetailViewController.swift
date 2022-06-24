@@ -29,9 +29,6 @@ class StudentProjectDetailViewController: UIViewController {
 // MARK: - Super Methods
 extension StudentProjectDetailViewController {
     override func loadView() {
-        super.loadView()
-
-        studentProjectDetailView.delegate = self
         self.view = studentProjectDetailView
     }
 
@@ -39,6 +36,12 @@ extension StudentProjectDetailViewController {
         super.viewWillLayoutSubviews()
 
         setGradientBackground()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        studentProjectDetailView.delegate = self
     }
 }
 

@@ -28,19 +28,16 @@ class StudentProjectDetailCoordinator: Coordinator {
             coordinator: self,
             project: project
         )
-
         let studentProjectDetailViewController = StudentProjectDetailViewController(
             presenter: studentProjectDetailPresenter
         )
 
         studentProjectDetailViewController.title = project.name
-
         var backButtonImage = UIImage(named: Constants.assets.icons.backArrowIcon)
         backButtonImage = backButtonImage?.withTintColor(
             .white,
             renderingMode: .alwaysOriginal
         )
-
         studentProjectDetailViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: backButtonImage,
             style: .plain,
@@ -51,10 +48,9 @@ class StudentProjectDetailCoordinator: Coordinator {
     }
 
     @objc func backButtonPressed() {
-        studentProjectDetailViewController.navigationController?.popViewController(animated: true)
+        navigationController.popViewController(animated: true)
     }
 }
-
 
 // MARK: - Actions
 
