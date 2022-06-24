@@ -7,17 +7,19 @@
 
 import UIKit
 
-class LoginCoordinator: Coordinator {
+class LoginCoordinator {
 
     // MARK: - Properties
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
 
     // MARK: - Initializer
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+}
 
+// MARK: - Coordinator
+extension LoginCoordinator: Coordinator {
     func start() {
         let loginPresenter = LoginPresenter(coordinator: self)
         let loginViewController = LoginViewController(
@@ -29,10 +31,8 @@ class LoginCoordinator: Coordinator {
         navigationController.setViewControllers([loginViewController], animated: true)
     }
 }
-
 // MARK: - Actions
 extension LoginCoordinator: LoginCoordinating {
-
     func showHome(student: StudentModel) {
         let tabbarViewController = TabBarViewController()
         let tabbarCoordinator = TabBarCoordinator(
@@ -40,6 +40,6 @@ extension LoginCoordinator: LoginCoordinating {
             tabBarViewController: tabbarViewController,
             student: student)
 
-        coordinate(to: tabbarCoordinator)
+        tabbarCoordinator.start()
     }
 }

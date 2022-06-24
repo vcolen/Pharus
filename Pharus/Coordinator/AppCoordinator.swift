@@ -7,31 +7,29 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
+class AppCoordinator {
 
     // MARK: - Properties
-
-    let window: UIWindow
-    var navigationController: UINavigationController
-    var navigationBarController: UINavigationBar
-    var childCoordinators: [Coordinator] = []
+    private let window: UIWindow
+    private var rootViewController: UINavigationController
 
     // MARK: - Initializer
-
     init(window: UIWindow) {
         self.window = window
-        self.navigationController = UINavigationController()
-        self.navigationBarController = UINavigationBar()
+        self.rootViewController = UINavigationController()
     }
+}
 
+// MARK: - Coordinator
+extension AppCoordinator: Coordinator {
     func start() {
-        window.rootViewController = navigationController
+        window.rootViewController = rootViewController
         window.makeKeyAndVisible()
 
         let mainCoordinator = LoginCoordinator(
-            navigationController: navigationController
+            navigationController: rootViewController
         )
 
-        coordinate(to: mainCoordinator)
+        mainCoordinator.start()
     }
 }

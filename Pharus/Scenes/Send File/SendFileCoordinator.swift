@@ -7,16 +7,13 @@
 
 import UIKit
 
-class SendFileCoordinator: Coordinator {
+class SendFileCoordinator {
 
     // MARK: - Properties
-
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private let navigationController: UINavigationController
     private let project: ProjectModel
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         project: ProjectModel
@@ -24,7 +21,10 @@ class SendFileCoordinator: Coordinator {
         self.navigationController = navigationController
         self.project = project
     }
+}
 
+// MARK: - Coordinator
+extension SendFileCoordinator: Coordinator {
     func start() {
         let sendFilePresenter = SendFilePresenter(coordinator: self)
         let sendFileViewController = SendFileViewController(presenter: sendFilePresenter)
@@ -32,9 +32,7 @@ class SendFileCoordinator: Coordinator {
         navigationController.present(sendFileViewController, animated: true)
     }
 }
-
 // MARK: - Actions
-
 extension SendFileCoordinator: SendFileCoordinating {
     func showFileSentAlert() {
         let alertCoordinator = SingleButtonAlertCoordinator(
@@ -44,7 +42,7 @@ extension SendFileCoordinator: SendFileCoordinating {
         )
 
         navigationController.topViewController?.dismiss(animated: true)
-        coordinate(to: alertCoordinator)
+        alertCoordinator.start()
     }
 
     func closeSheet() {
