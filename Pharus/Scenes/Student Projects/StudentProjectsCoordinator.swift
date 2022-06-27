@@ -30,13 +30,13 @@ extension StudentProjectsCoordinator: Coordinator {
             coordinator: self,
             student: student
         )
-
         let studentProjectsViewController = StudentProjectsViewController(
             presenter: studentProjectsPresenter
         )
 
-        navigationController.setNavigationBarHidden(false, animated: true)
+        studentProjectsViewController.title = "Seus projetos"
 
+        navigationController.setNavigationBarHidden(false, animated: true)
         navigationController.pushViewController(studentProjectsViewController, animated: true)
     }
 }

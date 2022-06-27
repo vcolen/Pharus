@@ -10,7 +10,6 @@ import UIKit
 class SubscribeButton: UIButton {
 
     // MARK: - Properties
-
     var isSubscribed: Bool {
         didSet {
             self.setButtonColors()
@@ -18,18 +17,8 @@ class SubscribeButton: UIButton {
     }
 
     // MARK: - Initializer
-
-    convenience init(isSubscribed: Bool) {
-        self.init()
-
+    init(isSubscribed: Bool) {
         self.isSubscribed = isSubscribed
-
-        configureSubviews()
-        setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-        self.isSubscribed = false
 
         super.init(frame: .zero)
 
@@ -42,7 +31,6 @@ class SubscribeButton: UIButton {
     }
 
     // MARK: - Subviews
-
     private func configureSubviews() {
         setButtonColors()
         titleLabel?.font = UIFont.smallButtonSemiBold
@@ -65,7 +53,6 @@ class SubscribeButton: UIButton {
     }
 
     // MARK: - Constraints
-
     private func setupConstraints() {
         self.heightAnchor.constraint(equalToConstant: 32).isActive = true
     }

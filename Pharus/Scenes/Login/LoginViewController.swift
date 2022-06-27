@@ -65,17 +65,13 @@ class LoginViewController: UIViewController {
 // MARK: - Super Methods
 extension LoginViewController {
     override func loadView() {
-        super.loadView()
-
         self.view = customView
-        customView.delegate = self
-        self.tabBarController?.tabBar.isHidden = true
-        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        customView.delegate = self
         initializeHideKeyboard()
         NotificationCenter.default.addObserver(
             self,

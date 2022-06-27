@@ -13,7 +13,7 @@ class StudentHomeViewController: UIViewController {
     private let currentIndex: Int
     private let pages: [Pages] = Pages.allCases
     private let presenter: StudentHomePresenting
-    private lazy var customView = StudentHomeView(studentName: presenter.student.firstName)
+    private lazy var customView = StudentHomeView(student: presenter.student)
 
     // MARK: - Initializer
     init(presenter: StudentHomePresenting) {
@@ -30,24 +30,6 @@ class StudentHomeViewController: UIViewController {
     }
 
     // MARK: - Actions
-    func showStudentAvatar() {
-        customView.studentAvatarImageView.image = UIImage(
-            named: "avatar" + presenter.student.avatar + Constants.assets.images.avatar.circleImage.suffix
-        )
-    }
-
-    func setupTabBarIcons() {
-        guard let array = self.tabBarController?.customizableViewControllers else { return }
-        for controller in array {
-            controller.tabBarItem.imageInsets = UIEdgeInsets(
-                top: 3,
-                left: 0,
-                bottom: -3,
-                right: 0
-            )
-        }
-    }
-
     private func setupPageController() {
         pageController = UIPageViewController(
             transitionStyle: .scroll,
@@ -81,15 +63,12 @@ class StudentHomeViewController: UIViewController {
 // MARK: - Super Methods
 extension StudentHomeViewController {
     override func loadView() {
-        super.loadView()
-
         self.view = customView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupTabBarIcons()
         setupPageController()
     }
 
@@ -97,7 +76,7 @@ extension StudentHomeViewController {
         super.viewWillAppear(animated)
 
         setGradientBackground()
-        showStudentAvatar()
+        customView.showStudentAvatar()
     }
 }
 
@@ -154,7 +133,7 @@ enum Pages: CaseIterable {
     var view: UIView {
         switch self {
         case .pageZero:
-            return HomeNewsView()
+            return HomeNewsView(news: Constants.defaultTexts.homeNewsText)
         case .pageOne:
             return HomeNewsView(
                 news: Constants.defaultTexts.homeNewsText

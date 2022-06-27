@@ -14,14 +14,12 @@ protocol ProjectTaskDelegate: AnyObject {
 class ProjectTaskView: UIView {
 
     // MARK: - Properties
-
     weak var delegate: ProjectTaskDelegate?
     private var checkImage: UIImage?
     private var task: TaskModel
     var color: UIColor
 
     // MARK: - Views
-
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -64,38 +62,19 @@ class ProjectTaskView: UIView {
     }()
 
     // MARK: - Initializer
-
-    convenience init(
+    init(
         task: TaskModel,
         checkImage: UIImage,
         color: UIColor
     ) {
-        self.init()
-
         self.task = task
         self.checkImage = checkImage
         self.color = color
 
-        configureSubviews()
-        customizeSubviews()
-        setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-
-        self.task = TaskModel(
-            title: "Tarefa",
-            isComplete: false,
-            description: "Lorem Ipsum"
-        )
-
-        self.color = .black
-
-        self.checkImage = .pharusIcons.checkmarkIcon ?? .defaultImage
-
         super.init(frame: .zero)
 
         configureSubviews()
+        customizeSubviews()
         setupConstraints()
     }
 
@@ -104,7 +83,6 @@ class ProjectTaskView: UIView {
     }
 
     // MARK: - Subviews
-
     func configureSubviews() {
         addSubview(mainStackView)
 
@@ -121,11 +99,11 @@ class ProjectTaskView: UIView {
     }
 
     // MARK: - Constraints
-
     private func setupConstraints() {
-
+        // Main Stack View
         self.stretch(mainStackView)
 
+        // Task Checkmark button
         NSLayoutConstraint.activate([
             taskCheckmarkButton.widthAnchor.constraint(equalToConstant: 25),
             taskCheckmarkButton.heightAnchor.constraint(equalToConstant: 25)
@@ -134,7 +112,6 @@ class ProjectTaskView: UIView {
 }
 
 // MARK: - Actions
-
 extension ProjectTaskView {
     func checkmarkButtonTapped(task: TaskModel) {
         delegate?.checkmarkButtonTapped(task: task)

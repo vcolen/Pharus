@@ -31,10 +31,11 @@ extension StudentProjectsRankingCoordinator: Coordinator {
             coordinator: self,
             student: student
         )
-
         let studentProjectsRankingViewController = StudentProjectsRankingViewController(
             presenter: studentProjectsRankingPresenter
         )
+
+        studentProjectsRankingViewController.title = "Seus Rankings"
 
         navigationController.pushViewController(
             studentProjectsRankingViewController,

@@ -10,7 +10,6 @@ import UIKit
 class MainCardButton: UIButton {
 
     // MARK: - Properties
-
     private var title: String
     private var buttonState: State {
         didSet {
@@ -19,20 +18,9 @@ class MainCardButton: UIButton {
     }
 
     // MARK: - Initializer
-
-    convenience init(title: String, buttonState: State) {
-        self.init()
-
+    init(title: String, buttonState: State) {
         self.title = title
         self.buttonState = buttonState
-
-        configureSubviews()
-        setupConstraints()
-    }
-
-    override init(frame: CGRect) {
-        self.title = "Fechar"
-        self.buttonState = .normal
 
         super.init(frame: .zero)
 
@@ -45,7 +33,6 @@ class MainCardButton: UIButton {
     }
 
     // MARK: - Subviews
-
     private func configureSubviews() {
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont.mediumButtonSemiBold
@@ -70,7 +57,6 @@ class MainCardButton: UIButton {
     }
 
     // MARK: - Actions
-
     func disable() {
         self.isEnabled = false
         self.buttonState = .disabled

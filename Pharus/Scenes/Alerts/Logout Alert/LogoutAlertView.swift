@@ -13,7 +13,6 @@ class LogoutAlertView: UIView {
     weak var delegate: LogoutAlertViewDelegate?
 
     // MARK: - Views
-
     private lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -111,7 +110,6 @@ class LogoutAlertView: UIView {
     }()
 
     // MARK: - Initilizer
-
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
@@ -124,7 +122,6 @@ class LogoutAlertView: UIView {
     }
 
     // MARK: - Subviews
-
     private func configureSubviews() {
         addSubview(blurEffectView)
         addSubview(mainView)
@@ -143,7 +140,6 @@ class LogoutAlertView: UIView {
     }
 
     // MARK: - Constraints
-
     private func setupConstraints() {
         // Main View
         NSLayoutConstraint.activate([

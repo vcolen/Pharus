@@ -16,7 +16,6 @@ class TabBarCoordinator {
     var childCoordinators: [Coordinator] = []
 
     // MARK: - Initializer
-
     init(
         navigationController: UINavigationController,
         tabBarViewController: UITabBarController,
@@ -28,12 +27,13 @@ class TabBarCoordinator {
     }
 
     // MARK: - Actions
-
     private func makeStudentHomeCoordinator() -> StudentHomeCoordinator {
         let coordinator = StudentHomeCoordinator(
             navigationController: UINavigationController(),
             student: student
         )
+
+        coordinator.start()
 
         coordinator
             .navigationController
@@ -45,7 +45,9 @@ class TabBarCoordinator {
             .tabBarItem
             .selectedImage = .pharusIcons.homeTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
 
-        coordinator.start()
+        coordinator
+            .navigationController
+            .title = ""
 
         return coordinator
     }
@@ -55,6 +57,8 @@ class TabBarCoordinator {
             navigationController: UINavigationController(),
             student: student
         )
+
+        coordinator.start()
 
         coordinator
             .navigationController
@@ -66,7 +70,9 @@ class TabBarCoordinator {
             .tabBarItem
             .selectedImage = .pharusIcons.projecsTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
 
-        coordinator.start()
+        coordinator
+            .navigationController
+            .title = ""
 
         return coordinator
     }
@@ -76,6 +82,8 @@ class TabBarCoordinator {
             navigationController: UINavigationController(),
             student: student
         )
+
+        coordinator.start()
 
         coordinator
             .navigationController
@@ -87,7 +95,9 @@ class TabBarCoordinator {
             .tabBarItem
             .selectedImage = .pharusIcons.rankingTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
 
-        coordinator.start()
+        coordinator
+            .navigationController
+            .title = ""
 
         return coordinator
     }
@@ -97,6 +107,8 @@ class TabBarCoordinator {
             navigationController: UINavigationController(),
             student: student
         )
+
+        coordinator.start()
 
         coordinator
             .navigationController
@@ -108,7 +120,9 @@ class TabBarCoordinator {
             .tabBarItem
             .selectedImage = .pharusIcons.avatarTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
 
-        coordinator.start()
+        coordinator
+            .navigationController
+            .title = ""
 
         return coordinator
     }
@@ -118,6 +132,8 @@ class TabBarCoordinator {
             navigationController: UINavigationController(),
             student: student
         )
+
+        coordinator.start()
 
         coordinator
             .navigationController
@@ -129,7 +145,9 @@ class TabBarCoordinator {
             .tabBarItem
             .selectedImage = .pharusIcons.profileTabBarIconSelected?.withRenderingMode(.alwaysOriginal)
 
-        coordinator.start()
+        coordinator
+            .navigationController
+            .title = ""
 
         return coordinator
     }
@@ -162,6 +180,19 @@ extension TabBarCoordinator: Coordinator {
             ],
             animated: true
         )
+
+        guard let viewControllers = tabBarViewController.customizableViewControllers else {
+            return
+        }
+
+        for controller in viewControllers {
+            controller.tabBarItem.imageInsets = UIEdgeInsets(
+                top: 3,
+                left: 0,
+                bottom: -3,
+                right: 0
+            )
+        }
 
         navigationController.setViewControllers([tabBarViewController], animated: true)
     }
