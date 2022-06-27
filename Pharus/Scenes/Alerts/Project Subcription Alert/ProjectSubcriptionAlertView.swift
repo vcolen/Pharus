@@ -10,7 +10,6 @@ import UIKit
 class ProjectSubcriptionAlertView: UIView {
 
     // MARK: - Properties
-
     weak var delegate: ProjectSubcriptionAlertViewDelegate?
     private var title: String
     private var message: String
@@ -18,7 +17,6 @@ class ProjectSubcriptionAlertView: UIView {
     private var secondaryButtonText: String
 
     // MARK: - Views
-
     private lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -137,7 +135,6 @@ class ProjectSubcriptionAlertView: UIView {
     }
 
     // MARK: - Subviews
-
     private func configureSubviews() {
         addSubview(blurEffectView)
         addSubview(mainView)
@@ -185,7 +182,6 @@ class ProjectSubcriptionAlertView: UIView {
 }
 
 // MARK: - Actions
-
 extension ProjectSubcriptionAlertView {
 
     func closeButtonTapped() {

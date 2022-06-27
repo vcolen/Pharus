@@ -40,6 +40,7 @@ extension ProjectSubcriptionAlertCoordinator: Coordinator {
         navigationController.present(alertViewController, animated: true)
     }
 }
+
 // MARK: - Actions
 extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinating {
     func closeModal() {

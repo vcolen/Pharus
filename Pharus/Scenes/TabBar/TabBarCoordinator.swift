@@ -194,7 +194,7 @@ extension TabBarCoordinator: Coordinator {
             )
         }
 
-        navigationController.setViewControllers([tabBarViewController], animated: true)
+         navigationController.setViewControllers([tabBarViewController], animated: true)
     }
 }
 
