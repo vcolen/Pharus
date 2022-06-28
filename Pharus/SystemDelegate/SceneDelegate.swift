@@ -11,7 +11,6 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coordinator: Coordinator?
 
     func scene(
         _ scene: UIScene, willConnectTo session: UISceneSession,
@@ -23,8 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let window = window {
             window.windowScene = windowScene
             window.overrideUserInterfaceStyle = .dark
-            coordinator = AppCoordinator(window: window)
-            coordinator?.start()
+            AppCoordinator(window: window).start()
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                window.rootViewController = nil
+            }
         }
     }
 

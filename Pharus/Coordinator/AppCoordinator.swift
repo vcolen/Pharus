@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppCoordinator {
+struct AppCoordinator {
 
     // MARK: - Properties
     private let window: UIWindow

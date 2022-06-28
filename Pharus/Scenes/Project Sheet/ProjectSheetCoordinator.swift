@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProjectSheetCoordinator {
+struct ProjectSheetCoordinator {
 
     // MARK: - Properties
     private let navigationController: UINavigationController

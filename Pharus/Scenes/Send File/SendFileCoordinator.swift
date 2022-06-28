@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SendFileCoordinator {
+struct SendFileCoordinator {
 
     // MARK: - Properties
     private let navigationController: UINavigationController

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AvatarSelectionCoordinator {
+struct AvatarSelectionCoordinator {
 
     // MARK: - Properties
     let navigationController: UINavigationController

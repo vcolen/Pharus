@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StudentHomeCoordinator {
+struct StudentHomeCoordinator {
 
     // MARK: - Properties
     let navigationController: UINavigationController

@@ -7,13 +7,12 @@
 
 import UIKit
 
-class TabBarCoordinator {
+struct TabBarCoordinator {
 
     // MARK: - Properties
     private let student: StudentModel
     private let navigationController: UINavigationController
     private let tabBarViewController: UITabBarController
-    var childCoordinators: [Coordinator] = []
 
     // MARK: - Initializer
     init(
@@ -161,14 +160,6 @@ extension TabBarCoordinator: Coordinator {
         let studentProjectsRankingCoordinator = makeStudentProjectsRankingCoordinator()
         let studentAvatarCoordinator = makeStudentAvatarCoordinator()
         let studentProfileCoordinator = makeStudentProfileCoordinator()
-
-        childCoordinators = [
-            studentHomeCoordinator,
-            studentProjectsCoordinator,
-            studentAvatarCoordinator,
-            studentProjectsRankingCoordinator,
-            studentProfileCoordinator
-        ]
 
         tabBarViewController.setViewControllers(
             [

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginCoordinator {
+struct LoginCoordinator {
 
     // MARK: - Properties
     private let navigationController: UINavigationController
