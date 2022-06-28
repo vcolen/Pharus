@@ -1,5 +1,5 @@
 //
-//  StudenteProfileView.swift
+//  StudentProfileView.swift
 //  Pharus
 //
 //  Created by Jéssica Serqueira on 16/04/22.

@@ -10,7 +10,7 @@ import UIKit
 struct StudentHomeCoordinator {
 
     // MARK: - Properties
-    let navigationController: UINavigationController
+    weak var navigationController: UINavigationController?
     private let student: StudentModel
 
     init(
@@ -34,10 +34,10 @@ extension StudentHomeCoordinator: Coordinator {
             presenter: studentHomePresenter
         )
 
-        navigationController.setNavigationBarHidden(true, animated: true)
-        navigationController.tabBarController?.tabBar.isHidden = false
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.tabBarController?.tabBar.isHidden = false
 
-        navigationController.pushViewController(studentHomeViewController, animated: true)
+        navigationController?.pushViewController(studentHomeViewController, animated: true)
     }
 }
 // MARK: - Student Home Coordinating

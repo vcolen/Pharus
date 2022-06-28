@@ -10,10 +10,12 @@ import UIKit
 struct LoginCoordinator {
 
     // MARK: - Properties
-    private let navigationController: UINavigationController
+    private weak var navigationController: UINavigationController?
 
     // MARK: - Initializer
-    init(navigationController: UINavigationController) {
+    init(
+        navigationController: UINavigationController
+    ) {
         self.navigationController = navigationController
     }
 }
@@ -26,20 +28,23 @@ extension LoginCoordinator: Coordinator {
             presenter: loginPresenter
         )
 
-        navigationController.setNavigationBarHidden(true, animated: true)
-        navigationController.tabBarController?.tabBar.isHidden = true
-        navigationController.setViewControllers([loginViewController], animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.tabBarController?.tabBar.isHidden = true
+        navigationController?.setViewControllers([loginViewController], animated: true)
     }
 }
 // MARK: - Actions
 extension LoginCoordinator: LoginCoordinating {
     func showHome(student: StudentModel) {
         let tabbarViewController = TabBarViewController()
-        let tabbarCoordinator = TabBarCoordinator(
-            navigationController: navigationController,
-            tabBarViewController: tabbarViewController,
-            student: student)
 
-        tabbarCoordinator.start()
+        if let navigationController = navigationController {
+            let tabbarCoordinator = MainTabBarCoordinator(
+                navigationController: navigationController,
+                tabBarViewController: tabbarViewController,
+                student: student)
+
+            tabbarCoordinator.start()
+        }
     }
 }

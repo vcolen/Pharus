@@ -10,7 +10,7 @@ import UIKit
 class StudentProfileCoordinator {
 
     // MARK: - Properties
-    let navigationController: UINavigationController
+    weak var navigationController: UINavigationController?
     private let student: StudentModel
 
     // MARK: - Initializer
@@ -37,17 +37,20 @@ extension StudentProfileCoordinator: Coordinator {
 
         studentProfileViewController.title = "Perfil"
 
-        navigationController.setNavigationBarHidden(false, animated: true)
-        navigationController.pushViewController(studentProfileViewController, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.pushViewController(studentProfileViewController, animated: true)
     }
 }
 // MARK: - Actions
 extension StudentProfileCoordinator: StudentProfileCoordinating {
     func showLogOutAlert() {
-        let logoutAlertCoordinator = LogoutAlertCoordinator(
-            navigationController: navigationController
-        )
 
-        logoutAlertCoordinator.start()
+        if let navigationController = navigationController {
+            let logoutAlertCoordinator = LogoutAlertCoordinator(
+                navigationController: navigationController
+            )
+
+            logoutAlertCoordinator.start()
+        }
     }
 }

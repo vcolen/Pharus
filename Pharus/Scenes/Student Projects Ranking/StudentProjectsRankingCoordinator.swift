@@ -10,7 +10,7 @@ import UIKit
 struct StudentProjectsRankingCoordinator {
 
     // MARK: - Properties
-    let navigationController: UINavigationController
+    weak var navigationController: UINavigationController?
     private let student: StudentModel
 
     // MARK: - Initializer
@@ -37,7 +37,7 @@ extension StudentProjectsRankingCoordinator: Coordinator {
 
         studentProjectsRankingViewController.title = "Seus Rankings"
 
-        navigationController.pushViewController(
+        navigationController?.pushViewController(
             studentProjectsRankingViewController,
             animated: true
         )

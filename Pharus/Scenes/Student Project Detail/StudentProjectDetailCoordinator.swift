@@ -10,7 +10,7 @@ import UIKit
 struct StudentProjectDetailCoordinator {
 
     // MARK: - Properties
-    private let navigationController: UINavigationController
+    private weak var navigationController: UINavigationController?
     private let project: ProjectModel
 
     // MARK: - Initializer
@@ -35,38 +35,46 @@ extension StudentProjectDetailCoordinator: Coordinator {
         )
 
         studentProjectDetailViewController.title = project.name
-        navigationController.pushViewController(studentProjectDetailViewController, animated: true)
+        navigationController?.pushViewController(studentProjectDetailViewController, animated: true)
     }
 }
 
 // MARK: - Student Project Detail Coordinating
 extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showProjectRules() {
-        let projectSheetCoordinator = ProjectSheetCoordinator(
-            navigationController: navigationController,
-            project: project,
-            projectSheetContent: .activities
-        )
 
-        projectSheetCoordinator.start()
+        if let navigationController = navigationController {
+            let projectSheetCoordinator = ProjectSheetCoordinator(
+                navigationController: navigationController,
+                project: project,
+                projectSheetContent: .activities
+            )
+
+            projectSheetCoordinator.start()
+        }
     }
 
     func showMentorReview() {
-        let projectSheetCoordinator = ProjectSheetCoordinator(
-            navigationController: navigationController,
-            project: project,
-            projectSheetContent: .mentorReview
-        )
 
-        projectSheetCoordinator.start()
+        if let navigationController = navigationController {
+            let projectSheetCoordinator = ProjectSheetCoordinator(
+                navigationController: navigationController,
+                project: project,
+                projectSheetContent: .mentorReview
+            )
+
+            projectSheetCoordinator.start()
+        }
     }
 
     func showSendFileView() {
-        let sendFileCoordinator = SendFileCoordinator(
-            navigationController: navigationController,
-            project: project
-        )
+        if let navigationController = navigationController {
+            let sendFileCoordinator = SendFileCoordinator(
+                navigationController: navigationController,
+                project: project
+            )
 
-        sendFileCoordinator.start()
+            sendFileCoordinator.start()
+        }
     }
 }

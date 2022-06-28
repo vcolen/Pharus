@@ -10,7 +10,7 @@ import UIKit
 struct AvatarSelectionCoordinator {
 
     // MARK: - Properties
-    let navigationController: UINavigationController
+    weak var navigationController: UINavigationController?
     private let student: StudentModel
 
     // MARK: - Initializer
@@ -37,7 +37,7 @@ extension AvatarSelectionCoordinator: Coordinator {
 
         studentAvatarViewController.title = "Avatar"
 
-        navigationController.pushViewController(studentAvatarViewController, animated: true)
+        navigationController?.pushViewController(studentAvatarViewController, animated: true)
     }
 }
 // MARK: - Avatar Selection Coordinating
