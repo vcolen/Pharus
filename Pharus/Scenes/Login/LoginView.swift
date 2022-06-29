@@ -174,8 +174,8 @@ class LoginView: UIView {
 
     private lazy var loginButton: MainCardButton = {
         let button = MainCardButton(title: "Entrar", buttonState: .normal)
-        button.addAction(UIAction { _ in
-            self.loginButtonPressed()
+        button.addAction(UIAction { [weak self] _ in
+            self?.loginButtonPressed()
         }, for: .touchUpInside)
         button.titleLabel?.font = .largeButton
         button.translatesAutoresizingMaskIntoConstraints = false

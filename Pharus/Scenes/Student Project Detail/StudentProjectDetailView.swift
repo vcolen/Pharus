@@ -244,8 +244,8 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
 
     private lazy var uploadFilesButton: MainCardButton = {
         let button = MainCardButton(title: "Enviar Arquivos", buttonState: .normal)
-        button.addAction(UIAction { _ in
-            self.sendFilesButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.sendFilesButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "StudentProjectDetailView.uploadFilesButton"

@@ -86,8 +86,8 @@ class LogoutAlertView: UIView {
             title: "Sair",
             importance: .primary
         )
-        button.addAction(UIAction { _ in
-            self.primaryButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.primaryButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "LogoutAlertViewDelegate.yesButton"
@@ -100,8 +100,8 @@ class LogoutAlertView: UIView {
             title: "Cancelar",
             importance: .secondary
         )
-        button.addAction(UIAction { _ in
-            self.secondaryButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.secondaryButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "LogoutAlertViewDelegate.noButton"

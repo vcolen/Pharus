@@ -68,8 +68,8 @@ class ProjectSubcriptionAlertView: UIView {
     private lazy var closeModalButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
-        button.addAction(UIAction { _ in
-            self.closeButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.closeButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "ProjectSubcriptionAlertView.closeModalButton"
@@ -91,8 +91,8 @@ class ProjectSubcriptionAlertView: UIView {
 
     private lazy var primaryButton: MainCardButton = {
         let button = MainCardButton(title: "Sim, quero me inscrever", buttonState: .normal)
-        button.addAction(UIAction { _ in
-            self.primaryButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.primaryButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "ProjectSubcriptionAlertView.primaryButton"
@@ -102,8 +102,8 @@ class ProjectSubcriptionAlertView: UIView {
 
     private lazy var secondaryButton: SecondaryCardButton = {
         let button = SecondaryCardButton(title: "Não quero, mudei de ideia")
-        button.addAction( UIAction { _ in
-            self.secondaryButtonTapped()
+        button.addAction( UIAction { [weak self] _ in
+            self?.secondaryButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "ProjectSubcriptionAlertView.secondaryButton"

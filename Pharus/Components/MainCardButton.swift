@@ -51,7 +51,6 @@ class MainCardButton: UIButton {
     }
 
     // MARK: - Constraints
-
     private func setupConstraints() {
         self.heightAnchor.constraint(equalToConstant: 56).isActive = true
     }
