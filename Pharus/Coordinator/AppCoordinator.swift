@@ -42,7 +42,8 @@ extension AppCoordinator {
         let tabBarController = TabBarViewController()
         MainTabBarCoordinator(
             rootViewController: tabBarController,
-            student: student
+            student: student,
+            onLogOut: openLoginScene
         ).start()
 
         window?.rootViewController = tabBarController
