@@ -22,6 +22,11 @@ struct StudentProfileTabCoordinator {
     func start() {
         let navigationController = UINavigationController()
 
+        StudentProfileCoordinator(
+            navigationController: navigationController,
+            student: student
+        ).start()
+
         navigationController.tabBarItem.image = .pharusIcons.profileTabBarIcon
         navigationController
             .tabBarItem
@@ -29,9 +34,10 @@ struct StudentProfileTabCoordinator {
 
         navigationController.title = ""
 
-        StudentProfileCoordinator(
-            navigationController: navigationController,
-            student: student
-        ).start()
+        if rootViewController?.viewControllers == nil {
+            rootViewController?.setViewControllers([navigationController], animated: true)
+        } else {
+            rootViewController?.viewControllers?.append(navigationController)
+        }
     }
 }

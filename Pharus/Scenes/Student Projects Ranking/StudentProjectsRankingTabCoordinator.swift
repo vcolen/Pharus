@@ -22,6 +22,11 @@ struct StudentProjectsRankingTabCoordinator {
     func start() {
         let navigationController = UINavigationController()
 
+        StudentProjectsRankingCoordinator(
+            navigationController: navigationController,
+            student: student
+        ).start()
+
         navigationController.tabBarItem.image = .pharusIcons.rankingTabBarIcon
         navigationController
             .tabBarItem
@@ -29,9 +34,10 @@ struct StudentProjectsRankingTabCoordinator {
 
         navigationController.title = ""
 
-        StudentProjectsRankingCoordinator(
-            navigationController: navigationController,
-            student: student
-        ).start()
+        if rootViewController?.viewControllers == nil {
+            rootViewController?.setViewControllers([navigationController], animated: true)
+        } else {
+            rootViewController?.viewControllers?.append(navigationController)
+        }
     }
 }

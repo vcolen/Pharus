@@ -39,7 +39,8 @@ extension LogoutAlertCoordinator: LogoutAlertCoordinating {
         closeModal()
         if let navigationController = navigationController {
             LoginCoordinator(
-                navigationController: navigationController
+                navigationController: navigationController,
+                onLogin: nil
             ).start()
         }
     }

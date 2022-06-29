@@ -11,52 +11,49 @@ struct MainTabBarCoordinator {
 
     // MARK: - Properties
     private let student: StudentModel
-    private weak var navigationController: UINavigationController?
-    private let rootViewController: UITabBarController
+    private weak var rootViewController: UITabBarController?
 
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
-        tabBarViewController: UITabBarController,
+        rootViewController: UITabBarController,
         student: StudentModel
     ) {
-        self.navigationController = navigationController
-        self.rootViewController = tabBarViewController
+        self.rootViewController = rootViewController
         self.student = student
     }
 
     // MARK: - Actions
     private func makeStudentHomeCoordinator() {
         StudentHomeTabCoordinator(
-            rootViewController: rootViewController,
+            rootViewController: rootViewController ?? UITabBarController(),
             student: student
         ).start()
     }
 
     private func makeStudentProjectsCoordinator() {
         StudentProjectsTabCoordinator(
-            rootViewController: rootViewController,
+            rootViewController: rootViewController ?? UITabBarController(),
             student: student
         ).start()
     }
 
     private func makeStudentProjectsRankingCoordinator() {
         StudentProjectsRankingTabCoordinator(
-            rootViewController: rootViewController,
+            rootViewController: rootViewController ?? UITabBarController(),
             student: student
         ).start()
     }
 
     private func makeStudentAvatarCoordinator() {
         AvatarSelectionTabCoordinator(
-            rootViewController: rootViewController,
+            rootViewController: rootViewController ?? UITabBarController(),
             student: student
         ).start()
     }
 
     private func makeStudentProfileCoordinator() {
         StudentProfileTabCoordinator(
-            rootViewController: rootViewController,
+            rootViewController: rootViewController ?? UITabBarController(),
             student: student
         ).start()
     }
@@ -70,8 +67,6 @@ extension MainTabBarCoordinator: Coordinator {
         makeStudentProjectsRankingCoordinator()
         makeStudentAvatarCoordinator()
         makeStudentProfileCoordinator()
-
-        navigationController?.setViewControllers([rootViewController], animated: true)
     }
 }
 

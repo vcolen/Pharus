@@ -10,26 +10,41 @@ import UIKit
 struct AppCoordinator {
 
     // MARK: - Properties
-    private let window: UIWindow
-    private var rootViewController: UINavigationController
+    private weak var window: UIWindow?
 
     // MARK: - Initializer
     init(window: UIWindow) {
         self.window = window
-        self.rootViewController = UINavigationController()
     }
 }
 
 // MARK: - Coordinator
 extension AppCoordinator: Coordinator {
     func start() {
-        window.rootViewController = rootViewController
-        window.makeKeyAndVisible()
+        openLoginScene()
+        window?.makeKeyAndVisible()
+    }
+}
 
-        let mainCoordinator = LoginCoordinator(
-            navigationController: rootViewController
-        )
+// MARK: - Open Scene
+extension AppCoordinator {
+    func openLoginScene() {
+        let navigationController = UINavigationController()
+            LoginCoordinator(
+                navigationController: navigationController,
+                onLogin: openTabBarScene
+            ).start()
 
-        mainCoordinator.start()
+        window?.rootViewController = navigationController
+    }
+
+    func openTabBarScene(student: StudentModel) {
+        let tabBarController = TabBarViewController()
+        MainTabBarCoordinator(
+            rootViewController: tabBarController,
+            student: student
+        ).start()
+
+        window?.rootViewController = tabBarController
     }
 }

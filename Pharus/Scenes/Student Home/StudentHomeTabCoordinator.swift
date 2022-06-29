@@ -22,6 +22,11 @@ struct StudentHomeTabCoordinator {
     func start() {
         let navigationController = UINavigationController()
 
+        StudentHomeCoordinator(
+            navigationController: navigationController,
+            student: student
+        ).start()
+
         navigationController.tabBarItem.image = .pharusIcons.homeTabBarIcon
         navigationController
             .tabBarItem
@@ -29,9 +34,10 @@ struct StudentHomeTabCoordinator {
 
         navigationController.title = ""
 
-        StudentHomeCoordinator(
-            navigationController: navigationController,
-            student: student
-        ).start()
+        if rootViewController?.viewControllers == nil {
+            rootViewController?.setViewControllers([navigationController], animated: true)
+        } else {
+            rootViewController?.viewControllers?.append(navigationController)
+        }
     }
 }
