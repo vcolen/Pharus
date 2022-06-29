@@ -12,6 +12,7 @@
 		790AA951286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA950286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift */; };
 		790AA953286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */; };
 		790AA955286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */; };
+		791444B8286CE810006CC1BD /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791444B7286CE810006CC1BD /* UITabBarController+Extension.swift */; };
 		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
 		799AFAC5285CECDE001B0371 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */; };
 		799AFAC6285CECDE001B0371 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */; };
@@ -198,6 +199,7 @@
 		790AA950286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingTabCoordinator.swift; sourceTree = "<group>"; };
+		791444B7286CE810006CC1BD /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
 		797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenter.swift.swift; sourceTree = "<group>"; };
 		799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -877,6 +879,7 @@
 				799AFAB6285CECDE001B0371 /* Float+Extension.swift */,
 				799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */,
 				799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */,
+				791444B7286CE810006CC1BD /* UITabBarController+Extension.swift */,
 				799AFB69285CF4F4001B0371 /* UIImage */,
 				799AFAAA285CECDE001B0371 /* UIStackView+Extension.swift */,
 				799AFA91285CECDE001B0371 /* UIView+Extension.swift */,
@@ -1188,6 +1191,7 @@
 				799AFB15285CECDF001B0371 /* AvatarSelectionCoordinating.swift in Sources */,
 				799AFB05285CECDF001B0371 /* SingleButtonAlertView.swift in Sources */,
 				799AFAEA285CECDF001B0371 /* StudentProfilePresenting.swift in Sources */,
+				791444B8286CE810006CC1BD /* UITabBarController+Extension.swift in Sources */,
 				799AFAF1285CECDF001B0371 /* TabBarCoordinating.swift in Sources */,
 				799AFAF4285CECDF001B0371 /* LogoutAlertPresenter.swift in Sources */,
 				79FFE7E92860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift in Sources */,

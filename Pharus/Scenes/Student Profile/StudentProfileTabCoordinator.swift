@@ -38,10 +38,6 @@ struct StudentProfileTabCoordinator {
 
         navigationController.title = ""
 
-        if rootViewController?.viewControllers == nil {
-            rootViewController?.setViewControllers([navigationController], animated: true)
-        } else {
-            rootViewController?.viewControllers?.append(navigationController)
-        }
+        rootViewController?.addViewController(navigationController)
     }
 }

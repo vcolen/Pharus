@@ -37,11 +37,10 @@ extension LogoutAlertCoordinator: Coordinator {
 // MARK: - Actions
 extension LogoutAlertCoordinator: LogoutAlertCoordinating {
     func closeModal() {
-        rootViewController?.topViewController?.dismiss(animated: true)
+        rootViewController?.dismiss(animated: true)
     }
 
     func logout() {
-        closeModal()
-        logoutHandler()
+        rootViewController?.dismiss(animated: true, completion: logoutHandler)
     }
 }

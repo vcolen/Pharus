@@ -30,12 +30,16 @@ extension AppCoordinator: Coordinator {
 extension AppCoordinator {
     func openLoginScene() {
         let navigationController = UINavigationController()
-            LoginCoordinator(
-                navigationController: navigationController,
-                onLogin: openTabBarScene
-            ).start()
+        LoginCoordinator(
+            navigationController: navigationController,
+            onLogin: openTabBarScene
+        ).start()
 
-        window?.rootViewController = navigationController
+        guard let window = window else { return }
+
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft) {
+            window.rootViewController = navigationController
+        }
     }
 
     func openTabBarScene(student: StudentModel) {
@@ -46,6 +50,10 @@ extension AppCoordinator {
             onLogout: openLoginScene
         ).start()
 
-        window?.rootViewController = tabBarController
+        guard let window = window else { return }
+
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft) {
+            window.rootViewController = tabBarController
+        }
     }
 }
