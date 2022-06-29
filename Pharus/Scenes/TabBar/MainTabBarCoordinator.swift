@@ -11,18 +11,18 @@ struct MainTabBarCoordinator {
 
     // MARK: - Properties
     private let student: StudentModel
-    private let logOutHandler: () -> Void
+    private let logoutHandler: () -> Void
     private weak var rootViewController: UITabBarController?
 
     // MARK: - Initializer
     init(
         rootViewController: UITabBarController,
         student: StudentModel,
-        onLogOut logOutHandler: @escaping () -> Void
+        onLogout logoutHandler: @escaping () -> Void
     ) {
         self.rootViewController = rootViewController
         self.student = student
-        self.logOutHandler = logOutHandler
+        self.logoutHandler = logoutHandler
     }
 
     // MARK: - Actions
@@ -58,7 +58,7 @@ struct MainTabBarCoordinator {
         StudentProfileTabCoordinator(
             rootViewController: rootViewController ?? UITabBarController(),
             student: student,
-            onLogOut: logOutHandler
+            onLogout: logoutHandler
         ).start()
     }
 }

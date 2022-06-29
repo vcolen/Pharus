@@ -29,7 +29,7 @@ class StudentProfileViewController: UIViewController {
     // MARK: - Actions
 
     func setNavigationBar() {
-        let logoutIcon = UIImage.pharusIcons.logOutIcon?.withRenderingMode(.alwaysOriginal)
+        let logoutIcon = UIImage.pharusIcons.logoutIcon?.withRenderingMode(.alwaysOriginal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: logoutIcon,
             style: .plain,

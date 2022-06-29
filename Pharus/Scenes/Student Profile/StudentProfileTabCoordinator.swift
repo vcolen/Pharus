@@ -10,16 +10,16 @@ import UIKit
 struct StudentProfileTabCoordinator {
     private weak var rootViewController: UITabBarController?
     private let student: StudentModel
-    private let logOutHandler: () -> Void
+    private let logoutHandler: () -> Void
 
     init(
         rootViewController: UITabBarController,
         student: StudentModel,
-        onLogOut logOutHandler: @escaping () -> Void
+        onLogout logoutHandler: @escaping () -> Void
     ) {
         self.rootViewController = rootViewController
         self.student = student
-        self.logOutHandler = logOutHandler
+        self.logoutHandler = logoutHandler
     }
 
     func start() {
@@ -28,7 +28,7 @@ struct StudentProfileTabCoordinator {
         StudentProfileCoordinator(
             navigationController: navigationController,
             student: student,
-            onLogOut: logOutHandler
+            onLogout: logoutHandler
         ).start()
 
         navigationController.tabBarItem.image = .pharusIcons.profileTabBarIcon

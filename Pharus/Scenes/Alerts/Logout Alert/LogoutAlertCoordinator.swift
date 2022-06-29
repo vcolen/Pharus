@@ -11,15 +11,15 @@ struct LogoutAlertCoordinator {
 
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
-    private let logOutHandler: () -> Void
+    private let logoutHandler: () -> Void
 
     // MARK: - Initializer
     init(
         navigationController: UINavigationController,
-        onLogOut logOutHandler: @escaping () -> Void
+        onLogout logoutHandler: @escaping () -> Void
     ) {
         self.rootViewController = navigationController
-        self.logOutHandler = logOutHandler
+        self.logoutHandler = logoutHandler
     }
 }
 
@@ -42,6 +42,6 @@ extension LogoutAlertCoordinator: LogoutAlertCoordinating {
 
     func logout() {
         closeModal()
-        logOutHandler()
+        logoutHandler()
     }
 }

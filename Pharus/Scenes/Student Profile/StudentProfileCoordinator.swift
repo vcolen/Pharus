@@ -12,17 +12,17 @@ class StudentProfileCoordinator {
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
     private let student: StudentModel
-    private let logOutHandler: () -> Void
+    private let logoutHandler: () -> Void
 
     // MARK: - Initializer
     init(
         navigationController: UINavigationController,
         student: StudentModel,
-        onLogOut logOutHandler: @escaping () -> Void
+        onLogout logoutHandler: @escaping () -> Void
     ) {
         self.rootViewController = navigationController
         self.student = student
-        self.logOutHandler = logOutHandler
+        self.logoutHandler = logoutHandler
     }
 }
 
@@ -50,7 +50,7 @@ extension StudentProfileCoordinator: StudentProfileCoordinating {
         if let navigationController = rootViewController {
             let logoutAlertCoordinator = LogoutAlertCoordinator(
                 navigationController: navigationController,
-                onLogOut: logOutHandler
+                onLogout: logoutHandler
             )
 
             logoutAlertCoordinator.start()

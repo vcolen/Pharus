@@ -43,7 +43,7 @@ extension AppCoordinator {
         MainTabBarCoordinator(
             rootViewController: tabBarController,
             student: student,
-            onLogOut: openLoginScene
+            onLogout: openLoginScene
         ).start()
 
         window?.rootViewController = tabBarController
