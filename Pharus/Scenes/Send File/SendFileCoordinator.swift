@@ -10,7 +10,7 @@ import UIKit
 struct SendFileCoordinator {
 
     // MARK: - Properties
-    private weak var navigationController: UINavigationController?
+    private weak var rootViewController: UINavigationController?
     private let project: ProjectModel
 
     // MARK: - Initializer
@@ -18,7 +18,7 @@ struct SendFileCoordinator {
         navigationController: UINavigationController,
         project: ProjectModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.project = project
     }
 }
@@ -29,14 +29,14 @@ extension SendFileCoordinator: Coordinator {
         let sendFilePresenter = SendFilePresenter(coordinator: self)
         let sendFileViewController = SendFileViewController(presenter: sendFilePresenter)
 
-        navigationController?.present(sendFileViewController, animated: true)
+        rootViewController?.present(sendFileViewController, animated: true)
     }
 }
 // MARK: - Actions
 extension SendFileCoordinator: SendFileCoordinating {
     func showFileSentAlert() {
 
-        if let navigationController = navigationController {
+        if let navigationController = rootViewController {
             let alertCoordinator = SingleButtonAlertCoordinator(
                 navigationController: navigationController,
                 alertMessage: "Arquivo enviado com sucesso!",
@@ -49,6 +49,6 @@ extension SendFileCoordinator: SendFileCoordinating {
     }
 
     func closeSheet() {
-        navigationController?.topViewController?.dismiss(animated: true)
+        rootViewController?.topViewController?.dismiss(animated: true)
     }
 }

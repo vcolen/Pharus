@@ -10,7 +10,7 @@ import UIKit
 struct StudentProjectsRankingCoordinator {
 
     // MARK: - Properties
-    weak var navigationController: UINavigationController?
+    weak var rootViewController: UINavigationController?
     private let student: StudentModel
 
     // MARK: - Initializer
@@ -19,7 +19,7 @@ struct StudentProjectsRankingCoordinator {
         navigationController: UINavigationController,
         student: StudentModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.student = student
     }
 }
@@ -37,7 +37,7 @@ extension StudentProjectsRankingCoordinator: Coordinator {
 
         studentProjectsRankingViewController.title = "Seus Rankings"
 
-        navigationController?.pushViewController(
+        rootViewController?.pushViewController(
             studentProjectsRankingViewController,
             animated: true
         )

@@ -10,7 +10,7 @@ import UIKit
 struct SingleButtonAlertCoordinator {
 
     // MARK: - Properties
-    private weak var navigationController: UINavigationController?
+    private weak var rootViewController: UINavigationController?
     private let alertMessage: String
     private let alertType: SingleButtonAlertView.AlertType
 
@@ -20,7 +20,7 @@ struct SingleButtonAlertCoordinator {
         alertMessage: String,
         alertType: SingleButtonAlertView.AlertType
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.alertMessage = alertMessage
         self.alertType = alertType
     }
@@ -41,13 +41,13 @@ extension SingleButtonAlertCoordinator: Coordinator {
 
         alertViewController.modalPresentationStyle = .overFullScreen
 
-        navigationController?.present(alertViewController, animated: true)
+        rootViewController?.present(alertViewController, animated: true)
     }
 }
 
 // MARK: - Actions
 extension SingleButtonAlertCoordinator: SingleButtonAlertCoordinating {
     func closeModal() {
-        navigationController?.topViewController?.dismiss(animated: true)
+        rootViewController?.topViewController?.dismiss(animated: true)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 struct ProjectSubcriptionAlertCoordinator {
 
     // MARK: - Properties
-    private weak var navigationController: UINavigationController?
+    private weak var rootViewController: UINavigationController?
     private let project: ProjectModel
 
     // MARK: - Initializer
@@ -18,7 +18,7 @@ struct ProjectSubcriptionAlertCoordinator {
         navigationController: UINavigationController,
         project: ProjectModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.project = project
     }
 }
@@ -37,21 +37,21 @@ extension ProjectSubcriptionAlertCoordinator: Coordinator {
 
         alertViewController.modalPresentationStyle = .fullScreen
 
-        navigationController?.present(alertViewController, animated: true)
+        rootViewController?.present(alertViewController, animated: true)
     }
 }
 
 // MARK: - Actions
 extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinating {
     func closeModal() {
-        navigationController?.topViewController?.dismiss(animated: true)
+        rootViewController?.topViewController?.dismiss(animated: true)
     }
 
     func subscribeToProject() {
         project.isSubscribed = true
         closeModal()
 
-        if let navigationController = navigationController {
+        if let navigationController = rootViewController {
             let confirmationAlertCoordinator = SingleButtonAlertCoordinator(
                 navigationController: navigationController,
                 alertMessage: "Inscrição confirmada!",

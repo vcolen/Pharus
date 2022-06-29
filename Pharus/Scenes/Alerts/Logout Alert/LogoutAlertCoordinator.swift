@@ -10,7 +10,7 @@ import UIKit
 struct LogoutAlertCoordinator {
 
     // MARK: - Properties
-    private weak var navigationController: UINavigationController?
+    private weak var rootViewController: UINavigationController?
     private let logOutHandler: () -> Void
 
     // MARK: - Initializer
@@ -18,7 +18,7 @@ struct LogoutAlertCoordinator {
         navigationController: UINavigationController,
         onLogOut logOutHandler: @escaping () -> Void
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.logOutHandler = logOutHandler
     }
 }
@@ -31,13 +31,13 @@ extension LogoutAlertCoordinator: Coordinator {
 
         alertViewController.modalPresentationStyle = .overFullScreen
 
-        navigationController?.present(alertViewController, animated: true)
+        rootViewController?.present(alertViewController, animated: true)
     }
 }
 // MARK: - Actions
 extension LogoutAlertCoordinator: LogoutAlertCoordinating {
     func closeModal() {
-        navigationController?.topViewController?.dismiss(animated: true)
+        rootViewController?.topViewController?.dismiss(animated: true)
     }
 
     func logout() {

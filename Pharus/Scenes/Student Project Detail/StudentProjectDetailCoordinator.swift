@@ -10,7 +10,7 @@ import UIKit
 struct StudentProjectDetailCoordinator {
 
     // MARK: - Properties
-    private weak var navigationController: UINavigationController?
+    private weak var rootViewController: UINavigationController?
     private let project: ProjectModel
 
     // MARK: - Initializer
@@ -18,7 +18,7 @@ struct StudentProjectDetailCoordinator {
         navigationController: UINavigationController,
         project: ProjectModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.project = project
     }
 }
@@ -35,7 +35,7 @@ extension StudentProjectDetailCoordinator: Coordinator {
         )
 
         studentProjectDetailViewController.title = project.name
-        navigationController?.pushViewController(studentProjectDetailViewController, animated: true)
+        rootViewController?.pushViewController(studentProjectDetailViewController, animated: true)
     }
 }
 
@@ -43,7 +43,7 @@ extension StudentProjectDetailCoordinator: Coordinator {
 extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showProjectRules() {
 
-        if let navigationController = navigationController {
+        if let navigationController = rootViewController {
             let projectSheetCoordinator = ProjectSheetCoordinator(
                 navigationController: navigationController,
                 project: project,
@@ -56,7 +56,7 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
 
     func showMentorReview() {
 
-        if let navigationController = navigationController {
+        if let navigationController = rootViewController {
             let projectSheetCoordinator = ProjectSheetCoordinator(
                 navigationController: navigationController,
                 project: project,
@@ -68,7 +68,7 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     }
 
     func showSendFileView() {
-        if let navigationController = navigationController {
+        if let navigationController = rootViewController {
             let sendFileCoordinator = SendFileCoordinator(
                 navigationController: navigationController,
                 project: project

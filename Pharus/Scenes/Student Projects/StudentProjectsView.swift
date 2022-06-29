@@ -106,7 +106,7 @@ extension StudentProjectsView: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension StudentProjectsView: UITableViewDelegate { 
+extension StudentProjectsView: UITableViewDelegate {
 
     private func setupTableViewDelegate() {
         tableView.dataSource = self

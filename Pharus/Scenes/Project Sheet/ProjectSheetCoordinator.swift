@@ -10,7 +10,7 @@ import UIKit
 struct ProjectSheetCoordinator {
 
     // MARK: - Properties
-    private weak var navigationController: UINavigationController?
+    private weak var rootViewController: UINavigationController?
     private let project: ProjectModel
     private let projectSheetContent: ProjectSheetView.SheetContent
 
@@ -20,7 +20,7 @@ struct ProjectSheetCoordinator {
         project: ProjectModel,
         projectSheetContent: ProjectSheetView.SheetContent
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.project = project
         self.projectSheetContent = projectSheetContent
     }
@@ -39,12 +39,12 @@ extension ProjectSheetCoordinator: Coordinator {
             presenter: projectSheetPresenter
         )
 
-        navigationController?.present(projectSheetViewController, animated: true)
+        rootViewController?.present(projectSheetViewController, animated: true)
     }
 }
 // MARK: - Actions
 extension ProjectSheetCoordinator: ProjectSheetCoordinating {
     func popView() {
-        navigationController?.dismiss(animated: true)
+        rootViewController?.dismiss(animated: true)
     }
 }

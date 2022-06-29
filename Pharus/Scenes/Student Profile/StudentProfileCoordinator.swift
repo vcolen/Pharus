@@ -10,7 +10,7 @@ import UIKit
 class StudentProfileCoordinator {
 
     // MARK: - Properties
-    weak var navigationController: UINavigationController?
+    weak var rootViewController: UINavigationController?
     private let student: StudentModel
     private let logOutHandler: () -> Void
 
@@ -20,7 +20,7 @@ class StudentProfileCoordinator {
         student: StudentModel,
         onLogOut logOutHandler: @escaping () -> Void
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.student = student
         self.logOutHandler = logOutHandler
     }
@@ -40,14 +40,14 @@ extension StudentProfileCoordinator: Coordinator {
 
         studentProfileViewController.title = "Perfil"
 
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.pushViewController(studentProfileViewController, animated: true)
+        rootViewController?.setNavigationBarHidden(false, animated: true)
+        rootViewController?.pushViewController(studentProfileViewController, animated: true)
     }
 }
 // MARK: - Actions
 extension StudentProfileCoordinator: StudentProfileCoordinating {
     func showLogOutAlert() {
-        if let navigationController = navigationController {
+        if let navigationController = rootViewController {
             let logoutAlertCoordinator = LogoutAlertCoordinator(
                 navigationController: navigationController,
                 onLogOut: logOutHandler

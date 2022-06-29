@@ -10,7 +10,7 @@ import UIKit
 struct StudentProjectsCoordinator {
 
     // MARK: - Properties
-    weak var navigationController: UINavigationController?
+    weak var rootViewController: UINavigationController?
     private let student: StudentModel
 
     // MARK: - Initializer
@@ -18,7 +18,7 @@ struct StudentProjectsCoordinator {
         navigationController: UINavigationController,
         student: StudentModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.student = student
     }
 }
@@ -36,14 +36,14 @@ extension StudentProjectsCoordinator: Coordinator {
 
         studentProjectsViewController.title = "Seus projetos"
 
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.pushViewController(studentProjectsViewController, animated: true)
+        rootViewController?.setNavigationBarHidden(false, animated: true)
+        rootViewController?.pushViewController(studentProjectsViewController, animated: true)
     }
 }
 // MARK: - Student Projects Coordinating
 extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     func showStudentProject(_ project: ProjectModel) {
-        if let navigationController = navigationController {
+        if let navigationController = rootViewController {
             let studentProjectDetailCoordinator = StudentProjectDetailCoordinator(
                 navigationController: navigationController,
                 project: project
@@ -54,7 +54,7 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     }
 
     func showSubscribeAlert(of project: ProjectModel) {
-        if let navigationController = navigationController {
+        if let navigationController = rootViewController {
             let projectSubcriptionAlertCoordinator = ProjectSubcriptionAlertCoordinator(
                 navigationController: navigationController,
                 project: project
