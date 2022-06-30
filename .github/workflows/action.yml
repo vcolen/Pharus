@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  installSwiftLint:
+  lint:
     runs-on: macos
     steps:
       - uses: actions/checkout@v3
