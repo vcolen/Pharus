@@ -23,7 +23,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.windowScene = windowScene
             window.overrideUserInterfaceStyle = .dark
             AppCoordinator(window: window).start()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                window.rootViewController = nil
+            }
         }
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

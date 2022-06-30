@@ -11,12 +11,10 @@ import UIKit
 class StudentProjectDetailView: UIView {
 
     // MARK: - Properties
-
     weak var delegate: StudentProjectDetailViewDelegate?
     private var project: ProjectModel
 
     // MARK: - Views
-
     private lazy var mainScrollView: UIScrollView = {
         var scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -130,8 +128,8 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
 
     private lazy var rulesStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.setOnClickListener {
-            self.rulesViewTapped()
+        stackView.setOnClickListener { [weak self] in
+            self?.rulesViewTapped()
         }
         stackView.axis = .horizontal
         stackView.spacing = 8
@@ -328,8 +326,8 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
 
         if project.scoreDescription != nil {
             mentorReviewImageView.image = .pharusIcons.notificationEnvelopeIcon
-            mentorReviewHelperView.setOnClickListener {
-                self.envelopeIconTapped()
+            mentorReviewHelperView.setOnClickListener { [weak self] in
+                self?.envelopeIconTapped()
             }
         }
     }
@@ -344,12 +342,12 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
             )
 
             if project.isComplete == false && project.isSubscribed == true {
-                taskView.taskCheckmarkButton.addAction(
-                    UIAction { _ in
-                        self.taskCheckboxTapped(task: task)
+            taskView.taskCheckmarkButton.addAction(
+                UIAction { [weak self, weak taskView] _ in
+                        self?.taskCheckboxTapped(task: task)
                         let newIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon : .defaultImage
-                        taskView.taskCheckmarkButton.setImage(newIcon, for: .normal)
-                        self.updateProjectProgressView()
+                        taskView?.taskCheckmarkButton.setImage(newIcon, for: .normal)
+                        self?.updateProjectProgressView()
                     }, for: .touchUpInside
                 )
             }

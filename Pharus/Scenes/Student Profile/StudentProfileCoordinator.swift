@@ -8,12 +8,12 @@
 import UIKit
 
 class StudentProfileCoordinator {
-    
+
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
     private let student: StudentModel
     private let logoutHandler: () -> Void
-    
+
     // MARK: - Initializer
     init(
         rootViewController: UINavigationController,
@@ -33,13 +33,13 @@ extension StudentProfileCoordinator: Coordinator {
             coordinator: self,
             student: student
         )
-        
+
         let studentProfileViewController = StudentProfileViewController(
             presenter: studentProfilePresenter
         )
-        
+
         studentProfileViewController.title = "Perfil"
-        
+
         rootViewController?.setNavigationBarHidden(false, animated: true)
         rootViewController?.pushViewController(studentProfileViewController, animated: true)
     }

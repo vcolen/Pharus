@@ -8,11 +8,11 @@
 import UIKit
 
 struct StudentProjectDetailCoordinator {
-    
+
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
     private let project: ProjectModel
-    
+
     // MARK: - Initializer
     init(
         rootViewController: UINavigationController,
@@ -33,7 +33,7 @@ extension StudentProjectDetailCoordinator: Coordinator {
         let studentProjectDetailViewController = StudentProjectDetailViewController(
             presenter: studentProjectDetailPresenter
         )
-        
+
         studentProjectDetailViewController.title = project.name
         rootViewController?.pushViewController(studentProjectDetailViewController, animated: true)
     }
@@ -42,7 +42,7 @@ extension StudentProjectDetailCoordinator: Coordinator {
 // MARK: - Student Project Detail Coordinating
 extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showProjectRules() {
-        
+
         if let navigationController = rootViewController {
             ProjectSheetCoordinator(
                 rootViewController: navigationController,
@@ -51,7 +51,7 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
             ).start()
         }
     }
-    
+
     func showMentorReview() {
         if let navigationController = rootViewController {
             ProjectSheetCoordinator(
@@ -61,7 +61,7 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
             ).start()
         }
     }
-    
+
     func showSendFileView() {
         if let navigationController = rootViewController {
             SendFileCoordinator(

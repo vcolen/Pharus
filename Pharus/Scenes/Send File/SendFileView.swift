@@ -102,8 +102,8 @@ Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os qu
 
     private lazy var uploadFileStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.setOnClickListener {
-            self.uploadButtonTapped()
+        stackView.setOnClickListener { [weak self] in
+            self?.uploadButtonTapped()
         }
         stackView.axis = .vertical
         stackView.spacing = 3

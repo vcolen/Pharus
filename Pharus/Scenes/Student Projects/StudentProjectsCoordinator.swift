@@ -8,11 +8,11 @@
 import UIKit
 
 struct StudentProjectsCoordinator {
-    
+
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
     private let student: StudentModel
-    
+
     // MARK: - Initializer
     init(
         rootViewController: UINavigationController,
@@ -33,9 +33,9 @@ extension StudentProjectsCoordinator: Coordinator {
         let studentProjectsViewController = StudentProjectsViewController(
             presenter: studentProjectsPresenter
         )
-        
+
         studentProjectsViewController.title = "Seus projetos"
-        
+
         rootViewController?.setNavigationBarHidden(false, animated: true)
         rootViewController?.pushViewController(studentProjectsViewController, animated: true)
     }
@@ -50,7 +50,7 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
             ).start()
         }
     }
-    
+
     func showSubscribeAlert(of project: ProjectModel) {
         if let navigationController = rootViewController {
             ProjectSubcriptionAlertCoordinator(
