@@ -37,3 +37,5 @@ struct AvatarSelectionTabCoordinator {
         rootViewController?.addViewController(navigationController)
     }
 }
+
+extension AvatarSelectionTabCoordinator: Coordinator { }

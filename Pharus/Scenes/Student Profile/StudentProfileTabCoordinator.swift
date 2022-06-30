@@ -41,3 +41,5 @@ struct StudentProfileTabCoordinator {
         rootViewController?.addViewController(navigationController)
     }
 }
+
+extension StudentProfileTabCoordinator: Coordinator { }

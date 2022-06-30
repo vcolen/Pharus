@@ -37,3 +37,5 @@ struct StudentHomeTabCoordinator {
         rootViewController?.addViewController(navigationController)
     }
 }
+
+extension StudentHomeTabCoordinator: Coordinator { }

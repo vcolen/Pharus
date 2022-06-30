@@ -48,9 +48,7 @@ extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinatin
     }
 
     func subscribeToProject() {
-        project.isSubscribed = true
         closeModal()
-
         if let navigationController = rootViewController {
             SingleButtonAlertCoordinator(
                 rootViewController: navigationController,

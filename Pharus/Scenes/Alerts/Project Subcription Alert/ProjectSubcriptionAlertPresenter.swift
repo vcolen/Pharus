@@ -31,6 +31,7 @@ class ProjectSubcriptionAlertPresenter: BasePresenter<ProjectSubcriptionAlertVie
     }
 
     func subscribeToProject() {
+        project.isSubscribed = true
         coordinator.subscribeToProject()
     }
 }

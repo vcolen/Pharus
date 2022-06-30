@@ -37,3 +37,5 @@ struct StudentProjectsRankingTabCoordinator {
         rootViewController?.addViewController(navigationController)
     }
 }
+
+extension StudentProjectsRankingTabCoordinator: Coordinator { }

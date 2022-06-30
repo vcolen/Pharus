@@ -19,11 +19,7 @@ struct LoginCoordinator {
         onLogin loginHandler: ((StudentModel) -> Void)? = nil
     ) {
         self.rootViewController = rootViewController
-        if let loginHandler = loginHandler {
-            self.loginHandler = loginHandler
-        } else {
-            self.loginHandler = nil
-        }
+        self.loginHandler = loginHandler
     }
 }
 
