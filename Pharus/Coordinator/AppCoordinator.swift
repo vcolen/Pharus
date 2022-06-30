@@ -7,29 +7,52 @@
 
 import UIKit
 
-class AppCoordinator {
+struct AppCoordinator {
 
     // MARK: - Properties
-    private let window: UIWindow
-    private var rootViewController: UINavigationController
+    private weak var window: UIWindow?
 
     // MARK: - Initializer
     init(window: UIWindow) {
         self.window = window
-        self.rootViewController = UINavigationController()
     }
 }
 
 // MARK: - Coordinator
 extension AppCoordinator: Coordinator {
     func start() {
-        window.rootViewController = rootViewController
-        window.makeKeyAndVisible()
+        openLoginScene()
+        window?.makeKeyAndVisible()
+    }
+}
 
-        let mainCoordinator = LoginCoordinator(
-            navigationController: rootViewController
-        )
+// MARK: - Open Scene
+extension AppCoordinator {
+    func openLoginScene() {
+        let navigationController = UINavigationController()
+        LoginCoordinator(
+            rootViewController: navigationController,
+            onLogin: openTabBarScene
+        ).start()
 
-        mainCoordinator.start()
+        transitionWindow(to: navigationController)
+    }
+
+    func openTabBarScene(student: StudentModel) {
+        let tabBarController = TabBarViewController()
+        MainTabBarCoordinator(
+            rootViewController: tabBarController,
+            student: student,
+            onLogout: openLoginScene
+        ).start()
+
+        transitionWindow(to: tabBarController)
+    }
+
+    func transitionWindow(to controller: UIViewController) {
+        guard let window = window else { return }
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft) {
+            window.rootViewController = controller
+        }
     }
 }

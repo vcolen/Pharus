@@ -10,16 +10,19 @@ import UIKit
 class StudentProfileCoordinator {
 
     // MARK: - Properties
-    let navigationController: UINavigationController
+    weak var rootViewController: UINavigationController?
     private let student: StudentModel
+    private let logoutHandler: () -> Void
 
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
-        student: StudentModel
+        rootViewController: UINavigationController,
+        student: StudentModel,
+        onLogout logoutHandler: @escaping () -> Void
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = rootViewController
         self.student = student
+        self.logoutHandler = logoutHandler
     }
 }
 
@@ -37,17 +40,18 @@ extension StudentProfileCoordinator: Coordinator {
 
         studentProfileViewController.title = "Perfil"
 
-        navigationController.setNavigationBarHidden(false, animated: true)
-        navigationController.pushViewController(studentProfileViewController, animated: true)
+        rootViewController?.setNavigationBarHidden(false, animated: true)
+        rootViewController?.pushViewController(studentProfileViewController, animated: true)
     }
 }
 // MARK: - Actions
 extension StudentProfileCoordinator: StudentProfileCoordinating {
     func showLogOutAlert() {
-        let logoutAlertCoordinator = LogoutAlertCoordinator(
-            navigationController: navigationController
-        )
-
-        logoutAlertCoordinator.start()
+        if let navigationController = rootViewController {
+            LogoutAlertCoordinator(
+                rootViewController: navigationController,
+                onLogout: logoutHandler
+            ).start()
+        }
     }
 }

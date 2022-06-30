@@ -20,7 +20,7 @@ struct PharusIcons {
      let notificationEnvelopeIcon = UIImage(named: Constants.assets.icons.notificationEnvelopeIcon)
      let uploadIcon = UIImage(named: Constants.assets.icons.uploadIcon)
      let checkIcon = UIImage(named: Constants.assets.icons.checkIcon)
-     let logOutIcon = UIImage(named: Constants.assets.icons.logoutIcon)
+     let logoutIcon = UIImage(named: Constants.assets.icons.logoutIcon)
      let rightArrowIcon = UIImage(named: Constants.assets.icons.rightArrowIcon)
      let warningIcon = UIImage(named: Constants.assets.icons.warningIcon)
      let medalIcon = UIImage(named: Constants.assets.icons.medalIcon)

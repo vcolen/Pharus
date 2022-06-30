@@ -51,7 +51,7 @@ class LogoutAlertView: UIView {
 
     private lazy var logoutIconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage.pharusIcons.logOutIcon?.withTintColor(.black)
+        imageView.image = UIImage.pharusIcons.logoutIcon?.withTintColor(.black)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.accessibilityIdentifier = "LogoutAlertViewDelegate.logoutIconImageView"
 
@@ -86,8 +86,8 @@ class LogoutAlertView: UIView {
             title: "Sair",
             importance: .primary
         )
-        button.addAction(UIAction { _ in
-            self.primaryButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.primaryButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "LogoutAlertViewDelegate.yesButton"
@@ -100,8 +100,8 @@ class LogoutAlertView: UIView {
             title: "Cancelar",
             importance: .secondary
         )
-        button.addAction(UIAction { _ in
-            self.secondaryButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.secondaryButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "LogoutAlertViewDelegate.noButton"

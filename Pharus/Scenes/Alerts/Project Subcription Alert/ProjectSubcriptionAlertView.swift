@@ -10,7 +10,6 @@ import UIKit
 class ProjectSubcriptionAlertView: UIView {
 
     // MARK: - Properties
-
     weak var delegate: ProjectSubcriptionAlertViewDelegate?
     private var title: String
     private var message: String
@@ -18,7 +17,6 @@ class ProjectSubcriptionAlertView: UIView {
     private var secondaryButtonText: String
 
     // MARK: - Views
-
     private lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -70,8 +68,8 @@ class ProjectSubcriptionAlertView: UIView {
     private lazy var closeModalButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
-        button.addAction(UIAction { _ in
-            self.closeButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.closeButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "ProjectSubcriptionAlertView.closeModalButton"
@@ -93,8 +91,8 @@ class ProjectSubcriptionAlertView: UIView {
 
     private lazy var primaryButton: MainCardButton = {
         let button = MainCardButton(title: "Sim, quero me inscrever", buttonState: .normal)
-        button.addAction(UIAction { _ in
-            self.primaryButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.primaryButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "ProjectSubcriptionAlertView.primaryButton"
@@ -104,8 +102,8 @@ class ProjectSubcriptionAlertView: UIView {
 
     private lazy var secondaryButton: SecondaryCardButton = {
         let button = SecondaryCardButton(title: "Não quero, mudei de ideia")
-        button.addAction( UIAction { _ in
-            self.secondaryButtonTapped()
+        button.addAction( UIAction { [weak self] _ in
+            self?.secondaryButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "ProjectSubcriptionAlertView.secondaryButton"
@@ -137,7 +135,6 @@ class ProjectSubcriptionAlertView: UIView {
     }
 
     // MARK: - Subviews
-
     private func configureSubviews() {
         addSubview(blurEffectView)
         addSubview(mainView)
@@ -185,7 +182,6 @@ class ProjectSubcriptionAlertView: UIView {
 }
 
 // MARK: - Actions
-
 extension ProjectSubcriptionAlertView {
 
     func closeButtonTapped() {

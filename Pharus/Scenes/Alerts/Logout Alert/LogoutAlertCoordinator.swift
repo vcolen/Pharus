@@ -7,40 +7,42 @@
 
 import UIKit
 
-class LogoutAlertCoordinator {
+struct LogoutAlertCoordinator {
 
     // MARK: - Properties
-    private let navigationController: UINavigationController
+    private weak var rootViewController: UINavigationController?
+    private let logoutHandler: () -> Void
 
     // MARK: - Initializer
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(
+        rootViewController: UINavigationController,
+        onLogout logoutHandler: @escaping () -> Void
+    ) {
+        self.rootViewController = rootViewController
+        self.logoutHandler = logoutHandler
     }
 }
 
 // MARK: - Coordinator
 extension LogoutAlertCoordinator: Coordinator {
     func start() {
-        let alertPresenter = LogoutAlertPresenter(coordinator: self)
-        let alertViewController = LogoutAlertViewController(presenter: alertPresenter)
+        let logoutAlertPresenter = LogoutAlertPresenter(coordinator: self)
+        let alertViewController = LogoutAlertViewController(
+            presenter: logoutAlertPresenter
+        )
 
         alertViewController.modalPresentationStyle = .overFullScreen
 
-        navigationController.present(alertViewController, animated: true)
+        rootViewController?.present(alertViewController, animated: true)
     }
 }
 // MARK: - Actions
 extension LogoutAlertCoordinator: LogoutAlertCoordinating {
     func closeModal() {
-        navigationController.topViewController?.dismiss(animated: true)
+        rootViewController?.dismiss(animated: true)
     }
 
     func logout() {
-        closeModal()
-        let loginCoordinator = LoginCoordinator(
-            navigationController: navigationController
-        )
-
-        loginCoordinator.start()
+        rootViewController?.dismiss(animated: true, completion: logoutHandler)
     }
 }

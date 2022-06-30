@@ -65,8 +65,8 @@ class SendFileView: UIView {
         let button = UIButton()
         button.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
         button.addAction(
-            UIAction { _ in
-                self.closeButtonTapped()
+            UIAction { [weak self] _ in
+                self?.closeButtonTapped()
             },
             for: .touchUpInside
         )
@@ -102,8 +102,8 @@ Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os qu
 
     private lazy var uploadFileStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.setOnClickListener {
-            self.uploadButtonTapped()
+        stackView.setOnClickListener { [weak self] in
+            self?.uploadButtonTapped()
         }
         stackView.axis = .vertical
         stackView.spacing = 3
@@ -194,8 +194,8 @@ Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os qu
 
     lazy var sendFileButton: MainCardButton = {
         let button = MainCardButton(title: "Enviar Arquivos", buttonState: .normal)
-        button.addAction(UIAction { _ in
-            self.sendFileButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.sendFileButtonTapped()
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "SendFileView.sendFileButton"

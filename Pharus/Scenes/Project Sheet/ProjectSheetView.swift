@@ -115,8 +115,8 @@ class ProjectSheetView: UIView {
     private lazy var closeButton: MainCardButton = {
         let button = MainCardButton(title: "Fechar", buttonState: .normal)
         button.setTitle("Fechar", for: .normal)
-        button.addAction(UIAction { _ in
-            self.closeButtonTapped()
+        button.addAction(UIAction { [weak self] _ in
+            self?.closeButtonTapped()
         }, for: .touchUpInside)
         button.accessibilityIdentifier = "ProjectSheetView.closeButton"
 

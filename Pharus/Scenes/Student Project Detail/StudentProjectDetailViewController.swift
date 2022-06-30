@@ -41,6 +41,7 @@ extension StudentProjectDetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupTabbar()
         studentProjectDetailView.delegate = self
     }
 }
@@ -66,3 +67,24 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
 
 // MARK: - Student Project Detail Viewable
 extension SendFileViewController: StudentProjectsViewable { }
+
+// MARK: - Methods
+extension StudentProjectDetailViewController {
+    func setupTabbar() {
+        var backButtonImage = UIImage(named: Constants.assets.icons.backArrowIcon)
+        backButtonImage = backButtonImage?.withTintColor(
+            .white,
+            renderingMode: .alwaysOriginal
+        )
+
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: backButtonImage,
+            style: .plain,
+            target: self,
+            action: #selector(backButtonPressed))
+    }
+
+    @objc func backButtonPressed() {
+        self.navigationController?.popViewController(animated: true)
+      }
+}

@@ -52,8 +52,10 @@ class ProjectTaskView: UIView {
 
     lazy var taskCheckmarkButton: CheckmarkButton = {
         let button = CheckmarkButton()
-        button.addAction(UIAction { _ in
-            self.checkmarkButtonTapped(task: self.task)
+        button.addAction(UIAction { [weak self] _ in
+            if let self = self {
+                self.checkmarkButtonTapped(task: self.task)
+            }
         }, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "ProjectTaskViewView.taskCheckmarkButton"

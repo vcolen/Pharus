@@ -96,8 +96,8 @@ extension StudentProjectsView: UITableViewDataSource {
         cell.configureCell(using: project)
 
         if project.isSubscribed == false {
-            cell.subscribeButton.addAction( UIAction { _ in
-                self.delegate?.subscribeButtonTapped(of: project)
+            cell.subscribeButton.addAction( UIAction { [weak self] _ in
+                self?.delegate?.subscribeButtonTapped(of: project)
             }, for: .touchUpInside)
         }
 

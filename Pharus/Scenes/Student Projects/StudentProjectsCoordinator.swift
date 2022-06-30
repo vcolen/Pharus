@@ -7,18 +7,18 @@
 
 import UIKit
 
-class StudentProjectsCoordinator {
+struct StudentProjectsCoordinator {
 
     // MARK: - Properties
-    let navigationController: UINavigationController
+    weak var rootViewController: UINavigationController?
     private let student: StudentModel
 
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         student: StudentModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = rootViewController
         self.student = student
     }
 }
@@ -36,27 +36,27 @@ extension StudentProjectsCoordinator: Coordinator {
 
         studentProjectsViewController.title = "Seus projetos"
 
-        navigationController.setNavigationBarHidden(false, animated: true)
-        navigationController.pushViewController(studentProjectsViewController, animated: true)
+        rootViewController?.setNavigationBarHidden(false, animated: true)
+        rootViewController?.pushViewController(studentProjectsViewController, animated: true)
     }
 }
 // MARK: - Student Projects Coordinating
 extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     func showStudentProject(_ project: ProjectModel) {
-        let studentProjectDetailCoordinator = StudentProjectDetailCoordinator(
-            navigationController: navigationController,
-            project: project
-        )
-
-        studentProjectDetailCoordinator.start()
+        if let navigationController = rootViewController {
+            StudentProjectDetailCoordinator(
+                rootViewController: navigationController,
+                project: project
+            ).start()
+        }
     }
 
     func showSubscribeAlert(of project: ProjectModel) {
-        let projectSubcriptionAlertCoordinator = ProjectSubcriptionAlertCoordinator(
-            navigationController: navigationController,
-            project: project
-        )
-
-        projectSubcriptionAlertCoordinator.start()
+        if let navigationController = rootViewController {
+            ProjectSubcriptionAlertCoordinator(
+                rootViewController: navigationController,
+                project: project
+            ).start()
+        }
     }
 }

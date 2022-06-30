@@ -7,20 +7,20 @@
 
 import UIKit
 
-class SingleButtonAlertCoordinator {
+struct SingleButtonAlertCoordinator {
 
     // MARK: - Properties
-    private let navigationController: UINavigationController
+    private weak var rootViewController: UINavigationController?
     private let alertMessage: String
     private let alertType: SingleButtonAlertView.AlertType
 
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         alertMessage: String,
         alertType: SingleButtonAlertView.AlertType
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = rootViewController
         self.alertMessage = alertMessage
         self.alertType = alertType
     }
@@ -41,13 +41,13 @@ extension SingleButtonAlertCoordinator: Coordinator {
 
         alertViewController.modalPresentationStyle = .overFullScreen
 
-        navigationController.present(alertViewController, animated: true)
+        rootViewController?.present(alertViewController, animated: true)
     }
 }
 
 // MARK: - Actions
 extension SingleButtonAlertCoordinator: SingleButtonAlertCoordinating {
     func closeModal() {
-        navigationController.topViewController?.dismiss(animated: true)
+        rootViewController?.dismiss(animated: true)
     }
 }
