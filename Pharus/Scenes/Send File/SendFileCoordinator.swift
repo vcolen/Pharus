@@ -15,10 +15,10 @@ struct SendFileCoordinator {
 
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         project: ProjectModel
     ) {
-        self.rootViewController = navigationController
+        self.rootViewController = rootViewController
         self.project = project
     }
 }
@@ -35,20 +35,17 @@ extension SendFileCoordinator: Coordinator {
 // MARK: - Actions
 extension SendFileCoordinator: SendFileCoordinating {
     func showFileSentAlert() {
-
         if let navigationController = rootViewController {
-            let alertCoordinator = SingleButtonAlertCoordinator(
-                navigationController: navigationController,
+            navigationController.dismiss(animated: true)
+            SingleButtonAlertCoordinator(
+                rootViewController: navigationController,
                 alertMessage: "Arquivo enviado com sucesso!",
                 alertType: .confirmation
-            )
-
-            navigationController.topViewController?.dismiss(animated: true)
-            alertCoordinator.start()
+            ).start()
         }
     }
 
     func closeSheet() {
-        rootViewController?.topViewController?.dismiss(animated: true)
+        rootViewController?.dismiss(animated: true)
     }
 }

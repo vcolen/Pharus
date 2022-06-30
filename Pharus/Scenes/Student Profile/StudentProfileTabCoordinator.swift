@@ -26,7 +26,7 @@ struct StudentProfileTabCoordinator {
         let navigationController = UINavigationController()
 
         StudentProfileCoordinator(
-            navigationController: navigationController,
+            rootViewController: navigationController,
             student: student,
             onLogout: logoutHandler
         ).start()

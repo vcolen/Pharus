@@ -23,7 +23,7 @@ struct AvatarSelectionTabCoordinator {
         let navigationController = UINavigationController()
 
         AvatarSelectionCoordinator(
-            navigationController: navigationController,
+            rootViewController: navigationController,
             student: student
         ).start()
 

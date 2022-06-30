@@ -15,10 +15,10 @@ struct ProjectSubcriptionAlertCoordinator {
 
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         project: ProjectModel
     ) {
-        self.rootViewController = navigationController
+        self.rootViewController = rootViewController
         self.project = project
     }
 }
@@ -44,7 +44,7 @@ extension ProjectSubcriptionAlertCoordinator: Coordinator {
 // MARK: - Actions
 extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinating {
     func closeModal() {
-        rootViewController?.topViewController?.dismiss(animated: true)
+        rootViewController?.dismiss(animated: true)
     }
 
     func subscribeToProject() {
@@ -52,13 +52,11 @@ extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinatin
         closeModal()
 
         if let navigationController = rootViewController {
-            let confirmationAlertCoordinator = SingleButtonAlertCoordinator(
-                navigationController: navigationController,
+            SingleButtonAlertCoordinator(
+                rootViewController: navigationController,
                 alertMessage: "Inscrição confirmada!",
                 alertType: .confirmation
-            )
-
-            confirmationAlertCoordinator.start()
+            ).start()
         }
     }
 }

@@ -31,7 +31,7 @@ extension AppCoordinator {
     func openLoginScene() {
         let navigationController = UINavigationController()
         LoginCoordinator(
-            navigationController: navigationController,
+            rootViewController: navigationController,
             onLogin: openTabBarScene
         ).start()
 

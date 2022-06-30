@@ -15,10 +15,10 @@ struct LoginCoordinator {
 
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         onLogin loginHandler: ((StudentModel) -> Void)? = nil
     ) {
-        self.rootViewController = navigationController
+        self.rootViewController = rootViewController
         if let loginHandler = loginHandler {
             self.loginHandler = loginHandler
         } else {

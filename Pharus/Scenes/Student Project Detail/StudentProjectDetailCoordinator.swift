@@ -8,17 +8,17 @@
 import UIKit
 
 struct StudentProjectDetailCoordinator {
-
+    
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
     private let project: ProjectModel
-
+    
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         project: ProjectModel
     ) {
-        self.rootViewController = navigationController
+        self.rootViewController = rootViewController
         self.project = project
     }
 }
@@ -33,7 +33,7 @@ extension StudentProjectDetailCoordinator: Coordinator {
         let studentProjectDetailViewController = StudentProjectDetailViewController(
             presenter: studentProjectDetailPresenter
         )
-
+        
         studentProjectDetailViewController.title = project.name
         rootViewController?.pushViewController(studentProjectDetailViewController, animated: true)
     }
@@ -42,39 +42,32 @@ extension StudentProjectDetailCoordinator: Coordinator {
 // MARK: - Student Project Detail Coordinating
 extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showProjectRules() {
-
+        
         if let navigationController = rootViewController {
-            let projectSheetCoordinator = ProjectSheetCoordinator(
-                navigationController: navigationController,
+            ProjectSheetCoordinator(
+                rootViewController: navigationController,
                 project: project,
                 projectSheetContent: .activities
-            )
-
-            projectSheetCoordinator.start()
+            ).start()
         }
     }
-
+    
     func showMentorReview() {
-
         if let navigationController = rootViewController {
-            let projectSheetCoordinator = ProjectSheetCoordinator(
-                navigationController: navigationController,
+            ProjectSheetCoordinator(
+                rootViewController: navigationController,
                 project: project,
                 projectSheetContent: .mentorReview
-            )
-
-            projectSheetCoordinator.start()
+            ).start()
         }
     }
-
+    
     func showSendFileView() {
         if let navigationController = rootViewController {
-            let sendFileCoordinator = SendFileCoordinator(
-                navigationController: navigationController,
+            SendFileCoordinator(
+                rootViewController: navigationController,
                 project: project
-            )
-
-            sendFileCoordinator.start()
+            ).start()
         }
     }
 }

@@ -16,11 +16,11 @@ struct ProjectSheetCoordinator {
 
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         project: ProjectModel,
         projectSheetContent: ProjectSheetView.SheetContent
     ) {
-        self.rootViewController = navigationController
+        self.rootViewController = rootViewController
         self.project = project
         self.projectSheetContent = projectSheetContent
     }

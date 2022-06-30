@@ -23,7 +23,7 @@ struct StudentHomeTabCoordinator {
         let navigationController = UINavigationController()
 
         StudentHomeCoordinator(
-            navigationController: navigationController,
+            rootViewController: navigationController,
             student: student
         ).start()
 

@@ -15,10 +15,10 @@ struct LogoutAlertCoordinator {
 
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         onLogout logoutHandler: @escaping () -> Void
     ) {
-        self.rootViewController = navigationController
+        self.rootViewController = rootViewController
         self.logoutHandler = logoutHandler
     }
 }
@@ -26,8 +26,10 @@ struct LogoutAlertCoordinator {
 // MARK: - Coordinator
 extension LogoutAlertCoordinator: Coordinator {
     func start() {
-        let alertPresenter = LogoutAlertPresenter(coordinator: self)
-        let alertViewController = LogoutAlertViewController(presenter: alertPresenter)
+        let logoutAlertPresenter = LogoutAlertPresenter(coordinator: self)
+        let alertViewController = LogoutAlertViewController(
+            presenter: logoutAlertPresenter
+        )
 
         alertViewController.modalPresentationStyle = .overFullScreen
 

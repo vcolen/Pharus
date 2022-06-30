@@ -23,7 +23,7 @@ struct StudentProjectsRankingTabCoordinator {
         let navigationController = UINavigationController()
 
         StudentProjectsRankingCoordinator(
-            navigationController: navigationController,
+            rootViewController: navigationController,
             student: student
         ).start()
 

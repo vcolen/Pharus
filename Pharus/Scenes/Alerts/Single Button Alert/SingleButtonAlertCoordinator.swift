@@ -16,11 +16,11 @@ struct SingleButtonAlertCoordinator {
 
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         alertMessage: String,
         alertType: SingleButtonAlertView.AlertType
     ) {
-        self.rootViewController = navigationController
+        self.rootViewController = rootViewController
         self.alertMessage = alertMessage
         self.alertType = alertType
     }
@@ -48,6 +48,6 @@ extension SingleButtonAlertCoordinator: Coordinator {
 // MARK: - Actions
 extension SingleButtonAlertCoordinator: SingleButtonAlertCoordinating {
     func closeModal() {
-        rootViewController?.topViewController?.dismiss(animated: true)
+        rootViewController?.dismiss(animated: true)
     }
 }

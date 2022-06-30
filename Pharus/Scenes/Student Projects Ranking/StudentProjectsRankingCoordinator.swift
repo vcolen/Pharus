@@ -16,10 +16,10 @@ struct StudentProjectsRankingCoordinator {
     // MARK: - Initializer
 
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         student: StudentModel
     ) {
-        self.rootViewController = navigationController
+        self.rootViewController = rootViewController
         self.student = student
     }
 }

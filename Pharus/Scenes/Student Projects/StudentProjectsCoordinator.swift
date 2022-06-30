@@ -8,17 +8,17 @@
 import UIKit
 
 struct StudentProjectsCoordinator {
-
+    
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
     private let student: StudentModel
-
+    
     // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         student: StudentModel
     ) {
-        self.rootViewController = navigationController
+        self.rootViewController = rootViewController
         self.student = student
     }
 }
@@ -33,9 +33,9 @@ extension StudentProjectsCoordinator: Coordinator {
         let studentProjectsViewController = StudentProjectsViewController(
             presenter: studentProjectsPresenter
         )
-
+        
         studentProjectsViewController.title = "Seus projetos"
-
+        
         rootViewController?.setNavigationBarHidden(false, animated: true)
         rootViewController?.pushViewController(studentProjectsViewController, animated: true)
     }
@@ -44,23 +44,19 @@ extension StudentProjectsCoordinator: Coordinator {
 extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     func showStudentProject(_ project: ProjectModel) {
         if let navigationController = rootViewController {
-            let studentProjectDetailCoordinator = StudentProjectDetailCoordinator(
-                navigationController: navigationController,
+            StudentProjectDetailCoordinator(
+                rootViewController: navigationController,
                 project: project
-            )
-
-            studentProjectDetailCoordinator.start()
+            ).start()
         }
     }
-
+    
     func showSubscribeAlert(of project: ProjectModel) {
         if let navigationController = rootViewController {
-            let projectSubcriptionAlertCoordinator = ProjectSubcriptionAlertCoordinator(
-                navigationController: navigationController,
+            ProjectSubcriptionAlertCoordinator(
+                rootViewController: navigationController,
                 project: project
-            )
-
-            projectSubcriptionAlertCoordinator.start()
+            ).start()
         }
     }
 }
