@@ -35,11 +35,7 @@ extension AppCoordinator {
             onLogin: openTabBarScene
         ).start()
 
-        guard let window = window else { return }
-
-        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft) {
-            window.rootViewController = navigationController
-        }
+        transitionWindowTo(navigationController)
     }
 
     func openTabBarScene(student: StudentModel) {
@@ -50,10 +46,13 @@ extension AppCoordinator {
             onLogout: openLoginScene
         ).start()
 
-        guard let window = window else { return }
+        transitionWindowTo(tabBarController)
+    }
 
+    func transitionWindowTo(_ controller: UIViewController) {
+        guard let window = window else { return }
         UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft) {
-            window.rootViewController = tabBarController
+            window.rootViewController = controller
         }
     }
 }
