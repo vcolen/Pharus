@@ -1,0 +1,24 @@
+name: Swiftlint
+
+# Controls when the workflow will run
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  lint:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: install swiftlint
+        run: > 
+          if [[ ! -f "/usr/local/bin/swiftlint" ]] 
+             then 
+               brew install swiftlint 
+             fi 
+          
+      - name: run swiftlint
+        run: swiftlint lint
