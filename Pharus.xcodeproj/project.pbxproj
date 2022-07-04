@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		790AA953286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */; };
 		790AA955286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */; };
 		791444B8286CE810006CC1BD /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791444B7286CE810006CC1BD /* UITabBarController+Extension.swift */; };
+		791B4546287358D800F1EBE6 /* PharusUI in Frameworks */ = {isa = PBXBuildFile; productRef = 791B4545287358D800F1EBE6 /* PharusUI */; };
 		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
 		799AFAC5285CECDE001B0371 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */; };
 		799AFAC6285CECDE001B0371 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */; };
@@ -200,6 +201,7 @@
 		790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingTabCoordinator.swift; sourceTree = "<group>"; };
 		791444B7286CE810006CC1BD /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
+		791B45432873578B00F1EBE6 /* PharusUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PharusUI; path = ../../PharusUI; sourceTree = "<group>"; };
 		797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenter.swift.swift; sourceTree = "<group>"; };
 		799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -386,12 +388,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				791B4546287358D800F1EBE6 /* PharusUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		791B45422873576400F1EBE6 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				791B45432873578B00F1EBE6 /* PharusUI */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		791B4544287358D800F1EBE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		799AF9F7285CECDE001B0371 /* Pharus */ = {
 			isa = PBXGroup;
 			children = (
@@ -928,10 +946,12 @@
 		C045617E27EA03A5007EC5C3 = {
 			isa = PBXGroup;
 			children = (
+				791B45422873576400F1EBE6 /* Packages */,
 				799AF9F7285CECDE001B0371 /* Pharus */,
 				79F06D9F27F28FCD00343865 /* PharusTests */,
 				C045618827EA03A5007EC5C3 /* Products */,
 				79AF90F628043A120094AB97 /* Recovered References */,
+				791B4544287358D800F1EBE6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -979,6 +999,9 @@
 			dependencies = (
 			);
 			name = Pharus;
+			packageProductDependencies = (
+				791B4545287358D800F1EBE6 /* PharusUI */,
+			);
 			productName = Pharus;
 			productReference = C045618727EA03A5007EC5C3 /* Pharus.app */;
 			productType = "com.apple.product-type.application";
@@ -1435,8 +1458,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pharus/Pharus.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QNHX86K7F4;
 				INFOPLIST_FILE = Pharus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1457,8 +1481,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pharus/Pharus.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QNHX86K7F4;
 				INFOPLIST_FILE = Pharus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1504,6 +1529,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		791B4545287358D800F1EBE6 /* PharusUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PharusUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C045617F27EA03A5007EC5C3 /* Project object */;
 }
