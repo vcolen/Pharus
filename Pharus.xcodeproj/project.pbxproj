@@ -12,11 +12,9 @@
 		790AA951286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA950286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift */; };
 		790AA953286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */; };
 		790AA955286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */; };
-		791444B8286CE810006CC1BD /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791444B7286CE810006CC1BD /* UITabBarController+Extension.swift */; };
 		791B4546287358D800F1EBE6 /* PharusUI in Frameworks */ = {isa = PBXBuildFile; productRef = 791B4545287358D800F1EBE6 /* PharusUI */; };
 		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
 		799AFAC5285CECDE001B0371 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */; };
-		799AFAC6285CECDE001B0371 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */; };
 		799AFAC7285CECDE001B0371 /* ProjectSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */; };
 		799AFAC8285CECDE001B0371 /* ProjectSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FD285CECDE001B0371 /* ProjectSheetView.swift */; };
 		799AFAC9285CECDE001B0371 /* ProjectSheetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FE285CECDE001B0371 /* ProjectSheetCoordinator.swift */; };
@@ -116,30 +114,17 @@
 		799AFB28285CECDF001B0371 /* LoginPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA79285CECDE001B0371 /* LoginPresenting.swift */; };
 		799AFB29285CECDF001B0371 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA7B285CECDE001B0371 /* AppCoordinator.swift */; };
 		799AFB2A285CECDF001B0371 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA7E285CECDE001B0371 /* Constants.swift */; };
-		799AFB2B285CECDF001B0371 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA7F285CECDE001B0371 /* Assets.swift */; };
 		799AFB2C285CECDF001B0371 /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA80285CECDE001B0371 /* DateFormats.swift */; };
-		799AFB2D285CECDF001B0371 /* FullImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA81285CECDE001B0371 /* FullImage.swift */; };
-		799AFB2E285CECDF001B0371 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA82285CECDE001B0371 /* CircleImage.swift */; };
-		799AFB2F285CECDF001B0371 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA83285CECDE001B0371 /* Icons.swift */; };
 		799AFB30285CECDF001B0371 /* RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA84285CECDE001B0371 /* RegEx.swift */; };
-		799AFB31285CECDF001B0371 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA85285CECDE001B0371 /* Avatar.swift */; };
-		799AFB32285CECDF001B0371 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA86285CECDE001B0371 /* Images.swift */; };
-		799AFB33285CECDF001B0371 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA87285CECDE001B0371 /* Company.swift */; };
 		799AFB34285CECDF001B0371 /* CellReuseIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA88285CECDE001B0371 /* CellReuseIdentifiers.swift */; };
 		799AFB35285CECDF001B0371 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA89285CECDE001B0371 /* Network.swift */; };
 		799AFB36285CECDF001B0371 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA8A285CECDE001B0371 /* Coordinator.swift */; };
-		799AFB37285CECDF001B0371 /* FullAvatarImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA8B285CECDE001B0371 /* FullAvatarImages.swift */; };
-		799AFB38285CECDF001B0371 /* PharusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA8C285CECDE001B0371 /* PharusIcons.swift */; };
 		799AFB39285CECDF001B0371 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA8D285CECDE001B0371 /* Date+Extension.swift */; };
 		799AFB3A285CECDF001B0371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA8F285CECDE001B0371 /* AppDelegate.swift */; };
 		799AFB3B285CECDF001B0371 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA90285CECDE001B0371 /* SceneDelegate.swift */; };
-		799AFB3C285CECDF001B0371 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA91285CECDE001B0371 /* UIView+Extension.swift */; };
-		799AFB3D285CECDF001B0371 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA92285CECDE001B0371 /* UIImage+Extension.swift */; };
 		799AFB3E285CECDF001B0371 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA93285CECDE001B0371 /* Bundle+Extension.swift */; };
 		799AFB3F285CECDF001B0371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799AFA94285CECDE001B0371 /* Assets.xcassets */; };
-		799AFB40285CECDF001B0371 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA95285CECDE001B0371 /* UIViewController+Extension.swift */; };
 		799AFB41285CECDF001B0371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799AFA96285CECDE001B0371 /* LaunchScreen.storyboard */; };
-		799AFB43285CECDF001B0371 /* CompanyImages.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9A285CECDE001B0371 /* CompanyImages.swift.swift */; };
 		799AFB44285CECDF001B0371 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9C285CECDE001B0371 /* CheckmarkButton.swift */; };
 		799AFB45285CECDF001B0371 /* SmallAlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */; };
 		799AFB46285CECDF001B0371 /* MainCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9E285CECDE001B0371 /* MainCardButton.swift */; };
@@ -151,7 +136,6 @@
 		799AFB4C285CECDF001B0371 /* UploadMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAA4285CECDE001B0371 /* UploadMessageButton.swift */; };
 		799AFB4D285CECDF001B0371 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAA5285CECDE001B0371 /* CircleProgressView.swift */; };
 		799AFB4F285CECDF001B0371 /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAA8285CECDE001B0371 /* HomeMiniCardView.swift */; };
-		799AFB51285CECDF001B0371 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAAA285CECDE001B0371 /* UIStackView+Extension.swift */; };
 		799AFB52285CECDF001B0371 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAAC285CECDE001B0371 /* ProjectModel.swift */; };
 		799AFB53285CECDF001B0371 /* Student.json in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAAD285CECDE001B0371 /* Student.json */; };
 		799AFB54285CECDF001B0371 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAAE285CECDE001B0371 /* TaskModel.swift */; };
@@ -159,7 +143,6 @@
 		799AFB56285CECDF001B0371 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAB0285CECDE001B0371 /* StudentModel.swift */; };
 		799AFB57285CECDF001B0371 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAB1285CECDE001B0371 /* Task.swift */; };
 		799AFB58285CECDF001B0371 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAB2285CECDE001B0371 /* Student.swift */; };
-		799AFB5A285CECDF001B0371 /* CircleAvatarImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAB5285CECDE001B0371 /* CircleAvatarImages.swift */; };
 		799AFB5B285CECDF001B0371 /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAB6285CECDE001B0371 /* Float+Extension.swift */; };
 		799AFB5C285CECDF001B0371 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAB9285CECDE001B0371 /* Montserrat-Medium.ttf */; };
 		799AFB5D285CECDF001B0371 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFABA285CECDE001B0371 /* Montserrat-Bold.ttf */; };
@@ -169,7 +152,6 @@
 		799AFB61285CECDF001B0371 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFABF285CECDE001B0371 /* OpenSans-Bold.ttf */; };
 		799AFB62285CECDF001B0371 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAC0285CECDE001B0371 /* OpenSans-Medium.ttf */; };
 		799AFB63285CECDF001B0371 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAC1285CECDE001B0371 /* OpenSans-Regular.ttf */; };
-		799AFB65285CECDF001B0371 /* PharusImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAC3285CECDE001B0371 /* PharusImages.swift */; };
 		799AFB66285CECDF001B0371 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */; };
 		799AFB67285CEDE5001B0371 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2F285CECDE001B0371 /* TabBarViewController.swift */; };
 		79D659C1286207690060971C /* DefaultTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C0286207690060971C /* DefaultTexts.swift */; };
@@ -200,11 +182,9 @@
 		790AA950286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingTabCoordinator.swift; sourceTree = "<group>"; };
-		791444B7286CE810006CC1BD /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
 		791B45432873578B00F1EBE6 /* PharusUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PharusUI; path = ../../PharusUI; sourceTree = "<group>"; };
 		797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenter.swift.swift; sourceTree = "<group>"; };
 		799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetViewController.swift; sourceTree = "<group>"; };
 		799AF9FD285CECDE001B0371 /* ProjectSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetView.swift; sourceTree = "<group>"; };
 		799AF9FE285CECDE001B0371 /* ProjectSheetCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetCoordinator.swift; sourceTree = "<group>"; };
@@ -305,30 +285,17 @@
 		799AFA79285CECDE001B0371 /* LoginPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenting.swift; sourceTree = "<group>"; };
 		799AFA7B285CECDE001B0371 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		799AFA7E285CECDE001B0371 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		799AFA7F285CECDE001B0371 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		799AFA80285CECDE001B0371 /* DateFormats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
-		799AFA81285CECDE001B0371 /* FullImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImage.swift; sourceTree = "<group>"; };
-		799AFA82285CECDE001B0371 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
-		799AFA83285CECDE001B0371 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		799AFA84285CECDE001B0371 /* RegEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegEx.swift; sourceTree = "<group>"; };
-		799AFA85285CECDE001B0371 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
-		799AFA86285CECDE001B0371 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
-		799AFA87285CECDE001B0371 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		799AFA88285CECDE001B0371 /* CellReuseIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellReuseIdentifiers.swift; sourceTree = "<group>"; };
 		799AFA89285CECDE001B0371 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		799AFA8A285CECDE001B0371 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		799AFA8B285CECDE001B0371 /* FullAvatarImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullAvatarImages.swift; sourceTree = "<group>"; };
-		799AFA8C285CECDE001B0371 /* PharusIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PharusIcons.swift; sourceTree = "<group>"; };
 		799AFA8D285CECDE001B0371 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		799AFA8F285CECDE001B0371 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		799AFA90285CECDE001B0371 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		799AFA91285CECDE001B0371 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		799AFA92285CECDE001B0371 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		799AFA93285CECDE001B0371 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		799AFA94285CECDE001B0371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		799AFA95285CECDE001B0371 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		799AFA97285CECDE001B0371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		799AFA9A285CECDE001B0371 /* CompanyImages.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyImages.swift.swift; sourceTree = "<group>"; };
 		799AFA9C285CECDE001B0371 /* CheckmarkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertButton.swift; sourceTree = "<group>"; };
 		799AFA9E285CECDE001B0371 /* MainCardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCardButton.swift; sourceTree = "<group>"; };
@@ -340,7 +307,6 @@
 		799AFAA4285CECDE001B0371 /* UploadMessageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMessageButton.swift; sourceTree = "<group>"; };
 		799AFAA5285CECDE001B0371 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		799AFAA8285CECDE001B0371 /* HomeMiniCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
-		799AFAAA285CECDE001B0371 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		799AFAAC285CECDE001B0371 /* ProjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		799AFAAD285CECDE001B0371 /* Student.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Student.json; sourceTree = "<group>"; };
 		799AFAAE285CECDE001B0371 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
@@ -349,7 +315,6 @@
 		799AFAB1285CECDE001B0371 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		799AFAB2285CECDE001B0371 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		799AFAB4285CECDE001B0371 /* Pharus.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Pharus.entitlements; sourceTree = "<group>"; };
-		799AFAB5285CECDE001B0371 /* CircleAvatarImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleAvatarImages.swift; sourceTree = "<group>"; };
 		799AFAB6285CECDE001B0371 /* Float+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
 		799AFAB9285CECDE001B0371 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		799AFABA285CECDE001B0371 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -360,7 +325,6 @@
 		799AFAC0285CECDE001B0371 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		799AFAC1285CECDE001B0371 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		799AFAC2285CECDE001B0371 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		799AFAC3285CECDE001B0371 /* PharusImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PharusImages.swift; sourceTree = "<group>"; };
 		799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		79D659C0286207690060971C /* DefaultTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTexts.swift; sourceTree = "<group>"; };
 		79D659C2286209760060971C /* StudentProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsView.swift; sourceTree = "<group>"; };
@@ -801,15 +765,8 @@
 			children = (
 				799AFA7E285CECDE001B0371 /* Constants.swift */,
 				79D659C0286207690060971C /* DefaultTexts.swift */,
-				799AFA7F285CECDE001B0371 /* Assets.swift */,
 				799AFA80285CECDE001B0371 /* DateFormats.swift */,
-				799AFA81285CECDE001B0371 /* FullImage.swift */,
-				799AFA82285CECDE001B0371 /* CircleImage.swift */,
-				799AFA83285CECDE001B0371 /* Icons.swift */,
 				799AFA84285CECDE001B0371 /* RegEx.swift */,
-				799AFA85285CECDE001B0371 /* Avatar.swift */,
-				799AFA86285CECDE001B0371 /* Images.swift */,
-				799AFA87285CECDE001B0371 /* Company.swift */,
 				799AFA88285CECDE001B0371 /* CellReuseIdentifiers.swift */,
 			);
 			path = Constants;
@@ -895,28 +852,9 @@
 				799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */,
 				799AFA8D285CECDE001B0371 /* Date+Extension.swift */,
 				799AFAB6285CECDE001B0371 /* Float+Extension.swift */,
-				799AF9F9285CECDE001B0371 /* UIColor+Extension.swift */,
 				799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */,
-				791444B7286CE810006CC1BD /* UITabBarController+Extension.swift */,
-				799AFB69285CF4F4001B0371 /* UIImage */,
-				799AFAAA285CECDE001B0371 /* UIStackView+Extension.swift */,
-				799AFA91285CECDE001B0371 /* UIView+Extension.swift */,
-				799AFA95285CECDE001B0371 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		799AFB69285CF4F4001B0371 /* UIImage */ = {
-			isa = PBXGroup;
-			children = (
-				799AFAB5285CECDE001B0371 /* CircleAvatarImages.swift */,
-				799AFA9A285CECDE001B0371 /* CompanyImages.swift.swift */,
-				799AFA8B285CECDE001B0371 /* FullAvatarImages.swift */,
-				799AFA8C285CECDE001B0371 /* PharusIcons.swift */,
-				799AFAC3285CECDE001B0371 /* PharusImages.swift */,
-				799AFA92285CECDE001B0371 /* UIImage+Extension.swift */,
-			);
-			path = UIImage;
 			sourceTree = "<group>";
 		};
 		79AF90F628043A120094AB97 /* Recovered References */ = {
@@ -1121,7 +1059,6 @@
 				799AFAC9285CECDE001B0371 /* ProjectSheetCoordinator.swift in Sources */,
 				799AFAE1285CECDF001B0371 /* StudentHomePresenter.swift in Sources */,
 				799AFB27285CECDF001B0371 /* LoginViewable.swift.swift in Sources */,
-				799AFB31285CECDF001B0371 /* Avatar.swift in Sources */,
 				799AFB49285CECDF001B0371 /* SubscribeButton.swift in Sources */,
 				799AFAFF285CECDF001B0371 /* ProjectSubcriptionViewable.swift in Sources */,
 				799AFB16285CECDF001B0371 /* AvatarSelectionViewDelegate.swift in Sources */,
@@ -1133,12 +1070,10 @@
 				799AFB4F285CECDF001B0371 /* HomeMiniCardView.swift in Sources */,
 				799AFB17285CECDF001B0371 /* AvatarSelectionViewable.swift in Sources */,
 				79D659C3286209760060971C /* StudentProjectsView.swift in Sources */,
-				799AFB3C285CECDF001B0371 /* UIView+Extension.swift in Sources */,
 				799AFB1F285CECDF001B0371 /* StudentProjectsDetailPresenting.swift in Sources */,
 				799AFAFA285CECDF001B0371 /* ProjectSubcriptionAlertPresenter.swift in Sources */,
 				799AFAF7285CECDF001B0371 /* LogoutAlertCoordinating.swift in Sources */,
 				790AA94D286B653A00D99D30 /* StudentHomeTabCoordinator.swift in Sources */,
-				799AFB5A285CECDF001B0371 /* CircleAvatarImages.swift in Sources */,
 				799AFAE6285CECDF001B0371 /* StudentHomeCoordinator.swift in Sources */,
 				799AFB20285CECDF001B0371 /* StudentProjectDetailPresenter.swift in Sources */,
 				799AFAE5285CECDF001B0371 /* StudentHomeViewable.swift in Sources */,
@@ -1146,15 +1081,12 @@
 				799AFB52285CECDF001B0371 /* ProjectModel.swift in Sources */,
 				799AFAD2285CECDF001B0371 /* SendFileViewController.swift in Sources */,
 				799AFAEC285CECDF001B0371 /* StudentProfileCoordinating.swift in Sources */,
-				799AFB40285CECDF001B0371 /* UIViewController+Extension.swift in Sources */,
 				799AFB23285CECDF001B0371 /* LoginViewController.swift in Sources */,
-				799AFB2D285CECDF001B0371 /* FullImage.swift in Sources */,
 				799AFAD0285CECDF001B0371 /* SendFileView.swift in Sources */,
 				799AFAEB285CECDF001B0371 /* StudentProfileViewable.swift in Sources */,
 				799AFADA285CECDF001B0371 /* StudentProjectsPresenter.swift in Sources */,
 				799AFAEF285CECDF001B0371 /* MainTabBarCoordinator.swift in Sources */,
 				799AFB2C285CECDF001B0371 /* DateFormats.swift in Sources */,
-				799AFB2F285CECDF001B0371 /* Icons.swift in Sources */,
 				799AFB30285CECDF001B0371 /* RegEx.swift in Sources */,
 				799AFB0C285CECDF001B0371 /* HomeNewsViewDelegate.swift.swift in Sources */,
 				799AFB56285CECDF001B0371 /* StudentModel.swift in Sources */,
@@ -1176,7 +1108,6 @@
 				799AFB45285CECDF001B0371 /* SmallAlertButton.swift in Sources */,
 				799AFAFD285CECDF001B0371 /* ProjectSubcriptionAlertView.swift in Sources */,
 				799AFB0B285CECDF001B0371 /* HomeNewsView.swift in Sources */,
-				799AFB32285CECDF001B0371 /* Images.swift in Sources */,
 				790AA94F286B736100D99D30 /* StudentProfileTabCoordinator.swift in Sources */,
 				799AFB57285CECDF001B0371 /* Task.swift in Sources */,
 				799AFAF2285CECDF001B0371 /* LogoutAlertCoordinator.swift in Sources */,
@@ -1190,7 +1121,6 @@
 				799AFAC7285CECDE001B0371 /* ProjectSheetViewController.swift in Sources */,
 				799AFB4B285CECDF001B0371 /* SecondaryCardButton.swift in Sources */,
 				799AFADC285CECDF001B0371 /* StudentProjectsCoordinating.swift in Sources */,
-				799AFB37285CECDF001B0371 /* FullAvatarImages.swift in Sources */,
 				799AFAE9285CECDF001B0371 /* StudentProfileView.swift in Sources */,
 				799AFB44285CECDF001B0371 /* CheckmarkButton.swift in Sources */,
 				799AFB1E285CECDF001B0371 /* StudentProjectDetailCoordinating.swift in Sources */,
@@ -1199,22 +1129,17 @@
 				799AFB25285CECDF001B0371 /* LoginCoordinating.swift in Sources */,
 				799AFB18285CECDF001B0371 /* AvatarSelectionView.swift in Sources */,
 				799AFB06285CECDF001B0371 /* SingleButtonAlertViewable.swift in Sources */,
-				799AFB65285CECDF001B0371 /* PharusImages.swift in Sources */,
 				799AFB48285CECDF001B0371 /* ProjectScheduleView.swift in Sources */,
-				799AFB2B285CECDF001B0371 /* Assets.swift in Sources */,
-				799AFB38285CECDF001B0371 /* PharusIcons.swift in Sources */,
 				799AFADE285CECDF001B0371 /* StudentProjectsViewable.swift in Sources */,
 				799AFB00285CECDF001B0371 /* ProjectSubcriptionAlertViewDelegate.swift in Sources */,
 				799AFAE2285CECDF001B0371 /* StudentHomePresenting.swift in Sources */,
 				790AA951286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift in Sources */,
 				799AFB28285CECDF001B0371 /* LoginPresenting.swift in Sources */,
 				799AFB08285CECDF001B0371 /* SingleButtonAlertCoordinating.swift in Sources */,
-				799AFB51285CECDF001B0371 /* UIStackView+Extension.swift in Sources */,
 				799AFB46285CECDF001B0371 /* MainCardButton.swift in Sources */,
 				799AFB15285CECDF001B0371 /* AvatarSelectionCoordinating.swift in Sources */,
 				799AFB05285CECDF001B0371 /* SingleButtonAlertView.swift in Sources */,
 				799AFAEA285CECDF001B0371 /* StudentProfilePresenting.swift in Sources */,
-				791444B8286CE810006CC1BD /* UITabBarController+Extension.swift in Sources */,
 				799AFAF1285CECDF001B0371 /* TabBarCoordinating.swift in Sources */,
 				799AFAF4285CECDF001B0371 /* LogoutAlertPresenter.swift in Sources */,
 				79FFE7E92860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift in Sources */,
@@ -1226,7 +1151,6 @@
 				79FCEB932863B55B004D22EC /* BasePresenter.swift in Sources */,
 				799AFB34285CECDF001B0371 /* CellReuseIdentifiers.swift in Sources */,
 				799AFAD9285CECDF001B0371 /* StudentProjectCell.swift in Sources */,
-				799AFB3D285CECDF001B0371 /* UIImage+Extension.swift in Sources */,
 				799AFB26285CECDF001B0371 /* LoginViewDelegate.swift in Sources */,
 				799AFB55285CECDF001B0371 /* Project.swift in Sources */,
 				799AFB54285CECDF001B0371 /* TaskModel.swift in Sources */,
@@ -1255,17 +1179,13 @@
 				799AFB21285CECDF001B0371 /* LoginView.swift in Sources */,
 				799AFAD6285CECDF001B0371 /* SendFilePresenting.swift in Sources */,
 				799AFAD8285CECDF001B0371 /* StudentProjectsCoordinator.swift in Sources */,
-				799AFB43285CECDF001B0371 /* CompanyImages.swift.swift in Sources */,
 				799AFB22285CECDF001B0371 /* LoginCoodinator.swift in Sources */,
 				799AFB35285CECDF001B0371 /* Network.swift in Sources */,
-				799AFB2E285CECDF001B0371 /* CircleImage.swift in Sources */,
 				79FFE7E52860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift in Sources */,
-				799AFB33285CECDF001B0371 /* Company.swift in Sources */,
 				799AFACA285CECDF001B0371 /* ProjectSheetPresenting.swift in Sources */,
 				799AFB0E285CECDF001B0371 /* StudentProjectsRankingCoordinator.swift in Sources */,
 				799AFAED285CECDF001B0371 /* StudentProfileViewDelegate.swift in Sources */,
 				799AFACF285CECDF001B0371 /* SendFilePresenter.swift in Sources */,
-				799AFAC6285CECDE001B0371 /* UIColor+Extension.swift in Sources */,
 				790AA955286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift in Sources */,
 				799AFB3A285CECDF001B0371 /* AppDelegate.swift in Sources */,
 				799AFAF5285CECDF001B0371 /* LogoutAlertView.swift in Sources */,

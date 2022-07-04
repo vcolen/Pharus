@@ -4,7 +4,9 @@
 //
 //  Created by Victor Colen on 12/04/22.
 //
+
 import UIKit
+import PharusUI
 
 class StudentHomeView: UIView {
 
@@ -241,7 +243,7 @@ class StudentHomeView: UIView {
 
     func showStudentAvatar() {
         studentAvatarImageView.image = UIImage(
-            named: "avatar" + student.avatar + Constants.assets.images.avatar.circleImage.suffix
+            named: "avatar" + student.avatar + PharusUIConstants.assets.images.avatar.circleImage.suffix
         )
     }
 }

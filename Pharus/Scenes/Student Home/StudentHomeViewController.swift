@@ -5,6 +5,7 @@
 //  Created by Victor Colen on 11/04/22.
 //
 import UIKit
+import PharusUI
 
 class StudentHomeViewController: UIViewController {
 
