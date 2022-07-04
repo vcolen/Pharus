@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PharusUI
 
 // swiftlint:disable type_body_length file_length
 class StudentProjectCell: UITableViewCell {
@@ -158,7 +159,7 @@ class StudentProjectCell: UITableViewCell {
     }()
 
     private lazy var projectScheduleView: ProjectScheduleView = {
-        let view = ProjectScheduleView(project: StudentModel.defaultProject)
+        let view = ProjectScheduleView(projectData: (isComplete: false, daysRemaining: 12))
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "StudentProjectCell.projectScheduleView"
 
@@ -266,7 +267,7 @@ class StudentProjectCell: UITableViewCell {
         titleLabel.text = project.name
         descriptionLabel.text = project.projectDescription
         mentorLabel.text = "Mentor: " + project.mentor
-        projectScheduleView.project = project
+        projectScheduleView.projectData = (project.isComplete, project.daysRemaining)
         subscribeButton.isSubscribed = project.isSubscribed
         companyLogoImageView.image = UIImage(
             named: "\(project.company ?? "ioasys" .lowercased())LogoImage"

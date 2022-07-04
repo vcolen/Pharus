@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PharusUI
 
 class ProjectSubcriptionAlertView: UIView {
 

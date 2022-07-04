@@ -6,15 +6,14 @@
 //
 
 import UIKit
+import PharusUI
 
 class SendFileView: UIView {
 
     // MARK: - Properties
-
     weak var delegate: SendFileViewDelegate?
 
     // MARK: - Views
-
     private lazy var mainView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.Modal.yellowBackground

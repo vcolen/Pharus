@@ -7,16 +7,14 @@
 
 import Foundation
 
-class TaskModel: Codable {
+public class TaskModel: Codable {
 
     // MARK: - Properties
-
     let title: String
     var isComplete: Bool
     let taskDescription: String
 
     // MARK: - Initializer
-
     init(
         title: String,
         isComplete: Bool,

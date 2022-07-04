@@ -13,8 +13,8 @@
 		790AA953286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */; };
 		790AA955286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */; };
 		791B4546287358D800F1EBE6 /* PharusUI in Frameworks */ = {isa = PBXBuildFile; productRef = 791B4545287358D800F1EBE6 /* PharusUI */; };
+		791B454E28737F8400F1EBE6 /* ProjectTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */; };
 		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
-		799AFAC5285CECDE001B0371 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */; };
 		799AFAC7285CECDE001B0371 /* ProjectSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */; };
 		799AFAC8285CECDE001B0371 /* ProjectSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FD285CECDE001B0371 /* ProjectSheetView.swift */; };
 		799AFAC9285CECDE001B0371 /* ProjectSheetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FE285CECDE001B0371 /* ProjectSheetCoordinator.swift */; };
@@ -125,17 +125,6 @@
 		799AFB3E285CECDF001B0371 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA93285CECDE001B0371 /* Bundle+Extension.swift */; };
 		799AFB3F285CECDF001B0371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799AFA94285CECDE001B0371 /* Assets.xcassets */; };
 		799AFB41285CECDF001B0371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799AFA96285CECDE001B0371 /* LaunchScreen.storyboard */; };
-		799AFB44285CECDF001B0371 /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9C285CECDE001B0371 /* CheckmarkButton.swift */; };
-		799AFB45285CECDF001B0371 /* SmallAlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */; };
-		799AFB46285CECDF001B0371 /* MainCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9E285CECDE001B0371 /* MainCardButton.swift */; };
-		799AFB47285CECDF001B0371 /* StudentProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA9F285CECDE001B0371 /* StudentProfileButton.swift */; };
-		799AFB48285CECDF001B0371 /* ProjectScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAA0285CECDE001B0371 /* ProjectScheduleView.swift */; };
-		799AFB49285CECDF001B0371 /* SubscribeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAA1285CECDE001B0371 /* SubscribeButton.swift */; };
-		799AFB4A285CECDF001B0371 /* ProjectTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAA2285CECDE001B0371 /* ProjectTaskView.swift */; };
-		799AFB4B285CECDF001B0371 /* SecondaryCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAA3285CECDE001B0371 /* SecondaryCardButton.swift */; };
-		799AFB4C285CECDF001B0371 /* UploadMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAA4285CECDE001B0371 /* UploadMessageButton.swift */; };
-		799AFB4D285CECDF001B0371 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAA5285CECDE001B0371 /* CircleProgressView.swift */; };
-		799AFB4F285CECDF001B0371 /* HomeMiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAA8285CECDE001B0371 /* HomeMiniCardView.swift */; };
 		799AFB52285CECDF001B0371 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAAC285CECDE001B0371 /* ProjectModel.swift */; };
 		799AFB53285CECDF001B0371 /* Student.json in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAAD285CECDE001B0371 /* Student.json */; };
 		799AFB54285CECDF001B0371 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAAE285CECDE001B0371 /* TaskModel.swift */; };
@@ -152,7 +141,6 @@
 		799AFB61285CECDF001B0371 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFABF285CECDE001B0371 /* OpenSans-Bold.ttf */; };
 		799AFB62285CECDF001B0371 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAC0285CECDE001B0371 /* OpenSans-Medium.ttf */; };
 		799AFB63285CECDF001B0371 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAC1285CECDE001B0371 /* OpenSans-Regular.ttf */; };
-		799AFB66285CECDF001B0371 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */; };
 		799AFB67285CEDE5001B0371 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2F285CECDE001B0371 /* TabBarViewController.swift */; };
 		79D659C1286207690060971C /* DefaultTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C0286207690060971C /* DefaultTexts.swift */; };
 		79D659C3286209760060971C /* StudentProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C2286209760060971C /* StudentProjectsView.swift */; };
@@ -183,8 +171,8 @@
 		790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingTabCoordinator.swift; sourceTree = "<group>"; };
 		791B45432873578B00F1EBE6 /* PharusUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PharusUI; path = ../../PharusUI; sourceTree = "<group>"; };
+		791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectTaskView.swift; path = "Student Home News/ProjectTaskView.swift"; sourceTree = "<group>"; };
 		797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenter.swift.swift; sourceTree = "<group>"; };
-		799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetViewController.swift; sourceTree = "<group>"; };
 		799AF9FD285CECDE001B0371 /* ProjectSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetView.swift; sourceTree = "<group>"; };
 		799AF9FE285CECDE001B0371 /* ProjectSheetCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetCoordinator.swift; sourceTree = "<group>"; };
@@ -296,17 +284,6 @@
 		799AFA93285CECDE001B0371 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		799AFA94285CECDE001B0371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		799AFA97285CECDE001B0371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		799AFA9C285CECDE001B0371 /* CheckmarkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
-		799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertButton.swift; sourceTree = "<group>"; };
-		799AFA9E285CECDE001B0371 /* MainCardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCardButton.swift; sourceTree = "<group>"; };
-		799AFA9F285CECDE001B0371 /* StudentProfileButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfileButton.swift; sourceTree = "<group>"; };
-		799AFAA0285CECDE001B0371 /* ProjectScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectScheduleView.swift; sourceTree = "<group>"; };
-		799AFAA1285CECDE001B0371 /* SubscribeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeButton.swift; sourceTree = "<group>"; };
-		799AFAA2285CECDE001B0371 /* ProjectTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTaskView.swift; sourceTree = "<group>"; };
-		799AFAA3285CECDE001B0371 /* SecondaryCardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryCardButton.swift; sourceTree = "<group>"; };
-		799AFAA4285CECDE001B0371 /* UploadMessageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadMessageButton.swift; sourceTree = "<group>"; };
-		799AFAA5285CECDE001B0371 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
-		799AFAA8285CECDE001B0371 /* HomeMiniCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMiniCardView.swift; sourceTree = "<group>"; };
 		799AFAAC285CECDE001B0371 /* ProjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		799AFAAD285CECDE001B0371 /* Student.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Student.json; sourceTree = "<group>"; };
 		799AFAAE285CECDE001B0371 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
@@ -325,7 +302,6 @@
 		799AFAC0285CECDE001B0371 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		799AFAC1285CECDE001B0371 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		799AFAC2285CECDE001B0371 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		79D659C0286207690060971C /* DefaultTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTexts.swift; sourceTree = "<group>"; };
 		79D659C2286209760060971C /* StudentProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsView.swift; sourceTree = "<group>"; };
 		79D659C4286213270060971C /* StudentProjectsRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingView.swift; sourceTree = "<group>"; };
@@ -784,18 +760,8 @@
 		799AFA9B285CECDE001B0371 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA9C285CECDE001B0371 /* CheckmarkButton.swift */,
-				799AFAA5285CECDE001B0371 /* CircleProgressView.swift */,
-				799AFAA8285CECDE001B0371 /* HomeMiniCardView.swift */,
-				799AFA9E285CECDE001B0371 /* MainCardButton.swift */,
-				799AFAA0285CECDE001B0371 /* ProjectScheduleView.swift */,
-				799AFAA2285CECDE001B0371 /* ProjectTaskView.swift */,
-				799AFAA3285CECDE001B0371 /* SecondaryCardButton.swift */,
-				799AFA9D285CECDE001B0371 /* SmallAlertButton.swift */,
+				791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */,
 				799AFA51285CECDE001B0371 /* Student Home News */,
-				799AFA9F285CECDE001B0371 /* StudentProfileButton.swift */,
-				799AFAA1285CECDE001B0371 /* SubscribeButton.swift */,
-				799AFAA4285CECDE001B0371 /* UploadMessageButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -849,10 +815,8 @@
 			isa = PBXGroup;
 			children = (
 				799AFA93285CECDE001B0371 /* Bundle+Extension.swift */,
-				799AFAC4285CECDE001B0371 /* CGFloat+Extension.swift */,
 				799AFA8D285CECDE001B0371 /* Date+Extension.swift */,
 				799AFAB6285CECDE001B0371 /* Float+Extension.swift */,
-				799AF9F8285CECDE001B0371 /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1053,13 +1017,10 @@
 				799AFAFB285CECDF001B0371 /* ProjectSubcriptionAlertCoordinator.swift in Sources */,
 				799AFB03285CECDF001B0371 /* SingleButtonAlertViewController.swift in Sources */,
 				799AFB0F285CECDF001B0371 /* StudentProjectRankingCell.swift in Sources */,
-				799AFB4D285CECDF001B0371 /* CircleProgressView.swift in Sources */,
 				799AFADF285CECDF001B0371 /* StudentHomeView.swift in Sources */,
-				799AFB4C285CECDF001B0371 /* UploadMessageButton.swift in Sources */,
 				799AFAC9285CECDE001B0371 /* ProjectSheetCoordinator.swift in Sources */,
 				799AFAE1285CECDF001B0371 /* StudentHomePresenter.swift in Sources */,
 				799AFB27285CECDF001B0371 /* LoginViewable.swift.swift in Sources */,
-				799AFB49285CECDF001B0371 /* SubscribeButton.swift in Sources */,
 				799AFAFF285CECDF001B0371 /* ProjectSubcriptionViewable.swift in Sources */,
 				799AFB16285CECDF001B0371 /* AvatarSelectionViewDelegate.swift in Sources */,
 				79D659C5286213270060971C /* StudentProjectsRankingView.swift in Sources */,
@@ -1067,7 +1028,6 @@
 				799AFB0A285CECDF001B0371 /* HomeNewsViewController.swift in Sources */,
 				79FFE7EB2860FA01003FCBE5 /* StudentProjectsRankingViewDelegate.swift in Sources */,
 				799AFAF8285CECDF001B0371 /* LogoutAlertViewable.swift in Sources */,
-				799AFB4F285CECDF001B0371 /* HomeMiniCardView.swift in Sources */,
 				799AFB17285CECDF001B0371 /* AvatarSelectionViewable.swift in Sources */,
 				79D659C3286209760060971C /* StudentProjectsView.swift in Sources */,
 				799AFB1F285CECDF001B0371 /* StudentProjectsDetailPresenting.swift in Sources */,
@@ -1091,11 +1051,9 @@
 				799AFB0C285CECDF001B0371 /* HomeNewsViewDelegate.swift.swift in Sources */,
 				799AFB56285CECDF001B0371 /* StudentModel.swift in Sources */,
 				799AFB67285CEDE5001B0371 /* TabBarViewController.swift in Sources */,
-				799AFB4A285CECDF001B0371 /* ProjectTaskView.swift in Sources */,
 				799AFB1A285CECDF001B0371 /* StudentProjectDetailViewController.swift in Sources */,
 				799AFB19285CECDF001B0371 /* StudentProjectDetailCoordinator.swift in Sources */,
 				799AFAF3285CECDF001B0371 /* LogoutAlertViewController.swift in Sources */,
-				799AFB47285CECDF001B0371 /* StudentProfileButton.swift in Sources */,
 				799AFAEE285CECDF001B0371 /* StudentProfileViewController.swift in Sources */,
 				799AFB2A285CECDF001B0371 /* Constants.swift in Sources */,
 				799AFAD1285CECDF001B0371 /* SendFileCoordinator.swift in Sources */,
@@ -1105,7 +1063,6 @@
 				797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */,
 				799AFAD4285CECDF001B0371 /* SendFileViewDelegate.swift in Sources */,
 				79FFE7E72860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift in Sources */,
-				799AFB45285CECDF001B0371 /* SmallAlertButton.swift in Sources */,
 				799AFAFD285CECDF001B0371 /* ProjectSubcriptionAlertView.swift in Sources */,
 				799AFB0B285CECDF001B0371 /* HomeNewsView.swift in Sources */,
 				790AA94F286B736100D99D30 /* StudentProfileTabCoordinator.swift in Sources */,
@@ -1114,36 +1071,30 @@
 				799AFADB285CECDF001B0371 /* StudentProjectsPresenting.swift in Sources */,
 				799AFAD3285CECDF001B0371 /* SendFileCoordinating.swift in Sources */,
 				799AFB07285CECDF001B0371 /* SingleButtonAlertViewDelegate.swift in Sources */,
-				799AFB66285CECDF001B0371 /* CGFloat+Extension.swift in Sources */,
 				799AFB02285CECDF001B0371 /* SingleButtonAlertPresenter.swift in Sources */,
 				799AFB10285CECDF001B0371 /* StudentProjectsRankingViewController.swift in Sources */,
 				79D659C1286207690060971C /* DefaultTexts.swift in Sources */,
 				799AFAC7285CECDE001B0371 /* ProjectSheetViewController.swift in Sources */,
-				799AFB4B285CECDF001B0371 /* SecondaryCardButton.swift in Sources */,
 				799AFADC285CECDF001B0371 /* StudentProjectsCoordinating.swift in Sources */,
 				799AFAE9285CECDF001B0371 /* StudentProfileView.swift in Sources */,
-				799AFB44285CECDF001B0371 /* CheckmarkButton.swift in Sources */,
 				799AFB1E285CECDF001B0371 /* StudentProjectDetailCoordinating.swift in Sources */,
 				799AFAE7285CECDF001B0371 /* StudentProfilePresenter.swift in Sources */,
 				799AFAE8285CECDF001B0371 /* StudentProfileCoordinator.swift in Sources */,
 				799AFB25285CECDF001B0371 /* LoginCoordinating.swift in Sources */,
 				799AFB18285CECDF001B0371 /* AvatarSelectionView.swift in Sources */,
 				799AFB06285CECDF001B0371 /* SingleButtonAlertViewable.swift in Sources */,
-				799AFB48285CECDF001B0371 /* ProjectScheduleView.swift in Sources */,
 				799AFADE285CECDF001B0371 /* StudentProjectsViewable.swift in Sources */,
 				799AFB00285CECDF001B0371 /* ProjectSubcriptionAlertViewDelegate.swift in Sources */,
 				799AFAE2285CECDF001B0371 /* StudentHomePresenting.swift in Sources */,
 				790AA951286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift in Sources */,
 				799AFB28285CECDF001B0371 /* LoginPresenting.swift in Sources */,
 				799AFB08285CECDF001B0371 /* SingleButtonAlertCoordinating.swift in Sources */,
-				799AFB46285CECDF001B0371 /* MainCardButton.swift in Sources */,
 				799AFB15285CECDF001B0371 /* AvatarSelectionCoordinating.swift in Sources */,
 				799AFB05285CECDF001B0371 /* SingleButtonAlertView.swift in Sources */,
 				799AFAEA285CECDF001B0371 /* StudentProfilePresenting.swift in Sources */,
 				799AFAF1285CECDF001B0371 /* TabBarCoordinating.swift in Sources */,
 				799AFAF4285CECDF001B0371 /* LogoutAlertPresenter.swift in Sources */,
 				79FFE7E92860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift in Sources */,
-				799AFAC5285CECDE001B0371 /* UIFont+Extension.swift in Sources */,
 				799AFB1D285CECDF001B0371 /* StudentProjectDetailViewDelegate.swift in Sources */,
 				799AFB39285CECDF001B0371 /* Date+Extension.swift in Sources */,
 				799AFB01285CECDF001B0371 /* ProjectSubcriptionAlertCoordinating.swift in Sources */,
@@ -1155,6 +1106,7 @@
 				799AFB55285CECDF001B0371 /* Project.swift in Sources */,
 				799AFB54285CECDF001B0371 /* TaskModel.swift in Sources */,
 				790AA953286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift in Sources */,
+				791B454E28737F8400F1EBE6 /* ProjectTaskView.swift in Sources */,
 				799AFB0D285CECDF001B0371 /* HomeNewsViewable.swift in Sources */,
 				799AFB09285CECDF001B0371 /* SingleButtonAlertPresenting.swift in Sources */,
 				799AFB11285CECDF001B0371 /* StudentProjectsRankingCoordinating.swift in Sources */,

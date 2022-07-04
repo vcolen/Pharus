@@ -343,8 +343,8 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
             )
 
             if project.isComplete == false && project.isSubscribed == true {
-            taskView.taskCheckmarkButton.addAction(
-                UIAction { [weak self, weak taskView] _ in
+                taskView.taskCheckmarkButton.addAction(
+                    UIAction { [weak self, weak taskView] _ in
                         self?.taskCheckboxTapped(task: task)
                         let newIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon : .defaultImage
                         taskView?.taskCheckmarkButton.setImage(newIcon, for: .normal)
