@@ -11,7 +11,13 @@ import UIKit
 public class ProjectScheduleView: UIView {
 
     // MARK: - Propertiess
-    public var projectData: (isComplete: Bool, daysRemaining: Int) {
+    public var projectIsComplete: Bool {
+        didSet {
+            customizeSubviews()
+        }
+    }
+
+    public var projectDaysRemaining: Int {
         didSet {
             customizeSubviews()
         }
@@ -65,8 +71,12 @@ public class ProjectScheduleView: UIView {
     }()
 
     // MARK: - Initilizer
-    public init(projectData: (isComplete: Bool, daysRemaining: Int)) {
-        self.projectData = projectData
+    public init(
+        projectIsComplete: Bool,
+        projectDaysRemaining: Int
+    ) {
+        self.projectIsComplete = projectIsComplete
+        self.projectDaysRemaining = projectDaysRemaining
 
         super.init(frame: .zero)
 
@@ -93,12 +103,12 @@ public class ProjectScheduleView: UIView {
 
     @available(iOS 13.0, *)
     private func customizeSubviews() {
-        if projectData.isComplete {
+        if projectIsComplete {
             iconImageView.image = .pharusIcons.checkIcon?.withTintColor(.black)
             textLabel.text = "Feito!"
             mainView.backgroundColor = UIColor.ProjectSchedule.greenBackground
         } else {
-            switch projectData.daysRemaining {
+            switch projectDaysRemaining {
             case ..<0:
                 mainView.backgroundColor = .black
                 textLabel.text = "Expirado"
@@ -106,16 +116,16 @@ public class ProjectScheduleView: UIView {
             case 0...6:
                 mainView.backgroundColor = UIColor.ProjectSchedule.redBackground
                 iconImageView.image = .pharusIcons.clockIcon ?? .defaultImage
-                textLabel.text = "\(projectData.daysRemaining) Dias"
+                textLabel.text = "\(projectDaysRemaining) Dias"
                 textLabel.textColor = .white
                 iconImageView.image = iconImageView.image?.withTintColor(.white)
             case 7...8:
                 iconImageView.image = .pharusIcons.clockIcon ?? .defaultImage
-                textLabel.text = "\(projectData.daysRemaining) Dias"
+                textLabel.text = "\(projectDaysRemaining) Dias"
                 mainView.backgroundColor = UIColor.ProjectSchedule.yellowBackground
             default:
                 iconImageView.image = .pharusIcons.clockIcon ?? .defaultImage
-                textLabel.text = "\(projectData.daysRemaining) Dias"
+                textLabel.text = "\(projectDaysRemaining) Dias"
                 mainView.backgroundColor = UIColor.ProjectSchedule.orangeBackground
             }
         }
