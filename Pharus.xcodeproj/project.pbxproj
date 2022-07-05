@@ -170,8 +170,8 @@
 		790AA950286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingTabCoordinator.swift; sourceTree = "<group>"; };
-		791B45432873578B00F1EBE6 /* PharusUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PharusUI; path = ../../PharusUI; sourceTree = "<group>"; };
 		791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectTaskView.swift; path = "Student Home News/ProjectTaskView.swift"; sourceTree = "<group>"; };
+		797A471C287481F2005A3632 /* PharusUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PharusUI; sourceTree = "<group>"; };
 		797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenter.swift.swift; sourceTree = "<group>"; };
 		799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetViewController.swift; sourceTree = "<group>"; };
 		799AF9FD285CECDE001B0371 /* ProjectSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetView.swift; sourceTree = "<group>"; };
@@ -335,19 +335,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		791B45422873576400F1EBE6 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				791B45432873578B00F1EBE6 /* PharusUI */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
 		791B4544287358D800F1EBE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		797A471B287481EC005A3632 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				797A471C287481F2005A3632 /* PharusUI */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		799AF9F7285CECDE001B0371 /* Pharus */ = {
@@ -848,7 +848,7 @@
 		C045617E27EA03A5007EC5C3 = {
 			isa = PBXGroup;
 			children = (
-				791B45422873576400F1EBE6 /* Modules */,
+				797A471B287481EC005A3632 /* Modules */,
 				799AF9F7285CECDE001B0371 /* Pharus */,
 				79F06D9F27F28FCD00343865 /* PharusTests */,
 				C045618827EA03A5007EC5C3 /* Products */,
