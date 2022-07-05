@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class TaskModel: Codable {
+class TaskModel: Codable {
 
     // MARK: - Properties
     let title: String

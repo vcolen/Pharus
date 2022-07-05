@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ProjectModel: Codable {
+class ProjectModel: Codable {
 
     // MARK: - Properties
     var id: String
