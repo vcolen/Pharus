@@ -335,12 +335,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		791B45422873576400F1EBE6 /* Packages */ = {
+		791B45422873576400F1EBE6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				791B45432873578B00F1EBE6 /* PharusUI */,
 			);
-			path = Packages;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		791B4544287358D800F1EBE6 /* Frameworks */ = {
@@ -848,7 +848,7 @@
 		C045617E27EA03A5007EC5C3 = {
 			isa = PBXGroup;
 			children = (
-				791B45422873576400F1EBE6 /* Packages */,
+				791B45422873576400F1EBE6 /* Modules */,
 				799AF9F7285CECDE001B0371 /* Pharus */,
 				79F06D9F27F28FCD00343865 /* PharusTests */,
 				C045618827EA03A5007EC5C3 /* Products */,
