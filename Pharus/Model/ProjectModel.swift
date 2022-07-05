@@ -10,7 +10,6 @@ import Foundation
 class ProjectModel: Codable {
 
     // MARK: - Properties
-
     var id: String
     let name: String
     var isSubscribed: Bool

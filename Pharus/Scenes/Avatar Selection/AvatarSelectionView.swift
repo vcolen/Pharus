@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PharusUI
 
 class AvatarSelectionView: UIView {
 
@@ -117,7 +118,7 @@ class AvatarSelectionView: UIView {
     // MARK: - Functions
     private func showStudentAvatar() {
         mainAvatarImageView.image = UIImage(
-            named: "avatar" + student.avatar + Constants.assets.images.avatar.fullImage.suffix
+            named: "avatar" + student.avatar + PharusUIConstants.assets.images.avatar.fullImage.suffix
         )
     }
 

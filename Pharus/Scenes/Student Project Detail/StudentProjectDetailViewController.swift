@@ -4,7 +4,9 @@
 //
 //  Created by Victor Colen on 05/04/22.
 //
+
 import UIKit
+import PharusUI
 
 class StudentProjectDetailViewController: UIViewController {
 
@@ -71,7 +73,7 @@ extension SendFileViewController: StudentProjectsViewable { }
 // MARK: - Methods
 extension StudentProjectDetailViewController {
     func setupTabbar() {
-        var backButtonImage = UIImage(named: Constants.assets.icons.backArrowIcon)
+        var backButtonImage = UIImage(named: PharusUIConstants.assets.icons.backArrowIcon)
         backButtonImage = backButtonImage?.withTintColor(
             .white,
             renderingMode: .alwaysOriginal

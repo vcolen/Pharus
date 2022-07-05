@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PharusUI
 
 class LoginView: UIView {
 

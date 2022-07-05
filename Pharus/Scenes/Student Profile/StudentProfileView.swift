@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PharusUI
 
 class StudentProfileView: UIView {
 
@@ -96,7 +97,7 @@ class StudentProfileView: UIView {
 
     func showStudentAvatar() {
         profileImageView.image = UIImage(
-            named: "avatar" + student.avatar + Constants.assets.images.avatar.circleImage.suffix
+            named: "avatar" + student.avatar + PharusUIConstants.assets.images.avatar.circleImage.suffix
         )
     }
 
