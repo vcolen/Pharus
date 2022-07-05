@@ -159,7 +159,7 @@ class StudentProjectCell: UITableViewCell {
     }()
 
     private lazy var projectScheduleView: ProjectScheduleView = {
-        let view = ProjectScheduleView(projectData: (isComplete: false, daysRemaining: 12))
+        let view = ProjectScheduleView(projectIsComplete: false, projectDaysRemaining: 12)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "StudentProjectCell.projectScheduleView"
 
@@ -267,7 +267,8 @@ class StudentProjectCell: UITableViewCell {
         titleLabel.text = project.name
         descriptionLabel.text = project.projectDescription
         mentorLabel.text = "Mentor: " + project.mentor
-        projectScheduleView.projectData = (project.isComplete, project.daysRemaining)
+        projectScheduleView.projectIsComplete = project.isComplete
+        projectScheduleView.projectDaysRemaining = project.daysRemaining
         subscribeButton.isSubscribed = project.isSubscribed
         companyLogoImageView.image = UIImage(
             named: "\(project.company ?? "ioasys" .lowercased())LogoImage"
