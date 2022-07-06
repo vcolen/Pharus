@@ -35,18 +35,19 @@ public extension UIView {
     }
 
     func edges() {
+        guard let superview = self.superview else { return }
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(
-                equalTo: self.superview?.topAnchor ?? topAnchor
+                equalTo: superview.topAnchor
             ),
             self.bottomAnchor.constraint(
-                equalTo: self.superview?.bottomAnchor ?? bottomAnchor
+                equalTo: superview.bottomAnchor
             ),
             self.leadingAnchor.constraint(
-                equalTo: self.superview?.leadingAnchor ?? leadingAnchor
+                equalTo: superview.leadingAnchor
             ),
             self.trailingAnchor.constraint(
-                equalTo: self.superview?.trailingAnchor ?? trailingAnchor
+                equalTo: superview.trailingAnchor
             )
         ])
     }
