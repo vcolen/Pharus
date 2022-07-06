@@ -34,7 +34,7 @@ public extension UIView {
         }
     }
 
-    func edges() -> Self {
+    func edges() {
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(
                 equalTo: self.superview?.topAnchor ?? topAnchor
@@ -49,8 +49,6 @@ public extension UIView {
                 equalTo: self.superview?.trailingAnchor ?? trailingAnchor
             )
         ])
-
-        return self
     }
 
     func frame(width: CGFloat? = nil, height: CGFloat? = nil) -> Self {
