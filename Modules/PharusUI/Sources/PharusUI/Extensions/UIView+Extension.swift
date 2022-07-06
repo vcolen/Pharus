@@ -32,6 +32,8 @@ public extension UIView {
                 view.bottomAnchor.constraint(equalTo: bottomAnchor, constant: bottom)
             ])
         }
+
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 
     func edges() {
@@ -50,19 +52,23 @@ public extension UIView {
                 equalTo: superview.trailingAnchor
             )
         ])
+
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 
     func frame(width: CGFloat? = nil, height: CGFloat? = nil) -> Self {
-            if let width = width {
-                self.widthAnchor.constraint(equalToConstant: width).isActive = true
-            }
-
-            if let height = height {
-                self.heightAnchor.constraint(equalToConstant: height).isActive = true
-            }
-
-            return self
+        if let width = width {
+            self.widthAnchor.constraint(equalToConstant: width).isActive = true
         }
+
+        if let height = height {
+            self.heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+
+        self.translatesAutoresizingMaskIntoConstraints = false
+
+        return self
+    }
 
     func center(in otherView: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -91,6 +97,8 @@ public extension UIView {
             backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
             backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
