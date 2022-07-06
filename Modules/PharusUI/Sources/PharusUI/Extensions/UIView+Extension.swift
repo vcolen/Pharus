@@ -7,26 +7,7 @@
 
 import UIKit
 
-// MARK: - Click action
-public class ClickListener: UITapGestureRecognizer {
-    public var onClick: (() -> Void)?
-}
-
-// MARK: - UIView Extension
 public extension UIView {
-
-    func setOnClickListener(action: @escaping () -> Void) {
-        let tapRecogniser = ClickListener(target: self, action: #selector(onViewClicked(sender:)))
-        tapRecogniser.onClick = action
-        self.addGestureRecognizer(tapRecogniser)
-    }
-
-    @objc func onViewClicked(sender: ClickListener) {
-        if let onClick = sender.onClick {
-            onClick()
-        }
-    }
-
     // MARK: - Constraints
     func stretch(_ view: UIView,
                  to otherView: UIView? = nil,
@@ -53,7 +34,37 @@ public extension UIView {
         }
     }
 
-    // MARK: - Center
+    func edges() -> Self {
+        NSLayoutConstraint.activate([
+            self.topAnchor.constraint(
+                equalTo: self.superview?.topAnchor ?? topAnchor
+            ),
+            self.bottomAnchor.constraint(
+                equalTo: self.superview?.bottomAnchor ?? bottomAnchor
+            ),
+            self.leadingAnchor.constraint(
+                equalTo: self.superview?.leadingAnchor ?? leadingAnchor
+            ),
+            self.trailingAnchor.constraint(
+                equalTo: self.superview?.trailingAnchor ?? trailingAnchor
+            )
+        ])
+
+        return self
+    }
+
+    func frame(width: CGFloat? = nil, height: CGFloat? = nil) -> Self {
+            if let width = width {
+                self.widthAnchor.constraint(equalToConstant: width).isActive = true
+            }
+
+            if let height = height {
+                self.heightAnchor.constraint(equalToConstant: height).isActive = true
+            }
+
+            return self
+        }
+
     func center(in otherView: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
         otherView.translatesAutoresizingMaskIntoConstraints = false
@@ -81,5 +92,24 @@ public extension UIView {
             backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
             backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+}
+
+// MARK: - Click action
+public class ClickListener: UITapGestureRecognizer {
+    public var onClick: (() -> Void)?
+}
+
+public extension UIView {
+    func setOnClickListener(action: @escaping () -> Void) {
+        let tapRecogniser = ClickListener(target: self, action: #selector(onViewClicked(sender:)))
+        tapRecogniser.onClick = action
+        self.addGestureRecognizer(tapRecogniser)
+    }
+
+    @objc func onViewClicked(sender: ClickListener) {
+        if let onClick = sender.onClick {
+            onClick()
+        }
     }
 }
