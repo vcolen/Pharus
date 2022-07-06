@@ -38,6 +38,8 @@ public extension UIView {
 
     func edges() {
         guard let superview = self.superview else { return }
+        self.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(
                 equalTo: superview.topAnchor
@@ -52,11 +54,11 @@ public extension UIView {
                 equalTo: superview.trailingAnchor
             )
         ])
-
-        self.translatesAutoresizingMaskIntoConstraints = false
     }
 
     func frame(width: CGFloat? = nil, height: CGFloat? = nil) -> Self {
+        self.translatesAutoresizingMaskIntoConstraints = false
+
         if let width = width {
             self.widthAnchor.constraint(equalToConstant: width).isActive = true
         }
@@ -64,8 +66,6 @@ public extension UIView {
         if let height = height {
             self.heightAnchor.constraint(equalToConstant: height).isActive = true
         }
-
-        self.translatesAutoresizingMaskIntoConstraints = false
 
         return self
     }
