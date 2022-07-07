@@ -27,8 +27,7 @@ public extension KeyPathSettable {
     }
 
     func assign(to reference: inout Self?) -> Self {
-        guard var reference = reference else { return self }
         reference = self
-        return reference
+        return self
     }
 }
