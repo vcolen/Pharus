@@ -13,6 +13,12 @@ public class PaddingView<Original: UIView, Wrapped: UIView>: UIView, WrapperView
     public let wrappedView: Wrapped
     public let edges: Set<MarginEdges>
     public let constant: CGFloat
+    private lazy var edgeConstants: [MarginEdges: CGFloat] = [
+        .top: 0,
+        .leading: 0,
+        .trailing: 0,
+        .bottom: 0
+    ]
 
     init(
         original: Original,
@@ -26,6 +32,10 @@ public class PaddingView<Original: UIView, Wrapped: UIView>: UIView, WrapperView
         self.constant = constant
         super.init(frame: .zero)
         setupView()
+
+        for edge in edges {
+            edgeConstants[edge] = constant
+        }
     }
 
     required init?(coder: NSCoder) {
@@ -39,42 +49,24 @@ extension PaddingView: ViewCodable {
     }
 
     public func setupConstraints() {
-        if edges.contains(.all) {
-            NSLayoutConstraint.activate([
-                wrappedView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: constant),
-                wrappedView.topAnchor.constraint(equalTo: topAnchor, constant: constant),
-                wrappedView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -constant),
-                wrappedView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -constant)
-            ])
-            return
-        }
-
-        if edges.contains(.top) {
-            wrappedView.topAnchor.constraint(
-                equalTo: topAnchor,
-                constant: constant
-            ).isActive = true
-        }
-
-        if edges.contains(.leading) {
+        wrappedView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
             wrappedView.leadingAnchor.constraint(
                 equalTo: leadingAnchor,
-                constant: constant
-            ).isActive = true
-        }
-
-        if edges.contains(.trailing) {
+                constant: edgeConstants[.leading] ?? 0
+            ),
+            wrappedView.topAnchor.constraint(
+                equalTo: topAnchor,
+                constant: edgeConstants[.top] ?? 0
+            ),
             wrappedView.trailingAnchor.constraint(
                 equalTo: trailingAnchor,
-                constant: -constant
-            ).isActive = true
-        }
-
-        if edges.contains(.bottom) {
+                constant: -(edgeConstants[.trailing] ?? 0)
+            ),
             wrappedView.bottomAnchor.constraint(
                 equalTo: bottomAnchor,
-                constant: -constant
-            ).isActive = true
-        }
+                constant: -(edgeConstants[.bottom] ?? 0)
+            )
+        ])
     }
 }
