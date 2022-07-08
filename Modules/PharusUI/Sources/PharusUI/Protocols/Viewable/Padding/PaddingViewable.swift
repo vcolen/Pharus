@@ -15,6 +15,7 @@ public extension PaddingViewable {
         _ edges: Set<MarginEdges>,
         _ constant: CGFloat
     ) -> PaddingView<Self, Self> {
+
         return PaddingView(
             original: self,
             wrapped: self,
@@ -30,6 +31,7 @@ public extension PaddingViewable where Self: WrapperViewable {
         _ edges: Set<MarginEdges>,
         _ constant: CGFloat
     ) -> PaddingView<Original, Self> {
+
         return PaddingView(
             original: self.originalView,
             wrapped: self, edges: edges,
