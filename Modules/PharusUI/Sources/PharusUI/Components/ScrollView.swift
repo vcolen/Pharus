@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ScrollView<Content: UIView>: UIView, ViewCodable {
+public class ScrollView<Content: UIView>: UIView, ViewCodable {
 
     // MARK: - Properties
     public let content: Content
 
     // MARK: - Initializer
-    init(content: () -> Content) {
+    public init(content: () -> Content) {
         self.content = content()
         super.init(frame: .zero)
         setupView()
@@ -25,7 +25,7 @@ class ScrollView<Content: UIView>: UIView, ViewCodable {
 }
 
 // MARK: - View Codable
-extension ScrollView {
+public extension ScrollView {
     func buildHierarchy() {
         addSubview(content)
     }
