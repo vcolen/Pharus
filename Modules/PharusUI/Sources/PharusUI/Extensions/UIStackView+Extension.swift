@@ -9,7 +9,7 @@ import UIKit
 public extension UIStackView {
 
     convenience init(_ views: [UIView]) {
-        self.init()
+        self.init(frame: .zero)
         for view in views {
             addArrangedSubview(view)
         }
