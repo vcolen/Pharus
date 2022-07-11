@@ -8,7 +8,7 @@
 import UIKit
 
 public class VStackView: UIStackView {
-    
+
     public init(
         spacing: CGFloat = 0,
         _ views: [UIView]
@@ -20,7 +20,7 @@ public class VStackView: UIStackView {
             addArrangedSubview(view)
         }
     }
-    
+
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
