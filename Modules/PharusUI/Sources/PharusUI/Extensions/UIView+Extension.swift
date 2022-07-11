@@ -119,6 +119,3 @@ public extension UIView {
         }
     }
 }
-
-// MARK: - PaddingViewable
-extension UIView: PaddingViewable {}
