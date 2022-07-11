@@ -16,6 +16,7 @@ public extension UIView {
                  bottom: CGFloat = 0,
                  right: CGFloat = 0) {
         view.translatesAutoresizingMaskIntoConstraints = false
+        otherView?.translatesAutoresizingMaskIntoConstraints = false
 
         if let otherView = otherView {
             NSLayoutConstraint.activate([
@@ -32,8 +33,6 @@ public extension UIView {
                 view.bottomAnchor.constraint(equalTo: bottomAnchor, constant: bottom)
             ])
         }
-
-        self.translatesAutoresizingMaskIntoConstraints = false
     }
 
     func edges() {
