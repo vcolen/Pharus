@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ScrollView<Content: UIView>: UIView, ViewCodable {
+public class ScrollView<Content: UIView>: UIScrollView, ViewCodable {
 
     // MARK: - Properties
     public let content: Content
@@ -31,7 +31,25 @@ public extension ScrollView {
     }
 
     func setupConstraints() {
-        self.edges()
-        content.edges()
+        self.translatesAutoresizingMaskIntoConstraints = false
+        content.translatesAutoresizingMaskIntoConstraints = false
+
+        let contentGuide = self.contentLayoutGuide
+        let frameGuide = self.frameLayoutGuide
+
+        NSLayoutConstraint.activate([
+            frameGuide.leadingAnchor.constraint(equalTo: leadingAnchor),
+            frameGuide.topAnchor.constraint(equalTo: topAnchor),
+            frameGuide.trailingAnchor.constraint(equalTo: trailingAnchor),
+            frameGuide.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            contentGuide.leadingAnchor.constraint(equalTo: content.leadingAnchor),
+            contentGuide.topAnchor.constraint(equalTo: content.topAnchor),
+            contentGuide.trailingAnchor.constraint(equalTo: content.trailingAnchor),
+            contentGuide.bottomAnchor.constraint(equalTo: content.bottomAnchor),
+            contentGuide.widthAnchor.constraint(equalTo: frameGuide.widthAnchor)
+        ])
     }
 }
