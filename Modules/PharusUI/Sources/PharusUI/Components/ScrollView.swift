@@ -26,6 +26,6 @@ class ScrollView<Content: UIView>: UIView, ViewCodable {
 
     func setupConstraints() {
         self.edges()
+        content.edges()
     }
-
 }
