@@ -9,7 +9,7 @@ import UIKit
 
 public class HStackView: UIStackView {
 
-    init(
+    public init(
         spacing: CGFloat = 0,
         _ views: [UIView]
     ) {
