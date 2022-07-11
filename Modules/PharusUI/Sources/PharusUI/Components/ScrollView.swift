@@ -8,8 +8,11 @@
 import UIKit
 
 class ScrollView<Content: UIView>: UIView, ViewCodable {
+
+    // MARK: - Properties
     public let content: Content
 
+    // MARK: - Initializer
     init(content: () -> Content) {
         self.content = content()
         super.init(frame: .zero)
@@ -19,7 +22,10 @@ class ScrollView<Content: UIView>: UIView, ViewCodable {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
+// MARK: - View Codable
+extension ScrollView {
     func buildHierarchy() {
         addSubview(content)
     }
