@@ -25,6 +25,7 @@ public extension PaddingViewable {
     }
 }
 
+// MARK: - Wrapper Viewable
 public extension PaddingViewable where Self: WrapperViewable {
 
     func padding(
@@ -39,3 +40,6 @@ public extension PaddingViewable where Self: WrapperViewable {
         )
     }
 }
+
+// MARK: - UIView
+extension UIView: PaddingViewable {}
