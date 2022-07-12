@@ -54,8 +54,8 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
         presenter.showMentorReview()
     }
 
-    func taskCheckboxTapped(task: TaskModel) {
-        presenter.toggleTaskCompletedStatus(task: task)
+    func taskCheckboxTapped(taskIndex: Int) {
+        presenter.toggleTaskCompletedStatus(taskIndex: taskIndex)
     }
 
     func rulesViewTapped() {

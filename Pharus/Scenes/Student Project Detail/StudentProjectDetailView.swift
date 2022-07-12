@@ -334,7 +334,8 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
     }
 
     private func setupProjectTasks(of project: ProjectModel) {
-        for task in project.tasks {
+        for taskIndex in project.tasks.indices {
+            let task = project.tasks[taskIndex]
             let checkboxIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon ?? .defaultImage : .defaultImage
             let taskView = ProjectTaskView(
                 task: task,
@@ -345,9 +346,18 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
             if project.isComplete == false && project.isSubscribed == true {
                 taskView.taskCheckmarkButton.addAction(
                     UIAction { [weak self, weak taskView] _ in
-                        self?.taskCheckboxTapped(task: task)
-                        let newIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon : .defaultImage
-                        taskView?.taskCheckmarkButton.setImage(newIcon, for: .normal)
+                        self?.taskCheckboxTapped(taskIndex: taskIndex)
+                        if project.tasks[taskIndex].isComplete {
+                            taskView?.taskCheckmarkButton.setImage(
+                                .pharusIcons.checkmarkIcon,
+                                for: .normal
+                            )
+                        } else {
+                            taskView?.taskCheckmarkButton.setImage(
+                                .defaultImage,
+                                for: .normal
+                            )
+                        }
                         self?.updateProjectProgressView()
                     }, for: .touchUpInside
                 )
@@ -457,8 +467,8 @@ extension StudentProjectDetailView {
         delegate?.envelopeIconTapped()
     }
 
-    func taskCheckboxTapped(task: TaskModel) {
-        delegate?.taskCheckboxTapped(task: task)
+    func taskCheckboxTapped(taskIndex: Int) {
+        delegate?.taskCheckboxTapped(taskIndex: taskIndex)
     }
 
     func rulesViewTapped() {

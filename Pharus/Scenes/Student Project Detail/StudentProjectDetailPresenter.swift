@@ -38,7 +38,7 @@ class StudentProjectDetailPresenter: StudentProjectsDetailPresenting {
         coordinator.showSendFileView()
     }
 
-    func toggleTaskCompletedStatus(task: TaskModel) {
-        task.toggleCompletionStatus()
+    func toggleTaskCompletedStatus(taskIndex: Int) {
+        project.tasks[taskIndex].toggleCompletionStatus()
     }
 }
