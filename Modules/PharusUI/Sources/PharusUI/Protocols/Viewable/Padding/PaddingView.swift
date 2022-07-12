@@ -31,11 +31,12 @@ public class PaddingView<Original: UIView, Wrapped: UIView>: UIView, WrapperView
         self.edges = edges
         self.constant = constant
         super.init(frame: .zero)
-        setupView()
 
         for edge in edges {
             edgeConstants[edge] = constant
         }
+
+        setupView()
     }
 
     required init?(coder: NSCoder) {
