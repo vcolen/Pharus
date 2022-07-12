@@ -12,30 +12,17 @@ public class SafeAreaView<Original: UIView, Wrapped: UIView>: UIView, WrapperVie
     public let originalView: Original
     public let wrappedView: Wrapped
     public let edges: Set<MarginEdges>
-    public let constant: CGFloat
-    private lazy var edgeConstants: [MarginEdges: CGFloat] = [
-        .top: 0,
-        .leading: 0,
-        .trailing: 0,
-        .bottom: 0
-    ]
 
     init(
         original: Original,
         wrapped: Wrapped,
-        edges: Set<MarginEdges>,
-        constant: CGFloat
+        edges: Set<MarginEdges>
     ) {
         self.originalView = original
         self.wrappedView = wrapped
         self.edges = edges
-        self.constant = constant
         super.init(frame: .zero)
         setupView()
-
-        for edge in edges {
-            edgeConstants[edge] = constant
-        }
     }
 
     required init?(coder: NSCoder) {
@@ -51,23 +38,29 @@ extension SafeAreaView: ViewCodable {
     public func setupConstraints() {
         wrappedView.translatesAutoresizingMaskIntoConstraints = false
         let safeArea = safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            wrappedView.leadingAnchor.constraint(
-                equalTo: safeArea.leadingAnchor,
-                constant: edgeConstants[.leading] ?? 0
-            ),
-            wrappedView.topAnchor.constraint(
-                equalTo: safeArea.topAnchor,
-                constant: edgeConstants[.top] ?? 0
-            ),
-            wrappedView.trailingAnchor.constraint(
-                equalTo: safeArea.trailingAnchor,
-                constant: -(edgeConstants[.trailing] ?? 0)
-            ),
-            wrappedView.bottomAnchor.constraint(
-                equalTo: safeArea.bottomAnchor,
-                constant: -(edgeConstants[.bottom] ?? 0)
-            )
-        ])
+        var constraints = [
+            wrappedView.topAnchor.constraint(equalTo: topAnchor),
+            wrappedView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            wrappedView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            wrappedView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ]
+
+        if edges.contains(.top) {
+            constraints[0] = wrappedView.topAnchor.constraint(equalTo: safeArea.topAnchor)
+        }
+
+        if edges.contains(.leading) {
+            constraints[1] = wrappedView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor)
+        }
+
+        if edges.contains(.trailing) {
+            constraints[2] = wrappedView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
+        }
+
+        if edges.contains(.bottom) {
+            constraints[3] = wrappedView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+        }
+
+        NSLayoutConstraint.activate(constraints)
     }
 }

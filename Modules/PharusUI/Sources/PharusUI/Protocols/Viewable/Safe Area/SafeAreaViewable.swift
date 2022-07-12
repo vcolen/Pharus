@@ -19,8 +19,7 @@ public extension SafeAreaViewable {
         return SafeAreaView(
             original: self,
             wrapped: self,
-            edges: edges,
-            constant: constant
+            edges: edges
         )
     }
 }
@@ -35,8 +34,7 @@ public extension SafeAreaViewable where Self: WrapperViewable {
 
         return SafeAreaView(
             original: self.originalView,
-            wrapped: self, edges: edges,
-            constant: constant
+            wrapped: self, edges: edges
         )
     }
 }
