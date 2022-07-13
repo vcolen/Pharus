@@ -51,11 +51,15 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
         }
     }
 
-    func showSubscribeAlert(of project: ProjectModel) {
+    func showSubscribeAlert(
+        of project: ProjectModel,
+        onCommit commitHandler: @escaping () -> Void
+    ) {
         if let navigationController = rootViewController {
             ProjectSubcriptionAlertCoordinator(
                 rootViewController: navigationController,
-                project: project
+                project: project,
+                onSubscription: commitHandler
             ).start()
         }
     }

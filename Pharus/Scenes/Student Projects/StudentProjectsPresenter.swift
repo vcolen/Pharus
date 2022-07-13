@@ -11,7 +11,7 @@ class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentP
 
     // MARK: - Properties
     private let coordinator: StudentProjectsCoordinating
-    let student: StudentModel
+    var student: StudentModel
 
     // MARK: - Initializer
     init(
@@ -28,7 +28,9 @@ class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentP
         coordinator.showStudentProject(project)
     }
 
-    func showSubscribeAlert(of project: ProjectModel) {
-        coordinator.showSubscribeAlert(of: project)
+    func showSubscribeAlert(of project: ProjectModel, at index: Int) {
+        coordinator.showSubscribeAlert(of: project) {
+            self.student.projects[index].isSubscribed = true
+        }
     }
 }
