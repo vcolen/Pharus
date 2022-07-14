@@ -12,7 +12,7 @@ class ProjectSubcriptionAlertPresenter: BasePresenter<ProjectSubcriptionAlertVie
 
     // MARK: - Properties
     private let coordinator: ProjectSubcriptionAlertCoordinating
-    var project: ProjectModel
+    let project: ProjectModel
     private let subscriptionHandler: () -> Void
 
     // MARK: - Initializer
