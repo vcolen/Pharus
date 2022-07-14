@@ -39,12 +39,30 @@ extension CenterView: ViewCodable {
 
     public func setupConstraints() {
         wrappedView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            wrappedView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor),
+            wrappedView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor),
+            wrappedView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor),
+            wrappedView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor)
+        ])
 
-        if axis == .horizontally {
-            wrappedView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        } else if axis == .vertically {
-            wrappedView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        } else {
+        switch axis {
+
+        case .horizontally:
+            NSLayoutConstraint.activate([
+                wrappedView.centerXAnchor.constraint(equalTo: centerXAnchor),
+                wrappedView.topAnchor.constraint(equalTo: topAnchor),
+                wrappedView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+
+        case .vertically:
+            NSLayoutConstraint.activate([
+                wrappedView.centerYAnchor.constraint(equalTo: centerYAnchor),
+                wrappedView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                wrappedView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            ])
+
+        case .allAxis:
             NSLayoutConstraint.activate([
                 wrappedView.centerXAnchor.constraint(equalTo: centerXAnchor),
                 wrappedView.centerYAnchor.constraint(equalTo: centerYAnchor)
