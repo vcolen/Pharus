@@ -13,15 +13,18 @@ class ProjectSubcriptionAlertPresenter: BasePresenter<ProjectSubcriptionAlertVie
     // MARK: - Properties
     private let coordinator: ProjectSubcriptionAlertCoordinating
     let project: ProjectModel
+    private let subscriptionHandler: () -> Void
 
     // MARK: - Initializer
 
     init(
         coordinator: ProjectSubcriptionAlertCoordinating,
-        project: ProjectModel
+        project: ProjectModel,
+        onSubscription subscriptionHandler: @escaping () -> Void
     ) {
         self.coordinator = coordinator
         self.project = project
+        self.subscriptionHandler = subscriptionHandler
     }
 
     // MARK: - Actions
@@ -31,7 +34,7 @@ class ProjectSubcriptionAlertPresenter: BasePresenter<ProjectSubcriptionAlertVie
     }
 
     func subscribeToProject() {
-        project.isSubscribed = true
+        subscriptionHandler()
         coordinator.subscribeToProject()
     }
 }

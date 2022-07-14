@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProjectModel: Codable {
+struct ProjectModel: Codable {
 
     // MARK: - Properties
     var id: String
@@ -32,7 +32,6 @@ class ProjectModel: Codable {
     }
 
     // MARK: - Initializer
-
     init(
         id: String,
         name: String,

@@ -55,20 +55,6 @@ public extension UIView {
         ])
     }
 
-    func frame(width: CGFloat? = nil, height: CGFloat? = nil) -> Self {
-        self.translatesAutoresizingMaskIntoConstraints = false
-
-        if let width = width {
-            self.widthAnchor.constraint(equalToConstant: width).isActive = true
-        }
-
-        if let height = height {
-            self.heightAnchor.constraint(equalToConstant: height).isActive = true
-        }
-
-        return self
-    }
-
     /// Centers self horizontally and vertically in other view
     func center(in otherView: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -87,6 +73,20 @@ public extension UIView {
     func centerVertically(in otherView: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.centerYAnchor.constraint(equalTo: otherView.centerYAnchor).isActive = true
+    }
+
+    func frame(width: CGFloat? = nil, height: CGFloat? = nil) -> Self {
+        self.translatesAutoresizingMaskIntoConstraints = false
+
+        if let width = width {
+            self.widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+
+        if let height = height {
+            self.heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+
+        return self
     }
 
     // MARK: - Add Background

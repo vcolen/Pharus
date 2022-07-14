@@ -59,6 +59,8 @@ extension StudentProfileViewController {
         super.viewWillAppear(animated)
 
         setGradientBackground()
+        presenter.loadData()
+        customView.student = presenter.student
         customView.showStudentAvatar()
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TaskModel: Codable {
+struct TaskModel: Codable {
 
     // MARK: - Properties
     let title: String
@@ -32,7 +32,7 @@ class TaskModel: Codable {
 }
 
 extension TaskModel {
-    func toggleCompletionStatus() {
+    mutating func toggleCompletionStatus() {
         isComplete.toggle()
     }
 }

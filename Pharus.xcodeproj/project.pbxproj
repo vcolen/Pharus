@@ -14,6 +14,7 @@
 		790AA955286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */; };
 		791B4546287358D800F1EBE6 /* PharusUI in Frameworks */ = {isa = PBXBuildFile; productRef = 791B4545287358D800F1EBE6 /* PharusUI */; };
 		791B454E28737F8400F1EBE6 /* ProjectTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */; };
+		79410A1A287F5F08001ABC40 /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410A19287F5F08001ABC40 /* StudentManager.swift */; };
 		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
 		799AFAC7285CECDE001B0371 /* ProjectSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */; };
 		799AFAC8285CECDE001B0371 /* ProjectSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FD285CECDE001B0371 /* ProjectSheetView.swift */; };
@@ -171,6 +172,7 @@
 		790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingTabCoordinator.swift; sourceTree = "<group>"; };
 		791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectTaskView.swift; path = "Student Home News/ProjectTaskView.swift"; sourceTree = "<group>"; };
+		79410A19287F5F08001ABC40 /* StudentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentManager.swift; sourceTree = "<group>"; };
 		797A471C287481F2005A3632 /* PharusUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PharusUI; sourceTree = "<group>"; };
 		797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenter.swift.swift; sourceTree = "<group>"; };
 		799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetViewController.swift; sourceTree = "<group>"; };
@@ -340,6 +342,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79410A18287F5EFA001ABC40 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				799AFAB0285CECDE001B0371 /* StudentModel.swift */,
+				79410A19287F5F08001ABC40 /* StudentManager.swift */,
+			);
+			path = Student;
 			sourceTree = "<group>";
 		};
 		797A471B287481EC005A3632 /* Modules */ = {
@@ -773,7 +784,7 @@
 				799AFAAD285CECDE001B0371 /* Student.json */,
 				799AFAAE285CECDE001B0371 /* TaskModel.swift */,
 				799AFAAF285CECDE001B0371 /* Project.swift */,
-				799AFAB0285CECDE001B0371 /* StudentModel.swift */,
+				79410A18287F5EFA001ABC40 /* Student */,
 				799AFAB1285CECDE001B0371 /* Task.swift */,
 				799AFAB2285CECDE001B0371 /* Student.swift */,
 			);
@@ -1060,6 +1071,7 @@
 				799AFAF6285CECDF001B0371 /* LogoutAlertViewDelegate.swift in Sources */,
 				799AFAE4285CECDF001B0371 /* StudentHomeCoordinating.swift in Sources */,
 				799AFB36285CECDF001B0371 /* Coordinator.swift in Sources */,
+				79410A1A287F5F08001ABC40 /* StudentManager.swift in Sources */,
 				797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */,
 				799AFAD4285CECDF001B0371 /* SendFileViewDelegate.swift in Sources */,
 				79FFE7E72860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift in Sources */,

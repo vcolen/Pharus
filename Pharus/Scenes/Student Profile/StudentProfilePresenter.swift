@@ -12,7 +12,7 @@ class StudentProfilePresenter: BasePresenter<StudentProfileViewable> {
     // MARK: - Properties
 
     private let coordinator: StudentProfileCoordinating
-    let student: StudentModel
+    var student: StudentModel
 
     // MARK: - Initializer
 
@@ -26,9 +26,14 @@ class StudentProfilePresenter: BasePresenter<StudentProfileViewable> {
 }
 
 // MARK: - Actions
-
 extension StudentProfilePresenter: StudentProfilePresenting {
     func showLogoutAlert() {
         coordinator.showLogOutAlert()
+    }
+}
+
+extension StudentProfilePresenter {
+    func loadData() {
+        student = StudentManager.shared.getStudent()
     }
 }

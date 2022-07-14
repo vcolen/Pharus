@@ -8,6 +8,6 @@
 import Foundation
 
 protocol StudentProjectsViewDelegate: AnyObject {
-    func subscribeButtonTapped(of project: ProjectModel)
+    func subscribeButtonTapped(of project: ProjectModel, at index: Int)
     func projectCellTapped(for project: ProjectModel)
 }
