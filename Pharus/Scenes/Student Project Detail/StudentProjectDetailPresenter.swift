@@ -12,7 +12,7 @@ class StudentProjectDetailPresenter: StudentProjectsDetailPresenting {
     // MARK: - Properties
 
     private let coordinator: StudentProjectDetailCoordinator
-    let project: ProjectModel
+    var project: ProjectModel
 
     // MARK: - Initializer
 
@@ -38,7 +38,7 @@ class StudentProjectDetailPresenter: StudentProjectsDetailPresenting {
         coordinator.showSendFileView()
     }
 
-    func toggleTaskCompletedStatus(task: TaskModel) {
-        task.toggleCompletionStatus()
+    func toggleTaskCompletedStatus(taskIndex: Int) {
+        project.tasks[taskIndex].toggleCompletionStatus()
     }
 }

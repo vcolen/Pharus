@@ -11,7 +11,7 @@ import PharusUI
 class StudentProfileView: UIView {
 
     // MARK: - Properties
-    private let student: StudentModel
+    var student: StudentModel
 
     // MARK: - Views
     private lazy var mainScrollView: UIScrollView = {

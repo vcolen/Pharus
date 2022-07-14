@@ -23,7 +23,7 @@ class StudentHomeViewController: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
 
-         presenter.attach(self)
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
@@ -77,6 +77,8 @@ extension StudentHomeViewController {
         super.viewWillAppear(animated)
 
         setGradientBackground()
+        presenter.loadData()
+        customView.student = presenter.student
         customView.showStudentAvatar()
     }
 }

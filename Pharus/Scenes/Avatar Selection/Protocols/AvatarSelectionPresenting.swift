@@ -10,4 +10,6 @@ import Foundation
 protocol AvatarSelectionPresenting: Presenting {
     var student: StudentModel { get }
     func changeStudentAvatar(to avatar: String)
+    func loadData()
+    func submit()
 }

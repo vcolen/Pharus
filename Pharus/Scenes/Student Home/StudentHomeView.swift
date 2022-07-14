@@ -11,7 +11,7 @@ import PharusUI
 class StudentHomeView: UIView {
 
     // MARK: - Properties
-    private var student: StudentModel
+    var student: StudentModel
     private let cards: [StudentHomeMiniCardView] = [
         StudentHomeMiniCardView(
             cardType: .warning,

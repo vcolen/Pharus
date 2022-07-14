@@ -21,6 +21,7 @@ public extension ViewCodable {
 
     func applyAdditionalChanges() {}
 
+    /** Calls the methods  buildHierarchy, setupConstraints and applyAdditionalChanges */
     func setupView() {
         buildHierarchy()
         setupConstraints()

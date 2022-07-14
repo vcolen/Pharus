@@ -55,8 +55,8 @@ extension StudentProjectsViewController {
 
 // MARK: - Student Projects View Delegate
 extension StudentProjectsViewController: StudentProjectsViewDelegate {
-    func subscribeButtonTapped(of project: ProjectModel) {
-        presenter.showSubscribeAlert(of: project)
+    func subscribeButtonTapped(of project: ProjectModel, at index: Int) {
+        presenter.showSubscribeAlert(of: project, at: index)
     }
 
     func projectCellTapped(for project: ProjectModel) {

@@ -36,6 +36,7 @@ extension AvatarSelectionViewController {
         super.viewWillAppear(animated)
 
         customView.delegate = self
+        presenter.loadData()
         setGradientBackground()
     }
 }
