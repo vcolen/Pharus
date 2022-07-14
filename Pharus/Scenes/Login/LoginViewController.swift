@@ -92,8 +92,13 @@ extension LoginViewController {
 // MARK: - Login View Delegate
 extension LoginViewController: LoginViewDelegate {
     func loginButtonPressed() {
-        guard let email = customView.emailTextField.text else { return }
-        guard let password = customView.passwordTextField.text else { return }
+//        guard let email = customView.emailTextField.text else { return }
+//        guard let password = customView.passwordTextField.text else { return }
+
+#warning("Retirar infos de login")
+
+        let email = "antonia.ferreira@gmail.com"
+        let password = "Atn4273!"
 
         let studentDidLogIn = presenter.loginUser(email: email, password: password)
 

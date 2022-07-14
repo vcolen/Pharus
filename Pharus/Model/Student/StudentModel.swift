@@ -4,9 +4,10 @@
 //
 //  Created by Victor Colen on 22/03/22.
 //
+
 import Foundation
 
-class StudentModel: Codable {
+struct StudentModel: Codable {
 
     // MARK: - Properties
     var id: String

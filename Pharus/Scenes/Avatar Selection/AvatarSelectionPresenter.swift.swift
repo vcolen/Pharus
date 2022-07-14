@@ -12,7 +12,7 @@ class AvatarSelectionPresenter: BasePresenter<AvatarSelectionViewable> {
     // MARK: - Properties
 
     private let coordinator: AvatarSelectionCoordinating
-    let student: StudentModel
+    var student: StudentModel
 
     // MARK: - Initializer
 

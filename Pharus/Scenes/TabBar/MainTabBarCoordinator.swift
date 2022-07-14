@@ -10,7 +10,7 @@ import UIKit
 struct MainTabBarCoordinator {
 
     // MARK: - Properties
-    private let student: StudentModel
+    private var student: StudentModel
     private let logoutHandler: () -> Void
     private weak var rootViewController: UITabBarController?
 
@@ -60,6 +60,10 @@ struct MainTabBarCoordinator {
             student: student,
             onLogout: logoutHandler
         ).start()
+    }
+
+    mutating func changeAvatar(to avatar: String) {
+        student.avatar = avatar
     }
 }
 
