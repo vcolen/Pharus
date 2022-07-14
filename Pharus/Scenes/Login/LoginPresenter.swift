@@ -37,6 +37,7 @@ class LoginPresenter: BasePresenter<LoginViewable>, LoginPresenting {
     func loginUser(email: String, password: String) -> Bool {
         if email == student.email && password == student.password {
             let studentModel = makeStudentModel(with: student)
+            StudentManager.shared.update(student: studentModel)
             coordinator.showHome(student: studentModel)
             return true
         }

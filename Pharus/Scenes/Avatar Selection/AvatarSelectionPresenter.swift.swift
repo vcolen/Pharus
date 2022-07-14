@@ -30,5 +30,16 @@ class AvatarSelectionPresenter: BasePresenter<AvatarSelectionViewable> {
 extension AvatarSelectionPresenter: AvatarSelectionPresenting {
     func changeStudentAvatar(to avatar: String) {
         student.avatar = avatar
+        submit()
+    }
+}
+
+extension AvatarSelectionPresenter {
+    func submit() {
+        StudentManager.shared.student = student
+    }
+
+    func loadData() {
+        self.student = StudentManager.shared.getStudent()
     }
 }

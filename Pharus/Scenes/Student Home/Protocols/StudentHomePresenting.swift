@@ -9,4 +9,5 @@ import Foundation
 
 protocol StudentHomePresenting: Presenting {
     var student: StudentModel { get }
+    func loadData()
 }

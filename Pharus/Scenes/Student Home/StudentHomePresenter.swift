@@ -11,7 +11,7 @@ class StudentHomePresenter: BasePresenter<StudentHomeViewable>, StudentHomePrese
 
     // MARK: - Properties
     private let coordinator: StudentHomeCoordinating
-    let student: StudentModel
+    var student: StudentModel
 
     // MARK: - Initializer
     init(
@@ -20,5 +20,11 @@ class StudentHomePresenter: BasePresenter<StudentHomeViewable>, StudentHomePrese
     ) {
         self.coordinator = coordinator
         self.student = student
+    }
+}
+
+extension StudentHomePresenter {
+    func loadData() {
+        student = StudentManager.shared.getStudent()
     }
 }

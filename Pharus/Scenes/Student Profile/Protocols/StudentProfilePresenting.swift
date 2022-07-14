@@ -10,4 +10,5 @@ import Foundation
 protocol StudentProfilePresenting: Presenting {
     var student: StudentModel { get }
     func showLogoutAlert()
+    func loadData()
 }

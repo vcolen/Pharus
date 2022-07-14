@@ -9,8 +9,17 @@ import Foundation
 
 class StudentManager {
     var student: StudentModel
+    static var shared = StudentManager(student: StudentModel())
 
     init(student: StudentModel) {
+        self.student = student
+    }
+
+    func getStudent() -> StudentModel {
+        return student
+    }
+
+    func update(student: StudentModel) {
         self.student = student
     }
 }

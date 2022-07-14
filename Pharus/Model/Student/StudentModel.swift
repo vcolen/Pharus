@@ -57,6 +57,23 @@ struct StudentModel: Codable {
         self.username = username
         self.projects = projects
     }
+
+    init() {
+        self.id = "01"
+        self.firstName = "Robert"
+        self.lastName = "Junior"
+        self.birthdate = "18/01/2005"
+        self.gender = "M"
+        self.school = "NYU"
+        self.year = "2o"
+        self.city = "BH"
+        self.schoolShift = "M"
+        self.avatar = "avatar02"
+        self.email = "robert.downey@gmail.com"
+        self.password = "robertinho"
+        self.username = "rdjunior"
+        self.projects = []
+    }
 }
 
 extension StudentModel {
