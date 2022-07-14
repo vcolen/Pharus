@@ -8,7 +8,7 @@
 import UIKit
 import PharusUI
 
-class LoginView: UIView, ViewCodable {
+class LoginView: UIView {
 
     // MARK: - Properties
     weak var delegate: LoginViewDelegate?
@@ -28,11 +28,11 @@ class LoginView: UIView, ViewCodable {
         loginTitle,
         emailStackView,
         passwordStackView,
-        loginButton
+        loginButton,
+        UIView()
     ])
         .setting(\.spacing, to: UIScreen.main.bounds.height/17)
         .setting(\.alignment, to: .fill)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
         .padding([.leading, .trailing], 32)
         .padding([.top], 48)
         .safeArea([.top])
@@ -84,7 +84,6 @@ class LoginView: UIView, ViewCodable {
         wrongPasswordStackView
     ])
         .setting(\.distribution, to: .fillEqually)
-        .setting(\.alignment, to: .fill)
         .setting(\.spacing, to: 10)
         .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
@@ -123,6 +122,7 @@ class LoginView: UIView, ViewCodable {
     lazy var wrongPasswordImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.errorIcon?.withTintColor(.clear))
         .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        .frame(width: 24)
 
     lazy var wrongPasswordLabel = UILabel()
         .setting(\.text, to: "Senha incorreta!")
@@ -143,30 +143,21 @@ class LoginView: UIView, ViewCodable {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
+// MARK: - ViewCodable
+extension LoginView: ViewCodable {
     func buildHierarchy() {
-        addSubview(mainView)
-        mainView.addSubview(mainStackView)
+        addSubview(mainStackView)
     }
 
-    // MARK: - Constraints
     func setupConstraints() {
-        // Main View
-        mainView.edges()
-
-        // Main Stack View
-        //        NSLayoutConstraint.activate([
-        //            mainStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 48),
-        //            mainStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 32),
-        //            mainStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -32)
-        //        ])
-
-        // Wrong password Image View
-        wrongPasswordImageView.setWidth(to: 24)
+        mainStackView.edges()
     }
 
     func applyAdditionalChanges() {
+        self.backgroundColor = .white
+
         loginButton.addAction(UIAction { [weak self] _ in
             self?.loginButtonPressed()
         }, for: .touchUpInside)
