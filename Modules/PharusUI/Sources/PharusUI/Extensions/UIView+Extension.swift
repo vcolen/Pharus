@@ -55,14 +55,6 @@ public extension UIView {
         ])
     }
 
-    func setHeight(to height: Float) {
-        self.heightAnchor.constraint(equalToConstant: CGFloat(height)).isActive = true
-    }
-
-    func setWidth(to width: Float) {
-        self.widthAnchor.constraint(equalToConstant: CGFloat(width)).isActive = true
-    }
-
     /// Centers self horizontally and vertically in other view
     func center(in otherView: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
