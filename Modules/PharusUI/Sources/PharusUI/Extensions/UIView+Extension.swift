@@ -69,14 +69,6 @@ public extension UIView {
         return self
     }
 
-    func setHeight(to height: Float) {
-        self.heightAnchor.constraint(equalToConstant: CGFloat(height)).isActive = true
-    }
-
-    func setWidth(to width: Float) {
-        self.widthAnchor.constraint(equalToConstant: CGFloat(width)).isActive = true
-    }
-
     /// Centers self horizontally and vertically in other view
     func center(in otherView: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -100,7 +92,6 @@ public extension UIView {
     // MARK: - Add Background
     func addBackground(imageName: String,
                        contentMode: UIView.ContentMode = .scaleToFill) {
-        print(UIScreen.main.bounds.height)
         let backgroundImageView = UIImageView(frame: UIScreen.main.bounds)
         backgroundImageView.image = UIImage(named: imageName)
         backgroundImageView.contentMode = contentMode

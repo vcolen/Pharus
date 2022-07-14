@@ -33,6 +33,9 @@ class LoginView: UIView, ViewCodable {
         .setting(\.spacing, to: UIScreen.main.bounds.height/17)
         .setting(\.alignment, to: .fill)
         .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        .padding([.leading, .trailing], 32)
+        .padding([.top], 48)
+        .safeArea([.top])
 
     private lazy var loginTitle = UILabel()
         .setting(\.text, to: "Login")
@@ -153,11 +156,11 @@ class LoginView: UIView, ViewCodable {
         mainView.edges()
 
         // Main Stack View
-        NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 48),
-            mainStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 32),
-            mainStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -32)
-        ])
+        //        NSLayoutConstraint.activate([
+        //            mainStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 48),
+        //            mainStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 32),
+        //            mainStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -32)
+        //        ])
 
         // Wrong password Image View
         wrongPasswordImageView.setWidth(to: 24)
