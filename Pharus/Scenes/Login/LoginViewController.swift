@@ -95,6 +95,7 @@ extension LoginViewController: LoginViewDelegate {
 //        guard let email = customView.emailTextField.text else { return }
 //        guard let password = customView.passwordTextField.text else { return }
 
+        #warning("tirar as infos de login")
         let email = "antonia.ferreira@gmail.com"
         let password = "Atn4273!"
 

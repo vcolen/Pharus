@@ -9,7 +9,7 @@ import Foundation
 
 protocol StudentProjectDetailViewDelegate: AnyObject {
     func rulesViewTapped()
-    func sendFilesButtonTapped()
+    func uploadFilesButtonTapped()
     func envelopeIconTapped()
     func taskCheckboxTapped(taskIndex: Int)
 }
