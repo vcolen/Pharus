@@ -8,65 +8,59 @@
 import UIKit
 import PharusUI
 
-// swiftlint:disable type_body_length file_length
+// swiftlint:disable line_length
 class StudentProjectDetailView: UIView {
 
     // MARK: - Properties
     weak var delegate: StudentProjectDetailViewDelegate?
-    private var project: ProjectModel
+    var project: ProjectModel
 
     // MARK: - Views
-    private lazy var mainScrollView: UIScrollView = {
-        var scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.accessibilityIdentifier = "StudentProjectDetailView.mainScrollView"
+    private lazy var mainScrollView = ScrollView {
+        mainStackView
+    }
 
-        return scrollView
-    }()
-
-    private lazy var mainView = UIView()
+    private lazy var mainStackView = VStackView([
+        titleStackView,
+        descriptionStackView,
+        rulesStackView,
+        taskTitleLabel,
+        tasksStackView,
+        completedTasksProgressStackView,
+        uploadFilesButton
+    ])
+        .setting(\.spacing, to: 24)
+        .padding([.top, .leading, .trailing], 24)
+        .padding([.bottom], 10)
         .setting(\.backgroundColor, to: .Modal.yellowBackground)
         .setting(\.layer.cornerRadius, to: 16)
+        .padding([.top], 50)
+        .padding([.leading, .trailing], 16)
+        .padding([.bottom], 10)
+        .center(.horizontally)
 
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 24
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectDetailView.mainStackView"
-
-        return stackView
-    }()
-
-    private lazy var titleStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectDetailView.titleStackView"
-
-        return stackView
-    }()
+    private lazy var titleStackView = HStackView([
+        mentorLabel,
+        mentorReviewHelperView
+    ])
+        .setting(\.spacing, to: 8)
 
     private lazy var mentorLabel = UILabel()
         .setting(\.textColor, to: .black)
         .setting(\.font, to: .mediumTitleBold)
 
     private lazy var mentorReviewHelperView = UIView()
+        .frame(width: 36, height: 36)
 
     private lazy var mentorReviewImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.envelopeIcon)
         .frame(width: 36, height: 36)
 
-    private lazy var descriptionStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 16
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectDetailView.descriptionStackView"
-
-        return stackView
-    }()
+    private lazy var descriptionStackView = VStackView([
+        descriptionTitleLabel,
+        descriptionTextLabel
+    ])
+        .setting(\.spacing, to: 16)
 
     private lazy var descriptionTitleLabel = UILabel()
         .setting(\.text, to: "Descrição:")
@@ -83,66 +77,41 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc non ipsum blandit tempus.
 """)
 
-    private lazy var rulesHelperView = UIView()
-
-    private lazy var rulesStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.setOnClickListener { [weak self] in
-            self?.rulesViewTapped()
-        }
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectDetailView.rulesStackView"
-
-        return stackView
-    }()
+    private lazy var rulesStackView = HStackView([
+        rulesLabel,
+        rulesArrowImageView
+    ])
+        .setting(\.spacing, to: 9)
+        .center(.allAxis)
 
     private lazy var rulesArrowImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.rightArrowIcon)
+        .frame(width: 24, height: 24)
 
     private lazy var rulesLabel = UILabel()
         .setting(\.text, to: "Atividades do projeto")
         .setting(\.textColor, to: .Project.redText)
         .setting(\.font, to: .largeTitleMedium)
 
-    private lazy var tasksStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 29
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectDetailView.taskStackView"
-
-        return stackView
-    }()
-
-    private lazy var tasksTitleHelperView = UIView()
+    private lazy var tasksStackView = VStackView([
+        taskTitleLabel,
+        taskHelperStackView
+    ])
+        .setting(\.spacing, to: 29)
 
     private lazy var taskTitleLabel = UILabel()
         .setting(\.text, to: "Lista de Tarefas")
         .setting(\.font, to: .mediumTitleSemiBold)
         .setting(\.textColor, to: .black)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false); #warning("tirar")
 
-    private lazy var taskHelperStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 30
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectDetailView.individualTaskHelperStackView"
+    private lazy var taskHelperStackView = VStackView([])
+        .setting(\.spacing, to: 30)
 
-        return stackView
-    }()
-
-    private lazy var completedTasksProgressStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 16
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectDetailView.completedTasksProgressStackView"
-
-        return stackView
-    }()
+    private lazy var completedTasksProgressStackView = VStackView([
+        completedTasksLabel,
+        completedTasksProgressView
+    ])
+        .setting(\.spacing, to: 16)
 
     private lazy var completedTasksLabel = UILabel()
         .setting(\.textAlignment, to: .center)
@@ -156,8 +125,7 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
         .setting(\.clipsToBounds, to: true)
         .setting(\.trackTintColor, to: .white)
         .setting(\.progressTintColor, to: .Project.greenProgress)
-
-    private lazy var uploadFilesHelperView = UIView()
+        .frame(height: 22)
 
     private lazy var uploadFilesButton = MainCardButton(title: "Enviar Arquivos", buttonState: .normal)
 
@@ -179,106 +147,11 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
 extension StudentProjectDetailView: ViewCodable {
     func buildHierarchy() {
         addSubview(mainScrollView)
-
-        mainScrollView.addSubview(mainView)
-
-        mainView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(titleStackView)
-
-        titleStackView.addArrangedSubview(mentorLabel)
-        titleStackView.addArrangedSubview(mentorReviewHelperView)
-
         mentorReviewHelperView.addSubview(mentorReviewImageView)
-
-        mainStackView.addArrangedSubview(descriptionStackView)
-
-        descriptionStackView.addArrangedSubview(descriptionTitleLabel)
-        descriptionStackView.addArrangedSubview(descriptionTextLabel)
-
-        mainStackView.addArrangedSubview(rulesHelperView)
-
-        rulesHelperView.addSubview(rulesStackView)
-
-        rulesStackView.addArrangedSubview(rulesLabel)
-        rulesStackView.addArrangedSubview(rulesArrowImageView)
-
-        mainStackView.addArrangedSubview(tasksStackView)
-
-        tasksStackView.addArrangedSubview(tasksTitleHelperView)
-        tasksTitleHelperView.addSubview(taskTitleLabel)
-
-        tasksStackView.addArrangedSubview(taskHelperStackView)
-
-        mainStackView.addArrangedSubview(completedTasksProgressStackView)
-
-        completedTasksProgressStackView.addArrangedSubview(completedTasksLabel)
-        completedTasksProgressStackView.addArrangedSubview(completedTasksProgressView)
-
-        mainStackView.addArrangedSubview(uploadFilesHelperView)
-
-        uploadFilesHelperView.addSubview(uploadFilesButton)
     }
 
-     func setupConstraints() {
-
-        // Scroll View
-        self.stretch(mainScrollView)
-
-        // Main View
-        self.stretch(mainView, to: mainScrollView, top: 50, left: 16, bottom: -10, right: -16)
-
-        // Main Stack View
-        NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 24),
-            mainStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 24),
-            mainStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -24),
-            mainStackView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -10),
-            mainStackView.centerXAnchor.constraint(equalTo: mainScrollView.centerXAnchor)
-        ])
-
-        // Mentor Review Helper View
-        NSLayoutConstraint.activate([
-            mentorReviewHelperView.widthAnchor.constraint(equalToConstant: 36),
-            mentorReviewHelperView.heightAnchor.constraint(equalToConstant: 36)
-        ])
-
-        // Rules Stack Helper View
-        NSLayoutConstraint.activate([
-            rulesHelperView.heightAnchor.constraint(equalToConstant: 30)
-        ])
-
-        // Rules Stack View
-        rulesStackView.center(in: rulesHelperView)
-
-        // Rules Book Image View
-        NSLayoutConstraint.activate([
-            rulesArrowImageView.widthAnchor.constraint(equalToConstant: 24),
-            rulesArrowImageView.heightAnchor.constraint(equalToConstant: 24)
-        ])
-
-        // Tasks Title Helper
-        NSLayoutConstraint.activate([
-            tasksTitleHelperView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
-            tasksTitleHelperView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor),
-            tasksTitleHelperView.heightAnchor.constraint(equalToConstant: 30)
-        ])
-
-        // Completed Tasks Progress View
-        NSLayoutConstraint.activate([
-            completedTasksProgressView.heightAnchor.constraint(equalToConstant: 22)
-        ])
-
-        // Upload Files Helper View
-        NSLayoutConstraint.activate([
-            uploadFilesHelperView.heightAnchor.constraint(equalToConstant: 50)
-        ])
-
-        // Upload Files Button
-        uploadFilesButton.center(in: uploadFilesHelperView)
-        NSLayoutConstraint.activate([
-            uploadFilesButton.widthAnchor.constraint(equalToConstant: 195)
-        ])
+    func setupConstraints() {
+        mainScrollView.edges()
     }
 
     func applyAdditionalChanges() {
@@ -301,6 +174,10 @@ extension StudentProjectDetailView: ViewCodable {
             }
         }
 
+        rulesStackView.setOnClickListener { [weak self] in
+            self?.rulesViewTapped()
+        }
+
         uploadFilesButton.addAction(UIAction { [weak self] _ in
             self?.uploadFilesButtonTapped()
         }, for: .touchUpInside)
@@ -318,7 +195,7 @@ extension StudentProjectDetailView {
                 checkImage: checkboxIcon,
                 color: project.isSubscribed ? .black : UIColor.Project.grayDisabledText
             )
-
+            #warning("TODO - update checkmark when button tapped")
             if project.isComplete == false && project.isSubscribed == true {
                 taskView.taskCheckmarkButton.addAction(
                     UIAction { [weak self, weak taskView] _ in
@@ -360,7 +237,7 @@ extension StudentProjectDetailView {
         let roundedPercentage: Float = project.completionPercentage*100
 
         completedTasksLabel.text = """
-Completadas \(project.completedTasksCount) de \(project.tasks.count) tarefas \(roundedPercentage.withDecimalPoints(2))%)
+Completadas \(project.completedTasksCount) de \(project.tasks.count) tarefas (\(roundedPercentage.withDecimalPoints(2))%)
 """
         completedTasksProgressView.progress = project.completionPercentage
     }

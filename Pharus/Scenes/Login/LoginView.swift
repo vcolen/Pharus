@@ -131,7 +131,6 @@ class LoginView: UIView {
         .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
     private lazy var loginButton = MainCardButton(title: "Entrar", buttonState: .normal)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
     // MARK: - Initializer
     override init(frame: CGRect) {
