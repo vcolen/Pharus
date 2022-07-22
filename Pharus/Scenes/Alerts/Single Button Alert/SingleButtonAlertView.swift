@@ -11,7 +11,6 @@ import PharusUI
 class SingleButtonAlertView: UIView {
 
     // MARK: - Properties
-
     weak var delegate: SingleButtonAlertViewDelegate?
     private var message: String
     private var type: AlertType
@@ -22,84 +21,41 @@ class SingleButtonAlertView: UIView {
     }
 
     // MARK: - Views
+    private lazy var blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        .setting(\.frame, to: bounds)
+        .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
 
-    lazy var blurEffectView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: .light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    private lazy var mainStackView = VStackView([
+        alertIconHelperView,
+        alertMessageHelperView,
+        actionButton
+    ])
+        .setting(\.spacing, to: 20)
+        .padding([.top, .trailing, .leading, .bottom], 20)
+        .setting(\.backgroundColor, to: .Modal.yellowBackground)
+        .setting(\.layer.cornerRadius, to: 16)
+        .padding([.leading, .trailing], 16)
+        .frame(height: 217)
+        .center(.vertically)
 
-        return blurEffectView
-    }()
+    private lazy var alertIconHelperView = VStackView([
+        alertIconImageView
+    ])
 
-    private lazy var mainView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 16
-        view.backgroundColor = UIColor.Modal.yellowBackground
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "SingleButtonAlertView.mainView"
+    private lazy var alertIconImageView = UIImageView()
+        .setting(\.image, to: .pharusIcons.checkIcon)
+        .center(.allAxis)
 
-        return view
-    }()
+    private lazy var alertMessageHelperView = VStackView([
+        alertMessageLabel
+    ])
 
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.backgroundColor = .clear
-        stackView.spacing = 20
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "SingleButtonAlertView.mainStackView"
+    private lazy var alertMessageLabel = UILabel()
+        .setting(\.textAlignment, to: .center)
+        .setting(\.font, to: .mediumTitleBold)
+        .setting(\.textColor, to: .black)
 
-        return stackView
-    }()
-
-    private lazy var alertIconHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "SingleButtonAlertView.alertIconHelperView"
-
-        return view
-    }()
-
-    private lazy var alertIconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = .pharusIcons.checkIcon
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "SingleButtonAlertView.alertIconImageView"
-
-        return imageView
-    }()
-
-    private lazy var alertMessageHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "SingleButtonAlertView.alertMessageHelperView"
-
-        return view
-    }()
-
-    private lazy var alertMessageLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.font = .mediumTitleBold
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "SingleButtonAlertView.alertMessageLabel"
-
-        return label
-    }()
-
-    private lazy var actionButton: MainCardButton = {
-        let button = MainCardButton(title: "Fechar", buttonState: .normal)
-        button.setTitle("Fechar", for: .normal)
-        button.addAction(UIAction { [weak self] _ in
-            self?.closeButtonTapped()
-        }, for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "SingleButtonAlertView.actionButton"
-
-        return button
-    }()
+    private lazy var actionButton = MainCardButton(title: "Fechar", buttonState: .normal)
 
     // MARK: - Initializer
     init(
@@ -111,9 +67,7 @@ class SingleButtonAlertView: UIView {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        customizeView()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
@@ -121,61 +75,37 @@ class SingleButtonAlertView: UIView {
     }
 
     private func configureSubviews() {
+
+    }
+}
+// MARK: - View Codable
+extension SingleButtonAlertView: ViewCodable {
+    func buildHierarchy() {
         addSubview(blurEffectView)
-        addSubview(mainView)
-
-        mainView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(alertIconHelperView)
-
-        alertIconHelperView.addSubview(alertIconImageView)
-
-        mainStackView.addArrangedSubview(alertMessageHelperView)
-
-        alertMessageHelperView.addSubview(alertMessageLabel)
-
-        mainStackView.addArrangedSubview(actionButton)
+        addSubview(mainStackView)
     }
 
-    private func customizeView() {
+    func setupConstraints() {
+        mainStackView.edges()
+    }
+
+    func applyAdditionalChanges() {
         alertMessageLabel.text = message
 
         if type == .confirmation {
-            alertIconImageView.image = .pharusIcons.checkIcon
+            alertIconImageView.originalView.image = .pharusIcons.checkIcon
         } else {
-            alertIconImageView.image = .pharusIcons.errorIcon
+            alertIconImageView.originalView.image = .pharusIcons.errorIcon
         }
-    }
 
-    // MARK: - Constraints
-
-    private func setupConstraints() {
-
-        // Main View
-        NSLayoutConstraint.activate([
-            mainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            mainView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            mainView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            mainView.heightAnchor.constraint(equalToConstant: 217)
-        ])
-
-        // Main Stack View
-        self.stretch(mainStackView, to: mainView, top: 24, left: 24, bottom: -24, right: -24)
-
-        // Alert Icon Image View
-        alertIconImageView.center(in: alertIconHelperView)
-
-        // Alert Message Label
-        alertMessageLabel.center(in: alertMessageHelperView)
-        NSLayoutConstraint.activate([
-            alertMessageLabel.trailingAnchor.constraint(equalTo: alertMessageHelperView.trailingAnchor),
-            alertMessageLabel.leadingAnchor.constraint(equalTo: alertMessageHelperView.leadingAnchor)
-        ])
+        actionButton.setTitle("Fechar", for: .normal)
+        actionButton.addAction(UIAction { [weak self] _ in
+            self?.closeButtonTapped()
+        }, for: .touchUpInside)
     }
 }
 
 // MARK: - Actions
-
 extension SingleButtonAlertView {
     func closeButtonTapped() {
         delegate?.closeButtonTapped()
