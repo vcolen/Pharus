@@ -136,11 +136,9 @@ enum Pages: CaseIterable {
     var view: UIView {
         switch self {
         case .pageZero:
-            return HomeNewsView(news: Constants.defaultTexts.homeNewsText)
+            return HomeNewsView(news: Constants.defaultTexts.pageZeroText)
         case .pageOne:
-            return HomeNewsView(
-                news: Constants.defaultTexts.homeNewsText
-            )
+            return HomeNewsView(news: Constants.defaultTexts.pageOneText)
         }
     }
 
