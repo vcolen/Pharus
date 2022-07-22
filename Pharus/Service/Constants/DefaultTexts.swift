@@ -16,4 +16,9 @@ Dá uma olhadinha lá, quem sabe você se identifica com a proposta!
     let pageOneText = """
 O projeto ”Introdução a robótica” finalizou. Me contaram você ficou bem colocado, dá uma olhadinha no seu ranking!
 """
+
+    let sendFileText = """
+Aqui você pode enviar os arquivos exigidos para completar uma tarefa.
+Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os que deseja enviar.
+"""
 }
