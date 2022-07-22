@@ -71,18 +71,14 @@ class StudentProjectDetailView: UIView {
         .setting(\.numberOfLines, to: 0)
         .setting(\.font, to: .smallBody)
         .setting(\.textColor, to: .black)
-        .setting(\.text,
-                  to: """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc non ipsum blandit tempus.
-""")
+        .setting(\.text, to: Constants.defaultTexts.lorem)
 
     private lazy var rulesStackView = HStackView([
         rulesLabel,
         rulesArrowImageView
     ])
         .setting(\.spacing, to: 9)
-        .center(.allAxis)
+        .center(.horizontally)
 
     private lazy var rulesArrowImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.rightArrowIcon)
@@ -159,7 +155,7 @@ extension StudentProjectDetailView: ViewCodable {
         descriptionTextLabel.text = project.projectDescription
         setupProjectTasks(of: project)
 
-        if !project.isSubscribed {
+        if project.isSubscribed == false {
             configureUnsubscribedProject(with: project)
         }
 
@@ -184,7 +180,7 @@ extension StudentProjectDetailView: ViewCodable {
     }
 }
 
-// MARK: - Additional Changes
+// MARK: - Additional Mehtods
 extension StudentProjectDetailView {
     private func setupProjectTasks(of project: ProjectModel) {
         for taskIndex in project.tasks.indices {
@@ -195,6 +191,7 @@ extension StudentProjectDetailView {
                 checkImage: checkboxIcon,
                 color: project.isSubscribed ? .black : UIColor.Project.grayDisabledText
             )
+
             #warning("TODO - update checkmark when button tapped")
             if project.isComplete == false && project.isSubscribed == true {
                 taskView.taskCheckmarkButton.addAction(
