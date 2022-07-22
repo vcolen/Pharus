@@ -1,5 +1,5 @@
 //
-//  ProjectSubcriptionAlertCoordinating.swift
+//  ProjectSubscriptionAlertCoordinating.swift
 //  Pharus
 //
 //  Created by Victor Colen on 17/06/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ProjectSubcriptionAlertCoordinating {
+protocol ProjectSubscriptionAlertCoordinating {
     func closeModal()
     func subscribeToProject()
 }

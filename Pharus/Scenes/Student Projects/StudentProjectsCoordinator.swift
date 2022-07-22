@@ -56,7 +56,7 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
         onCommit commitHandler: @escaping () -> Void
     ) {
         if let navigationController = rootViewController {
-            ProjectSubcriptionAlertCoordinator(
+            ProjectSubscriptionAlertCoordinator(
                 rootViewController: navigationController,
                 project: project,
                 onSubscription: commitHandler

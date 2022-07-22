@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol ProjectSubcriptionAlertViewable: AnyObject { }
+protocol ProjectSubscriptionAlertViewable: AnyObject { }

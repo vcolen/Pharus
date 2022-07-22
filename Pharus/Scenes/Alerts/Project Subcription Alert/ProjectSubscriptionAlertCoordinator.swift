@@ -1,5 +1,5 @@
 //
-//  ProjectSubcriptionAlertCoordinator.swift
+//  ProjectSubscriptionAlertCoordinator.swift
 //  Pharus
 //
 //  Created by Victor Colen on 20/04/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ProjectSubcriptionAlertCoordinator {
+struct ProjectSubscriptionAlertCoordinator {
 
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
@@ -27,15 +27,15 @@ struct ProjectSubcriptionAlertCoordinator {
 }
 
 // MARK: - Coordinator
-extension ProjectSubcriptionAlertCoordinator: Coordinator {
+extension ProjectSubscriptionAlertCoordinator: Coordinator {
     func start() {
-        let alertPresenter = ProjectSubcriptionAlertPresenter(
+        let alertPresenter = ProjectSubscriptionAlertPresenter(
             coordinator: self,
             project: project,
             onSubscription: projectSubscriptionHandler
         )
 
-        let alertViewController = ProjectSubcriptionAlertViewController(
+        let alertViewController = ProjectSubscriptionAlertViewController(
             presenter: alertPresenter
         )
 
@@ -46,7 +46,7 @@ extension ProjectSubcriptionAlertCoordinator: Coordinator {
 }
 
 // MARK: - Actions
-extension ProjectSubcriptionAlertCoordinator: ProjectSubcriptionAlertCoordinating {
+extension ProjectSubscriptionAlertCoordinator: ProjectSubscriptionAlertCoordinating {
     func closeModal() {
         rootViewController?.dismiss(animated: true)
     }
