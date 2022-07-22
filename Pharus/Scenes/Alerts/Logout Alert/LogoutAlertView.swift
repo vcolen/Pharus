@@ -14,160 +14,87 @@ class LogoutAlertView: UIView {
     weak var delegate: LogoutAlertViewDelegate?
 
     // MARK: - Views
-    private lazy var blurEffectView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: .light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    private lazy var blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        .setting(\.frame, to: bounds)
+        .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
 
-        return blurEffectView
-    }()
+    private lazy var mainStackView = VStackView([
+        logoutIconHelperView,
+        titleLabel,
+        buttonStackView
+    ])
+        .padding([.top], 26)
+        .padding([.leading, .trailing], 18)
+        .padding([.bottom], 16)
+        .setting(\.backgroundColor, to: .Modal.yellowBackground)
+        .setting(\.layer.cornerRadius, to: 16)
+        .padding([.leading, .trailing], 16)
+        .frame(height: 217)
+        .center(.vertically)
 
-    private lazy var mainView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 16
-        view.backgroundColor = UIColor.Modal.yellowBackground
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "LogoutAlertViewDelegate.mainView"
+    private lazy var logoutIconHelperView = VStackView([
+        logoutIconImageView
+    ])
+        .frame(height: 50)
 
-        return view
-    }()
+    private lazy var logoutIconImageView = UIImageView()
+        .setting(\.image, to: .pharusIcons.logoutIcon?.withTintColor(.black))
+        .frame(width: 48, height: 48)
+        .center(.allAxis)
 
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "LogoutAlertViewDelegate.mainStackView"
+    private lazy var titleLabel = UILabel()
+        .setting(\.text, to: "Deseja sair da sua conta?")
+        .setting(\.textAlignment, to: .center)
+        .setting(\.font, to: .mediumTitleBold)
+        .setting(\.textColor, to: .black)
 
-        return stackView
-    }()
+    private lazy var buttonStackView = HStackView([
+        primaryButton,
+        secondaryButton
+    ])
+        .setting(\.spacing, to: 39)
+        .setting(\.distribution, to: .fillEqually)
 
-    private lazy var logoutIconHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "LogoutAlertViewDelegate.logoutIconHelperView"
+    private lazy var primaryButton = SmallAlertButton(title: "Sair", importance: .primary)
 
-        return view
-    }()
-
-    private lazy var logoutIconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage.pharusIcons.logoutIcon?.withTintColor(.black)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "LogoutAlertViewDelegate.logoutIconImageView"
-
-        return imageView
-    }()
-
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Deseja sair da sua conta?"
-        label.textAlignment = .center
-        label.font = UIFont.mediumTitleBold
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "LogoutAlertViewDelegate.titleLabel"
-
-        return label
-    }()
-
-    private lazy var buttonStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 39
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "LogoutAlertViewDelegate.buttonStackView"
-
-        return stackView
-    }()
-
-    private lazy var primaryButton: SmallAlertButton = {
-        let button = SmallAlertButton(
-            title: "Sair",
-            importance: .primary
-        )
-        button.addAction(UIAction { [weak self] _ in
-            self?.primaryButtonTapped()
-        }, for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "LogoutAlertViewDelegate.yesButton"
-
-        return button
-    }()
-
-    private lazy var secondaryButton: SmallAlertButton = {
-        let button = SmallAlertButton(
-            title: "Cancelar",
-            importance: .secondary
-        )
-        button.addAction(UIAction { [weak self] _ in
-            self?.secondaryButtonTapped()
-        }, for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "LogoutAlertViewDelegate.noButton"
-
-        return button
-    }()
+    private lazy var secondaryButton = SmallAlertButton(title: "Cancelar", importance: .secondary)
 
     // MARK: - Initilizer
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-    private func configureSubviews() {
+// MARK: - View Codable
+extension LogoutAlertView: ViewCodable {
+    func buildHierarchy() {
         addSubview(blurEffectView)
-        addSubview(mainView)
-
-        mainView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(logoutIconHelperView)
-
-        logoutIconHelperView.addSubview(logoutIconImageView)
-
-        mainStackView.addArrangedSubview(titleLabel)
-        mainStackView.addArrangedSubview(buttonStackView)
-
-        buttonStackView.addArrangedSubview(primaryButton)
-        buttonStackView.addArrangedSubview(secondaryButton)
+        addSubview(mainStackView)
     }
 
-    // MARK: - Constraints
-    private func setupConstraints() {
-        // Main View
-        NSLayoutConstraint.activate([
-            mainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            mainView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            mainView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            mainView.heightAnchor.constraint(equalToConstant: 217)
-        ])
-
-        // Main Stack View
-        self.stretch(mainStackView, to: mainView, top: 26, left: 18, bottom: -16, right: -18)
-
-        // Logout Icon Helper View
-        NSLayoutConstraint.activate([
-            logoutIconHelperView.heightAnchor.constraint(equalToConstant: 50)
-        ])
-
-        // Logout Icon Image View
-        logoutIconImageView.center(in: logoutIconHelperView)
-        NSLayoutConstraint.activate([
-            logoutIconImageView.heightAnchor.constraint(equalToConstant: 48),
-            logoutIconImageView.widthAnchor.constraint(equalToConstant: 48)
-        ])
+    func setupConstraints() {
+        mainStackView.edges()
     }
 
-    // MARK: - Actions
+    func applyAdditionalChanges() {
+        primaryButton.addAction(UIAction { [weak self] _ in
+            self?.primaryButtonTapped()
+        }, for: .touchUpInside)
 
+        secondaryButton.addAction(UIAction { [weak self] _ in
+            self?.secondaryButtonTapped()
+        }, for: .touchUpInside)
+    }
+}
+
+// MARK: - Delegate Actions
+extension LogoutAlertView {
     func primaryButtonTapped() {
         delegate?.primaryButtonTapped()
     }
