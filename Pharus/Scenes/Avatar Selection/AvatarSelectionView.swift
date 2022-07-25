@@ -74,13 +74,13 @@ class AvatarSelectionView: UIView {
 
 // MARK: - View Codable
 extension AvatarSelectionView: ViewCodable {
-     func buildHierarchy() {
+    func buildHierarchy() {
         addSubview(mainScrollView)
-         avatarSelectionStackView.addArrangedSubview(avatarSelectionCollectionView)
+        avatarSelectionStackView.addArrangedSubview(avatarSelectionCollectionView)
     }
 
-     func setupConstraints() {
-         mainScrollView.edges()
+    func setupConstraints() {
+        mainScrollView.edges()
     }
 
     func applyAdditionalChanges() {
@@ -91,11 +91,11 @@ extension AvatarSelectionView: ViewCodable {
 
 // MARK: - UI Collection View Data Source
 extension AvatarSelectionView: UICollectionViewDataSource {
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         CircleAvatarImages.avatars.count
     }
 
-     func collectionView(
+    func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
@@ -114,7 +114,7 @@ extension AvatarSelectionView: UICollectionViewDataSource {
 
 // MARK: - UI Collection View Delegate
 extension AvatarSelectionView: UICollectionViewDelegate {
-     func collectionView(
+    func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
