@@ -13,6 +13,10 @@ class AvatarSelectionView: UIView {
     // MARK: - Properties
     weak var delegate: AvatarSelectionViewDelegate?
     private var student: StudentModel
+    private let avatarSelectionConfiguration = UICollectionView
+        .CellRegistration<AvatarSelectionCell, UIImage> { cell, _, image in
+            cell.avatarImageView.image = image
+        }
 
     // MARK: - Views
     private lazy var mainScrollView = ScrollView {
@@ -95,16 +99,12 @@ extension AvatarSelectionView: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection,
-            for: indexPath
+        let avatarImage = CircleAvatarImages.avatars[indexPath.row] ?? UIImage()
+        return collectionView.dequeueConfiguredReusableCell(
+            using: avatarSelectionConfiguration,
+            for: indexPath,
+            item: avatarImage
         )
-
-        let avatarImage = CircleAvatarImages.avatars[indexPath.row]
-        let avatarImageView = UIImageView(image: avatarImage)
-
-        cell.addSubview(avatarImageView)
-        return cell
     }
 }
 

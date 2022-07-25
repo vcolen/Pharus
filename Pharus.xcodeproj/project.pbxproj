@@ -149,6 +149,7 @@
 		79F06DA127F28FCD00343865 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */; };
 		79FCEB932863B55B004D22EC /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FCEB922863B55B004D22EC /* BasePresenter.swift */; };
 		79FCEB952863B5B6004D22EC /* Presenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FCEB942863B5B6004D22EC /* Presenting.swift */; };
+		79FE1C6E288F0D600081334A /* AvatarSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE1C6D288F0D600081334A /* AvatarSelectionCell.swift */; };
 		79FFE7E52860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */; };
 		79FFE7E72860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E62860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift */; };
 		79FFE7E92860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFE7E82860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift */; };
@@ -311,6 +312,7 @@
 		79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		79FCEB922863B55B004D22EC /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		79FCEB942863B5B6004D22EC /* Presenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenting.swift; sourceTree = "<group>"; };
+		79FE1C6D288F0D600081334A /* AvatarSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionCell.swift; sourceTree = "<group>"; };
 		79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingPresenter.swift; sourceTree = "<group>"; };
 		79FFE7E62860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingPresenting.swift; sourceTree = "<group>"; };
 		79FFE7E82860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingViewable.swift; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				799AFA5E285CECDE001B0371 /* AvatarSelectionCoordinator.swift */,
 				790AA950286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift */,
 				799AFA65285CECDE001B0371 /* AvatarSelectionView.swift */,
+				79FE1C6D288F0D600081334A /* AvatarSelectionCell.swift */,
 				797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */,
 				799AFA5F285CECDE001B0371 /* AvatarSelectionViewController.swift */,
 				799AFA60285CECDE001B0371 /* Protocols */,
@@ -1087,6 +1090,7 @@
 				799AFB10285CECDF001B0371 /* StudentProjectsRankingViewController.swift in Sources */,
 				79D659C1286207690060971C /* DefaultTexts.swift in Sources */,
 				799AFAC7285CECDE001B0371 /* ProjectSheetViewController.swift in Sources */,
+				79FE1C6E288F0D600081334A /* AvatarSelectionCell.swift in Sources */,
 				799AFADC285CECDF001B0371 /* StudentProjectsCoordinating.swift in Sources */,
 				799AFAE9285CECDF001B0371 /* StudentProfileView.swift in Sources */,
 				799AFB1E285CECDF001B0371 /* StudentProjectDetailCoordinating.swift in Sources */,
