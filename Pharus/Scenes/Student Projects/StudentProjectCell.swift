@@ -11,19 +11,24 @@ import PharusUI
 class StudentProjectCell: UITableViewCell {
 
     // MARK: - Views
-    private lazy var mainView = UIView()
+    private lazy var mainStackView = VStackView([
+        titleStackView,
+        mentorLabel,
+        descriptionTitleLabel,
+        descriptionStackView,
+        lowerStackView
+    ])
+        .setting(\.spacing, to: 20)
+        .padding([.bottom, .leading, .trailing], 8)
+        .padding([.top], 24.5)
         .setting(\.layer.cornerRadius, to: 16)
+        .padding([.top, .leading, .bottom, .trailing], 16)
 
     private lazy var titleStackView = HStackView([])
 
     private lazy var descriptionStackView = HStackView([])
         .setting(\.distribution, to: .fillEqually)
-
-    private lazy var mainStackView = VStackView([
-
-    ])
-        .setting(\.spacing, to: 20)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        .frame(height: 144)
 
     private lazy var progressStackView = VStackView([])
         .setting(\.spacing, to: 8)
@@ -49,7 +54,6 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.font, to: .smallBody)
         .setting(\.numberOfLines, to: 0)
         .setting(\.textColor, to: .black)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
     private lazy var completionStackView = VStackView([])
         .setting(\.alignment, to: .center)
@@ -63,18 +67,18 @@ class StudentProjectCell: UITableViewCell {
         radius: 45,
         progress: 50
     )
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        .center(.allAxis)
 
     private lazy var percentageCompletionLabel = UILabel()
         .setting(\.text, to: "100%")
         .setting(\.font, to: .smallBody)
         .setting(\.textColor, to: .black)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
-
+        .center(.allAxis)
     private lazy var projectScheduleView = ProjectScheduleView(
         projectIsComplete: false,
         projectDaysRemaining: 12
     )
+        .frame(height: 44)
 
     private lazy var lowerHelperView = UIView()
 
@@ -86,26 +90,28 @@ class StudentProjectCell: UITableViewCell {
     ])
         .setting(\.spacing, to: 8)
         .setting(\.distribution, to: .fillEqually)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-    private lazy var partnershipHelperView = UIView()
+    private lazy var partnershipHelperView = VStackView([])
+        .setting(\.alignment, to: .trailing)
 
     private lazy var partnershipLabel = UILabel()
         .setting(\.text, to: "Parceria: ")
         .setting(\.font, to: .smallBodyBold)
         .setting(\.textColor, to: .black)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        .center(.horizontally)
 
-    private lazy var companyLogoHelperView = UIView()
+    private lazy var companyLogoHelperView = VStackView([])
 
     private lazy var companyLogoImageView = UIImageView()
         .setting(\.image, to: .pharusImages.companyImages.ioasysLogoImage)
         .setting(\.contentMode, to: .scaleAspectFit)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        .frame(width: 66, height: 66)
+        .center(.allAxis)
 
     private lazy var subscribeHelperView = UIView()
 
     lazy var subscribeButton = SubscribeButton(isSubscribed: true)
+        .center(.horizontally)
 
     // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -124,17 +130,9 @@ extension StudentProjectCell: ViewCodable {
     func buildHierarchy() {
         self.backgroundColor = .clear
 
-        addSubview(mainView)
-
-        mainView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(titleStackView)
+        addSubview(mainStackView)
 
         titleStackView.addArrangedSubview(titleLabel)
-
-        mainStackView.addArrangedSubview(mentorLabel)
-        mainStackView.addArrangedSubview(descriptionTitleLabel)
-        mainStackView.addArrangedSubview(descriptionStackView)
 
         descriptionStackView.addArrangedSubview(descriptionLabelView)
 
@@ -146,24 +144,19 @@ extension StudentProjectCell: ViewCodable {
 
         completionCircleHelpView.addSubview(completionBarCircleView)
 
-        // Making circle start from intended position
-        completionBarCircleView.transform = CGAffineTransform(rotationAngle: 180.7)
-
-        completionCircleHelpView.addSubview(percentageCompletionLabel)
+        setupBarCircleView()
 
         completionStackView.addArrangedSubview(projectScheduleView)
-
-        mainStackView.addArrangedSubview(lowerStackView)
 
         lowerStackView.addArrangedSubview(partnershipStackView)
 
         partnershipStackView.addArrangedSubview(partnershipHelperView)
 
-        partnershipHelperView.addSubview(partnershipLabel)
+        partnershipHelperView.addArrangedSubview(partnershipLabel)
 
         partnershipStackView.addArrangedSubview(companyLogoHelperView)
 
-        companyLogoHelperView.addSubview(companyLogoImageView)
+        companyLogoHelperView.addArrangedSubview(companyLogoImageView)
 
         lowerStackView.addArrangedSubview(subscribeHelperView)
 
@@ -173,74 +166,9 @@ extension StudentProjectCell: ViewCodable {
     // MARK: - Constraints
 
     func setupConstraints() {
-
-        // Main View
-        self.stretch(mainView, top: 16, left: 16, bottom: -16, right: -16)
-
-        // Main Stack View
-        NSLayoutConstraint.activate([
-            mainStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 8),
-            mainStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -8),
-            mainStackView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 24.5),
-            mainStackView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -8)
-        ])
-
-        // Mentors Label
-        NSLayoutConstraint.activate([
-            mentorLabel.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor)
-        ])
-
-        // Completion Stack View
-        NSLayoutConstraint.activate([
-            completionStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor)
-        ])
-
-        // Description Stack View
-        NSLayoutConstraint.activate([
-            descriptionStackView.heightAnchor.constraint(equalToConstant: 144)
-        ])
-
-        // Description Label
-        NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: descriptionLabelView.topAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionLabelView.trailingAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: descriptionLabelView.leadingAnchor),
-            descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: descriptionLabelView.bottomAnchor)
-        ])
-
-        // Percentage Completion Label
-        NSLayoutConstraint.activate([
-            percentageCompletionLabel.centerXAnchor.constraint(equalTo: completionCircleHelpView.centerXAnchor),
-            percentageCompletionLabel.centerYAnchor.constraint(equalTo: completionCircleHelpView.centerYAnchor)
-        ])
-
-        // Completion Bar Circle View
-        NSLayoutConstraint.activate([
-            completionBarCircleView.centerXAnchor.constraint(equalTo: completionCircleHelpView.centerXAnchor),
-            completionBarCircleView.centerYAnchor.constraint(equalTo: completionCircleHelpView.centerYAnchor)
-        ])
-
-        // Project Schedule View
-        NSLayoutConstraint.activate([
-            projectScheduleView.heightAnchor.constraint(equalToConstant: 44)
-        ])
-
-        // Company Logo Image View
-        NSLayoutConstraint.activate([
-            companyLogoImageView.widthAnchor.constraint(equalToConstant: 66),
-            companyLogoImageView.heightAnchor.constraint(equalToConstant: 66),
-            companyLogoImageView.leadingAnchor.constraint(equalTo: companyLogoHelperView.leadingAnchor),
-            companyLogoImageView.centerYAnchor.constraint(equalTo: partnershipStackView.centerYAnchor)
-        ])
-
-        // Partnership Label
-        NSLayoutConstraint.activate([
-            partnershipLabel.trailingAnchor.constraint(equalTo: partnershipHelperView.trailingAnchor),
-            partnershipLabel.centerYAnchor.constraint(equalTo: partnershipStackView.centerYAnchor)
-        ])
-
-        // Subscribe Button
-        subscribeButton.center(in: subscribeHelperView)
+        mainStackView.edges()
+        descriptionLabel.edges()
+        subscribeButton.edges()
     }
 }
 
@@ -252,28 +180,40 @@ extension StudentProjectCell {
         mentorLabel.text = "Mentor: " + project.mentor
         projectScheduleView.projectIsComplete = project.isComplete
         projectScheduleView.projectDaysRemaining = project.daysRemaining
-        subscribeButton.isSubscribed = project.isSubscribed
-        companyLogoImageView.image = UIImage(
+        subscribeButton.originalView.isSubscribed = project.isSubscribed
+        companyLogoImageView.originalView.image = UIImage(
             named: "\(project.company?.lowercased() ?? "ioasys")LogoImage"
         )
 
-        completionBarCircleView.progress = project.completionPercentage*100
-        percentageCompletionLabel.text = "\(project.completedTasksCount) de \(project.tasks.count)"
+        completionBarCircleView.originalView.progress = project.completionPercentage*100
+        percentageCompletionLabel.originalView.text = "\(project.completedTasksCount) de \(project.tasks.count)"
 
         if project.daysRemaining >= 0 {
             if project.isSubscribed {
-                mainView.backgroundColor = UIColor.Project.orangeSubscribedProjectBackground
+                mainStackView.wrappedView.backgroundColor = UIColor.Project.orangeSubscribedProjectBackground
             } else {
-                mainView.backgroundColor = UIColor.Project.grayUnsubscribedProjectBackground
+                mainStackView.wrappedView.backgroundColor = UIColor.Project.grayUnsubscribedProjectBackground
             }
         } else {
-            mainView.backgroundColor = UIColor.Project.redExpiredProjectBackground
+            mainStackView.wrappedView.backgroundColor = UIColor.Project.redExpiredProjectBackground
             titleLabel.textColor = .white
             mentorLabel.textColor = .white
             descriptionTitleLabel.textColor = .white
             descriptionLabel.textColor = .white
-            partnershipLabel.textColor = .white
-            percentageCompletionLabel.textColor = .white
+            partnershipLabel.originalView.textColor = .white
+            percentageCompletionLabel.originalView.textColor = .white
         }
+    }
+}
+
+// MARK: - Additional Methods
+extension StudentProjectCell {
+    func setupBarCircleView() {
+        // Making circle start from intended position
+        completionBarCircleView.addSubview(percentageCompletionLabel)
+        completionBarCircleView.transform = CGAffineTransform(rotationAngle: 180.7)
+
+        // Returning label to horizontal position
+        percentageCompletionLabel.transform = CGAffineTransform(rotationAngle: 1.5)
     }
 }
