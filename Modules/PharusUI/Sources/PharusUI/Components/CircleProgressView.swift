@@ -42,18 +42,17 @@ public class CircleProgressView: UIView {
 
     // MARK: - Subviews
     private func makeCircularPath() {
-        self.layer.cornerRadius = self.frame.size.width/2
-
         let completionBarLayerPath = UIBezierPath(
             arcCenter: CGPoint(
-                x: frame.size.width/2,
-                y: frame.size.height/2
+                x: frame.size.width/3,
+                y: frame.size.height/3
             ),
             radius: CGFloat(self.circleRadius),
             startAngle: CGFloat(0).toRadians(),
             endAngle: CGFloat(360).toRadians() * CGFloat(progress)/100,
             clockwise: true
         )
+
         let circleLayerPath = UIBezierPath(
             arcCenter: CGPoint(
                 x: frame.size.width/2,
