@@ -14,309 +14,149 @@ class SendFileView: UIView {
     weak var delegate: SendFileViewDelegate?
 
     // MARK: - Views
-    private lazy var mainView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.Modal.yellowBackground
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "SendFileView.mainView"
+    private lazy var mainStackView = VStackView([
+        titleStackView,
+        descriptionLabel,
+        uploadFileHelperView,
+        fileHelperView,
+        sendFileButton,
+        UIView()
+    ])
+        .setting(\.spacing, to: 30)
+        .padding([.top], 38)
+        .padding([.leading, .trailing], 25)
+        .setting(\.backgroundColor, to: .Modal.yellowBackground)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return view
-    }()
+    private lazy var titleStackView = HStackView([
+        titleHelperView,
+        closeSheetButton
+    ])
 
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 30
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "SendFileView.mainStackView"
+    private lazy var titleHelperView = VStackView([
+        titleLabel
+    ])
 
-        return stackView
-    }()
+    private lazy var titleLabel = UILabel()
+        .setting(\.text, to: "Enviar arquivos")
+        .setting(\.font, to: .largeTitleBold)
+        .setting(\.textColor, to: .black)
+        .setting(\.textAlignment, to: .center)
 
-    private lazy var titleStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "SendFileView.titleStackView"
+    lazy var closeSheetButton = UIButton()
+        .frame(width: 24, height: 24)
 
-        return stackView
-    }()
+    private lazy var descriptionLabel = UILabel()
+        .setting(\.numberOfLines, to: 0)
+        .setting(\.text, to: Constants.defaultTexts.sendFileText)
+        .setting(\.textColor, to: .black)
+        .setting(\.font, to: .smallBody)
 
-    private lazy var titleHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "SendFileView.titleHelperView"
+    private lazy var uploadFileHelperView = VStackView([
+        uploadFileStackView
+    ])
+        .setting(\.backgroundColor, to: .Modal.orangeBackground)
+        .setting(\.layer.cornerRadius, to: 8)
+        .frame(height: 118)
 
-        return view
-    }()
+    private lazy var uploadFileStackView = VStackView([
+        uploadIconHelperView,
+        uploadMessageLabel
+    ])
+        .setting(\.spacing, to: 3)
 
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Enviar arquivos"
-        label.font = .largeTitleBold
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "SendFileView.titleLabel"
+    private lazy var uploadIconHelperView = VStackView([
+        uploadIconImageView
+    ])
+        .frame(height: 50)
 
-        return label
-    }()
+    private lazy var uploadIconImageView = UIImageView()
+        .setting(\.image, to: .pharusIcons.uploadIcon)
+        .frame(height: 43)
+        .center(.allAxis)
 
-    lazy var closeSheetButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
-        button.addAction(
-            UIAction { [weak self] _ in
-                self?.closeButtonTapped()
-            },
-            for: .touchUpInside
-        )
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "SendFileView.closeSheetButton"
-        return button
-    }()
+    private lazy var uploadMessageLabel = UILabel()
+        .setting(\.text, to: "Selecione os arquivos para enviar")
+        .setting(\.textAlignment, to: .center)
+        .setting(\.numberOfLines, to: 0)
+        .setting(\.font, to: .smallBody)
+        .setting(\.textColor, to: .black)
 
-    private lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.text = """
-Aqui você pode enviar os arquivos exigidos para completar uma tarefa.
-Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os que deseja enviar.
-"""
-        label.textColor = .black
-        label.font = .smallBody
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "SendFileView.descriptionLabel"
+    private lazy var fileHelperView = VStackView([
+        fileStackView
+    ])
+        .setting(\.backgroundColor, to: .white)
+        .setting(\.layer.cornerRadius, to: 8)
+        .frame(height: 45)
 
-        return label
-    }()
+    private lazy var fileStackView = HStackView([
+        fileImageView,
+        fileNameLabel,
+        removeFileButton
+    ])
+        .setting(\.spacing, to: 14)
+        .padding([.top, .leading, .trailing, .bottom], 9)
 
-    private lazy var uploadFileHelperView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.Modal.orangeBackground
-        view.layer.cornerRadius = 8
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "SendFileView.uploadFileHelperView"
+    private lazy var fileImageView = UIImageView()
+        .setting(\.image, to: .pharusIcons.bookIcon)
+        .frame(width: 28)
 
-        return view
-    }()
+    lazy var fileNameLabel = UILabel()
+        .setting(\.text, to: "")
+        .setting(\.textColor, to: .black)
 
-    private lazy var uploadFileStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.setOnClickListener { [weak self] in
-            self?.uploadButtonTapped()
-        }
-        stackView.axis = .vertical
-        stackView.spacing = 3
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "SendFileView.uploadFileStackView"
+    private lazy var removeFileButton = UIButton()
+        .setting(\.tintColor, to: .black)
+        .frame(width: 18)
 
-        return stackView
-    }()
-
-    private lazy var uploadIconHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "SendFileView.uploadIconHelperView"
-
-        return view
-    }()
-
-    private lazy var uploadIconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage.pharusIcons.uploadIcon
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "SendFileView.uploadIconImageView"
-
-        return imageView
-    }()
-
-    private lazy var uploadMessageLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Selecione os arquivos para enviar"
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.font = .smallBody
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "SendFileView.uploadMessageLabel"
-
-        return label
-    }()
-
-    private lazy var fileHelperView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 8
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "SendFileView.fileView"
-
-        return view
-    }()
-
-    private lazy var fileStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 14
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "SendFileView.fileStackView"
-
-        return stackView
-    }()
-
-    private lazy var fileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = .pharusIcons.bookIcon
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "SendFileView.fileImageView"
-
-        return imageView
-    }()
-
-    lazy var fileNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = ""
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "SendFileView.fileNameLabel"
-
-        return label
-    }()
-
-    private lazy var removeFileButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
-        button.tintColor = .black
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "SendFileView.removeFileButton"
-
-        return button
-    }()
-
-    lazy var sendFileButton: MainCardButton = {
-        let button = MainCardButton(title: "Enviar Arquivos", buttonState: .normal)
-        button.addAction(UIAction { [weak self] _ in
-            self?.sendFileButtonTapped()
-        }, for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "SendFileView.sendFileButton"
-
-        return button
-    }()
+    lazy var sendFileButton = MainCardButton(title: "Enviar Arquivos", buttonState: .normal)
 
     // MARK: - Initializer
-
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-
-    private func configureSubviews() {
-        addSubview(mainView)
-
-        mainView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(titleStackView)
-
-        titleStackView.addArrangedSubview(titleHelperView)
-
-        titleHelperView.addSubview(titleLabel)
-
-        titleStackView.addArrangedSubview(closeSheetButton)
-
-        mainStackView.addArrangedSubview(descriptionLabel)
-        mainStackView.addArrangedSubview(uploadFileHelperView)
-
-        uploadFileHelperView.addSubview(uploadFileStackView)
-
-        uploadFileStackView.addArrangedSubview(uploadIconHelperView)
-
-        uploadIconHelperView.addSubview(uploadIconImageView)
-
-        uploadFileStackView.addArrangedSubview(uploadMessageLabel)
-
-        mainStackView.addArrangedSubview(fileHelperView)
-
-        fileHelperView.addSubview(fileStackView)
-
-        fileStackView.addArrangedSubview(fileImageView)
-        fileStackView.addArrangedSubview(fileNameLabel)
-        fileStackView.addArrangedSubview(removeFileButton)
-
-        mainStackView.addArrangedSubview(sendFileButton)
-        sendFileButton.disable()
+// MARK: - View Codable
+extension SendFileView: ViewCodable {
+    func buildHierarchy() {
+        addSubview(mainStackView)
     }
 
-    // MARK: - Constraints
+    func setupConstraints() {
+        mainStackView.edges()
+    }
 
-    private func setupConstraints() {
+    func applyAdditionalChanges() {
+        closeSheetButton.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
+        closeSheetButton.addAction(
+            UIAction { [weak self] _ in
+                self?.closeButtonTapped()
+            },
+            for: .touchUpInside
+        )
 
-        // Main View
-        self.stretch(mainView)
+        uploadFileStackView.setOnClickListener { [weak self] in
+            self?.uploadButtonTapped()
+        }
 
-        // Main Stack View
-        NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 38),
-            mainStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 25),
-            mainStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -25)
-        ])
+        removeFileButton.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
 
-        // Close Sheet Button
-        NSLayoutConstraint.activate([
-            closeSheetButton.heightAnchor.constraint(equalToConstant: 24),
-            closeSheetButton.widthAnchor.constraint(equalToConstant: 24)
-        ])
+        sendFileButton.addAction(UIAction { [weak self] _ in
+            self?.sendFileButtonTapped()
+        }, for: .touchUpInside)
 
-        // Title Label
-        NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: titleHelperView.centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: titleHelperView.centerYAnchor)
-        ])
-
-        // Upload File Helper View
-        NSLayoutConstraint.activate([
-            uploadFileHelperView.heightAnchor.constraint(equalToConstant: 118)
-        ])
-
-        // Upload File Stack View
-        self.stretch(uploadFileStackView, to: uploadFileHelperView, top: 12, left: 37, bottom: -12, right: -37)
-
-        // Upload Icon Helper view
-        NSLayoutConstraint.activate([
-            uploadIconHelperView.heightAnchor.constraint(equalToConstant: 50)
-        ])
-
-        // Upload Icon Image View
-        NSLayoutConstraint.activate([
-            uploadIconImageView.centerXAnchor.constraint(equalTo: uploadIconHelperView.centerXAnchor),
-            uploadIconImageView.centerYAnchor.constraint(equalTo: uploadIconHelperView.centerYAnchor),
-            uploadIconImageView.heightAnchor.constraint(equalToConstant: 43)
-        ])
-
-        // File Helper View
-        NSLayoutConstraint.activate([
-            fileHelperView.heightAnchor.constraint(equalToConstant: 45)
-        ])
-
-        // File Stack View
-        self.stretch(fileStackView, to: fileHelperView, top: 9, left: 9, bottom: -9, right: -9)
-
-        // File Image View
-        fileImageView.widthAnchor.constraint(equalToConstant: 28).isActive = true
-
-        // Remove File button
-        removeFileButton.widthAnchor.constraint(equalToConstant: 18).isActive = true
+        sendFileButton.disable()
     }
 }
 
-// MARK: - Actions
-
+// MARK: - Delegate Actions
 extension SendFileView {
     func closeButtonTapped() {
         delegate?.closeButtonTapped()

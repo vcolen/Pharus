@@ -1,5 +1,5 @@
 //
-//  ProjectSubcriptionAlertPresenter.swift
+//  ProjectSubscriptionAlertPresenter.swift
 //  Pharus
 //
 //  Created by Victor Colen on 20/04/22.
@@ -7,18 +7,18 @@
 
 import UIKit
 
-class ProjectSubcriptionAlertPresenter: BasePresenter<ProjectSubcriptionAlertViewable>,
-                                        ProjectSubcriptionAlertPresenting {
+class ProjectSubscriptionAlertPresenter: BasePresenter<ProjectSubscriptionAlertViewable>,
+                                        ProjectSubscriptionAlertPresenting {
 
     // MARK: - Properties
-    private let coordinator: ProjectSubcriptionAlertCoordinating
+    private let coordinator: ProjectSubscriptionAlertCoordinating
     let project: ProjectModel
     private let subscriptionHandler: () -> Void
 
     // MARK: - Initializer
 
     init(
-        coordinator: ProjectSubcriptionAlertCoordinating,
+        coordinator: ProjectSubscriptionAlertCoordinating,
         project: ProjectModel,
         onSubscription subscriptionHandler: @escaping () -> Void
     ) {

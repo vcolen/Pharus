@@ -66,14 +66,14 @@
 		799AFAF7285CECDF001B0371 /* LogoutAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA3A285CECDE001B0371 /* LogoutAlertCoordinating.swift */; };
 		799AFAF8285CECDF001B0371 /* LogoutAlertViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA3B285CECDE001B0371 /* LogoutAlertViewable.swift */; };
 		799AFAF9285CECDF001B0371 /* LogoutAlertPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA3C285CECDE001B0371 /* LogoutAlertPresenting.swift */; };
-		799AFAFA285CECDF001B0371 /* ProjectSubcriptionAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA3E285CECDE001B0371 /* ProjectSubcriptionAlertPresenter.swift */; };
-		799AFAFB285CECDF001B0371 /* ProjectSubcriptionAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA3F285CECDE001B0371 /* ProjectSubcriptionAlertCoordinator.swift */; };
-		799AFAFC285CECDF001B0371 /* ProjectSubcriptionAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA40285CECDE001B0371 /* ProjectSubcriptionAlertViewController.swift */; };
-		799AFAFD285CECDF001B0371 /* ProjectSubcriptionAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA41285CECDE001B0371 /* ProjectSubcriptionAlertView.swift */; };
-		799AFAFE285CECDF001B0371 /* ProjectSubcriptionAlertPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA43285CECDE001B0371 /* ProjectSubcriptionAlertPresenting.swift */; };
+		799AFAFA285CECDF001B0371 /* ProjectSubscriptionAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA3E285CECDE001B0371 /* ProjectSubscriptionAlertPresenter.swift */; };
+		799AFAFB285CECDF001B0371 /* ProjectSubscriptionAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA3F285CECDE001B0371 /* ProjectSubscriptionAlertCoordinator.swift */; };
+		799AFAFC285CECDF001B0371 /* ProjectSubscriptionAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA40285CECDE001B0371 /* ProjectSubscriptionAlertViewController.swift */; };
+		799AFAFD285CECDF001B0371 /* ProjectSubscriptionAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA41285CECDE001B0371 /* ProjectSubscriptionAlertView.swift */; };
+		799AFAFE285CECDF001B0371 /* ProjectSubscriptionAlertPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA43285CECDE001B0371 /* ProjectSubscriptionAlertPresenting.swift */; };
 		799AFAFF285CECDF001B0371 /* ProjectSubcriptionViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA44285CECDE001B0371 /* ProjectSubcriptionViewable.swift */; };
-		799AFB00285CECDF001B0371 /* ProjectSubcriptionAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA45285CECDE001B0371 /* ProjectSubcriptionAlertViewDelegate.swift */; };
-		799AFB01285CECDF001B0371 /* ProjectSubcriptionAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA46285CECDE001B0371 /* ProjectSubcriptionAlertCoordinating.swift */; };
+		799AFB00285CECDF001B0371 /* ProjectSubscriptionAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA45285CECDE001B0371 /* ProjectSubscriptionAlertViewDelegate.swift */; };
+		799AFB01285CECDF001B0371 /* ProjectSubscriptionAlertCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA46285CECDE001B0371 /* ProjectSubscriptionAlertCoordinating.swift */; };
 		799AFB02285CECDF001B0371 /* SingleButtonAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA48285CECDE001B0371 /* SingleButtonAlertPresenter.swift */; };
 		799AFB03285CECDF001B0371 /* SingleButtonAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA49285CECDE001B0371 /* SingleButtonAlertViewController.swift */; };
 		799AFB04285CECDF001B0371 /* SingleButtonAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA4A285CECDE001B0371 /* SingleButtonAlertCoordinator.swift */; };
@@ -226,14 +226,14 @@
 		799AFA3A285CECDE001B0371 /* LogoutAlertCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutAlertCoordinating.swift; sourceTree = "<group>"; };
 		799AFA3B285CECDE001B0371 /* LogoutAlertViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutAlertViewable.swift; sourceTree = "<group>"; };
 		799AFA3C285CECDE001B0371 /* LogoutAlertPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutAlertPresenting.swift; sourceTree = "<group>"; };
-		799AFA3E285CECDE001B0371 /* ProjectSubcriptionAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertPresenter.swift; sourceTree = "<group>"; };
-		799AFA3F285CECDE001B0371 /* ProjectSubcriptionAlertCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertCoordinator.swift; sourceTree = "<group>"; };
-		799AFA40285CECDE001B0371 /* ProjectSubcriptionAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertViewController.swift; sourceTree = "<group>"; };
-		799AFA41285CECDE001B0371 /* ProjectSubcriptionAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertView.swift; sourceTree = "<group>"; };
-		799AFA43285CECDE001B0371 /* ProjectSubcriptionAlertPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertPresenting.swift; sourceTree = "<group>"; };
+		799AFA3E285CECDE001B0371 /* ProjectSubscriptionAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubscriptionAlertPresenter.swift; sourceTree = "<group>"; };
+		799AFA3F285CECDE001B0371 /* ProjectSubscriptionAlertCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubscriptionAlertCoordinator.swift; sourceTree = "<group>"; };
+		799AFA40285CECDE001B0371 /* ProjectSubscriptionAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubscriptionAlertViewController.swift; sourceTree = "<group>"; };
+		799AFA41285CECDE001B0371 /* ProjectSubscriptionAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubscriptionAlertView.swift; sourceTree = "<group>"; };
+		799AFA43285CECDE001B0371 /* ProjectSubscriptionAlertPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubscriptionAlertPresenting.swift; sourceTree = "<group>"; };
 		799AFA44285CECDE001B0371 /* ProjectSubcriptionViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionViewable.swift; sourceTree = "<group>"; };
-		799AFA45285CECDE001B0371 /* ProjectSubcriptionAlertViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertViewDelegate.swift; sourceTree = "<group>"; };
-		799AFA46285CECDE001B0371 /* ProjectSubcriptionAlertCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubcriptionAlertCoordinating.swift; sourceTree = "<group>"; };
+		799AFA45285CECDE001B0371 /* ProjectSubscriptionAlertViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubscriptionAlertViewDelegate.swift; sourceTree = "<group>"; };
+		799AFA46285CECDE001B0371 /* ProjectSubscriptionAlertCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSubscriptionAlertCoordinating.swift; sourceTree = "<group>"; };
 		799AFA48285CECDE001B0371 /* SingleButtonAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertPresenter.swift; sourceTree = "<group>"; };
 		799AFA49285CECDE001B0371 /* SingleButtonAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertViewController.swift; sourceTree = "<group>"; };
 		799AFA4A285CECDE001B0371 /* SingleButtonAlertCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertCoordinator.swift; sourceTree = "<group>"; };
@@ -572,10 +572,10 @@
 		799AFA3D285CECDE001B0371 /* Project Subcription Alert */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA3F285CECDE001B0371 /* ProjectSubcriptionAlertCoordinator.swift */,
-				799AFA3E285CECDE001B0371 /* ProjectSubcriptionAlertPresenter.swift */,
-				799AFA41285CECDE001B0371 /* ProjectSubcriptionAlertView.swift */,
-				799AFA40285CECDE001B0371 /* ProjectSubcriptionAlertViewController.swift */,
+				799AFA3F285CECDE001B0371 /* ProjectSubscriptionAlertCoordinator.swift */,
+				799AFA3E285CECDE001B0371 /* ProjectSubscriptionAlertPresenter.swift */,
+				799AFA41285CECDE001B0371 /* ProjectSubscriptionAlertView.swift */,
+				799AFA40285CECDE001B0371 /* ProjectSubscriptionAlertViewController.swift */,
 				799AFA42285CECDE001B0371 /* Protocols */,
 			);
 			path = "Project Subcription Alert";
@@ -584,10 +584,10 @@
 		799AFA42285CECDE001B0371 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA43285CECDE001B0371 /* ProjectSubcriptionAlertPresenting.swift */,
+				799AFA43285CECDE001B0371 /* ProjectSubscriptionAlertPresenting.swift */,
 				799AFA44285CECDE001B0371 /* ProjectSubcriptionViewable.swift */,
-				799AFA45285CECDE001B0371 /* ProjectSubcriptionAlertViewDelegate.swift */,
-				799AFA46285CECDE001B0371 /* ProjectSubcriptionAlertCoordinating.swift */,
+				799AFA45285CECDE001B0371 /* ProjectSubscriptionAlertViewDelegate.swift */,
+				799AFA46285CECDE001B0371 /* ProjectSubscriptionAlertCoordinating.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1025,7 +1025,7 @@
 				799AFB5B285CECDF001B0371 /* Float+Extension.swift in Sources */,
 				799AFB1C285CECDF001B0371 /* StudentProjectDetailViewable.swift in Sources */,
 				799AFAC8285CECDE001B0371 /* ProjectSheetView.swift in Sources */,
-				799AFAFB285CECDF001B0371 /* ProjectSubcriptionAlertCoordinator.swift in Sources */,
+				799AFAFB285CECDF001B0371 /* ProjectSubscriptionAlertCoordinator.swift in Sources */,
 				799AFB03285CECDF001B0371 /* SingleButtonAlertViewController.swift in Sources */,
 				799AFB0F285CECDF001B0371 /* StudentProjectRankingCell.swift in Sources */,
 				799AFADF285CECDF001B0371 /* StudentHomeView.swift in Sources */,
@@ -1042,7 +1042,7 @@
 				799AFB17285CECDF001B0371 /* AvatarSelectionViewable.swift in Sources */,
 				79D659C3286209760060971C /* StudentProjectsView.swift in Sources */,
 				799AFB1F285CECDF001B0371 /* StudentProjectsDetailPresenting.swift in Sources */,
-				799AFAFA285CECDF001B0371 /* ProjectSubcriptionAlertPresenter.swift in Sources */,
+				799AFAFA285CECDF001B0371 /* ProjectSubscriptionAlertPresenter.swift in Sources */,
 				799AFAF7285CECDF001B0371 /* LogoutAlertCoordinating.swift in Sources */,
 				790AA94D286B653A00D99D30 /* StudentHomeTabCoordinator.swift in Sources */,
 				799AFAE6285CECDF001B0371 /* StudentHomeCoordinator.swift in Sources */,
@@ -1075,7 +1075,7 @@
 				797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */,
 				799AFAD4285CECDF001B0371 /* SendFileViewDelegate.swift in Sources */,
 				79FFE7E72860F9CA003FCBE5 /* StudentProjectsRankingPresenting.swift in Sources */,
-				799AFAFD285CECDF001B0371 /* ProjectSubcriptionAlertView.swift in Sources */,
+				799AFAFD285CECDF001B0371 /* ProjectSubscriptionAlertView.swift in Sources */,
 				799AFB0B285CECDF001B0371 /* HomeNewsView.swift in Sources */,
 				790AA94F286B736100D99D30 /* StudentProfileTabCoordinator.swift in Sources */,
 				799AFB57285CECDF001B0371 /* Task.swift in Sources */,
@@ -1096,7 +1096,7 @@
 				799AFB18285CECDF001B0371 /* AvatarSelectionView.swift in Sources */,
 				799AFB06285CECDF001B0371 /* SingleButtonAlertViewable.swift in Sources */,
 				799AFADE285CECDF001B0371 /* StudentProjectsViewable.swift in Sources */,
-				799AFB00285CECDF001B0371 /* ProjectSubcriptionAlertViewDelegate.swift in Sources */,
+				799AFB00285CECDF001B0371 /* ProjectSubscriptionAlertViewDelegate.swift in Sources */,
 				799AFAE2285CECDF001B0371 /* StudentHomePresenting.swift in Sources */,
 				790AA951286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift in Sources */,
 				799AFB28285CECDF001B0371 /* LoginPresenting.swift in Sources */,
@@ -1109,7 +1109,7 @@
 				79FFE7E92860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift in Sources */,
 				799AFB1D285CECDF001B0371 /* StudentProjectDetailViewDelegate.swift in Sources */,
 				799AFB39285CECDF001B0371 /* Date+Extension.swift in Sources */,
-				799AFB01285CECDF001B0371 /* ProjectSubcriptionAlertCoordinating.swift in Sources */,
+				799AFB01285CECDF001B0371 /* ProjectSubscriptionAlertCoordinating.swift in Sources */,
 				799AFB29285CECDF001B0371 /* AppCoordinator.swift in Sources */,
 				79FCEB932863B55B004D22EC /* BasePresenter.swift in Sources */,
 				799AFB34285CECDF001B0371 /* CellReuseIdentifiers.swift in Sources */,
@@ -1131,13 +1131,13 @@
 				799AFACE285CECDF001B0371 /* ProjectSheetPresenter.swift in Sources */,
 				799AFB14285CECDF001B0371 /* AvatarSelectionPresenting.swift in Sources */,
 				799AFAD7285CECDF001B0371 /* StudentProjectsViewController.swift in Sources */,
-				799AFAFE285CECDF001B0371 /* ProjectSubcriptionAlertPresenting.swift in Sources */,
+				799AFAFE285CECDF001B0371 /* ProjectSubscriptionAlertPresenting.swift in Sources */,
 				799AFB04285CECDF001B0371 /* SingleButtonAlertCoordinator.swift in Sources */,
 				799AFACD285CECDF001B0371 /* ProjectSheetCoordinating.swift in Sources */,
 				799AFB13285CECDF001B0371 /* AvatarSelectionViewController.swift in Sources */,
 				799AFACC285CECDF001B0371 /* ProjectSheetViewable.swift in Sources */,
 				799AFB58285CECDF001B0371 /* Student.swift in Sources */,
-				799AFAFC285CECDF001B0371 /* ProjectSubcriptionAlertViewController.swift in Sources */,
+				799AFAFC285CECDF001B0371 /* ProjectSubscriptionAlertViewController.swift in Sources */,
 				799AFACB285CECDF001B0371 /* ProjectSheetDelegate.swift in Sources */,
 				799AFAF9285CECDF001B0371 /* LogoutAlertPresenting.swift in Sources */,
 				799AFB21285CECDF001B0371 /* LoginView.swift in Sources */,

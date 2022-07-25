@@ -12,8 +12,7 @@ public protocol SafeAreaViewable: UIView { }
 public extension SafeAreaViewable {
 
     func safeArea(
-        _ edges: Set<MarginEdges>,
-        _ constant: CGFloat
+        _ edges: Set<MarginEdges>
     ) -> SafeAreaView<Self, Self> {
 
         return SafeAreaView(
@@ -28,8 +27,7 @@ public extension SafeAreaViewable {
 public extension SafeAreaViewable where Self: WrapperViewable {
 
     func safeArea(
-        _ edges: Set<MarginEdges>,
-        _ constant: CGFloat
+        _ edges: Set<MarginEdges>
     ) -> SafeAreaView<Original, Self> {
 
         return SafeAreaView(

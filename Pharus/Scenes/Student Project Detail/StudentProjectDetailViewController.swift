@@ -12,7 +12,7 @@ class StudentProjectDetailViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: StudentProjectDetailPresenter
-    private lazy var studentProjectDetailView = StudentProjectDetailView(
+    private lazy var customView = StudentProjectDetailView(
         project: presenter.project
     )
 
@@ -31,7 +31,7 @@ class StudentProjectDetailViewController: UIViewController {
 // MARK: - Super Methods
 extension StudentProjectDetailViewController {
     override func loadView() {
-        self.view = studentProjectDetailView
+        self.view = customView
     }
 
     override func viewWillLayoutSubviews() {
@@ -44,7 +44,7 @@ extension StudentProjectDetailViewController {
         super.viewDidLoad()
 
         setupTabbar()
-        studentProjectDetailView.delegate = self
+        customView.delegate = self
     }
 }
 
@@ -56,13 +56,14 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
 
     func taskCheckboxTapped(taskIndex: Int) {
         presenter.toggleTaskCompletedStatus(taskIndex: taskIndex)
+        customView.project = presenter.project
     }
 
     func rulesViewTapped() {
         presenter.showProjectRules()
     }
 
-    func sendFilesButtonTapped() {
+    func uploadFilesButtonTapped() {
         presenter.showUploadFileView()
     }
 }

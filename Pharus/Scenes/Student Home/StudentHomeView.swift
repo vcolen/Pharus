@@ -129,9 +129,7 @@ class StudentHomeView: UIView {
     }()
 
     private lazy var newsView: HomeNewsView = {
-        let view = HomeNewsView(news: Constants.defaultTexts.homeNewsText)
-        view.mainView.backgroundColor = .white
-        view.mainView.layer.cornerRadius = 16
+        let view = HomeNewsView(news: Constants.defaultTexts.pageOneText)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "StudentHomeView.newsView"
 

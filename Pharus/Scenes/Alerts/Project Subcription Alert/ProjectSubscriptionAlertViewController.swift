@@ -1,5 +1,5 @@
 //
-//  ProjectSubcriptionAlertViewController.swift
+//  ProjectSubscriptionAlertViewController.swift
 //  Pharus
 //
 //  Created by Victor Colen on 20/04/22.
@@ -7,19 +7,19 @@
 
 import UIKit
 
-class ProjectSubcriptionAlertViewController: UIViewController {
+class ProjectSubscriptionAlertViewController: UIViewController {
 
     // MARK: - Properties
-    private lazy var alertView = ProjectSubcriptionAlertView(
+    private lazy var alertView = ProjectSubscriptionAlertView(
         title: "Confirmar Inscrição",
         message: "Você deseja se inscrever no projeto \"\(presenter.project.name)\"?",
         mainButtonText: "Sim, quero me inscrever",
         secondaryButtonText: "Não quero, mudei de idéia"
     )
-    private let presenter: ProjectSubcriptionAlertPresenting
+    private let presenter: ProjectSubscriptionAlertPresenting
 
     // MARK: - Initializer
-    init(presenter: ProjectSubcriptionAlertPresenting) {
+    init(presenter: ProjectSubscriptionAlertPresenting) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
@@ -31,7 +31,7 @@ class ProjectSubcriptionAlertViewController: UIViewController {
 }
 
 // MARK: - Super Methods
-extension ProjectSubcriptionAlertViewController {
+extension ProjectSubscriptionAlertViewController {
 
     override func loadView() {
         self.view = alertView
@@ -45,7 +45,7 @@ extension ProjectSubcriptionAlertViewController {
 }
 
 // MARK: - Project Subcription Alert View Delegate
-extension ProjectSubcriptionAlertViewController: ProjectSubcriptionAlertViewDelegate {
+extension ProjectSubscriptionAlertViewController: ProjectSubscriptionAlertViewDelegate {
     func closeButtonTapped() {
         presenter.closeModal()
     }
@@ -60,4 +60,4 @@ extension ProjectSubcriptionAlertViewController: ProjectSubcriptionAlertViewDele
 }
 
 // MARK: - Project Subscription Alert Viewable
-extension ProjectSubcriptionAlertViewController: ProjectSubcriptionAlertViewable { }
+extension ProjectSubscriptionAlertViewController: ProjectSubscriptionAlertViewable { }

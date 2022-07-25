@@ -14,230 +14,153 @@ class LoginView: UIView {
     weak var delegate: LoginViewDelegate?
 
     // MARK: - Views
-    private lazy var mainView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "LoginView.mainView"
+    private lazy var mainView = UIView()
+        .setting(\.backgroundColor, to: .white)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return view
-    }()
+    private lazy var logoImageView = UIImageView()
+        .setting(\.image, to: .pharusImages.appLogoImage)
+        .setting(\.contentMode, to: .scaleAspectFit)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-    private lazy var logoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage.pharusImages.appLogoImage
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "LoginView.logoImageView"
+    private lazy var mainStackView = VStackView([
+        logoImageView,
+        loginTitle,
+        emailStackView,
+        passwordStackView,
+        loginButton,
+        UIView()
+    ])
+        .setting(\.spacing, to: UIScreen.main.bounds.height/17)
+        .setting(\.alignment, to: .fill)
+        .padding([.leading, .trailing], 32)
+        .padding([.top], 48)
+        .safeArea([.top])
 
-        return imageView
-    }()
+    private lazy var loginTitle = UILabel()
+        .setting(\.text, to: "Login")
+        .setting(\.textColor, to: .Purple.pharusPurple)
+        .setting(\.font, to: .largeTitleBold)
+        .setting(\.textAlignment, to: .center)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = UIScreen.main.bounds.height/17
-        stackView.alignment = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "LoginView.mainStackView"
+    private lazy var emailStackView = UIStackView([
+        emailLabel,
+        emailTextField
+    ])
+        .setting(\.axis, to: .vertical)
+        .setting(\.distribution, to: .fillEqually)
+        .setting(\.alignment, to: .fill)
+        .setting(\.spacing, to: 10)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return stackView
-    }()
+    private lazy var emailLabel = UILabel()
+        .setting(\.text, to: "E-mail")
+        .setting(\.font, to: .mediumTitleBold)
+        .setting(\.textColor, to: .Purple.pharusPurple)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-    private lazy var loginTitle: UILabel = {
-        let label = UILabel()
-        label.text = "Login"
-        label.textColor = UIColor.Purple.pharusPurple
-        label.font = .largeTitleBold
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "LoginView.loginTitle"
+    lazy var emailTextField = UITextField()
+        .setting(\.attributedPlaceholder,
+                  to: NSAttributedString(
+                    string: "antonia.ferreira@gmail.com",
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]
+                  )
+        )
+        .setting(\.textColor, to: .black)
+        .setting(\.font, to: .smallBody)
+        .setting(\.layer.shadowColor, to: UIColor.Purple.pharusPurple.cgColor)
+        .setting(\.layer.shadowOffset, to: CGSize(width: 0.0, height: 1.0))
+        .setting(\.layer.shadowOpacity, to: 0.3)
+        .setting(\.layer.shadowRadius, to: 0)
+        .setting(\.backgroundColor, to: .white)
+        .setting(\.autocorrectionType, to: .no)
+        .setting(\.autocapitalizationType, to: .none)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return label
-    }()
+    private lazy var passwordStackView = VStackView([
+        passwordLabel,
+        passwordTextField,
+        wrongPasswordStackView
+    ])
+        .setting(\.distribution, to: .fillEqually)
+        .setting(\.spacing, to: 10)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-    private lazy var emailStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.alignment = .fill
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "LoginView.emailStackView"
+    private lazy var passwordLabel = UILabel()
+        .setting(\.text, to: "Senha")
+        .setting(\.font, to: .mediumTitleBold)
+        .setting(\.textColor, to: .Purple.pharusPurple)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return stackView
-    }()
+    lazy var passwordTextField = UITextField()
+        .setting(\.attributedPlaceholder,
+                  to: NSAttributedString(
+                    string: "Senha",
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]
+                  )
+        )
+        .setting(\.textColor, to: .black)
+        .setting(\.font, to: .smallBody)
+        .setting(\.layer.shadowColor, to: UIColor.Purple.pharusPurple.cgColor)
+        .setting(\.layer.shadowOffset, to: CGSize(width: 0.0, height: 1.0))
+        .setting(\.layer.shadowOpacity, to: 0.3)
+        .setting(\.layer.shadowRadius, to: 0)
+        .setting(\.backgroundColor, to: .white)
+        .setting(\.autocorrectionType, to: .no)
+        .setting(\.autocapitalizationType, to: .none)
+        .setting(\.isSecureTextEntry, to: true)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-    private lazy var emailLabel: UILabel = {
-        let label = UILabel()
-        label.text = "E-mail"
-        label.font = .mediumTitleBold
-        label.textColor = UIColor.Purple.pharusPurple
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "LoginView.emailLabel"
+    private lazy var wrongPasswordStackView = HStackView([
+        wrongPasswordImageView,
+        wrongPasswordLabel
+    ])
+        .setting(\.spacing, to: 4)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return label
-    }()
+    lazy var wrongPasswordImageView = UIImageView()
+        .setting(\.image, to: .pharusIcons.errorIcon?.withTintColor(.clear))
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        .frame(width: 24)
 
-    lazy var emailTextField: UITextField = {
-        let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(
-            string: "antonia.ferreira@gmail.com",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        textField.textColor = .black
-        textField.font = .smallBody
-        textField.layer.shadowColor = UIColor.Purple.pharusPurple.cgColor
-        textField.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
-        textField.layer.shadowOpacity = 0.30
-        textField.layer.shadowRadius = 0.0
-        textField.backgroundColor = .white
-        textField.autocorrectionType = .no
-        textField.autocapitalizationType = .none
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.accessibilityIdentifier = "LoginView.emailTextField"
+    lazy var wrongPasswordLabel = UILabel()
+        .setting(\.text, to: "Senha incorreta!")
+        .setting(\.font, to: .smallBody)
+        .setting(\.textColor, to: .clear)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return textField
-    }()
-
-    private lazy var passwordStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.alignment = .fill
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "LoginView.passwordStackView"
-
-        return stackView
-    }()
-
-    private  lazy var passwordLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Senha"
-        label.font = .mediumTitleBold
-        label.textColor = UIColor.Purple.pharusPurple
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "LoginView.passwordLabel"
-
-        return label
-    }()
-
-    lazy var passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(
-            string: "Senha",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        textField.textColor = .black
-        textField.font = .smallBody
-        textField.layer.shadowColor = UIColor.Purple.pharusPurple.cgColor
-        textField.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
-        textField.layer.shadowOpacity = 0.30
-        textField.layer.shadowRadius = 0.0
-        textField.backgroundColor = .white
-        textField.autocorrectionType = .no
-        textField.autocapitalizationType = .none
-        textField.isSecureTextEntry = true
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.accessibilityIdentifier = "LoginView.passwordTextField"
-
-        return textField
-    }()
-
-  private lazy var wrongPasswordStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 4
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "LoginView.wrongPasswordStackView"
-
-        return stackView
-    }()
-
-    lazy var wrongPasswordImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage.pharusIcons.errorIcon?.withTintColor(.clear)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "LoginView.wrongPasswordImageView"
-
-        return imageView
-    }()
-
-    lazy var wrongPasswordLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Senha incorreta!"
-        label.font = .smallBody
-        label.textColor = UIColor.clear
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "LoginView.wrongPasswordLabel"
-
-        return label
-    }()
-
-    private lazy var loginButton: MainCardButton = {
-        let button = MainCardButton(title: "Entrar", buttonState: .normal)
-        button.addAction(UIAction { [weak self] _ in
-            self?.loginButtonPressed()
-        }, for: .touchUpInside)
-        button.titleLabel?.font = .largeButton
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "LoginView.loginButton"
-
-        return button
-    }()
+    private lazy var loginButton = MainCardButton(title: "Entrar", buttonState: .normal)
 
     // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-    func configureSubviews() {
-        addSubview(mainView)
-
-        mainView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(logoImageView)
-        mainStackView.addArrangedSubview(loginTitle)
-        mainStackView.addArrangedSubview(emailStackView)
-
-        emailStackView.addArrangedSubview(emailLabel)
-        emailStackView.addArrangedSubview(emailTextField)
-
-        mainStackView.addArrangedSubview(passwordStackView)
-
-        passwordStackView.addArrangedSubview(passwordLabel)
-        passwordStackView.addArrangedSubview(passwordTextField)
-        passwordStackView.addArrangedSubview(wrongPasswordStackView)
-
-        wrongPasswordStackView.addArrangedSubview(wrongPasswordImageView)
-        wrongPasswordStackView.addArrangedSubview(wrongPasswordLabel)
-
-        mainStackView.addArrangedSubview(loginButton)
+// MARK: - ViewCodable
+extension LoginView: ViewCodable {
+    func buildHierarchy() {
+        addSubview(mainStackView)
     }
 
-    // MARK: - Constraints
     func setupConstraints() {
-        // Main View
-        self.stretch(mainView)
+        mainStackView.edges()
+    }
 
-        // Main Stack View
-        NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 48),
-            mainStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 32),
-            mainStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -32)
-        ])
+    func applyAdditionalChanges() {
+        self.backgroundColor = .white
 
-        // Wrong password Image View
-        NSLayoutConstraint.activate([
-            wrongPasswordImageView.widthAnchor.constraint(equalToConstant: 24)
-        ])
+        loginButton.addAction(UIAction { [weak self] _ in
+            self?.loginButtonPressed()
+        }, for: .touchUpInside)
+        loginButton.titleLabel?.font = .largeButton
     }
 }
 
