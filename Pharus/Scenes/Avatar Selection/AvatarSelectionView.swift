@@ -16,15 +16,13 @@ class AvatarSelectionView: UIView {
 
     // MARK: - Views
     private lazy var mainScrollView = ScrollView {
-        mainStackView
-    }
-
-    private lazy var mainStackView = VStackView([
-        mainAvatarImageView,
-        avatarSelectionStackView
-    ])
+        VStackView([
+            mainAvatarImageView,
+            avatarSelectionStackView
+        ])
         .setting(\.spacing, to: 48)
         .padding([.top], 30)
+    }
 
     private lazy var mainAvatarImageView = UIImageView()
         .setting(\.image, to: FullAvatarImages.avatar1)
@@ -32,16 +30,15 @@ class AvatarSelectionView: UIView {
         .frame(height: UIScreen.main.bounds.height/2.2)
 
     private lazy var avatarSelectionStackView = VStackView([
-        selectYourAvatarLabel
+        UILabel()
+            .setting(\.text, to: "Escolha o seu avatar")
+            .setting(\.textAlignment, to: .center)
+            .setting(\.font, to: .largeTitleBold)
+            .setting(\.textColor, to: .white)
+            .frame(height: 25),
+        avatarSelectionCollectionView
     ])
         .setting(\.spacing, to: 32)
-
-    private lazy var selectYourAvatarLabel = UILabel()
-        .setting(\.text, to: "Escolha o seu avatar")
-        .setting(\.textAlignment, to: .center)
-        .setting(\.font, to: .largeTitleBold)
-        .setting(\.textColor, to: .white)
-        .frame(height: 25)
 
     private lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
         .setting(\.scrollDirection, to: .horizontal)
@@ -51,7 +48,7 @@ class AvatarSelectionView: UIView {
         .setting(\.minimumInteritemSpacing, to: 20)
 
     private lazy var avatarSelectionCollectionView = UICollectionView(
-        frame: mainStackView.frame,
+        frame: .zero,
         collectionViewLayout: collectionViewFlowLayout
     )
         .setting(\.backgroundColor, to: .clear)
@@ -76,7 +73,6 @@ class AvatarSelectionView: UIView {
 extension AvatarSelectionView: ViewCodable {
     func buildHierarchy() {
         addSubview(mainScrollView)
-        avatarSelectionStackView.addArrangedSubview(avatarSelectionCollectionView)
     }
 
     func setupConstraints() {
