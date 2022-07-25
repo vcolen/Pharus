@@ -8,293 +8,120 @@
 import UIKit
 import PharusUI
 
-// swiftlint:disable type_body_length file_length
 class StudentProjectCell: UITableViewCell {
 
     // MARK: - Views
+    private lazy var mainView = UIView()
+        .setting(\.layer.cornerRadius, to: 16)
 
-    lazy var mainView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 16
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectCell.mainView"
+    private lazy var titleStackView = HStackView([])
 
-        return view
-    }()
+    private lazy var descriptionStackView = HStackView([])
+        .setting(\.distribution, to: .fillEqually)
 
-    private lazy var titleStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectCell.titleStackView"
+    private lazy var mainStackView = VStackView([
 
-        return stackView
-    }()
+    ])
+        .setting(\.spacing, to: 20)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-    private lazy var descriptionStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "UserProejctCell.descriptionStackView"
+    private lazy var progressStackView = VStackView([])
+        .setting(\.spacing, to: 8)
 
-        return stackView
-    }()
+    private lazy var titleLabel = UILabel()
+        .setting(\.numberOfLines, to: 1)
+        .setting(\.lineBreakMode, to: .byTruncatingTail)
+        .setting(\.font, to: .largeTitleBold)
 
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 20
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectCell.mainStackView"
+    private lazy var mentorLabel = UILabel()
+        .setting(\.numberOfLines, to: 1)
+        .setting(\.font, to: .mediumTitleBold)
+        .setting(\.lineBreakMode, to: .byTruncatingTail)
 
-        return stackView
-    }()
+    private lazy var descriptionTitleLabel = UILabel()
+        .setting(\.text, to: "Descrição:")
+        .setting(\.font, to: .mediumTitleSemiBold)
+        .setting(\.textColor, to: .black)
 
-    private lazy var progressStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 8
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectCell.progressStackView"
+    private lazy var descriptionLabelView = UIView()
 
-        return stackView
-    }()
+    private lazy var descriptionLabel = UILabel()
+        .setting(\.font, to: .smallBody)
+        .setting(\.numberOfLines, to: 0)
+        .setting(\.textColor, to: .black)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.lineBreakMode = .byTruncatingTail
-        label.font = .largeTitleBold
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "StudentProjectCell.titleLabel"
+    private lazy var completionStackView = VStackView([])
+        .setting(\.alignment, to: .center)
+        .setting(\.spacing, to: 26)
 
-        return label
-    }()
+    private lazy var completionCircleHelpView = UIView()
 
-    private lazy var mentorLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.font = .mediumTitleBold
-        label.textColor = .black
-        label.lineBreakMode = .byTruncatingTail
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "StudentProjectCell.mentorsLabel"
+    private lazy var completionBarCircleView = CircleProgressView(
+        circleColor: .white,
+        completionProgressColor: UIColor.Purple.pharusPurple,
+        radius: 45,
+        progress: 50
+    )
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return label
-    }()
+    private lazy var percentageCompletionLabel = UILabel()
+        .setting(\.text, to: "100%")
+        .setting(\.font, to: .smallBody)
+        .setting(\.textColor, to: .black)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-    private lazy var descriptionTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Descrição:"
-        label.font = .mediumTitleSemiBold
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "StudentProjectCell.descriptionTitleLabel"
+    private lazy var projectScheduleView = ProjectScheduleView(
+        projectIsComplete: false,
+        projectDaysRemaining: 12
+    )
 
-        return label
-    }()
+    private lazy var lowerHelperView = UIView()
 
-    private lazy var descriptionLabelView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectCell.descriptionLabelView"
+    private lazy var lowerStackView = HStackView([])
+        .setting(\.distribution, to: .fillEqually)
 
-        return view
-    }()
+    private lazy var partnershipStackView = HStackView([
 
-    private lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = .smallBody
-        label.numberOfLines = 0
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "StudentProjectCell.descriptionLabel"
+    ])
+        .setting(\.spacing, to: 8)
+        .setting(\.distribution, to: .fillEqually)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return label
-    }()
+    private lazy var partnershipHelperView = UIView()
 
-    private lazy var completionStackView: UIStackView = {
-        let stackview = UIStackView()
-        stackview.axis = .vertical
-        stackview.alignment = .center
-        stackview.spacing = 26
-        stackview.translatesAutoresizingMaskIntoConstraints = false
-        stackview.accessibilityIdentifier = "StudentProjectCell.helpImageView"
+    private lazy var partnershipLabel = UILabel()
+        .setting(\.text, to: "Parceria: ")
+        .setting(\.font, to: .smallBodyBold)
+        .setting(\.textColor, to: .black)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return stackview
-    }()
+    private lazy var companyLogoHelperView = UIView()
 
-    private lazy var completionCircleHelpView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectCell.completionCircleHelpView"
+    private lazy var companyLogoImageView = UIImageView()
+        .setting(\.image, to: .pharusImages.companyImages.ioasysLogoImage)
+        .setting(\.contentMode, to: .scaleAspectFit)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
-        return view
-    }()
+    private lazy var subscribeHelperView = UIView()
 
-    private lazy var completionBarCircleView: CircleProgressView = {
-        let view = CircleProgressView(
-            circleColor: .white,
-            completionProgressColor: UIColor.Purple.pharusPurple,
-            radius: 45,
-            progress: 50
-        )
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectCell.descriptionTitleLabel"
-
-        return view
-    }()
-
-    private lazy var percentageCompletionLabel: UILabel = {
-        let label = UILabel()
-        label.text = "100%"
-        label.font = .smallBody
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "StudentProjectCell.percentageCompletionLabel"
-
-        return label
-    }()
-
-    private lazy var projectScheduleView: ProjectScheduleView = {
-        let view = ProjectScheduleView(projectIsComplete: false, projectDaysRemaining: 12)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectCell.projectScheduleView"
-
-        return view
-    }()
-
-    private lazy var lowerHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectCell.lowerHelperView"
-
-        return view
-    }()
-
-    private lazy var lowerStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "UserProjectCell.lowerStackView"
-
-        return stackView
-    }()
-
-    private lazy var partnershipStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "UserProjectCell.partnershipStackView"
-
-        return stackView
-    }()
-
-    private lazy var partnershipHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "UserProjectCell.partnershipHelperView"
-
-        return view
-    }()
-
-    private lazy var partnershipLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Parceira: "
-        label.font = .smallBodyBold
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "UserProjectCell.partnershipLabel"
-
-        return label
-    }()
-
-    private lazy var companyLogoHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "UserProjectCell.companyLogoHelperView"
-
-        return view
-    }()
-
-    private lazy var companyLogoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage.pharusImages.companyImages.ioasysLogoImage
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "UserProjectCell.companyLogoImageView"
-
-        return imageView
-    }()
-
-    private lazy var subscribeHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "UserProjectCell.subscribeHelperView"
-
-        return view
-    }()
-
-    lazy var subscribeButton: SubscribeButton = {
-        let button = SubscribeButton(isSubscribed: true)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "UserProjectCell.subscribeButton"
-
-        return button
-    }()
+    lazy var subscribeButton = SubscribeButton(isSubscribed: true)
 
     // MARK: - Initializers
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        configureSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-
-    func configureCell(using project: ProjectModel) {
-        titleLabel.text = project.name
-        descriptionLabel.text = project.projectDescription
-        mentorLabel.text = "Mentor: " + project.mentor
-        projectScheduleView.projectIsComplete = project.isComplete
-        projectScheduleView.projectDaysRemaining = project.daysRemaining
-        subscribeButton.isSubscribed = project.isSubscribed
-        companyLogoImageView.image = UIImage(
-            named: "\(project.company ?? "ioasys" .lowercased())LogoImage"
-        )
-
-        completionBarCircleView.progress = project.completionPercentage*100
-        percentageCompletionLabel.text = "\(project.completedTasksCount) de \(project.tasks.count)"
-
-        if project.daysRemaining >= 0 {
-            if project.isSubscribed {
-                mainView.backgroundColor = UIColor.Project.orangeSubscribedProjectBackground
-            } else {
-                mainView.backgroundColor = UIColor.Project.grayUnsubscribedProjectBackground
-            }
-        } else {
-            mainView.backgroundColor = UIColor.Project.redExpiredProjectBackground
-            titleLabel.textColor = .white
-            mentorLabel.textColor = .white
-            descriptionTitleLabel.textColor = .white
-            descriptionLabel.textColor = .white
-            partnershipLabel.textColor = .white
-            percentageCompletionLabel.textColor = .white
-        }
-    }
-
-    func configureSubviews() {
+// MARK: - View Codable
+extension StudentProjectCell: ViewCodable {
+    func buildHierarchy() {
         self.backgroundColor = .clear
 
         addSubview(mainView)
@@ -414,5 +241,39 @@ class StudentProjectCell: UITableViewCell {
 
         // Subscribe Button
         subscribeButton.center(in: subscribeHelperView)
+    }
+}
+
+// MARK: - Additional Methods
+extension StudentProjectCell {
+    func configureCell(using project: ProjectModel) {
+        titleLabel.text = project.name
+        descriptionLabel.text = project.projectDescription
+        mentorLabel.text = "Mentor: " + project.mentor
+        projectScheduleView.projectIsComplete = project.isComplete
+        projectScheduleView.projectDaysRemaining = project.daysRemaining
+        subscribeButton.isSubscribed = project.isSubscribed
+        companyLogoImageView.image = UIImage(
+            named: "\(project.company?.lowercased() ?? "ioasys")LogoImage"
+        )
+
+        completionBarCircleView.progress = project.completionPercentage*100
+        percentageCompletionLabel.text = "\(project.completedTasksCount) de \(project.tasks.count)"
+
+        if project.daysRemaining >= 0 {
+            if project.isSubscribed {
+                mainView.backgroundColor = UIColor.Project.orangeSubscribedProjectBackground
+            } else {
+                mainView.backgroundColor = UIColor.Project.grayUnsubscribedProjectBackground
+            }
+        } else {
+            mainView.backgroundColor = UIColor.Project.redExpiredProjectBackground
+            titleLabel.textColor = .white
+            mentorLabel.textColor = .white
+            descriptionTitleLabel.textColor = .white
+            descriptionLabel.textColor = .white
+            partnershipLabel.textColor = .white
+            percentageCompletionLabel.textColor = .white
+        }
     }
 }

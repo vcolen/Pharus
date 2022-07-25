@@ -91,8 +91,7 @@ extension StudentProjectsView: UITableViewDataSource {
 
         let project = student.projects[indexPath.row]
 
-        cell.configureSubviews()
-        cell.setupConstraints()
+        cell.setupView()
         cell.configureCell(using: project)
 
         if project.isSubscribed == false {
