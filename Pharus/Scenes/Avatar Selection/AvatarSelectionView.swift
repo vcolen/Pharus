@@ -16,24 +16,23 @@ class AvatarSelectionView: UIView {
 
     // MARK: - Views
     private lazy var mainScrollView = ScrollView {
-        mainView
+        mainStackView
     }
 
-    private lazy var mainView = UIView()
-
-    lazy var mainStackView = VStackView([
-
+    private lazy var mainStackView = VStackView([
+        mainAvatarImageView,
+        avatarSelectionStackView
     ])
         .setting(\.spacing, to: 48)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        .padding([.top], 30)
 
-    lazy var mainAvatarImageView = UIImageView()
+    private lazy var mainAvatarImageView = UIImageView()
         .setting(\.image, to: FullAvatarImages.avatar1)
         .setting(\.contentMode, to: .scaleAspectFit)
         .frame(height: UIScreen.main.bounds.height/2.2)
 
-    lazy var avatarSelectionStackView = VStackView([
-
+    private lazy var avatarSelectionStackView = VStackView([
+        selectYourAvatarLabel
     ])
         .setting(\.spacing, to: 32)
 
@@ -44,14 +43,14 @@ class AvatarSelectionView: UIView {
         .setting(\.textColor, to: .white)
         .frame(height: 25)
 
-    lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
+    private lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
         .setting(\.scrollDirection, to: .horizontal)
         .setting(\.sectionInset, to: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
         .setting(\.itemSize, to: CGSize(width: 120, height: 120))
         .setting(\.minimumLineSpacing, to: 20)
         .setting(\.minimumInteritemSpacing, to: 20)
 
-    lazy var avatarSelectionCollectionView = UICollectionView(
+    private lazy var avatarSelectionCollectionView = UICollectionView(
         frame: mainStackView.frame,
         collectionViewLayout: collectionViewFlowLayout
     )
@@ -77,31 +76,11 @@ class AvatarSelectionView: UIView {
 extension AvatarSelectionView: ViewCodable {
      func buildHierarchy() {
         addSubview(mainScrollView)
-        mainView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(mainAvatarImageView)
-        mainStackView.addArrangedSubview(avatarSelectionStackView)
-
-        avatarSelectionStackView.addArrangedSubview(selectYourAvatarLabel)
-        avatarSelectionStackView.addArrangedSubview(avatarSelectionCollectionView)
+         avatarSelectionStackView.addArrangedSubview(avatarSelectionCollectionView)
     }
 
      func setupConstraints() {
          mainScrollView.edges()
-
-        // Main View
-        self.stretch(mainView, to: mainScrollView)
-        mainView.center(in: mainScrollView)
-        NSLayoutConstraint.activate([
-            mainView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width)
-        ])
-
-        // Main Stack View
-        NSLayoutConstraint.activate([
-            mainStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
-            mainStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
-            mainStackView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 20)
-        ])
     }
 
     func applyAdditionalChanges() {
@@ -112,11 +91,11 @@ extension AvatarSelectionView: ViewCodable {
 
 // MARK: - UI Collection View Data Source
 extension AvatarSelectionView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         CircleAvatarImages.avatars.count
     }
 
-    func collectionView(
+     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
@@ -135,7 +114,7 @@ extension AvatarSelectionView: UICollectionViewDataSource {
 
 // MARK: - UI Collection View Delegate
 extension AvatarSelectionView: UICollectionViewDelegate {
-    func collectionView(
+     func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
@@ -148,7 +127,7 @@ extension AvatarSelectionView: UICollectionViewDelegate {
 
 // MARK: - Additional Methods
 extension AvatarSelectionView {
-    func showStudentAvatar() {
+    private func showStudentAvatar() {
         mainAvatarImageView.image = UIImage(
             named: "avatar" + student.avatar + PharusUIConstants.assets.images.avatar.fullImage.suffix
         )
