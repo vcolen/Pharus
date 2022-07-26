@@ -14,69 +14,40 @@ class StudentProfileView: UIView {
     var student: StudentModel
 
     // MARK: - Views
-    private lazy var mainScrollView: UIScrollView = {
-        var scrollView = UIScrollView()
-        scrollView.clipsToBounds = true
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.accessibilityIdentifier = "StudentProfileView.mainScrollView"
+    private lazy var mainScrollView = ScrollView {
+        mainStackView
+    }
 
-        return scrollView
-    }()
+    private lazy var mainStackView = VStackView([
+        profileImageHelperView,
+        infoHelperView
+    ])
+        .setting(\.spacing, to: 88)
+        .padding([.top], 30)
+        .padding([.bottom], 26)
+        .frame(width: UIScreen.main.bounds.width)
 
-    private lazy var mainView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .red
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProfileView.mainView"
+    private lazy var profileImageHelperView = VStackView([
+        profileImageView
+    ])
+        .frame(height: 120)
 
-        return view
-    }()
+    lazy var profileImageView = UIImageView()
+        .setting(\.image, to: CircleAvatarImages.avatar1)
+        .setting(\.contentMode, to: .scaleAspectFit)
+        .center(.allAxis)
 
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 88
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProfileView.mainStackView"
+    private lazy var infoHelperView = VStackView([
+        infoStackView
+    ])
+        .frame(height: 480)
 
-        return stackView
-    }()
+    private lazy var infoStackView = VStackView([
 
-    private lazy var profileImageHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProfileView.profileImageHelperView"
-
-        return view
-    }()
-
-    lazy var profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = CircleAvatarImages.avatar1
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "StudentProfileView.profileImageView"
-
-        return imageView
-    }()
-
-    private lazy var infoHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProfileView.infoHelperView"
-
-        return view
-    }()
-
-    private lazy var infoStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 40
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProfileView.infoStackView"
-
-        return stackView
-    }()
+    ])
+        .setting(\.spacing, to: 40)
+        .padding([.leading], 40)
+        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
     // MARK: - Initializer
     init(student: StudentModel) {
@@ -84,36 +55,35 @@ class StudentProfileView: UIView {
 
         super.init(frame: .zero)
 
-        configureSubviews(with: student)
-        setupConstraints()
-        showStudentAvatar()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
+// MARK: - View Codable
+extension StudentProfileView: ViewCodable {
+    func buildHierarchy() {
+        addSubview(mainScrollView)
+        buildInfoView()
+    }
 
+    func setupConstraints() {
+        mainScrollView.edges()
+    }
+}
+
+// MARK: - Additional Methods
+extension StudentProfileView {
     func showStudentAvatar() {
-        profileImageView.image = UIImage(
+        profileImageView.originalView.image = UIImage(
             named: "avatar" + student.avatar + PharusUIConstants.assets.images.avatar.circleImage.suffix
         )
     }
 
-    func configureSubviews(with student: StudentModel) {
-        addSubview(mainScrollView)
-
-        mainScrollView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(profileImageHelperView)
-
-        profileImageHelperView.addSubview(profileImageView)
-
-        mainStackView.addArrangedSubview(infoHelperView)
-
-        infoHelperView.addSubview(infoStackView)
-
+    func buildInfoView() {
         let studentInfo: KeyValuePairs<String, String> = [
             "Nome": "\(student.firstName) \(student.lastName)",
             "E-mail": student.email,
@@ -140,41 +110,7 @@ class StudentProfileView: UIView {
             stackView.addArrangedSubview(infoKeyLabel)
             stackView.addArrangedSubview(infoValueLabel)
 
-            infoStackView.addArrangedSubview(stackView)
+            infoStackView.originalView.addArrangedSubview(stackView)
         }
-    }
-
-    // MARK: - Constraints
-
-    func setupConstraints() {
-        // Main Scroll View
-        self.stretch(mainScrollView)
-
-        // Main Stack View
-        self.stretch(mainStackView, to: mainScrollView, top: 30, bottom: -26)
-        NSLayoutConstraint.activate([
-            mainStackView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width)
-        ])
-
-        // Info Helper View
-        NSLayoutConstraint.activate([
-            infoHelperView.heightAnchor.constraint(equalToConstant: 480)
-        ])
-
-        // Info Stack View
-        NSLayoutConstraint.activate([
-            infoStackView.leadingAnchor.constraint(equalTo: infoHelperView.leadingAnchor, constant: 40)
-        ])
-
-        // Profile Image Helper View
-        NSLayoutConstraint.activate([
-            profileImageHelperView.heightAnchor.constraint(equalToConstant: 150)
-        ])
-
-        // Profile Image View
-        profileImageView.center(in: profileImageHelperView)
-        NSLayoutConstraint.activate([
-            profileImageView.heightAnchor.constraint(equalToConstant: 120)
-        ])
     }
 }
