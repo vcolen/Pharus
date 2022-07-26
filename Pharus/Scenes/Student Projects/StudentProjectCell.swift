@@ -54,11 +54,13 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.textColor, to: .black)
 
     private lazy var completionStackView = VStackView([
-        completionBarCircleView,
+        completionHelperView,
         projectScheduleView
     ])
         .setting(\.alignment, to: .center)
         .setting(\.spacing, to: 26)
+
+    private lazy var completionHelperView = UIView()
 
     private lazy var completionBarCircleView = CircleProgressView(
         circleColor: .white,
@@ -85,7 +87,6 @@ class StudentProjectCell: UITableViewCell {
         subscribeHelperView
     ])
         .setting(\.distribution, to: .fillEqually)
-        .frame(height: 70)
 
     private lazy var partnershipStackView = HStackView([
         partnershipLabel,
@@ -99,7 +100,6 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.font, to: .smallBodyBold)
         .setting(\.textColor, to: .black)
         .setting(\.textAlignment, to: .right)
-        .center(.horizontally)
 
     private lazy var companyLogoHelperView = VStackView([
         companyLogoImageView
@@ -131,15 +131,16 @@ class StudentProjectCell: UITableViewCell {
 extension StudentProjectCell: ViewCodable {
     func buildHierarchy() {
         addSubview(mainStackView)
-
-        completionBarCircleView.addSubview(percentageCompletionLabel)
-
+        completionHelperView.addSubview(completionBarCircleView)
+        completionHelperView.addSubview(percentageCompletionLabel)
         subscribeHelperView.addSubview(subscribeButton)
     }
 
     func setupConstraints() {
         mainStackView.edges()
         subscribeButton.edges()
+        percentageCompletionLabel.center(in: completionHelperView)
+        completionBarCircleView.center(in: completionHelperView)
     }
 
     func applyAdditionalChanges() {
@@ -177,7 +178,7 @@ extension StudentProjectCell {
         }
     }
 
-   private func setupBarCircleView() {
+    private func setupBarCircleView() {
         // Making circle start from intended position
         completionBarCircleView.addSubview(percentageCompletionLabel)
         completionBarCircleView.transform = CGAffineTransform(rotationAngle: 180.7)
@@ -186,21 +187,21 @@ extension StudentProjectCell {
         percentageCompletionLabel.transform = CGAffineTransform(rotationAngle: 1.5)
     }
 
-   private func setBlackLabels() {
+    private func setBlackLabels() {
         titleLabel.textColor = .black
         mentorLabel.textColor = .black
         descriptionTitleLabel.textColor = .black
         descriptionLabel.textColor = .black
-        partnershipLabel.originalView.textColor = .black
+        partnershipLabel.textColor = .black
         percentageCompletionLabel.originalView.textColor = .black
     }
 
-   private func setWhiteLabels() {
+    private func setWhiteLabels() {
         titleLabel.textColor = .white
         mentorLabel.textColor = .white
         descriptionTitleLabel.textColor = .white
         descriptionLabel.textColor = .white
-        partnershipLabel.originalView.textColor = .white
+        partnershipLabel.textColor = .white
         percentageCompletionLabel.originalView.textColor = .white
     }
 }
