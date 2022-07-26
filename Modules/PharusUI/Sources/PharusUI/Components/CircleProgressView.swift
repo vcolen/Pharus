@@ -40,12 +40,17 @@ public class CircleProgressView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        makeCircularPath()
+    }
+
     // MARK: - Subviews
     private func makeCircularPath() {
         let completionBarLayerPath = UIBezierPath(
             arcCenter: CGPoint(
-                x: frame.size.width/3,
-                y: frame.size.height/3
+                x: frame.size.width/2,
+                y: frame.size.height/2
             ),
             radius: CGFloat(self.circleRadius),
             startAngle: CGFloat(0).toRadians(),
