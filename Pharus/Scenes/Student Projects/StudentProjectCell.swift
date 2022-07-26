@@ -60,7 +60,10 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.alignment, to: .center)
         .setting(\.spacing, to: 26)
 
-    private lazy var completionHelperView = UIView()
+    private lazy var completionHelperView = VStackView([
+        completionBarCircleView,
+        percentageCompletionLabel
+    ])
 
     private lazy var completionBarCircleView = CircleProgressView(
         circleColor: .white,
@@ -110,7 +113,9 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.image, to: .pharusImages.companyImages.ioasysLogoImage)
         .setting(\.contentMode, to: .scaleAspectFit)
 
-    private lazy var subscribeHelperView = UIView()
+    private lazy var subscribeHelperView = VStackView([
+        subscribeButton
+    ])
 
     lazy var subscribeButton = SubscribeButton(isSubscribed: true)
         .center(.allAxis)
@@ -131,9 +136,6 @@ class StudentProjectCell: UITableViewCell {
 extension StudentProjectCell: ViewCodable {
     func buildHierarchy() {
         addSubview(mainStackView)
-        completionHelperView.addSubview(completionBarCircleView)
-        completionHelperView.addSubview(percentageCompletionLabel)
-        subscribeHelperView.addSubview(subscribeButton)
     }
 
     func setupConstraints() {
