@@ -42,12 +42,9 @@ class StudentProfileView: UIView {
     ])
         .frame(height: 480)
 
-    private lazy var infoStackView = VStackView([
-
-    ])
+    private lazy var infoStackView = VStackView([])
         .setting(\.spacing, to: 40)
         .padding([.leading], 40)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
     // MARK: - Initializer
     init(student: StudentModel) {
