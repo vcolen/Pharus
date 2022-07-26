@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PharusUI
 
 class StudentProjectsView: UIView {
 
@@ -14,25 +15,9 @@ class StudentProjectsView: UIView {
     private let student: StudentModel
 
     // MARK: - Views
-    private lazy var mainView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectsView.mainView"
-
-        return view
-    }()
-
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.backgroundColor = .clear
-        tableView.separatorColor = .clear
-        tableView.register(
-            StudentProjectCell.self,
-            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userProjects
-        )
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
+    lazy var tableView = UITableView()
+        .setting(\.backgroundColor, to: .clear)
+        .setting(\.separatorColor, to: .clear)
 
     // MARK: - Initializer
     init(student: StudentModel) {
@@ -40,30 +25,32 @@ class StudentProjectsView: UIView {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
-        setupTableViewDelegate()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
 
     }
+}
 
-    // MARK: - Subviews
-    func configureSubviews() {
-        addSubview(mainView)
-        mainView.addSubview(tableView)
+// MARK: - View Codable
+extension StudentProjectsView: ViewCodable {
+    func buildHierarchy() {
+        addSubview(tableView)
     }
 
-    func customizeSubviews() {
-
-    }
-
-    // MARK: - Constraints
     func setupConstraints() {
-        self.stretch(mainView)
-        self.stretch(tableView, to: mainView)
+        tableView.edges()
+    }
+
+    func applyAdditionalChanges() {
+        tableView.register(
+            StudentProjectCell.self,
+            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userProjects
+        )
+
+        setupTableViewDelegate()
     }
 }
 
