@@ -1,5 +1,5 @@
 //
-//  UserProjectsViewController.swift
+//  StudentProjectsViewController.swift
 //  Pharus
 //
 //  Created by Victor Colen on 29/03/22.

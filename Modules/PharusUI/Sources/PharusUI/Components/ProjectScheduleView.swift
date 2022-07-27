@@ -7,10 +7,9 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
 public class ProjectScheduleView: UIView {
 
-    // MARK: - Propertiess
+    // MARK: - Properties
     public var projectIsComplete: Bool {
         didSet {
             customizeSubviews()
