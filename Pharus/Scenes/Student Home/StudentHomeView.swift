@@ -142,18 +142,23 @@ class StudentHomeView: UIView {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
-        customizeSubviews()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Subviews
+    func showStudentAvatar() {
+        studentAvatarImageView.image = UIImage(
+            named: "avatar" + student.avatar + PharusUIConstants.assets.images.avatar.circleImage.suffix
+        )
+    }
+}
 
-    func configureSubviews() {
+extension StudentHomeView: ViewCodable {
+
+    func buildHierarchy() {
         addSubview(rectangleImageView)
         addSubview(mainScrollView)
 
@@ -182,13 +187,7 @@ class StudentHomeView: UIView {
 
     }
 
-    private func customizeSubviews() {
-        helloStudentLabel.text = "Olá, \(student.firstName)!"
-    }
-
-    // MARK: - Constraints
-
-    private func setupConstraints() {
+    func setupConstraints() {
 
         // Main Scroll View
         self.stretch(mainScrollView)
@@ -239,9 +238,7 @@ class StudentHomeView: UIView {
         ])
     }
 
-    func showStudentAvatar() {
-        studentAvatarImageView.image = UIImage(
-            named: "avatar" + student.avatar + PharusUIConstants.assets.images.avatar.circleImage.suffix
-        )
+    func applyAdditionalChanges() {
+        helloStudentLabel.text = "Olá, \(student.firstName)!"
     }
 }
