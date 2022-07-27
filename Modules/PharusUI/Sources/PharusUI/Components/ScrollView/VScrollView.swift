@@ -1,5 +1,5 @@
 //
-//  ScrollView.swift
+//  VScrollView.swift
 //
 //
 //  Created by Victor Colen on 11/07/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ScrollView<Content: UIView>: UIScrollView, ViewCodable {
+public class VScrollView<Content: UIView>: UIScrollView, ViewCodable {
 
     // MARK: - Properties
     public let content: Content
@@ -25,7 +25,7 @@ public class ScrollView<Content: UIView>: UIScrollView, ViewCodable {
 }
 
 // MARK: - View Codable
-public extension ScrollView {
+public extension VScrollView {
     func buildHierarchy() {
         addSubview(content)
     }

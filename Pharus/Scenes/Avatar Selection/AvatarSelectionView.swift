@@ -19,7 +19,7 @@ class AvatarSelectionView: UIView {
         }
 
     // MARK: - Views
-    private lazy var mainScrollView = ScrollView {
+    private lazy var mainScrollView = VScrollView {
         VStackView([
             mainAvatarImageView,
             avatarSelectionStackView
