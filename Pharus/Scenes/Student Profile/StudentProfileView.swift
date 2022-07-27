@@ -22,15 +22,15 @@ class StudentProfileView: UIView {
         profileImageHelperView,
         infoHelperView
     ])
-        .setting(\.spacing, to: 88)
-        .padding([.top], 30)
-        .padding([.bottom], 26)
-        .frame(width: UIScreen.main.bounds.width)
+    .setting(\.spacing, to: 88)
+    .padding([.top], 30)
+    .padding([.bottom], 26)
+    .frame(width: UIScreen.main.bounds.width)
 
     private lazy var profileImageHelperView = VStackView([
         profileImageView
     ])
-        .frame(height: 120)
+    .frame(height: 120)
 
     lazy var profileImageView = UIImageView()
         .setting(\.image, to: CircleAvatarImages.avatar1)
@@ -40,7 +40,7 @@ class StudentProfileView: UIView {
     private lazy var infoHelperView = VStackView([
         infoStackView
     ])
-        .frame(height: 480)
+    .frame(height: 480)
 
     private lazy var infoStackView = VStackView([])
         .setting(\.spacing, to: 40)
