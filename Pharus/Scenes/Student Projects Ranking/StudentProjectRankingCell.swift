@@ -1,125 +1,59 @@
 //
-//  UserProjectRankingCell.swift
+//  StudentProjectRankingCell.swift
 //  Pharus
 //
 //  Created by Victor Colen on 04/04/22.
 //
 import UIKit
+import PharusUI
 
 class StudentProjectRankingCell: UITableViewCell {
 
-    lazy var mainView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 16
-        view.backgroundColor = UIColor.Purple.pharusPurple
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectCell.mainView"
+    private lazy var mainStackView = VStackView([
+        projectTitleLabel,
+        congratulationsLabel,
+        placementStackView,
+        mentorCommentsStackView
+    ])
+        .setting(\.spacing, to: 32)
+        .padding([.top, .leading, .trailing, .bottom], 16)
+        .setting(\.backgroundColor, to: .Purple.pharusPurple)
+        .setting(\.layer.cornerRadius, to: 16)
+        .padding([.top], 24.5)
+        .padding([.leading, .bottom, .trailing], 8)
 
-        return view
-    }()
+    private lazy var projectTitleLabel = UILabel()
+        .setting(\.textAlignment, to: .center)
+        .setting(\.textColor, to: .white)
+        .setting(\.font, to: .largeTitleBold)
 
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 32
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectCell.mainStackView"
+    private lazy var congratulationsLabel = UILabel()
+        .setting(\.text, to: "Parabéns! Você alcançou o")
+        .setting(\.numberOfLines, to: 2)
+        .setting(\.textAlignment, to: .center)
+        .setting(\.textColor, to: .white)
+        .setting(\.font, to: .mediumTitleSemiBold)
 
-        return stackView
-    }()
+    private lazy var placementStackView = HStackView([
+        placementHelperView,
+        medalHelperView
+    ])
+        .setting(\.distribution, to: .fillEqually)
+        .frame(height: 133)
 
-    private lazy var projectTitleLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.textColor = .white
-        label.font = .largeTitleBold
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "StudentProjectRankingCell.projectTitleLabel"
+    private lazy var placementHelperView = UIView()
 
-        return label
-    }()
+    private lazy var placementImageView = UIImageView()
+        .setting(\.image, to: .pharusImages.thirdPlaceImage)
 
-    private lazy var congratulationsHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectRankingCell.congratulationsHelperView"
+    private lazy var medalImageView = UIImageView()
+        .setting(\.image, to: .pharusImages.thirdPlaceMedalImage)
 
-        return view
-    }()
+    private lazy var medalHelperView = UIView()
 
-    private lazy var congratulationsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Parabéns! Você alcançou o"
-        label.numberOfLines = 2
-        label.textAlignment = .center
-        label.textColor = .white
-        label.font = .mediumTitleSemiBold
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "StudentProjectRankingCell.congratulationsLabel"
+    private lazy var mentorCommentsStackView = VStackView([])
 
-        return label
-    }()
-
-    private lazy var placementStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectCell.placementStackView"
-
-        return stackView
-    }()
-
-    private lazy var placementHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectCell.placementHelperView"
-
-        return view
-    }()
-
-    private lazy var placementImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage.pharusImages.thirdPlaceImage
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "StudentProjectCell.placementImageView"
-
-        return imageView
-    }()
-
-    private lazy var medalImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage.pharusImages.thirdPlaceMedalImage
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "StudentProjectCell.placementImageView"
-
-        return imageView
-    }()
-
-    private lazy var medalHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectCell.medalHelperView"
-
-        return view
-    }()
-
-    private lazy var mentorCommentsStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "StudentProjectRankingCell.mentorCommentsStackView"
-
-        return stackView
-    }()
-
-    private lazy var mentorCommentsTitleHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectRankingCell.mentorCommentsTitleHelperView"
-
-        return view
-    }()
+    private lazy var mentorCommentsTitleHelperView = UIView()
 
     private lazy var mentorCommentsTitleLabel: UILabel = {
         let label = UILabel()
@@ -178,26 +112,11 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
     private func configureSubviews(with project: ProjectModel) {
         self.backgroundColor = .clear
 
-        addSubview(mainView)
-
-        mainView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(projectTitleLabel)
-        mainStackView.addArrangedSubview(congratulationsHelperView)
-
-        congratulationsHelperView.addSubview(congratulationsLabel)
-
-        mainStackView.addArrangedSubview(placementStackView)
-
-        placementStackView.addArrangedSubview(placementHelperView)
+        addSubview(mainStackView)
 
         placementHelperView.addSubview(placementImageView)
 
-        placementStackView.addArrangedSubview(medalHelperView)
-
         medalHelperView.addSubview(medalImageView)
-
-        mainStackView.addArrangedSubview(mentorCommentsStackView)
 
         mentorCommentsStackView.addArrangedSubview(mentorCommentsTitleHelperView)
 
@@ -270,34 +189,7 @@ Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc n
     // MARK: - Constraints
 
     private func setupConstraints() {
-
-        // Main View
-        self.stretch(mainView, top: 16, left: 16, bottom: -16, right: -16)
-
-        // Main Stack View
-        self.stretch(mainStackView, to: mainView, top: 24.5, left: 8, bottom: -8, right: -8)
-
-        // Project Title Label
-        NSLayoutConstraint.activate([
-            projectTitleLabel.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor)
-        ])
-
-        // Congratulations Helper View
-        NSLayoutConstraint.activate([
-            congratulationsHelperView.heightAnchor.constraint(equalToConstant: 40)
-        ])
-
-        // Congratulations Label
-        congratulationsLabel.center(in: congratulationsHelperView)
-        NSLayoutConstraint.activate([
-            congratulationsLabel.trailingAnchor.constraint(equalTo: congratulationsHelperView.trailingAnchor),
-            congratulationsLabel.leadingAnchor.constraint(equalTo: congratulationsHelperView.leadingAnchor)
-        ])
-
-        // Placement Stack View
-        NSLayoutConstraint.activate([
-            placementStackView.heightAnchor.constraint(equalToConstant: 133)
-        ])
+        mainStackView.edges()
 
         // Mentor Comments Title Helper View
         NSLayoutConstraint.activate([
