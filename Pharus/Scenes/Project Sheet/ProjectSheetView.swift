@@ -11,7 +11,6 @@ import PharusUI
 class ProjectSheetView: UIView {
 
     // MARK: - Properties
-
     weak var delegate: ProjectSheetViewDelegate?
 
     private var project: ProjectModel
@@ -23,106 +22,52 @@ class ProjectSheetView: UIView {
     }
 
     // MARK: - Views
+    private lazy var scrollView = ScrollView {
+        VStackView([
+            VStackView([
+                HStackView([
+                    titleIconImageView,
+                    titleLabel
+                ])
+                .setting(\.spacing, to: 8)
+                .center(.allAxis)
+            ])
+            .frame(height: 60),
 
-    private lazy var scrollView: UIScrollView = {
-        var scrollView = UIScrollView()
-        scrollView.backgroundColor = UIColor.Modal.yellowBackground
-        scrollView.layer.cornerRadius = 16
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.accessibilityIdentifier = "ProjectSheetView.scrollView"
+            VStackView([
+                UILabel()
+                    .setting(\.font, to: .mediumTitleBold)
+                    .setting(\.numberOfLines, to: 0)
+                    .setting(\.textColor, to: .black),
 
-        return scrollView
-    }()
+                descriptionTextLabel
+            ])
+            .setting(\.spacing, to: 16),
 
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 46
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "ProjectSheetView.mainStackView"
+            closeButton
+        ])
+        .setting(\.spacing, to: 46)
+        .padding([.leading, .trailing], 25)
+        .padding([.top], 32)
+        .padding([.bottom], 24)
+    }
+    .setting(\.backgroundColor, to: .Modal.yellowBackground)
+    .setting(\.layer.cornerRadius, to: 16)
 
-        return stackView
-    }()
+    private lazy var titleIconImageView = UIImageView()
+        .setting(\.image, to: .pharusIcons.feedbackIcon)
+        .frame(width: 48, height: 48)
 
-    private lazy var titleHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "ProjectSheetView.titleHelperView"
+    private lazy var titleLabel = UILabel()
+        .setting(\.font, to: .largeTitleBold)
+        .setting(\.textColor, to: .black)
 
-        return view
-    }()
+    private lazy var descriptionTextLabel = UILabel()
+        .setting(\.numberOfLines, to: 0)
+        .setting(\.textColor, to: .black)
+        .setting(\.font, to: .smallBody)
 
-    private lazy var titleStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "ProjectSheetView.titleStackView"
-
-        return stackView
-    }()
-
-    private lazy var titleIconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = .pharusIcons.feedbackIcon
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "ProjectSheetView.titleIconImageView"
-
-        return imageView
-    }()
-
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .largeTitleBold
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "ProjectSheetView.titleLabel"
-
-        return label
-    }()
-
-    private lazy var descriptionStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 16
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "ProjectSheetView.descriptionStackView"
-
-        return stackView
-    }()
-
-    private lazy var descriptionTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .mediumTitleBold
-        label.numberOfLines = 0
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "ProjectSheetView.descriptionTitleLabel"
-
-        return label
-    }()
-
-    private lazy var descriptionTextLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.textColor = .black
-        label.font = .smallBody
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "ProjectSheetView.descriptionTextLabel"
-
-        return label
-    }()
-
-    private lazy var closeButton: MainCardButton = {
-        let button = MainCardButton(title: "Fechar", buttonState: .normal)
-        button.setTitle("Fechar", for: .normal)
-        button.addAction(UIAction { [weak self] _ in
-            self?.closeButtonTapped()
-        }, for: .touchUpInside)
-        button.accessibilityIdentifier = "ProjectSheetView.closeButton"
-
-        return button
-    }()
+    private lazy var closeButton = MainCardButton(title: "Fechar", buttonState: .normal)
 
     // MARK: - Initializer
     init(
@@ -134,36 +79,40 @@ class ProjectSheetView: UIView {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        customizeSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    private func configureSubviews() {
+// MARK: - View Codable
+extension ProjectSheetView: ViewCodable {
+    func buildHierarchy() {
         addSubview(scrollView)
-
-        scrollView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(titleHelperView)
-
-        titleHelperView.addSubview(titleStackView)
-
-        titleStackView.addArrangedSubview(titleIconImageView)
-        titleStackView.addArrangedSubview(titleLabel)
-
-        mainStackView.addArrangedSubview(descriptionStackView)
-
-        descriptionStackView.addArrangedSubview(descriptionTitleLabel)
-        descriptionStackView.addArrangedSubview(descriptionTextLabel)
-
-        mainStackView.addArrangedSubview(closeButton)
     }
 
-    private func customizeSubviews() {
+    func setupConstraints() {
+        scrollView.edges()
+    }
+
+    func applyAdditionalChanges() {
+        setupSheetContent()
+        setupCloseButton()
+    }
+}
+
+// MARK: - Delegate Actions
+extension ProjectSheetView {
+    func closeButtonTapped() {
+        delegate?.closeButtonTapped()
+    }
+}
+
+// MARK: - Additional Methods
+extension ProjectSheetView {
+    private func setupSheetContent() {
         if sheetContent == .mentorReview {
             titleIconImageView.image = .pharusIcons.feedbackIcon
             titleLabel.text = "Avaliação do Mentor"
@@ -179,34 +128,10 @@ class ProjectSheetView: UIView {
         }
     }
 
-    // MARK: - Constraints
-
-    private func setupConstraints() {
-        self.stretch(scrollView)
-
-        self.stretch(mainStackView, to: scrollView, top: 32, left: 25, bottom: -24, right: -25)
-        mainStackView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-
-        // Title Helper View
-        NSLayoutConstraint.activate([
-            titleHelperView.heightAnchor.constraint(equalToConstant: 60)
-        ])
-
-        // Title Stack View
-        titleStackView.center(in: titleHelperView)
-
-        // Title Icon Image View
-        NSLayoutConstraint.activate([
-            titleIconImageView.heightAnchor.constraint(equalToConstant: 48),
-            titleIconImageView.widthAnchor.constraint(equalToConstant: 48)
-        ])
-    }
-}
-
-// MARK: - Actions
-
-extension ProjectSheetView {
-    func closeButtonTapped() {
-        delegate?.closeButtonTapped()
+    private func setupCloseButton() {
+        closeButton.setTitle("Fechar", for: .normal)
+        closeButton.addAction(UIAction { [weak self] _ in
+            self?.closeButtonTapped()
+        }, for: .touchUpInside)
     }
 }
