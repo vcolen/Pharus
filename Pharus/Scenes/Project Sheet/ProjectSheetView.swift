@@ -23,32 +23,36 @@ class ProjectSheetView: UIView {
 
     // MARK: - Views
     private lazy var scrollView = ScrollView {
-        mainStackView
+        VStackView([
+            VStackView([
+                HStackView([
+                    titleIconImageView,
+                    titleLabel
+                ])
+                .setting(\.spacing, to: 8)
+                .center(.allAxis)
+            ])
+            .frame(height: 60),
+
+            VStackView([
+                UILabel()
+                    .setting(\.font, to: .mediumTitleBold)
+                    .setting(\.numberOfLines, to: 0)
+                    .setting(\.textColor, to: .black),
+
+                descriptionTextLabel
+            ])
+            .setting(\.spacing, to: 16),
+
+            closeButton
+        ])
+        .setting(\.spacing, to: 46)
+        .padding([.leading, .trailing], 25)
+        .padding([.top], 32)
+        .padding([.bottom], 24)
     }
     .setting(\.backgroundColor, to: .Modal.yellowBackground)
     .setting(\.layer.cornerRadius, to: 16)
-
-    private lazy var mainStackView = VStackView([
-        titleStackHelperView,
-        descriptionStackView,
-        closeButton
-    ])
-    .setting(\.spacing, to: 46)
-    .padding([.leading, .trailing], 25)
-    .padding([.top], 32)
-    .padding([.bottom], 24)
-
-    private lazy var titleStackHelperView = UIStackView([
-        titleStackView
-    ])
-    .frame(height: 60)
-
-    private lazy var titleStackView = HStackView([
-        titleIconImageView,
-        titleLabel
-    ])
-    .setting(\.spacing, to: 8)
-    .center(.allAxis)
 
     private lazy var titleIconImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.feedbackIcon)
@@ -56,17 +60,6 @@ class ProjectSheetView: UIView {
 
     private lazy var titleLabel = UILabel()
         .setting(\.font, to: .largeTitleBold)
-        .setting(\.textColor, to: .black)
-
-    private lazy var descriptionStackView = VStackView([
-        descriptionTitleLabel,
-        descriptionTextLabel
-    ])
-    .setting(\.spacing, to: 16)
-
-    private lazy var descriptionTitleLabel = UILabel()
-        .setting(\.font, to: .mediumTitleBold)
-        .setting(\.numberOfLines, to: 0)
         .setting(\.textColor, to: .black)
 
     private lazy var descriptionTextLabel = UILabel()
