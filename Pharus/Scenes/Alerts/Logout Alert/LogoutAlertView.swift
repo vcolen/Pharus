@@ -14,46 +14,36 @@ class LogoutAlertView: UIView {
     weak var delegate: LogoutAlertViewDelegate?
 
     // MARK: - Views
-    private lazy var blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        .setting(\.frame, to: bounds)
-        .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
-
     private lazy var mainStackView = VStackView([
-        logoutIconHelperView,
-        titleLabel,
-        buttonStackView
-    ])
-        .padding([.top], 26)
-        .padding([.leading, .trailing], 18)
-        .padding([.bottom], 16)
-        .setting(\.backgroundColor, to: .Modal.yellowBackground)
-        .setting(\.layer.cornerRadius, to: 16)
-        .padding([.leading, .trailing], 16)
-        .frame(height: 217)
-        .center(.vertically)
+        VStackView([
+            UIImageView()
+                .setting(\.image, to: .pharusIcons.logoutIcon?.withTintColor(.black))
+                .frame(width: 48, height: 48)
+                .center(.allAxis)
+        ])
+        .frame(height: 50),
 
-    private lazy var logoutIconHelperView = VStackView([
-        logoutIconImageView
-    ])
-        .frame(height: 50)
+        UILabel()
+            .setting(\.text, to: "Deseja sair da sua conta?")
+            .setting(\.textAlignment, to: .center)
+            .setting(\.font, to: .mediumTitleBold)
+            .setting(\.textColor, to: .black),
 
-    private lazy var logoutIconImageView = UIImageView()
-        .setting(\.image, to: .pharusIcons.logoutIcon?.withTintColor(.black))
-        .frame(width: 48, height: 48)
-        .center(.allAxis)
-
-    private lazy var titleLabel = UILabel()
-        .setting(\.text, to: "Deseja sair da sua conta?")
-        .setting(\.textAlignment, to: .center)
-        .setting(\.font, to: .mediumTitleBold)
-        .setting(\.textColor, to: .black)
-
-    private lazy var buttonStackView = HStackView([
-        primaryButton,
-        secondaryButton
-    ])
+        HStackView([
+            primaryButton,
+            secondaryButton
+        ])
         .setting(\.spacing, to: 39)
         .setting(\.distribution, to: .fillEqually)
+    ])
+    .padding([.top], 26)
+    .padding([.leading, .trailing], 18)
+    .padding([.bottom], 16)
+    .setting(\.backgroundColor, to: .Modal.yellowBackground)
+    .setting(\.layer.cornerRadius, to: 16)
+    .padding([.leading, .trailing], 16)
+    .frame(height: 217)
+    .center(.vertically)
 
     private lazy var primaryButton = SmallAlertButton(title: "Sair", importance: .primary)
 
@@ -74,7 +64,12 @@ class LogoutAlertView: UIView {
 // MARK: - View Codable
 extension LogoutAlertView: ViewCodable {
     func buildHierarchy() {
-        addSubview(blurEffectView)
+        addSubview(
+            UIVisualEffectView(effect: UIBlurEffect(style: .light))
+                .setting(\.frame, to: bounds)
+                .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
+        )
+
         addSubview(mainStackView)
     }
 
