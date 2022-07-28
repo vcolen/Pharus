@@ -22,16 +22,21 @@ public class SubscribeButton: UIButton {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-    private func configureSubviews() {
+// MARK: - View Codable
+extension SubscribeButton: ViewCodable {
+    public func setupConstraints() {
+        self.heightAnchor.constraint(equalToConstant: 32).isActive = true
+    }
+
+    public func applyAdditionalChanges() {
         setButtonColors()
         titleLabel?.font = UIFont.smallButtonSemiBold
         backgroundColor = .clear
@@ -39,7 +44,10 @@ public class SubscribeButton: UIButton {
         layer.borderWidth = 2
         layer.cornerRadius = 16
     }
+}
 
+// MARK: - Additional Methods
+extension SubscribeButton {
     private func setButtonColors() {
         if isSubscribed {
             setTitle("Inscrito", for: .normal)
@@ -50,10 +58,5 @@ public class SubscribeButton: UIButton {
             setTitleColor(UIColor.Purple.pharusPurple, for: .normal)
             layer.borderColor = UIColor.Purple.pharusPurple.cgColor
         }
-    }
-
-    // MARK: - Constraints
-    private func setupConstraints() {
-        self.heightAnchor.constraint(equalToConstant: 32).isActive = true
     }
 }
