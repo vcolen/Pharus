@@ -22,7 +22,7 @@ class ProjectSheetView: UIView {
     }
 
     // MARK: - Views
-    private lazy var scrollView = ScrollView {
+    private lazy var scrollView = VScrollView {
         VStackView([
             VStackView([
                 HStackView([
