@@ -14,59 +14,58 @@ class LoginView: UIView {
     weak var delegate: LoginViewDelegate?
 
     // MARK: - Views
-    private lazy var mainView = UIView()
-        .setting(\.backgroundColor, to: .white)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
-
-    private lazy var logoImageView = UIImageView()
-        .setting(\.image, to: .pharusImages.appLogoImage)
-        .setting(\.contentMode, to: .scaleAspectFit)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
-
     private lazy var mainStackView = VStackView([
-        logoImageView,
-        loginTitle,
-        emailStackView,
-        passwordStackView,
-        loginButton,
-        UIView()
-    ])
-        .setting(\.spacing, to: UIScreen.main.bounds.height/17)
-        .setting(\.alignment, to: .fill)
-        .padding([.leading, .trailing], 32)
-        .padding([.top], 48)
-        .safeArea([.top])
+        UIImageView()
+            .setting(\.image, to: .pharusImages.appLogoImage)
+            .setting(\.contentMode, to: .scaleAspectFit),
 
-    private lazy var loginTitle = UILabel()
-        .setting(\.text, to: "Login")
-        .setting(\.textColor, to: .Purple.pharusPurple)
-        .setting(\.font, to: .largeTitleBold)
-        .setting(\.textAlignment, to: .center)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        UILabel()
+            .setting(\.text, to: "Login")
+            .setting(\.textColor, to: .Purple.pharusPurple)
+            .setting(\.font, to: .largeTitleBold)
+            .setting(\.textAlignment, to: .center),
 
-    private lazy var emailStackView = UIStackView([
-        emailLabel,
-        emailTextField
-    ])
+        UIStackView([
+            UILabel()
+                .setting(\.text, to: "E-mail")
+                .setting(\.font, to: .mediumTitleBold)
+                .setting(\.textColor, to: .Purple.pharusPurple),
+
+            emailTextField
+        ])
         .setting(\.axis, to: .vertical)
         .setting(\.distribution, to: .fillEqually)
         .setting(\.alignment, to: .fill)
-        .setting(\.spacing, to: 10)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        .setting(\.spacing, to: 10),
 
-    private lazy var emailLabel = UILabel()
-        .setting(\.text, to: "E-mail")
-        .setting(\.font, to: .mediumTitleBold)
-        .setting(\.textColor, to: .Purple.pharusPurple)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        VStackView([
+            UILabel()
+                .setting(\.text, to: "Senha")
+                .setting(\.font, to: .mediumTitleBold)
+                .setting(\.textColor, to: .Purple.pharusPurple),
+
+            passwordTextField,
+
+            HStackView([
+                wrongPasswordImageView,
+                wrongPasswordLabel
+            ])
+            .setting(\.spacing, to: 4)
+        ])
+        .setting(\.distribution, to: .fillEqually)
+        .setting(\.spacing, to: 10),
+
+        loginButton,
+        UIView()
+    ])
+    .setting(\.backgroundColor, to: .white)
+    .setting(\.spacing, to: UIScreen.main.bounds.height/17)
+    .setting(\.alignment, to: .fill)
+    .padding([.leading, .trailing], 32)
+    .padding([.top], 48)
+    .safeArea([.top])
 
     lazy var emailTextField = UITextField()
-        .setting(\.attributedPlaceholder,
-                  to: NSAttributedString(
-                    string: "antonia.ferreira@gmail.com",
-                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]
-                  )
-        )
         .setting(\.textColor, to: .black)
         .setting(\.font, to: .smallBody)
         .setting(\.layer.shadowColor, to: UIColor.Purple.pharusPurple.cgColor)
@@ -76,30 +75,14 @@ class LoginView: UIView {
         .setting(\.backgroundColor, to: .white)
         .setting(\.autocorrectionType, to: .no)
         .setting(\.autocapitalizationType, to: .none)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
-
-    private lazy var passwordStackView = VStackView([
-        passwordLabel,
-        passwordTextField,
-        wrongPasswordStackView
-    ])
-        .setting(\.distribution, to: .fillEqually)
-        .setting(\.spacing, to: 10)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
-
-    private lazy var passwordLabel = UILabel()
-        .setting(\.text, to: "Senha")
-        .setting(\.font, to: .mediumTitleBold)
-        .setting(\.textColor, to: .Purple.pharusPurple)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
-
-    lazy var passwordTextField = UITextField()
         .setting(\.attributedPlaceholder,
                   to: NSAttributedString(
-                    string: "Senha",
+                    string: "antonia.ferreira@gmail.com",
                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]
                   )
         )
+
+    lazy var passwordTextField = UITextField()
         .setting(\.textColor, to: .black)
         .setting(\.font, to: .smallBody)
         .setting(\.layer.shadowColor, to: UIColor.Purple.pharusPurple.cgColor)
@@ -110,25 +93,21 @@ class LoginView: UIView {
         .setting(\.autocorrectionType, to: .no)
         .setting(\.autocapitalizationType, to: .none)
         .setting(\.isSecureTextEntry, to: true)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
-
-    private lazy var wrongPasswordStackView = HStackView([
-        wrongPasswordImageView,
-        wrongPasswordLabel
-    ])
-        .setting(\.spacing, to: 4)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
+        .setting(\.attributedPlaceholder,
+                  to: NSAttributedString(
+                    string: "Senha",
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]
+                  )
+        )
 
     lazy var wrongPasswordImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.errorIcon?.withTintColor(.clear))
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
         .frame(width: 24)
 
     lazy var wrongPasswordLabel = UILabel()
         .setting(\.text, to: "Senha incorreta!")
         .setting(\.font, to: .smallBody)
         .setting(\.textColor, to: .clear)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
 
     private lazy var loginButton = MainCardButton(title: "Entrar", buttonState: .normal)
 
@@ -156,17 +135,23 @@ extension LoginView: ViewCodable {
 
     func applyAdditionalChanges() {
         self.backgroundColor = .white
-
-        loginButton.addAction(UIAction { [weak self] _ in
-            self?.loginButtonPressed()
-        }, for: .touchUpInside)
-        loginButton.titleLabel?.font = .largeButton
+        setupLoginButton()
     }
 }
 
-// MARK: - Actions
+// MARK: - Delegate Actions
 extension LoginView: LoginViewDelegate {
     func loginButtonPressed() {
         delegate?.loginButtonPressed()
+    }
+}
+
+// MARK: - Additional Methods
+extension LoginView {
+    private func setupLoginButton() {
+        loginButton.titleLabel?.font = .largeButton
+        loginButton.addAction(UIAction { [weak self] _ in
+            self?.loginButtonPressed()
+        }, for: .touchUpInside)
     }
 }
