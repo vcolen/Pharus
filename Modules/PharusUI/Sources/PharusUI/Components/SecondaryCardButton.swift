@@ -18,16 +18,21 @@ public class SecondaryCardButton: UIButton {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-    private func configureSubviews() {
+// MARK: - View Codable
+extension SecondaryCardButton: ViewCodable {
+    public func setupConstraints() {
+        self.heightAnchor.constraint(equalToConstant: 56).isActive = true
+    }
+
+    public func applyAdditionalChanges() {
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont.mediumButtonSemiBold
         setTitleColor(UIColor.Purple.pharusPurple, for: .normal)
@@ -36,13 +41,10 @@ public class SecondaryCardButton: UIButton {
         layer.borderColor = UIColor.Purple.pharusPurple.cgColor
         layer.cornerRadius = 16
     }
+}
 
-    // MARK: - Constraints
-    private func setupConstraints() {
-        self.heightAnchor.constraint(equalToConstant: 56).isActive = true
-    }
-
-    // MARK: - Actions
+// MARK: - Additional Methods
+extension SecondaryCardButton {
     func disable() {
         self.isEnabled = false
     }
