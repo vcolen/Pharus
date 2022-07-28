@@ -14,7 +14,7 @@ class StudentProfileView: UIView {
     var student: StudentModel
 
     // MARK: - Views
-    private lazy var mainScrollView = ScrollView {
+    private lazy var mainScrollView = VScrollView {
         mainStackView
     }
 
