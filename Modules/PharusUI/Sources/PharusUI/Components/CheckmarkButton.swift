@@ -13,27 +13,28 @@ public class CheckmarkButton: UIButton {
     public override init(frame: CGRect) {
         super.init(frame: .zero)
 
-        setupButton()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-    private func setupButton() {
+// MARK: - View Codable
+extension CheckmarkButton: ViewCodable {
+    public func setupConstraints() {
+        NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: 25),
+            self.widthAnchor.constraint(equalToConstant: 25)
+        ])
+    }
+
+    public func applyAdditionalChanges() {
         self.layer.borderWidth = 1
         self.backgroundColor = .white
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.cornerRadius = 4
         self.setImage(.pharusIcons.checkmarkIcon, for: .normal)
-    }
-
-    // MARK: - Constraints
-    private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 25),
-            self.widthAnchor.constraint(equalToConstant: 25)
-        ])
     }
 }
