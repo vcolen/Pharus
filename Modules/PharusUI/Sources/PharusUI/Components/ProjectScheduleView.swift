@@ -12,13 +12,13 @@ public class ProjectScheduleView: UIView {
     // MARK: - Properties
     public var projectIsComplete: Bool {
         didSet {
-            applyAdditionalChanges()
+            updateViewStyle()
         }
     }
 
     public var projectDaysRemaining: Int {
         didSet {
-            applyAdditionalChanges()
+            updateViewStyle()
         }
     }
 
@@ -69,6 +69,14 @@ extension ProjectScheduleView: ViewCodable {
     }
 
     public func applyAdditionalChanges() {
+        updateViewStyle()
+    }
+}
+
+// MARK: - Additional Methods
+extension ProjectScheduleView {
+
+    private func updateViewStyle() {
         if projectIsComplete {
             setCompletedProject()
         } else {
@@ -84,10 +92,7 @@ extension ProjectScheduleView: ViewCodable {
             }
         }
     }
-}
 
-// MARK: - Additional Methods
-extension ProjectScheduleView {
     private func setCompletedProject() {
         iconImageView.originalView.image = .pharusIcons.checkIcon?.withTintColor(.black)
         textLabel.text = "Feito!"
