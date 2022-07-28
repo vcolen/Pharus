@@ -17,18 +17,35 @@ class StudentProjectDetailView: UIView {
 
     // MARK: - Views
     private lazy var mainScrollView = VScrollView {
-        mainStackView
-    }
+        VStackView([
+            HStackView([
+                mentorLabel,
+                mentorReviewHelperView
+            ])
+            .setting(\.spacing, to: 8),
 
-    private lazy var mainStackView = VStackView([
-        titleStackView,
-        descriptionStackView,
-        rulesStackView,
-        taskTitleLabel,
-        tasksStackView,
-        completedTasksProgressStackView,
-        uploadFilesButton
-    ])
+            VStackView([
+                UILabel()
+                    .setting(\.text, to: "Descrição:")
+                    .setting(\.font, to: .mediumTitleMedium)
+                    .setting(\.textColor, to: .black),
+
+                descriptionTextLabel
+            ])
+            .setting(\.spacing, to: 16),
+
+            rulesStackView,
+            taskTitleLabel,
+            tasksStackView,
+
+            VStackView([
+                completedTasksLabel,
+                completedTasksProgressView
+            ])
+            .setting(\.spacing, to: 16),
+
+            uploadFilesButton
+        ])
         .setting(\.spacing, to: 24)
         .padding([.top, .leading, .trailing], 24)
         .padding([.bottom], 10)
@@ -38,12 +55,7 @@ class StudentProjectDetailView: UIView {
         .padding([.leading, .trailing], 16)
         .padding([.bottom], 10)
         .center(.horizontally)
-
-    private lazy var titleStackView = HStackView([
-        mentorLabel,
-        mentorReviewHelperView
-    ])
-        .setting(\.spacing, to: 8)
+    }
 
     private lazy var mentorLabel = UILabel()
         .setting(\.textColor, to: .black)
@@ -56,17 +68,6 @@ class StudentProjectDetailView: UIView {
         .setting(\.image, to: .pharusIcons.envelopeIcon)
         .frame(width: 36, height: 36)
 
-    private lazy var descriptionStackView = VStackView([
-        descriptionTitleLabel,
-        descriptionTextLabel
-    ])
-        .setting(\.spacing, to: 16)
-
-    private lazy var descriptionTitleLabel = UILabel()
-        .setting(\.text, to: "Descrição:")
-        .setting(\.font, to: .mediumTitleMedium)
-        .setting(\.textColor, to: .black)
-
     private lazy var descriptionTextLabel = UILabel()
         .setting(\.numberOfLines, to: 0)
         .setting(\.font, to: .smallBody)
@@ -75,14 +76,13 @@ class StudentProjectDetailView: UIView {
 
     private lazy var rulesStackView = HStackView([
         rulesLabel,
-        rulesArrowImageView
-    ])
-        .setting(\.spacing, to: 9)
-        .center(.horizontally)
 
-    private lazy var rulesArrowImageView = UIImageView()
-        .setting(\.image, to: .pharusIcons.rightArrowIcon)
-        .frame(width: 24, height: 24)
+        UIImageView()
+            .setting(\.image, to: .pharusIcons.rightArrowIcon)
+            .frame(width: 24, height: 24)
+    ])
+    .setting(\.spacing, to: 9)
+    .center(.horizontally)
 
     private lazy var rulesLabel = UILabel()
         .setting(\.text, to: "Atividades do projeto")
@@ -93,7 +93,7 @@ class StudentProjectDetailView: UIView {
         taskTitleLabel,
         taskHelperStackView
     ])
-        .setting(\.spacing, to: 29)
+    .setting(\.spacing, to: 29)
 
     private lazy var taskTitleLabel = UILabel()
         .setting(\.text, to: "Lista de Tarefas")
@@ -102,12 +102,6 @@ class StudentProjectDetailView: UIView {
 
     private lazy var taskHelperStackView = VStackView([])
         .setting(\.spacing, to: 30)
-
-    private lazy var completedTasksProgressStackView = VStackView([
-        completedTasksLabel,
-        completedTasksProgressView
-    ])
-        .setting(\.spacing, to: 16)
 
     private lazy var completedTasksLabel = UILabel()
         .setting(\.textAlignment, to: .center)
@@ -192,7 +186,7 @@ extension StudentProjectDetailView {
                 color: project.isSubscribed ? .black : UIColor.Project.grayDisabledText
             )
 
-            #warning("TODO - update checkmark when button tapped")
+#warning("TODO - update checkmark when button tapped")
             if project.isComplete == false && project.isSubscribed == true {
                 taskView.taskCheckmarkButton.addAction(
                     UIAction { [weak self, weak taskView] _ in
