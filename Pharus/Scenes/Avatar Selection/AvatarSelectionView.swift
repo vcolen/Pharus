@@ -22,7 +22,17 @@ class AvatarSelectionView: UIView {
     private lazy var mainScrollView = VScrollView {
         VStackView([
             mainAvatarImageView,
-            avatarSelectionStackView
+
+            VStackView([
+                UILabel()
+                    .setting(\.text, to: "Escolha o seu avatar")
+                    .setting(\.textAlignment, to: .center)
+                    .setting(\.font, to: .largeTitleBold)
+                    .setting(\.textColor, to: .white)
+                    .frame(height: 25),
+                avatarSelectionCollectionView
+            ])
+            .setting(\.spacing, to: 32)
         ])
         .setting(\.spacing, to: 48)
         .padding([.top], 30)
@@ -33,27 +43,14 @@ class AvatarSelectionView: UIView {
         .setting(\.contentMode, to: .scaleAspectFit)
         .frame(height: UIScreen.main.bounds.height/2.2)
 
-    private lazy var avatarSelectionStackView = VStackView([
-        UILabel()
-            .setting(\.text, to: "Escolha o seu avatar")
-            .setting(\.textAlignment, to: .center)
-            .setting(\.font, to: .largeTitleBold)
-            .setting(\.textColor, to: .white)
-            .frame(height: 25),
-        avatarSelectionCollectionView
-    ])
-        .setting(\.spacing, to: 32)
-
-    private lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
-        .setting(\.scrollDirection, to: .horizontal)
-        .setting(\.sectionInset, to: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
-        .setting(\.itemSize, to: CGSize(width: 120, height: 120))
-        .setting(\.minimumLineSpacing, to: 20)
-        .setting(\.minimumInteritemSpacing, to: 20)
-
     private lazy var avatarSelectionCollectionView = UICollectionView(
         frame: .zero,
-        collectionViewLayout: collectionViewFlowLayout
+        collectionViewLayout: UICollectionViewFlowLayout()
+            .setting(\.scrollDirection, to: .horizontal)
+            .setting(\.sectionInset, to: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
+            .setting(\.itemSize, to: CGSize(width: 120, height: 120))
+            .setting(\.minimumLineSpacing, to: 20)
+            .setting(\.minimumInteritemSpacing, to: 20)
     )
         .setting(\.backgroundColor, to: .clear)
         .setting(\.showsHorizontalScrollIndicator, to: false)
@@ -99,11 +96,10 @@ extension AvatarSelectionView: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let avatarImage = CircleAvatarImages.avatars[indexPath.row] ?? UIImage()
-        return collectionView.dequeueConfiguredReusableCell(
+        collectionView.dequeueConfiguredReusableCell(
             using: avatarSelectionConfiguration,
             for: indexPath,
-            item: avatarImage
+            item: CircleAvatarImages.avatars[indexPath.row] ?? UIImage()
         )
     }
 }
@@ -114,8 +110,7 @@ extension AvatarSelectionView: UICollectionViewDelegate {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        let newAvatar = FullAvatarImages.avatars[indexPath.row]
-        mainAvatarImageView.image = newAvatar
+        mainAvatarImageView.image = FullAvatarImages.avatars[indexPath.row]
 
         delegate?.avatarImageTapped(avatar: String(indexPath.row + 1))
     }
