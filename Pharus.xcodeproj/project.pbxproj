@@ -16,6 +16,7 @@
 		791B454E28737F8400F1EBE6 /* ProjectTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */; };
 		79410A1A287F5F08001ABC40 /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410A19287F5F08001ABC40 /* StudentManager.swift */; };
 		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
+		7989817A2892D173001B39E8 /* ProjectTasksDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798981792892D173001B39E8 /* ProjectTasksDelegate.swift */; };
 		799AFAC7285CECDE001B0371 /* ProjectSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */; };
 		799AFAC8285CECDE001B0371 /* ProjectSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FD285CECDE001B0371 /* ProjectSheetView.swift */; };
 		799AFAC9285CECDE001B0371 /* ProjectSheetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FE285CECDE001B0371 /* ProjectSheetCoordinator.swift */; };
@@ -172,10 +173,11 @@
 		790AA950286B739D00D99D30 /* AvatarSelectionTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA952286B73DE00D99D30 /* StudentProjectsTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsTabCoordinator.swift; sourceTree = "<group>"; };
 		790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingTabCoordinator.swift; sourceTree = "<group>"; };
-		791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectTaskView.swift; path = "Student Home News/ProjectTaskView.swift"; sourceTree = "<group>"; };
+		791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskView.swift; sourceTree = "<group>"; };
 		79410A19287F5F08001ABC40 /* StudentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentManager.swift; sourceTree = "<group>"; };
 		797A471C287481F2005A3632 /* PharusUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PharusUI; sourceTree = "<group>"; };
 		797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenter.swift.swift; sourceTree = "<group>"; };
+		798981792892D173001B39E8 /* ProjectTasksDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTasksDelegate.swift; sourceTree = "<group>"; };
 		799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetViewController.swift; sourceTree = "<group>"; };
 		799AF9FD285CECDE001B0371 /* ProjectSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetView.swift; sourceTree = "<group>"; };
 		799AF9FE285CECDE001B0371 /* ProjectSheetCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSheetCoordinator.swift; sourceTree = "<group>"; };
@@ -361,6 +363,15 @@
 				797A471C287481F2005A3632 /* PharusUI */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		798981782892D15B001B39E8 /* Project Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */,
+				798981792892D173001B39E8 /* ProjectTasksDelegate.swift */,
+			);
+			path = "Project Tasks";
 			sourceTree = "<group>";
 		};
 		799AF9F7285CECDE001B0371 /* Pharus */ = {
@@ -774,7 +785,7 @@
 		799AFA9B285CECDE001B0371 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */,
+				798981782892D15B001B39E8 /* Project Tasks */,
 				799AFA51285CECDE001B0371 /* Student Home News */,
 			);
 			path = Components;
@@ -1065,6 +1076,7 @@
 				799AFB0C285CECDF001B0371 /* HomeNewsViewDelegate.swift.swift in Sources */,
 				799AFB56285CECDF001B0371 /* StudentModel.swift in Sources */,
 				799AFB67285CEDE5001B0371 /* TabBarViewController.swift in Sources */,
+				7989817A2892D173001B39E8 /* ProjectTasksDelegate.swift in Sources */,
 				799AFB1A285CECDF001B0371 /* StudentProjectDetailViewController.swift in Sources */,
 				799AFB19285CECDF001B0371 /* StudentProjectDetailCoordinator.swift in Sources */,
 				799AFAF3285CECDF001B0371 /* LogoutAlertViewController.swift in Sources */,
