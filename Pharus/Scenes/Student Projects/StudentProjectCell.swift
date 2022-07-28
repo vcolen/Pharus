@@ -15,14 +15,43 @@ class StudentProjectCell: UITableViewCell {
         titleLabel,
         mentorLabel,
         descriptionTitleLabel,
-        descriptionStackView,
-        lowerStackView
+
+        HStackView([
+            descriptionLabel,
+
+            VStackView([
+                completionHelperView,
+                projectScheduleView
+            ])
+            .setting(\.alignment, to: .center)
+            .setting(\.spacing, to: 26)
+        ])
+        .setting(\.distribution, to: .fillEqually)
+        .frame(height: 144),
+
+        HStackView([
+            HStackView([
+                partnershipLabel,
+
+                VStackView([
+                    companyLogoImageView
+                ])
+                .setting(\.alignment, to: .leading)
+            ])
+            .setting(\.spacing, to: 8)
+            .setting(\.distribution, to: .fillEqually),
+
+            VStackView([
+                subscribeButton
+            ])
+        ])
+        .setting(\.distribution, to: .fillEqually)
     ])
-        .setting(\.spacing, to: 20)
-        .padding([.bottom, .leading, .trailing], 8)
-        .padding([.top], 24.5)
-        .setting(\.layer.cornerRadius, to: 16)
-        .padding([.all], 16)
+    .setting(\.spacing, to: 20)
+    .padding([.bottom, .leading, .trailing], 8)
+    .padding([.top], 24.5)
+    .setting(\.layer.cornerRadius, to: 16)
+    .padding([.all], 16)
 
     private lazy var titleLabel = UILabel()
         .setting(\.numberOfLines, to: 1)
@@ -36,13 +65,6 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.lineBreakMode, to: .byTruncatingTail)
         .setting(\.textColor, to: .black)
 
-    private lazy var descriptionStackView = HStackView([
-        descriptionLabel,
-        completionStackView
-    ])
-        .setting(\.distribution, to: .fillEqually)
-        .frame(height: 144)
-
     private lazy var descriptionTitleLabel = UILabel()
         .setting(\.text, to: "Descrição:")
         .setting(\.font, to: .mediumTitleSemiBold)
@@ -52,13 +74,6 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.font, to: .smallBody)
         .setting(\.numberOfLines, to: 0)
         .setting(\.textColor, to: .black)
-
-    private lazy var completionStackView = VStackView([
-        completionHelperView,
-        projectScheduleView
-    ])
-        .setting(\.alignment, to: .center)
-        .setting(\.spacing, to: 26)
 
     private lazy var completionHelperView = VStackView([
         completionBarCircleView,
@@ -71,7 +86,7 @@ class StudentProjectCell: UITableViewCell {
         radius: 45,
         progress: 50
     )
-        .center(.allAxis)
+    .center(.allAxis)
 
     private lazy var percentageCompletionLabel = UILabel()
         .setting(\.text, to: "100%")
@@ -83,20 +98,7 @@ class StudentProjectCell: UITableViewCell {
         projectIsComplete: false,
         projectDaysRemaining: 12
     )
-        .frame(height: 44)
-
-    private lazy var lowerStackView = HStackView([
-        partnershipStackView,
-        subscribeHelperView
-    ])
-        .setting(\.distribution, to: .fillEqually)
-
-    private lazy var partnershipStackView = HStackView([
-        partnershipLabel,
-        companyLogoHelperView
-    ])
-        .setting(\.spacing, to: 8)
-        .setting(\.distribution, to: .fillEqually)
+    .frame(height: 44)
 
     private lazy var partnershipLabel = UILabel()
         .setting(\.text, to: "Parceria: ")
@@ -104,18 +106,9 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.textColor, to: .black)
         .setting(\.textAlignment, to: .right)
 
-    private lazy var companyLogoHelperView = VStackView([
-        companyLogoImageView
-    ])
-        .setting(\.alignment, to: .leading)
-
     private lazy var companyLogoImageView = UIImageView()
         .setting(\.image, to: .pharusImages.companyImages.ioasysLogoImage)
         .setting(\.contentMode, to: .scaleAspectFit)
-
-    private lazy var subscribeHelperView = VStackView([
-        subscribeButton
-    ])
 
     lazy var subscribeButton = SubscribeButton(isSubscribed: true)
         .center(.allAxis)
