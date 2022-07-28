@@ -35,6 +35,9 @@ public extension HScrollView {
          content.translatesAutoresizingMaskIntoConstraints = false
 
          let contentGuide = self.contentLayoutGuide
+         let frameGuide = self.frameLayoutGuide
+
+         frameGuide.heightAnchor.constraint(equalTo: content.heightAnchor).isActive = true
 
          NSLayoutConstraint.activate([
              contentGuide.leadingAnchor.constraint(equalTo: content.leadingAnchor),
