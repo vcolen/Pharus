@@ -31,11 +31,11 @@ class HomeNewsView: UIView {
     .setting(\.layer.cornerRadius, to: 16)
 
     private lazy var descriptionLabel = UILabel()
-    .setting(\.numberOfLines, to: 0)
-    .setting(\.textColor, to: .black)
-    .setting(\.font, to: .smallBody)
-    .setting(\.textAlignment, to: .justified)
-    .setting(\.text, to: Constants.defaultTexts.pageZeroText)
+        .setting(\.numberOfLines, to: 0)
+        .setting(\.textColor, to: .black)
+        .setting(\.font, to: .smallBody)
+        .setting(\.textAlignment, to: .justified)
+        .setting(\.text, to: Constants.defaultTexts.pageZeroText)
 
     // MARK: - Initializer
     init(news: String) {

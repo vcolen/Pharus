@@ -186,7 +186,7 @@ extension StudentProjectDetailView {
                 color: project.isSubscribed ? .black : UIColor.Project.grayDisabledText
             )
 
-#warning("TODO - update checkmark when button tapped")
+            #warning("TODO - update checkmark when button tapped")
             if project.isComplete == false && project.isSubscribed == true {
                 taskView.taskCheckmarkButton.addAction(
                     UIAction { [weak self, weak taskView] _ in
