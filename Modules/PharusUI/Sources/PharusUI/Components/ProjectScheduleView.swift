@@ -12,62 +12,33 @@ public class ProjectScheduleView: UIView {
     // MARK: - Properties
     public var projectIsComplete: Bool {
         didSet {
-            customizeSubviews()
+            updateViewStyle()
         }
     }
 
     public var projectDaysRemaining: Int {
         didSet {
-            customizeSubviews()
+            updateViewStyle()
         }
     }
 
     // MARK: - Views
-    private lazy var mainView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "ProjectScheduleView.mainView"
-        view.layer.cornerRadius = 8
+    private lazy var mainStackView = HStackView([
+        iconImageView,
+        textLabel
+    ])
+    .setting(\.spacing, to: 10)
+    .padding([.leading, .trailing], 10)
+    .setting(\.layer.cornerRadius, to: 8)
 
-        return view
-    }()
+    private lazy var iconImageView = UIImageView()
+        .setting(\.image, to: .pharusIcons.clockIcon)
+        .frame(width: 36)
+        .padding([.top, .bottom], 5)
 
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.accessibilityIdentifier = "ProjectScheduleView.mainStackView"
-
-        return stackView
-    }()
-
-    private lazy var iconHelperView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "ProjectScheduleView.iconHelperView"
-
-        return view
-    }()
-
-    private lazy var iconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = .pharusIcons.clockIcon
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityIdentifier = "ProjectScheduleView.iconImageView"
-
-        return imageView
-    }()
-
-    private lazy var textLabel: UILabel = {
-        let label = UILabel()
-        label.text = "20 dias"
-        label.font = UIFont.mediumBodyBold
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "ProjectScheduleView.textLabel"
-
-        return label
-    }()
+    private lazy var textLabel = UILabel()
+        .setting(\.text, to: "20 dias")
+        .setting(\.font, to: .mediumBodyBold)
 
     // MARK: - Initilizer
     public init(
@@ -79,75 +50,78 @@ public class ProjectScheduleView: UIView {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-    private func configureSubviews() {
-        addSubview(mainView)
-
-        mainView.addSubview(mainStackView)
-
-        mainStackView.addArrangedSubview(iconHelperView)
-
-        iconHelperView.addSubview(iconImageView)
-
-        mainStackView.addArrangedSubview(textLabel)
+// MARK: - View Codable
+extension ProjectScheduleView: ViewCodable {
+    public func buildHierarchy() {
+        addSubview(mainStackView)
     }
 
-    @available(iOS 13.0, *)
-    private func customizeSubviews() {
+    public func setupConstraints() {
+        mainStackView.edges()
+    }
+
+    public func applyAdditionalChanges() {
+        updateViewStyle()
+    }
+}
+
+// MARK: - Additional Methods
+extension ProjectScheduleView {
+
+    private func updateViewStyle() {
         if projectIsComplete {
-            iconImageView.image = .pharusIcons.checkIcon?.withTintColor(.black)
-            textLabel.text = "Feito!"
-            mainView.backgroundColor = UIColor.ProjectSchedule.greenBackground
+            setCompletedProject()
         } else {
             switch projectDaysRemaining {
             case ..<0:
-                mainView.backgroundColor = .black
-                textLabel.text = "Expirado"
-                iconImageView.image = .pharusIcons.xmarkIcon?.withTintColor(.white)
+                setExpiredProject()
             case 0...6:
-                mainView.backgroundColor = UIColor.ProjectSchedule.redBackground
-                iconImageView.image = .pharusIcons.clockIcon ?? .defaultImage
-                textLabel.text = "\(projectDaysRemaining) Dias"
-                textLabel.textColor = .white
-                iconImageView.image = iconImageView.image?.withTintColor(.white)
+                setFewDaysRemainingProject()
             case 7...8:
-                iconImageView.image = .pharusIcons.clockIcon ?? .defaultImage
-                textLabel.text = "\(projectDaysRemaining) Dias"
-                mainView.backgroundColor = UIColor.ProjectSchedule.yellowBackground
+                setMediumDaysRemainingProject()
             default:
-                iconImageView.image = .pharusIcons.clockIcon ?? .defaultImage
-                textLabel.text = "\(projectDaysRemaining) Dias"
-                mainView.backgroundColor = UIColor.ProjectSchedule.orangeBackground
+                setDefaultProject()
             }
         }
     }
 
-    // MARK: - Constraints
-    private func setupConstraints() {
-        // Main View
-        self.stretch(mainView)
+    private func setCompletedProject() {
+        iconImageView.originalView.image = .pharusIcons.checkIcon?.withTintColor(.black)
+        textLabel.text = "Feito!"
+        mainStackView.backgroundColor = UIColor.ProjectSchedule.greenBackground
+    }
 
-        // Main Stack View
-        self.stretch(mainStackView, to: mainView, left: 10, right: -10)
+    private func setExpiredProject() {
+        mainStackView.backgroundColor = .black
+        textLabel.text = "Expirado"
+        iconImageView.originalView.image = .pharusIcons.xmarkIcon?.withTintColor(.white)
+    }
 
-        // Icon Helper View
-        NSLayoutConstraint.activate([
-            iconHelperView.widthAnchor.constraint(equalToConstant: 36)
-        ])
+    private func setFewDaysRemainingProject() {
+        mainStackView.backgroundColor = UIColor.ProjectSchedule.redBackground
+        iconImageView.originalView.image = .pharusIcons.clockIcon ?? .defaultImage
+        textLabel.text = "\(projectDaysRemaining) Dias"
+        textLabel.textColor = .white
+        iconImageView.originalView.image = iconImageView.originalView.image?.withTintColor(.white)
+    }
 
-        // Icon Image View
-        iconImageView.center(in: iconHelperView)
-        NSLayoutConstraint.activate([
-            iconImageView.heightAnchor.constraint(equalToConstant: 36),
-            iconImageView.widthAnchor.constraint(equalToConstant: 36)
-        ])
+    private func setMediumDaysRemainingProject() {
+        iconImageView.originalView.image = .pharusIcons.clockIcon ?? .defaultImage
+        textLabel.text = "\(projectDaysRemaining) Dias"
+        mainStackView.backgroundColor = UIColor.ProjectSchedule.yellowBackground
+    }
+
+    private func setDefaultProject() {
+        iconImageView.originalView.image = .pharusIcons.clockIcon ?? .defaultImage
+        textLabel.text = "\(projectDaysRemaining) Dias"
+        mainStackView.backgroundColor = UIColor.ProjectSchedule.orangeBackground
     }
 }
