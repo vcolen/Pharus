@@ -23,4 +23,6 @@ public struct PharusImages {
     public let fifthPlaceMedalImage = UIImage(named: PharusUIConstants.assets.images.fifthPlaceMedalImage)
 
     public let appLogoImage = UIImage(named: PharusUIConstants.assets.images.appLogoImage)
+
+    public let homeBackground = UIImage(named: PharusUIConstants.assets.images.homeBackground)
 }
