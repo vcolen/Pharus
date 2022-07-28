@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PharusUI
 
 class StudentProjectsRankingView: UIView {
 
@@ -14,28 +15,10 @@ class StudentProjectsRankingView: UIView {
     private let projects: [ProjectModel]
 
     // MARK: - Views
-    lazy var mainView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.accessibilityIdentifier = "StudentProjectsRankingView.mainView"
-
-        return view
-    }()
-
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.backgroundColor = .clear
-        tableView.separatorColor = .clear
-        tableView.register(
-            StudentProjectRankingCell.self,
-            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userRankingProjects
-        )
-        tableView.allowsSelection = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.accessibilityIdentifier = "StudentProjectsRankingView.tableView"
-
-        return tableView
-    }()
+    lazy var tableView = UITableView()
+        .setting(\.backgroundColor, to: .clear)
+        .setting(\.separatorColor, to: .clear)
+        .setting(\.allowsSelection, to: false)
 
     // MARK: - Initializer
     init(student: StudentModel) {
@@ -44,35 +27,38 @@ class StudentProjectsRankingView: UIView {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
-        setupTableViewDataSource()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-    func configureSubviews() {
-        addSubview(mainView)
-        mainView.addSubview(tableView)
+// MARK: - View Codable
+extension StudentProjectsRankingView: ViewCodable {
+    func buildHierarchy() {
+        addSubview(tableView)
     }
 
     func setupConstraints() {
-        // Main View
-        self.stretch(mainView)
+        tableView.edges()
+    }
 
-        // Table View
-        self.stretch(tableView, to: mainView)
+    func applyAdditionalChanges() {
+        setupTableView()
     }
 }
 
 // MARK: - UITableViewDataSource
 extension StudentProjectsRankingView: UITableViewDataSource {
 
-    private func setupTableViewDataSource() {
+    private func setupTableView() {
         tableView.dataSource = self
+        tableView.register(
+            StudentProjectsRankingCell.self,
+            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userRankingProjects
+        )
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,15 +69,14 @@ extension StudentProjectsRankingView: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: Constants.cellReuseIdentifiers.userRankingProjects,
             for: indexPath
-        ) as? StudentProjectRankingCell else {
+        ) as? StudentProjectsRankingCell else {
             return tableView.dequeueReusableCell(
                 withIdentifier: Constants.cellReuseIdentifiers.userRankingProjects,
                 for: indexPath
             )
         }
 
-        let project = projects[indexPath.row]
-        cell.configureCell(using: project)
+        cell.configureCell(using: projects[indexPath.row])
         return cell
     }
 }

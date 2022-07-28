@@ -88,7 +88,7 @@
 		799AFB0C285CECDF001B0371 /* HomeNewsViewDelegate.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA55285CECDE001B0371 /* HomeNewsViewDelegate.swift.swift */; };
 		799AFB0D285CECDF001B0371 /* HomeNewsViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA56285CECDE001B0371 /* HomeNewsViewable.swift */; };
 		799AFB0E285CECDF001B0371 /* StudentProjectsRankingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA58285CECDE001B0371 /* StudentProjectsRankingCoordinator.swift */; };
-		799AFB0F285CECDF001B0371 /* StudentProjectRankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA59285CECDE001B0371 /* StudentProjectRankingCell.swift */; };
+		799AFB0F285CECDF001B0371 /* StudentProjectsRankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA59285CECDE001B0371 /* StudentProjectsRankingCell.swift */; };
 		799AFB10285CECDF001B0371 /* StudentProjectsRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA5A285CECDE001B0371 /* StudentProjectsRankingViewController.swift */; };
 		799AFB11285CECDF001B0371 /* StudentProjectsRankingCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA5C285CECDE001B0371 /* StudentProjectsRankingCoordinating.swift */; };
 		799AFB12285CECDF001B0371 /* AvatarSelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA5E285CECDE001B0371 /* AvatarSelectionCoordinator.swift */; };
@@ -250,7 +250,7 @@
 		799AFA55285CECDE001B0371 /* HomeNewsViewDelegate.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNewsViewDelegate.swift.swift; sourceTree = "<group>"; };
 		799AFA56285CECDE001B0371 /* HomeNewsViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNewsViewable.swift; sourceTree = "<group>"; };
 		799AFA58285CECDE001B0371 /* StudentProjectsRankingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingCoordinator.swift; sourceTree = "<group>"; };
-		799AFA59285CECDE001B0371 /* StudentProjectRankingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectRankingCell.swift; sourceTree = "<group>"; };
+		799AFA59285CECDE001B0371 /* StudentProjectsRankingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingCell.swift; sourceTree = "<group>"; };
 		799AFA5A285CECDE001B0371 /* StudentProjectsRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingViewController.swift; sourceTree = "<group>"; };
 		799AFA5C285CECDE001B0371 /* StudentProjectsRankingCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingCoordinating.swift; sourceTree = "<group>"; };
 		799AFA5E285CECDE001B0371 /* AvatarSelectionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarSelectionCoordinator.swift; sourceTree = "<group>"; };
@@ -651,7 +651,7 @@
 			isa = PBXGroup;
 			children = (
 				799AFA58285CECDE001B0371 /* StudentProjectsRankingCoordinator.swift */,
-				799AFA59285CECDE001B0371 /* StudentProjectRankingCell.swift */,
+				799AFA59285CECDE001B0371 /* StudentProjectsRankingCell.swift */,
 				79FFE7E42860F7A2003FCBE5 /* StudentProjectsRankingPresenter.swift */,
 				799AFA5A285CECDE001B0371 /* StudentProjectsRankingViewController.swift */,
 				790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */,
@@ -1041,7 +1041,7 @@
 				799AFAC8285CECDE001B0371 /* ProjectSheetView.swift in Sources */,
 				799AFAFB285CECDF001B0371 /* ProjectSubscriptionAlertCoordinator.swift in Sources */,
 				799AFB03285CECDF001B0371 /* SingleButtonAlertViewController.swift in Sources */,
-				799AFB0F285CECDF001B0371 /* StudentProjectRankingCell.swift in Sources */,
+				799AFB0F285CECDF001B0371 /* StudentProjectsRankingCell.swift in Sources */,
 				799AFADF285CECDF001B0371 /* StudentHomeView.swift in Sources */,
 				799AFAC9285CECDE001B0371 /* ProjectSheetCoordinator.swift in Sources */,
 				799AFAE1285CECDF001B0371 /* StudentHomePresenter.swift in Sources */,
