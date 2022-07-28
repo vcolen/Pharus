@@ -31,7 +31,7 @@ class SingleButtonAlertView: UIView {
         actionButton
     ])
         .setting(\.spacing, to: 20)
-        .padding([.top, .trailing, .leading, .bottom], 20)
+        .padding([.all], 20)
         .setting(\.backgroundColor, to: .Modal.yellowBackground)
         .setting(\.layer.cornerRadius, to: 16)
         .padding([.leading, .trailing], 16)

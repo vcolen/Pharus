@@ -95,7 +95,7 @@ class SendFileView: UIView {
         removeFileButton
     ])
         .setting(\.spacing, to: 14)
-        .padding([.top, .leading, .trailing, .bottom], 9)
+        .padding([.all], 9)
 
     private lazy var fileImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.bookIcon)
