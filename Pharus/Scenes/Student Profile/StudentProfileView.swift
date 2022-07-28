@@ -15,32 +15,27 @@ class StudentProfileView: UIView {
 
     // MARK: - Views
     private lazy var mainScrollView = VScrollView {
-        mainStackView
+        VStackView([
+            VStackView([
+                profileImageView
+            ])
+            .frame(height: 120),
+
+            VStackView([
+                infoStackView
+            ])
+            .frame(height: 480)
+        ])
+        .setting(\.spacing, to: 88)
+        .padding([.top], 30)
+        .padding([.bottom], 26)
+        .frame(width: UIScreen.main.bounds.width)
     }
-
-    private lazy var mainStackView = VStackView([
-        profileImageHelperView,
-        infoHelperView
-    ])
-    .setting(\.spacing, to: 88)
-    .padding([.top], 30)
-    .padding([.bottom], 26)
-    .frame(width: UIScreen.main.bounds.width)
-
-    private lazy var profileImageHelperView = VStackView([
-        profileImageView
-    ])
-    .frame(height: 120)
 
     lazy var profileImageView = UIImageView()
         .setting(\.image, to: CircleAvatarImages.avatar1)
         .setting(\.contentMode, to: .scaleAspectFit)
         .center(.allAxis)
-
-    private lazy var infoHelperView = VStackView([
-        infoStackView
-    ])
-    .frame(height: 480)
 
     private lazy var infoStackView = VStackView([])
         .setting(\.spacing, to: 40)
