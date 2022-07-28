@@ -18,15 +18,17 @@ public class StudentProfileButton: UIButton {
 
         super.init(frame: .zero)
 
-        configureSubviews()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-    private func configureSubviews() {
+// MARK: - View Codable
+extension StudentProfileButton: ViewCodable {
+    public func applyAdditionalChanges() {
         self.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         self.layer.cornerRadius = 0.5 * self.bounds.size.width
         self.clipsToBounds = true
