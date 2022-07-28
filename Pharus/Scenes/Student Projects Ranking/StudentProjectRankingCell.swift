@@ -29,7 +29,7 @@ class StudentProjectRankingCell: UITableViewCell {
         ])
     ])
     .setting(\.spacing, to: 32)
-    .padding([.top, .leading, .trailing, .bottom], 16)
+    .padding([.all], 16)
     .setting(\.backgroundColor, to: .Purple.pharusPurple)
     .setting(\.layer.cornerRadius, to: 16)
     .padding([.top], 24.5)
