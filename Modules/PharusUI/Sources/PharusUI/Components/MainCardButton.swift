@@ -24,24 +24,32 @@ public class MainCardButton: UIButton {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-    private func configureSubviews() {
-        setTitle(title, for: .normal)
-        titleLabel?.font = UIFont.mediumButtonSemiBold
-        setBackgroundColor()
-        setTitleColor(UIColor.Project.grayDisabledText, for: .disabled)
-        setTitleColor(UIColor.Button.whiteMainButtonText, for: .normal)
-        layer.cornerRadius = 16
+// MARK: - View Codable
+extension MainCardButton: ViewCodable {
+    public func setupConstraints() {
+        self.heightAnchor.constraint(equalToConstant: 56).isActive = true
     }
 
+    public func applyAdditionalChanges() {
+        setTitle(title, for: .normal)
+        titleLabel?.font = UIFont.mediumButtonSemiBold
+        setTitleColor(UIColor.Project.grayDisabledText, for: .disabled)
+        setTitleColor(UIColor.Button.whiteMainButtonText, for: .normal)
+        setBackgroundColor()
+        layer.cornerRadius = 16
+    }
+}
+
+// MARK: - Additional Methods
+extension MainCardButton {
     private func setBackgroundColor() {
         if buttonState == .normal {
             backgroundColor = UIColor.Purple.pharusPurple
@@ -50,12 +58,6 @@ public class MainCardButton: UIButton {
         }
     }
 
-    // MARK: - Constraints
-    private func setupConstraints() {
-        self.heightAnchor.constraint(equalToConstant: 56).isActive = true
-    }
-
-    // MARK: - Actions
     public func disable() {
         self.isEnabled = false
         self.buttonState = .disabled
