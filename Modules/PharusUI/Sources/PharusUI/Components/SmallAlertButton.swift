@@ -28,16 +28,23 @@ public class SmallAlertButton: UIButton {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Subviews
-    private func configureSubviews() {
+// MARK: - View Codable
+extension SmallAlertButton: ViewCodable {
+    public func setupConstraints() {
+        NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: 32)
+        ])
+    }
+
+    public func applyAdditionalChanges() {
         setTitle(title, for: .normal)
         layer.borderWidth = 2
         layer.borderColor = UIColor.Purple.pharusPurple.cgColor
@@ -50,12 +57,5 @@ public class SmallAlertButton: UIButton {
             backgroundColor = .clear
             setTitleColor(UIColor.Purple.pharusPurple, for: .normal)
         }
-    }
-
-    // MARK: - Constraints
-    private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 32)
-        ])
     }
 }
