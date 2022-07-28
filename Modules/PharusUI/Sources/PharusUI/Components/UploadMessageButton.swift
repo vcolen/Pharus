@@ -24,33 +24,31 @@ public class UploadMessageButton: UIButton {
 
         super.init(frame: .zero)
 
-        configureSubviews()
-        setupConstraints()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Actions
-    func disable() {
-        self.isEnabled = false
-        self.buttonState = .disabled
+// MARK: - View Codable
+extension UploadMessageButton: ViewCodable {
+    public func setupConstraints() {
+        self.heightAnchor.constraint(equalToConstant: 56).isActive = true
     }
 
-    func enable() {
-        self.isEnabled = true
-        self.buttonState = .normal
-    }
-
-    private func configureSubviews() {
+    public func applyAdditionalChanges() {
         setTitle(title, for: .normal)
         setBackgroundColor()
         setTitleColor(UIColor.Project.grayDisabledText, for: .disabled)
         setTitleColor(UIColor.Button.whiteMainButtonText, for: .normal)
         layer.cornerRadius = 16
     }
+}
 
+// MARK: - Additional Methods
+extension UploadMessageButton {
     func setBackgroundColor() {
         if buttonState == .normal {
             backgroundColor = UIColor.Purple.pharusPurple
@@ -59,8 +57,13 @@ public class UploadMessageButton: UIButton {
         }
     }
 
-    // MARK: - Constraints
-    private func setupConstraints() {
-        self.heightAnchor.constraint(equalToConstant: 56).isActive = true
+    func disable() {
+        self.isEnabled = false
+        self.buttonState = .disabled
+    }
+
+    func enable() {
+        self.isEnabled = true
+        self.buttonState = .normal
     }
 }
