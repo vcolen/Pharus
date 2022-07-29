@@ -12,10 +12,7 @@ public class ZStackView: UIView {
     public init(_ views: [UIView]) {
         super.init(frame: .zero)
         for view in views {
-            addSubview(
-                view
-                    .center(.allAxis)
-            )
+            addSubview(view.center(.allAxis))
         }
     }
 
@@ -27,9 +24,6 @@ public class ZStackView: UIView {
 // MARK: - Additional Methods
 extension ZStackView {
     public func addArrangedSubview(_ view: UIView) {
-        addSubview(
-            view
-                .center(.allAxis)
-        )
+        addSubview(view.center(.allAxis))
     }
 }
