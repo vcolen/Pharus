@@ -85,7 +85,7 @@ class StudentProjectCell: UITableViewCell {
         radius: 45,
         progress: 50
     )
-        .center(.allAxis)
+    .center(.allAxis)
 
     private lazy var percentageCompletionLabel = UILabel()
         .setting(\.text, to: "100%")
@@ -97,7 +97,7 @@ class StudentProjectCell: UITableViewCell {
         projectIsComplete: false,
         projectDaysRemaining: 12
     )
-        .frame(height: 44)
+    .frame(height: 44)
 
     private lazy var partnershipLabel = UILabel()
         .setting(\.text, to: "Parceria: ")
