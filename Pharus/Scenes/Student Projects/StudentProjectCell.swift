@@ -19,12 +19,16 @@ class StudentProjectCell: UITableViewCell {
         HStackView([
             descriptionLabel,
 
-            VStackView([
-                completionHelperView,
+            VStackView(spacing: 26, [
+                ZStackView([
+                    completionBarCircleView,
+                    percentageCompletionLabel
+                ])
+                .center(.allAxis),
+
                 projectScheduleView
+                    .center(.horizontally)
             ])
-            .setting(\.alignment, to: .center)
-            .setting(\.spacing, to: 26)
         ])
         .setting(\.distribution, to: .fillEqually)
         .frame(height: 144),
@@ -74,11 +78,6 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.font, to: .smallBody)
         .setting(\.numberOfLines, to: 0)
         .setting(\.textColor, to: .black)
-
-    private lazy var completionHelperView = VStackView([
-        completionBarCircleView,
-        percentageCompletionLabel
-    ])
 
     private lazy var completionBarCircleView = CircleProgressView(
         circleColor: .white,
@@ -133,9 +132,6 @@ extension StudentProjectCell: ViewCodable {
 
     func setupConstraints() {
         mainStackView.edges()
-        subscribeButton.edges()
-        percentageCompletionLabel.center(in: completionHelperView)
-        completionBarCircleView.center(in: completionHelperView)
     }
 
     func applyAdditionalChanges() {
@@ -175,11 +171,7 @@ extension StudentProjectCell {
 
     private func setupBarCircleView() {
         // Making circle start from intended position
-        completionBarCircleView.addSubview(percentageCompletionLabel)
         completionBarCircleView.transform = CGAffineTransform(rotationAngle: 180.7)
-
-        // Returning label to horizontal position
-        percentageCompletionLabel.transform = CGAffineTransform(rotationAngle: 1.5)
     }
 
     private func setBlackLabels() {
