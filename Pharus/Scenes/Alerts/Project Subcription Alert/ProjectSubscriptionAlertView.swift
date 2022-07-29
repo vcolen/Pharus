@@ -18,30 +18,25 @@ class ProjectSubscriptionAlertView: UIView {
     private var secondaryButtonText: String
 
     // MARK: - Views
-    private lazy var blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        .setting(\.frame, to: bounds)
-        .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
-
     private lazy var mainStackView = VStackView([
-        titleStackView,
+        HStackView([
+            titleLabel,
+            closeModalButton
+        ]),
+
         descriptionLabel,
         primaryButton,
         secondaryButton
     ])
-        .setting(\.spacing, to: 24)
-        .padding([.top], 32)
-        .padding([.leading, .bottom], 16)
-        .padding([.trailing], 13)
-        .setting(\.backgroundColor, to: .Modal.yellowBackground)
-        .setting(\.layer.cornerRadius, to: 16)
-        .padding([.leading, .trailing], 16)
-        .frame(height: 314)
-        .center(.vertically)
-
-    private lazy var titleStackView = HStackView([
-        titleLabel,
-        closeModalButton
-    ])
+    .setting(\.spacing, to: 24)
+    .padding([.top], 32)
+    .padding([.leading, .bottom], 16)
+    .padding([.trailing], 13)
+    .setting(\.backgroundColor, to: .Modal.yellowBackground)
+    .setting(\.layer.cornerRadius, to: 16)
+    .padding([.leading, .trailing], 16)
+    .frame(height: 314)
+    .center(.vertically)
 
     private lazy var titleLabel = UILabel()
         .setting(\.font, to: .largeTitleSemiBold)
@@ -89,7 +84,12 @@ class ProjectSubscriptionAlertView: UIView {
 // MARK: - View Codable
 extension ProjectSubscriptionAlertView: ViewCodable {
     func buildHierarchy() {
-        addSubview(blurEffectView)
+        addSubview(
+            UIVisualEffectView(effect: UIBlurEffect(style: .light))
+                .setting(\.frame, to: bounds)
+                .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
+        )
+
         addSubview(mainStackView)
     }
 
@@ -100,21 +100,7 @@ extension ProjectSubscriptionAlertView: ViewCodable {
     func applyAdditionalChanges() {
         titleLabel.text = title
         descriptionLabel.text = message
-        primaryButton.setTitle(mainButtonText, for: .normal)
-        secondaryButton.setTitle(secondaryButtonText, for: .normal)
-
-        closeModalButton.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
-        closeModalButton.addAction(UIAction { [weak self] _ in
-            self?.closeButtonTapped()
-        }, for: .touchUpInside)
-
-        primaryButton.addAction(UIAction { [weak self] _ in
-            self?.primaryButtonTapped()
-        }, for: .touchUpInside)
-
-        secondaryButton.addAction( UIAction { [weak self] _ in
-            self?.secondaryButtonTapped()
-        }, for: .touchUpInside)
+        setupButtons()
     }
 }
 
@@ -130,5 +116,35 @@ extension ProjectSubscriptionAlertView {
 
     func secondaryButtonTapped() {
         delegate?.secondaryButtonTapped()
+    }
+}
+
+// MARK: - Additional Methods
+extension ProjectSubscriptionAlertView {
+    private func setupButtons() {
+        setupPrimaryButton()
+        setupSecondaryButton()
+        setupCloseButton()
+    }
+
+    private func setupPrimaryButton() {
+        primaryButton.setTitle(mainButtonText, for: .normal)
+        primaryButton.addAction(UIAction { [weak self] _ in
+            self?.primaryButtonTapped()
+        }, for: .touchUpInside)
+    }
+
+    private func setupSecondaryButton() {
+        secondaryButton.setTitle(secondaryButtonText, for: .normal)
+        secondaryButton.addAction( UIAction { [weak self] _ in
+            self?.secondaryButtonTapped()
+        }, for: .touchUpInside)
+    }
+
+    private func setupCloseButton() {
+        closeModalButton.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
+        closeModalButton.addAction(UIAction { [weak self] _ in
+            self?.closeButtonTapped()
+        }, for: .touchUpInside)
     }
 }

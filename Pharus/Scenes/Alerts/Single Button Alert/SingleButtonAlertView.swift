@@ -21,34 +21,28 @@ class SingleButtonAlertView: UIView {
     }
 
     // MARK: - Views
-    private lazy var blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        .setting(\.frame, to: bounds)
-        .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
-
     private lazy var mainStackView = VStackView([
-        alertIconHelperView,
-        alertMessageHelperView,
+        VStackView([
+            alertIconImageView
+        ]),
+
+        VStackView([
+            alertMessageLabel
+        ]),
+
         actionButton
     ])
-        .setting(\.spacing, to: 20)
-        .padding([.all], 20)
-        .setting(\.backgroundColor, to: .Modal.yellowBackground)
-        .setting(\.layer.cornerRadius, to: 16)
-        .padding([.leading, .trailing], 16)
-        .frame(height: 217)
-        .center(.vertically)
-
-    private lazy var alertIconHelperView = VStackView([
-        alertIconImageView
-    ])
+    .setting(\.spacing, to: 20)
+    .padding([.all], 20)
+    .setting(\.backgroundColor, to: .Modal.yellowBackground)
+    .setting(\.layer.cornerRadius, to: 16)
+    .padding([.leading, .trailing], 16)
+    .frame(height: 217)
+    .center(.vertically)
 
     private lazy var alertIconImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.checkIcon)
         .center(.allAxis)
-
-    private lazy var alertMessageHelperView = VStackView([
-        alertMessageLabel
-    ])
 
     private lazy var alertMessageLabel = UILabel()
         .setting(\.textAlignment, to: .center)
@@ -81,7 +75,12 @@ class SingleButtonAlertView: UIView {
 // MARK: - View Codable
 extension SingleButtonAlertView: ViewCodable {
     func buildHierarchy() {
-        addSubview(blurEffectView)
+        addSubview(
+            UIVisualEffectView(effect: UIBlurEffect(style: .light))
+                .setting(\.frame, to: bounds)
+                .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
+        )
+
         addSubview(mainStackView)
     }
 
@@ -91,23 +90,32 @@ extension SingleButtonAlertView: ViewCodable {
 
     func applyAdditionalChanges() {
         alertMessageLabel.text = message
+        setupAlertIconImageView()
+        setupActionButton()
+    }
+}
 
+// MARK: - Delegate Actions
+extension SingleButtonAlertView {
+    func closeButtonTapped() {
+        delegate?.closeButtonTapped()
+    }
+}
+
+// MARK: - Additional Methods
+extension SingleButtonAlertView {
+    private func setupAlertIconImageView() {
         if type == .confirmation {
             alertIconImageView.originalView.image = .pharusIcons.checkIcon
         } else {
             alertIconImageView.originalView.image = .pharusIcons.errorIcon
         }
+    }
 
+    private func setupActionButton() {
         actionButton.setTitle("Fechar", for: .normal)
         actionButton.addAction(UIAction { [weak self] _ in
             self?.closeButtonTapped()
         }, for: .touchUpInside)
-    }
-}
-
-// MARK: - Actions
-extension SingleButtonAlertView {
-    func closeButtonTapped() {
-        delegate?.closeButtonTapped()
     }
 }

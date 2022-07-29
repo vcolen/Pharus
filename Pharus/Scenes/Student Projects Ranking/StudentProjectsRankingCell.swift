@@ -1,5 +1,5 @@
 //
-//  StudentProjectRankingCell.swift
+//  StudentProjectsRankingCell.swift
 //  Pharus
 //
 //  Created by Victor Colen on 04/04/22.
@@ -8,7 +8,7 @@
 import UIKit
 import PharusUI
 
-class StudentProjectRankingCell: UITableViewCell {
+class StudentProjectsRankingCell: UITableViewCell {
 
     // MARK: - Views
     private lazy var mainStackView = VStackView([
@@ -85,7 +85,7 @@ class StudentProjectRankingCell: UITableViewCell {
 }
 
 // MARK: - View Codable
-extension StudentProjectRankingCell: ViewCodable {
+extension StudentProjectsRankingCell: ViewCodable {
     func buildHierarchy() {
         addSubview(mainStackView)
     }
@@ -100,7 +100,7 @@ extension StudentProjectRankingCell: ViewCodable {
 }
 
 // MARK: - Additional Methods
-extension StudentProjectRankingCell {
+extension StudentProjectsRankingCell {
     func configureCell(using project: ProjectModel) {
         self.projectTitleLabel.text = project.name
         mentorCommentsDescriptionLabel.originalView.text = project.scoreDescription

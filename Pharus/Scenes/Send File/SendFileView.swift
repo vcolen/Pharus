@@ -15,91 +15,77 @@ class SendFileView: UIView {
 
     // MARK: - Views
     private lazy var mainStackView = VStackView([
-        titleStackView,
-        descriptionLabel,
-        uploadFileHelperView,
-        fileHelperView,
+        HStackView([
+            VStackView([
+                UILabel()
+                    .setting(\.text, to: "Enviar arquivos")
+                    .setting(\.font, to: .largeTitleBold)
+                    .setting(\.textColor, to: .black)
+                    .setting(\.textAlignment, to: .center)
+            ]),
+
+            closeSheetButton
+        ]),
+
+        UILabel()
+            .setting(\.numberOfLines, to: 0)
+            .setting(\.text, to: Constants.defaultTexts.sendFileText)
+            .setting(\.textColor, to: .black)
+            .setting(\.font, to: .smallBody),
+
+        VStackView([
+            uploadFileStackView
+        ])
+        .setting(\.backgroundColor, to: .Modal.orangeBackground)
+        .setting(\.layer.cornerRadius, to: 8)
+        .frame(height: 118),
+
+        VStackView([
+            fileStackView
+        ])
+        .setting(\.backgroundColor, to: .white)
+        .setting(\.layer.cornerRadius, to: 8)
+        .frame(height: 45),
+
         sendFileButton,
         UIView()
     ])
-        .setting(\.spacing, to: 30)
-        .padding([.top], 38)
-        .padding([.leading, .trailing], 25)
-        .setting(\.backgroundColor, to: .Modal.yellowBackground)
-        .setting(\.translatesAutoresizingMaskIntoConstraints, to: false)
-
-    private lazy var titleStackView = HStackView([
-        titleHelperView,
-        closeSheetButton
-    ])
-
-    private lazy var titleHelperView = VStackView([
-        titleLabel
-    ])
-
-    private lazy var titleLabel = UILabel()
-        .setting(\.text, to: "Enviar arquivos")
-        .setting(\.font, to: .largeTitleBold)
-        .setting(\.textColor, to: .black)
-        .setting(\.textAlignment, to: .center)
+    .setting(\.spacing, to: 30)
+    .padding([.top], 38)
+    .padding([.leading, .trailing], 25)
+    .setting(\.backgroundColor, to: .Modal.yellowBackground)
 
     lazy var closeSheetButton = UIButton()
         .frame(width: 24, height: 24)
 
-    private lazy var descriptionLabel = UILabel()
-        .setting(\.numberOfLines, to: 0)
-        .setting(\.text, to: Constants.defaultTexts.sendFileText)
-        .setting(\.textColor, to: .black)
-        .setting(\.font, to: .smallBody)
-
-    private lazy var uploadFileHelperView = VStackView([
-        uploadFileStackView
-    ])
-        .setting(\.backgroundColor, to: .Modal.orangeBackground)
-        .setting(\.layer.cornerRadius, to: 8)
-        .frame(height: 118)
-
     private lazy var uploadFileStackView = VStackView([
-        uploadIconHelperView,
-        uploadMessageLabel
+        VStackView([
+            UIImageView()
+                .setting(\.image, to: .pharusIcons.uploadIcon)
+                .frame(height: 43)
+                .center(.allAxis)
+        ])
+        .frame(height: 50),
+
+        UILabel()
+            .setting(\.text, to: "Selecione os arquivos para enviar")
+            .setting(\.textAlignment, to: .center)
+            .setting(\.numberOfLines, to: 0)
+            .setting(\.font, to: .smallBody)
+            .setting(\.textColor, to: .black)
     ])
-        .setting(\.spacing, to: 3)
-
-    private lazy var uploadIconHelperView = VStackView([
-        uploadIconImageView
-    ])
-        .frame(height: 50)
-
-    private lazy var uploadIconImageView = UIImageView()
-        .setting(\.image, to: .pharusIcons.uploadIcon)
-        .frame(height: 43)
-        .center(.allAxis)
-
-    private lazy var uploadMessageLabel = UILabel()
-        .setting(\.text, to: "Selecione os arquivos para enviar")
-        .setting(\.textAlignment, to: .center)
-        .setting(\.numberOfLines, to: 0)
-        .setting(\.font, to: .smallBody)
-        .setting(\.textColor, to: .black)
-
-    private lazy var fileHelperView = VStackView([
-        fileStackView
-    ])
-        .setting(\.backgroundColor, to: .white)
-        .setting(\.layer.cornerRadius, to: 8)
-        .frame(height: 45)
+    .setting(\.spacing, to: 3)
 
     private lazy var fileStackView = HStackView([
-        fileImageView,
+        UIImageView()
+            .setting(\.image, to: .pharusIcons.bookIcon)
+            .frame(width: 28),
+
         fileNameLabel,
         removeFileButton
     ])
-        .setting(\.spacing, to: 14)
-        .padding([.all], 9)
-
-    private lazy var fileImageView = UIImageView()
-        .setting(\.image, to: .pharusIcons.bookIcon)
-        .frame(width: 28)
+    .setting(\.spacing, to: 14)
+    .padding([.all], 9)
 
     lazy var fileNameLabel = UILabel()
         .setting(\.text, to: "")
@@ -134,25 +120,10 @@ extension SendFileView: ViewCodable {
     }
 
     func applyAdditionalChanges() {
-        closeSheetButton.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
-        closeSheetButton.addAction(
-            UIAction { [weak self] _ in
-                self?.closeButtonTapped()
-            },
-            for: .touchUpInside
-        )
-
+        setupButtons()
         uploadFileStackView.setOnClickListener { [weak self] in
             self?.uploadButtonTapped()
         }
-
-        removeFileButton.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
-
-        sendFileButton.addAction(UIAction { [weak self] _ in
-            self?.sendFileButtonTapped()
-        }, for: .touchUpInside)
-
-        sendFileButton.disable()
     }
 }
 
@@ -168,5 +139,32 @@ extension SendFileView {
 
     func sendFileButtonTapped() {
         delegate?.sendFileButtonTapped()
+    }
+}
+
+// MARK: - Additional Methods
+extension SendFileView {
+    private func setupButtons() {
+        setupSendFileButton()
+        setupCloseSheetButton()
+        removeFileButton.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
+    }
+
+    private func setupSendFileButton() {
+        sendFileButton.addAction(UIAction { [weak self] _ in
+            self?.sendFileButtonTapped()
+        }, for: .touchUpInside)
+
+        sendFileButton.disable()
+    }
+
+    private func setupCloseSheetButton() {
+        closeSheetButton.setImage(UIImage.pharusIcons.xmarkIcon, for: .normal)
+        closeSheetButton.addAction(
+            UIAction { [weak self] _ in
+                self?.closeButtonTapped()
+            },
+            for: .touchUpInside
+        )
     }
 }
