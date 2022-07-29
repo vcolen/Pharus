@@ -75,7 +75,7 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.numberOfLines, to: 0)
         .setting(\.textColor, to: .black)
 
-    private lazy var completionHelperView = VStackView([
+    private lazy var completionHelperView = ZStackView([
         completionBarCircleView,
         percentageCompletionLabel
     ])
@@ -133,9 +133,6 @@ extension StudentProjectCell: ViewCodable {
 
     func setupConstraints() {
         mainStackView.edges()
-        subscribeButton.edges()
-        percentageCompletionLabel.center(in: completionHelperView)
-        completionBarCircleView.center(in: completionHelperView)
     }
 
     func applyAdditionalChanges() {
