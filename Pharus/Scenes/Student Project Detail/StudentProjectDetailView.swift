@@ -48,12 +48,12 @@ class StudentProjectDetailView: UIView {
         ])
         .setting(\.spacing, to: 24)
         .padding([.top, .leading, .trailing], 24)
-        .padding([.bottom], 10)
+        .padding(.bottom, 10)
         .setting(\.backgroundColor, to: .Modal.yellowBackground)
         .setting(\.layer.cornerRadius, to: 16)
-        .padding([.top], 50)
+        .padding(.top, 50)
         .padding([.leading, .trailing], 16)
-        .padding([.bottom], 10)
+        .padding(.bottom, 10)
         .center(.horizontally)
     }
 

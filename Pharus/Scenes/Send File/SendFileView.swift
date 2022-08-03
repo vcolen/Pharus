@@ -51,7 +51,7 @@ class SendFileView: UIView {
         UIView()
     ])
     .setting(\.spacing, to: 30)
-    .padding([.top], 38)
+    .padding(.top, 38)
     .padding([.leading, .trailing], 25)
     .setting(\.backgroundColor, to: .Modal.yellowBackground)
 
@@ -85,7 +85,7 @@ class SendFileView: UIView {
         removeFileButton
     ])
     .setting(\.spacing, to: 14)
-    .padding([.all], 9)
+    .padding(.all, 9)
 
     lazy var fileNameLabel = UILabel()
         .setting(\.text, to: "")

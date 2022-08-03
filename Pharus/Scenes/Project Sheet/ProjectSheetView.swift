@@ -48,8 +48,8 @@ class ProjectSheetView: UIView {
         ])
         .setting(\.spacing, to: 46)
         .padding([.leading, .trailing], 25)
-        .padding([.top], 32)
-        .padding([.bottom], 24)
+        .padding(.top, 32)
+        .padding(.bottom, 24)
     }
     .setting(\.backgroundColor, to: .Modal.yellowBackground)
     .setting(\.layer.cornerRadius, to: 16)

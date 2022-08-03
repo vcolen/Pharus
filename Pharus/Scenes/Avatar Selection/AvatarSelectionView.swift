@@ -35,7 +35,7 @@ class AvatarSelectionView: UIView {
             .setting(\.spacing, to: 32)
         ])
         .setting(\.spacing, to: 48)
-        .padding([.top], 30)
+        .padding(.top, 30)
     }
 
     private lazy var mainAvatarImageView = UIImageView()

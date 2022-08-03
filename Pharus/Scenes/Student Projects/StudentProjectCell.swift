@@ -53,9 +53,9 @@ class StudentProjectCell: UITableViewCell {
     ])
     .setting(\.spacing, to: 20)
     .padding([.bottom, .leading, .trailing], 8)
-    .padding([.top], 24.5)
+    .padding(.top, 24.5)
     .setting(\.layer.cornerRadius, to: 16)
-    .padding([.all], 16)
+    .padding(.all, 16)
 
     private lazy var titleLabel = UILabel()
         .setting(\.numberOfLines, to: 1)

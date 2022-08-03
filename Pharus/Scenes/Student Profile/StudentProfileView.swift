@@ -36,12 +36,12 @@ class StudentProfileView: UIView {
                     ])
                 })
                 .setting(\.spacing, to: 40)
-                .padding([.leading], 40)
+                .padding(.leading, 40)
             ])
         ])
         .setting(\.spacing, to: 88)
-        .padding([.top], 30)
-        .padding([.bottom], 26)
+        .padding(.top, 30)
+        .padding(.bottom, 26)
         .frame(width: UIScreen.main.bounds.width)
     }
 
