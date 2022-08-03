@@ -12,7 +12,7 @@ public protocol PaddingViewable: UIView { }
 public extension PaddingViewable {
 
     func padding(
-        _ edges: Set<MarginEdges>,
+        _ edges: MarginEdges,
         _ constant: CGFloat
     ) -> PaddingView<Self, Self> {
 
@@ -29,7 +29,7 @@ public extension PaddingViewable {
 public extension PaddingViewable where Self: WrapperViewable {
 
     func padding(
-        _ edges: Set<MarginEdges>,
+        _ edges: MarginEdges,
         _ constant: CGFloat
     ) -> PaddingView<Original, Self> {
 

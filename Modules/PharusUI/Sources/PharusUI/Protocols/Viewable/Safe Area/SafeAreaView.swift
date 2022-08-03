@@ -11,12 +11,12 @@ public class SafeAreaView<Original: UIView, Wrapped: UIView>: UIView, WrapperVie
 
     public let originalView: Original
     public let wrappedView: Wrapped
-    public let edges: Set<MarginEdges>
+    public let edges: MarginEdges
 
     init(
         original: Original,
         wrapped: Wrapped,
-        edges: Set<MarginEdges>
+        edges: MarginEdges
     ) {
         self.originalView = original
         self.wrappedView = wrapped

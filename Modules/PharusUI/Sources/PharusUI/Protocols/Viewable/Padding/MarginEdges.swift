@@ -7,10 +7,18 @@
 
 import Foundation
 
-public enum MarginEdges {
-    case top
-    case bottom
-    case leading
-    case trailing
-    case all
+public struct MarginEdges: OptionSet {
+    public let rawValue: Int
+
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
+
+    public static let top = MarginEdges(rawValue: 1 << 0)
+    public static let bottom = MarginEdges(rawValue: 1 << 1)
+    public static let leading = MarginEdges(rawValue: 1 << 2)
+    public static let trailing = MarginEdges(rawValue: 1 << 3)
+    public static var all: MarginEdges {
+        [.top, .bottom, .leading, .trailing]
+    }
 }
