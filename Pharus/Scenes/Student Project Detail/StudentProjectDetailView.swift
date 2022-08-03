@@ -61,7 +61,9 @@ class StudentProjectDetailView: UIView {
         .setting(\.textColor, to: .black)
         .setting(\.font, to: .mediumTitleBold)
 
-    private lazy var mentorReviewHelperView = UIView()
+    private lazy var mentorReviewHelperView = VStackView([
+        mentorReviewImageView
+    ])
         .frame(width: 36, height: 36)
 
     private lazy var mentorReviewImageView = UIImageView()
@@ -137,7 +139,6 @@ class StudentProjectDetailView: UIView {
 extension StudentProjectDetailView: ViewCodable {
     func buildHierarchy() {
         addSubview(mainScrollView)
-        mentorReviewHelperView.addSubview(mentorReviewImageView)
     }
 
     func setupConstraints() {
