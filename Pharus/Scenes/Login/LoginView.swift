@@ -62,7 +62,7 @@ class LoginView: UIView {
     .setting(\.spacing, to: UIScreen.main.bounds.height/17)
     .setting(\.alignment, to: .fill)
     .padding([.leading, .trailing], 32)
-    .padding([.top], 48)
+    .padding(.top, 48)
     .safeArea([.top])
 
     lazy var emailTextField = UITextField()
