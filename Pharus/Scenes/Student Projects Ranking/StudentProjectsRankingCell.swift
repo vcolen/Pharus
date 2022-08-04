@@ -29,10 +29,10 @@ class StudentProjectsRankingCell: UITableViewCell {
         ])
     ])
     .setting(\.spacing, to: 32)
-    .padding([.all], 16)
+    .padding(.all, 16)
     .setting(\.backgroundColor, to: .Purple.pharusPurple)
     .setting(\.layer.cornerRadius, to: 16)
-    .padding([.top], 24.5)
+    .padding(.top, 24.5)
     .padding([.leading, .bottom, .trailing], 8)
 
     private lazy var projectTitleLabel = UILabel()
