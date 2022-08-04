@@ -11,8 +11,11 @@ public class ZStackView: UIView {
 
     public init(_ views: [UIView]) {
         super.init(frame: .zero)
+
         for view in views {
-            addSubview(view.center(.allAxis))
+            view.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(view)
+            view.edges()
         }
     }
 
