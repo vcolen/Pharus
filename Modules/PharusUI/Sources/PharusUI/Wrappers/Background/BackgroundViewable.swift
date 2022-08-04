@@ -11,9 +11,9 @@ public protocol BackgroundViewable: UIView { }
 
 public extension BackgroundViewable {
 
-    func background(
-        _ view: UIView
-    ) -> BackgroundView<Self, Self> {
+    func background<Background>(
+        _ view: Background
+    ) -> BackgroundView<Self, Self, Background> {
 
         return BackgroundView(
             original: self,
@@ -26,9 +26,9 @@ public extension BackgroundViewable {
 // MARK: - Wrapper Viewable
 public extension BackgroundViewable where Self: WrapperViewable {
 
-    func background(
-        _ view: UIView
-    ) -> BackgroundView<Original, Self> {
+    func background<Background>(
+        _ view: Background
+    ) -> BackgroundView<Original, Self, Background> {
 
         return BackgroundView(
             original: self.originalView,

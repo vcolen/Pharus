@@ -7,16 +7,16 @@
 
 import UIKit
 
-public class BackgroundView<Original: UIView, Wrapped: UIView>: UIView, WrapperViewable {
+public class BackgroundView<Original: UIView, Wrapped: UIView, Background: UIView>: UIView, WrapperViewable {
 
     public let originalView: Original
     public let wrappedView: Wrapped
-    public let background: UIView
+    public let background: Background
 
     init(
         original: Original,
         wrapped: Wrapped,
-        background: UIView
+        background: Background
     ) {
         self.originalView = original
         self.wrappedView = wrapped
