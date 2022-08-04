@@ -42,7 +42,7 @@ class StudentHomeView: UIView {
         .padding(.top, 80)
         .padding(.bottom, 45)
     }
-        .background(homeBackgroundImageView)
+    .background(homeBackgroundImageView)
 
     private lazy var homeBackgroundImageView = UIImageView()
         .setting(\.image, to: .pharusImages.homeBackground)

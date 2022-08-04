@@ -64,7 +64,7 @@ class StudentProjectDetailView: UIView {
     private lazy var mentorReviewHelperView = VStackView([
         mentorReviewImageView
     ])
-        .frame(width: 36, height: 36)
+    .frame(width: 36, height: 36)
 
     private lazy var mentorReviewImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.envelopeIcon)
@@ -83,8 +83,8 @@ class StudentProjectDetailView: UIView {
             .setting(\.image, to: .pharusIcons.rightArrowIcon)
             .frame(width: 24, height: 24)
     ])
-        .setting(\.spacing, to: 9)
-        .center(.horizontally)
+    .setting(\.spacing, to: 9)
+    .center(.horizontally)
 
     private lazy var rulesLabel = UILabel()
         .setting(\.text, to: "Atividades do projeto")
@@ -95,7 +95,7 @@ class StudentProjectDetailView: UIView {
         taskTitleLabel,
         taskHelperStackView
     ])
-        .setting(\.spacing, to: 29)
+    .setting(\.spacing, to: 29)
 
     private lazy var taskTitleLabel = UILabel()
         .setting(\.text, to: "Lista de Tarefas")
@@ -187,7 +187,7 @@ extension StudentProjectDetailView {
                 color: project.isSubscribed ? .black : UIColor.Project.grayDisabledText
             )
 
-#warning("TODO - update checkmark when button tapped")
+            #warning("TODO - update checkmark when button tapped")
             if project.isComplete == false && project.isSubscribed == true {
                 taskView.taskCheckmarkButton.addAction(
                     UIAction { [weak self, weak taskView] _ in

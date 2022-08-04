@@ -32,14 +32,14 @@ class SingleButtonAlertView: UIView {
 
         actionButton
     ])
-        .setting(\.spacing, to: 20)
-        .padding(.all, 20)
-        .setting(\.backgroundColor, to: .Modal.yellowBackground)
-        .setting(\.layer.cornerRadius, to: 16)
-        .padding([.leading, .trailing], 16)
-        .frame(height: 217)
-        .center(.vertically)
-        .background(UIVisualEffectView(effect: UIBlurEffect(style: .light)))
+    .setting(\.spacing, to: 20)
+    .padding(.all, 20)
+    .setting(\.backgroundColor, to: .Modal.yellowBackground)
+    .setting(\.layer.cornerRadius, to: 16)
+    .padding([.leading, .trailing], 16)
+    .frame(height: 217)
+    .center(.vertically)
+    .background(UIVisualEffectView(effect: UIBlurEffect(style: .light)))
 
     private lazy var alertIconImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.checkIcon)
