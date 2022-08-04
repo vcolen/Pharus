@@ -39,28 +39,19 @@ extension SafeAreaView: ViewCodable {
         wrappedView.translatesAutoresizingMaskIntoConstraints = false
         let safeArea = safeAreaLayoutGuide
 
-        if edges.contains(.all) {
-            NSLayoutConstraint.activate([
-                wrappedView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-                wrappedView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-                wrappedView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-                wrappedView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
-            ])
-        } else {
-            NSLayoutConstraint.activate([
-                wrappedView.topAnchor.constraint(
-                    equalTo: edges.contains(.top) ? safeArea.topAnchor : topAnchor
-                ),
-                wrappedView.leadingAnchor.constraint(
-                    equalTo: edges.contains(.leading) ? safeArea.leadingAnchor : leadingAnchor
-                ),
-                wrappedView.trailingAnchor.constraint(
-                    equalTo: edges.contains(.trailing) ? safeArea.trailingAnchor : trailingAnchor
-                ),
-                wrappedView.bottomAnchor.constraint(
-                    equalTo: edges.contains(.bottom) ? safeArea.bottomAnchor : bottomAnchor
-                )
-            ])
-        }
+        NSLayoutConstraint.activate([
+            wrappedView.topAnchor.constraint(
+                equalTo: edges.contains(.top) ? safeArea.topAnchor : topAnchor
+            ),
+            wrappedView.leadingAnchor.constraint(
+                equalTo: edges.contains(.leading) ? safeArea.leadingAnchor : leadingAnchor
+            ),
+            wrappedView.trailingAnchor.constraint(
+                equalTo: edges.contains(.trailing) ? safeArea.trailingAnchor : trailingAnchor
+            ),
+            wrappedView.bottomAnchor.constraint(
+                equalTo: edges.contains(.bottom) ? safeArea.bottomAnchor : bottomAnchor
+            )
+        ])
     }
 }

@@ -42,45 +42,23 @@ extension PaddingView: ViewCodable {
     public func setupConstraints() {
         wrappedView.translatesAutoresizingMaskIntoConstraints = false
 
-        if edges.contains(.all) {
-            NSLayoutConstraint.activate([
-                wrappedView.leadingAnchor.constraint(
-                    equalTo: leadingAnchor,
-                    constant: constant
-                ),
-                wrappedView.topAnchor.constraint(
-                    equalTo: topAnchor,
-                    constant: constant
-                ),
-                wrappedView.trailingAnchor.constraint(
-                    equalTo: trailingAnchor,
-                    constant: -constant
-                ),
-                wrappedView.bottomAnchor.constraint(
-                    equalTo: bottomAnchor,
-                    constant: -constant
-                )
-            ])
-
-        } else {
-            NSLayoutConstraint.activate([
-                wrappedView.leadingAnchor.constraint(
-                    equalTo: leadingAnchor,
-                    constant: edges.contains(.leading) ? constant : 0
-                ),
-                wrappedView.topAnchor.constraint(
-                    equalTo: topAnchor,
-                    constant: edges.contains(.top) ? constant : 0
-                ),
-                wrappedView.trailingAnchor.constraint(
-                    equalTo: trailingAnchor,
-                    constant: edges.contains(.trailing) ? -constant : 0
-                ),
-                wrappedView.bottomAnchor.constraint(
-                    equalTo: bottomAnchor,
-                    constant: edges.contains(.bottom) ? -constant : 0
-                )
-            ])
-        }
+        NSLayoutConstraint.activate([
+            wrappedView.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: edges.contains(.leading) ? constant : 0
+            ),
+            wrappedView.topAnchor.constraint(
+                equalTo: topAnchor,
+                constant: edges.contains(.top) ? constant : 0
+            ),
+            wrappedView.trailingAnchor.constraint(
+                equalTo: trailingAnchor,
+                constant: edges.contains(.trailing) ? -constant : 0
+            ),
+            wrappedView.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: edges.contains(.bottom) ? -constant : 0
+            )
+        ])
     }
 }
