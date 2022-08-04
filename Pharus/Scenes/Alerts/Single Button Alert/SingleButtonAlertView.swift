@@ -39,11 +39,7 @@ class SingleButtonAlertView: UIView {
         .padding([.leading, .trailing], 16)
         .frame(height: 217)
         .center(.vertically)
-        .background(
-            UIVisualEffectView(effect: UIBlurEffect(style: .light))
-                .setting(\.frame, to: bounds)
-                .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
-        )
+        .background(UIVisualEffectView(effect: UIBlurEffect(style: .light)))
 
     private lazy var alertIconImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.checkIcon)
