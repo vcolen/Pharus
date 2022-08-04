@@ -44,6 +44,7 @@ class LogoutAlertView: UIView {
     .padding([.leading, .trailing], 16)
     .frame(height: 217)
     .center(.vertically)
+    .background(UIVisualEffectView(effect: UIBlurEffect(style: .light)))
 
     private lazy var primaryButton = SmallAlertButton(title: "Sair", importance: .primary)
 
@@ -64,12 +65,6 @@ class LogoutAlertView: UIView {
 // MARK: - View Codable
 extension LogoutAlertView: ViewCodable {
     func buildHierarchy() {
-        addSubview(
-            UIVisualEffectView(effect: UIBlurEffect(style: .light))
-                .setting(\.frame, to: bounds)
-                .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
-        )
-
         addSubview(mainStackView)
     }
 

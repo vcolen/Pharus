@@ -37,6 +37,7 @@ class ProjectSubscriptionAlertView: UIView {
     .padding([.leading, .trailing], 16)
     .frame(height: 314)
     .center(.vertically)
+    .background(UIVisualEffectView(effect: UIBlurEffect(style: .light)))
 
     private lazy var titleLabel = UILabel()
         .setting(\.font, to: .largeTitleSemiBold)
@@ -84,12 +85,6 @@ class ProjectSubscriptionAlertView: UIView {
 // MARK: - View Codable
 extension ProjectSubscriptionAlertView: ViewCodable {
     func buildHierarchy() {
-        addSubview(
-            UIVisualEffectView(effect: UIBlurEffect(style: .light))
-                .setting(\.frame, to: bounds)
-                .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
-        )
-
         addSubview(mainStackView)
     }
 

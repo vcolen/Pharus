@@ -39,6 +39,7 @@ class SingleButtonAlertView: UIView {
     .padding([.leading, .trailing], 16)
     .frame(height: 217)
     .center(.vertically)
+    .background(UIVisualEffectView(effect: UIBlurEffect(style: .light)))
 
     private lazy var alertIconImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.checkIcon)
@@ -75,12 +76,6 @@ class SingleButtonAlertView: UIView {
 // MARK: - View Codable
 extension SingleButtonAlertView: ViewCodable {
     func buildHierarchy() {
-        addSubview(
-            UIVisualEffectView(effect: UIBlurEffect(style: .light))
-                .setting(\.frame, to: bounds)
-                .setting(\.autoresizingMask, to: [.flexibleWidth, .flexibleHeight])
-        )
-
         addSubview(mainStackView)
     }
 
