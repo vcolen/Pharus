@@ -31,7 +31,7 @@ public class StudentHomeMiniCardView: UIView {
         ])
     ])
     .setting(\.spacing, to: 15)
-    .padding([.all], 10)
+    .padding(.all, 10)
     .setting(\.layer.cornerRadius, to: 16)
 
     private lazy var cardIconImageView = UIImageView()

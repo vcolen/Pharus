@@ -11,20 +11,13 @@ public class PaddingView<Original: UIView, Wrapped: UIView>: UIView, WrapperView
 
     public let originalView: Original
     public let wrappedView: Wrapped
-    public let edges: Set<MarginEdges>
+    public let edges: MarginEdges
     public let constant: CGFloat
-    private lazy var edgeConstants: [MarginEdges: CGFloat] = [
-        .top: 0,
-        .leading: 0,
-        .trailing: 0,
-        .bottom: 0,
-        .all: 0
-    ]
 
     init(
         original: Original,
         wrapped: Wrapped,
-        edges: Set<MarginEdges>,
+        edges: MarginEdges,
         constant: CGFloat
     ) {
         self.originalView = original
@@ -32,10 +25,6 @@ public class PaddingView<Original: UIView, Wrapped: UIView>: UIView, WrapperView
         self.edges = edges
         self.constant = constant
         super.init(frame: .zero)
-
-        for edge in edges {
-            edgeConstants[edge] = constant
-        }
 
         setupView()
     }
@@ -53,44 +42,23 @@ extension PaddingView: ViewCodable {
     public func setupConstraints() {
         wrappedView.translatesAutoresizingMaskIntoConstraints = false
 
-        if edgeConstants[.all] != 0 {
-            NSLayoutConstraint.activate([
-                wrappedView.leadingAnchor.constraint(
-                    equalTo: leadingAnchor,
-                    constant: edgeConstants[.all] ?? 0
-                ),
-                wrappedView.topAnchor.constraint(
-                    equalTo: topAnchor,
-                    constant: edgeConstants[.all] ?? 0
-                ),
-                wrappedView.trailingAnchor.constraint(
-                    equalTo: trailingAnchor,
-                    constant: -(edgeConstants[.all] ?? 0)
-                ),
-                wrappedView.bottomAnchor.constraint(
-                    equalTo: bottomAnchor,
-                    constant: -(edgeConstants[.all] ?? 0)
-                )
-            ])
-        } else {
-            NSLayoutConstraint.activate([
-                wrappedView.leadingAnchor.constraint(
-                    equalTo: leadingAnchor,
-                    constant: edgeConstants[.leading] ?? 0
-                ),
-                wrappedView.topAnchor.constraint(
-                    equalTo: topAnchor,
-                    constant: edgeConstants[.top] ?? 0
-                ),
-                wrappedView.trailingAnchor.constraint(
-                    equalTo: trailingAnchor,
-                    constant: -(edgeConstants[.trailing] ?? 0)
-                ),
-                wrappedView.bottomAnchor.constraint(
-                    equalTo: bottomAnchor,
-                    constant: -(edgeConstants[.bottom] ?? 0)
-                )
-            ])
-        }
+        NSLayoutConstraint.activate([
+            wrappedView.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: edges.contains(.leading) ? constant : 0
+            ),
+            wrappedView.topAnchor.constraint(
+                equalTo: topAnchor,
+                constant: edges.contains(.top) ? constant : 0
+            ),
+            wrappedView.trailingAnchor.constraint(
+                equalTo: trailingAnchor,
+                constant: edges.contains(.trailing) ? -constant : 0
+            ),
+            wrappedView.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: edges.contains(.bottom) ? -constant : 0
+            )
+        ])
     }
 }

@@ -39,16 +39,16 @@ class StudentHomeView: UIView {
             newsHelperView
         ])
         .setting(\.spacing, to: 49)
-        .padding([.top], 80)
-        .padding([.bottom], 45)
+        .padding(.top, 80)
+        .padding(.bottom, 45)
     }
         .background(homeBackgroundImageView)
 
     private lazy var homeBackgroundImageView = UIImageView()
         .setting(\.image, to: .pharusImages.homeBackground)
-        .padding([.top], 80)
-        .safeArea([.bottom])
-        .safeArea([.top])
+        .padding(.top, 80)
+        .safeArea(.bottom)
+        .safeArea(.top)
 
     private lazy var helloStudentLabel = UILabel()
         .setting(\.text, to: "Olá, Antônia!")
