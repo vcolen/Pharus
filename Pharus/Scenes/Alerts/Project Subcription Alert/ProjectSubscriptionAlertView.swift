@@ -29,9 +29,9 @@ class ProjectSubscriptionAlertView: UIView {
         secondaryButton
     ])
         .setting(\.spacing, to: 24)
-        .padding([.top], 32)
+        .padding(.top, 32)
         .padding([.leading, .bottom], 16)
-        .padding([.trailing], 13)
+        .padding(.trailing, 13)
         .setting(\.backgroundColor, to: .Modal.yellowBackground)
         .setting(\.layer.cornerRadius, to: 16)
         .padding([.leading, .trailing], 16)
