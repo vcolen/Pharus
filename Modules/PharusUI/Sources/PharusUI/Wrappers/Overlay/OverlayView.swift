@@ -1,5 +1,5 @@
 //
-//  BackgroundView.swift
+//  OverlayView.swift
 //
 //
 //  Created by Victor Colen on 04/08/22.
@@ -7,20 +7,20 @@
 
 import UIKit
 
-public class BackgroundView<Original: UIView, Wrapped: UIView, Background: UIView>: UIView, WrapperViewable {
+public class OverlayView<Original: UIView, Wrapped: UIView, Overlay: UIView>: UIView, WrapperViewable {
 
     public let originalView: Original
     public let wrappedView: Wrapped
-    public let background: Background
+    public let overlay: Overlay
 
     init(
         original: Original,
         wrapped: Wrapped,
-        background: Background
+        overlay: Overlay
     ) {
         self.originalView = original
         self.wrappedView = wrapped
-        self.background = background
+        self.overlay = overlay
 
         super.init(frame: .zero)
 
@@ -32,16 +32,16 @@ public class BackgroundView<Original: UIView, Wrapped: UIView, Background: UIVie
     }
 }
 
-extension BackgroundView: ViewCodable {
+extension OverlayView: ViewCodable {
     public func buildHierarchy() {
-        addSubview(background)
         addSubview(wrappedView)
+        addSubview(overlay)
     }
 
     public func setupConstraints() {
         wrappedView.translatesAutoresizingMaskIntoConstraints = false
-        background.translatesAutoresizingMaskIntoConstraints = false
+        overlay.translatesAutoresizingMaskIntoConstraints = false
         wrappedView.edges()
-        background.edges()
+        overlay.edges()
     }
 }
