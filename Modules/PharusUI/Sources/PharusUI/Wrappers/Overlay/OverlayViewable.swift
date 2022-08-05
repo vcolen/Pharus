@@ -12,13 +12,15 @@ public protocol OverlayViewable: UIView { }
 public extension OverlayViewable {
 
     func overlay<Overlay>(
-        _ view: Overlay
+        _ view: Overlay,
+        alignment: OverlayAlignment? = nil
     ) -> OverlayView<Self, Self, Overlay> {
 
         return OverlayView(
             original: self,
             wrapped: self,
-            overlay: view
+            overlay: view,
+            alignment: alignment
         )
     }
 }
@@ -27,13 +29,15 @@ public extension OverlayViewable {
 public extension OverlayViewable where Self: WrapperViewable {
 
     func overlay<Overlay>(
-        _ view: Overlay
+        _ view: Overlay,
+        alignment: OverlayAlignment
     ) -> OverlayView<Original, Self, Overlay> {
 
         return OverlayView(
             original: self.originalView,
             wrapped: self,
-            overlay: view
+            overlay: view,
+            alignment: alignment
         )
     }
 }
