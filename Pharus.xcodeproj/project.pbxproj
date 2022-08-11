@@ -15,6 +15,7 @@
 		791B4546287358D800F1EBE6 /* PharusUI in Frameworks */ = {isa = PBXBuildFile; productRef = 791B4545287358D800F1EBE6 /* PharusUI */; };
 		791B454E28737F8400F1EBE6 /* ProjectTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */; };
 		79410A1A287F5F08001ABC40 /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410A19287F5F08001ABC40 /* StudentManager.swift */; };
+		79458CBA28A5766B00537910 /* InjectionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 79458CB928A5766B00537910 /* InjectionKit */; };
 		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
 		7989817A2892D173001B39E8 /* ProjectTasksDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798981792892D173001B39E8 /* ProjectTasksDelegate.swift */; };
 		799AFAC7285CECDE001B0371 /* ProjectSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AF9FC285CECDE001B0371 /* ProjectSheetViewController.swift */; };
@@ -175,6 +176,7 @@
 		790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingTabCoordinator.swift; sourceTree = "<group>"; };
 		791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskView.swift; sourceTree = "<group>"; };
 		79410A19287F5F08001ABC40 /* StudentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentManager.swift; sourceTree = "<group>"; };
+		79458CB828A5765000537910 /* InjectionKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = InjectionKit; sourceTree = "<group>"; };
 		797A471C287481F2005A3632 /* PharusUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PharusUI; sourceTree = "<group>"; };
 		797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionPresenter.swift.swift; sourceTree = "<group>"; };
 		798981792892D173001B39E8 /* ProjectTasksDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTasksDelegate.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				791B4546287358D800F1EBE6 /* PharusUI in Frameworks */,
+				79458CBA28A5766B00537910 /* InjectionKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +363,7 @@
 		797A471B287481EC005A3632 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				79458CB828A5765000537910 /* InjectionKit */,
 				797A471C287481F2005A3632 /* PharusUI */,
 			);
 			path = Modules;
@@ -928,6 +932,7 @@
 			name = Pharus;
 			packageProductDependencies = (
 				791B4545287358D800F1EBE6 /* PharusUI */,
+				79458CB928A5766B00537910 /* InjectionKit */,
 			);
 			productName = Pharus;
 			productReference = C045618727EA03A5007EC5C3 /* Pharus.app */;
@@ -1434,6 +1439,10 @@
 		791B4545287358D800F1EBE6 /* PharusUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PharusUI;
+		};
+		79458CB928A5766B00537910 /* InjectionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InjectionKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
