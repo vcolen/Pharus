@@ -8,53 +8,50 @@
 import UIKit
 
 class LogoutAlertViewController: UIViewController {
-    
-    //MARK: - Properties
-    
-    private var alertView: LogoutAlertView
-    private var coordinator: LogoutAlertCoordinator
-    private var presenter: LogoutAlertPresenter
-    
-    //MARK: - Initializer
-    
-    init(
-        alertView: LogoutAlertView,
-        coordinator: LogoutAlertCoordinator,
-        presenter: LogoutAlertPresenter
-    ) {
-        
-        self.alertView = alertView
-        self.coordinator = coordinator
+
+    // MARK: - Properties
+    private lazy var alertView = LogoutAlertView()
+    private let presenter: LogoutAlertPresenting
+
+    // MARK: - Initializer
+    init(presenter: LogoutAlertPresenting) {
         self.presenter = presenter
-        
+
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK: - Life Cycle
-    
+}
+
+// MARK: - Super Methods
+extension LogoutAlertViewController {
+
+    override func loadView() {
+        self.view = alertView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         alertView.delegate = self
-        self.view = alertView
     }
 }
 
-//MARK: - Logout Alert View Delegate
-
+// MARK: - Logout Alert View Delegate
 extension LogoutAlertViewController: LogoutAlertViewDelegate {
-    
+
     func primaryButtonTapped() {
         presenter.logout()
     }
-    
+
     func secondaryButtonTapped() {
         presenter.closeModal()
     }
 }
 
-
+// MARK: - Logout Alert Viewable
+extension LogoutAlertViewController: LogoutAlertViewable { }

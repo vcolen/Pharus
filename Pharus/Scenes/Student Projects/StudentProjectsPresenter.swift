@@ -5,32 +5,32 @@
 //  Created by Victor Colen on 29/03/22.
 //
 
-import UIKit
+import Foundation
 
-protocol StudentProjectsPresenterProtocol {
-    func showStudentProject(project: ProjectModel)
-}
+class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentProjectsPresenting {
 
-class StudentProjectsPresenter: StudentProjectsPresenterProtocol {
-    
-    //MARK: - Properties
-    
-    private var coordinator: StudentProjectsCoordinator
-    
-    //MARK: - Initializer
-    
-    init(coordinator: StudentProjectsCoordinator) {
+    // MARK: - Properties
+    private let coordinator: StudentProjectsCoordinating
+    var student: StudentModel
+
+    // MARK: - Initializer
+    init(
+        coordinator: StudentProjectsCoordinating,
+        student: StudentModel
+    ) {
         self.coordinator = coordinator
+        self.student = student
     }
-    
-    //MARK: - Actions
-    
+
+    // MARK: - Actions
+
     func showStudentProject(project: ProjectModel) {
         coordinator.showStudentProject(project)
     }
-    
-    func showSubscribeAlert(of project: ProjectModel) {
-        coordinator.showSubscribeAlert(of: project)
+
+    func showSubscribeAlert(of project: ProjectModel, at index: Int) {
+        coordinator.showSubscribeAlert(of: project) {
+            self.student.projects[index].isSubscribed = true
+        }
     }
 }
-

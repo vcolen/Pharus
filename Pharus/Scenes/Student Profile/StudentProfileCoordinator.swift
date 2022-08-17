@@ -7,55 +7,51 @@
 
 import UIKit
 
-protocol StudentProfileFlow {
-    
+class StudentProfileCoordinator {
+
+    // MARK: - Properties
+    weak var rootViewController: UINavigationController?
+    private let student: StudentModel
+    private let logoutHandler: () -> Void
+
+    // MARK: - Initializer
+    init(
+        rootViewController: UINavigationController,
+        student: StudentModel,
+        onLogout logoutHandler: @escaping () -> Void
+    ) {
+        self.rootViewController = rootViewController
+        self.student = student
+        self.logoutHandler = logoutHandler
+    }
 }
 
-class StudentProfileCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
-    private var student: StudentModel
-    
-    //MARK: - Initializer
-    
-    init(
-        navigationController: UINavigationController,
-        student: StudentModel
-    ) {
-        self.navigationController = navigationController
-        self.student = student
-    }
-    
+// MARK: - Coordinator
+extension StudentProfileCoordinator: Coordinator {
     func start() {
         let studentProfilePresenter = StudentProfilePresenter(
-            coordinator: self
-        )
-        
-        let studentProfileViewController = StutentProfileViewController(
             coordinator: self,
-            presenter: studentProfilePresenter,
             student: student
         )
-        
-        navigationController.setNavigationBarHidden(false, animated: true)
-        navigationController.pushViewController(studentProfileViewController, animated: true)
+
+        let studentProfileViewController = StudentProfileViewController(
+            presenter: studentProfilePresenter
+        )
+
+        studentProfileViewController.title = "Perfil"
+
+        rootViewController?.setNavigationBarHidden(false, animated: true)
+        rootViewController?.pushViewController(studentProfileViewController, animated: true)
     }
 }
-
-//MARK: - Actions
-
-extension StudentProfileCoordinator: StudentProfileFlow {
+// MARK: - Actions
+extension StudentProfileCoordinator: StudentProfileCoordinating {
     func showLogOutAlert() {
-        let logoutAlertView = LogoutAlertView()
-        
-        let logoutAlertCoordinator = LogoutAlertCoordinator(
-            navigationController: navigationController,
-            alertView: logoutAlertView
-        )
-        
-        coordinate(to: logoutAlertCoordinator)
+        if let navigationController = rootViewController {
+            LogoutAlertCoordinator(
+                rootViewController: navigationController,
+                onLogout: logoutHandler
+            ).start()
+        }
     }
 }

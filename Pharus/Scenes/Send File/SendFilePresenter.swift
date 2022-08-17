@@ -7,31 +7,22 @@
 
 import UIKit
 
-protocol SendFilePresenterProtocol {
-    func uploadFile()
-    func sendFile()
-}
+class SendFilePresenter: BasePresenter<SendFileViewable>, SendFilePresenting {
 
-class SendFilePresenter {
-    
-    //MARK: - Properties
-    
-    var coordinator: SendFileCoordinator
-    
-    //MARK: - Initializer
-    
-    init(coordinator: SendFileCoordinator) {
+    // MARK: - Properties
+    let coordinator: SendFileCoordinating
+
+    // MARK: - Initializer
+    init(coordinator: SendFileCoordinating) {
         self.coordinator = coordinator
     }
-    
-    //MARK: - Actions
 
+    // MARK: - Actions
     func sendFile() {
         coordinator.showFileSentAlert()
     }
-    
+
     func closeSheet() {
         coordinator.closeSheet()
     }
 }
-

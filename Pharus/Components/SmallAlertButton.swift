@@ -8,69 +8,54 @@
 import UIKit
 
 class SmallAlertButton: UIButton {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
     private var title: String
     private var importance: Importance
-    
+
     enum Importance {
         case primary
         case secondary
     }
-    
-    //MARK: - Initializer
-    
-    convenience init(
+
+    // MARK: - Initializer
+    init(
         title: String,
         importance: Importance
     ) {
-        self.init()
-        
         self.title = title
         self.importance = importance
-        
-        configureSubviews()
-        setupConstraints()
-    }
-    
-    override init(frame: CGRect) {
-        self.title = "Sair"
-        self.importance = .primary
-        
+
         super.init(frame: .zero)
-        
+
         configureSubviews()
         setupConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK: - Subviews
-    
+
+    // MARK: - Subviews
     private func configureSubviews() {
         setTitle(title, for: .normal)
         layer.borderWidth = 2
-        layer.borderColor = UIColor.purple.pharusPurple.cgColor
+        layer.borderColor = UIColor.Purple.pharusPurple.cgColor
         layer.cornerRadius = 16
-        
+
         if importance == .primary {
-            backgroundColor = UIColor.purple.pharusPurple
+            backgroundColor = UIColor.Purple.pharusPurple
             setTitleColor(.white, for: .normal)
         } else {
             backgroundColor = .clear
-            setTitleColor(UIColor.purple.pharusPurple, for: .normal)
+            setTitleColor(UIColor.Purple.pharusPurple, for: .normal)
         }
     }
-    
-    //MARK: - Constraints
-    
+
+    // MARK: - Constraints
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             self.heightAnchor.constraint(equalToConstant: 32)
         ])
     }
 }
-

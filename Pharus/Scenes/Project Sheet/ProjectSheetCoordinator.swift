@@ -7,49 +7,44 @@
 
 import UIKit
 
-protocol ProjectSheetFlow {
-    func popView()
+struct ProjectSheetCoordinator {
+
+    // MARK: - Properties
+    private weak var rootViewController: UINavigationController?
+    private let project: ProjectModel
+    private let projectSheetContent: ProjectSheetView.SheetContent
+
+    // MARK: - Initializer
+    init(
+        rootViewController: UINavigationController,
+        project: ProjectModel,
+        projectSheetContent: ProjectSheetView.SheetContent
+    ) {
+        self.rootViewController = rootViewController
+        self.project = project
+        self.projectSheetContent = projectSheetContent
+    }
 }
 
-class ProjectSheetCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
-    private var projectSheetView: ProjectSheetView
-    
-    //MARK: - Initializer
-    
-    init(
-        navigationController: UINavigationController,
-        projectSheetView: ProjectSheetView
-    ) {
-        self.navigationController = navigationController
-        self.projectSheetView = projectSheetView
-    }
-    
+// MARK: - Coordinator
+extension ProjectSheetCoordinator: Coordinator {
     func start() {
-        
         let projectSheetPresenter = ProjectSheetPresenter(
             coordinator: self,
-            projectSheetView: projectSheetView
+            project: project,
+            projectSheetContent: projectSheetContent
         )
-        
+
         let projectSheetViewController = ProjectSheetViewController(
-            coordinator: self,
-            presenter: projectSheetPresenter,
-            projectSheetView: projectSheetView
+            presenter: projectSheetPresenter
         )
-        
-        navigationController.present(projectSheetViewController, animated: true)
+
+        rootViewController?.present(projectSheetViewController, animated: true)
     }
 }
-
-//MARK: - Actions
-
-extension ProjectSheetCoordinator: ProjectSheetFlow {
+// MARK: - Actions
+extension ProjectSheetCoordinator: ProjectSheetCoordinating {
     func popView() {
-        navigationController.dismiss(animated: true)
+        rootViewController?.dismiss(animated: true)
     }
 }

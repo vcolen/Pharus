@@ -5,95 +5,90 @@
 //  Created by Victor Colen on 11/04/22.
 //
 import UIKit
+import PharusUI
 
 class StudentHomeViewController: UIViewController {
-    
-    //MARK: - Properties
-    
-    private var coordinator: StudentHomeCoordinator
-    private var presenter: StudentHomePresenter
-    private var student: StudentModel
+
+    // MARK: - Properties
     private var pageController: UIPageViewController?
-    private var currentIndex: Int
-    private var pages: [Pages] = Pages.allCases
-    private var customView: StudentHomeView
-    
-    //MARK: - Initializer
-    
-    init(
-        coordinator: StudentHomeCoordinator,
-        presenter: StudentHomePresenter,
-        student: StudentModel
-    ) {
-        self.coordinator = coordinator
+    private let currentIndex: Int
+    private let pages: [Pages] = Pages.allCases
+    private let presenter: StudentHomePresenting
+    private lazy var customView = StudentHomeView(student: presenter.student)
+
+    // MARK: - Initializer
+    init(presenter: StudentHomePresenting) {
         self.presenter = presenter
-        self.student = student
         self.currentIndex = 0
-        self.customView = StudentHomeView(studentName: student.firstName)
-        
+
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK: - Life Cycle
-    
-    override func loadView() {
-        super.loadView()
-        
-        self.view = customView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupTabBarIcons()
-        setupPageController()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setGradientBackground()
-        showStudentAvatar()
-    }
-    
-    //MARK: - Actions
-    
-    func showStudentAvatar() {
-        customView.studentAvatarImageView.image = UIImage(
-            named: "avatar" + student.avatar + K.Assets.Images.Avatar.CircleImage.suffix
-        )
-    }
-    
-    func setupTabBarIcons() {
-        let array = self.tabBarController?.customizableViewControllers
-        for controller in array! {
-            controller.tabBarItem.imageInsets = UIEdgeInsets(top: 3, left: 0, bottom: -3, right: 0)
-        }
-    }
-    
+
+    // MARK: - Actions
     private func setupPageController() {
-        self.pageController = UIPageViewController(
+        pageController = UIPageViewController(
             transitionStyle: .scroll,
             navigationOrientation: .horizontal
         )
-        
-        self.pageController?.dataSource = self
-        self.customView.newsHelperView.addSubview(self.pageController!.view)
-        self.view.stretch(self.pageController!.view, to: customView.newsHelperView, left: 16, right: -16)
+
+        guard let pageController = pageController else {
+            return
+        }
+
+        pageController.dataSource = self
+        customView.newsHelperView.addSubview(pageController.view)
+        view.stretch(
+            pageController.view,
+            to: customView.newsHelperView,
+            left: 16,
+            right: -16
+        )
+
         let initialVC = HomeNewsViewController(with: pages[0])
-        self.pageController?.setViewControllers([initialVC], direction: .forward, animated: true)
-        self.pageController?.didMove(toParent: self)
+        pageController.setViewControllers(
+            [initialVC],
+            direction: .forward,
+            animated: true
+        )
+
+        pageController.didMove(toParent: self)
     }
 }
 
-//MARK: - UIPageViewControllerDataSource
+// MARK: - Super Methods
+extension StudentHomeViewController {
+    override func loadView() {
+        self.view = customView
+    }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupPageController()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        setGradientBackground()
+        presenter.loadData()
+        customView.student = presenter.student
+        customView.showStudentAvatar()
+    }
+}
+
+// MARK: - UIPageViewControllerDataSource
 extension StudentHomeViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerBefore viewController: UIViewController
+    ) -> UIViewController? {
         guard let currentVC = viewController as? HomeNewsViewController else {
             return nil
         }
@@ -102,11 +97,14 @@ extension StudentHomeViewController: UIPageViewControllerDataSource {
             return nil
         }
         index -= 1
-        let vc: HomeNewsViewController = HomeNewsViewController(with: pages[index])
-        return vc
+        let viewController: HomeNewsViewController = HomeNewsViewController(with: pages[index])
+        return viewController
     }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerAfter viewController: UIViewController
+    ) -> UIViewController? {
         guard let currentVC = viewController as? HomeNewsViewController else {
             return nil
         }
@@ -115,30 +113,35 @@ extension StudentHomeViewController: UIPageViewControllerDataSource {
             return nil
         }
         index += 1
-        let vc: HomeNewsViewController = HomeNewsViewController(with: pages[index])
-        return vc
+        let viewController: HomeNewsViewController = HomeNewsViewController(with: pages[index])
+        return viewController
     }
-    
+
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return self.pages.count
     }
 }
 
-//MARK: - Pages
+// MARK: - Student Home View Delegate
+extension StudentHomeViewController: StudentHomeViewDelegate { }
 
+// MARK: - Student Home Viewable
+extension StudentHomeViewController: StudentHomeViewable { }
+
+// MARK: - Pages
 enum Pages: CaseIterable {
     case pageZero
     case pageOne
-    
+
     var view: UIView {
         switch self {
         case .pageZero:
-            return HomeNewsView()
+            return HomeNewsView(news: Constants.defaultTexts.pageZeroText)
         case .pageOne:
-            return HomeNewsView(news: "O projeto ”Introdução a robótica” finalizou. Me contaram você ficou bem colocado, dá uma olhadinha no seu ranking!")
+            return HomeNewsView(news: Constants.defaultTexts.pageOneText)
         }
     }
-    
+
     var index: Int {
         switch self {
         case .pageZero:

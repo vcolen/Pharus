@@ -7,69 +7,29 @@
 
 import UIKit
 
-class StutentProfileViewController: UIViewController {
-    
-    //MARK: - Properties
-    
-    private var coordinator: StudentProfileCoordinator
-    private var studentProfileView: StudentProfileView
-    private var presenter: StudentProfilePresenter
-    private var student: StudentModel
-    
-    //MARK: - Initializer
-    
-    init(
-        coordinator: StudentProfileCoordinator,
-        presenter: StudentProfilePresenter,
-        student: StudentModel
-    ) {
-        self.coordinator = coordinator
+class StudentProfileViewController: UIViewController {
+
+    // MARK: - Properties
+    private let presenter: StudentProfilePresenting
+    private lazy var customView = StudentProfileView(student: presenter.student)
+
+    // MARK: - Initializer
+    init(presenter: StudentProfilePresenting) {
         self.presenter = presenter
-        self.student = student
-        
-        studentProfileView =  StudentProfileView(student: student)
-        
+
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK: - Life Cycle
-    
-    override func loadView() {
-        super.loadView()
-        
-        self.view = studentProfileView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setNavigationBar()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setGradientBackground()
-        showStudentAvatar()
-    }
-    
-    //MARK: - Actions
-    
-    func showStudentAvatar() {
-        studentProfileView.profileImageView.image = UIImage(
-            named: "avatar" + student.avatar + K.Assets.Images.Avatar.CircleImage.suffix
-        )
-    }
-    
+
+    // MARK: - Actions
+
     func setNavigationBar() {
-        self.title = "Perfil"
-        self.navigationController?.title = ""
-        
-        let logoutIcon = UIImage.icons.logOutIcon?.withRenderingMode(.alwaysOriginal)
+        let logoutIcon = UIImage.pharusIcons.logoutIcon?.withRenderingMode(.alwaysOriginal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: logoutIcon,
             style: .plain,
@@ -77,8 +37,36 @@ class StutentProfileViewController: UIViewController {
             action: #selector(logoutTapped)
         )
     }
-    
+
     @objc func logoutTapped() {
         presenter.showLogoutAlert()
     }
 }
+
+// MARK: - Super Methods
+extension StudentProfileViewController {
+    override func loadView() {
+        self.view = customView
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setNavigationBar()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        setGradientBackground()
+        presenter.loadData()
+        customView.student = presenter.student
+        customView.showStudentAvatar()
+    }
+}
+
+// MARK: - Student Profile View Delegate
+extension StudentProfileViewController: StudentProfileViewDelegate { }
+
+// MARK: - Student Profile Viewable
+extension StudentProfileViewController: StudentProfileViewable { }

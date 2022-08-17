@@ -7,10 +7,5 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-
-    var coordinator: TabBarFlow?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    var coordinator: TabBarCoordinating?
 }

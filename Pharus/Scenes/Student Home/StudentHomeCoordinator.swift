@@ -7,41 +7,38 @@
 
 import UIKit
 
-protocol StudentHomeFlow {
-    
-}
+struct StudentHomeCoordinator {
 
-class StudentHomeCoordinator: Coordinator {
-    
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
-    var student: StudentModel
-    
+    // MARK: - Properties
+    weak var rootViewController: UINavigationController?
+    private let student: StudentModel
+
     init(
-        navigationController: UINavigationController,
-         student: StudentModel
+        rootViewController: UINavigationController,
+        student: StudentModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = rootViewController
         self.student = student
     }
-    
+}
+
+// MARK: - Coordinator
+extension StudentHomeCoordinator: Coordinator {
     func start() {
-        
-        let studentHomePresenter = StudentHomePresenter(coordinator: self)
-        let studentHomeViewController = StudentHomeViewController(
+        let studentHomePresenter = StudentHomePresenter(
             coordinator: self,
-            presenter: studentHomePresenter,
             student: student
         )
-    
-        navigationController.setNavigationBarHidden(true, animated: true)
-        navigationController.tabBarController?.tabBar.isHidden = false
-        
-        navigationController.pushViewController(studentHomeViewController, animated: true)
+
+        let studentHomeViewController = StudentHomeViewController(
+            presenter: studentHomePresenter
+        )
+
+        rootViewController?.setNavigationBarHidden(true, animated: true)
+        rootViewController?.tabBarController?.tabBar.isHidden = false
+
+        rootViewController?.pushViewController(studentHomeViewController, animated: true)
     }
 }
-
-extension StudentHomeCoordinator: StudentHomeFlow {
-
-}
-
+// MARK: - Student Home Coordinating
+extension StudentHomeCoordinator: StudentHomeCoordinating { }

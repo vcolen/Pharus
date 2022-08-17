@@ -7,59 +7,45 @@
 
 import UIKit
 
-protocol SendFileFlow {
-    func showFileSentAlert()
-}
+struct SendFileCoordinator {
 
-class SendFileCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
-    private var project: ProjectModel
-    
-    //MARK: - Initializer
-    
+    // MARK: - Properties
+    private weak var rootViewController: UINavigationController?
+    private let project: ProjectModel
+
+    // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         project: ProjectModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = rootViewController
         self.project = project
     }
-    
+}
+
+// MARK: - Coordinator
+extension SendFileCoordinator: Coordinator {
     func start() {
         let sendFilePresenter = SendFilePresenter(coordinator: self)
-        let sendFileViewController = SendFileViewController(
-            presenter: sendFilePresenter,
-            coordinator: self
-        )
-        
-        navigationController.present(sendFileViewController, animated: true)
+        let sendFileViewController = SendFileViewController(presenter: sendFilePresenter)
+
+        rootViewController?.present(sendFileViewController, animated: true)
     }
 }
-
-//MARK: - Actions
-
-extension SendFileCoordinator: SendFileFlow {
+// MARK: - Actions
+extension SendFileCoordinator: SendFileCoordinating {
     func showFileSentAlert() {
-        let alertView = SingleButtonAlertView(
-            message: "Arquivo enviado com sucesso!",
-            type: .confirmation
-        )
-        
-        let alertCoordinator = SingleButtonAlertCoordinator(
-            navigationController: navigationController,
-            alertView: alertView
-        )
-        
-        navigationController.topViewController?.dismiss(animated: true)
-        coordinate(to: alertCoordinator)
+        if let navigationController = rootViewController {
+            navigationController.dismiss(animated: true)
+            SingleButtonAlertCoordinator(
+                rootViewController: navigationController,
+                alertMessage: "Arquivo enviado com sucesso!",
+                alertType: .confirmation
+            ).start()
+        }
     }
-    
+
     func closeSheet() {
-        navigationController.topViewController?.dismiss(animated: true)
+        rootViewController?.dismiss(animated: true)
     }
 }
-

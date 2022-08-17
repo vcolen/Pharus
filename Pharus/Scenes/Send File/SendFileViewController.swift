@@ -9,63 +9,59 @@ import UIKit
 import UniformTypeIdentifiers
 
 class SendFileViewController: UIViewController, UIDocumentPickerDelegate {
-    
-    //MARK: - Properties
-    
-    private let sendFileView = SendFileView()
-    private let presenter: SendFilePresenter
-    private let coordinator: SendFileCoordinator
-    
-    //MARK: - Initializer
-    
-    init(
-        presenter: SendFilePresenter,
-        coordinator: SendFileCoordinator
-    ) {
+
+    // MARK: - Properties
+    private lazy var sendFileView = SendFileView()
+    private let presenter: SendFilePresenting
+
+    // MARK: - Initializer
+    init(presenter: SendFilePresenting) {
         self.presenter = presenter
-        self.coordinator = coordinator
-        
+
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK: - Life Cycle
-    
+}
+
+// MARK: - Super Methods
+extension SendFileViewController {
     override func loadView() {
-        super.loadView()
-        
-        sendFileView.delegate = self
         self.view = sendFileView
+    }
+
+    override func viewDidLoad() {
+        sendFileView.delegate = self
     }
 }
 
-//MARK: - Send File Delegate
-
-extension SendFileViewController: SendFileDelegate {
+// MARK: - Send File Delegate
+extension SendFileViewController: SendFileViewDelegate {
     func closeButtonTapped() {
         presenter.closeSheet()
     }
-    
+
     func uploadButtonTapped() {
         let suportFiles: [UTType] = [
             .pdf,
             .data,
             .jpeg
         ]
-        
+
         let controller = UIDocumentPickerViewController(
             forOpeningContentTypes: suportFiles,
             asCopy: true
         )
-        
+
         controller.delegate = self
         controller.allowsMultipleSelection = false
         present(controller, animated: true, completion: nil)
     }
-    
+
     func documentPicker(
         _ controller: UIDocumentPickerViewController,
         didPickDocumentsAt urls: [URL]
@@ -75,8 +71,11 @@ extension SendFileViewController: SendFileDelegate {
             sendFileView.sendFileButton.enable()
         }
     }
-    
+
     func sendFileButtonTapped() {
         presenter.sendFile()
     }
 }
+
+// MARK: - Send File Viewable
+extension SendFileViewController: SendFileViewable { }

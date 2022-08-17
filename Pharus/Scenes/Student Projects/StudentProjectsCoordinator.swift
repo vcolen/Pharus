@@ -7,70 +7,60 @@
 
 import UIKit
 
-protocol StudentProjectsFlow {
-    func showStudentProject(_ project: ProjectModel)
-}
+struct StudentProjectsCoordinator {
 
-class StudentProjectsCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
-    private var student: StudentModel
-    
-    //MARK: - Initializer
-    
+    // MARK: - Properties
+    weak var rootViewController: UINavigationController?
+    private let student: StudentModel
+
+    // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         student: StudentModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = rootViewController
         self.student = student
     }
-    
+}
+
+// MARK: - Coordinator
+extension StudentProjectsCoordinator: Coordinator {
     func start() {
-        let studentProjectsPresenter = StudentProjectsPresenter(coordinator: self)
-        
-        let studentProjectsViewController = StudentProjectsViewController(
+        let studentProjectsPresenter = StudentProjectsPresenter(
             coordinator: self,
-            presenter: studentProjectsPresenter,
             student: student
         )
-        
-        navigationController.setNavigationBarHidden(false, animated: true)
-        
-        navigationController.pushViewController(studentProjectsViewController, animated: true)
+        let studentProjectsViewController = StudentProjectsViewController(
+            presenter: studentProjectsPresenter
+        )
+
+        studentProjectsViewController.title = "Seus projetos"
+
+        rootViewController?.setNavigationBarHidden(false, animated: true)
+        rootViewController?.pushViewController(studentProjectsViewController, animated: true)
     }
 }
-
-//MARK: - Actions
-
-extension StudentProjectsCoordinator: StudentProjectsFlow {
+// MARK: - Student Projects Coordinating
+extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     func showStudentProject(_ project: ProjectModel) {
-        let studentProjectDetailCoordinator = StudentProjectDetailCoordinator(
-            navigationController: navigationController,
-            project: project
-        )
-        
-        self.coordinate(to: studentProjectDetailCoordinator)
+        if let navigationController = rootViewController {
+            StudentProjectDetailCoordinator(
+                rootViewController: navigationController,
+                project: project
+            ).start()
+        }
     }
-    
-    func showSubscribeAlert(of project: ProjectModel) {
-        let alertView = ProjectSubcriptionAlertView(
-            title: "Confirmar Inscrição",
-            message: "Você deseja se inscrever no projeto \"\(project.name)\"?",
-            mainButtonText: "Sim, quero me inscrever",
-            secondaryButtonText: "Não quero, mudei de idéia"
-        )
-        
-        let twoBigButtonsAlertCoordinator = ProjectSubcriptionAlertCoordinator(
-            navigationController: navigationController,
-            alertView: alertView,
-            project: project
-        )
-        
-        coordinate(to: twoBigButtonsAlertCoordinator)
+
+    func showSubscribeAlert(
+        of project: ProjectModel,
+        onCommit commitHandler: @escaping () -> Void
+    ) {
+        if let navigationController = rootViewController {
+            ProjectSubscriptionAlertCoordinator(
+                rootViewController: navigationController,
+                project: project,
+                onSubscription: commitHandler
+            ).start()
+        }
     }
 }
-

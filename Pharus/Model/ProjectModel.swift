@@ -7,10 +7,9 @@
 
 import Foundation
 
-class ProjectModel: Codable {
-    
-    //MARK: - Properties
-    
+struct ProjectModel: Codable {
+
+    // MARK: - Properties
     var id: String
     let name: String
     var isSubscribed: Bool
@@ -25,15 +24,14 @@ class ProjectModel: Codable {
     var mentor: String
     var company: String?
     var tasks: [TaskModel]
-    
+
     enum CodingKeys: String, CodingKey {
         case id, name, isSubscribed, isComplete, score, placement
         case projectDescription = "description"
         case scoreDescription, startDate, endDate, school, mentor, company, tasks
     }
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
     init(
         id: String,
         name: String,
@@ -71,21 +69,21 @@ extension ProjectModel {
     var completedTasksCount: Int {
         self.tasks.filter { $0.isComplete }.count
     }
-    
+
     var completionPercentage: Float {
         Float(completedTasksCount)/Float(self.tasks.count)
     }
-    
+
     var daysRemaining: Int {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = K.DateFormats.projectDateFormat
-        
+        dateFormatter.dateFormat = Constants.dateFormats.projectDateFormat
+
         let projectEndDate = dateFormatter.date(from: self.endDate) ?? Date()
         let daysRemaining = Date.getDifferenceInDays(
             between: Date(),
             and: projectEndDate
         )
-        
+
         return daysRemaining
     }
 }

@@ -7,24 +7,29 @@
 
 import UIKit
 
-protocol SingleButtonAlertPresenterProtocol {
-    func closeModal()
-}
+class SingleButtonAlertPresenter: BasePresenter<SingleButtonAlertViewable>,
+                                  SingleButtonAlertPresenting {
 
-class SingleButtonAlertPresenter: SingleButtonAlertPresenterProtocol {
-    
-    //MARK: - Properties
-    
-    private var coordinator: SingleButtonAlertCoordinator
-    
-    //MARK: - Initializer
-    
-    init(coordinator: SingleButtonAlertCoordinator) {
+    // MARK: - Properties
+
+    private let coordinator: SingleButtonAlertCoordinating
+    let alertMessage: String
+    let alertType: SingleButtonAlertView.AlertType
+
+    // MARK: - Initializer
+
+    init(
+        coordinator: SingleButtonAlertCoordinating,
+        alertMessage: String,
+        alertType: SingleButtonAlertView.AlertType
+    ) {
         self.coordinator = coordinator
+        self.alertMessage = alertMessage
+        self.alertType = alertType
     }
-    
-    //MARK: - Actions
-    
+
+    // MARK: - Actions
+
     func closeModal() {
         coordinator.closeModal()
     }

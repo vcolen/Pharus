@@ -7,33 +7,42 @@
 
 import UIKit
 
-class StudentProjectsRankingCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
-    private var student: StudentModel
-    
-    //MARK: - Initializer
-    
+struct StudentProjectsRankingCoordinator {
+
+    // MARK: - Properties
+    weak var rootViewController: UINavigationController?
+    private let student: StudentModel
+
+    // MARK: - Initializer
+
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         student: StudentModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = rootViewController
         self.student = student
     }
-    
+}
+
+// MARK: - Coordinator
+extension StudentProjectsRankingCoordinator: Coordinator {
     func start() {
-        let studentProjectsRankingViewController = StudentRankingProjectsViewController(
+        let studentProjectsRankingPresenter = StudentProjectsRankingPresenter(
             coordinator: self,
             student: student
         )
+        let studentProjectsRankingViewController = StudentProjectsRankingViewController(
+            presenter: studentProjectsRankingPresenter
+        )
 
-        navigationController.pushViewController(
+        studentProjectsRankingViewController.title = "Seus Rankings"
+
+        rootViewController?.pushViewController(
             studentProjectsRankingViewController,
             animated: true
         )
     }
 }
+
+// MARK: - Student Projects Ranking Coordinating
+extension StudentProjectsRankingCoordinator: StudentProjectsRankingCoordinating { }

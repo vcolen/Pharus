@@ -7,33 +7,28 @@
 
 import UIKit
 
-protocol ProjectSheetProtocol {
-    func popView()
-}
+class ProjectSheetPresenter: BasePresenter<ProjectSheetViewable> {
 
-class ProjectSheetPresenter {
-    
-    //MARK: - Properties
-    
-    var coordinator: ProjectSheetCoordinator
-    private var projectSheetView: ProjectSheetView
-    
-    //MARK: - Initializer
-    
+    // MARK: - Properties
+    private let coordinator: ProjectSheetCoordinating
+    let project: ProjectModel
+    let projectSheetContent: ProjectSheetView.SheetContent
+
+    // MARK: - Initializer
     init(
-        coordinator: ProjectSheetCoordinator,
-        projectSheetView: ProjectSheetView
+        coordinator: ProjectSheetCoordinating,
+        project: ProjectModel,
+        projectSheetContent: ProjectSheetView.SheetContent
     ) {
         self.coordinator = coordinator
-        self.projectSheetView = projectSheetView
+        self.project = project
+        self.projectSheetContent = projectSheetContent
     }
 }
 
-//MARK: - Actions
-
-extension ProjectSheetPresenter: ProjectSheetProtocol {
+// MARK: - Actions
+extension ProjectSheetPresenter: ProjectSheetPresenting {
     func popView() {
         coordinator.popView()
     }
 }
-

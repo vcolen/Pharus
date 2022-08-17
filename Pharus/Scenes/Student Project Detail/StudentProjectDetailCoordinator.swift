@@ -7,80 +7,67 @@
 
 import UIKit
 
-protocol StudentProjectDetailFlow {
-    func showProjectRules()
-    func showSendFileView()
-    func showMentorReview()
-}
+struct StudentProjectDetailCoordinator {
 
-class StudentProjectDetailCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
-    private var project: ProjectModel
-    
-    //MARK: - Initializer
-    
+    // MARK: - Properties
+    private weak var rootViewController: UINavigationController?
+    private let project: ProjectModel
+
+    // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         project: ProjectModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = rootViewController
         self.project = project
-    }
-    
-    func start() {
-        let studentProjectDetailPresenter = StudentProjectDetailPresenter(coordinator: self)
-        
-        let studentProjectDetailViewController = StudentProjectDetailViewController(
-            coordinator: self,
-            presenter: studentProjectDetailPresenter,
-            project: project
-        )
-        
-        navigationController.pushViewController(studentProjectDetailViewController, animated: true)
     }
 }
 
-//MARK: - Actions
-
-extension StudentProjectDetailCoordinator: StudentProjectDetailFlow {
-    func showProjectRules() {
-        let projectSheetView = ProjectSheetView(
-            project: project,
-            sheetContent: .activities
-        )
-        
-        let projectSheetCoordinator = ProjectSheetCoordinator(
-            navigationController: navigationController,
-            projectSheetView: projectSheetView
-        )
-        
-        coordinate(to: projectSheetCoordinator)
-    }
-    
-    func showMentorReview() {
-        let projectSheetView = ProjectSheetView(
-            project: project,
-            sheetContent: .mentorReview
-        )
-        
-        let projectSheetCoordinator = ProjectSheetCoordinator(
-            navigationController: navigationController,
-            projectSheetView: projectSheetView
-        )
-        
-        coordinate(to: projectSheetCoordinator)
-    }
-    
-    func showSendFileView() {
-        let sendFileCoordinator = SendFileCoordinator(
-            navigationController: navigationController,
+// MARK: - Coordinator
+extension StudentProjectDetailCoordinator: Coordinator {
+    func start() {
+        let studentProjectDetailPresenter = StudentProjectDetailPresenter(
+            coordinator: self,
             project: project
         )
-        
-        coordinate(to: sendFileCoordinator)
+        let studentProjectDetailViewController = StudentProjectDetailViewController(
+            presenter: studentProjectDetailPresenter
+        )
+
+        studentProjectDetailViewController.title = project.name
+        rootViewController?.pushViewController(studentProjectDetailViewController, animated: true)
+    }
+}
+
+// MARK: - Student Project Detail Coordinating
+extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
+    func showProjectRules() {
+
+        if let navigationController = rootViewController {
+            ProjectSheetCoordinator(
+                rootViewController: navigationController,
+                project: project,
+                projectSheetContent: .activities
+            ).start()
+        }
+    }
+
+    func showMentorReview() {
+        if let navigationController = rootViewController {
+            ProjectSheetCoordinator(
+                rootViewController: navigationController,
+                project: project,
+                projectSheetContent: .mentorReview
+            ).start()
+        }
+    }
+
+    func showSendFileView() {
+        if let navigationController = rootViewController {
+            SendFileCoordinator(
+                rootViewController: navigationController,
+                project: project
+            ).start()
+        }
     }
 }

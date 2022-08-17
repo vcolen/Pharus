@@ -7,39 +7,38 @@
 
 import UIKit
 
-protocol AvatarSelectionFlow {
-    func start()
-}
+struct AvatarSelectionCoordinator {
 
-class AvatarSelectionCoordinator: Coordinator {
-    
-    //MARK: - Properties
-    
-    var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
-    private var student: StudentModel
-    
-    //MARK: - Initializer
-    
+    // MARK: - Properties
+    weak var rootViewController: UINavigationController?
+    private let student: StudentModel
+
+    // MARK: - Initializer
     init(
-        navigationController: UINavigationController,
+        rootViewController: UINavigationController,
         student: StudentModel
     ) {
-        self.navigationController = navigationController
+        self.rootViewController = rootViewController
         self.student = student
     }
-    
+}
+
+// MARK: - Coordinator
+extension AvatarSelectionCoordinator: Coordinator {
     func start() {
-        let studentAvatarViewController = AvatarSelectionViewController(
+        let studentAvatarSelectionPresenter = AvatarSelectionPresenter(
             coordinator: self,
             student: student
         )
-        
-        navigationController.pushViewController(studentAvatarViewController, animated: true)
+
+        let studentAvatarViewController = AvatarSelectionViewController(
+            presenter: studentAvatarSelectionPresenter
+        )
+
+        studentAvatarViewController.title = "Avatar"
+
+        rootViewController?.pushViewController(studentAvatarViewController, animated: true)
     }
 }
-
-extension AvatarSelectionCoordinator: AvatarSelectionFlow {
-    
-    
-}
+// MARK: - Avatar Selection Coordinating
+extension AvatarSelectionCoordinator: AvatarSelectionCoordinating { }

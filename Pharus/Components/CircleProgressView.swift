@@ -8,9 +8,8 @@
 import UIKit
 
 class CircleProgressView: UIView {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
     private var circleLayer = CAShapeLayer()
     private var completionProgressLayer = CAShapeLayer()
     private var circleColor: UIColor
@@ -21,42 +20,30 @@ class CircleProgressView: UIView {
             makeCircularPath()
         }
     }
-    
-    //MARK: - Initializer
-    
-    convenience init(
+
+    // MARK: - Initializer
+    init(
         circleColor: UIColor,
         completionProgressColor: UIColor,
         radius: Float,
         progress: Float
     ) {
-        self.init()
-        
         self.circleColor = circleColor
         self.completionProgressColor = completionProgressColor
         self.circleRadius = radius
         self.progress = progress
-    }
-    
-    override init(frame: CGRect) {
-        
-        self.circleColor = .white
-        self.completionProgressColor = .black
-        self.circleRadius = 40.0
-        self.progress = 50.0
-        
+
         super.init(frame: .zero)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK: - Subviews
-    
+
+    // MARK: - Subviews
     private func makeCircularPath() {
         self.layer.cornerRadius = self.frame.size.width/2
-        
+
         let completionBarLayerPath = UIBezierPath(
             arcCenter: CGPoint(
                 x: frame.size.width/2,
@@ -67,7 +54,6 @@ class CircleProgressView: UIView {
             endAngle: CGFloat(360).toRadians() * CGFloat(progress)/100,
             clockwise: true
         )
-        
         let circleLayerPath = UIBezierPath(
             arcCenter: CGPoint(
                 x: frame.size.width/2,
@@ -78,20 +64,22 @@ class CircleProgressView: UIView {
             endAngle: CGFloat(360).toRadians(),
             clockwise: true
         )
-        
+
         circleLayer.path = circleLayerPath.cgPath
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.strokeColor = circleColor.cgColor
         circleLayer.lineWidth = 15
         circleLayer.strokeEnd = 1.0
+
         layer.addSublayer(circleLayer)
-        
+
         completionProgressLayer.path = completionBarLayerPath.cgPath
         completionProgressLayer.fillColor = UIColor.clear.cgColor
         completionProgressLayer.strokeColor = completionProgressColor.cgColor
         completionProgressLayer.lineWidth = 15.0
         completionProgressLayer.strokeEnd = 1.0
         completionProgressLayer.lineCap = .round
+
         layer.addSublayer(completionProgressLayer)
     }
 }
