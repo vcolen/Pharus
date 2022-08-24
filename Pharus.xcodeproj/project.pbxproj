@@ -18,7 +18,6 @@
 		7929987528B659F1009D5E0C /* CoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987428B659F1009D5E0C /* CoreKit */; };
 		7929987728B659F1009D5E0C /* CoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987628B659F1009D5E0C /* CoreNetwork */; };
 		7929987928B659F1009D5E0C /* CoreScene in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987828B659F1009D5E0C /* CoreScene */; };
-		7929987B28B659F1009D5E0C /* CoreSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987A28B659F1009D5E0C /* CoreSDK */; };
 		7929987D28B659F1009D5E0C /* CoreStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987C28B659F1009D5E0C /* CoreStorage */; };
 		7929987F28B659F1009D5E0C /* DataKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987E28B659F1009D5E0C /* DataKit */; };
 		79410A1A287F5F08001ABC40 /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410A19287F5F08001ABC40 /* StudentManager.swift */; };
@@ -322,7 +321,6 @@
 		79CA732F28B656D9001EE3B7 /* CoreScene */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreScene; sourceTree = "<group>"; };
 		79CA733028B656E5001EE3B7 /* CoreApp */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreApp; sourceTree = "<group>"; };
 		79CA733128B656FA001EE3B7 /* PharusApp */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PharusApp; sourceTree = "<group>"; };
-		79CA733228B65756001EE3B7 /* CoreSDK */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreSDK; sourceTree = "<group>"; };
 		79CA733328B65764001EE3B7 /* CoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreNetwork; sourceTree = "<group>"; };
 		79CA733428B65781001EE3B7 /* CoreStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreStorage; sourceTree = "<group>"; };
 		79D659C0286207690060971C /* DefaultTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTexts.swift; sourceTree = "<group>"; };
@@ -355,7 +353,6 @@
 				79CA733628B6593C001EE3B7 /* PharusApp in Frameworks */,
 				7929987F28B659F1009D5E0C /* DataKit in Frameworks */,
 				7929987328B659F1009D5E0C /* CoreApp in Frameworks */,
-				7929987B28B659F1009D5E0C /* CoreSDK in Frameworks */,
 				7929987D28B659F1009D5E0C /* CoreStorage in Frameworks */,
 				7929987928B659F1009D5E0C /* CoreScene in Frameworks */,
 				7929987528B659F1009D5E0C /* CoreKit in Frameworks */,
@@ -391,7 +388,6 @@
 				79CA732D28B656C3001EE3B7 /* CoreKit */,
 				79CA733328B65764001EE3B7 /* CoreNetwork */,
 				79CA732F28B656D9001EE3B7 /* CoreScene */,
-				79CA733228B65756001EE3B7 /* CoreSDK */,
 				79CA733428B65781001EE3B7 /* CoreStorage */,
 				79CA732E28B656CE001EE3B7 /* DataKit */,
 				79CA732C28B656AD001EE3B7 /* Features */,
@@ -978,7 +974,6 @@
 				7929987428B659F1009D5E0C /* CoreKit */,
 				7929987628B659F1009D5E0C /* CoreNetwork */,
 				7929987828B659F1009D5E0C /* CoreScene */,
-				7929987A28B659F1009D5E0C /* CoreSDK */,
 				7929987C28B659F1009D5E0C /* CoreStorage */,
 				7929987E28B659F1009D5E0C /* DataKit */,
 			);
@@ -1503,10 +1498,6 @@
 		7929987828B659F1009D5E0C /* CoreScene */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoreScene;
-		};
-		7929987A28B659F1009D5E0C /* CoreSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CoreSDK;
 		};
 		7929987C28B659F1009D5E0C /* CoreStorage */ = {
 			isa = XCSwiftPackageProductDependency;
