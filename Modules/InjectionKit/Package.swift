@@ -11,7 +11,8 @@ let package = Package(
     products: [
         .library(
             name: "InjectionKit",
-            targets: ["InjectionKit"])
+            targets: ["InjectionKit"]
+        )
     ],
     dependencies: [
     ],

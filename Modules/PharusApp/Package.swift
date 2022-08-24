@@ -11,7 +11,8 @@ let package = Package(
     products: [
         .library(
             name: "PharusApp",
-            targets: ["PharusApp"])
+            targets: ["PharusApp"]
+        )
     ],
     dependencies: [
     ],

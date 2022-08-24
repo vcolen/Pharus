@@ -11,7 +11,8 @@ let package = Package(
     products: [
         .library(
             name: "CoreKit",
-            targets: ["CoreKit"])
+            targets: ["CoreKit"]
+        )
     ],
     dependencies: [
     ],

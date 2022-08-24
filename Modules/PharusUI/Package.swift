@@ -11,13 +11,15 @@ let package = Package(
     products: [
         .library(
             name: "PharusUI",
-            targets: ["PharusUI"])
+            targets: ["PharusUI"]
+        )
     ],
     dependencies: [
     ],
     targets: [
         .target(
             name: "PharusUI",
-            dependencies: [])
+            dependencies: []
+	)
     ]
 )

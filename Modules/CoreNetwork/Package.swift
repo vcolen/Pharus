@@ -11,7 +11,8 @@ let package = Package(
     products: [
         .library(
             name: "CoreNetwork",
-            targets: ["CoreNetwork"])
+            targets: ["CoreNetwork"]
+        )
     ],
     dependencies: [
     ],

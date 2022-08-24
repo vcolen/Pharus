@@ -11,7 +11,8 @@ let package = Package(
     products: [
         .library(
             name: "CoreStorage",
-            targets: ["CoreStorage"])
+            targets: ["CoreStorage"]
+        )
     ],
     dependencies: [
     ],

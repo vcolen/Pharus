@@ -11,7 +11,8 @@ let package = Package(
     products: [
         .library(
             name: "CoreScene",
-            targets: ["CoreScene"])
+            targets: ["CoreScene"]
+        )
     ],
     dependencies: [
     ],

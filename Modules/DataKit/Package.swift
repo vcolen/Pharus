@@ -11,7 +11,8 @@ let package = Package(
     products: [
         .library(
             name: "DataKit",
-            targets: ["DataKit"])
+            targets: ["DataKit"]
+        )
     ],
     dependencies: [
     ],
