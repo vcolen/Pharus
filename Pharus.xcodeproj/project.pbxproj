@@ -156,6 +156,13 @@
 		79D659C3286209760060971C /* StudentProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C2286209760060971C /* StudentProjectsView.swift */; };
 		79D659C5286213270060971C /* StudentProjectsRankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C4286213270060971C /* StudentProjectsRankingView.swift */; };
 		79F06DA127F28FCD00343865 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */; };
+		79F12BE728B6860B00C23947 /* AvatarSelectionFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79F12BE628B6860B00C23947 /* AvatarSelectionFeature */; };
+		79F12BE928B6860B00C23947 /* HomeFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79F12BE828B6860B00C23947 /* HomeFeature */; };
+		79F12BEB28B6860B00C23947 /* LoginFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79F12BEA28B6860B00C23947 /* LoginFeature */; };
+		79F12BED28B6860B00C23947 /* StudentProfileFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79F12BEC28B6860B00C23947 /* StudentProfileFeature */; };
+		79F12BEF28B6860B00C23947 /* StudentProjectDetailFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79F12BEE28B6860B00C23947 /* StudentProjectDetailFeature */; };
+		79F12BF128B6860B00C23947 /* StudentProjectsFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79F12BF028B6860B00C23947 /* StudentProjectsFeature */; };
+		79F12BF328B6860B00C23947 /* StudentProjectsRankingFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79F12BF228B6860B00C23947 /* StudentProjectsRankingFeature */; };
 		79FCEB932863B55B004D22EC /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FCEB922863B55B004D22EC /* BasePresenter.swift */; };
 		79FCEB952863B5B6004D22EC /* Presenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FCEB942863B5B6004D22EC /* Presenting.swift */; };
 		79FE1C6E288F0D600081334A /* AvatarSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE1C6D288F0D600081334A /* AvatarSelectionCell.swift */; };
@@ -328,6 +335,13 @@
 		79D659C4286213270060971C /* StudentProjectsRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingView.swift; sourceTree = "<group>"; };
 		79F06D9E27F28FCD00343865 /* PharusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PharusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F06DA027F28FCD00343865 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		79F12BDF28B684BB00C23947 /* LoginFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LoginFeature; sourceTree = "<group>"; };
+		79F12BE028B684CF00C23947 /* HomeFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HomeFeature; sourceTree = "<group>"; };
+		79F12BE128B6855D00C23947 /* StudentProjectsFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StudentProjectsFeature; sourceTree = "<group>"; };
+		79F12BE228B6857400C23947 /* StudentProjectDetailFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StudentProjectDetailFeature; sourceTree = "<group>"; };
+		79F12BE328B6859B00C23947 /* StudentProjectsRankingFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StudentProjectsRankingFeature; sourceTree = "<group>"; };
+		79F12BE428B685AE00C23947 /* AvatarSelectionFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AvatarSelectionFeature; sourceTree = "<group>"; };
+		79F12BE528B685DB00C23947 /* StudentProfileFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StudentProfileFeature; sourceTree = "<group>"; };
 		79FCEB922863B55B004D22EC /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		79FCEB942863B5B6004D22EC /* Presenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenting.swift; sourceTree = "<group>"; };
 		79FE1C6D288F0D600081334A /* AvatarSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionCell.swift; sourceTree = "<group>"; };
@@ -350,7 +364,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F12BEF28B6860B00C23947 /* StudentProjectDetailFeature in Frameworks */,
+				79F12BED28B6860B00C23947 /* StudentProfileFeature in Frameworks */,
+				79F12BE928B6860B00C23947 /* HomeFeature in Frameworks */,
 				79CA733628B6593C001EE3B7 /* PharusApp in Frameworks */,
+				79F12BF328B6860B00C23947 /* StudentProjectsRankingFeature in Frameworks */,
 				7929987F28B659F1009D5E0C /* DataKit in Frameworks */,
 				7929987328B659F1009D5E0C /* CoreApp in Frameworks */,
 				7929987D28B659F1009D5E0C /* CoreStorage in Frameworks */,
@@ -358,7 +376,10 @@
 				7929987528B659F1009D5E0C /* CoreKit in Frameworks */,
 				791B4546287358D800F1EBE6 /* PharusUI in Frameworks */,
 				7929987728B659F1009D5E0C /* CoreNetwork in Frameworks */,
+				79F12BEB28B6860B00C23947 /* LoginFeature in Frameworks */,
 				79458CBA28A5766B00537910 /* InjectionKit in Frameworks */,
+				79F12BE728B6860B00C23947 /* AvatarSelectionFeature in Frameworks */,
+				79F12BF128B6860B00C23947 /* StudentProjectsFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,6 +910,13 @@
 		79CA732C28B656AD001EE3B7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				79F12BE528B685DB00C23947 /* StudentProfileFeature */,
+				79F12BE428B685AE00C23947 /* AvatarSelectionFeature */,
+				79F12BE328B6859B00C23947 /* StudentProjectsRankingFeature */,
+				79F12BE228B6857400C23947 /* StudentProjectDetailFeature */,
+				79F12BE128B6855D00C23947 /* StudentProjectsFeature */,
+				79F12BE028B684CF00C23947 /* HomeFeature */,
+				79F12BDF28B684BB00C23947 /* LoginFeature */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -976,6 +1004,13 @@
 				7929987828B659F1009D5E0C /* CoreScene */,
 				7929987C28B659F1009D5E0C /* CoreStorage */,
 				7929987E28B659F1009D5E0C /* DataKit */,
+				79F12BE628B6860B00C23947 /* AvatarSelectionFeature */,
+				79F12BE828B6860B00C23947 /* HomeFeature */,
+				79F12BEA28B6860B00C23947 /* LoginFeature */,
+				79F12BEC28B6860B00C23947 /* StudentProfileFeature */,
+				79F12BEE28B6860B00C23947 /* StudentProjectDetailFeature */,
+				79F12BF028B6860B00C23947 /* StudentProjectsFeature */,
+				79F12BF228B6860B00C23947 /* StudentProjectsRankingFeature */,
 			);
 			productName = Pharus;
 			productReference = C045618727EA03A5007EC5C3 /* Pharus.app */;
@@ -1514,6 +1549,34 @@
 		79CA733528B6593C001EE3B7 /* PharusApp */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PharusApp;
+		};
+		79F12BE628B6860B00C23947 /* AvatarSelectionFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AvatarSelectionFeature;
+		};
+		79F12BE828B6860B00C23947 /* HomeFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HomeFeature;
+		};
+		79F12BEA28B6860B00C23947 /* LoginFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginFeature;
+		};
+		79F12BEC28B6860B00C23947 /* StudentProfileFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StudentProfileFeature;
+		};
+		79F12BEE28B6860B00C23947 /* StudentProjectDetailFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StudentProjectDetailFeature;
+		};
+		79F12BF028B6860B00C23947 /* StudentProjectsFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StudentProjectsFeature;
+		};
+		79F12BF228B6860B00C23947 /* StudentProjectsRankingFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StudentProjectsRankingFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
