@@ -4,18 +4,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "StudentProjectDetailFeature",
+    name: "AppFeature",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "StudentProjectDetailFeature",
-            targets: ["StudentProjectDetailFeature"]
+            name: "AppFeature",
+            targets: ["AppFeature"]
         )
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "StudentProjectDetailFeature",
+            name: "AppFeature",
             dependencies: []
         )
     ]

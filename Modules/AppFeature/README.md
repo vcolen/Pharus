@@ -1,3 +1,3 @@
-# StudentProjectDetailFeature
+# AppFeature
 
 A description of this package.
