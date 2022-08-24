@@ -5,9 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "CoreScene",
-    platforms: [
-        .iOS(.v14)
-    ],
+    platforms: [.iOS(.v14)],
     products: [
         .library(
             name: "CoreScene",
@@ -15,11 +13,18 @@ let package = Package(
         )
     ],
     dependencies: [
+        .package(path: "../CoreKit"),
+        .package(path: "../InjectionKit"),
+        .package(path: "../CoreApp")
     ],
     targets: [
         .target(
             name: "CoreScene",
-            dependencies: []
+            dependencies: [
+                "CoreKit",
+                "InjectionKit",
+                "CoreApp"
+            ]
         )
     ]
 )

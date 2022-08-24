@@ -5,21 +5,18 @@ import PackageDescription
 
 let package = Package(
     name: "PharusUI",
-    platforms: [
-        .iOS(.v14)
-    ],
+    platforms: [.iOS(.v14)],
     products: [
         .library(
             name: "PharusUI",
             targets: ["PharusUI"]
         )
     ],
-    dependencies: [
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "PharusUI",
             dependencies: []
-	)
+        )
     ]
 )

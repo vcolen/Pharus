@@ -5,9 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "CoreStorage",
-    platforms: [
-        .iOS(.v14)
-    ],
+    platforms: [.iOS(.v14)],
     products: [
         .library(
             name: "CoreStorage",
@@ -15,11 +13,20 @@ let package = Package(
         )
     ],
     dependencies: [
+        .package(path: "../DataKit"),
+        .package(path: "../CoreKit"),
+        .package(path: "../CoreApp"),
+        .package(path: "../InjectionKit")
     ],
     targets: [
         .target(
             name: "CoreStorage",
-            dependencies: []
+            dependencies: [
+                "DataKit",
+                "CoreKit",
+                "CoreApp",
+                "InjectionKit"
+            ]
         )
     ]
 )
