@@ -14,6 +14,13 @@
 		790AA955286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790AA954286B741B00D99D30 /* StudentProjectsRankingTabCoordinator.swift */; };
 		791B4546287358D800F1EBE6 /* PharusUI in Frameworks */ = {isa = PBXBuildFile; productRef = 791B4545287358D800F1EBE6 /* PharusUI */; };
 		791B454E28737F8400F1EBE6 /* ProjectTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B454D28737F8400F1EBE6 /* ProjectTaskView.swift */; };
+		7929987328B659F1009D5E0C /* CoreApp in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987228B659F1009D5E0C /* CoreApp */; };
+		7929987528B659F1009D5E0C /* CoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987428B659F1009D5E0C /* CoreKit */; };
+		7929987728B659F1009D5E0C /* CoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987628B659F1009D5E0C /* CoreNetwork */; };
+		7929987928B659F1009D5E0C /* CoreScene in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987828B659F1009D5E0C /* CoreScene */; };
+		7929987B28B659F1009D5E0C /* CoreSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987A28B659F1009D5E0C /* CoreSDK */; };
+		7929987D28B659F1009D5E0C /* CoreStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987C28B659F1009D5E0C /* CoreStorage */; };
+		7929987F28B659F1009D5E0C /* DataKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987E28B659F1009D5E0C /* DataKit */; };
 		79410A1A287F5F08001ABC40 /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410A19287F5F08001ABC40 /* StudentManager.swift */; };
 		79458CBA28A5766B00537910 /* InjectionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 79458CB928A5766B00537910 /* InjectionKit */; };
 		797FA7E32860C533001C29EB /* AvatarSelectionPresenter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7E22860C533001C29EB /* AvatarSelectionPresenter.swift.swift */; };
@@ -145,6 +152,7 @@
 		799AFB62285CECDF001B0371 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAC0285CECDE001B0371 /* OpenSans-Medium.ttf */; };
 		799AFB63285CECDF001B0371 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAC1285CECDE001B0371 /* OpenSans-Regular.ttf */; };
 		799AFB67285CEDE5001B0371 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2F285CECDE001B0371 /* TabBarViewController.swift */; };
+		79CA733628B6593C001EE3B7 /* PharusApp in Frameworks */ = {isa = PBXBuildFile; productRef = 79CA733528B6593C001EE3B7 /* PharusApp */; };
 		79D659C1286207690060971C /* DefaultTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C0286207690060971C /* DefaultTexts.swift */; };
 		79D659C3286209760060971C /* StudentProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C2286209760060971C /* StudentProjectsView.swift */; };
 		79D659C5286213270060971C /* StudentProjectsRankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C4286213270060971C /* StudentProjectsRankingView.swift */; };
@@ -309,6 +317,14 @@
 		799AFAC0285CECDE001B0371 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		799AFAC1285CECDE001B0371 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		799AFAC2285CECDE001B0371 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79CA732D28B656C3001EE3B7 /* CoreKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreKit; sourceTree = "<group>"; };
+		79CA732E28B656CE001EE3B7 /* DataKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataKit; sourceTree = "<group>"; };
+		79CA732F28B656D9001EE3B7 /* CoreScene */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreScene; sourceTree = "<group>"; };
+		79CA733028B656E5001EE3B7 /* CoreApp */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreApp; sourceTree = "<group>"; };
+		79CA733128B656FA001EE3B7 /* PharusApp */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PharusApp; sourceTree = "<group>"; };
+		79CA733228B65756001EE3B7 /* CoreSDK */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreSDK; sourceTree = "<group>"; };
+		79CA733328B65764001EE3B7 /* CoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreNetwork; sourceTree = "<group>"; };
+		79CA733428B65781001EE3B7 /* CoreStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreStorage; sourceTree = "<group>"; };
 		79D659C0286207690060971C /* DefaultTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTexts.swift; sourceTree = "<group>"; };
 		79D659C2286209760060971C /* StudentProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsView.swift; sourceTree = "<group>"; };
 		79D659C4286213270060971C /* StudentProjectsRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectsRankingView.swift; sourceTree = "<group>"; };
@@ -336,7 +352,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79CA733628B6593C001EE3B7 /* PharusApp in Frameworks */,
+				7929987F28B659F1009D5E0C /* DataKit in Frameworks */,
+				7929987328B659F1009D5E0C /* CoreApp in Frameworks */,
+				7929987B28B659F1009D5E0C /* CoreSDK in Frameworks */,
+				7929987D28B659F1009D5E0C /* CoreStorage in Frameworks */,
+				7929987928B659F1009D5E0C /* CoreScene in Frameworks */,
+				7929987528B659F1009D5E0C /* CoreKit in Frameworks */,
 				791B4546287358D800F1EBE6 /* PharusUI in Frameworks */,
+				7929987728B659F1009D5E0C /* CoreNetwork in Frameworks */,
 				79458CBA28A5766B00537910 /* InjectionKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +387,16 @@
 		797A471B287481EC005A3632 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				79CA733028B656E5001EE3B7 /* CoreApp */,
+				79CA732D28B656C3001EE3B7 /* CoreKit */,
+				79CA733328B65764001EE3B7 /* CoreNetwork */,
+				79CA732F28B656D9001EE3B7 /* CoreScene */,
+				79CA733228B65756001EE3B7 /* CoreSDK */,
+				79CA733428B65781001EE3B7 /* CoreStorage */,
+				79CA732E28B656CE001EE3B7 /* DataKit */,
+				79CA732C28B656AD001EE3B7 /* Features */,
 				79458CB828A5765000537910 /* InjectionKit */,
+				79CA733128B656FA001EE3B7 /* PharusApp */,
 				797A471C287481F2005A3632 /* PharusUI */,
 			);
 			path = Modules;
@@ -857,6 +890,13 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		79CA732C28B656AD001EE3B7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		79F06D9F27F28FCD00343865 /* PharusTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -933,6 +973,14 @@
 			packageProductDependencies = (
 				791B4545287358D800F1EBE6 /* PharusUI */,
 				79458CB928A5766B00537910 /* InjectionKit */,
+				79CA733528B6593C001EE3B7 /* PharusApp */,
+				7929987228B659F1009D5E0C /* CoreApp */,
+				7929987428B659F1009D5E0C /* CoreKit */,
+				7929987628B659F1009D5E0C /* CoreNetwork */,
+				7929987828B659F1009D5E0C /* CoreScene */,
+				7929987A28B659F1009D5E0C /* CoreSDK */,
+				7929987C28B659F1009D5E0C /* CoreStorage */,
+				7929987E28B659F1009D5E0C /* DataKit */,
 			);
 			productName = Pharus;
 			productReference = C045618727EA03A5007EC5C3 /* Pharus.app */;
@@ -1440,9 +1488,41 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = PharusUI;
 		};
+		7929987228B659F1009D5E0C /* CoreApp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreApp;
+		};
+		7929987428B659F1009D5E0C /* CoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreKit;
+		};
+		7929987628B659F1009D5E0C /* CoreNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreNetwork;
+		};
+		7929987828B659F1009D5E0C /* CoreScene */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreScene;
+		};
+		7929987A28B659F1009D5E0C /* CoreSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreSDK;
+		};
+		7929987C28B659F1009D5E0C /* CoreStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreStorage;
+		};
+		7929987E28B659F1009D5E0C /* DataKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataKit;
+		};
 		79458CB928A5766B00537910 /* InjectionKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InjectionKit;
+		};
+		79CA733528B6593C001EE3B7 /* PharusApp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PharusApp;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
