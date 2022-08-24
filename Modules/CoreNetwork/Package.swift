@@ -5,9 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "CoreNetwork",
-    platforms: [
-        .iOS(.v14)
-    ],
+    platforms: [.iOS(.v14)],
     products: [
         .library(
             name: "CoreNetwork",
@@ -15,11 +13,20 @@ let package = Package(
         )
     ],
     dependencies: [
+        .package(path: "../DataKit"),
+        .package(path: "../CoreKit"),
+        .package(path: "../CoreApp"),
+        .package(path: "../InjectionKit")
     ],
     targets: [
         .target(
             name: "CoreNetwork",
-            dependencies: []
+            dependencies: [
+                "DataKit",
+                "CoreKit",
+                "CoreApp",
+                "InjectionKit"
+            ]
         )
     ]
 )

@@ -5,17 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "InjectionKit",
-    platforms: [
-        .iOS(.v14)
-    ],
+    platforms: [.iOS(.v14)],
     products: [
         .library(
             name: "InjectionKit",
             targets: ["InjectionKit"]
         )
     ],
-    dependencies: [
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "InjectionKit",

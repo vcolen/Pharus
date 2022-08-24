@@ -5,9 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "PharusApp",
-    platforms: [
-        .iOS(.v14)
-    ],
+    platforms: [.iOS(.v14)],
     products: [
         .library(
             name: "PharusApp",
@@ -15,11 +13,24 @@ let package = Package(
         )
     ],
     dependencies: [
+        .package(path: "../CoreStorage"),
+        .package(path: "../CoreNetwork"),
+        .package(path: "../DataKit"),
+        .package(path: "../CoreKit"),
+        .package(path: "../CoreApp"),
+        .package(path: "../CoreScene")
     ],
     targets: [
         .target(
             name: "PharusApp",
-            dependencies: []
+            dependencies: [
+                "CoreStorage",
+                "CoreNetwork",
+                "DataKit",
+                "CoreKit",
+                "CoreApp",
+                "CoreScene"
+            ]
         )
     ]
 )

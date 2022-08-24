@@ -15,11 +15,16 @@ let package = Package(
         )
     ],
     dependencies: [
+        .package(path: "../CoreApp"),
+        .package(path: "../InjectionKit")
     ],
     targets: [
         .target(
             name: "CoreKit",
-            dependencies: []
+            dependencies: [
+                "CoreApp",
+                "InjectionKit"
+            ]
         )
     ]
 )

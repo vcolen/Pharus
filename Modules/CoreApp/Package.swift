@@ -5,17 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "CoreApp",
-    platforms: [
-        .iOS(.v14)
-    ],
+    platforms: [.iOS(.v14)],
     products: [
         .library(
             name: "CoreApp",
             targets: ["CoreApp"]
-	)
+        )
     ],
-    dependencies: [
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "CoreApp",
