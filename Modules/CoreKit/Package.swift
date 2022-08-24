@@ -4,22 +4,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "PharusUI",
+    name: "CoreKit",
     platforms: [
         .iOS(.v14)
     ],
     products: [
         .library(
-            name: "PharusUI",
-            targets: ["PharusUI"]
+            name: "CoreKit",
+            targets: ["CoreKit"]
         )
     ],
     dependencies: [
     ],
     targets: [
         .target(
-            name: "PharusUI",
+            name: "CoreKit",
             dependencies: []
-	)
+        )
     ]
 )
