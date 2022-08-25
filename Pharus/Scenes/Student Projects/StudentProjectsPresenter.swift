@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentProjectsPresenting {
 

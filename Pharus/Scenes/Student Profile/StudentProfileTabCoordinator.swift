@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreApp
 
 struct StudentProfileTabCoordinator {
     private weak var rootViewController: UITabBarController?

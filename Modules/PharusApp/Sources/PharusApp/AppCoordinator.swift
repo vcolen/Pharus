@@ -6,21 +6,23 @@
 //
 
 import UIKit
+import CoreApp
+import LoginFeature
 
-struct AppCoordinator {
+public struct AppCoordinator {
 
     // MARK: - Properties
     private weak var window: UIWindow?
 
     // MARK: - Initializer
-    init(window: UIWindow) {
+    public init(window: UIWindow) {
         self.window = window
     }
 }
 
 // MARK: - Coordinator
 extension AppCoordinator: Coordinator {
-    func start() {
+    public func start() {
         openLoginScene()
         window?.makeKeyAndVisible()
     }
@@ -38,15 +40,15 @@ extension AppCoordinator {
         transitionWindow(to: navigationController)
     }
 
-    func openTabBarScene(student: StudentModel) {
-        let tabBarController = TabBarViewController()
-        MainTabBarCoordinator(
-            rootViewController: tabBarController,
-            student: student,
-            onLogout: openLoginScene
-        ).start()
+    func openTabBarScene() {
+//        let tabBarController = TabBarViewController()
+//        MainTabBarCoordinator(
+//            rootViewController: tabBarController,
+//            student: student,
+//            onLogout: openLoginScene
+//        ).start()
 
-        transitionWindow(to: tabBarController)
+    //    transitionWindow(to: tabBarController)
     }
 
     func transitionWindow(to controller: UIViewController) {

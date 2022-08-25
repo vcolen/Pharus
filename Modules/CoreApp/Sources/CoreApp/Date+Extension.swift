@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
     static func getDifferenceInDays(between date: Date, and otherDate: Date) -> Int {
         Calendar.current.dateComponents([.day], from: date, to: otherDate).day ?? 0
     }

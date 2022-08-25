@@ -1,5 +1,6 @@
 import UIKit
 import PharusUI
+import CoreApp
 
 class StudentHomeView: UIView {
 

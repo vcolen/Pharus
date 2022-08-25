@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import CoreApp
 
-struct TaskModel: Codable {
+public struct TaskModel: Codable {
 
     // MARK: - Properties
-    let title: String
-    var isComplete: Bool
-    let taskDescription: String
+    public let title: String
+    public var isComplete: Bool
+    public let taskDescription: String
 
     // MARK: - Initializer
     init(
@@ -31,7 +32,7 @@ struct TaskModel: Codable {
     }
 }
 
-extension TaskModel {
+public extension TaskModel {
     mutating func toggleCompletionStatus() {
         isComplete.toggle()
     }

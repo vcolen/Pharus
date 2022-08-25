@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 protocol ProjectSheetPresenting: Presenting {
     var project: ProjectModel { get }

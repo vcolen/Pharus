@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 protocol SendFilePresenting: Presenting {
     func closeSheet()

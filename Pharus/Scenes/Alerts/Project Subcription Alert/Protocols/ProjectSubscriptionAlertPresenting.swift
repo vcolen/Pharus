@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 protocol ProjectSubscriptionAlertPresenting: Presenting {
     var project: ProjectModel { get }

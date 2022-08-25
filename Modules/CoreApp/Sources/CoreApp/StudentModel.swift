@@ -7,26 +7,26 @@
 
 import Foundation
 
-struct StudentModel: Codable {
+public struct StudentModel: Codable {
 
     // MARK: - Properties
-    var id: String
-    let firstName: String
-    let lastName: String
-    let birthdate: String
-    let gender: String
-    let school: String
-    var year: String
-    var city: String
-    var schoolShift: String
-    var avatar: String
-    var email: String
-    var password: String
-    var username: String
-    var projects: [ProjectModel]
+    public var id: String
+    public let firstName: String
+    public let lastName: String
+    public let birthdate: String
+    public let gender: String
+    public let school: String
+    public var year: String
+    public var city: String
+    public var schoolShift: String
+    public var avatar: String
+    public var email: String
+    public var password: String
+    public var username: String
+    public var projects: [ProjectModel]
 
     // MARK: - Initializer
-    init(
+    public init(
         id: String,
         firstName: String,
         lastName: String,
@@ -58,7 +58,7 @@ struct StudentModel: Codable {
         self.projects = projects
     }
 
-    init() {
+    public init() {
         self.id = "01"
         self.firstName = "Robert"
         self.lastName = "Junior"
@@ -77,7 +77,7 @@ struct StudentModel: Codable {
 }
 
 extension StudentModel {
-    static let defaultProject = ProjectModel(
+    public static let defaultProject = ProjectModel(
         id: "1",
         name: "El Projeto",
         isSubscribed: true,

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol Presenting {
+public protocol Presenting {
     func attach(_ view: AnyObject)
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import PharusUI
+import CoreApp
 
 class AvatarSelectionView: UIView {
 

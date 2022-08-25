@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 protocol StudentProjectsCoordinating {
     func showStudentProject(_ project: ProjectModel)

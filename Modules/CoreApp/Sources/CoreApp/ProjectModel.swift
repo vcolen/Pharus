@@ -7,23 +7,23 @@
 
 import Foundation
 
-struct ProjectModel: Codable {
+public struct ProjectModel: Codable {
 
     // MARK: - Properties
-    var id: String
-    let name: String
-    var isSubscribed: Bool
-    var isComplete: Bool
-    var score: Int?
-    var placement: Int?
-    var projectDescription: String
-    var scoreDescription: String?
-    var startDate: String
-    var endDate: String
-    var school: String
-    var mentor: String
-    var company: String?
-    var tasks: [TaskModel]
+    public var id: String
+    public let name: String
+    public var isSubscribed: Bool
+    public var isComplete: Bool
+    public var score: Int?
+    public var placement: Int?
+    public var projectDescription: String
+    public var scoreDescription: String?
+    public var startDate: String
+    public var endDate: String
+    public var school: String
+    public var mentor: String
+    public var company: String?
+    public var tasks: [TaskModel]
 
     enum CodingKeys: String, CodingKey {
         case id, name, isSubscribed, isComplete, score, placement
@@ -32,7 +32,7 @@ struct ProjectModel: Codable {
     }
 
     // MARK: - Initializer
-    init(
+    public init(
         id: String,
         name: String,
         isSubscribed: Bool,
@@ -66,17 +66,18 @@ struct ProjectModel: Codable {
 }
 
 extension ProjectModel {
-    var completedTasksCount: Int {
+    public var completedTasksCount: Int {
         self.tasks.filter { $0.isComplete }.count
     }
 
-    var completionPercentage: Float {
+    public var completionPercentage: Float {
         Float(completedTasksCount)/Float(self.tasks.count)
     }
 
-    var daysRemaining: Int {
+    public var daysRemaining: Int {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Constants.dateFormats.projectDateFormat
+#warning("Colocar em constante")
+        dateFormatter.dateFormat = "dd/MM/yyyy"
 
         let projectEndDate = dateFormatter.date(from: self.endDate) ?? Date()
         let daysRemaining = Date.getDifferenceInDays(

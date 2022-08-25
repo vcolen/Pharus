@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 class StudentProjectsRankingPresenter: BasePresenter<StudentProjectsRankingViewable>, StudentProjectsRankingPresenting {
     private let coordinator: StudentProjectsRankingCoordinating

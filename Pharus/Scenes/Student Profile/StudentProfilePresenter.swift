@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 class StudentProfilePresenter: BasePresenter<StudentProfileViewable> {
 

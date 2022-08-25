@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 protocol SingleButtonAlertPresenting: Presenting {
     var alertType: SingleButtonAlertView.AlertType { get }

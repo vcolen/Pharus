@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreApp
 
 struct AvatarSelectionTabCoordinator {
     private weak var rootViewController: UITabBarController?

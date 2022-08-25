@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 class StudentManager {
     var student: StudentModel

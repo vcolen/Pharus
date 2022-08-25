@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 protocol StudentProjectsPresenting: Presenting {
     var student: StudentModel { get }

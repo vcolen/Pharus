@@ -6,17 +6,18 @@
 //
 
 import UIKit
+import CoreApp
 
-struct LoginCoordinator {
+public struct LoginCoordinator {
 
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
-    private let loginHandler: ((StudentModel) -> Void)?
+    private let loginHandler: (() -> Void)?
 
     // MARK: - Initializer
-    init(
+    public init(
         rootViewController: UINavigationController,
-        onLogin loginHandler: ((StudentModel) -> Void)? = nil
+        onLogin loginHandler: (() -> Void)? = nil
     ) {
         self.rootViewController = rootViewController
         self.loginHandler = loginHandler
@@ -25,7 +26,7 @@ struct LoginCoordinator {
 
 // MARK: - Coordinator
 extension LoginCoordinator: Coordinator {
-    func start() {
+    public func start() {
         let loginPresenter = LoginPresenter(coordinator: self)
         let loginViewController = LoginViewController(
             presenter: loginPresenter
@@ -38,9 +39,9 @@ extension LoginCoordinator: Coordinator {
 }
 // MARK: - Actions
 extension LoginCoordinator: LoginCoordinating {
-    func showHome(student: StudentModel) {
+    func showHome() {
         if let loginHandler = loginHandler {
-            loginHandler(student)
+            loginHandler()
         }
     }
 }

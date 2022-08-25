@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LoginCoordinating {
-    func showHome(student: StudentModel)
+    func showHome()
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Float {
+public extension Float {
     func withDecimalPoints(_ decimalPoints: Int) -> String {
         return String(format: "%.\(decimalPoints)f", self)
     }

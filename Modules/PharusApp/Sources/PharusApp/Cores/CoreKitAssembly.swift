@@ -1,6 +1,6 @@
 //
 //  CoreKitAssemble.swift
-//  
+//
 //
 //  Created by Victor Colen on 24/08/22.
 //
@@ -8,10 +8,11 @@
 import Foundation
 import InjectionKit
 import CoreKit
+import LoginFeature
 
 struct CoreKitAssembly: Assembly {
     func assemble(container: Container) {
-        assembleLogin(container: Container)
+        assembleLogin(container)
     }
 }
 

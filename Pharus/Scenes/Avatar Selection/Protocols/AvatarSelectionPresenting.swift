@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 protocol AvatarSelectionPresenting: Presenting {
     var student: StudentModel { get }

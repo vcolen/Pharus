@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 protocol LoginPresenting: Presenting {
     func isValidEmail(email: String) -> Bool

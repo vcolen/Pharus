@@ -4,7 +4,9 @@
 //
 //  Created by Victor Colen on 04/04/22.
 //
+
 import UIKit
+import CoreApp
 
 class StudentProjectsRankingViewController: UIViewController {
 

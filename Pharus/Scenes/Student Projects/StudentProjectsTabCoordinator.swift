@@ -7,6 +7,7 @@
 
 import UIKit
 import PharusUI
+import CoreApp
 
 struct StudentProjectsTabCoordinator {
     private weak var rootViewController: UITabBarController?

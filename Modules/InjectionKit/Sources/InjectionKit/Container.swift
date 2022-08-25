@@ -21,7 +21,7 @@ public class Container {
 
     public func resolve<T>() -> T {
         guard let content = dictionary[ObjectIdentifier(T.self)]?() as? T else {
-            fatalError()
+            fatalError("Could not get \(T.self)")
         }
 
         return content

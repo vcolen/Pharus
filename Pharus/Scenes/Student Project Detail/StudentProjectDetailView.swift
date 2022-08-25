@@ -7,6 +7,7 @@
 
 import UIKit
 import PharusUI
+import CoreApp
 
 // swiftlint:disable line_length
 class StudentProjectDetailView: UIView {

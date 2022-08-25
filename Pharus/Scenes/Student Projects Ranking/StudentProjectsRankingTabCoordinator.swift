@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreApp
 
 struct StudentProjectsRankingTabCoordinator {
     private weak var rootViewController: UITabBarController?
