@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import AppFeature
+// import AppFeature
 
 public enum App {
 
@@ -17,9 +17,10 @@ public enum App {
     ) {
         Assembler.run([
             CoreKitAssembly(),
-            DataKitAssembly()
-//            CoreSDKAssembly(),
-//            FeaturesAssembly()
+            DataKitAssembly(),
+            CoreNetworkAssembly()
+            //            CoreSDKAssembly(),
+            //            FeaturesAssembly()
         ])
 
         result(AppCoordinator(window: window))
