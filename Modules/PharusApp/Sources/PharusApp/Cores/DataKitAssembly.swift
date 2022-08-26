@@ -10,16 +10,16 @@ import InjectionKit
 import DataKit
 import CoreKit
 
-// struct DataKitAssembly: Assembly {
-//    func assemble(container: Container) {
-//        assembleLogin(container: Container)
-//    }
-// }
-//
-// extension DataKitAssembly {
-//    func assembleLogin(container: Container) {
-//        container.register(LoginUserRepositoryProtocol.self) {
-//            LoginUserRepository()
-//        }
-//    }
-// }
+ struct DataKitAssembly: Assembly {
+    func assemble(container: Container) {
+        assembleLogin(container)
+    }
+ }
+
+ extension DataKitAssembly {
+    func assembleLogin(_ container: Container) {
+        container.register(LoginRepositoryProtocol.self) {
+            LoginRepository()
+        }
+    }
+ }

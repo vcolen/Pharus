@@ -16,8 +16,8 @@ public enum App {
         result: (AppCoordinator) -> Void
     ) {
         Assembler.run([
-            CoreKitAssembly()
-//            DataKitAssembly(),
+            CoreKitAssembly(),
+            DataKitAssembly()
 //            CoreSDKAssembly(),
 //            FeaturesAssembly()
         ])

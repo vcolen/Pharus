@@ -6,20 +6,21 @@
 //
 
 import Foundation
+import InjectionKit
 
 public protocol LoginUserUseCaseProtocol {
     func callAsFunction(email: String, password: String) -> Bool
 }
 
 public struct LoginUserUseCase {
+    @Injected var repository: LoginRepositoryProtocol
 
     public init() { }
 }
 
 extension LoginUserUseCase: LoginUserUseCaseProtocol {
     public func callAsFunction(email: String, password: String) -> Bool {
-        print("passou aqui")
-        return true
+        repository.loginUser(email: email, password: password)
     }
 }
 
