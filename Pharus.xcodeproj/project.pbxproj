@@ -66,8 +66,6 @@
 		799AFAEC285CECDF001B0371 /* StudentProfileCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2A285CECDE001B0371 /* StudentProfileCoordinating.swift */; };
 		799AFAED285CECDF001B0371 /* StudentProfileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2B285CECDE001B0371 /* StudentProfileViewDelegate.swift */; };
 		799AFAEE285CECDF001B0371 /* StudentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2C285CECDE001B0371 /* StudentProfileViewController.swift */; };
-		799AFAEF285CECDF001B0371 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2E285CECDE001B0371 /* MainTabBarCoordinator.swift */; };
-		799AFAF1285CECDF001B0371 /* TabBarCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA31285CECDE001B0371 /* TabBarCoordinating.swift */; };
 		799AFAF2285CECDF001B0371 /* LogoutAlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA34285CECDE001B0371 /* LogoutAlertCoordinator.swift */; };
 		799AFAF3285CECDF001B0371 /* LogoutAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA35285CECDE001B0371 /* LogoutAlertViewController.swift */; };
 		799AFAF4285CECDF001B0371 /* LogoutAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA36285CECDE001B0371 /* LogoutAlertPresenter.swift */; };
@@ -136,7 +134,6 @@
 		799AFB61285CECDF001B0371 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFABF285CECDE001B0371 /* OpenSans-Bold.ttf */; };
 		799AFB62285CECDF001B0371 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAC0285CECDE001B0371 /* OpenSans-Medium.ttf */; };
 		799AFB63285CECDF001B0371 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAC1285CECDE001B0371 /* OpenSans-Regular.ttf */; };
-		799AFB67285CEDE5001B0371 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA2F285CECDE001B0371 /* TabBarViewController.swift */; };
 		79CA733628B6593C001EE3B7 /* PharusApp in Frameworks */ = {isa = PBXBuildFile; productRef = 79CA733528B6593C001EE3B7 /* PharusApp */; };
 		79D659C1286207690060971C /* DefaultTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C0286207690060971C /* DefaultTexts.swift */; };
 		79D659C3286209760060971C /* StudentProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D659C2286209760060971C /* StudentProjectsView.swift */; };
@@ -233,9 +230,6 @@
 		799AFA2A285CECDE001B0371 /* StudentProfileCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfileCoordinating.swift; sourceTree = "<group>"; };
 		799AFA2B285CECDE001B0371 /* StudentProfileViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfileViewDelegate.swift; sourceTree = "<group>"; };
 		799AFA2C285CECDE001B0371 /* StudentProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfileViewController.swift; sourceTree = "<group>"; };
-		799AFA2E285CECDE001B0371 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
-		799AFA2F285CECDE001B0371 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		799AFA31285CECDE001B0371 /* TabBarCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarCoordinating.swift; sourceTree = "<group>"; };
 		799AFA34285CECDE001B0371 /* LogoutAlertCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutAlertCoordinator.swift; sourceTree = "<group>"; };
 		799AFA35285CECDE001B0371 /* LogoutAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutAlertViewController.swift; sourceTree = "<group>"; };
 		799AFA36285CECDE001B0371 /* LogoutAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutAlertPresenter.swift; sourceTree = "<group>"; };
@@ -596,8 +590,6 @@
 		799AFA2D285CECDE001B0371 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA2E285CECDE001B0371 /* MainTabBarCoordinator.swift */,
-				799AFA2F285CECDE001B0371 /* TabBarViewController.swift */,
 				799AFA30285CECDE001B0371 /* Protocols */,
 			);
 			path = TabBar;
@@ -606,7 +598,6 @@
 		799AFA30285CECDE001B0371 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				799AFA31285CECDE001B0371 /* TabBarCoordinating.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1110,11 +1101,9 @@
 				799AFAD0285CECDF001B0371 /* SendFileView.swift in Sources */,
 				799AFAEB285CECDF001B0371 /* StudentProfileViewable.swift in Sources */,
 				799AFADA285CECDF001B0371 /* StudentProjectsPresenter.swift in Sources */,
-				799AFAEF285CECDF001B0371 /* MainTabBarCoordinator.swift in Sources */,
 				799AFB2C285CECDF001B0371 /* DateFormats.swift in Sources */,
 				799AFB30285CECDF001B0371 /* RegEx.swift in Sources */,
 				799AFB0C285CECDF001B0371 /* HomeNewsViewDelegate.swift.swift in Sources */,
-				799AFB67285CEDE5001B0371 /* TabBarViewController.swift in Sources */,
 				7989817A2892D173001B39E8 /* ProjectTasksDelegate.swift in Sources */,
 				799AFB1A285CECDF001B0371 /* StudentProjectDetailViewController.swift in Sources */,
 				799AFB19285CECDF001B0371 /* StudentProjectDetailCoordinator.swift in Sources */,
@@ -1156,7 +1145,6 @@
 				799AFB15285CECDF001B0371 /* AvatarSelectionCoordinating.swift in Sources */,
 				799AFB05285CECDF001B0371 /* SingleButtonAlertView.swift in Sources */,
 				799AFAEA285CECDF001B0371 /* StudentProfilePresenting.swift in Sources */,
-				799AFAF1285CECDF001B0371 /* TabBarCoordinating.swift in Sources */,
 				799AFAF4285CECDF001B0371 /* LogoutAlertPresenter.swift in Sources */,
 				79FFE7E92860F9F8003FCBE5 /* StudentProjectsRankingViewable.swift in Sources */,
 				799AFB1D285CECDF001B0371 /* StudentProjectDetailViewDelegate.swift in Sources */,

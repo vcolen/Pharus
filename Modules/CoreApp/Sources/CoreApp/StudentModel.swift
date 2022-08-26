@@ -77,6 +77,10 @@ public struct StudentModel: Codable {
 }
 
 extension StudentModel {
+    static let shared = StudentModel()
+}
+
+extension StudentModel {
     public static let defaultProject = ProjectModel(
         id: "1",
         name: "El Projeto",

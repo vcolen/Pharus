@@ -12,11 +12,15 @@ let package = Package(
             targets: ["AppFeature"]
         )
     ],
-    dependencies: [],
+    dependencies: [
+        .package(path: "../CoreScene")
+    ],
     targets: [
         .target(
             name: "AppFeature",
-            dependencies: []
+            dependencies: [
+                "CoreScene"
+            ]
         )
     ]
 )

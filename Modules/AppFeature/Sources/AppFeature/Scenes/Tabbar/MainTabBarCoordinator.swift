@@ -7,8 +7,9 @@
 
 import UIKit
 import CoreApp
+import CoreScene
 
-struct MainTabBarCoordinator {
+public struct MainTabBarCoordinator {
 
     // MARK: - Properties
     private let student: StudentModel

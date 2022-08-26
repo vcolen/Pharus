@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-// import AppFeature
+import AppFeature
 
 public enum App {
 

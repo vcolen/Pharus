@@ -20,7 +20,9 @@ let package = Package(
         .package(path: "../CoreApp"),
         .package(path: "../CoreScene"),
 
-        .package(path: "../Features/LoginFeature")
+        .package(path: "../Features/LoginFeature"),
+
+        .package(path: ".../AppFeature")
     ],
     targets: [
         .target(
@@ -32,7 +34,8 @@ let package = Package(
                 "CoreKit",
                 "CoreApp",
                 "CoreScene",
-                "LoginFeature"
+                "LoginFeature",
+                "AppFeature"
             ]
         )
     ]

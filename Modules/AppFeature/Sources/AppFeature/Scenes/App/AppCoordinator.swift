@@ -41,14 +41,15 @@ extension AppCoordinator {
     }
 
     func openTabBarScene() {
-//        let tabBarController = TabBarViewController()
-//        MainTabBarCoordinator(
-//            rootViewController: tabBarController,
-//            student: student,
-//            onLogout: openLoginScene
-//        ).start()
+        print("abrir tabbar")
+        let tabBarController = UITabBarController()
+        MainTabBarCoordinator(
+            rootViewController: tabBarController,
+            student: student,
+            onLogout: openLoginScene
+        ).start()
 
-    //    transitionWindow(to: tabBarController)
+        transitionWindow(to: tabBarController)
     }
 
     func transitionWindow(to controller: UIViewController) {

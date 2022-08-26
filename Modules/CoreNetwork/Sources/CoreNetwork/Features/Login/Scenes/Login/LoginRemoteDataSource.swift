@@ -14,11 +14,12 @@ public struct LoginRemoteDataSource {
 
 extension LoginRemoteDataSource: DataKit.LoginRemoteDataSource {
     public func loginUser(email: String, password: String) -> Bool {
-        return email == "antonia.ferreira@gmail.com" && password == "Atn4273!"
+       // return email == "antonia.ferreira@gmail.com" && password == "Atn4273!"
+        return true
     }
 }
 
-//
+#warning("StudentModel")
 // func makeStudentModel(with student: Student) -> StudentModel {
 //    var projectModelArray = [ProjectModel]()
 //    for project in student.projects {
