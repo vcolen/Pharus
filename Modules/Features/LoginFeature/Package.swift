@@ -17,7 +17,7 @@ let package = Package(
         .package(path: "../../CoreKit"),
         .package(path: "../../PharusUI"),
         .package(path: "../../InjectionKit"),
-        .package(path: "../CoreScene")
+        .package(path: "../../CoreScene")
     ],
     targets: [
         .target(
