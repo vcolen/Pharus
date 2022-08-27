@@ -41,11 +41,10 @@ extension AppCoordinator {
     }
 
     func openTabBarScene() {
-        print("abrir tabbar")
         let tabBarController = UITabBarController()
-        MainTabBarCoordinator(
+        TabBarCoordinator(
             rootViewController: tabBarController,
-            student: student,
+            student: StudentModel.shared,
             onLogout: openLoginScene
         ).start()
 

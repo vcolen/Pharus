@@ -1,14 +1,14 @@
 //
-//  StudentProjectsSceneProtocol.swift
+//  HomeSceneProtocol.swift
 //
 //
 //  Created by Victor Colen on 26/08/22.
 //
 
-import CoreApp
 import UIKit
+import CoreApp
 
-public protocol StudentProjectsSceneProtocol {
+public protocol HomeSceneProtocol {
     func callAsFunction(
         rootViewController: UITabBarController,
         student: StudentModel

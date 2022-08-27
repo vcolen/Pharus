@@ -18,7 +18,8 @@ public enum App {
         Assembler.run([
             CoreKitAssembly(),
             DataKitAssembly(),
-            CoreNetworkAssembly()
+            CoreNetworkAssembly(),
+            FeaturesAssembly()
             //            CoreSDKAssembly(),
             //            FeaturesAssembly()
         ])

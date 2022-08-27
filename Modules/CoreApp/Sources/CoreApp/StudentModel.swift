@@ -77,7 +77,7 @@ public struct StudentModel: Codable {
 }
 
 extension StudentModel {
-    static let shared = StudentModel()
+    public static let shared = StudentModel()
 }
 
 extension StudentModel {

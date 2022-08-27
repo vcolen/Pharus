@@ -21,6 +21,7 @@ let package = Package(
         .package(path: "../CoreScene"),
 
         .package(path: "../Features/LoginFeature"),
+        .package(path: "../Features/HomeFeature"),
 
         .package(path: ".../AppFeature")
     ],
@@ -35,6 +36,7 @@ let package = Package(
                 "CoreApp",
                 "CoreScene",
                 "LoginFeature",
+                "HomeFeature",
                 "AppFeature"
             ]
         )

@@ -4,24 +4,24 @@
 import PackageDescription
 
 let package = Package(
-    name: "StudentProjectsRankingFeature",
+    name: "AlertFeature",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "StudentProjectsRankingFeature",
-            targets: ["StudentProjectsRankingFeature"]
+            name: "AlertFeature",
+            targets: ["AlertFeature"]
         )
     ],
     dependencies: [
-        .package(path: "../../PharusUI"),
-        .package(path: "../../CoreApp")
+        .package(path: "../../CoreApp"),
+        .package(path: "../../PharusUI")
     ],
     targets: [
         .target(
-            name: "StudentProjectsRankingFeature",
+            name: "AlertFeature",
             dependencies: [
-                "PharusUI",
-                "CoreApp"
+                "CoreApp",
+                "PharusUI"
             ]
         )
     ]
