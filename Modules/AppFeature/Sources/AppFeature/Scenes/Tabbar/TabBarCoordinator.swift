@@ -13,7 +13,7 @@ import InjectionKit
 public struct TabBarCoordinator {
 
     // MARK: - Properties
-    private let student: StudentModel
+    private let student: Student
     private let logoutHandler: () -> Void
     private weak var rootViewController: UITabBarController?
 
@@ -26,7 +26,7 @@ public struct TabBarCoordinator {
     // MARK: - Initializer
     init(
         rootViewController: UITabBarController,
-        student: StudentModel,
+        student: Student,
         onLogout logoutHandler: @escaping () -> Void
     ) {
         self.rootViewController = rootViewController
@@ -38,35 +38,35 @@ public struct TabBarCoordinator {
     private func makeStudentHomeCoordinator() {
         studentHomeScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: Student.shared
+            student: student
         )
     }
 
     private func makeStudentProjectsCoordinator() {
         studentProjectsScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: Student.shared
+            student: student
         )
     }
 
     private func makeStudentProjectsRankingCoordinator() {
         studentProjectsRankingScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: Student.shared
+            student: student
         )
     }
 
     private func makeStudentAvatarCoordinator() {
         avatarSelectionScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: Student.shared
+            student: student
         )
     }
 
     private func makeStudentProfileCoordinator() {
         studentProfileScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: Student.shared,
+            student: student,
             onLogout: logoutHandler
         )
     }

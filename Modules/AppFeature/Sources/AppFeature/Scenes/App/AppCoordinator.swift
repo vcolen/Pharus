@@ -40,11 +40,12 @@ extension AppCoordinator {
         transitionWindow(to: navigationController)
     }
 
+    #warning("colocar student")
     func openTabBarScene() {
         let tabBarController = UITabBarController()
         TabBarCoordinator(
             rootViewController: tabBarController,
-            student: StudentModel.shared,
+            student: Student.shared,
             onLogout: openLoginScene
         ).start()
 
