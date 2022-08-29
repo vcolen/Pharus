@@ -9,11 +9,11 @@ import UIKit
 import PharusUI
 import CoreApp
 
-struct StudentProjectsTabCoordinator {
+public struct StudentProjectsTabCoordinator {
     private weak var rootViewController: UITabBarController?
     private let student: StudentModel
 
-    init(
+    public init(
         rootViewController: UITabBarController,
         student: StudentModel
     ) {
@@ -21,7 +21,7 @@ struct StudentProjectsTabCoordinator {
         self.student = student
     }
 
-    func start() {
+    public func start() {
         let navigationController = UINavigationController()
 
         StudentProjectsCoordinator(

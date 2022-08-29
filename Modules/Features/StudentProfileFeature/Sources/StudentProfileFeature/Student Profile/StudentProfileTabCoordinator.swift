@@ -8,12 +8,12 @@
 import UIKit
 import CoreApp
 
-struct StudentProfileTabCoordinator {
+public struct StudentProfileTabCoordinator {
     private weak var rootViewController: UITabBarController?
     private let student: StudentModel
     private let logoutHandler: () -> Void
 
-    init(
+    public init(
         rootViewController: UITabBarController,
         student: StudentModel,
         onLogout logoutHandler: @escaping () -> Void
@@ -23,7 +23,7 @@ struct StudentProfileTabCoordinator {
         self.logoutHandler = logoutHandler
     }
 
-    func start() {
+    public func start() {
         let navigationController = UINavigationController()
 
         StudentProfileCoordinator(

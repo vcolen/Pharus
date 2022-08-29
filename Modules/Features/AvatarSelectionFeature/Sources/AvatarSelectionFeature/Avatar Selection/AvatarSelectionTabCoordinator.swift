@@ -8,11 +8,11 @@
 import UIKit
 import CoreApp
 
-struct AvatarSelectionTabCoordinator {
+public struct AvatarSelectionTabCoordinator {
     private weak var rootViewController: UITabBarController?
     private let student: StudentModel
 
-    init(
+    public init(
         rootViewController: UITabBarController,
         student: StudentModel
     ) {
@@ -20,7 +20,7 @@ struct AvatarSelectionTabCoordinator {
         self.student = student
     }
 
-    func start() {
+    public func start() {
         let navigationController = UINavigationController()
 
         AvatarSelectionCoordinator(

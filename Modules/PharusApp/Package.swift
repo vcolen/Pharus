@@ -19,9 +19,16 @@ let package = Package(
         .package(path: "../CoreKit"),
         .package(path: "../CoreApp"),
         .package(path: "../CoreScene"),
+        .package(path: "../InjectionKit"),
 
+        .package(path: "../Features/AlertFeature"),
         .package(path: "../Features/LoginFeature"),
         .package(path: "../Features/HomeFeature"),
+        .package(path: "../Features/AvatarSelectionFeature"),
+        .package(path: "../Features/StudentProjectsFeature"),
+        .package(path: "../Features/StudentProfileFeature"),
+        .package(path: "../Features/StudentProjectsRankingFeature"),
+        .package(path: "../Features/SendFileFeature"),
 
         .package(path: ".../AppFeature")
     ],
@@ -34,10 +41,16 @@ let package = Package(
                 "DataKit",
                 "CoreKit",
                 "CoreApp",
+                "InjectionKit",
                 "CoreScene",
                 "LoginFeature",
                 "HomeFeature",
-                "AppFeature"
+                "AppFeature",
+                "AvatarSelectionFeature",
+                "StudentProjectsFeature",
+                "StudentProjectsRankingFeature",
+                "SendFileFeature",
+                "AlertFeature"
             ]
         )
     ]

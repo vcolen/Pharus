@@ -8,11 +8,11 @@
 import UIKit
 import CoreApp
 
-struct StudentProjectsRankingTabCoordinator {
+public struct StudentProjectsRankingTabCoordinator {
     private weak var rootViewController: UITabBarController?
     private let student: StudentModel
 
-    init(
+    public init(
         rootViewController: UITabBarController,
         student: StudentModel
     ) {
@@ -20,7 +20,7 @@ struct StudentProjectsRankingTabCoordinator {
         self.student = student
     }
 
-    func start() {
+    public func start() {
         let navigationController = UINavigationController()
 
         StudentProjectsRankingCoordinator(
