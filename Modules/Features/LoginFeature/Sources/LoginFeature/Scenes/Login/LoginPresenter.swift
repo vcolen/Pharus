@@ -23,16 +23,14 @@ class LoginPresenter: BasePresenter<LoginViewable>, LoginPresenting {
 
     // MARK: - Actions
     func isValidEmail(email: String) -> Bool {
-        #warning("Trocar por constante")
-        let emailRegEx = "^[a-z0-9_%+-]+([.-][a-z0-9]+)*@[a-z0-9]+([.-][a-z0-9]+)*\\.[a-z]{2,3}$"
+        let emailRegEx = Constants.regEx.emailRegEx
 
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPredicate.evaluate(with: email)
     }
 
     func isValidPassword(password: String) -> Bool {
-        #warning("Trocar por constante")
-        let passwordRegEx = "^(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$"
+        let passwordRegEx = Constants.regEx.passwordRegEx
 
         let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         return passwordPredicate.evaluate(with: password)

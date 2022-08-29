@@ -11,12 +11,10 @@ import CoreApp
 class StudentProjectDetailPresenter: StudentProjectsDetailPresenting {
 
     // MARK: - Properties
-
     private let coordinator: StudentProjectDetailCoordinator
     var project: ProjectModel
 
     // MARK: - Initializer
-
     init(
         coordinator: StudentProjectDetailCoordinator,
         project: ProjectModel
@@ -26,7 +24,6 @@ class StudentProjectDetailPresenter: StudentProjectsDetailPresenting {
     }
 
     // MARK: - Actions
-
     func showProjectRules() {
         coordinator.showProjectRules()
     }

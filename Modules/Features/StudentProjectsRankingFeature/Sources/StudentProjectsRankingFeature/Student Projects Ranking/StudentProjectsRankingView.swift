@@ -67,14 +67,14 @@ extension StudentProjectsRankingView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-#warning("colocar constante")
+
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "userRankingProjects",
+            withIdentifier: Constants.cellReuseIdentifiers.userRankingProjects,
             for: indexPath
         ) as? StudentProjectsRankingCell else {
-#warning("colocar constante")
+
             return tableView.dequeueReusableCell(
-                withIdentifier: "userRankingProjects",
+                withIdentifier: Constants.cellReuseIdentifiers.userRankingProjects,
                 for: indexPath
             )
         }

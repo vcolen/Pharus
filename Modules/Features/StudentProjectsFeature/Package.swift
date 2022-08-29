@@ -16,8 +16,7 @@ let package = Package(
         .package(path: "../AlertFeature"),
         .package(path: "../SendFileFeature"),
         .package(path: "../../PharusUI"),
-        .package(path: "../../CoreApp"),
-        .package(path: "../StudentProfileFeature")
+        .package(path: "../../CoreApp")
     ],
     targets: [
         .target(
@@ -26,8 +25,7 @@ let package = Package(
                 "AlertFeature",
                 "CoreApp",
                 "PharusUI",
-                "SendFileFeature",
-                "StudentProfileFeature"
+                "SendFileFeature"
             ]
         )
     ]

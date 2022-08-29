@@ -76,8 +76,7 @@ extension ProjectModel {
 
     public var daysRemaining: Int {
         let dateFormatter = DateFormatter()
-#warning("Colocar em constante")
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = Constants.dateFormats.projectDateFormat
 
         let projectEndDate = dateFormatter.date(from: self.endDate) ?? Date()
         let daysRemaining = Date.getDifferenceInDays(

@@ -50,7 +50,8 @@ let package = Package(
                 "StudentProjectsFeature",
                 "StudentProjectsRankingFeature",
                 "SendFileFeature",
-                "AlertFeature"
+                "AlertFeature",
+                "StudentProfileFeature"
             ]
         )
     ]

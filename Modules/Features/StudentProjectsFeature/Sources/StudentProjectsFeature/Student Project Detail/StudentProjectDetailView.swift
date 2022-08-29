@@ -71,12 +71,11 @@ class StudentProjectDetailView: UIView {
         .setting(\.image, to: .pharusIcons.envelopeIcon)
         .frame(width: 36, height: 36)
 
-    #warning("implementar constante")
     private lazy var descriptionTextLabel = UILabel()
         .setting(\.numberOfLines, to: 0)
         .setting(\.font, to: .smallBody)
         .setting(\.textColor, to: .black)
-        .setting(\.text, to: "lorem ipsum")
+        .setting(\.text, to: Constants.defaultTexts.lorem)
 
     private lazy var rulesStackView = HStackView([
         rulesLabel,

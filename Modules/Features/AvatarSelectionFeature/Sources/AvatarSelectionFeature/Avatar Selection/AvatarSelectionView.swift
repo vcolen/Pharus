@@ -125,11 +125,10 @@ extension AvatarSelectionView {
         )
     }
 
-    #warning("colocar constante")
     private func setupCollectionViewDelegate() {
         avatarSelectionCollectionView.register(
             UICollectionViewCell.self,
-            forCellWithReuseIdentifier: "avatarSelection"
+            forCellWithReuseIdentifier: Constants.cellReuseIdentifiers.avatarSelection
         )
         avatarSelectionCollectionView.dataSource = self
         avatarSelectionCollectionView.delegate = self

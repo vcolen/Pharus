@@ -68,9 +68,8 @@ class StudentProjectsRankingCell: UITableViewCell {
         .setting(\.textColor, to: .white)
         .setting(\.textAlignment, to: .center)
 
-#warning("colocar constante")
     private lazy var mentorCommentsDescriptionLabel = UILabel()
-        .setting(\.text, to: "lorem ipsum")
+        .setting(\.text, to: Constants.defaultTexts.lorem)
         .setting(\.font, to: .smallBody)
         .setting(\.textColor, to: .white)
         .setting(\.numberOfLines, to: 4)

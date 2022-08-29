@@ -7,6 +7,7 @@
 
 import UIKit
 import PharusUI
+import CoreApp
 
 class HomeNewsView: UIView {
 
@@ -35,8 +36,7 @@ class HomeNewsView: UIView {
         .setting(\.textColor, to: .black)
         .setting(\.font, to: .smallBody)
         .setting(\.textAlignment, to: .justified)
-        .setting(\.text, to: "texto texto")
-    #warning("colocar constante")
+        .setting(\.text, to: Constants.defaultTexts.lorem)
 
     // MARK: - Initializer
     init(news: String) {

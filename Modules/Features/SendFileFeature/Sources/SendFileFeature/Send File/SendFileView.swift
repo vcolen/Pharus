@@ -7,10 +7,10 @@
 
 import UIKit
 import PharusUI
+import CoreApp
 
 class SendFileView: UIView {
 
-    #warning("implementar constante na linha 34")
     // MARK: - Properties
     weak var delegate: SendFileViewDelegate?
 
@@ -30,7 +30,7 @@ class SendFileView: UIView {
 
         UILabel()
             .setting(\.numberOfLines, to: 0)
-            .setting(\.text, to: "enviar arquivo")
+            .setting(\.text, to: Constants.defaultTexts.sendFileText)
             .setting(\.textColor, to: .black)
             .setting(\.font, to: .smallBody),
 

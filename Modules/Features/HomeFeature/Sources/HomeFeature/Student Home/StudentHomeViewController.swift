@@ -4,9 +4,10 @@
 //
 //  Created by Victor Colen on 11/04/22.
 //
+
 import UIKit
 import PharusUI
-
+import CoreApp
 class StudentHomeViewController: UIViewController {
 
     // MARK: - Properties
@@ -133,13 +134,12 @@ enum Pages: CaseIterable {
     case pageZero
     case pageOne
 
-    #warning("colocar constante")
     var view: UIView {
         switch self {
         case .pageZero:
-            return HomeNewsView(news: "alo alo alo")
+            return HomeNewsView(news: Constants.defaultTexts.pageZeroText)
         case .pageOne:
-            return HomeNewsView(news: "alo alo alo")
+            return HomeNewsView(news: Constants.defaultTexts.pageOneText)
         }
     }
 

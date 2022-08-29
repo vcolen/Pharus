@@ -7,22 +7,22 @@
 
 import Foundation
 
-struct DefaultTexts {
-    let pageZeroText = """
+public struct DefaultTexts {
+    public let pageZeroText = """
 A empresa XPTO, em parceria com a escola, lançou o projeto Voluntários Digitais.
 Dá uma olhadinha lá, quem sabe você se identifica com a proposta!
 """
 
-    let pageOneText = """
+    public let pageOneText = """
 O projeto ”Introdução a robótica” finalizou. Me contaram você ficou bem colocado, dá uma olhadinha no seu ranking!
 """
 
-    let sendFileText = """
+    public let sendFileText = """
 Aqui você pode enviar os arquivos exigidos para completar uma tarefa.
 Você pode enviar mais de um arquivo de uma vez, bastando selecionar todos os que deseja enviar.
 """
 
-    let lorem = """
+    public let lorem = """
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Nulla bibendum elit tellus, at condimentum mauris sagittis ut. Nam auctor nunc non ipsum blandit tempus.
 """

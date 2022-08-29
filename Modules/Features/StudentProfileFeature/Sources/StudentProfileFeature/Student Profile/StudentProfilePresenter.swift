@@ -11,12 +11,10 @@ import CoreApp
 class StudentProfilePresenter: BasePresenter<StudentProfileViewable> {
 
     // MARK: - Properties
-
     private let coordinator: StudentProfileCoordinating
     var student: StudentModel
 
     // MARK: - Initializer
-
     init(
         coordinator: StudentProfileCoordinating,
         student: StudentModel

@@ -45,11 +45,10 @@ extension StudentProjectsView: ViewCodable {
         tableView.edges()
     }
 
-    #warning("implementar constante")
     func applyAdditionalChanges() {
         tableView.register(
             StudentProjectCell.self,
-            forCellReuseIdentifier: "userProjects"
+            forCellReuseIdentifier: Constants.cellReuseIdentifiers.userProjects
         )
 
         setupTableViewDelegate()
@@ -67,14 +66,13 @@ extension StudentProjectsView: UITableViewDataSource {
         student.projects.count
     }
 
-    #warning("implementar constante")
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "userProjects",
+            withIdentifier: Constants.cellReuseIdentifiers.userProjects,
             for: indexPath
         ) as? StudentProjectCell else {
             return tableView.dequeueReusableCell(
-                withIdentifier: "userProjects",
+                withIdentifier: Constants.cellReuseIdentifiers.userProjects,
                 for: indexPath
             )
         }

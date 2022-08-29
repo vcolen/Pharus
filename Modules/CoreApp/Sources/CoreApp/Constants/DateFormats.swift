@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct DateFormats {
-     let projectDateFormat = "dd/MM/yyyy"
+public struct DateFormats {
+    public let projectDateFormat = "dd/MM/yyyy"
 }
