@@ -59,7 +59,7 @@ public struct TabBarCoordinator {
     private func makeStudentAvatarCoordinator() {
         avatarSelectionScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: student
+            student: Student.shared
         )
     }
 

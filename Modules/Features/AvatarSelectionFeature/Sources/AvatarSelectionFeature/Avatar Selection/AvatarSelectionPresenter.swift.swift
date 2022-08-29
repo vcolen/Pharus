@@ -11,15 +11,13 @@ import CoreApp
 class AvatarSelectionPresenter: BasePresenter<AvatarSelectionViewable> {
 
     // MARK: - Properties
-
     private let coordinator: AvatarSelectionCoordinating
-    var student: StudentModel
+    var student: Student
 
     // MARK: - Initializer
-
     init(
         coordinator: AvatarSelectionCoordinating,
-        student: StudentModel
+        student: Student
     ) {
         self.coordinator = coordinator
         self.student = student
@@ -27,7 +25,6 @@ class AvatarSelectionPresenter: BasePresenter<AvatarSelectionViewable> {
 }
 
 // MARK: - Avatar Selection Presenting
-
 extension AvatarSelectionPresenter: AvatarSelectionPresenting {
     func changeStudentAvatar(to avatar: String) {
         student.avatar = avatar

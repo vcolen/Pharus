@@ -13,7 +13,7 @@ class AvatarSelectionView: UIView {
 
     // MARK: - Properties
     weak var delegate: AvatarSelectionViewDelegate?
-    private var student: StudentModel
+    private var student: Student
     private let avatarSelectionConfiguration = UICollectionView
         .CellRegistration<AvatarSelectionCell, UIImage> { cell, _, image in
             cell.avatarImageView.image = image
@@ -58,7 +58,7 @@ class AvatarSelectionView: UIView {
         .frame(height: 130)
 
     // MARK: - Initializer
-    init(student: StudentModel) {
+    init(student: Student) {
         self.student = student
 
         super.init(frame: .zero)

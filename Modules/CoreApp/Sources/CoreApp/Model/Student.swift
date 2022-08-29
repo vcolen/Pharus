@@ -10,7 +10,8 @@ import Foundation
 public struct Student: Codable {
     public let id, firstName, lastName, birthdate: String
     public let gender, school, year, city: String
-    public let schoolShift, avatar, email, password, username: String
+    public let schoolShift, email, password, username: String
+    public var avatar: String
     public let projects: [Project]
 
     public static let shared = Student()
