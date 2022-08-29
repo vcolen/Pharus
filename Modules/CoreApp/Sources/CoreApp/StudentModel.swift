@@ -72,7 +72,30 @@ public struct StudentModel: Codable {
         self.email = "robert.downey@gmail.com"
         self.password = "robertinho"
         self.username = "rdjunior"
-        self.projects = []
+        self.projects = [
+            ProjectModel(
+                id: "1",
+                name: "Lorem ipsum",
+                isSubscribed: true,
+                isComplete: true,
+                score: 100,
+                placement: 1,
+                projectDescription: "Lorem ipsum",
+                scoreDescription: "Lorem ipsum",
+                startDate: "22-02-2022",
+                endDate: "25-09-2022",
+                school: "Lorem ipsum",
+                mentor: "Lorem ipsum",
+                company: "Lorem ipsum",
+                tasks: [
+                    TaskModel(
+                        title: "Lorem ipsum",
+                        isComplete: true,
+                        description: "Lorem ipsum"
+                    )
+                ]
+            )
+        ]
     }
 }
 
