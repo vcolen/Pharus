@@ -38,7 +38,7 @@ public struct TabBarCoordinator {
     private func makeStudentHomeCoordinator() {
         studentHomeScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: student
+            student: Student.shared
         )
     }
 

@@ -12,12 +12,12 @@ class StudentHomePresenter: BasePresenter<StudentHomeViewable>, StudentHomePrese
 
     // MARK: - Properties
     private let coordinator: StudentHomeCoordinating
-    var student: StudentModel
+    var student: Student
 
     // MARK: - Initializer
     init(
         coordinator: StudentHomeCoordinating,
-        student: StudentModel
+        student: Student
     ) {
         self.coordinator = coordinator
         self.student = student
@@ -27,6 +27,6 @@ class StudentHomePresenter: BasePresenter<StudentHomeViewable>, StudentHomePrese
 #warning("implementar")
 extension StudentHomePresenter {
     func loadData() {
-        student = StudentModel.shared
+        student = Student.shared
     }
 }
