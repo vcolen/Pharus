@@ -28,5 +28,6 @@ public extension UIViewController {
                                                    dy: -0.5 * view.bounds.size.height)
 
         self.view.layer.insertSublayer(gradientLayer, at: 0)
+        view.clipsToBounds = true
     }
 }
