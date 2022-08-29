@@ -12,12 +12,12 @@ class StudentProfilePresenter: BasePresenter<StudentProfileViewable> {
 
     // MARK: - Properties
     private let coordinator: StudentProfileCoordinating
-    var student: StudentModel
+    var student: Student
 
     // MARK: - Initializer
     init(
         coordinator: StudentProfileCoordinating,
-        student: StudentModel
+        student: Student
     ) {
         self.coordinator = coordinator
         self.student = student
@@ -34,6 +34,6 @@ extension StudentProfilePresenter: StudentProfilePresenting {
 extension StudentProfilePresenter {
     #warning("implementar")
     func loadData() {
-        student = StudentModel.shared
+        student = Student.shared
     }
 }

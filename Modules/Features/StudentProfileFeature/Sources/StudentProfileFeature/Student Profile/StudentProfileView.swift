@@ -12,7 +12,7 @@ import CoreApp
 class StudentProfileView: UIView {
 
     // MARK: - Properties
-    var student: StudentModel
+    var student: Student
 
     // MARK: - Views
     private lazy var mainScrollView = VScrollView {
@@ -52,7 +52,7 @@ class StudentProfileView: UIView {
         .center(.allAxis)
 
     // MARK: - Initializer
-    init(student: StudentModel) {
+    init(student: Student) {
         self.student = student
 
         super.init(frame: .zero)

@@ -66,7 +66,7 @@ public struct TabBarCoordinator {
     private func makeStudentProfileCoordinator() {
         studentProfileScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: student,
+            student: Student.shared,
             onLogout: logoutHandler
         )
     }
