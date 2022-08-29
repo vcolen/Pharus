@@ -14,7 +14,7 @@ class StudentProjectDetailView: UIView {
 
     // MARK: - Properties
     weak var delegate: StudentProjectDetailViewDelegate?
-    var project: ProjectModel
+    var project: Project
 
     // MARK: - Views
     private lazy var mainScrollView = VScrollView {
@@ -123,7 +123,7 @@ class StudentProjectDetailView: UIView {
     private lazy var uploadFilesButton = MainCardButton(title: "Enviar Arquivos", buttonState: .normal)
 
     // MARK: - Initializer
-    init(project: ProjectModel) {
+    init(project: Project) {
         self.project = project
 
         super.init(frame: .zero)
@@ -178,7 +178,7 @@ extension StudentProjectDetailView: ViewCodable {
 
 // MARK: - Additional Mehtods
 extension StudentProjectDetailView {
-    private func setupProjectTasks(of project: ProjectModel) {
+    private func setupProjectTasks(of project: Project) {
         for taskIndex in project.tasks.indices {
             let task = project.tasks[taskIndex]
             let checkboxIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon ?? .defaultImage : .defaultImage
@@ -213,7 +213,7 @@ extension StudentProjectDetailView {
         updateProjectProgressView()
     }
 
-    private func configureUnsubscribedProject(with project: ProjectModel) {
+    private func configureUnsubscribedProject(with project: Project) {
         mentorReviewImageView.image = mentorReviewImageView.image?.withTintColor(UIColor.Project.grayDisabledText)
         rulesLabel.textColor = UIColor.Project.grayDisabledText
         completedTasksLabel.textColor = UIColor.Project.grayDisabledText

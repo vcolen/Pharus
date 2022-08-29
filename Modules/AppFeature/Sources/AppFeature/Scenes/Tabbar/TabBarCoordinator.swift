@@ -45,7 +45,7 @@ public struct TabBarCoordinator {
     private func makeStudentProjectsCoordinator() {
         studentProjectsScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: student
+            student: Student.shared
         )
     }
 

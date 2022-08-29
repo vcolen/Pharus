@@ -12,13 +12,13 @@ struct ProjectSheetCoordinator {
 
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
-    private let project: ProjectModel
+    private let project: Project
     private let projectSheetContent: ProjectSheetView.SheetContent
 
     // MARK: - Initializer
     init(
         rootViewController: UINavigationController,
-        project: ProjectModel,
+        project: Project,
         projectSheetContent: ProjectSheetView.SheetContent
     ) {
         self.rootViewController = rootViewController

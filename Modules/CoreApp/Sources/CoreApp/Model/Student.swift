@@ -12,7 +12,7 @@ public struct Student: Codable {
     public let gender, school, year, city: String
     public let schoolShift, email, password, username: String
     public var avatar: String
-    public let projects: [Project]
+    public var projects: [Project]
 
     public static let shared = Student()
 

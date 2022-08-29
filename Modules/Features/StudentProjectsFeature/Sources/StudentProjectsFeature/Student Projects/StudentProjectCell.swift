@@ -143,7 +143,7 @@ extension StudentProjectCell: ViewCodable {
 
 // MARK: - Additional Methods
 extension StudentProjectCell {
-    func configureCell(using project: ProjectModel) {
+    func configureCell(using project: Project) {
         titleLabel.text = project.name
         descriptionLabel.text = project.projectDescription
         mentorLabel.text = "Mentor: " + project.mentor

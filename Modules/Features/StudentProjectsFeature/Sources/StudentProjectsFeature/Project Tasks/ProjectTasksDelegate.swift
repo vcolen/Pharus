@@ -9,5 +9,5 @@ import Foundation
 import CoreApp
 
 protocol ProjectTaskDelegate: AnyObject {
-    func checkmarkButtonTapped(task: TaskModel)
+    func checkmarkButtonTapped(task: Task)
 }

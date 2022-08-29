@@ -11,6 +11,6 @@ import UIKit
 public protocol StudentProjectsSceneProtocol {
     func callAsFunction(
         rootViewController: UITabBarController,
-        student: StudentModel
+        student: Student
     )
 }

@@ -9,6 +9,6 @@ import Foundation
 import CoreApp
 
 protocol StudentProjectsViewDelegate: AnyObject {
-    func subscribeButtonTapped(of project: ProjectModel, at index: Int)
-    func projectCellTapped(for project: ProjectModel)
+    func subscribeButtonTapped(of project: Project, at index: Int)
+    func projectCellTapped(for project: Project)
 }

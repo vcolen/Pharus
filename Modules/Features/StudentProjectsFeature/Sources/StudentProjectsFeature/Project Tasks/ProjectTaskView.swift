@@ -14,7 +14,7 @@ class ProjectTaskView: UIView {
     // MARK: - Properties
     weak var delegate: ProjectTaskDelegate?
     private var checkImage: UIImage?
-    private var task: TaskModel
+    private var task: Task
     var color: UIColor
 
     // MARK: - Views
@@ -33,7 +33,7 @@ class ProjectTaskView: UIView {
 
     // MARK: - Initializer
     init(
-        task: TaskModel,
+        task: Task,
         checkImage: UIImage,
         color: UIColor
     ) {
@@ -76,7 +76,7 @@ extension ProjectTaskView: ViewCodable {
 
 // MARK: - Delegate Actions
 extension ProjectTaskView {
-    func checkmarkButtonTapped(task: TaskModel) {
+    func checkmarkButtonTapped(task: Task) {
         delegate?.checkmarkButtonTapped(task: task)
     }
 }

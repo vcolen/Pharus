@@ -9,14 +9,14 @@ import Foundation
 
 public struct Project: Codable {
     public let id, name: String
-    public let isSubscribed, isComplete: Bool
+    public var isSubscribed, isComplete: Bool
     public let score, placement: Int?
     public let projectDescription: String
     public let scoreDescription: String?
     public let startDate, endDate, school: String
     public let mentor: String
-    public let company: String
-    public let tasks: [Task]
+    public let company: String?
+    public var tasks: [Task]
 
     enum CodingKeys: String, CodingKey {
         case id, name, isSubscribed, isComplete, score, placement

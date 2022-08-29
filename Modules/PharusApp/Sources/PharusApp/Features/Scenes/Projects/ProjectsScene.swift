@@ -13,7 +13,7 @@ import CoreApp
 public struct ProjectsScene: StudentProjectsSceneProtocol {
     public func callAsFunction(
         rootViewController: UITabBarController,
-        student: StudentModel
+        student: Student
     ) {
         StudentProjectsTabCoordinator(
             rootViewController: rootViewController,

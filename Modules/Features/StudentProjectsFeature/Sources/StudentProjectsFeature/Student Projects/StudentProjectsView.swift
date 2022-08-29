@@ -13,7 +13,7 @@ class StudentProjectsView: UIView {
 
     // MARK: - Properties
     weak var delegate: StudentProjectsViewDelegate?
-    private let student: StudentModel
+    private let student: Student
 
     // MARK: - Views
     lazy var tableView = UITableView()
@@ -21,7 +21,7 @@ class StudentProjectsView: UIView {
         .setting(\.separatorColor, to: .clear)
 
     // MARK: - Initializer
-    init(student: StudentModel) {
+    init(student: Student) {
         self.student = student
 
         super.init(frame: .zero)
