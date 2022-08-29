@@ -68,7 +68,7 @@ public struct StudentModel: Codable {
         self.year = "2o"
         self.city = "BH"
         self.schoolShift = "M"
-        self.avatar = "avatar2"
+        self.avatar = "18"
         self.email = "robert.downey@gmail.com"
         self.password = "robertinho"
         self.username = "rdjunior"
