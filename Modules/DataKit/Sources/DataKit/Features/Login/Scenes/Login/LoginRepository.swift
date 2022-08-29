@@ -11,6 +11,7 @@ import InjectionKit
 
 public struct LoginRepository {
     @Injected var remoteDataSource: LoginRemoteDataSource
+    @Injected var localDataSource: LoginLocalDataSource
 
     public init() { }
 }
@@ -18,5 +19,9 @@ public struct LoginRepository {
 extension LoginRepository: LoginRepositoryProtocol {
     public func loginUser(email: String, password: String) -> Bool {
         remoteDataSource.loginUser(email: email, password: password)
+    }
+
+    public func getUserToken() -> String {
+        localDataSource.getUserToken()
     }
 }

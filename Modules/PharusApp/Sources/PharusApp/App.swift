@@ -19,9 +19,8 @@ public enum App {
             CoreKitAssembly(),
             DataKitAssembly(),
             CoreNetworkAssembly(),
+            CoreStorageAssembly(),
             FeaturesAssembly()
-            //            CoreSDKAssembly(),
-            //            FeaturesAssembly()
         ])
 
         result(AppCoordinator(window: window))

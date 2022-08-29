@@ -15,6 +15,7 @@ class LoginPresenter: BasePresenter<LoginViewable>, LoginPresenting {
     // MARK: - Properties
     private let coordinator: LoginCoordinating
     @Injected var loginUserUseCaseProtocol: LoginUserUseCaseProtocol
+    @Injected var getUserTokenUseCaseProtocol: GetUserTokenUseCaseProtocol
 
     // MARK: - Initializer
     init(coordinator: LoginCoordinating) {
@@ -38,6 +39,7 @@ class LoginPresenter: BasePresenter<LoginViewable>, LoginPresenting {
 
     func loginUser(email: String, password: String) -> Bool {
         if loginUserUseCaseProtocol(email: email, password: password) {
+            print(getUserTokenUseCaseProtocol())
             coordinator.showHome()
             return true
         }

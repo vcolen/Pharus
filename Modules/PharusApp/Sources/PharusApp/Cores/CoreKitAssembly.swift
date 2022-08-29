@@ -21,5 +21,9 @@ extension CoreKitAssembly {
         container.register(LoginUserUseCaseProtocol.self) {
             LoginUserUseCase()
         }
+
+        container.register(GetUserTokenUseCaseProtocol.self) {
+            GetUserTokenUseCase()
+        }
     }
 }

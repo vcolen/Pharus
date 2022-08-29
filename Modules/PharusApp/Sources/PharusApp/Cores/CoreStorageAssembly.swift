@@ -9,17 +9,18 @@ import Foundation
 import InjectionKit
 import CoreStorage
 import DataKit
+import LoginFeature
 
-// struct CoreStorageAssembly: Assembly {
-//    func assemble(container: Container) {
-//        assembleLogin(container: container)
-//    }
-// }
-//
-// extension CoreStorageAssembly {
-//    func assembleLogin(container: Container) {
-//        container.register(DataKit.StudentLocalDataSource.self) {
-//            CoreStorage.StudentLocalDataSource()
-//        }
-//    }
-// }
+ struct CoreStorageAssembly: Assembly {
+    func assemble(container: Container) {
+        assembleLogin(container: container)
+    }
+ }
+
+ extension CoreStorageAssembly {
+    func assembleLogin(container: Container) {
+        container.register(DataKit.LoginLocalDataSource.self) {
+            CoreStorage.LoginLocalDataSource()
+        }
+    }
+ }
