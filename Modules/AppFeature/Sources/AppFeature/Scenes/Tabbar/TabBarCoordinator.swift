@@ -52,7 +52,7 @@ public struct TabBarCoordinator {
     private func makeStudentProjectsRankingCoordinator() {
         studentProjectsRankingScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: student
+            student: Student.shared
         )
     }
 

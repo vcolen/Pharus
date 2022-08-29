@@ -12,8 +12,8 @@ import CoreApp
 class StudentProjectsRankingView: UIView {
 
     // MARK: - Properties
-    private let student: StudentModel
-    private let projects: [ProjectModel]
+    private let student: Student
+    private let projects: [Project]
 
     // MARK: - Views
     lazy var tableView = UITableView()
@@ -22,7 +22,7 @@ class StudentProjectsRankingView: UIView {
         .setting(\.allowsSelection, to: false)
 
     // MARK: - Initializer
-    init(student: StudentModel) {
+    init(student: Student) {
         self.student = student
         self.projects = student.projects.filter({ $0.placement != nil })
 
