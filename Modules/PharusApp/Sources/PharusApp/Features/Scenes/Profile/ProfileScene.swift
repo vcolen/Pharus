@@ -13,7 +13,7 @@ import CoreScene
 public struct ProfileScene: StudentProfileSceneProtocol {
     public func callAsFunction(
         rootViewController: UITabBarController,
-        student: StudentModel,
+        student: Student,
         onLogout logoutHandler: @escaping () -> Void
     ) {
         StudentProfileTabCoordinator(

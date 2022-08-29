@@ -11,6 +11,6 @@ import CoreApp
 public protocol HomeSceneProtocol {
     func callAsFunction(
         rootViewController: UITabBarController,
-        student: StudentModel
+        student: Student
     )
 }

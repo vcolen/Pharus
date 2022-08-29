@@ -2,30 +2,20 @@
 //  Student.swift
 //  Pharus
 //
-//  Created by Victor Colen on 22/03/22.
+//  Created by Victor Colen on 21/04/22.
 //
 
 import Foundation
 
-public struct StudentModel: Codable {
-
-    // MARK: - Properties
-    public var id: String
-    public let firstName: String
-    public let lastName: String
-    public let birthdate: String
-    public let gender: String
-    public let school: String
-    public var year: String
-    public var city: String
-    public var schoolShift: String
+public struct Student: Codable {
+    public let id, firstName, lastName, birthdate: String
+    public let gender, school, year, city: String
+    public let schoolShift, email, password, username: String
     public var avatar: String
-    public var email: String
-    public var password: String
-    public var username: String
-    public var projects: [ProjectModel]
+    public var projects: [Project]
 
-    // MARK: - Initializer
+    public static let shared = Student()
+
     public init(
         id: String,
         firstName: String,
@@ -40,7 +30,7 @@ public struct StudentModel: Codable {
         email: String,
         password: String,
         username: String,
-        projects: [ProjectModel]
+        projects: [Project]
     ) {
         self.id = id
         self.firstName = firstName
@@ -73,7 +63,7 @@ public struct StudentModel: Codable {
         self.password = "robertinho"
         self.username = "rdjunior"
         self.projects = [
-            ProjectModel(
+            Project(
                 id: "1",
                 name: "Lorem ipsum",
                 isSubscribed: true,
@@ -88,38 +78,9 @@ public struct StudentModel: Codable {
                 mentor: "Lorem ipsum",
                 company: "Lorem ipsum",
                 tasks: [
-                    TaskModel(
-                        title: "Lorem ipsum",
-                        isComplete: true,
-                        description: "Lorem ipsum"
-                    )
+                    Task(title: "teste", isComplete: true, taskDescription: "alo alo")
                 ]
             )
         ]
     }
-}
-
-extension StudentModel {
-    public static let shared = StudentModel()
-}
-
-extension StudentModel {
-    public static let defaultProject = ProjectModel(
-        id: "1",
-        name: "El Projeto",
-        isSubscribed: true,
-        isComplete: true,
-        score: 100,
-        placement: 2,
-        projectDescription: "Lorem ipsum",
-        scoreDescription: "bela nota parabens",
-        startDate: "22/03/2021",
-        endDate: "25/05/2023",
-        school: "Batista",
-        mentor: "Yo el brabo",
-        company: "ioasys",
-        tasks: [
-            TaskModel(title: "Terminar projeto", isComplete: true, description: "Teste")
-        ]
-    )
 }

@@ -9,9 +9,9 @@ import Foundation
 import CoreApp
 
 protocol StudentProjectsCoordinating {
-    func showStudentProject(_ project: ProjectModel)
+    func showStudentProject(_ project: Project)
     func showSubscribeAlert(
-        of project: ProjectModel,
+        of project: Project,
         onCommit commitHandler: @escaping () -> Void
     )
 }

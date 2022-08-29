@@ -9,7 +9,7 @@ import Foundation
 import CoreApp
 
 protocol StudentProjectsPresenting: Presenting {
-    var student: StudentModel { get }
-    func showSubscribeAlert(of project: ProjectModel, at index: Int)
-    func showStudentProject(project: ProjectModel)
+    var student: Student { get }
+    func showSubscribeAlert(of project: Project, at index: Int)
+    func showStudentProject(project: Project)
 }

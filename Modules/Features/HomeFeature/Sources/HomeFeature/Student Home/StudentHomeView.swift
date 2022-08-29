@@ -5,7 +5,7 @@ import CoreApp
 class StudentHomeView: UIView {
 
     // MARK: - Properties
-    var student: StudentModel
+    var student: Student
     private let cards: [StudentHomeMiniCardView] = [
         StudentHomeMiniCardView(
             cardType: .warning,
@@ -69,7 +69,7 @@ class StudentHomeView: UIView {
         .frame(height: 221)
 
     // MARK: - Initializer
-    init(student: StudentModel) {
+    init(student: Student) {
         self.student = student
 
         super.init(frame: .zero)

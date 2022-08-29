@@ -13,13 +13,13 @@ class StudentProfileCoordinator {
 
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
-    private let student: StudentModel
+    private let student: Student
     private let logoutHandler: () -> Void
 
     // MARK: - Initializer
     init(
         rootViewController: UINavigationController,
-        student: StudentModel,
+        student: Student,
         onLogout logoutHandler: @escaping () -> Void
     ) {
         self.rootViewController = rootViewController

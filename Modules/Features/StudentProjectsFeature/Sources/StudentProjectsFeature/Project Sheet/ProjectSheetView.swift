@@ -14,7 +14,7 @@ class ProjectSheetView: UIView {
     // MARK: - Properties
     weak var delegate: ProjectSheetViewDelegate?
 
-    private var project: ProjectModel
+    private var project: Project
     private var sheetContent: SheetContent
 
     enum SheetContent {
@@ -72,7 +72,7 @@ class ProjectSheetView: UIView {
 
     // MARK: - Initializer
     init(
-        project: ProjectModel,
+        project: Project,
         sheetContent: SheetContent
     ) {
         self.project = project

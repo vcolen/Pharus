@@ -9,6 +9,6 @@ import Foundation
 import CoreApp
 
 protocol StudentHomePresenting: Presenting {
-    var student: StudentModel { get }
+    var student: Student { get }
     func loadData()
 }

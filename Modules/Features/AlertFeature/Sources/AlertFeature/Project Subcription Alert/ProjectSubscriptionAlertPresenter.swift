@@ -13,14 +13,14 @@ class ProjectSubscriptionAlertPresenter: BasePresenter<ProjectSubscriptionAlertV
 
     // MARK: - Properties
     private let coordinator: ProjectSubscriptionAlertCoordinating
-    let project: ProjectModel
+    let project: Project
     private let subscriptionHandler: () -> Void
 
     // MARK: - Initializer
 
     init(
         coordinator: ProjectSubscriptionAlertCoordinating,
-        project: ProjectModel,
+        project: Project,
         onSubscription subscriptionHandler: @escaping () -> Void
     ) {
         self.coordinator = coordinator

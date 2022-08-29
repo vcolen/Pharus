@@ -10,11 +10,11 @@ import CoreApp
 
 class StudentProjectsRankingPresenter: BasePresenter<StudentProjectsRankingViewable>, StudentProjectsRankingPresenting {
     private let coordinator: StudentProjectsRankingCoordinating
-    let student: StudentModel
+    let student: Student
 
     init(
         coordinator: StudentProjectsRankingCoordinating,
-        student: StudentModel
+        student: Student
     ) {
         self.coordinator = coordinator
         self.student = student

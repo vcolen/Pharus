@@ -13,12 +13,12 @@ struct StudentProjectsCoordinator {
 
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
-    private let student: StudentModel
+    private let student: Student
 
     // MARK: - Initializer
     init(
         rootViewController: UINavigationController,
-        student: StudentModel
+        student: Student
     ) {
         self.rootViewController = rootViewController
         self.student = student
@@ -44,7 +44,7 @@ extension StudentProjectsCoordinator: Coordinator {
 }
 // MARK: - Student Projects Coordinating
 extension StudentProjectsCoordinator: StudentProjectsCoordinating {
-    func showStudentProject(_ project: ProjectModel) {
+    func showStudentProject(_ project: Project) {
         if let navigationController = rootViewController {
             StudentProjectDetailCoordinator(
                 rootViewController: navigationController,
@@ -54,7 +54,7 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
     }
 
     func showSubscribeAlert(
-        of project: ProjectModel,
+        of project: Project,
         onCommit commitHandler: @escaping () -> Void
     ) {
         if let navigationController = rootViewController {

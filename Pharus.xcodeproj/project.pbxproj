@@ -15,7 +15,6 @@
 		7929987928B659F1009D5E0C /* CoreScene in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987828B659F1009D5E0C /* CoreScene */; };
 		7929987D28B659F1009D5E0C /* CoreStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987C28B659F1009D5E0C /* CoreStorage */; };
 		7929987F28B659F1009D5E0C /* DataKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987E28B659F1009D5E0C /* DataKit */; };
-		79410A1A287F5F08001ABC40 /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79410A19287F5F08001ABC40 /* StudentManager.swift */; };
 		79458CBA28A5766B00537910 /* InjectionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 79458CB928A5766B00537910 /* InjectionKit */; };
 		79621ABD28B68AB800A150F1 /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79621ABC28B68AB800A150F1 /* AppFeature */; };
 		79621AC028B68BC900A150F1 /* SendFileFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79621ABF28B68BC900A150F1 /* SendFileFeature */; };
@@ -24,10 +23,6 @@
 		799AFB3B285CECDF001B0371 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA90285CECDE001B0371 /* SceneDelegate.swift */; };
 		799AFB3F285CECDF001B0371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799AFA94285CECDE001B0371 /* Assets.xcassets */; };
 		799AFB41285CECDF001B0371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799AFA96285CECDE001B0371 /* LaunchScreen.storyboard */; };
-		799AFB53285CECDF001B0371 /* Student.json in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAAD285CECDE001B0371 /* Student.json */; };
-		799AFB55285CECDF001B0371 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAAF285CECDE001B0371 /* Project.swift */; };
-		799AFB57285CECDF001B0371 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAB1285CECDE001B0371 /* Task.swift */; };
-		799AFB58285CECDF001B0371 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFAB2285CECDE001B0371 /* Student.swift */; };
 		799AFB5C285CECDF001B0371 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFAB9285CECDE001B0371 /* Montserrat-Medium.ttf */; };
 		799AFB5D285CECDF001B0371 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFABA285CECDE001B0371 /* Montserrat-Bold.ttf */; };
 		799AFB5E285CECDF001B0371 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799AFABB285CECDE001B0371 /* Montserrat-SemiBold.ttf */; };
@@ -58,7 +53,6 @@
 
 /* Begin PBXFileReference section */
 		7906B08C28B961F800681E6E /* AlertFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AlertFeature; sourceTree = "<group>"; };
-		79410A19287F5F08001ABC40 /* StudentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentManager.swift; sourceTree = "<group>"; };
 		79458CB828A5765000537910 /* InjectionKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = InjectionKit; sourceTree = "<group>"; };
 		795B451728B7E7DA006D3835 /* FullAvatarImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullAvatarImages.swift; sourceTree = "<group>"; };
 		795B451828B7E7DA006D3835 /* PharusIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharusIcons.swift; sourceTree = "<group>"; };
@@ -82,10 +76,6 @@
 		799AFA90285CECDE001B0371 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		799AFA94285CECDE001B0371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		799AFA97285CECDE001B0371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		799AFAAD285CECDE001B0371 /* Student.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Student.json; sourceTree = "<group>"; };
-		799AFAAF285CECDE001B0371 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		799AFAB1285CECDE001B0371 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		799AFAB2285CECDE001B0371 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		799AFAB4285CECDE001B0371 /* Pharus.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Pharus.entitlements; sourceTree = "<group>"; };
 		799AFAB9285CECDE001B0371 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		799AFABA285CECDE001B0371 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -157,14 +147,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		79410A18287F5EFA001ABC40 /* Student */ = {
-			isa = PBXGroup;
-			children = (
-				79410A19287F5F08001ABC40 /* StudentManager.swift */,
-			);
-			path = Student;
-			sourceTree = "<group>";
-		};
 		795B451528B7E7DA006D3835 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,7 +202,6 @@
 				799AFAB7285CECDE001B0371 /* Fonts */,
 				799AFAC2285CECDE001B0371 /* Info.plist */,
 				799AFA96285CECDE001B0371 /* LaunchScreen.storyboard */,
-				799AFAAB285CECDE001B0371 /* Model */,
 				799AFAB4285CECDE001B0371 /* Pharus.entitlements */,
 				799AFA7C285CECDE001B0371 /* Service */,
 				799AFA8E285CECDE001B0371 /* SystemDelegate */,
@@ -243,18 +224,6 @@
 				799AFA90285CECDE001B0371 /* SceneDelegate.swift */,
 			);
 			path = SystemDelegate;
-			sourceTree = "<group>";
-		};
-		799AFAAB285CECDE001B0371 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				799AFAAD285CECDE001B0371 /* Student.json */,
-				799AFAAF285CECDE001B0371 /* Project.swift */,
-				79410A18287F5EFA001ABC40 /* Student */,
-				799AFAB1285CECDE001B0371 /* Task.swift */,
-				799AFAB2285CECDE001B0371 /* Student.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		799AFAB7285CECDE001B0371 /* Fonts */ = {
@@ -450,7 +419,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				799AFB53285CECDF001B0371 /* Student.json in Resources */,
 				799AFB61285CECDF001B0371 /* OpenSans-Bold.ttf in Resources */,
 				799AFB60285CECDF001B0371 /* OpenSans-SemiBold.ttf in Resources */,
 				799AFB62285CECDF001B0371 /* OpenSans-Medium.ttf in Resources */,
@@ -499,11 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79410A1A287F5F08001ABC40 /* StudentManager.swift in Sources */,
-				799AFB57285CECDF001B0371 /* Task.swift in Sources */,
-				799AFB55285CECDF001B0371 /* Project.swift in Sources */,
 				799AFB3B285CECDF001B0371 /* SceneDelegate.swift in Sources */,
-				799AFB58285CECDF001B0371 /* Student.swift in Sources */,
 				799AFB35285CECDF001B0371 /* Network.swift in Sources */,
 				799AFB3A285CECDF001B0371 /* AppDelegate.swift in Sources */,
 			);

@@ -102,7 +102,7 @@ extension StudentProjectsRankingCell: ViewCodable {
 
 // MARK: - Additional Methods
 extension StudentProjectsRankingCell {
-    func configureCell(using project: ProjectModel) {
+    func configureCell(using project: Project) {
         self.projectTitleLabel.text = project.name
         mentorCommentsDescriptionLabel.originalView.text = project.scoreDescription
 
@@ -110,7 +110,7 @@ extension StudentProjectsRankingCell {
         setPlacementImages(with: project)
     }
 
-    private func setPlacementImages(with project: ProjectModel) {
+    private func setPlacementImages(with project: Project) {
         guard let projectPlacement = project.placement else {
             return
         }

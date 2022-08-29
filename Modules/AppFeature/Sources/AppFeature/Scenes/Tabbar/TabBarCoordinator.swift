@@ -13,7 +13,7 @@ import InjectionKit
 public struct TabBarCoordinator {
 
     // MARK: - Properties
-    private let student: StudentModel
+    private let student: Student
     private let logoutHandler: () -> Void
     private weak var rootViewController: UITabBarController?
 
@@ -26,7 +26,7 @@ public struct TabBarCoordinator {
     // MARK: - Initializer
     init(
         rootViewController: UITabBarController,
-        student: StudentModel,
+        student: Student,
         onLogout logoutHandler: @escaping () -> Void
     ) {
         self.rootViewController = rootViewController

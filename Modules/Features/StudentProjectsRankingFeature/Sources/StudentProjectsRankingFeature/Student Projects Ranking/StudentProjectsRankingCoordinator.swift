@@ -12,13 +12,13 @@ struct StudentProjectsRankingCoordinator {
 
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
-    private let student: StudentModel
+    private let student: Student
 
     // MARK: - Initializer
 
     init(
         rootViewController: UINavigationController,
-        student: StudentModel
+        student: Student
     ) {
         self.rootViewController = rootViewController
         self.student = student

@@ -12,13 +12,13 @@ public struct ProjectSubscriptionAlertCoordinator {
 
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
-    private let project: ProjectModel
+    private let project: Project
     private let projectSubscriptionHandler: () -> Void
 
     // MARK: - Initializer
     public init(
         rootViewController: UINavigationController,
-        project: ProjectModel,
+        project: Project,
         onSubscription projectSubscriptionHandler: @escaping () -> Void
     ) {
         self.rootViewController = rootViewController

@@ -13,7 +13,7 @@ import CoreApp
 public struct AvatarSelectionScene: AvatarSelectionSceneProtocol {
     public func callAsFunction(
         rootViewController: UITabBarController,
-        student: StudentModel
+        student: Student
     ) {
         AvatarSelectionTabCoordinator(
             rootViewController: rootViewController,

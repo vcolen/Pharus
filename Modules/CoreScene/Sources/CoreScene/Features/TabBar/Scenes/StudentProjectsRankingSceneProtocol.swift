@@ -11,6 +11,6 @@ import CoreApp
 public protocol StudentProjectsRankingSceneProtocol {
     func callAsFunction(
         rootViewController: UITabBarController,
-        student: StudentModel
+        student: Student
     )
 }

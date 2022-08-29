@@ -13,12 +13,12 @@ public struct SendFileCoordinator {
 
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
-    private let project: ProjectModel
+    private let project: Project
 
     // MARK: - Initializer
     public  init(
         rootViewController: UINavigationController,
-        project: ProjectModel
+        project: Project
     ) {
         self.rootViewController = rootViewController
         self.project = project

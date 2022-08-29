@@ -12,12 +12,12 @@ class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentP
 
     // MARK: - Properties
     private let coordinator: StudentProjectsCoordinating
-    var student: StudentModel
+    var student: Student
 
     // MARK: - Initializer
     init(
         coordinator: StudentProjectsCoordinating,
-        student: StudentModel
+        student: Student
     ) {
         self.coordinator = coordinator
         self.student = student
@@ -25,11 +25,11 @@ class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentP
 
     // MARK: - Actions
 
-    func showStudentProject(project: ProjectModel) {
+    func showStudentProject(project: Project) {
         coordinator.showStudentProject(project)
     }
 
-    func showSubscribeAlert(of project: ProjectModel, at index: Int) {
+    func showSubscribeAlert(of project: Project, at index: Int) {
         coordinator.showSubscribeAlert(of: project) {
             self.student.projects[index].isSubscribed = true
         }

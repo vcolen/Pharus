@@ -12,13 +12,13 @@ class ProjectSheetPresenter: BasePresenter<ProjectSheetViewable> {
 
     // MARK: - Properties
     private let coordinator: ProjectSheetCoordinating
-    let project: ProjectModel
+    let project: Project
     let projectSheetContent: ProjectSheetView.SheetContent
 
     // MARK: - Initializer
     init(
         coordinator: ProjectSheetCoordinating,
-        project: ProjectModel,
+        project: Project,
         projectSheetContent: ProjectSheetView.SheetContent
     ) {
         self.coordinator = coordinator
