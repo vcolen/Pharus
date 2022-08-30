@@ -8,11 +8,14 @@
 import UIKit
 import CoreApp
 import LoginFeature
+import CoreKit
+import InjectionKit
 
 public struct AppCoordinator {
 
     // MARK: - Properties
     private weak var window: UIWindow?
+    @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
 
     // MARK: - Initializer
     public init(window: UIWindow) {
@@ -40,12 +43,11 @@ extension AppCoordinator {
         transitionWindow(to: navigationController)
     }
 
-    #warning("colocar student")
     func openTabBarScene() {
         let tabBarController = UITabBarController()
         TabBarCoordinator(
             rootViewController: tabBarController,
-            student: Student.shared,
+            student: getStudentUseCaseProtocol(),
             onLogout: openLoginScene
         ).start()
 

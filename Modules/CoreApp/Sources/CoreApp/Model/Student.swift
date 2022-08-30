@@ -14,7 +14,7 @@ public struct Student: Codable {
     public var avatar: String
     public var projects: [Project]
 
-    public static let shared = Student()
+    public static var shared = Student()
 
     public init(
         id: String,

@@ -1,5 +1,5 @@
 //
-//  GetUserTokenUseCaseProtocol.swift
+//  GetUserTokenUseCase.swift
 //
 //
 //  Created by Victor Colen on 29/08/22.

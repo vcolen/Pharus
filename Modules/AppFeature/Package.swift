@@ -16,7 +16,8 @@ let package = Package(
         .package(path: "../InjectionKit"),
         .package(path: "../CoreApp"),
         .package(path: "../Features/LoginFeature"),
-        .package(path: "../CoreScene")
+        .package(path: "../CoreScene"),
+        .package(path: "../CoreKit")
     ],
     targets: [
         .target(
@@ -25,7 +26,8 @@ let package = Package(
                 "CoreScene",
                 "InjectionKit",
                 "CoreApp",
-                "LoginFeature"
+                "LoginFeature",
+                "CoreKit"
             ]
         )
     ]
