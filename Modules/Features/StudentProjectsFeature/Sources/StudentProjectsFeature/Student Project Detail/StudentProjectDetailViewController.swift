@@ -70,7 +70,7 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
 }
 
 // MARK: - Student Project Detail Viewable
-extension StudentProjectDetailViewController: StudentProjectsViewable { }
+extension StudentProjectDetailViewController: StudentProjectDetailViewable { }
 
 // MARK: - Methods
 extension StudentProjectDetailViewController {

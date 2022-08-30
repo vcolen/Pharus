@@ -12,7 +12,7 @@ class StudentProjectsViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: StudentProjectsPresenting
-    private lazy var customView = StudentProjectsView(student: presenter.student)
+    private lazy var customView = StudentProjectsView()
 
     // MARK: - Initializer
     init(presenter: StudentProjectsPresenting) {
@@ -66,4 +66,8 @@ extension StudentProjectsViewController: StudentProjectsViewDelegate {
 }
 
 // MARK: - Student Projects Viewable
-extension StudentProjectsViewController: StudentProjectsViewable { }
+extension StudentProjectsViewController: StudentProjectsViewable {
+    func didFinishFetchingStudent(_ student: Student) {
+        customView.updateView(with: student)
+    }
+}

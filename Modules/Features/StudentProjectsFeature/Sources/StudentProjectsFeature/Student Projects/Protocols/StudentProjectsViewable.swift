@@ -6,5 +6,8 @@
 //
 
 import Foundation
+import CoreApp
 
-protocol StudentProjectsViewable: AnyObject { }
+protocol StudentProjectsViewable: AnyObject {
+    func didFinishFetchingStudent(_ student: Student)
+}
