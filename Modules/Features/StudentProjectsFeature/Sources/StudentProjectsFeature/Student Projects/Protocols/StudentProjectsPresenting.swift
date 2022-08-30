@@ -10,7 +10,7 @@ import CoreApp
 
 protocol StudentProjectsPresenting: Presenting {
     var student: Student? { get }
-    func getStudent() -> Student
+    func loadData()
     func showSubscribeAlert(of project: Project, at index: Int)
     func showStudentProject(project: Project)
 }

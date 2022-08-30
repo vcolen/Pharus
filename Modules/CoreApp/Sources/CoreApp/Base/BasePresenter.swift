@@ -9,7 +9,7 @@ import Foundation
 
 open class BasePresenter<T> {
     private weak var privateView: AnyObject?
-    var view: T? { privateView as? T }
+    public var view: T? { privateView as? T }
     public init() { }
 }
 

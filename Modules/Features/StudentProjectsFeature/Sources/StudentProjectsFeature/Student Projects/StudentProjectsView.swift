@@ -13,7 +13,7 @@ class StudentProjectsView: UIView {
 
     // MARK: - Properties
     weak var delegate: StudentProjectsViewDelegate?
-    private let student: Student?
+    private var student: Student?
 
     // MARK: - Views
     lazy var tableView = UITableView()
@@ -115,7 +115,8 @@ extension StudentProjectsView: UITableViewDelegate {
 
 // MARK: - Additional Methods
 extension StudentProjectsView {
-    func updateView(with: Student) {
+    func updateView(with student: Student) {
+        self.student = student
         tableView.reloadData()
     }
 }

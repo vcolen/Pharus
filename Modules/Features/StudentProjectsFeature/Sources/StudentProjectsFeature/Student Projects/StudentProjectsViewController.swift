@@ -21,6 +21,7 @@ class StudentProjectsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         presenter.attach(self)
+        presenter.loadData()
     }
 
     required init?(coder: NSCoder) {
@@ -67,7 +68,7 @@ extension StudentProjectsViewController: StudentProjectsViewDelegate {
 
 // MARK: - Student Projects Viewable
 extension StudentProjectsViewController: StudentProjectsViewable {
-    func didFinishFetchingStudent(_ student: Student) {
+    func updateView(with student: Student) {
         customView.updateView(with: student)
     }
 }

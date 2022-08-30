@@ -13,9 +13,9 @@ import CoreKit
 class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentProjectsPresenting {
 
     // MARK: - Properties
+    @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
     private let coordinator: StudentProjectsCoordinating
     var student: Student?
-    @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
 
     // MARK: - Initializer
     init(coordinator: StudentProjectsCoordinating) {
@@ -23,8 +23,8 @@ class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentP
     }
 
     // MARK: - Actions
-    func getStudent() -> Student {
-        getStudentUseCaseProtocol()
+    func loadData() {
+        view?.updateView(with: getStudentUseCaseProtocol())
     }
 
     func showStudentProject(project: Project) {

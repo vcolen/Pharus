@@ -9,5 +9,5 @@ import Foundation
 import CoreApp
 
 protocol StudentProjectsViewable: AnyObject {
-    func didFinishFetchingStudent(_ student: Student)
+    func updateView(with student: Student)
 }

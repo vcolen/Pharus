@@ -55,6 +55,7 @@ class StudentProjectCell: UITableViewCell {
     .setting(\.spacing, to: 20)
     .padding([.bottom, .leading, .trailing], 8)
     .padding(.top, 24.5)
+    .setting(\.backgroundColor, to: .Project.orangeSubscribedProjectBackground)
     .setting(\.layer.cornerRadius, to: 16)
     .padding(.all, 16)
 
@@ -63,12 +64,14 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.lineBreakMode, to: .byTruncatingTail)
         .setting(\.font, to: .largeTitleBold)
         .setting(\.textColor, to: .black)
+        .setting(\.text, to: "Caminhada de Ipanema")
 
     private lazy var mentorLabel = UILabel()
         .setting(\.numberOfLines, to: 1)
         .setting(\.font, to: .mediumTitleBold)
         .setting(\.lineBreakMode, to: .byTruncatingTail)
         .setting(\.textColor, to: .black)
+        .setting(\.text, to: "Bruno Serqueira")
 
     private lazy var descriptionTitleLabel = UILabel()
         .setting(\.text, to: "Descrição:")
@@ -79,6 +82,7 @@ class StudentProjectCell: UITableViewCell {
         .setting(\.font, to: .smallBody)
         .setting(\.numberOfLines, to: 0)
         .setting(\.textColor, to: .black)
+        .setting(\.text, to: Constants.defaultTexts.lorem)
 
     private lazy var completionBarCircleView = CircleProgressView(
         circleColor: .white,
@@ -86,10 +90,10 @@ class StudentProjectCell: UITableViewCell {
         radius: 45,
         progress: 50
     )
+        .setting(\.progress, to: Float.random(in: 0...100))
     .center(.allAxis)
 
     private lazy var percentageCompletionLabel = UILabel()
-        .setting(\.text, to: "100%")
         .setting(\.font, to: .smallBody)
         .setting(\.textColor, to: .black)
         .center(.allAxis)
