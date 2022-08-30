@@ -54,6 +54,7 @@ extension StudentProfileViewController {
         super.viewDidLoad()
 
         setNavigationBar()
+        presenter.loadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
