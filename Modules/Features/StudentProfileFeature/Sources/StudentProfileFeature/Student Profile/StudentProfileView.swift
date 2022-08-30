@@ -11,9 +11,6 @@ import CoreApp
 
 class StudentProfileView: UIView {
 
-    // MARK: - Properties
-    var student: Student
-
     // MARK: - Views
     private lazy var mainScrollView = VScrollView {
         VStackView([
@@ -23,21 +20,7 @@ class StudentProfileView: UIView {
             .frame(height: 120),
 
             VStackView([
-                VStackView(spacing: 18, studentInfo.map { info in
-                    VStackView([
-                        UILabel()
-                            .setting(\.text, to: info.key)
-                            .setting(\.textColor, to: .white)
-                            .setting(\.font, to: .mediumTitleBold),
-
-                        UILabel()
-                            .setting(\.text, to: info.value)
-                            .setting(\.textColor, to: .white)
-                            .setting(\.font, to: .smallBody)
-                    ])
-                })
-                .setting(\.spacing, to: 40)
-                .padding(.leading, 40)
+                infoStackView
             ])
         ])
         .setting(\.spacing, to: 88)
@@ -51,10 +34,12 @@ class StudentProfileView: UIView {
         .setting(\.contentMode, to: .scaleAspectFit)
         .center(.allAxis)
 
-    // MARK: - Initializer
-    init(student: Student) {
-        self.student = student
+    lazy var infoStackView = VStackView(spacing: 18, [])
+        .setting(\.spacing, to: 40)
+        .padding(.leading, 40)
 
+    // MARK: - Initializer
+    init() {
         super.init(frame: .zero)
 
         setupView()
@@ -74,23 +59,76 @@ extension StudentProfileView: ViewCodable {
     func setupConstraints() {
         mainScrollView.edges()
     }
+
+    func applyAdditionalChanges() {
+        showStudentAvatar()
+        setupStudentInfo()
+    }
 }
 
 // MARK: - Additional Methods
 extension StudentProfileView {
-    func showStudentAvatar() {
+    func showStudentAvatar(of student: Student? = nil) {
+        guard let student = student else {
+            profileImageView.originalView.image = UIImage(
+                named: "avatar1" + PharusUIConstants.assets.images.avatar.circleImage.suffix
+            )
+            return
+        }
         profileImageView.originalView.image = UIImage(
             named: "avatar" + student.avatar + PharusUIConstants.assets.images.avatar.circleImage.suffix
         )
     }
 
-    var studentInfo: KeyValuePairs<String, String> {
-        [
+    func setupStudentInfo(of student: Student? = nil) {
+        guard let student = student else {
+            for _ in 0..<5 {
+                infoStackView.originalView.addArrangedSubview(
+                    VStackView([
+                        UILabel()
+                            .setting(\.text, to: "XXXXXXXXXX")
+                            .setting(\.textColor, to: .white)
+                            .setting(\.font, to: .mediumTitleBold),
+
+                        UILabel()
+                            .setting(\.text, to: "xxxxxxxxxx")
+                            .setting(\.textColor, to: .white)
+                            .setting(\.font, to: .smallBody)
+                    ])
+                )
+            }
+            return
+        }
+
+        infoStackView.originalView.removeFullyAllArrangedSubviews()
+
+        var studentInfo: KeyValuePairs<String, String> {[
             "Nome": "\(student.firstName) \(student.lastName)",
             "E-mail": student.email,
             "Escola": student.school,
             "Período Escolar": student.year,
             "Cidade": student.city
-        ]
+        ]}
+
+        studentInfo.forEach { info in
+            infoStackView.originalView.addArrangedSubview(
+                VStackView([
+                    UILabel()
+                        .setting(\.text, to: info.key)
+                        .setting(\.textColor, to: .white)
+                        .setting(\.font, to: .mediumTitleBold),
+
+                    UILabel()
+                        .setting(\.text, to: info.value)
+                        .setting(\.textColor, to: .white)
+                        .setting(\.font, to: .smallBody)
+                ])
+            )
+        }
+    }
+
+    func updateView(with student: Student) {
+        showStudentAvatar(of: student)
+        setupStudentInfo(of: student)
     }
 }

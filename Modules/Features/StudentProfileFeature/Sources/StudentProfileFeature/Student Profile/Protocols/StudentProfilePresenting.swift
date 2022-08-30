@@ -9,7 +9,7 @@ import Foundation
 import CoreApp
 
 protocol StudentProfilePresenting: Presenting {
-    var student: Student { get }
+    var student: Student? { get }
     func showLogoutAlert()
     func loadData()
 }
