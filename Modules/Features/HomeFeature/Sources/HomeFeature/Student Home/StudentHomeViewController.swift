@@ -15,7 +15,7 @@ class StudentHomeViewController: UIViewController {
     private let currentIndex: Int
     private let pages: [Pages] = Pages.allCases
     private let presenter: StudentHomePresenting
-    private lazy var customView = StudentHomeView(student: presenter.student)
+    private lazy var customView = StudentHomeView()
 
     // MARK: - Initializer
     init(presenter: StudentHomePresenting) {
@@ -25,6 +25,7 @@ class StudentHomeViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         presenter.attach(self)
+        presenter.loadData()
     }
 
     required init?(coder: NSCoder) {
@@ -79,8 +80,6 @@ extension StudentHomeViewController {
 
         setGradientBackground()
         presenter.loadData()
-        customView.student = presenter.student
-        customView.showStudentAvatar()
     }
 }
 
@@ -127,7 +126,11 @@ extension StudentHomeViewController: UIPageViewControllerDataSource {
 extension StudentHomeViewController: StudentHomeViewDelegate { }
 
 // MARK: - Student Home Viewable
-extension StudentHomeViewController: StudentHomeViewable { }
+extension StudentHomeViewController: StudentHomeViewable {
+    func updateView(with student: Student) {
+        customView.updateView(with: student)
+    }
+}
 
 // MARK: - Pages
 enum Pages: CaseIterable {
