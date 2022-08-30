@@ -23,10 +23,7 @@ public struct StudentHomeTabCoordinator {
     public func start() {
         let navigationController = UINavigationController()
 
-        StudentHomeCoordinator(
-            rootViewController: navigationController,
-            student: student
-        ).start()
+        StudentHomeCoordinator(rootViewController: navigationController).start()
 
         navigationController.tabBarItem.image = .pharusIcons.homeTabBarIcon
         navigationController

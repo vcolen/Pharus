@@ -5,7 +5,6 @@ import CoreApp
 class StudentHomeView: UIView {
 
     // MARK: - Properties
-    var student: Student
     private let cards: [StudentHomeMiniCardView] = [
         StudentHomeMiniCardView(
             cardType: .warning,
@@ -34,8 +33,8 @@ class StudentHomeView: UIView {
             HScrollView {
                 miniCardStackView
             }
-            .setting(\.showsHorizontalScrollIndicator, to: false)
-            .frame(height: 180),
+                .setting(\.showsHorizontalScrollIndicator, to: false)
+                .frame(height: 180),
 
             newsHelperView
         ])
@@ -69,9 +68,7 @@ class StudentHomeView: UIView {
         .frame(height: 221)
 
     // MARK: - Initializer
-    init(student: Student) {
-        self.student = student
-
+    init() {
         super.init(frame: .zero)
 
         setupView()
@@ -93,7 +90,7 @@ extension StudentHomeView: ViewCodable {
     }
 
     func applyAdditionalChanges() {
-        helloStudentLabel.text = "Olá, \(student.firstName)!"
+        showStudentName()
         setupMiniCardStackView()
     }
 }
@@ -109,9 +106,29 @@ extension StudentHomeView {
         }
     }
 
-    func showStudentAvatar() {
+    func showStudentAvatar(of student: Student? = nil) {
+        guard let student = student else {
+            studentAvatarImageView.originalView.image = UIImage(
+                named: "avatar10" + PharusUIConstants.assets.images.avatar.circleImage.suffix
+            )
+            return
+        }
         studentAvatarImageView.originalView.image = UIImage(
             named: "avatar" + student.avatar + PharusUIConstants.assets.images.avatar.circleImage.suffix
         )
+    }
+
+    func showStudentName(of student: Student? = nil) {
+        guard let student = student else {
+            helloStudentLabel.text = "Olá!"
+            return
+        }
+
+        helloStudentLabel.text = "Olá, \(student.firstName)!"
+    }
+
+    func updateView(with student: Student) {
+        showStudentAvatar(of: student)
+        showStudentName(of: student)
     }
 }

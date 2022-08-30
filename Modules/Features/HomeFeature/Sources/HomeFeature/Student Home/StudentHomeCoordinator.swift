@@ -12,24 +12,16 @@ public struct StudentHomeCoordinator {
 
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
-    private let student: Student
 
-    public init(
-        rootViewController: UINavigationController,
-        student: Student
-    ) {
+    public init(rootViewController: UINavigationController) {
         self.rootViewController = rootViewController
-        self.student = student
     }
 }
 
 // MARK: - Coordinator
 extension StudentHomeCoordinator: Coordinator {
     public func start() {
-        let studentHomePresenter = StudentHomePresenter(
-            coordinator: self,
-            student: student
-        )
+        let studentHomePresenter = StudentHomePresenter(coordinator: self)
 
         let studentHomeViewController = StudentHomeViewController(
             presenter: studentHomePresenter
