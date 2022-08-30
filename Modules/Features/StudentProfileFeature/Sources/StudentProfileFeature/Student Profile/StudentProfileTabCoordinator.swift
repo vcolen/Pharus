@@ -28,7 +28,6 @@ public struct StudentProfileTabCoordinator {
 
         StudentProfileCoordinator(
             rootViewController: navigationController,
-            student: student,
             onLogout: logoutHandler
         ).start()
 

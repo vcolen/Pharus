@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import CoreApp
 
 class StudentProfileViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: StudentProfilePresenting
-    private lazy var customView = StudentProfileView(student: presenter.student)
+    private lazy var customView = StudentProfileView()
 
     // MARK: - Initializer
     init(presenter: StudentProfilePresenting) {
@@ -20,6 +21,7 @@ class StudentProfileViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         presenter.attach(self)
+        presenter.loadData()
     }
 
     required init?(coder: NSCoder) {
@@ -27,7 +29,6 @@ class StudentProfileViewController: UIViewController {
     }
 
     // MARK: - Actions
-
     func setNavigationBar() {
         let logoutIcon = UIImage.pharusIcons.logoutIcon?.withRenderingMode(.alwaysOriginal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -60,8 +61,6 @@ extension StudentProfileViewController {
 
         setGradientBackground()
         presenter.loadData()
-        customView.student = presenter.student
-        customView.showStudentAvatar()
     }
 }
 
@@ -69,4 +68,8 @@ extension StudentProfileViewController {
 extension StudentProfileViewController: StudentProfileViewDelegate { }
 
 // MARK: - Student Profile Viewable
-extension StudentProfileViewController: StudentProfileViewable { }
+extension StudentProfileViewController: StudentProfileViewable {
+    func updateView(with student: Student) {
+        customView.updateView(with: student)
+    }
+}
