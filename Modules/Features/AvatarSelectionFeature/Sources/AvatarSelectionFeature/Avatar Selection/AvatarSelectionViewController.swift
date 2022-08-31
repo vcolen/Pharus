@@ -46,7 +46,7 @@ extension AvatarSelectionViewController {
 // MARK: - Avatar Selection Viewable
 extension AvatarSelectionViewController: AvatarSelectionViewable {
     func updateView(with student: Student) {
-        // customView.updateView(with: student)
+        customView.updateView(with: student)
     }
 }
 

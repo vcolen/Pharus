@@ -26,10 +26,7 @@ class AvatarSelectionPresenter: BasePresenter<AvatarSelectionViewable> {
 // MARK: - Avatar Selection Presenting
 extension AvatarSelectionPresenter: AvatarSelectionPresenting {
     func changeStudentAvatar(to avatar: String) {
-        if var student = student {
-            student.avatar = avatar
-            submit()
-        }
+        #warning("implementar funcao para salvar o avatar")
     }
 }
 
