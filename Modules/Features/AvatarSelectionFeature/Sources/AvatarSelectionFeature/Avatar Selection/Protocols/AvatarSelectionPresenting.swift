@@ -9,7 +9,7 @@ import Foundation
 import CoreApp
 
 protocol AvatarSelectionPresenting: Presenting {
-    var student: Student { get }
+    var student: Student? { get }
     func changeStudentAvatar(to avatar: String)
     func loadData()
     func submit()

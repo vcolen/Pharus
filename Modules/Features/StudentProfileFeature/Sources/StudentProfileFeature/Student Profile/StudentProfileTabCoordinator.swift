@@ -10,16 +10,13 @@ import CoreApp
 
 public struct StudentProfileTabCoordinator {
     private weak var rootViewController: UITabBarController?
-    private let student: Student
     private let logoutHandler: () -> Void
 
     public init(
         rootViewController: UITabBarController,
-        student: Student,
         onLogout logoutHandler: @escaping () -> Void
     ) {
         self.rootViewController = rootViewController
-        self.student = student
         self.logoutHandler = logoutHandler
     }
 

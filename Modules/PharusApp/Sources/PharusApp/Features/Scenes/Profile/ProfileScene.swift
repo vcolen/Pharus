@@ -13,12 +13,10 @@ import CoreScene
 public struct ProfileScene: StudentProfileSceneProtocol {
     public func callAsFunction(
         rootViewController: UITabBarController,
-        student: Student,
         onLogout logoutHandler: @escaping () -> Void
     ) {
         StudentProfileTabCoordinator(
             rootViewController: rootViewController,
-            student: student,
             onLogout: logoutHandler
         ).start()
     }

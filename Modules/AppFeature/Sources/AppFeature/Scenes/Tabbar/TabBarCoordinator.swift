@@ -37,8 +37,7 @@ public struct TabBarCoordinator {
     // MARK: - Actions
     private func makeStudentHomeCoordinator() {
         studentHomeScene(
-            rootViewController: rootViewController ?? UITabBarController(),
-            student: student
+            rootViewController: rootViewController ?? UITabBarController()
         )
     }
 
@@ -57,15 +56,13 @@ public struct TabBarCoordinator {
 
     private func makeStudentAvatarCoordinator() {
         avatarSelectionScene(
-            rootViewController: rootViewController ?? UITabBarController(),
-            student: student
+            rootViewController: rootViewController ?? UITabBarController()
         )
     }
 
     private func makeStudentProfileCoordinator() {
         studentProfileScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: student,
             onLogout: logoutHandler
         )
     }

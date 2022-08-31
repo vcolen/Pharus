@@ -12,25 +12,17 @@ struct AvatarSelectionCoordinator {
 
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
-    private let student: Student
 
     // MARK: - Initializer
-    init(
-        rootViewController: UINavigationController,
-        student: Student
-    ) {
+    init(rootViewController: UINavigationController) {
         self.rootViewController = rootViewController
-        self.student = student
     }
 }
 
 // MARK: - Coordinator
 extension AvatarSelectionCoordinator: Coordinator {
     func start() {
-        let studentAvatarSelectionPresenter = AvatarSelectionPresenter(
-            coordinator: self,
-            student: student
-        )
+        let studentAvatarSelectionPresenter = AvatarSelectionPresenter(coordinator: self)
 
         let studentAvatarViewController = AvatarSelectionViewController(
             presenter: studentAvatarSelectionPresenter

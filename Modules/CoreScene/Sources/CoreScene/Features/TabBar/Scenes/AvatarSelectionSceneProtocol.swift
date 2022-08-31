@@ -10,7 +10,6 @@ import CoreApp
 
 public protocol AvatarSelectionSceneProtocol {
     func callAsFunction(
-        rootViewController: UITabBarController,
-        student: Student
+        rootViewController: UITabBarController
     )
 }
