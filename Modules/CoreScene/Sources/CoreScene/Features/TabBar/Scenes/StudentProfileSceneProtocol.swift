@@ -11,7 +11,6 @@ import CoreApp
 public protocol StudentProfileSceneProtocol {
     func callAsFunction(
         rootViewController: UITabBarController,
-        student: Student,
         onLogout: @escaping () -> Void
     )
 }

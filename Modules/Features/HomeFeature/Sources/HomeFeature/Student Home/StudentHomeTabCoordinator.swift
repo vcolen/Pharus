@@ -10,14 +10,9 @@ import CoreApp
 
 public struct StudentHomeTabCoordinator {
     private weak var rootViewController: UITabBarController?
-    private let student: Student
 
-    public init(
-        rootViewController: UITabBarController,
-        student: Student
-    ) {
+    public init(rootViewController: UITabBarController) {
         self.rootViewController = rootViewController
-        self.student = student
     }
 
     public func start() {
