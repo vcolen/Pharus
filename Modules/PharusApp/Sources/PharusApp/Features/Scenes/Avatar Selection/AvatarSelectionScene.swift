@@ -16,8 +16,7 @@ public struct AvatarSelectionScene: AvatarSelectionSceneProtocol {
         student: Student
     ) {
         AvatarSelectionTabCoordinator(
-            rootViewController: rootViewController,
-            student: student
+            rootViewController: rootViewController
         ).start()
     }
 

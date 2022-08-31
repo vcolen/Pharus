@@ -6,5 +6,8 @@
 //
 
 import Foundation
+import CoreApp
 
-protocol AvatarSelectionViewable: AnyObject { }
+protocol AvatarSelectionViewable: AnyObject {
+    func updateView(with: Student)
+}

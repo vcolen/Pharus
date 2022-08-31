@@ -4,13 +4,15 @@
 //
 //  Created by Jéssica Serqueira on 06/04/22.
 //
+
 import UIKit
+import CoreApp
 
 class AvatarSelectionViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: AvatarSelectionPresenting
-    private lazy var customView = AvatarSelectionView(student: presenter.student)
+    private lazy var customView = AvatarSelectionView()
 
     // MARK: - Initializer
     init(presenter: AvatarSelectionPresenting) {
@@ -42,7 +44,11 @@ extension AvatarSelectionViewController {
 }
 
 // MARK: - Avatar Selection Viewable
-extension AvatarSelectionViewController: AvatarSelectionViewable { }
+extension AvatarSelectionViewController: AvatarSelectionViewable {
+    func updateView(with student: Student) {
+        // customView.updateView(with: student)
+    }
+}
 
 // MARK: - Avatar Selection View Delegate
 extension AvatarSelectionViewController: AvatarSelectionViewDelegate {
