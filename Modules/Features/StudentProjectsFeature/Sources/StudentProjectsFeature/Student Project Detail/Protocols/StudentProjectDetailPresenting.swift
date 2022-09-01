@@ -12,4 +12,5 @@ protocol StudentProjectDetailPresenting: AnyObject {
     func showUploadFileView()
     func toggleTaskCompletedStatus(taskIndex: Int)
     func showMentorReview()
+    func loadData()
 }

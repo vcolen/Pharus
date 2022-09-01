@@ -61,6 +61,7 @@ class StudentProjectDetailView: UIView {
     private lazy var mentorLabel = UILabel()
         .setting(\.textColor, to: .black)
         .setting(\.font, to: .mediumTitleBold)
+        .setting(\.text, to: "Lorenzo Ipsum")
 
     private lazy var mentorReviewHelperView = VStackView([
         mentorReviewImageView
@@ -145,6 +146,8 @@ extension StudentProjectDetailView: ViewCodable {
     }
 
     func applyAdditionalChanges() {
+        setupProjectTasks()
+
         rulesStackView.setOnClickListener { [weak self] in
             self?.rulesViewTapped()
         }
@@ -162,10 +165,13 @@ extension StudentProjectDetailView {
             for _ in 0...3 {
                 taskHelperStackView.addArrangedSubview(createDefaultTask())
             }
+
+            uploadFilesButton.disable()
             return
         }
 
         taskHelperStackView.removeFullyAllArrangedSubviews()
+        uploadFilesButton.enable()
 
         for task in project.tasks {
             let checkboxIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon ?? .defaultImage : .defaultImage

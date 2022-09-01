@@ -40,4 +40,8 @@ class StudentProjectDetailPresenter: BasePresenter<StudentProjectDetailViewable>
     func toggleTaskCompletedStatus(taskIndex: Int) {
         project.tasks[taskIndex].toggleCompletionStatus()
     }
+
+    func loadData() {
+        
+    }
 }

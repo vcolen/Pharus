@@ -7,7 +7,7 @@
 
 import UIKit
 import PharusUI
-import StudentProfileFeature
+import CoreKit
 
 class StudentProjectDetailViewController: UIViewController {
 
@@ -47,6 +47,12 @@ extension StudentProjectDetailViewController {
         setupTabbar()
         customView.delegate = self
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        presenter.loadData()
+    }
 }
 
 // MARK: - Student Project Detail View Delegate
@@ -71,7 +77,11 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
 }
 
 // MARK: - Student Project Detail Viewable
-extension StudentProjectDetailViewController: StudentProjectDetailViewable { }
+extension StudentProjectDetailViewController: StudentProjectDetailViewable {
+    func updateView(with project: Project) {
+        customView.updateView(with: project)
+    }
+}
 
 // MARK: - Methods
 extension StudentProjectDetailViewController {
