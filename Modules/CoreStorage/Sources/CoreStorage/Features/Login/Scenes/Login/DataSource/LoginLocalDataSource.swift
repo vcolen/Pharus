@@ -8,11 +8,13 @@
 import Foundation
 import DataKit
 
-public struct LoginLocalDataSource: DataKit.LoginLocalDataSource {
+public struct LoginLocalDataSource {
     public init() {
 
     }
+}
 
+extension LoginLocalDataSource: DataKit.LoginLocalDataSource {
     public func getUserToken() -> String {
         return "Token"
     }

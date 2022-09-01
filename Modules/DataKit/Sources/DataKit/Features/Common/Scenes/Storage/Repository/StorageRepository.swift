@@ -9,14 +9,14 @@ import Foundation
 import InjectionKit
 import CoreKit
 
-public struct StorageRepository: StorageRepositoryProtocol {
+public struct StorageRepository {
     @Injected var localDataSource: StorageDataSource
 
     public init() { }
 }
 
 // MARK: - Local Data Source
-extension StorageRepository {
+extension StorageRepository: StorageRepositoryProtocol {
     public func getStorageData<T: Codable>(_ type: T.Type, key: String) -> T? {
         localDataSource.getCustomStorageData(type, forKey: key)
     }

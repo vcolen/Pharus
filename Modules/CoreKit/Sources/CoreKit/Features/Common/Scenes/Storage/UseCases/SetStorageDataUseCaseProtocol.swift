@@ -12,11 +12,13 @@ public protocol SetStorageDataUseCaseProtocol {
     func callAsFunction<T: Codable>(_ data: T, forKey key: String)
 }
 
-public struct SetStorageDataUseCase: SetStorageDataUseCaseProtocol {
+public struct SetStorageDataUseCase {
     @Injected var repository: StorageRepositoryProtocol
 
     public init() { }
+}
 
+extension SetStorageDataUseCase: SetStorageDataUseCaseProtocol {
     public func callAsFunction<T: Codable>(_ data: T, forKey key: String) {
         repository.setStorageData(data, forKey: key)
     }
