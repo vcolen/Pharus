@@ -7,39 +7,34 @@
 
 import UIKit
 import CoreApp
+import InjectionKit
+import CoreKit
 
 class AvatarSelectionPresenter: BasePresenter<AvatarSelectionViewable> {
 
     // MARK: - Properties
     private let coordinator: AvatarSelectionCoordinating
-    var student: Student
+    var student: Student?
+    @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
+    @Injected var updateStudentUseCaseProtocol: UpdateStudentUseCaseProtocol
 
     // MARK: - Initializer
-    init(
-        coordinator: AvatarSelectionCoordinating,
-        student: Student
-    ) {
+    init(coordinator: AvatarSelectionCoordinating) {
         self.coordinator = coordinator
-        self.student = student
     }
 }
 
 // MARK: - Avatar Selection Presenting
 extension AvatarSelectionPresenter: AvatarSelectionPresenting {
     func changeStudentAvatar(to avatar: String) {
+        var student = getStudentUseCaseProtocol()
         student.avatar = avatar
-        submit()
+        updateStudentUseCaseProtocol(student)
     }
 }
 
 extension AvatarSelectionPresenter {
-    func submit() {
-#warning("implementar")
-        // StudentManager.shared.student = student
-    }
-
     func loadData() {
-#warning("implementar")
-        // self.student = StudentManager.shared.getStudent()
+        view?.updateView(with: getStudentUseCaseProtocol())
     }
 }

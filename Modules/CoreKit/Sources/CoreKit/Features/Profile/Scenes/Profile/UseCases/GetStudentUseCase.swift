@@ -7,17 +7,20 @@
 
 import Foundation
 import CoreApp
+import InjectionKit
 
 public protocol GetStudentUseCaseProtocol {
     func callAsFunction() -> Student
 }
 
 public struct GetStudentUseCase {
+    @Injected var repository: ProfileRepositoryProtocol
+
     public init() { }
 }
 
 extension GetStudentUseCase: GetStudentUseCaseProtocol {
     public func callAsFunction() -> Student {
-        return Student.shared
+        repository.getStudent()
     }
 }

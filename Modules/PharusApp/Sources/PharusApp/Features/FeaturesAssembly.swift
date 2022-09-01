@@ -17,9 +17,8 @@ struct FeaturesAssembly: Assembly {
        assembleHome(container)
        assembleProjects(container)
        assembleRanking(container)
-       assembleProfile(container)
        assembleAvatarSelection(container)
-       assembleTabbar(container)
+       assembleProfile(container)
    }
 }
 
@@ -62,7 +61,6 @@ extension FeaturesAssembly {
 
 // MARK: - Profile
 extension FeaturesAssembly {
-
     func assembleProfile(_ container: Container) {
         container.register(StudentProfileSceneProtocol.self) {
             ProfileScene()
@@ -76,15 +74,6 @@ extension FeaturesAssembly {
     func assembleAvatarSelection(_ container: Container) {
         container.register(AvatarSelectionSceneProtocol.self) {
             AvatarSelectionScene()
-        }
-    }
-}
-
-extension FeaturesAssembly {
-
-    func assembleTabbar(_ container: Container) {
-        container.register(GetStudentUseCaseProtocol.self) {
-            GetStudentUseCase()
         }
     }
 }

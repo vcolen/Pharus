@@ -7,8 +7,9 @@
 
 import Foundation
 import CoreApp
+import CoreKit
 
 protocol StudentHomePresenting: Presenting {
-    var student: Student { get }
+    var student: Student? { get }
     func loadData()
 }

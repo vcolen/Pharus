@@ -7,20 +7,19 @@
 
 import Foundation
 import CoreApp
+import InjectionKit
+import CoreKit
 
 class StudentProfilePresenter: BasePresenter<StudentProfileViewable> {
 
     // MARK: - Properties
     private let coordinator: StudentProfileCoordinating
-    var student: Student
+    var student: Student?
+    @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
 
     // MARK: - Initializer
-    init(
-        coordinator: StudentProfileCoordinating,
-        student: Student
-    ) {
+    init(coordinator: StudentProfileCoordinating) {
         self.coordinator = coordinator
-        self.student = student
     }
 }
 
@@ -32,8 +31,7 @@ extension StudentProfilePresenter: StudentProfilePresenting {
 }
 
 extension StudentProfilePresenter {
-    #warning("implementar")
     func loadData() {
-        student = Student.shared
+        view?.updateView(with: getStudentUseCaseProtocol())
     }
 }

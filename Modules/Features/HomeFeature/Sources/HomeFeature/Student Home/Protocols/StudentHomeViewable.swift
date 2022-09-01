@@ -6,5 +6,8 @@
 //
 
 import Foundation
+import CoreKit
 
-protocol StudentHomeViewable: AnyObject { }
+protocol StudentHomeViewable: AnyObject {
+    func updateView(with: Student)
+}

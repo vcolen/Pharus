@@ -12,10 +12,26 @@ import LoginFeature
 
 struct CoreKitAssembly: Assembly {
     func assemble(container: Container) {
+        assembleCommon(container)
         assembleLogin(container)
+        assembleProfile(container)
     }
 }
 
+// MARK: - Common
+extension CoreKitAssembly {
+    func assembleCommon(_ container: Container) {
+        container.register(GetStorageDataUseCaseProtocol.self) {
+            GetStorageDataUseCase()
+        }
+
+        container.register(SetStorageDataUseCaseProtocol.self) {
+            SetStorageDataUseCase()
+        }
+    }
+}
+
+// MARK: - Login
 extension CoreKitAssembly {
     func assembleLogin(_ container: Container) {
         container.register(LoginUserUseCaseProtocol.self) {
@@ -24,6 +40,19 @@ extension CoreKitAssembly {
 
         container.register(GetUserTokenUseCaseProtocol.self) {
             GetUserTokenUseCase()
+        }
+    }
+}
+
+// MARK: - Profile
+extension CoreKitAssembly {
+    func assembleProfile(_ container: Container) {
+        container.register(GetStudentUseCaseProtocol.self) {
+            GetStudentUseCase()
+        }
+
+        container.register(UpdateStudentUseCaseProtocol.self) {
+            UpdateStudentUseCase()
         }
     }
 }

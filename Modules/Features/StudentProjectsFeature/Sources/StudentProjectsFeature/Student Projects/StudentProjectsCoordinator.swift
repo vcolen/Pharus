@@ -8,30 +8,23 @@
 import UIKit
 import CoreApp
 import AlertFeature
+import CoreKit
 
 struct StudentProjectsCoordinator {
 
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
-    private let student: Student
 
     // MARK: - Initializer
-    init(
-        rootViewController: UINavigationController,
-        student: Student
-    ) {
+    init(rootViewController: UINavigationController) {
         self.rootViewController = rootViewController
-        self.student = student
     }
 }
 
 // MARK: - Coordinator
 extension StudentProjectsCoordinator: Coordinator {
     func start() {
-        let studentProjectsPresenter = StudentProjectsPresenter(
-            coordinator: self,
-            student: student
-        )
+        let studentProjectsPresenter = StudentProjectsPresenter(coordinator: self)
         let studentProjectsViewController = StudentProjectsViewController(
             presenter: studentProjectsPresenter
         )

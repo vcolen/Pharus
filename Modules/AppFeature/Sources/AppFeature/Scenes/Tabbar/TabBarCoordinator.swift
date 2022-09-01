@@ -9,6 +9,7 @@ import UIKit
 import CoreApp
 import CoreScene
 import InjectionKit
+import CoreKit
 
 public struct TabBarCoordinator {
 
@@ -37,36 +38,31 @@ public struct TabBarCoordinator {
     // MARK: - Actions
     private func makeStudentHomeCoordinator() {
         studentHomeScene(
-            rootViewController: rootViewController ?? UITabBarController(),
-            student: student
+            rootViewController: rootViewController ?? UITabBarController()
         )
     }
 
     private func makeStudentProjectsCoordinator() {
         studentProjectsScene(
-            rootViewController: rootViewController ?? UITabBarController(),
-            student: student
+            rootViewController: rootViewController ?? UITabBarController()
         )
     }
 
     private func makeStudentProjectsRankingCoordinator() {
         studentProjectsRankingScene(
-            rootViewController: rootViewController ?? UITabBarController(),
-            student: student
+            rootViewController: rootViewController ?? UITabBarController()
         )
     }
 
     private func makeStudentAvatarCoordinator() {
         avatarSelectionScene(
-            rootViewController: rootViewController ?? UITabBarController(),
-            student: student
+            rootViewController: rootViewController ?? UITabBarController()
         )
     }
 
     private func makeStudentProfileCoordinator() {
         studentProfileScene(
             rootViewController: rootViewController ?? UITabBarController(),
-            student: student,
             onLogout: logoutHandler
         )
     }

@@ -6,9 +6,10 @@
 //
 
 import UIKit
-import CoreApp
 import AlertFeature
 import SendFileFeature
+import CoreKit
+import CoreApp
 
 struct StudentProjectDetailCoordinator {
 

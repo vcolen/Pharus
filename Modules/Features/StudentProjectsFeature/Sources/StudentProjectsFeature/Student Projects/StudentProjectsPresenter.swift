@@ -7,23 +7,25 @@
 
 import Foundation
 import CoreApp
+import InjectionKit
+import CoreKit
 
 class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentProjectsPresenting {
 
     // MARK: - Properties
+    @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
     private let coordinator: StudentProjectsCoordinating
-    var student: Student
+    var student: Student?
 
     // MARK: - Initializer
-    init(
-        coordinator: StudentProjectsCoordinating,
-        student: Student
-    ) {
+    init(coordinator: StudentProjectsCoordinating) {
         self.coordinator = coordinator
-        self.student = student
     }
 
     // MARK: - Actions
+    func loadData() {
+        view?.updateView(with: getStudentUseCaseProtocol())
+    }
 
     func showStudentProject(project: Project) {
         coordinator.showStudentProject(project)
@@ -31,7 +33,7 @@ class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentP
 
     func showSubscribeAlert(of project: Project, at index: Int) {
         coordinator.showSubscribeAlert(of: project) {
-            self.student.projects[index].isSubscribed = true
+            self.student?.projects[index].isSubscribed = true
         }
     }
 }

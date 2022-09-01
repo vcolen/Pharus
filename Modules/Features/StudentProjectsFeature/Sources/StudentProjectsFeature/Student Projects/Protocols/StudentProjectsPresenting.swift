@@ -7,9 +7,11 @@
 
 import Foundation
 import CoreApp
+import CoreKit
 
 protocol StudentProjectsPresenting: Presenting {
-    var student: Student { get }
+    var student: Student? { get }
+    func loadData()
     func showSubscribeAlert(of project: Project, at index: Int)
     func showStudentProject(project: Project)
 }

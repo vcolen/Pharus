@@ -13,17 +13,14 @@ class StudentProfileCoordinator {
 
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
-    private let student: Student
     private let logoutHandler: () -> Void
 
     // MARK: - Initializer
     init(
         rootViewController: UINavigationController,
-        student: Student,
         onLogout logoutHandler: @escaping () -> Void
     ) {
         self.rootViewController = rootViewController
-        self.student = student
         self.logoutHandler = logoutHandler
     }
 }
@@ -31,10 +28,7 @@ class StudentProfileCoordinator {
 // MARK: - Coordinator
 extension StudentProfileCoordinator: Coordinator {
     func start() {
-        let studentProfilePresenter = StudentProfilePresenter(
-            coordinator: self,
-            student: student
-        )
+        let studentProfilePresenter = StudentProfilePresenter(coordinator: self)
 
         let studentProfileViewController = StudentProfileViewController(
             presenter: studentProfilePresenter

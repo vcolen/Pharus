@@ -7,13 +7,14 @@
 
 import UIKit
 import PharusUI
+import CoreKit
 import CoreApp
 
 class StudentProjectsView: UIView {
 
     // MARK: - Properties
     weak var delegate: StudentProjectsViewDelegate?
-    private let student: Student
+    private var student: Student?
 
     // MARK: - Views
     lazy var tableView = UITableView()
@@ -21,7 +22,7 @@ class StudentProjectsView: UIView {
         .setting(\.separatorColor, to: .clear)
 
     // MARK: - Initializer
-    init(student: Student) {
+    init(student: Student? = nil) {
         self.student = student
 
         super.init(frame: .zero)
@@ -63,7 +64,7 @@ extension StudentProjectsView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        student.projects.count
+        student?.projects.count ?? 8
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,7 +78,9 @@ extension StudentProjectsView: UITableViewDataSource {
             )
         }
 
-        let project = student.projects[indexPath.row]
+        guard let project = student?.projects[indexPath.row] else {
+            return cell
+        }
 
         cell.setupView()
         cell.configureCell(using: project)
@@ -101,9 +104,20 @@ extension StudentProjectsView: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let project = student.projects[indexPath.row]
+        guard let project = student?.projects[indexPath.row] else {
+            return
+        }
+
         delegate?.projectCellTapped(for: project)
 
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - Additional Methods
+extension StudentProjectsView {
+    func updateView(with student: Student) {
+        self.student = student
+        tableView.reloadData()
     }
 }

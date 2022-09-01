@@ -7,16 +7,19 @@
 
 import Foundation
 import CoreApp
+import InjectionKit
+import CoreKit
 
 class StudentProjectsRankingPresenter: BasePresenter<StudentProjectsRankingViewable>, StudentProjectsRankingPresenting {
     private let coordinator: StudentProjectsRankingCoordinating
-    let student: Student
+    var student: Student?
+    @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
 
-    init(
-        coordinator: StudentProjectsRankingCoordinating,
-        student: Student
-    ) {
+    init(coordinator: StudentProjectsRankingCoordinating) {
         self.coordinator = coordinator
-        self.student = student
+    }
+
+    func loadData() {
+        view?.updateView(with: getStudentUseCaseProtocol().projects)
     }
 }

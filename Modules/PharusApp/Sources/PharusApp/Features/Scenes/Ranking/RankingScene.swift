@@ -12,12 +12,10 @@ import CoreApp
 
 public struct RankingScene: StudentProjectsRankingSceneProtocol {
     public func callAsFunction(
-        rootViewController: UITabBarController,
-        student: Student
+        rootViewController: UITabBarController
     ) {
         StudentProjectsRankingTabCoordinator(
-            rootViewController: rootViewController,
-            student: student
+            rootViewController: rootViewController
         ).start()
     }
 

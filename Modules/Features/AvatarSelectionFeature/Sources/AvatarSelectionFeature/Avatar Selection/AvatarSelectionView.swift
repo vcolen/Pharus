@@ -7,13 +7,13 @@
 
 import UIKit
 import PharusUI
+import CoreKit
 import CoreApp
 
 class AvatarSelectionView: UIView {
 
     // MARK: - Properties
     weak var delegate: AvatarSelectionViewDelegate?
-    private var student: Student
     private let avatarSelectionConfiguration = UICollectionView
         .CellRegistration<AvatarSelectionCell, UIImage> { cell, _, image in
             cell.avatarImageView.image = image
@@ -58,9 +58,7 @@ class AvatarSelectionView: UIView {
         .frame(height: 130)
 
     // MARK: - Initializer
-    init(student: Student) {
-        self.student = student
-
+    init() {
         super.init(frame: .zero)
 
         setupView()
@@ -82,7 +80,7 @@ extension AvatarSelectionView: ViewCodable {
     }
 
     func applyAdditionalChanges() {
-        showStudentAvatar()
+        showAvatar()
         setupCollectionViewDelegate()
     }
 }
@@ -119,7 +117,14 @@ extension AvatarSelectionView: UICollectionViewDelegate {
 
 // MARK: - Additional Methods
 extension AvatarSelectionView {
-    private func showStudentAvatar() {
+    private func showAvatar(of student: Student? = nil) {
+        guard let student = student else {
+            mainAvatarImageView.image = UIImage(
+                named: "avatar2" + PharusUIConstants.assets.images.avatar.fullImage.suffix
+            )
+            return
+        }
+
         mainAvatarImageView.image = UIImage(
             named: "avatar" + student.avatar + PharusUIConstants.assets.images.avatar.fullImage.suffix
         )
@@ -132,5 +137,9 @@ extension AvatarSelectionView {
         )
         avatarSelectionCollectionView.dataSource = self
         avatarSelectionCollectionView.delegate = self
+    }
+
+    func updateView(with student: Student) {
+        showAvatar(of: student)
     }
 }

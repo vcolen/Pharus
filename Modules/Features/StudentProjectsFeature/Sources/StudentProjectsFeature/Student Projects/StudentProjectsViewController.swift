@@ -6,13 +6,13 @@
 //
 
 import UIKit
-import CoreApp
+import CoreKit
 
 class StudentProjectsViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: StudentProjectsPresenting
-    private lazy var customView = StudentProjectsView(student: presenter.student)
+    private lazy var customView = StudentProjectsView()
 
     // MARK: - Initializer
     init(presenter: StudentProjectsPresenting) {
@@ -44,6 +44,7 @@ extension StudentProjectsViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        presenter.loadData()
         customView.tableView.reloadData()
     }
 
@@ -66,4 +67,8 @@ extension StudentProjectsViewController: StudentProjectsViewDelegate {
 }
 
 // MARK: - Student Projects Viewable
-extension StudentProjectsViewController: StudentProjectsViewable { }
+extension StudentProjectsViewController: StudentProjectsViewable {
+    func updateView(with student: Student) {
+        customView.updateView(with: student)
+    }
+}

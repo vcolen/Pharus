@@ -11,23 +11,15 @@ import CoreApp
 
 public struct StudentProjectsTabCoordinator {
     private weak var rootViewController: UITabBarController?
-    private let student: Student
 
-    public init(
-        rootViewController: UITabBarController,
-        student: Student
-    ) {
+    public init(rootViewController: UITabBarController) {
         self.rootViewController = rootViewController
-        self.student = student
     }
 
     public func start() {
         let navigationController = UINavigationController()
 
-        StudentProjectsCoordinator(
-            rootViewController: navigationController,
-            student: student
-        ).start()
+        StudentProjectsCoordinator(rootViewController: navigationController).start()
 
         navigationController.tabBarItem.image = .pharusIcons.projecsTabBarIcon
         navigationController

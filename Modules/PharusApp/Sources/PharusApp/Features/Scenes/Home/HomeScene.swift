@@ -12,12 +12,10 @@ import CoreApp
 
 public struct HomeScene: HomeSceneProtocol {
     public func callAsFunction(
-        rootViewController: UITabBarController,
-        student: Student
+        rootViewController: UITabBarController
     ) {
         StudentHomeTabCoordinator(
-            rootViewController: rootViewController,
-            student: student
+            rootViewController: rootViewController
         ).start()
     }
 
