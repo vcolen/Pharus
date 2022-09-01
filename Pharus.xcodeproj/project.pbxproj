@@ -63,7 +63,6 @@
 		795B451D28B7E7DA006D3835 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		795B451E28B7E7DA006D3835 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		795B451F28B7E7DA006D3835 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		795B452028B7E7DA006D3835 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		795B452128B7E7DA006D3835 /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
 		795B452228B7E7DA006D3835 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		795B452328B7E7DA006D3835 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
@@ -154,7 +153,6 @@
 				795B451D28B7E7DA006D3835 /* UIFont+Extension.swift */,
 				795B451E28B7E7DA006D3835 /* UIColor+Extension.swift */,
 				795B451F28B7E7DA006D3835 /* UIView+Extension.swift */,
-				795B452028B7E7DA006D3835 /* Bundle+Extension.swift */,
 				795B452128B7E7DA006D3835 /* UITabBarController+Extension.swift */,
 				795B452228B7E7DA006D3835 /* UIViewController+Extension.swift */,
 				795B452328B7E7DA006D3835 /* UIStackView+Extension.swift */,

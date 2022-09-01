@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreApp
 
 public struct Project: Codable {
     public let id, name: String

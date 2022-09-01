@@ -9,6 +9,7 @@ import UIKit
 import CoreApp
 import CoreScene
 import InjectionKit
+import CoreKit
 
 public struct TabBarCoordinator {
 

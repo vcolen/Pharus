@@ -61,14 +61,9 @@ extension FeaturesAssembly {
 
 // MARK: - Profile
 extension FeaturesAssembly {
-
     func assembleProfile(_ container: Container) {
         container.register(StudentProfileSceneProtocol.self) {
             ProfileScene()
-        }
-
-        container.register(GetStudentUseCaseProtocol.self) {
-            GetStudentUseCase()
         }
     }
 }

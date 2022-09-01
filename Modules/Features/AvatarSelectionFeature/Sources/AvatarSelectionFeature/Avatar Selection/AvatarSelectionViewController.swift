@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CoreApp
+import CoreKit
 
 class AvatarSelectionViewController: UIViewController {
 

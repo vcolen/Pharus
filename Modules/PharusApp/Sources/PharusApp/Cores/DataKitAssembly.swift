@@ -13,9 +13,21 @@ import CoreKit
  struct DataKitAssembly: Assembly {
     func assemble(container: Container) {
         assembleLogin(container)
+        assembleProfile(container)
+        assembleCommon(container)
     }
  }
 
+// MARK: - Common
+extension DataKitAssembly {
+    func assembleCommon(_ container: Container) {
+        container.register(StorageRepositoryProtocol.self) {
+            StorageRepository()
+        }
+    }
+}
+
+// MARK: - Login
  extension DataKitAssembly {
     func assembleLogin(_ container: Container) {
         container.register(LoginRepositoryProtocol.self) {
@@ -23,3 +35,12 @@ import CoreKit
         }
     }
  }
+
+// MARK: - Profile
+extension DataKitAssembly {
+   func assembleProfile(_ container: Container) {
+       container.register(ProfileRepositoryProtocol.self) {
+           ProfileRepository()
+       }
+   }
+}

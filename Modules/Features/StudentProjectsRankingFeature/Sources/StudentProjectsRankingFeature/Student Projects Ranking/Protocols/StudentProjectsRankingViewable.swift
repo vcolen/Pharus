@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CoreApp
+import CoreKit
 
 protocol StudentProjectsRankingViewable: AnyObject {
     func updateView(with projects: [Project])

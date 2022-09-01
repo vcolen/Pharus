@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CoreApp
+import CoreKit
 
 protocol ProjectTaskDelegate: AnyObject {
     func checkmarkButtonTapped(task: Task)

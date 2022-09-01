@@ -8,6 +8,7 @@
 import UIKit
 import CoreApp
 import AlertFeature
+import CoreKit
 
 struct StudentProjectsCoordinator {
 

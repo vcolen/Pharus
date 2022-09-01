@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreApp
+import CoreKit
 
 protocol ProjectSheetPresenting: Presenting {
     var project: Project { get }
