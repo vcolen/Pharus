@@ -7,8 +7,9 @@
 
 import UIKit
 import CoreKit
+import CoreApp
 
-class StudentProjectDetailPresenter: StudentProjectsDetailPresenting {
+class StudentProjectDetailPresenter: BasePresenter<StudentProjectDetailViewable>, StudentProjectDetailPresenting {
 
     // MARK: - Properties
     private let coordinator: StudentProjectDetailCoordinator

@@ -15,7 +15,6 @@ class StudentProjectDetailView: UIView {
 
     // MARK: - Properties
     weak var delegate: StudentProjectDetailViewDelegate?
-    var project: Project
 
     // MARK: - Views
     private lazy var mainScrollView = VScrollView {
@@ -66,7 +65,7 @@ class StudentProjectDetailView: UIView {
     private lazy var mentorReviewHelperView = VStackView([
         mentorReviewImageView
     ])
-    .frame(width: 36, height: 36)
+        .frame(width: 36, height: 36)
 
     private lazy var mentorReviewImageView = UIImageView()
         .setting(\.image, to: .pharusIcons.envelopeIcon)
@@ -85,8 +84,8 @@ class StudentProjectDetailView: UIView {
             .setting(\.image, to: .pharusIcons.rightArrowIcon)
             .frame(width: 24, height: 24)
     ])
-    .setting(\.spacing, to: 9)
-    .center(.horizontally)
+        .setting(\.spacing, to: 9)
+        .center(.horizontally)
 
     private lazy var rulesLabel = UILabel()
         .setting(\.text, to: "Atividades do projeto")
@@ -97,7 +96,7 @@ class StudentProjectDetailView: UIView {
         taskTitleLabel,
         taskHelperStackView
     ])
-    .setting(\.spacing, to: 29)
+        .setting(\.spacing, to: 29)
 
     private lazy var taskTitleLabel = UILabel()
         .setting(\.text, to: "Lista de Tarefas")
@@ -124,9 +123,7 @@ class StudentProjectDetailView: UIView {
     private lazy var uploadFilesButton = MainCardButton(title: "Enviar Arquivos", buttonState: .normal)
 
     // MARK: - Initializer
-    init(project: Project) {
-        self.project = project
-
+    init() {
         super.init(frame: .zero)
 
         setupView()
@@ -148,25 +145,6 @@ extension StudentProjectDetailView: ViewCodable {
     }
 
     func applyAdditionalChanges() {
-        mentorLabel.text = project.mentor
-        descriptionTextLabel.text = project.projectDescription
-        setupProjectTasks(of: project)
-
-        if project.isSubscribed == false {
-            configureUnsubscribedProject(with: project)
-        }
-
-        if project.isComplete {
-            uploadFilesButton.disable()
-        }
-
-        if project.scoreDescription != nil {
-            mentorReviewImageView.image = .pharusIcons.notificationEnvelopeIcon
-            mentorReviewHelperView.setOnClickListener { [weak self] in
-                self?.envelopeIconTapped()
-            }
-        }
-
         rulesStackView.setOnClickListener { [weak self] in
             self?.rulesViewTapped()
         }
@@ -179,22 +157,30 @@ extension StudentProjectDetailView: ViewCodable {
 
 // MARK: - Additional Mehtods
 extension StudentProjectDetailView {
-    private func setupProjectTasks(of project: Project) {
-        for taskIndex in project.tasks.indices {
-            let task = project.tasks[taskIndex]
+    private func setupProjectTasks(of project: Project? = nil) {
+        guard let project = project else {
+            for _ in 0...3 {
+                taskHelperStackView.addArrangedSubview(createDefaultTask())
+            }
+            return
+        }
+
+        taskHelperStackView.removeFullyAllArrangedSubviews()
+
+        for task in project.tasks {
             let checkboxIcon = task.isComplete ? UIImage.pharusIcons.checkmarkIcon ?? .defaultImage : .defaultImage
+
             let taskView = ProjectTaskView(
                 task: task,
                 checkImage: checkboxIcon,
                 color: project.isSubscribed ? .black : UIColor.Project.grayDisabledText
             )
 
-            #warning("TODO - update checkmark when button tapped")
             if project.isComplete == false && project.isSubscribed == true {
                 taskView.taskCheckmarkButton.addAction(
                     UIAction { [weak self, weak taskView] _ in
-                        self?.taskCheckboxTapped(taskIndex: taskIndex)
-                        if project.tasks[taskIndex].isComplete {
+                        self?.taskCheckboxTapped(taskId: task.id)
+                        if project.tasks[task.id - 1].isComplete {
                             taskView?.taskCheckmarkButton.setImage(
                                 .pharusIcons.checkmarkIcon,
                                 for: .normal
@@ -227,13 +213,48 @@ extension StudentProjectDetailView {
         }
     }
 
-    private func updateProjectProgressView() {
+    private func updateProjectProgressView(with project: Project? = nil) {
+        guard let project = project else {
+            completedTasksLabel.text = "Completadas 0 de 4 tarefas (0%)"
+            completedTasksProgressView.progress = 0
+            return
+        }
+
         let roundedPercentage: Float = project.completionPercentage*100
 
         completedTasksLabel.text = """
 Completadas \(project.completedTasksCount) de \(project.tasks.count) tarefas (\(roundedPercentage.withDecimalPoints(2))%)
 """
         completedTasksProgressView.progress = project.completionPercentage
+    }
+
+    private func createDefaultTask() -> ProjectTaskView {
+        return ProjectTaskView(
+            task: Student.shared.projects[0].tasks[0],
+            checkImage: .defaultImage,
+            color: .black
+        )
+    }
+
+    func updateView(with project: Project) {
+        mentorLabel.text = project.mentor
+        descriptionTextLabel.text = project.projectDescription
+        setupProjectTasks(of: project)
+
+        if project.isSubscribed == false {
+            configureUnsubscribedProject(with: project)
+        }
+
+        if project.isComplete {
+            uploadFilesButton.disable()
+        }
+
+        if project.scoreDescription != nil {
+            mentorReviewImageView.image = .pharusIcons.notificationEnvelopeIcon
+            mentorReviewHelperView.setOnClickListener { [weak self] in
+                self?.envelopeIconTapped()
+            }
+        }
     }
 }
 
@@ -244,8 +265,8 @@ extension StudentProjectDetailView {
         delegate?.envelopeIconTapped()
     }
 
-    func taskCheckboxTapped(taskIndex: Int) {
-        delegate?.taskCheckboxTapped(taskIndex: taskIndex)
+    func taskCheckboxTapped(taskId: Int) {
+        delegate?.taskCheckboxTapped(taskIndex: taskId)
     }
 
     func rulesViewTapped() {

@@ -12,16 +12,16 @@ import StudentProfileFeature
 class StudentProjectDetailViewController: UIViewController {
 
     // MARK: - Properties
-    private let presenter: StudentProjectDetailPresenter
-    private lazy var customView = StudentProjectDetailView(
-        project: presenter.project
-    )
+    private let presenter: StudentProjectDetailPresenting
+    private lazy var customView = StudentProjectDetailView()
 
     // MARK: - Initializer
     init(presenter: StudentProjectDetailPresenter) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
@@ -56,8 +56,9 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
     }
 
     func taskCheckboxTapped(taskIndex: Int) {
-        presenter.toggleTaskCompletedStatus(taskIndex: taskIndex)
-        customView.project = presenter.project
+        #warning("implementar")
+//        presenter.toggleTaskCompletedStatus(taskIndex: taskIndex)
+//        customView.project = presenter.project
     }
 
     func rulesViewTapped() {
