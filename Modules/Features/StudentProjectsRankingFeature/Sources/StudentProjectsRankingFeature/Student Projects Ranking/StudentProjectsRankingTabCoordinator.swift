@@ -10,22 +10,16 @@ import CoreApp
 
 public struct StudentProjectsRankingTabCoordinator {
     private weak var rootViewController: UITabBarController?
-    private let student: Student
 
-    public init(
-        rootViewController: UITabBarController,
-        student: Student
-    ) {
+    public init(rootViewController: UITabBarController) {
         self.rootViewController = rootViewController
-        self.student = student
     }
 
     public func start() {
         let navigationController = UINavigationController()
 
         StudentProjectsRankingCoordinator(
-            rootViewController: navigationController,
-            student: student
+            rootViewController: navigationController
         ).start()
 
         navigationController.tabBarItem.image = .pharusIcons.rankingTabBarIcon

@@ -21,7 +21,6 @@ class StudentProjectsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         presenter.attach(self)
-        presenter.loadData()
     }
 
     required init?(coder: NSCoder) {
@@ -45,6 +44,7 @@ extension StudentProjectsViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        presenter.loadData()
         customView.tableView.reloadData()
     }
 

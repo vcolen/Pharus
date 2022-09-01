@@ -21,7 +21,6 @@ class StudentProfileViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         presenter.attach(self)
-        presenter.loadData()
     }
 
     required init?(coder: NSCoder) {
@@ -54,7 +53,6 @@ extension StudentProfileViewController {
         super.viewDidLoad()
 
         setNavigationBar()
-        presenter.loadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {

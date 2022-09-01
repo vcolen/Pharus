@@ -29,12 +29,12 @@ class StudentProjectsRankingCell: UITableViewCell {
             .frame(height: 80)
         ])
     ])
-    .setting(\.spacing, to: 32)
-    .padding(.all, 16)
-    .setting(\.backgroundColor, to: .Purple.pharusPurple)
-    .setting(\.layer.cornerRadius, to: 16)
-    .padding(.top, 24.5)
-    .padding([.leading, .bottom, .trailing], 8)
+        .setting(\.spacing, to: 32)
+        .padding(.all, 16)
+        .setting(\.backgroundColor, to: .Purple.pharusPurple)
+        .setting(\.layer.cornerRadius, to: 16)
+        .padding(.top, 24.5)
+        .padding([.leading, .bottom, .trailing], 8)
 
     private lazy var projectTitleLabel = UILabel()
         .setting(\.textAlignment, to: .center)
@@ -102,7 +102,16 @@ extension StudentProjectsRankingCell: ViewCodable {
 
 // MARK: - Additional Methods
 extension StudentProjectsRankingCell {
-    func configureCell(using project: Project) {
+    func configureCell(using project: Project? = nil) {
+        guard let project = project else {
+            self.projectTitleLabel.text = "Projeto Surpresa"
+            mentorCommentsDescriptionLabel.originalView.text = "XXXXXXXXXXXXX"
+
+            setupView()
+            setPlacementImages()
+            return
+        }
+
         self.projectTitleLabel.text = project.name
         mentorCommentsDescriptionLabel.originalView.text = project.scoreDescription
 
@@ -110,11 +119,13 @@ extension StudentProjectsRankingCell {
         setPlacementImages(with: project)
     }
 
-    private func setPlacementImages(with project: Project) {
-        guard let projectPlacement = project.placement else {
+    private func setPlacementImages(with project: Project? = nil) {
+        guard let project = project else {
+            setOnPodiumView()
             return
         }
 
+        guard let projectPlacement = project.placement else { return }
         if projectPlacement < 6 {
             setOnPodiumView(with: projectPlacement)
         } else {
@@ -122,7 +133,13 @@ extension StudentProjectsRankingCell {
         }
     }
 
-    private func setOnPodiumView(with placement: Int) {
+    private func setOnPodiumView(with placement: Int? = nil) {
+        guard let placement = placement else {
+            placementImageView.image = .pharusImages.fifthPlaceImage
+            medalImageView.image = .pharusImages.fifthPlaceMedalImage
+            return
+        }
+
         switch placement {
         case 1:
             placementImageView.image = .pharusImages.firstPlaceImage

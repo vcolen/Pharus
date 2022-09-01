@@ -25,7 +25,6 @@ class StudentHomeViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         presenter.attach(self)
-        presenter.loadData()
     }
 
     required init?(coder: NSCoder) {

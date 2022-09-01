@@ -12,8 +12,7 @@ import CoreApp
 class StudentProjectsRankingView: UIView {
 
     // MARK: - Properties
-    private let student: Student
-    private let projects: [Project]
+    private var projects: [Project]?
 
     // MARK: - Views
     lazy var tableView = UITableView()
@@ -22,9 +21,12 @@ class StudentProjectsRankingView: UIView {
         .setting(\.allowsSelection, to: false)
 
     // MARK: - Initializer
-    init(student: Student) {
-        self.student = student
-        self.projects = student.projects.filter({ $0.placement != nil })
+    init(projects: [Project]? = nil) {
+        if let projects = projects {
+            self.projects = projects.filter({ $0.placement != nil })
+        } else {
+            self.projects = projects
+        }
 
         super.init(frame: .zero)
 
@@ -63,7 +65,7 @@ extension StudentProjectsRankingView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        projects.count
+        projects?.count ?? 3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,7 +81,21 @@ extension StudentProjectsRankingView: UITableViewDataSource {
             )
         }
 
-        cell.configureCell(using: projects[indexPath.row])
-        return cell
+        if let projects = projects {
+            cell.configureCell(using: projects[indexPath.row])
+            return cell
+        } else {
+            cell.configureCell()
+            return cell
+        }
+
+    }
+}
+
+// MARK: - Additional Methods
+extension StudentProjectsRankingView {
+    func updateView(with projects: [Project]) {
+        self.projects = projects
+        tableView.reloadData()
     }
 }

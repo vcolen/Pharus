@@ -12,26 +12,18 @@ struct StudentProjectsRankingCoordinator {
 
     // MARK: - Properties
     weak var rootViewController: UINavigationController?
-    private let student: Student
 
     // MARK: - Initializer
 
-    init(
-        rootViewController: UINavigationController,
-        student: Student
-    ) {
+    init(rootViewController: UINavigationController) {
         self.rootViewController = rootViewController
-        self.student = student
     }
 }
 
 // MARK: - Coordinator
 extension StudentProjectsRankingCoordinator: Coordinator {
     func start() {
-        let studentProjectsRankingPresenter = StudentProjectsRankingPresenter(
-            coordinator: self,
-            student: student
-        )
+        let studentProjectsRankingPresenter = StudentProjectsRankingPresenter(coordinator: self)
         let studentProjectsRankingViewController = StudentProjectsRankingViewController(
             presenter: studentProjectsRankingPresenter
         )

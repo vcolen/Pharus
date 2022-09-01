@@ -9,5 +9,6 @@ import Foundation
 import CoreApp
 
 protocol StudentProjectsRankingPresenting: Presenting {
-    var student: Student { get }
+    var student: Student? { get }
+    func loadData()
 }

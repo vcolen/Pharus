@@ -11,7 +11,7 @@ import CoreApp
 class StudentProjectsRankingViewController: UIViewController {
 
     // MARK: - Properties
-    private lazy var customView = StudentProjectsRankingView(student: presenter.student)
+    private lazy var customView = StudentProjectsRankingView()
     private let presenter: StudentProjectsRankingPresenting
 
     // MARK: - Initializer
@@ -35,15 +35,26 @@ extension StudentProjectsRankingViewController {
         self.view = customView
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         setGradientBackground()
+        presenter.loadData()
     }
+
 }
 
 // MARK: - Student Projects Ranking Viewable
-extension StudentProjectsRankingViewController: StudentProjectsRankingViewable { }
+extension StudentProjectsRankingViewController: StudentProjectsRankingViewable {
+    func updateView(with projects: [Project]) {
+        customView.updateView(with: projects)
+    }
+}
 
 // MARK: - Student Projects Ranking View Delegate
 extension StudentProjectsRankingViewController: StudentProjectsRankingViewDelegate { }
