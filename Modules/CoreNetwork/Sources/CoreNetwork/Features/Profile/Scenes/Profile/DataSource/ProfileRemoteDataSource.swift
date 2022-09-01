@@ -8,14 +8,26 @@
 import Foundation
 import DataKit
 import CoreKit
-import CoreApp
+import InjectionKit
 
-public struct ProfileRemoteDataSource: DataKit.ProfileRemoteDataSource {
+public struct ProfileRemoteDataSource {
+    @Injected var setStorageDataUseCaseProtocol: SetStorageDataUseCaseProtocol
+    @Injected var getStorageDataUseCaseProtocol: GetStorageDataUseCaseProtocol
+
     public init() {
 
     }
+}
 
+extension ProfileRemoteDataSource: DataKit.ProfileRemoteDataSource {
     public func getStudent() -> Student {
-        return Bundle.main.decode("Student.json")
+        return getStorageDataUseCaseProtocol(
+            Student.self,
+            key: "student"
+        ) ?? Bundle.main.decode("Student.json")
+    }
+
+    public func updateStudent(_ student: Student) {
+        setStorageDataUseCaseProtocol(student, forKey: "student")
     }
 }

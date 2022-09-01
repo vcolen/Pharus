@@ -15,8 +15,13 @@ public struct ProfileRepository {
     public init() { }
 }
 
+// MARK: - Remote Data Source
 extension ProfileRepository: ProfileRepositoryProtocol {
     public func getStudent() -> Student {
         remoteDataSource.getStudent()
+    }
+
+    public func updateStudent(_ student: Student) {
+        remoteDataSource.updateStudent(student)
     }
 }

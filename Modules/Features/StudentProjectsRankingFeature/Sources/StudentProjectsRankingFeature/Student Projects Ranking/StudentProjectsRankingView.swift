@@ -13,7 +13,11 @@ import CoreApp
 class StudentProjectsRankingView: UIView {
 
     // MARK: - Properties
-    private var projects: [Project]?
+    private var projects: [Project]? {
+        didSet {
+            projects = projects?.filter({ $0.placement != nil })
+        }
+    }
 
     // MARK: - Views
     lazy var tableView = UITableView()
@@ -23,11 +27,7 @@ class StudentProjectsRankingView: UIView {
 
     // MARK: - Initializer
     init(projects: [Project]? = nil) {
-        if let projects = projects {
-            self.projects = projects.filter({ $0.placement != nil })
-        } else {
-            self.projects = projects
-        }
+        self.projects = projects
 
         super.init(frame: .zero)
 
