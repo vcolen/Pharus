@@ -27,7 +27,7 @@ extension StorageDataSource: DataKit.StorageDataSource {
                 key: key
             )
         } catch {
-            print("Unable to Encode Note (\(error))")
+            print("Unable to Encode \(T.self): \(error)")
         }
     }
 }
