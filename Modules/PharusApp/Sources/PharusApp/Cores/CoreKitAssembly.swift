@@ -13,9 +13,11 @@ import LoginFeature
 struct CoreKitAssembly: Assembly {
     func assemble(container: Container) {
         assembleLogin(container)
+        assembleProfile(container)
     }
 }
 
+// MARK: - Login
 extension CoreKitAssembly {
     func assembleLogin(_ container: Container) {
         container.register(LoginUserUseCaseProtocol.self) {
@@ -24,6 +26,15 @@ extension CoreKitAssembly {
 
         container.register(GetUserTokenUseCaseProtocol.self) {
             GetUserTokenUseCase()
+        }
+    }
+}
+
+// MARK: - Profile
+extension CoreKitAssembly {
+    func assembleProfile(_ container: Container) {
+        container.register(GetStudentUseCaseProtocol.self) {
+            GetStudentUseCase()
         }
     }
 }

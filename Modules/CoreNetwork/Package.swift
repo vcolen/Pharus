@@ -26,6 +26,9 @@ let package = Package(
                 "CoreKit",
                 "CoreApp",
                 "InjectionKit"
+            ],
+            resources: [
+                .copy("Features/Profile/Scenes/Profile/Model/Student.json")
             ]
         )
     ]
