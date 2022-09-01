@@ -1,5 +1,5 @@
 {
-    "id": "",
+    "id": 1,
     "firstName": "Antônia",
     "lastName": "Ferreira",
     "birthdate": "13/05/2002",
@@ -14,7 +14,7 @@
     "username": "sTud3nt",
     "projects": [
         {
-            "id": "",
+            "id": 1,
             "name": "Criando moda!",
             "isSubscribed": true,
             "isComplete": true,
@@ -30,21 +30,25 @@
             "company": "Dupé",
             "tasks": [
                 {
+                    "id": 1,
                     "title": "Moda do Momenton",
                     "isComplete": true,
                     "description": " Faça uma dissertação sobre como observa a moda em seu ambiente escola. Poderá escrever até 500 palavras, e encaminhar fotos com referências da moda em sua escola."
                 },
                 {
+                    "id": 2,
                     "title": "Moda na Família",
                     "isComplete": true,
                     "description": "Converse com algum familiar e entenda a moda de quando ele ou ela foi adolescente. Faça 04 desenhos com a moda da adolescência de seu familiar. Coloque no início do desenho ano referencial da moda."
                 },
                 {
+                    "id": 3,
                     "title": "Rascunho Inovação",
                     "isComplete": true,
                     "description": "Imagine um futuro de 30 anos a frente, e desenhe a moda como poderá estar. Crie em uma ferramenta de design. Faça 03 desenhos completos, incluindo o tipo de caçado que poderá ser usado."
                 },
                 {
+                    "id": 4,
                     "title": "Moda Verão Escolar",
                     "isComplete": true,
                     "description": "Com dias quentes durante o verão, desenhe calçados que possam ser confortáveis para ir a escola. Use a imaginação para cores, e que poderia ser usado. Faça 04 modelos em uma ferramenta de design."
@@ -52,7 +56,7 @@
             ]
         },
         {
-            "id": "",
+            "id": 2,
             "name": "Transformação Digital e Você!",
             "isSubscribed": false,
             "isComplete": false,
@@ -67,26 +71,31 @@
             "company": "Alpargatas",
             "tasks": [
                 {
+                    "id": 1,
                     "title": "Tarefa 01",
                     "isComplete": false,
                     "description": "Utilizando os conhecimentos do minicurso de Algoritmo, rascunhe o processo de sua saída para a Escola, e acrescente como a transformação digital entrou neste fluxo. Anexar a tarefa 01 no aplicativo pharus"
                 },
                 {
+                    "id": 2,
                     "title": "Tarefa 02",
                     "isComplete": false,
                     "description": "Converse com seus responsáveis familiares, e entenda como a transformação digital faz parte de suas vidas. Relate em quais áreas a transformação digital foi mais impactante. Anexar a tarefa 02 no aplicativo pharus."
                 },
                 {
+                    "id": 3,
                     "title": "Tarefa 03",
                     "isComplete": false,
                     "description": "Imagine um futuro, e uma inovação para uma transformação digital, em uma área qualquer que possa desejar. Como base no minicurso de design, faça um rascunho do que será essa inovação. Anexar tarefa 03 no aplicativo pharus."
                 },
                 {
+                    "id": 4,
                     "title": "Tarefa 04",
                     "isComplete": false,
                     "description": "Sabendo sobre o negócio da empresa parceira Alpargatas, rascunhe o que poderá ser a Transformação Digital, em alguma área da empesa. Anexar tarefa 04 no aplicativo pharus."
                 },
                 {
+                    "id": 5,
                     "title": "Tarefa 05",
                     "isComplete": false,
                     "description": "Com um amigo de equipe, aponte se em sua Escola houve Transformação Digital, e projete o que considera como a inovação digital poderia auxiliar a Escola. Anexar tarefa 04 no aplicativo pharus."
@@ -94,7 +103,7 @@
             ]
         },
         {
-            "id": "",
+            "id": 3,
             "name": "Startup Go!",
             "isSubscribed": true,
             "isComplete": false,
@@ -109,21 +118,25 @@
             "company": "ioasys",
             "tasks": [
                 {
+                    "id": 1,
                     "title": "Aprendendo a empreender",
                     "isComplete": false,
                     "description": "Forme um grupo de 04 amigos da escola para executar esta tarefa. Com base no aprendizado sobre o que é uma startup, reúnam-se para descobrir um possível nicho do ambiente escolar ou externo que possa ser um possível produto de uma startup. Para esta entrega, Façam: Descreva o problema a ser atuado / Como chegaram na conclusão do tema a ser trabalhado / Coloquem um nome para a startup."
                 },
                 {
+                    "id": 2,
                     "title": "Desbravando o produto",
                     "isComplete": true,
                     "description": "Conhecendo o problema que escolheram, para tarefa escolha um nome este produto. Defina o que será este produto. Façam uma dissertação explicando como o produto irá ser importante para o problema escolhido. Descreva qual será o publico que o produto irá atender."
                 },
                 {
+                    "id": 3,
                     "title": "Design em ação...",
                     "isComplete": false,
                     "description": "Com uma ferramenta de design criem uma logomarca para o produto escolhido, e um slogan (slogan é uma frase criada para gerar no consumidor uma associação mental a uma marca, favorecendo que se lembre dela facilmente)."
                 },
                 {
+                    "id": 4,
                     "title": "Hora do show!",
                     "isComplete": true,
                     "description": "Definido o produto na tarefa 02, agora é hora de desenhar um protótipo (é o termo usado para se referir ao que foi criado pela primeira vez, servindo de modelo ou molde para futuras produções.) desta inovação. Com seus amigos de grupo, escolham uma ferramenta adequada para que possam rascunhar o produto. Façam ao menos 03 referenciais do produto."
@@ -131,7 +144,7 @@
             ]
         },
         {
-            "id": "62501bb56c91d14d76f0123ww",
+            "id": 4,
             "name": "Sustentabilidade Hipster",
             "isSubscribed": true,
             "isComplete": false,
@@ -146,15 +159,19 @@
             "company": "Osklen",
             "tasks": [
                 {
+                    "id": 1,
                     "title": "Sustentabilidade na prática!",
                     "isComplete": true,
                     "description": "Atividade será em equipe de 04 pessoas. Conhecendo os tipos de materiais para reciclagem, monte um trabalho de divulgação sobre como separar os materiais, e divulgue na escola. Utilize material que possam ser reciclados. Inovem!!!"
                 },
                 {
+                    "id": 2,
                     "title": "Família na onda da sustentabilidade!",
                     "isComplete": false,
                     "description": "Esta atividade será individual. Com seu responsável familiar, monte em casa repositórios para a coleta de materiais para o direcionamento correto do lixo residencial. Faça etiquetas para os locais de depósito dos lixos. Ah! use produto reciclado para o deposito do lixo para reciclagem."
-                },{
+                },
+                {
+                    "id": 3,
                     "title": "Ação na Comunidade",
                     "isComplete": false,
                     "description": "Esta tarefa será em grupo com acompanhamento de um responsável escolar. Inicialmente desenvolva material explicativo de como organizar o lixo para reciclagem. Crie um cronograma para que possam visitar residências da região escolar promovendo o conhecimento da reciclagem. Encaminhe os registros no app !"
@@ -162,7 +179,7 @@
             ]
         },
         {
-            "id": "62501bb56c91d14d76f012wq",
+            "id": 5,
             "name": "Memória em ação!",
             "isSubscribed": true,
             "isComplete": false,
@@ -177,15 +194,19 @@
             "company": "Havaianas",
             "tasks": [
                 {
+                    "id": 1,
                     "title": "Desapegando!",
                     "isComplete": true,
                     "description": "Atividade individual. Para esta tarefa você deverá escolher uma peça de roupa ou calçado que não usa a um bom tempo, e está em boa conservação para que possa ser utilizado outra pessoa. Faça uma dissertação sobre o que esta peça lhe traz de memória, não limite para o texto. Encaminhe no APP!"
                 },
                 {
+                    "id": 2,
                     "title": "Amigos de Escola!",
                     "isComplete": true,
                     "description": "Junte a dissertação criada mais a peça escolhida. A tarefa será o mentor da escola irá acompanhar uma reunião para que todos possam realizar a passagem da peça para um colega de turma, e livremente ler sua dissertação."
-                },{
+                },
+                {
+                    "id": 3,
                     "title": "Imaginação no Social!",
                     "isComplete": false,
                     "description": "Atividade será individual. Observe sua comunidade, sua escola todo o ambiente por onde tenha sua vivência diária. Imagine como poderia ser útil para este ambiente. Crie um Projeto Social com base em suas observações, siga a seguinte lista: O ambiente que será beneficiado / Nome do Projeto Social / O problema observado / Como será o projeto social. Anexo o documento no APP."
@@ -193,7 +214,7 @@
             ]
         },
         {
-            "id": "62501bb56c91d14d76f0123wq",
+            "id": 6,
             "name": "Algoritmo no seu dia!",
             "isSubscribed": true,
             "isComplete": true,
@@ -208,21 +229,25 @@
             "company": "ioasys",
             "tasks": [
                 {
+                    "id": 1,
                     "title": "Tarefa 01",
                     "isComplete": true,
                     "description": "Escrever um algoritmo sobre a sua organização para ida para a escola. O fim do algoritmo deverá ser com a “Entrada na sala de aula”. Anexar a tarefa 01 no aplicativo pharus."
                 },
                 {
+                    "id": 2,
                     "title": "Tarefa 02",
                     "isComplete": true,
                     "description": "Escrever um algoritmo sobre a sua rotina após o fim da aula. Anexar a tarefa 02 no aplicativo pharus."
                 },
                 {
+                    "id": 3,
                     "title": "Tarefa 03",
                     "isComplete": true,
                     "description": "Desenhar um algoritmo sobre o final de semanal. Término será considerado como domingo às 20:00 h. Anexar tarefa 03 no aplicativo pharus."
                 },
                 {
+                    "id": 4,
                     "title": "Tarefa 04",
                     "isComplete": true,
                     "description": "Escrever um algoritmo com um amigo de turma sobre a rotina de parceria de amizade. Considera juntamente uma visão de futuro. Anexar tarefa 04 no aplicativo pharus."
@@ -230,7 +255,7 @@
             ]
         },
         {
-            "id": "62501bb56c91d14d76f0123wq",
+            "id": 7,
             "name": "Rabisco em arte",
             "isSubscribed": false,
             "isComplete": false,
@@ -245,21 +270,25 @@
             "company": "havaianas",
             "tasks": [
                 {
+                    "id": 1,
                     "title": "Tarefa 01",
                     "isComplete": false,
                     "description": "Utilizando os conhecimentos do minicurso de Algoritmo, rascunhe o processo de sua saída para a Escola, e com o conhecimento do estudo de design, faça uma arte deste processo. Anexar a tarefa 01 no aplicativo pharus."
                 },
                 {
+                    "id": 2,
                     "title": "Tarefa 02",
                     "isComplete": false,
                     "description": "Converse com seus responsáveis familiares, e procure entender o que sabem sobre design. Faça uma arte de sua residência utilizando alguma ferramenta de design. Anexar no APP."
                 },
                 {
+                    "id": 3,
                     "title": "Tarefa 03",
                     "isComplete": false,
                     "description": "Faça uma arte com base no seu ambiente escola, o qual imagine sendo parte de uma coleção da Havaianas. Tenha a sua mente livre, fique a vontade para elaborar o número de desenhos que sentir a liberdade de criar."
                 },
                 {
+                    "id": 4,
                     "title": "Tarefa 04",
                     "isComplete": false,
                     "description": "Converse com seus famílias e amigos, e busque uma história do passado que tenha a Havaianas relacionada. Com base nesta conversa, crie uma arte para uma Coleção Memórias Havaianas."
@@ -267,7 +296,7 @@
             ]
         },
         {
-            "id": "625bb56c91d14d76f0123wq",
+            "id": 8,
             "name": "Criando Avatar!",
             "isSubscribed": true,
             "isComplete": true,
@@ -282,21 +311,25 @@
             "company": "ioasys",
             "tasks": [
                 {
+                    "id": 1,
                     "title": "Tarefa 01",
                     "isComplete": true,
                     "description": "Faça uma dupla com seu amigo de turma, e conversem sobre o tema Avatar. Com base neste conversa façam Avatar um do outro, respeitando sempre o amigo de trabalho. Alinhe e faça um Avatar que possa trazer traços que considera legal em seu par de tarefa."
                 },
                 {
+                    "id": 2,
                     "title": "Tarefa 02",
                     "isComplete": true,
                     "description": "Imagine uma escola de outro mundo... Com base nesta liberdade de pensamento, crie pelo menos 06 Avatares, e o ambiente escolar. Esta atividade será individual."
                 },
                 {
+                    "id": 3,
                     "title": "Tarefa 03",
                     "isComplete": true,
                     "description": "Em casa, converse com algum família sobre o projeto, e peça a liberdade para criar um ou dois avatares de algum familiar. Lembrando, sempre com permissão e respeito."
                 },
                 {
+                    "id": 4,
                     "title": "Tarefa 04",
                     "isComplete": true,
                     "description": " Imagine que você é um avatar do seu game favorito. Agora desenhe este Avatar em pelo menos dois ambientes criados conforme o game. Ah! não deixe de nos contar qual o seu game favorito."

@@ -14,6 +14,7 @@ class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentP
 
     // MARK: - Properties
     @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
+    @Injected var subscribeToProjectUseCaseProtocol: SubscribeToProjectUseCaseProtocol
     private let coordinator: StudentProjectsCoordinating
     var student: Student?
 
@@ -33,7 +34,8 @@ class StudentProjectsPresenter: BasePresenter<StudentProjectsViewable>, StudentP
 
     func showSubscribeAlert(of project: Project, at index: Int) {
         coordinator.showSubscribeAlert(of: project) {
-            self.student?.projects[index].isSubscribed = true
+            self.subscribeToProjectUseCaseProtocol(projectId: project.id)
+            self.loadData()
         }
     }
 }

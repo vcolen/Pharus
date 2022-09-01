@@ -15,6 +15,7 @@ struct CoreKitAssembly: Assembly {
         assembleCommon(container)
         assembleLogin(container)
         assembleProfile(container)
+        assembleProjects(container)
     }
 }
 
@@ -53,6 +54,15 @@ extension CoreKitAssembly {
 
         container.register(UpdateStudentUseCaseProtocol.self) {
             UpdateStudentUseCase()
+        }
+    }
+}
+
+// MARK: - Projects
+extension CoreKitAssembly {
+    func assembleProjects(_ container: Container) {
+        container.register(SubscribeToProjectUseCaseProtocol.self) {
+            SubscribeToProjectUseCase()
         }
     }
 }
