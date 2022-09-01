@@ -12,11 +12,23 @@ let package = Package(
             targets: ["AppFeature"]
         )
     ],
-    dependencies: [],
+    dependencies: [
+        .package(path: "../InjectionKit"),
+        .package(path: "../CoreApp"),
+        .package(path: "../Features/LoginFeature"),
+        .package(path: "../CoreScene"),
+        .package(path: "../CoreKit")
+    ],
     targets: [
         .target(
             name: "AppFeature",
-            dependencies: []
+            dependencies: [
+                "CoreScene",
+                "InjectionKit",
+                "CoreApp",
+                "LoginFeature",
+                "CoreKit"
+            ]
         )
     ]
 )

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreApp
+import PharusApp
 
 // swiftlint:disable line_length
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -18,12 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        if let window = window {
-            window.windowScene = windowScene
-            window.overrideUserInterfaceStyle = .dark
-            AppCoordinator(window: window).start()
+        let window = UIWindow(windowScene: windowScene)
+
+        App.build(in: window) {
+            $0.start()
         }
+
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

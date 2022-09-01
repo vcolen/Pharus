@@ -12,11 +12,17 @@ let package = Package(
             targets: ["AvatarSelectionFeature"]
         )
     ],
-    dependencies: [],
+    dependencies: [
+        .package(path: "../../PharusUI"),
+        .package(path: "../../CoreApp")
+    ],
     targets: [
         .target(
             name: "AvatarSelectionFeature",
-            dependencies: []
+            dependencies: [
+                "PharusUI",
+                "CoreApp"
+            ]
         )
     ]
 )

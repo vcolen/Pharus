@@ -12,11 +12,17 @@ let package = Package(
             targets: ["StudentProjectsRankingFeature"]
         )
     ],
-    dependencies: [],
+    dependencies: [
+        .package(path: "../../PharusUI"),
+        .package(path: "../../CoreApp")
+    ],
     targets: [
         .target(
             name: "StudentProjectsRankingFeature",
-            dependencies: []
+            dependencies: [
+                "PharusUI",
+                "CoreApp"
+            ]
         )
     ]
 )
