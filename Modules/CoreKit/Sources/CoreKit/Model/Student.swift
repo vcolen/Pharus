@@ -79,7 +79,7 @@ public struct Student: Codable {
                 mentor: "Lorem ipsum",
                 company: "Lorem ipsum",
                 tasks: [
-                    Task(id: 1, title: "teste", isComplete: true, taskDescription: "alo alo")
+                    Task(id: 1, project: 1, title: "teste", isComplete: true, taskDescription: "alo alo")
                 ]
             )
         ]
