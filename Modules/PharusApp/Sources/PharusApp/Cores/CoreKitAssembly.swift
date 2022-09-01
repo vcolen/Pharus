@@ -64,5 +64,9 @@ extension CoreKitAssembly {
         container.register(SubscribeToProjectUseCaseProtocol.self) {
             SubscribeToProjectUseCase()
         }
+
+        container.register(ToggleTaskCompletionUseCaseProtocol.self) {
+            ToggleTaskCompletionUseCase()
+        }
     }
 }
