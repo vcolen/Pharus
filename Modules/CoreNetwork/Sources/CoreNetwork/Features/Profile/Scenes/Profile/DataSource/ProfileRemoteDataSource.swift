@@ -24,7 +24,7 @@ extension ProfileRemoteDataSource: DataKit.ProfileRemoteDataSource {
         return getStorageDataUseCaseProtocol(
             Student.self,
             key: "student"
-        ) ?? Bundle.main.decode("Student.json")
+        ) ?? Bundle.module.decode("Student.json")
     }
 
     public func updateStudent(_ student: Student) {

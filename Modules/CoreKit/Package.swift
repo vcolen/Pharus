@@ -24,9 +24,6 @@ let package = Package(
             dependencies: [
                 "CoreApp",
                 "InjectionKit"
-            ],
-            resources: [
-                .process("Resources")
             ]
         )
     ]
