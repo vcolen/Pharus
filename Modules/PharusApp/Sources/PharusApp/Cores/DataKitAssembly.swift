@@ -15,6 +15,7 @@ import CoreKit
         assembleLogin(container)
         assembleProfile(container)
         assembleCommon(container)
+        assembleProjects(container)
     }
  }
 
@@ -43,4 +44,13 @@ extension DataKitAssembly {
            ProfileRepository()
        }
    }
+}
+
+// MARK: - Projects
+extension DataKitAssembly {
+    func assembleProjects(_ container: Container) {
+        container.register(ProjectsRepositoryProtocol.self) {
+            ProjectsRepository()
+        }
+    }
 }

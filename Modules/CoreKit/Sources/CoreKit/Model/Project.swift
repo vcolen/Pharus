@@ -9,7 +9,8 @@ import Foundation
 import CoreApp
 
 public struct Project: Codable {
-    public let id, name: String
+    public let id: Int
+    public let name: String
     public var isSubscribed, isComplete: Bool
     public let score, placement: Int?
     public let projectDescription: String

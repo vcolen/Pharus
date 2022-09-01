@@ -8,12 +8,13 @@
 import Foundation
 
 public struct Task: Codable {
+    public let id: Int
     public let title: String
     public var isComplete: Bool
     public let taskDescription: String
 
     enum CodingKeys: String, CodingKey {
-        case title, isComplete
+        case id, title, isComplete
         case taskDescription = "description"
     }
 }

@@ -15,6 +15,7 @@ struct CoreNetworkAssembly: Assembly {
     func assemble(container: Container) {
         assembleLogin(container)
         assembleProfile(container)
+        assembleProjects(container)
     }
 }
 
@@ -32,6 +33,15 @@ extension CoreNetworkAssembly {
     func assembleProfile(_ container: Container) {
         container.register(DataKit.ProfileRemoteDataSource.self) {
             CoreNetwork.ProfileRemoteDataSource()
+        }
+    }
+}
+
+// MARK: - Projects
+extension CoreNetworkAssembly {
+    func assembleProjects(_ container: Container) {
+        container.register(DataKit.ProjectsRemoteDataSource.self) {
+            CoreNetwork.ProjectsRemoteDataSource()
         }
     }
 }

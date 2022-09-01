@@ -41,7 +41,7 @@ extension ProjectSubscriptionAlertCoordinator: Coordinator {
             presenter: alertPresenter
         )
 
-        alertViewController.modalPresentationStyle = .fullScreen
+        alertViewController.modalPresentationStyle = .overFullScreen
 
         rootViewController?.present(alertViewController, animated: true)
     }
@@ -54,6 +54,7 @@ extension ProjectSubscriptionAlertCoordinator: ProjectSubscriptionAlertCoordinat
     }
 
     func subscribeToProject() {
+        projectSubscriptionHandler()
         closeModal()
         if let navigationController = rootViewController {
             SingleButtonAlertCoordinator(

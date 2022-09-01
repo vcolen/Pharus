@@ -8,7 +8,8 @@
 import Foundation
 
 public struct Student: Codable {
-    public let id, firstName, lastName, birthdate: String
+    public let id: Int
+    public let firstName, lastName, birthdate: String
     public let gender, school, year, city: String
     public let schoolShift, email, password, username: String
     public var avatar: String
@@ -17,7 +18,7 @@ public struct Student: Codable {
     public static var shared = Student()
 
     public init(
-        id: String,
+        id: Int,
         firstName: String,
         lastName: String,
         birthdate: String,
@@ -49,7 +50,7 @@ public struct Student: Codable {
     }
 
     public init() {
-        self.id = "01"
+        self.id = 1
         self.firstName = "Robert"
         self.lastName = "Junior"
         self.birthdate = "18/01/2005"
@@ -64,7 +65,7 @@ public struct Student: Codable {
         self.username = "rdjunior"
         self.projects = [
             Project(
-                id: "1",
+                id: 1,
                 name: "Lorem ipsum",
                 isSubscribed: true,
                 isComplete: true,
@@ -78,7 +79,7 @@ public struct Student: Codable {
                 mentor: "Lorem ipsum",
                 company: "Lorem ipsum",
                 tasks: [
-                    Task(title: "teste", isComplete: true, taskDescription: "alo alo")
+                    Task(id: 1, title: "teste", isComplete: true, taskDescription: "alo alo")
                 ]
             )
         ]
