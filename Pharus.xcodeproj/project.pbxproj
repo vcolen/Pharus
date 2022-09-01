@@ -16,9 +16,9 @@
 		7929987D28B659F1009D5E0C /* CoreStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987C28B659F1009D5E0C /* CoreStorage */; };
 		7929987F28B659F1009D5E0C /* DataKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7929987E28B659F1009D5E0C /* DataKit */; };
 		79458CBA28A5766B00537910 /* InjectionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 79458CB928A5766B00537910 /* InjectionKit */; };
-		795C81EE28C04F0500519A98 /* Student.json in Resources */ = {isa = PBXBuildFile; fileRef = 795C81ED28C04F0500519A98 /* Student.json */; };
 		79621ABD28B68AB800A150F1 /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79621ABC28B68AB800A150F1 /* AppFeature */; };
 		79621AC028B68BC900A150F1 /* SendFileFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 79621ABF28B68BC900A150F1 /* SendFileFeature */; };
+		7992352428C10C7000AB7C0D /* Student.json in Resources */ = {isa = PBXBuildFile; fileRef = 7992352328C10C7000AB7C0D /* Student.json */; };
 		799AFB35285CECDF001B0371 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA89285CECDE001B0371 /* Network.swift */; };
 		799AFB3A285CECDF001B0371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA8F285CECDE001B0371 /* AppDelegate.swift */; };
 		799AFB3B285CECDF001B0371 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFA90285CECDE001B0371 /* SceneDelegate.swift */; };
@@ -68,10 +68,10 @@
 		795B452228B7E7DA006D3835 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		795B452328B7E7DA006D3835 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		795B452428B7E7DA006D3835 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
-		795C81ED28C04F0500519A98 /* Student.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Student.json; path = Modules/CoreNetwork/Sources/CoreNetwork/Features/Profile/Scenes/Profile/Model/Student.json; sourceTree = "<group>"; };
 		79621ABB28B68A7C00A150F1 /* AppFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppFeature; sourceTree = "<group>"; };
 		79621ABE28B68B6F00A150F1 /* SendFileFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SendFileFeature; sourceTree = "<group>"; };
 		797A471C287481F2005A3632 /* PharusUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PharusUI; sourceTree = "<group>"; };
+		7992352328C10C7000AB7C0D /* Student.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Student.json; path = Modules/CoreKit/Sources/CoreKit/Resources/Student.json; sourceTree = "<group>"; };
 		799AFA89285CECDE001B0371 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		799AFA8F285CECDE001B0371 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		799AFA90285CECDE001B0371 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 		C045617E27EA03A5007EC5C3 = {
 			isa = PBXGroup;
 			children = (
-				795C81ED28C04F0500519A98 /* Student.json */,
+				7992352328C10C7000AB7C0D /* Student.json */,
 				797A471B287481EC005A3632 /* Modules */,
 				799AF9F7285CECDE001B0371 /* Pharus */,
 				79F06D9F27F28FCD00343865 /* PharusTests */,
@@ -420,7 +420,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				795C81EE28C04F0500519A98 /* Student.json in Resources */,
+				7992352428C10C7000AB7C0D /* Student.json in Resources */,
 				799AFB61285CECDF001B0371 /* OpenSans-Bold.ttf in Resources */,
 				799AFB60285CECDF001B0371 /* OpenSans-SemiBold.ttf in Resources */,
 				799AFB62285CECDF001B0371 /* OpenSans-Medium.ttf in Resources */,
