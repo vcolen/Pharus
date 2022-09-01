@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreKit
 import CoreApp
 
 protocol AvatarSelectionPresenting: Presenting {

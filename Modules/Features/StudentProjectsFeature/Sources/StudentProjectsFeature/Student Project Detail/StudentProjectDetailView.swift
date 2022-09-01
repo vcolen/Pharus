@@ -7,6 +7,7 @@
 
 import UIKit
 import PharusUI
+import CoreKit
 import CoreApp
 
 // swiftlint:disable line_length

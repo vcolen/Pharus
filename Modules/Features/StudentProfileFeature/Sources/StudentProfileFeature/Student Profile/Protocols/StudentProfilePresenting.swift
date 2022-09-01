@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreApp
+import CoreKit
 
 protocol StudentProfilePresenting: Presenting {
     var student: Student? { get }

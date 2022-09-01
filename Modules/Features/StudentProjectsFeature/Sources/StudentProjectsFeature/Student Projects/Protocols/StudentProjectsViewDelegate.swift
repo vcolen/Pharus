@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CoreApp
+import CoreKit
 
 protocol StudentProjectsViewDelegate: AnyObject {
     func subscribeButtonTapped(of project: Project, at index: Int)
