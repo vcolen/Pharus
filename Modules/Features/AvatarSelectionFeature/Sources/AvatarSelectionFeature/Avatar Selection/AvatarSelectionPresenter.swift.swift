@@ -16,6 +16,7 @@ class AvatarSelectionPresenter: BasePresenter<AvatarSelectionViewable> {
     private let coordinator: AvatarSelectionCoordinating
     var student: Student?
     @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
+    @Injected var updateStudentUseCaseProtocol: UpdateStudentUseCaseProtocol
 
     // MARK: - Initializer
     init(coordinator: AvatarSelectionCoordinating) {
@@ -26,15 +27,13 @@ class AvatarSelectionPresenter: BasePresenter<AvatarSelectionViewable> {
 // MARK: - Avatar Selection Presenting
 extension AvatarSelectionPresenter: AvatarSelectionPresenting {
     func changeStudentAvatar(to avatar: String) {
-        #warning("implementar funcao para salvar o avatar")
+        var student = getStudentUseCaseProtocol()
+        student.avatar = avatar
+        updateStudentUseCaseProtocol(student)
     }
 }
 
 extension AvatarSelectionPresenter {
-    func submit() {
-        #warning("implementar salvar os dados")
-    }
-
     func loadData() {
         view?.updateView(with: getStudentUseCaseProtocol())
     }

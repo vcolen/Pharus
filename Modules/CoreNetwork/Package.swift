@@ -28,7 +28,7 @@ let package = Package(
                 "InjectionKit"
             ],
             resources: [
-                .copy("Features/Profile/Scenes/Profile/Model/Student.json")
+                .process("Resources")
             ]
         )
     ]

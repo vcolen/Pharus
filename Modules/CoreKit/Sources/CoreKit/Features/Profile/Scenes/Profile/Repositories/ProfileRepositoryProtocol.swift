@@ -9,4 +9,5 @@ import Foundation
 
 public protocol ProfileRepositoryProtocol {
     func getStudent() -> Student
+    func updateStudent(_ student: Student)
 }

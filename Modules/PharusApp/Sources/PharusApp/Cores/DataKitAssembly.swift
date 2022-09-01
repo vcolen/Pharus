@@ -14,8 +14,18 @@ import CoreKit
     func assemble(container: Container) {
         assembleLogin(container)
         assembleProfile(container)
+        assembleCommon(container)
     }
  }
+
+// MARK: - Common
+extension DataKitAssembly {
+    func assembleCommon(_ container: Container) {
+        container.register(StorageRepositoryProtocol.self) {
+            StorageRepository()
+        }
+    }
+}
 
 // MARK: - Login
  extension DataKitAssembly {
