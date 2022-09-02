@@ -31,4 +31,16 @@ extension ProjectDetailRemoteDataSource: DataKit.ProjectDetailRemoteDataSource {
             forKey: "student"
         )
     }
+
+    public func getProject(id: Int) -> Project {
+        guard let student = getStorageDataUseCaseProtocol(
+            Student.self,
+            key: "student"
+        ) else {
+            print("Student not found")
+            return Student.shared.projects[0]
+        }
+
+        return student.projects[id - 1]
+    }
 }

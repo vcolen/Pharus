@@ -10,20 +10,22 @@ import AlertFeature
 import SendFileFeature
 import CoreKit
 import CoreApp
+import InjectionKit
 
 struct StudentProjectDetailCoordinator {
 
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
-    private let project: Project
+    private let projectId: Int
+    @Injected var getProjectUseCaseProtocol: GetProjectUseCaseProtocol
 
     // MARK: - Initializer
     init(
         rootViewController: UINavigationController,
-        project: Project
+        project: Int
     ) {
         self.rootViewController = rootViewController
-        self.project = project
+        self.projectId = project
     }
 }
 
@@ -32,14 +34,17 @@ extension StudentProjectDetailCoordinator: Coordinator {
     func start() {
         let studentProjectDetailPresenter = StudentProjectDetailPresenter(
             coordinator: self,
-            project: project
+            project: projectId
         )
         let studentProjectDetailViewController = StudentProjectDetailViewController(
             presenter: studentProjectDetailPresenter
         )
 
-        studentProjectDetailViewController.title = project.name
-        rootViewController?.pushViewController(studentProjectDetailViewController, animated: true)
+        studentProjectDetailViewController.title = getProjectUseCaseProtocol(id: projectId).name
+        rootViewController?.pushViewController(
+            studentProjectDetailViewController,
+            animated: true
+        )
     }
 }
 
@@ -47,31 +52,31 @@ extension StudentProjectDetailCoordinator: Coordinator {
 extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showProjectRules() {
 
-        if let navigationController = rootViewController {
-            ProjectSheetCoordinator(
-                rootViewController: navigationController,
-                project: project,
-                projectSheetContent: .activities
-            ).start()
-        }
+//        if let navigationController = rootViewController {
+//            ProjectSheetCoordinator(
+//                rootViewController: navigationController,
+//                project: projectId,
+//                projectSheetContent: .activities
+//            ).start()
+//        }
     }
 
     func showMentorReview() {
-        if let navigationController = rootViewController {
-            ProjectSheetCoordinator(
-                rootViewController: navigationController,
-                project: project,
-                projectSheetContent: .mentorReview
-            ).start()
-        }
+//        if let navigationController = rootViewController {
+//            ProjectSheetCoordinator(
+//                rootViewController: navigationController,
+//                project: projectId,
+//                projectSheetContent: .mentorReview
+//            ).start()
+//        }
     }
 
     func showSendFileView() {
-        if let navigationController = rootViewController {
-            SendFileCoordinator(
-                rootViewController: navigationController,
-                project: project
-            ).start()
-        }
+//        if let navigationController = rootViewController {
+//            SendFileCoordinator(
+//                rootViewController: navigationController,
+//                project: projectId
+//            ).start()
+//        }
     }
 }

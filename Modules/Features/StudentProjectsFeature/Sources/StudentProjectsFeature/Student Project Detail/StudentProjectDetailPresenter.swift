@@ -14,17 +14,17 @@ class StudentProjectDetailPresenter: BasePresenter<StudentProjectDetailViewable>
 
     // MARK: - Properties
     private let coordinator: StudentProjectDetailCoordinator
-    var project: Project
+    var projectId: Int
     @Injected var toggleTaskCompletionUseCase: ToggleTaskCompletionUseCaseProtocol
-    @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
+    @Injected var getProjectUseCaseProtocol: GetProjectUseCaseProtocol
 
     // MARK: - Initializer
     init(
         coordinator: StudentProjectDetailCoordinator,
-        project: Project
+        project: Int
     ) {
         self.coordinator = coordinator
-        self.project = project
+        self.projectId = project
     }
 
     // MARK: - Actions
@@ -41,10 +41,10 @@ class StudentProjectDetailPresenter: BasePresenter<StudentProjectDetailViewable>
     }
 
     func toggleTaskCompletedStatus(taskId: Int) {
-        toggleTaskCompletionUseCase(taskId: taskId, projectId: project.id)
+        toggleTaskCompletionUseCase(taskId: taskId, projectId: projectId)
     }
 
     func loadData() {
-        view?.updateView(with: getStudentUseCaseProtocol().projects[project.id - 1])
+        view?.updateView(with: getProjectUseCaseProtocol(id: projectId))
     }
 }

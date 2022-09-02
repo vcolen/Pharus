@@ -41,7 +41,7 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
         if let navigationController = rootViewController {
             StudentProjectDetailCoordinator(
                 rootViewController: navigationController,
-                project: project
+                project: project.id
             ).start()
         }
     }

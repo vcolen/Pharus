@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import CoreKit
 
 public protocol ProjectDetailRemoteDataSource {
     func toggleTaskCompletionUseCase(taskId: Int, projectId: Int)
+    func getProject(id: Int) -> Project
 }

@@ -6,5 +6,8 @@
 //
 
 import Foundation
+import CoreKit
 
-protocol ProjectSheetViewable: AnyObject { }
+protocol ProjectSheetViewable: AnyObject {
+    func updateView(with project: Project)
+}

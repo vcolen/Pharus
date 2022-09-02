@@ -33,4 +33,8 @@ extension ProjectSheetPresenter: ProjectSheetPresenting {
     func popView() {
         coordinator.popView()
     }
+
+    func loadData() {
+        view?.updateView(with: project)
+    }
 }

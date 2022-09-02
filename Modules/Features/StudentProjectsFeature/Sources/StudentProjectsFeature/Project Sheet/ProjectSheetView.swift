@@ -8,13 +8,12 @@
 import UIKit
 import PharusUI
 import CoreKit
+import CoreApp
 
 class ProjectSheetView: UIView {
 
     // MARK: - Properties
     weak var delegate: ProjectSheetViewDelegate?
-
-    private var project: Project
     private var sheetContent: SheetContent
 
     enum SheetContent {
@@ -71,11 +70,7 @@ class ProjectSheetView: UIView {
     private lazy var closeButton = MainCardButton(title: "Fechar", buttonState: .normal)
 
     // MARK: - Initializer
-    init(
-        project: Project,
-        sheetContent: SheetContent
-    ) {
-        self.project = project
+    init(sheetContent: SheetContent) {
         self.sheetContent = sheetContent
 
         super.init(frame: .zero)
@@ -113,7 +108,14 @@ extension ProjectSheetView {
 
 // MARK: - Additional Methods
 extension ProjectSheetView {
-    private func setupSheetContent() {
+    private func setupSheetContent(with project: Project? = nil) {
+        guard let project = project else {
+            titleIconImageView.image = .pharusIcons.feedbackIcon
+            titleLabel.text = "Avaliação do Mentor"
+            descriptionTextLabel.text = Constants.defaultTexts.lorem
+            return
+        }
+
         if sheetContent == .mentorReview {
             titleIconImageView.image = .pharusIcons.feedbackIcon
             titleLabel.text = "Avaliação do Mentor"
@@ -134,5 +136,41 @@ extension ProjectSheetView {
         closeButton.addAction(UIAction { [weak self] _ in
             self?.closeButtonTapped()
         }, for: .touchUpInside)
+    }
+
+    func updateView(with project: Project) {
+        if sheetContent == .mentorReview {
+            setMentorReviewView(for: project)
+        } else {
+            setActivityRulesView(for: project)
+        }
+    }
+
+    func setMentorReviewView(for project: Project? = nil) {
+        guard let project = project else {
+            titleIconImageView.image = .pharusIcons.feedbackIcon
+            titleLabel.text = "Avaliação do Mentor"
+            descriptionTextLabel.text = Constants.defaultTexts.lorem
+            return
+        }
+
+        titleIconImageView.image = .pharusIcons.feedbackIcon
+        titleLabel.text = "Avaliação do Mentor"
+        descriptionTextLabel.text = project.scoreDescription
+    }
+
+    func setActivityRulesView(for project: Project? = nil) {
+        titleLabel.text = "Atividades"
+        titleIconImageView.image = .pharusIcons.rulesIcon
+        guard let project = project else {
+            descriptionTextLabel.text = Constants.defaultTexts.lorem
+            return
+        }
+
+        var descriptionText = ""
+        for task in project.tasks {
+            descriptionText += "\(task.title) - \(task.taskDescription)\n\n"
+        }
+        descriptionTextLabel.text = descriptionText
     }
 }

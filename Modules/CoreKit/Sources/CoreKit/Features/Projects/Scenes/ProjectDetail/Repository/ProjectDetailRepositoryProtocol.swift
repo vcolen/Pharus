@@ -9,4 +9,5 @@ import Foundation
 
 public protocol ProjectDetailRepositoryProtocol {
     func toggleTaskCompletion(taskId: Int, projectId: Int)
+    func getProject(id: Int) -> Project
 }
