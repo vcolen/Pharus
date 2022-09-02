@@ -10,20 +10,22 @@ import AlertFeature
 import SendFileFeature
 import CoreKit
 import CoreApp
+import InjectionKit
 
 struct StudentProjectDetailCoordinator {
 
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
-    private let project: Project
+    private let projectId: Int
+    @Injected var getProjectUseCaseProtocol: GetProjectUseCaseProtocol
 
     // MARK: - Initializer
     init(
         rootViewController: UINavigationController,
-        project: Project
+        project: Int
     ) {
         self.rootViewController = rootViewController
-        self.project = project
+        self.projectId = project
     }
 }
 
@@ -32,25 +34,27 @@ extension StudentProjectDetailCoordinator: Coordinator {
     func start() {
         let studentProjectDetailPresenter = StudentProjectDetailPresenter(
             coordinator: self,
-            project: project
+            project: projectId
         )
         let studentProjectDetailViewController = StudentProjectDetailViewController(
             presenter: studentProjectDetailPresenter
         )
 
-        studentProjectDetailViewController.title = project.name
-        rootViewController?.pushViewController(studentProjectDetailViewController, animated: true)
+        studentProjectDetailViewController.title = getProjectUseCaseProtocol(id: projectId).name
+        rootViewController?.pushViewController(
+            studentProjectDetailViewController,
+            animated: true
+        )
     }
 }
 
 // MARK: - Student Project Detail Coordinating
 extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showProjectRules() {
-
         if let navigationController = rootViewController {
             ProjectSheetCoordinator(
                 rootViewController: navigationController,
-                project: project,
+                projectId: projectId,
                 projectSheetContent: .activities
             ).start()
         }
@@ -60,7 +64,7 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
         if let navigationController = rootViewController {
             ProjectSheetCoordinator(
                 rootViewController: navigationController,
-                project: project,
+                projectId: projectId,
                 projectSheetContent: .mentorReview
             ).start()
         }
@@ -69,8 +73,7 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showSendFileView() {
         if let navigationController = rootViewController {
             SendFileCoordinator(
-                rootViewController: navigationController,
-                project: project
+                rootViewController: navigationController
             ).start()
         }
     }

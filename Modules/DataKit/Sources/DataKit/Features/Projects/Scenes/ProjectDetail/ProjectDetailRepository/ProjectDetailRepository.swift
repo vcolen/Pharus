@@ -19,4 +19,8 @@ extension ProjectDetailRepository: ProjectDetailRepositoryProtocol {
     public func toggleTaskCompletion(taskId: Int, projectId: Int) {
         remoteDataSource.toggleTaskCompletionUseCase(taskId: taskId, projectId: projectId)
     }
+
+    public func getProject(id: Int) -> Project {
+        remoteDataSource.getProject(id: id)
+    }
 }

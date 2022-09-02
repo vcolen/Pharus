@@ -12,9 +12,8 @@ import CoreKit
 class ProjectTaskView: UIView {
 
     // MARK: - Properties
-    weak var delegate: ProjectTaskDelegate?
+    private var task: Task?
     private var checkImage: UIImage?
-    private var task: Task
     var color: UIColor
 
     // MARK: - Views
@@ -27,14 +26,16 @@ class ProjectTaskView: UIView {
     private lazy var taskTitleLabel = UILabel()
         .setting(\.font, to: .mediumTitleMedium)
         .setting(\.numberOfLines, to: 0)
+        .setting(\.text, to: "Lorem ipsum")
+        .setting(\.textColor, to: color)
 
     lazy var taskCheckmarkButton = CheckmarkButton()
         .frame(width: 25, height: 25)
 
     // MARK: - Initializer
     init(
-        task: Task,
-        checkImage: UIImage,
+        task: Task? = nil,
+        checkImage: UIImage? = .pharusIcons.checkmarkIcon,
         color: UIColor
     ) {
         self.task = task
@@ -62,21 +63,18 @@ extension ProjectTaskView: ViewCodable {
     }
 
     func applyAdditionalChanges() {
-        taskTitleLabel.text = task.title
-        taskTitleLabel.textColor = color
-
         taskCheckmarkButton.setImage(self.checkImage, for: .normal)
-        taskCheckmarkButton.addAction(UIAction { [weak self] _ in
-            if let self = self {
-                self.checkmarkButtonTapped(task: self.task)
-            }
-        }, for: .touchUpInside)
+
+        if let task = task {
+            updateView(with: task)
+        }
     }
 }
 
-// MARK: - Delegate Actions
+// MARK: - Additional Methods
 extension ProjectTaskView {
-    func checkmarkButtonTapped(task: Task) {
-        delegate?.checkmarkButtonTapped(task: task)
+    func updateView(with task: Task) {
+        taskTitleLabel.text = task.title
+        taskCheckmarkButton.setImage(self.checkImage, for: .normal)
     }
 }

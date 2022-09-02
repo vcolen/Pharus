@@ -6,16 +6,12 @@
 //
 
 import UIKit
+import CoreKit
 
 class ProjectSubscriptionAlertViewController: UIViewController {
 
     // MARK: - Properties
-    private lazy var alertView = ProjectSubscriptionAlertView(
-        title: "Confirmar Inscrição",
-        message: "Você deseja se inscrever no projeto \"\(presenter.project.name)\"?",
-        mainButtonText: "Sim, quero me inscrever",
-        secondaryButtonText: "Não quero, mudei de idéia"
-    )
+    private lazy var customView = ProjectSubscriptionAlertView()
     private let presenter: ProjectSubscriptionAlertPresenting
 
     // MARK: - Initializer
@@ -23,6 +19,8 @@ class ProjectSubscriptionAlertViewController: UIViewController {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
@@ -34,13 +32,14 @@ class ProjectSubscriptionAlertViewController: UIViewController {
 extension ProjectSubscriptionAlertViewController {
 
     override func loadView() {
-        self.view = alertView
+        self.view = customView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        alertView.delegate = self
+        customView.delegate = self
+        presenter.loadData()
     }
 }
 
@@ -60,4 +59,8 @@ extension ProjectSubscriptionAlertViewController: ProjectSubscriptionAlertViewDe
 }
 
 // MARK: - Project Subscription Alert Viewable
-extension ProjectSubscriptionAlertViewController: ProjectSubscriptionAlertViewable { }
+extension ProjectSubscriptionAlertViewController: ProjectSubscriptionAlertViewable {
+    func updateView(with project: Project) {
+        customView.updateView(with: project)
+    }
+}

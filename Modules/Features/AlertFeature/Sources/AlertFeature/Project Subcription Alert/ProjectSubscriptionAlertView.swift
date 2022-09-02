@@ -7,20 +7,20 @@
 
 import UIKit
 import PharusUI
+import CoreKit
 
 class ProjectSubscriptionAlertView: UIView {
 
     // MARK: - Properties
     weak var delegate: ProjectSubscriptionAlertViewDelegate?
-    private var title: String
-    private var message: String
-    private var mainButtonText: String
-    private var secondaryButtonText: String
 
     // MARK: - Views
     private lazy var mainStackView = VStackView([
         HStackView([
-            titleLabel,
+            UILabel()
+                .setting(\.font, to: .largeTitleSemiBold)
+                .setting(\.text, to: "Confirmar Inscrição")
+                .setting(\.textColor, to: .black),
             closeModalButton
         ]),
 
@@ -39,11 +39,6 @@ class ProjectSubscriptionAlertView: UIView {
     .center(.vertically)
     .background(UIVisualEffectView(effect: UIBlurEffect(style: .light)))
 
-    private lazy var titleLabel = UILabel()
-        .setting(\.font, to: .largeTitleSemiBold)
-        .setting(\.text, to: "Confirmar Inscrição")
-        .setting(\.textColor, to: .black)
-
     private lazy var closeModalButton = UIButton()
         .frame(width: 24, height: 24)
 
@@ -61,17 +56,7 @@ class ProjectSubscriptionAlertView: UIView {
     private lazy var secondaryButton = SecondaryCardButton(title: "Não quero, mudei de ideia")
 
     // MARK: - Initializer
-    init(
-        title: String,
-        message: String,
-        mainButtonText: String,
-        secondaryButtonText: String
-    ) {
-        self.title = title
-        self.message = message
-        self.mainButtonText = mainButtonText
-        self.secondaryButtonText = secondaryButtonText
-
+    init() {
         super.init(frame: .zero)
 
         setupView()
@@ -93,8 +78,6 @@ extension ProjectSubscriptionAlertView: ViewCodable {
     }
 
     func applyAdditionalChanges() {
-        titleLabel.text = title
-        descriptionLabel.text = message
         setupButtons()
     }
 }
@@ -123,14 +106,12 @@ extension ProjectSubscriptionAlertView {
     }
 
     private func setupPrimaryButton() {
-        primaryButton.setTitle(mainButtonText, for: .normal)
         primaryButton.addAction(UIAction { [weak self] _ in
             self?.primaryButtonTapped()
         }, for: .touchUpInside)
     }
 
     private func setupSecondaryButton() {
-        secondaryButton.setTitle(secondaryButtonText, for: .normal)
         secondaryButton.addAction( UIAction { [weak self] _ in
             self?.secondaryButtonTapped()
         }, for: .touchUpInside)
@@ -141,5 +122,9 @@ extension ProjectSubscriptionAlertView {
         closeModalButton.addAction(UIAction { [weak self] _ in
             self?.closeButtonTapped()
         }, for: .touchUpInside)
+    }
+
+    func updateView(with project: Project) {
+        descriptionLabel.text = "Você deseja se inscrever no projeto \"\(project.name)?\""
     }
 }

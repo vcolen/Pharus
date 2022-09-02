@@ -8,29 +8,29 @@
 import UIKit
 import CoreKit
 import CoreApp
+import InjectionKit
 
 class ProjectSubscriptionAlertPresenter: BasePresenter<ProjectSubscriptionAlertViewable>,
                                         ProjectSubscriptionAlertPresenting {
 
     // MARK: - Properties
     private let coordinator: ProjectSubscriptionAlertCoordinating
-    let project: Project
+    let projectId: Int
     private let subscriptionHandler: () -> Void
+    @Injected var getProjectUseCaseProtocol: GetProjectUseCaseProtocol
 
     // MARK: - Initializer
-
     init(
         coordinator: ProjectSubscriptionAlertCoordinating,
-        project: Project,
+        projectId: Int,
         onSubscription subscriptionHandler: @escaping () -> Void
     ) {
         self.coordinator = coordinator
-        self.project = project
+        self.projectId = projectId
         self.subscriptionHandler = subscriptionHandler
     }
 
     // MARK: - Actions
-
     func closeModal() {
         coordinator.closeModal()
     }
@@ -38,5 +38,9 @@ class ProjectSubscriptionAlertPresenter: BasePresenter<ProjectSubscriptionAlertV
     func subscribeToProject() {
         subscriptionHandler()
         coordinator.subscribeToProject()
+    }
+
+    func loadData() {
+        view?.updateView(with: getProjectUseCaseProtocol(id: projectId))
     }
 }

@@ -12,6 +12,7 @@ import CoreKit
 import StudentProjectsFeature
 
 struct FeaturesAssembly: Assembly {
+
    func assemble(container: Container) {
        assembleLogin(container)
        assembleHome(container)
@@ -24,6 +25,7 @@ struct FeaturesAssembly: Assembly {
 
 // MARK: - Login
 extension FeaturesAssembly {
+
     func assembleLogin(_ container: Container) {
         container.register(LoginUserUseCaseProtocol.self) {
             LoginUserUseCase()
@@ -33,6 +35,7 @@ extension FeaturesAssembly {
 
 // MARK: - Home
 extension FeaturesAssembly {
+
     func assembleHome(_ container: Container) {
         container.register(HomeSceneProtocol.self) {
             HomeScene()

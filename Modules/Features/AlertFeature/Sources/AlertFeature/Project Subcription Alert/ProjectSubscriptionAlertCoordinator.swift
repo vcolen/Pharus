@@ -13,17 +13,17 @@ public struct ProjectSubscriptionAlertCoordinator {
 
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
-    private let project: Project
+    private let projectId: Int
     private let projectSubscriptionHandler: () -> Void
 
     // MARK: - Initializer
     public init(
         rootViewController: UINavigationController,
-        project: Project,
+        projectId: Int,
         onSubscription projectSubscriptionHandler: @escaping () -> Void
     ) {
         self.rootViewController = rootViewController
-        self.project = project
+        self.projectId = projectId
         self.projectSubscriptionHandler = projectSubscriptionHandler
     }
 }
@@ -33,7 +33,7 @@ extension ProjectSubscriptionAlertCoordinator: Coordinator {
     public func start() {
         let alertPresenter = ProjectSubscriptionAlertPresenter(
             coordinator: self,
-            project: project,
+            projectId: projectId,
             onSubscription: projectSubscriptionHandler
         )
 

@@ -10,7 +10,8 @@ import CoreApp
 import CoreKit
 
 protocol ProjectSheetPresenting: Presenting {
-    var project: Project { get }
+    var projectId: Int { get }
     var projectSheetContent: ProjectSheetView.SheetContent { get }
     func popView()
+    func loadData()
 }

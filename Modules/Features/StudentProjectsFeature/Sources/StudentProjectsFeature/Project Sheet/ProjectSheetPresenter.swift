@@ -8,22 +8,24 @@
 import UIKit
 import CoreKit
 import CoreApp
+import InjectionKit
 
 class ProjectSheetPresenter: BasePresenter<ProjectSheetViewable> {
 
     // MARK: - Properties
     private let coordinator: ProjectSheetCoordinating
-    let project: Project
+    let projectId: Int
     let projectSheetContent: ProjectSheetView.SheetContent
+    @Injected var getProjectUseCaseProtocol: GetProjectUseCaseProtocol
 
     // MARK: - Initializer
     init(
         coordinator: ProjectSheetCoordinating,
-        project: Project,
+        projectId: Int,
         projectSheetContent: ProjectSheetView.SheetContent
     ) {
         self.coordinator = coordinator
-        self.project = project
+        self.projectId = projectId
         self.projectSheetContent = projectSheetContent
     }
 }
@@ -32,5 +34,9 @@ class ProjectSheetPresenter: BasePresenter<ProjectSheetViewable> {
 extension ProjectSheetPresenter: ProjectSheetPresenting {
     func popView() {
         coordinator.popView()
+    }
+
+    func loadData() {
+        view?.updateView(with: getProjectUseCaseProtocol(id: projectId))
     }
 }

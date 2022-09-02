@@ -6,13 +6,13 @@
 //
 
 import UIKit
+import CoreKit
 
 class ProjectSheetViewController: UIViewController {
 
     // MARK: - Properties
     private let presenter: ProjectSheetPresenting
     private lazy var projectSheetView = ProjectSheetView(
-        project: presenter.project,
         sheetContent: presenter.projectSheetContent
     )
 
@@ -40,6 +40,7 @@ extension ProjectSheetViewController {
         super.viewDidLoad()
 
         projectSheetView.delegate = self
+        presenter.loadData()
     }
 }
 
@@ -51,4 +52,8 @@ extension ProjectSheetViewController: ProjectSheetViewDelegate {
 }
 
 // MARK: - Project Sheet Viewable
-extension ProjectSheetViewController: ProjectSheetViewable { }
+extension ProjectSheetViewController: ProjectSheetViewable {
+    func updateView(with project: Project) {
+        projectSheetView.updateView(with: project)
+    }
+}

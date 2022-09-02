@@ -12,13 +12,11 @@ class SingleButtonAlertPresenter: BasePresenter<SingleButtonAlertViewable>,
                                   SingleButtonAlertPresenting {
 
     // MARK: - Properties
-
     private let coordinator: SingleButtonAlertCoordinating
     let alertMessage: String
     let alertType: SingleButtonAlertView.AlertType
 
     // MARK: - Initializer
-
     init(
         coordinator: SingleButtonAlertCoordinating,
         alertMessage: String,
@@ -30,7 +28,6 @@ class SingleButtonAlertPresenter: BasePresenter<SingleButtonAlertViewable>,
     }
 
     // MARK: - Actions
-
     func closeModal() {
         coordinator.closeModal()
     }

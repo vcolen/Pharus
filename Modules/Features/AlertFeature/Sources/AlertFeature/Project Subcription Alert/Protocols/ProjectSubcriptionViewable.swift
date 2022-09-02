@@ -6,5 +6,8 @@
 //
 
 import Foundation
+import CoreKit
 
-protocol ProjectSubscriptionAlertViewable: AnyObject { }
+protocol ProjectSubscriptionAlertViewable: AnyObject {
+    func updateView(with project: Project)
+}
