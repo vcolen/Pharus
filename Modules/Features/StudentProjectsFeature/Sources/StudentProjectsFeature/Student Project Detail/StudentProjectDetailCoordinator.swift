@@ -51,32 +51,31 @@ extension StudentProjectDetailCoordinator: Coordinator {
 // MARK: - Student Project Detail Coordinating
 extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     func showProjectRules() {
-
-//        if let navigationController = rootViewController {
-//            ProjectSheetCoordinator(
-//                rootViewController: navigationController,
-//                project: projectId,
-//                projectSheetContent: .activities
-//            ).start()
-//        }
+        if let navigationController = rootViewController {
+            ProjectSheetCoordinator(
+                rootViewController: navigationController,
+                projectId: projectId,
+                projectSheetContent: .activities
+            ).start()
+        }
     }
 
     func showMentorReview() {
-//        if let navigationController = rootViewController {
-//            ProjectSheetCoordinator(
-//                rootViewController: navigationController,
-//                project: projectId,
-//                projectSheetContent: .mentorReview
-//            ).start()
-//        }
+        if let navigationController = rootViewController {
+            ProjectSheetCoordinator(
+                rootViewController: navigationController,
+                projectId: projectId,
+                projectSheetContent: .mentorReview
+            ).start()
+        }
     }
 
     func showSendFileView() {
-//        if let navigationController = rootViewController {
-//            SendFileCoordinator(
-//                rootViewController: navigationController,
-//                project: projectId
-//            ).start()
-//        }
+//                if let navigationController = rootViewController {
+//                    SendFileCoordinator(
+//                        rootViewController: navigationController,
+//                        projectId: projectId
+//                    ).start()
+//                }
     }
 }

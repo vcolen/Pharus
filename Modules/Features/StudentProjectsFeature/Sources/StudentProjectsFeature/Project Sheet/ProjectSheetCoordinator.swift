@@ -14,16 +14,16 @@ struct ProjectSheetCoordinator {
     // MARK: - Properties
     private weak var rootViewController: UINavigationController?
     private let projectSheetContent: ProjectSheetView.SheetContent
-    private let project: Project
+    private let projectId: Int
 
     // MARK: - Initializer
     init(
         rootViewController: UINavigationController,
-        project: Project,
+        projectId: Int,
         projectSheetContent: ProjectSheetView.SheetContent
     ) {
         self.rootViewController = rootViewController
-        self.project = project
+        self.projectId = projectId
         self.projectSheetContent = projectSheetContent
     }
 }
@@ -33,7 +33,7 @@ extension ProjectSheetCoordinator: Coordinator {
     func start() {
         let projectSheetPresenter = ProjectSheetPresenter(
             coordinator: self,
-            project: project,
+            projectId: projectId,
             projectSheetContent: projectSheetContent
         )
 
