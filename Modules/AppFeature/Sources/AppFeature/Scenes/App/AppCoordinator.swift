@@ -16,6 +16,7 @@ public struct AppCoordinator {
     // MARK: - Properties
     private weak var window: UIWindow?
     @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
+    @Injected var getUserTokenUseCaseProtocol: GetUserTokenUseCaseProtocol
 
     // MARK: - Initializer
     public init(window: UIWindow) {
@@ -26,7 +27,18 @@ public struct AppCoordinator {
 // MARK: - Coordinator
 extension AppCoordinator: Coordinator {
     public func start() {
-        openLoginScene()
+        guard let token = getUserTokenUseCaseProtocol() else {
+            openLoginScene()
+            window?.makeKeyAndVisible()
+            return
+        }
+
+        if tokenIsExpired(token) {
+            openLoginScene()
+        } else {
+            openTabBarScene()
+        }
+
         window?.makeKeyAndVisible()
     }
 }
@@ -59,5 +71,12 @@ extension AppCoordinator {
         UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft) {
             window.rootViewController = controller
         }
+    }
+}
+
+// MARK: - Additional Methods
+extension AppCoordinator {
+    func tokenIsExpired(_ token: Date) -> Bool {
+        return Date() > token
     }
 }

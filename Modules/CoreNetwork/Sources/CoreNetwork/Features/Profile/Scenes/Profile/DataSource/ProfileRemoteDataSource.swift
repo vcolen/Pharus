@@ -21,10 +21,15 @@ public struct ProfileRemoteDataSource {
 
 extension ProfileRemoteDataSource: DataKit.ProfileRemoteDataSource {
     public func getStudent() -> Student {
-        return getStorageDataUseCaseProtocol(
+        if let student = getStorageDataUseCaseProtocol(
             Student.self,
             key: "student"
-        ) ?? Bundle.module.decode("Student.json")
+        ) {
+            return student
+        } else {
+            updateStudent(Bundle.module.decode("Student.json"))
+            return getStudent()
+        }
     }
 
     public func updateStudent(_ student: Student) {

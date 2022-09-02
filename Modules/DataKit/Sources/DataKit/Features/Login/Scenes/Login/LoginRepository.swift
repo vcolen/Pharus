@@ -21,7 +21,11 @@ extension LoginRepository: LoginRepositoryProtocol {
         remoteDataSource.loginUser(email: email, password: password)
     }
 
-    public func getUserToken() -> String {
+    public func getUserToken() -> Date? {
         localDataSource.getUserToken()
+    }
+
+    public func setUserToken() {
+        localDataSource.setUserToken()
     }
 }

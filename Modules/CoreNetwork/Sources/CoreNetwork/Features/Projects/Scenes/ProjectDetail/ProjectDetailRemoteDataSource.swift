@@ -37,7 +37,6 @@ extension ProjectDetailRemoteDataSource: DataKit.ProjectDetailRemoteDataSource {
             Student.self,
             key: "student"
         ) else {
-            print("Student not found")
             return Student.shared.projects[0]
         }
 

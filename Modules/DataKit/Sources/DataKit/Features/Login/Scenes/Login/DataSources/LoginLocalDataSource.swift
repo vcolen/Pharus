@@ -8,5 +8,6 @@
 import Foundation
 
 public protocol LoginLocalDataSource {
-    func getUserToken() -> String
+    func getUserToken() -> Date?
+    func setUserToken()
 }
