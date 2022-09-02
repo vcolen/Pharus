@@ -14,7 +14,6 @@ public struct LoginRemoteDataSource {
 
 extension LoginRemoteDataSource: DataKit.LoginRemoteDataSource {
     public func loginUser(email: String, password: String) -> Bool {
-       // return email == "antonia.ferreira@gmail.com" && password == "Atn4273!"
-        return true
+        return email == "antonia.ferreira@gmail.com" && password == "Atn4273!"
     }
 }

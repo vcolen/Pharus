@@ -9,7 +9,7 @@ import Foundation
 import InjectionKit
 
 public protocol GetUserTokenUseCaseProtocol {
-    func callAsFunction() -> String
+    func callAsFunction() -> Date?
 }
 
 public struct GetUserTokenUseCase {
@@ -19,7 +19,7 @@ public struct GetUserTokenUseCase {
 }
 
 extension GetUserTokenUseCase: GetUserTokenUseCaseProtocol {
-    public func callAsFunction() -> String {
+    public func callAsFunction() -> Date? {
         repository.getUserToken()
     }
 }

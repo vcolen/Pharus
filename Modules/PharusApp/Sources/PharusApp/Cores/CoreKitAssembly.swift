@@ -42,6 +42,10 @@ extension CoreKitAssembly {
         container.register(GetUserTokenUseCaseProtocol.self) {
             GetUserTokenUseCase()
         }
+
+        container.register(SetUserTokenUseCaseProtocol.self) {
+            SetUserTokenUseCase()
+        }
     }
 }
 

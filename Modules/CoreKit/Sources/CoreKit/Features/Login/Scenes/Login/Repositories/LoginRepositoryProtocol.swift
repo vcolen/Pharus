@@ -9,5 +9,6 @@ import Foundation
 
 public protocol LoginRepositoryProtocol {
     func loginUser(email: String, password: String) -> Bool
-    func getUserToken() -> String
+    func getUserToken() -> Date?
+    func setUserToken()
 }
