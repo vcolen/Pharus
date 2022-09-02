@@ -7,21 +7,21 @@
 
 import UIKit
 import PharusUI
-import StudentProfileFeature
+import CoreKit
 
 class StudentProjectDetailViewController: UIViewController {
 
     // MARK: - Properties
-    private let presenter: StudentProjectDetailPresenter
-    private lazy var customView = StudentProjectDetailView(
-        project: presenter.project
-    )
+    private let presenter: StudentProjectDetailPresenting
+    private lazy var customView = StudentProjectDetailView()
 
     // MARK: - Initializer
     init(presenter: StudentProjectDetailPresenter) {
         self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
+
+        presenter.attach(self)
     }
 
     required init?(coder: NSCoder) {
@@ -47,6 +47,12 @@ extension StudentProjectDetailViewController {
         setupTabbar()
         customView.delegate = self
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        presenter.loadData()
+    }
 }
 
 // MARK: - Student Project Detail View Delegate
@@ -55,9 +61,9 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
         presenter.showMentorReview()
     }
 
-    func taskCheckboxTapped(taskIndex: Int) {
-        presenter.toggleTaskCompletedStatus(taskIndex: taskIndex)
-        customView.project = presenter.project
+    func taskCheckboxTapped(taskId: Int) {
+        presenter.toggleTaskCompletedStatus(taskId: taskId)
+        presenter.loadData()
     }
 
     func rulesViewTapped() {
@@ -70,7 +76,11 @@ extension StudentProjectDetailViewController: StudentProjectDetailViewDelegate {
 }
 
 // MARK: - Student Project Detail Viewable
-extension StudentProjectDetailViewController: StudentProjectDetailViewable { }
+extension StudentProjectDetailViewController: StudentProjectDetailViewable {
+    func updateView(with project: Project) {
+        customView.updateView(with: project)
+    }
+}
 
 // MARK: - Methods
 extension StudentProjectDetailViewController {

@@ -9,12 +9,13 @@ import Foundation
 
 public struct Task: Codable {
     public let id: Int
+    public let project: Int
     public let title: String
     public var isComplete: Bool
     public let taskDescription: String
 
     enum CodingKeys: String, CodingKey {
-        case id, title, isComplete
+        case id, project, title, isComplete
         case taskDescription = "description"
     }
 }

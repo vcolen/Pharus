@@ -52,5 +52,9 @@ extension DataKitAssembly {
         container.register(ProjectsRepositoryProtocol.self) {
             ProjectsRepository()
         }
+
+        container.register(ProjectDetailRepositoryProtocol.self) {
+            ProjectDetailRepository()
+        }
     }
 }

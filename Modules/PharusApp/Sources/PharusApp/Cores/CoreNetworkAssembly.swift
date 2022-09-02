@@ -43,5 +43,9 @@ extension CoreNetworkAssembly {
         container.register(DataKit.ProjectsRemoteDataSource.self) {
             CoreNetwork.ProjectsRemoteDataSource()
         }
+
+        container.register(DataKit.ProjectDetailRemoteDataSource.self) {
+            CoreNetwork.ProjectDetailRemoteDataSource()
+        }
     }
 }
