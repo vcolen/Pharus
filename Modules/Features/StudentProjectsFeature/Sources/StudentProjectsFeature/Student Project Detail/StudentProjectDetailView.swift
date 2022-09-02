@@ -165,7 +165,6 @@ extension StudentProjectDetailView {
             for _ in 0...3 {
                 taskHelperStackView.addArrangedSubview(createDefaultTask())
             }
-
             uploadFilesButton.disable()
             return
         }
@@ -185,7 +184,6 @@ extension StudentProjectDetailView {
             if project.isComplete == false && project.isSubscribed == true {
                 taskView.taskCheckmarkButton.addAction(
                     UIAction { [weak self, weak taskView] _ in
-                        self?.taskCheckboxTapped(taskId: task.id)
                         if project.tasks[task.id - 1].isComplete {
                             taskView?.taskCheckmarkButton.setImage(
                                 .pharusIcons.checkmarkIcon,
@@ -197,13 +195,12 @@ extension StudentProjectDetailView {
                                 for: .normal
                             )
                         }
-                        self?.updateProjectProgressView()
+                        self?.taskCheckboxTapped(taskId: task.id)
                     }, for: .touchUpInside
                 )
             }
             taskHelperStackView.addArrangedSubview(taskView)
         }
-        updateProjectProgressView()
     }
 
     private func configureUnsubscribedProject(with project: Project) {
@@ -246,6 +243,7 @@ Completadas \(project.completedTasksCount) de \(project.tasks.count) tarefas (\(
         mentorLabel.text = project.mentor
         descriptionTextLabel.text = project.projectDescription
         setupProjectTasks(of: project)
+        updateProjectProgressView(with: project)
 
         if project.isSubscribed == false {
             configureUnsubscribedProject(with: project)
@@ -272,7 +270,7 @@ extension StudentProjectDetailView {
     }
 
     func taskCheckboxTapped(taskId: Int) {
-        delegate?.taskCheckboxTapped(taskIndex: taskId)
+        delegate?.taskCheckboxTapped(taskId: taskId)
     }
 
     func rulesViewTapped() {

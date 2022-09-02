@@ -11,5 +11,5 @@ protocol StudentProjectDetailViewDelegate: AnyObject {
     func rulesViewTapped()
     func uploadFilesButtonTapped()
     func envelopeIconTapped()
-    func taskCheckboxTapped(taskIndex: Int)
+    func taskCheckboxTapped(taskId: Int)
 }

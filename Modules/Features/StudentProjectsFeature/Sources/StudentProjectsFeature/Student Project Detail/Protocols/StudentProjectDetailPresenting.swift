@@ -10,7 +10,7 @@ import Foundation
 protocol StudentProjectDetailPresenting: AnyObject {
     func showProjectRules()
     func showUploadFileView()
-    func toggleTaskCompletedStatus(taskIndex: Int)
+    func toggleTaskCompletedStatus(taskId: Int)
     func showMentorReview()
     func loadData()
 }

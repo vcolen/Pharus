@@ -9,7 +9,7 @@ import Foundation
 import InjectionKit
 
 public protocol ToggleTaskCompletionUseCaseProtocol {
-    func callAsFunciton(taskId: Int, projectId: Int)
+    func callAsFunction(taskId: Int, projectId: Int)
 }
 
 public struct ToggleTaskCompletionUseCase {
@@ -19,7 +19,7 @@ public struct ToggleTaskCompletionUseCase {
 }
 
 extension ToggleTaskCompletionUseCase: ToggleTaskCompletionUseCaseProtocol {
-    public func callAsFunciton(taskId: Int, projectId: Int) {
+    public func callAsFunction(taskId: Int, projectId: Int) {
         repository.toggleTaskCompletion(taskId: taskId, projectId: projectId)
     }
 }

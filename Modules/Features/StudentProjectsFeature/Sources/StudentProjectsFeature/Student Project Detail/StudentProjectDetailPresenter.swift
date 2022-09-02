@@ -8,12 +8,15 @@
 import UIKit
 import CoreKit
 import CoreApp
+import InjectionKit
 
 class StudentProjectDetailPresenter: BasePresenter<StudentProjectDetailViewable>, StudentProjectDetailPresenting {
 
     // MARK: - Properties
     private let coordinator: StudentProjectDetailCoordinator
     var project: Project
+    @Injected var toggleTaskCompletionUseCase: ToggleTaskCompletionUseCaseProtocol
+    @Injected var getStudentUseCaseProtocol: GetStudentUseCaseProtocol
 
     // MARK: - Initializer
     init(
@@ -37,11 +40,11 @@ class StudentProjectDetailPresenter: BasePresenter<StudentProjectDetailViewable>
         coordinator.showSendFileView()
     }
 
-    func toggleTaskCompletedStatus(taskIndex: Int) {
-        project.tasks[taskIndex].toggleCompletionStatus()
+    func toggleTaskCompletedStatus(taskId: Int) {
+        toggleTaskCompletionUseCase(taskId: taskId, projectId: project.id)
     }
 
     func loadData() {
-        
+        view?.updateView(with: getStudentUseCaseProtocol().projects[project.id - 1])
     }
 }
