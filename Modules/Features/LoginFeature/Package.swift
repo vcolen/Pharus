@@ -15,9 +15,9 @@ let package = Package(
     dependencies: [
         .package(path: "../../CoreApp"),
         .package(path: "../../CoreKit"),
-        .package(path: "../../PharusUI"),
+        .package(path: "../../CoreScene"),
         .package(path: "../../InjectionKit"),
-        .package(path: "../../CoreScene")
+        .package(path: "../../PharusUI")
     ],
     targets: [
         .target(
@@ -25,9 +25,9 @@ let package = Package(
             dependencies: [
                 "CoreApp",
                 "CoreKit",
-                "PharusUI",
+                "CoreScene",
                 "InjectionKit",
-                "CoreScene"
+                "PharusUI"
             ]
         )
     ]

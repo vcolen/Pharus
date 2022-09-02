@@ -14,16 +14,16 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../AlertFeature"),
-        .package(path: "../../PharusUI"),
-        .package(path: "../../CoreApp")
+        .package(path: "../../CoreApp"),
+        .package(path: "../../PharusUI")
     ],
     targets: [
         .target(
             name: "StudentProfileFeature",
             dependencies: [
                 "AlertFeature",
-                "PharusUI",
-                "CoreApp"
+                "CoreApp",
+                "PharusUI"
             ]
         )
     ]

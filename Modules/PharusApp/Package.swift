@@ -13,45 +13,45 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../CoreStorage"),
-        .package(path: "../CoreNetwork"),
-        .package(path: "../DataKit"),
-        .package(path: "../CoreKit"),
+        .package(path: "../AppFeature"),
+
         .package(path: "../CoreApp"),
+        .package(path: "../CoreKit"),
+        .package(path: "../CoreNetwork"),
         .package(path: "../CoreScene"),
+        .package(path: "../CoreStorage"),
+        .package(path: "../DataKit"),
         .package(path: "../InjectionKit"),
 
         .package(path: "../Features/AlertFeature"),
-        .package(path: "../Features/LoginFeature"),
-        .package(path: "../Features/HomeFeature"),
         .package(path: "../Features/AvatarSelectionFeature"),
-        .package(path: "../Features/StudentProjectsFeature"),
-        .package(path: "../Features/StudentProfileFeature"),
-        .package(path: "../Features/StudentProjectsRankingFeature"),
+        .package(path: "../Features/HomeFeature"),
+        .package(path: "../Features/LoginFeature"),
         .package(path: "../Features/SendFileFeature"),
-
-        .package(path: ".../AppFeature")
+        .package(path: "../Features/StudentProfileFeature"),
+        .package(path: "../Features/StudentProjectsFeature"),
+        .package(path: "../Features/StudentProjectsRankingFeature")
     ],
     targets: [
         .target(
             name: "PharusApp",
             dependencies: [
-                "CoreStorage",
-                "CoreNetwork",
-                "DataKit",
-                "CoreKit",
-                "CoreApp",
-                "InjectionKit",
-                "CoreScene",
-                "LoginFeature",
-                "HomeFeature",
+                "AlertFeature",
                 "AppFeature",
                 "AvatarSelectionFeature",
-                "StudentProjectsFeature",
-                "StudentProjectsRankingFeature",
+                "CoreApp",
+                "CoreKit",
+                "CoreNetwork",
+                "CoreScene",
+                "CoreStorage",
+                "DataKit",
+                "HomeFeature",
+                "InjectionKit",
+                "LoginFeature",
                 "SendFileFeature",
-                "AlertFeature",
-                "StudentProfileFeature"
+                "StudentProfileFeature",
+                "StudentProjectsFeature",
+                "StudentProjectsRankingFeature"
             ]
         )
     ]

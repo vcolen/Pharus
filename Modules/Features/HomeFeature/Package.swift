@@ -13,15 +13,15 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../../PharusUI"),
-        .package(path: "../../CoreApp")
+        .package(path: "../../CoreApp"),
+        .package(path: "../../PharusUI")
     ],
     targets: [
         .target(
             name: "HomeFeature",
             dependencies: [
-                "PharusUI",
-                "CoreApp"
+                "CoreApp",
+                "PharusUI"
             ]
         )
     ]

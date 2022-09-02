@@ -13,18 +13,18 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../DataKit"),
-        .package(path: "../CoreKit"),
         .package(path: "../CoreApp"),
+        .package(path: "../CoreKit"),
+        .package(path: "../DataKit"),
         .package(path: "../InjectionKit")
     ],
     targets: [
         .target(
             name: "CoreStorage",
             dependencies: [
-                "DataKit",
-                "CoreKit",
                 "CoreApp",
+                "CoreKit",
+                "DataKit",
                 "InjectionKit"
             ]
         )

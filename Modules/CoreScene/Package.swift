@@ -13,17 +13,17 @@ let package = Package(
         )
     ],
     dependencies: [
+        .package(path: "../CoreApp"),
         .package(path: "../CoreKit"),
-        .package(path: "../InjectionKit"),
-        .package(path: "../CoreApp")
+        .package(path: "../InjectionKit")
     ],
     targets: [
         .target(
             name: "CoreScene",
             dependencies: [
+                "CoreApp",
                 "CoreKit",
-                "InjectionKit",
-                "CoreApp"
+                "InjectionKit"
             ]
         )
     ]
