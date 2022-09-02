@@ -71,11 +71,10 @@ extension StudentProjectDetailCoordinator: StudentProjectDetailCoordinating {
     }
 
     func showSendFileView() {
-//                if let navigationController = rootViewController {
-//                    SendFileCoordinator(
-//                        rootViewController: navigationController,
-//                        projectId: projectId
-//                    ).start()
-//                }
+        if let navigationController = rootViewController {
+            SendFileCoordinator(
+                rootViewController: navigationController
+            ).start()
+        }
     }
 }

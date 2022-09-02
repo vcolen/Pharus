@@ -53,7 +53,7 @@ extension StudentProjectsCoordinator: StudentProjectsCoordinating {
         if let navigationController = rootViewController {
             ProjectSubscriptionAlertCoordinator(
                 rootViewController: navigationController,
-                project: project,
+                projectId: project.id,
                 onSubscription: commitHandler
             ).start()
         }

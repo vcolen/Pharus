@@ -10,7 +10,8 @@ import CoreApp
 import CoreKit
 
 protocol ProjectSubscriptionAlertPresenting: Presenting {
-    var project: Project { get }
+    var projectId: Int { get }
     func closeModal()
     func subscribeToProject()
+    func loadData()
 }

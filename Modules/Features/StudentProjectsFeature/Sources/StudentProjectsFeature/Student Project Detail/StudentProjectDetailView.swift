@@ -233,7 +233,6 @@ Completadas \(project.completedTasksCount) de \(project.tasks.count) tarefas (\(
 
     private func createDefaultTask() -> ProjectTaskView {
         return ProjectTaskView(
-            task: Student.shared.projects[0].tasks[0],
             checkImage: .defaultImage,
             color: .black
         )
